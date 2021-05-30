@@ -45,4 +45,4 @@ echo %ProgramFiles(x86)%
 
 Screenshot shown for reference - Templates categorized as MAUI for quick access:
 
-![Add New Item dialog - Visual Studio](https://github.com/egvijayanand/dotnet-maui-templates/tree/main/src/item-templates/tree/main/images/add-new-item.png)
+![Add New Item dialog - Visual Studio](https://github.com/egvijayanand/dotnet-maui-templates/blob/main/images/add-new-item.png)
