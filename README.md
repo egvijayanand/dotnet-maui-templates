@@ -13,7 +13,10 @@ Hence have created new item templates exclusively to be used with .NET MAUI proj
 
 Grab these templates from the [Releases](https://github.com/egvijayanand/dotnet-maui-templates/releases/tag/1.0.0).
 
-To make it work, copy those 2 zip files to any of the below mentioned directory in your local machine (Create the folder structure, if not already present).
+* MauiPageCS.zip
+* MauiPageXaml.zip
+
+To make it work, copy the 2 zip files to any of the below mentioned directory in your local machine (Create the folder structure, if not already present).
 
 For current user - %UserProfile% is the users' directory, run echo command to know the exact location
 
@@ -26,7 +29,7 @@ echo %UserProfile%
 
 For all users:
 
-Or copy to this folder, if you want this to be available for all users accessing that machine (requires Administrator privilege) 
+Copy to this folder, if you want this to be available for all users accessing that machine (requires Administrator privilege) 
 
 _(Note: Visual Studio edition needs to be updated properly, have mentioned below as **Preview**):_
 
@@ -35,7 +38,7 @@ echo %ProgramFiles(x86)%
 ```
 
 ```console
-"%ProgramFiles(x86)%\Microsoft Visual Studio\2019\**Preview**\Common7\IDE\ItemTemplates\CSharp"
+"%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Preview\Common7\IDE\ItemTemplates\CSharp"
 ```
 
 ***After copying those Zip files, it is mandatory to restart the Visual Studio instance for custom templates like these to take effect.***
