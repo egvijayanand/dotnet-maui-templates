@@ -1,0 +1,14 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+	<TemplateData>
+		<DefaultName>MauiPage.cs</DefaultName>
+		<Name>Content Page (C#)</Name>
+		<Description>A page for displaying content using C#.</Description>
+		<ProjectType>CSharp</ProjectType>
+		<SortOrder>10</SortOrder>
+		<Icon>__TemplateIcon.ico</Icon>
+	</TemplateData>
+	<TemplateContent>
+		<References/>
+		<ProjectItem SubType="MAUI" TargetFileName="$fileinputname$.cs" ReplaceParameters="true">MauiPageCS.cs</ProjectItem>
+	</TemplateContent>
+</VSTemplate>
