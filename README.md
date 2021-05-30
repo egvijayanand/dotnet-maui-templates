@@ -38,7 +38,7 @@ echo %ProgramFiles(x86)%
 ```
 
 ```console
-"%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Preview\Common7\IDE\ItemTemplates\CSharp"
+"%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Preview\Common7\IDE\ItemTemplates\CSharp\MAUI"
 ```
 
 ***After copying those Zip files, it is mandatory to restart the Visual Studio instance for custom templates like these to take effect.***
