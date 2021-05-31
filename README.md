@@ -1,4 +1,4 @@
-# .NET MAUI Project and Item Templates
+## .NET MAUI Project and Item Templates
 This repository is to host the .NET MAUI Project and Item templates
 
 We all know that .NET MAUI is an evolution of Xamarin.Forms.
@@ -47,23 +47,24 @@ Screenshot shown for reference - Templates categorized as MAUI for quick access:
 
 ![Add New Item dialog - Visual Studio](images/add-new-item.png)
 
+### .NET CLI Template
 
-## For making use of these templates cross-platfrom, have provided it as .NET CLI item template
+For making use of these templates cross-platfrom, have provided it as .NET CLI item template.
 
-It is made available in [MauiPageCLI](src/item-templates/MauiPageCLI) directory.
+It is maintained in the [MauiPageCLI](src/item-templates/MauiPageCLI) directory.
 
 Clone (or Download) the source into your local machine and run the batch files available in the same folder.
 
-_Under the hood, they run the .NET CLI commands to create and install the templates._
+_Under the hood, batch files run the .NET CLI commands to create and install the templates._
 
 * Create-Template.bat
 * Install-Template.bat
 
-The template is named as **maui-page** and it take two parameters:
+The item template is named as **maui-page** and it takes two parameters:
 
 Name: (Short form: -n)
 
-The name of the file to create, don't need to suffix it with xaml, it will get appended.
+The name of the file to create, _don't need to suffix it with xaml_, it will get added.
 
 _If the name parameter is not specified, by default, the .NET CLI template engine will take the current folder name as the filename (current behavior of the templating engine)._
 
