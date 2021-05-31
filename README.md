@@ -24,7 +24,7 @@ For current user - %UserProfile% is the users' directory, run echo command to kn
 echo %UserProfile%
 ```
 ```console
-"%UserProfile%\Documents\Visual Studio 2019\Templates\ItemTemplates\Visual C#\MAUI"
+mkdir "%UserProfile%\Documents\Visual Studio 2019\Templates\ItemTemplates\Visual C#\MAUI"
 ```
 
 For all users:
@@ -38,19 +38,19 @@ echo %ProgramFiles(x86)%
 ```
 
 ```console
-"%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Preview\Common7\IDE\ItemTemplates\CSharp\MAUI"
+mkdir "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Preview\Common7\IDE\ItemTemplates\CSharp\MAUI"
 ```
 
 ***After copying those Zip files, it is mandatory to restart the Visual Studio instance for custom templates like these to take effect.***
 
 Screenshot shown for reference - Templates categorized as MAUI for quick access:
 
-![Add New Item dialog - Visual Studio](https://github.com/egvijayanand/dotnet-maui-templates/blob/main/images/add-new-item.png)
+![Add New Item dialog - Visual Studio](images/add-new-item.png)
 
 
 ## For making use of these templates cross-platfrom, have provided it as .NET CLI item template
 
-It is made available in \src\item-templates\MauiPageCLI directory.
+It is made available in [MauiPageCLI](src/item-templates/MauiPageCLI) directory.
 
 Clone (or Download) the source into your local machine and run the batch files available in the same folder.
 
@@ -63,9 +63,9 @@ The template is named as **maui-page** and it take two parameters:
 
 Name: (Short form: -n)
 
-The name of the file to get generated, don't need to suffix it with xaml, it will get generated.
+The name of the file to create, don't need to suffix it with xaml, it will get appended.
 
-_If the name parameter is not specified, by default, the .NET CLI template engine takes the current folder name as the filename, . Seems like a bug over there._
+_If the name parameter is not specified, by default, the .NET CLI template engine will take the current folder name as the filename (current behavior of the templating engine)._
 
 Namespace: (Short form: -na)
 
