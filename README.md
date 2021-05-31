@@ -11,7 +11,7 @@ So that the existing Xamarin.Forms item templates cannot be used as is from now 
 
 Hence have created new item templates exclusively to be used with .NET MAUI projects (both for XAML and C#).
 
-Grab these templates from the [Releases](https://github.com/egvijayanand/dotnet-maui-templates/releases/tag/1.0.0).
+Grab these templates from the [Releases](https://github.com/egvijayanand/dotnet-maui-templates/releases).
 
 * MauiPageCS.zip
 * MauiPageXaml.zip
