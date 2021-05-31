@@ -1,7 +1,7 @@
 # .NET MAUI Project and Item Templates
 This repository is to host the .NET MAUI Project and Item templates
 
-We all know that .NET MAUI is an evolution to Xamarin.Forms.
+We all know that .NET MAUI is an evolution of Xamarin.Forms.
 
 And .NET 6 Preview 4 just got released last week in the **MSBuild 2021**.
 
@@ -46,3 +46,37 @@ echo %ProgramFiles(x86)%
 Screenshot shown for reference - Templates categorized as MAUI for quick access:
 
 ![Add New Item dialog - Visual Studio](https://github.com/egvijayanand/dotnet-maui-templates/blob/main/images/add-new-item.png)
+
+
+## For making use of these templates cross-platfrom, have provided it as .NET CLI item template
+
+It is made available in \src\item-templates\MauiPageCLI directory.
+
+Clone (or Download) the source into your local machine and run the batch files available in the same folder.
+
+_Under the hood, they run the .NET CLI commands to create and install the templates._
+
+* Create-Template.bat
+* Install-Template.bat
+
+The template is named as **maui-page** and it take two parameters:
+
+Name: (Short form: -n)
+
+The name of the file to get generated, don't need to suffix it with xaml, it will get generated.
+
+_If the name parameter is not specified, by default, the .NET CLI template engine takes the current folder name as the filename, . Seems like a bug over there._
+
+Namespace: (Short form: -na)
+
+The namespace for the generated files.
+
+After installation, run the below command to make use of the template (both provide the same result):
+
+```console
+dotnet new maui-page -n MainPage -na TestApp.Views
+```
+
+```console
+dotnet new maui-page --name MainPage --namespace TestApp.Views
+```

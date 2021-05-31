@@ -1,0 +1,35 @@
+{
+    "$schema": "https://json.schemastore.org/template",
+    "author": "Vijay Anand E G",
+    "defaultName": "MauiPage1",
+    "classifications": [
+        "MAUI",
+        "Mobile"
+    ],
+    "identity": "VijayAnand.MauiPage",
+    "description": "An item template for .NET MAUI ContentPage in XAML (.NET 6 Preview 4)",
+    "name": ".NET MAUI ContentPage",
+    "shortName": "maui-page",
+    "sourceName": "MyPage",
+    "primaryOutputs": [
+        {
+            "path": "MyPage.xaml"
+        },
+        {
+            "path": "MyPage.xaml.cs"
+        }
+    ],
+    "tags": {
+        "language": "C#",
+        "type": "item"
+    },
+    "symbols": {
+        "namespace": {
+            "type": "parameter",
+            //"defaultValue": "safe_namespace",
+            "replaces": "MyApp.Namespace",
+            "datatype": "text",
+            "description": "namespace for the generated code"
+        }
+    }
+}
