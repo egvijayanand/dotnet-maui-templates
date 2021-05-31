@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<PackageType>Template</PackageType>
+		<PackageId>VijayAnand.MauiPage</PackageId>
+		<PackageVersion>1.0.0</PackageVersion>
+		<Title>.NET MAUI ContentPage</Title>
+		<Authors>Vijay Anand E G</Authors>
+		<Description>Item template for creating a .NET MAUI ContentPage in XAML</Description>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<IncludeContentInPack>true</IncludeContentInPack>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<IncludeSymbols>false</IncludeSymbols>
+		<ContentTargetFolders>Content</ContentTargetFolders>
+		<!-- This project has no .NET assemblies, so disable the warning for that -->
+		<NoWarn>$(NoWarn);NU5128</NoWarn>
+	</PropertyGroup>
+	<ItemGroup>
+		<Content Include="MauiPage\**\*" Exclude="MauiPage\**\bin\**;MauiPage\**\obj\**"/>
+		<Compile Remove="**\*"/>
+	</ItemGroup>
+</Project>
