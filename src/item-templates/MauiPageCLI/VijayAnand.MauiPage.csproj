@@ -3,7 +3,7 @@
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<PackageType>Template</PackageType>
 		<PackageId>VijayAnand.MauiPage</PackageId>
-		<PackageVersion>1.0.0</PackageVersion>
+		<PackageVersion>1.0.1</PackageVersion>
 		<Title>.NET MAUI ContentPage</Title>
 		<Authors>Vijay Anand E G</Authors>
 		<Description>Item template for creating a .NET MAUI ContentPage in XAML</Description>
@@ -14,9 +14,14 @@
 		<ContentTargetFolders>Content</ContentTargetFolders>
 		<!-- This project has no .NET assemblies, so disable the warning for that -->
 		<NoWarn>$(NoWarn);NU5128</NoWarn>
+		<RepositoryType>github</RepositoryType>
+		<RepositoryUrl>https://github.com/egvijayanand/dotnet-maui-templates</RepositoryUrl>
+		<PackageTags>MAUI, Mobile, iOS, Android, WinUI3, MacCatalyst</PackageTags>
+		<PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)/release-notes.txt"))</PackageReleaseNotes>
 	</PropertyGroup>
 	<ItemGroup>
-		<Content Include="MauiPage\**\*" Exclude="MauiPage\**\bin\**;MauiPage\**\obj\**"/>
+		<Content Include="MauiPage\**\*"
+		         Exclude="MauiPage\**\bin\**;MauiPage\**\obj\**"/>
 		<Compile Remove="**\*"/>
 	</ItemGroup>
 </Project>
