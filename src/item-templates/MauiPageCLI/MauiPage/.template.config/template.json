@@ -4,19 +4,23 @@
     "defaultName": "MauiPage1",
     "classifications": [
         "MAUI",
-        "Mobile"
+        "Mobile",
+        "iOS",
+        "Android",
+        "WinUI3",
+        "MacCatalyst"
     ],
     "identity": "VijayAnand.MauiPage",
-    "description": "An item template for .NET MAUI ContentPage in XAML (.NET 6 Preview 4)",
+    "description": "An item template for .NET MAUI ContentPage in XAML (.NET 6 Preview 5)",
     "name": ".NET MAUI ContentPage",
     "shortName": "maui-page",
-    "sourceName": "MyPage",
+    "sourceName": "MauiPage",
     "primaryOutputs": [
         {
-            "path": "MyPage.xaml"
+            "path": "MauiPage.xaml"
         },
         {
-            "path": "MyPage.xaml.cs"
+            "path": "MauiPage.xaml.cs"
         }
     ],
     "tags": {
@@ -26,7 +30,6 @@
     "symbols": {
         "namespace": {
             "type": "parameter",
-            //"defaultValue": "safe_namespace",
             "replaces": "MyApp.Namespace",
             "datatype": "text",
             "description": "namespace for the generated code"

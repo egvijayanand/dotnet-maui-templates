@@ -3,11 +3,11 @@ This repository is to host the .NET MAUI Project and Item templates
 
 We all know that .NET MAUI is an evolution of Xamarin.Forms.
 
-And .NET 6 Preview 4 just got released last week in the **MSBuild 2021**.
+And .NET 6 Preview 4 just got released last week in the **MSBuild 2021**. And Preview 5 is now available too.
 
 With this new release, ContentPage is completely moved into .NET MAUI world with a brand new xml namespace and using directive.
 
-So that the existing Xamarin.Forms item templates cannot be used as is from now on and modfifying it everytime is painful.
+So that the existing Xamarin.Forms item templates cannot be used as is from now on and modifying it every time is painful.
 
 Hence have created new item templates exclusively to be used with .NET MAUI projects (both for XAML and C#).
 
@@ -49,16 +49,15 @@ Screenshot shown for reference - Templates categorized as MAUI for quick access:
 
 ### .NET CLI Template
 
-For making use of these templates cross-platfrom, have provided it as .NET CLI item template.
+For making use of these templates cross-platform, have provided it as .NET CLI item template.
 
-It is maintained in the [MauiPageCLI](src/item-templates/MauiPageCLI) directory.
+[![NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiPage/)](https://www.nuget.org/packages/VijayAnand.MauiPage/)
 
-Clone (or Download) the source into your local machine and run the batch files available in the same folder.
+Install the item template from NuGet with the below command.
 
-_Under the hood, batch files run the .NET CLI commands to create and install the templates._
-
-* Create-Template.bat
-* Install-Template.bat
+```console
+dotnet new --install VijayAnand.MauiPage
+```
 
 The item template is named as **maui-page** and it takes two parameters:
 
@@ -66,7 +65,7 @@ Name: (Short form: -n)
 
 The name of the file to create, _don't need to suffix it with xaml_, it will get added.
 
-_If the name parameter is not specified, by default, the .NET CLI template engine will take the current folder name as the filename (current behavior of the templating engine)._
+_If the name parameter is not specified, by default, the **.NET CLI template engine will take the current folder name as the filename** (current behaviour of the templating engine)._
 
 Namespace: (Short form: -na)
 

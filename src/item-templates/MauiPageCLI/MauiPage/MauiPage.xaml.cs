@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 namespace MyApp.Namespace
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MyPage : ContentPage, IPage
+    public partial class MauiPage : ContentPage, IPage
     {
-        public MyPage()
+        public MauiPage()
         {
             InitializeComponent();
         }
