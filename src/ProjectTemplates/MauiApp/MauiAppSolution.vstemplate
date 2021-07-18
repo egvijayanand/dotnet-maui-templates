@@ -1,0 +1,36 @@
+<VSTemplate Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
+	<TemplateData>
+		<Name>.NET MAUI App (Preview)</Name>
+		<Description>A project for creating a .NET MAUI application for iOS, Android, Mac Catalyst, and WinUI</Description>
+		<ProjectType>CSharp</ProjectType>
+		<ProjectSubType>MAUI</ProjectSubType>
+		<SortOrder>1000</SortOrder>
+		<CreateNewFolder>true</CreateNewFolder>
+		<DefaultName>MauiApp</DefaultName>
+		<ProvideDefaultName>true</ProvideDefaultName>
+		<LocationField>Enabled</LocationField>
+		<EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+		<CreateInPlace>true</CreateInPlace>
+		<Icon>__TemplateIcon.ico</Icon>
+		<LanguageTag>CSharp</LanguageTag>
+		<PlatformTag>Android</PlatformTag>
+		<PlatformTag>iOS</PlatformTag>
+		<PlatformTag>macOS</PlatformTag>
+		<PlatformTag>Windows</PlatformTag>
+		<ProjectTypeTag>Desktop</ProjectTypeTag>
+		<ProjectTypeTag>MAUI</ProjectTypeTag>
+		<ProjectTypeTag>Mac Catalyst</ProjectTypeTag>
+		<ProjectTypeTag>Mobile</ProjectTypeTag>
+		<ProjectTypeTag>WinUI</ProjectTypeTag>
+	</TemplateData>
+	<TemplateContent>
+		<ProjectCollection>
+			<ProjectTemplateLink ProjectName="$safeprojectname$" CopyParameters="true">MauiApp\MauiApp.vstemplate</ProjectTemplateLink>
+			<ProjectTemplateLink ProjectName="$safeprojectname$.WinUI" CopyParameters="true">MauiApp.WinUI\MauiApp.WinUI.vstemplate</ProjectTemplateLink>
+		</ProjectCollection>
+	</TemplateContent>
+	<WizardExtension>
+		<Assembly>VijayAnand.MauiTemplates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7550554040ebdd44</Assembly>
+		<FullClassName>MauiTemplates.CustomActionWizard</FullClassName>
+	</WizardExtension>
+</VSTemplate>

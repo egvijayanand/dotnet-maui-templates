@@ -1,0 +1,16 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+	<TemplateData>
+		<DefaultName>MauiPage.xaml</DefaultName>
+		<Name>Content Page (.NET MAUI)</Name>
+		<Description>A page for displaying content using XAML.</Description>
+		<ProjectType>CSharp</ProjectType>
+		<ProjectSubType>MAUI</ProjectSubType>
+		<SortOrder>10</SortOrder>
+		<Icon>__TemplateIcon.ico</Icon>
+	</TemplateData>
+	<TemplateContent>
+		<References/>
+		<ProjectItem SubType="MAUI" TargetFileName="$fileinputname$.xaml" ReplaceParameters="true">MauiPage.xaml</ProjectItem>
+		<ProjectItem SubType="MAUI" TargetFileName="$fileinputname$.xaml.cs" ReplaceParameters="true">MauiPage.xaml.cs</ProjectItem>
+	</TemplateContent>
+</VSTemplate>
