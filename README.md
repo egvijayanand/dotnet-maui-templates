@@ -3,9 +3,25 @@ This repository is to host the .NET MAUI Project and Item templates
 
 We all know that .NET MAUI is an evolution of Xamarin.Forms.
 
-And .NET 6 Preview 4 just got released last week in the **MSBuild 2021**. And Preview 5 is now available too.
+And .NET 6 Preview 6 just got released last week.
 
-With this new release, ContentPage is completely moved into .NET MAUI world with a brand new xml namespace and using directive.
+To provide an integrated experience in VS2022, a VS extension has been developed to host these templates.
+
+Extension is made available in the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-templates) and can also be installed from within Visual Studio itself (Extensions -> Manage Extensions / Alt + X + M)
+
+This has project template for both MAUI and MAUI Blazor project and it has been named as:
+
+* .NET MAUI App (Preview)
+* .NET MAUI Blazor App (Preview)
+
+And for Item templates, ContentPage in both XAML and C# and it has been named as:
+
+* Content Page (.NET MAUI)
+* Content Page (C#) (.NET MAUI)
+
+### For VS2019 users:
+
+Now, ContentPage is completely moved into .NET MAUI world with a brand new xml namespace and using directive.
 
 So that the existing Xamarin.Forms item templates cannot be used as is from now on and modifying it every time is painful.
 
