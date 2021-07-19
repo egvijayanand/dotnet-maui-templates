@@ -5,16 +5,18 @@ We all know that .NET MAUI is an evolution of Xamarin.Forms.
 
 And .NET 6 Preview 6 just got released last week.
 
-To provide an integrated experience in VS2022, a VS extension has been developed to host these templates.
+### For VS2022 users:
 
-Extension is made available in the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-templates) and can also be installed from within Visual Studio itself (Extensions -> Manage Extensions / Alt + X + M)
+To provide an integrated experience, a VS extension has been developed to host these templates.
+
+Extension is made available in the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-templates) and even more easier, can be installed from within Visual Studio itself (Extensions -> Manage Extensions / Alt + X + M).
 
 This has project template for both MAUI and MAUI Blazor project and it has been named as:
 
 * .NET MAUI App (Preview)
 * .NET MAUI Blazor App (Preview)
 
-And for Item templates, ContentPage in both XAML and C# and it has been named as:
+And Item template for ContentPage, in both XAML and C#, and has been named as:
 
 * Content Page (.NET MAUI)
 * Content Page (C#) (.NET MAUI)
@@ -25,41 +27,14 @@ Now, ContentPage is completely moved into .NET MAUI world with a brand new xml n
 
 So that the existing Xamarin.Forms item templates cannot be used as is from now on and modifying it every time is painful.
 
-Hence have created new item templates exclusively to be used with .NET MAUI projects (both for XAML and C#).
+Hence have created a VS extension exclusively to be used with .NET MAUI projects.
 
-Grab these templates from the [Releases](https://github.com/egvijayanand/dotnet-maui-templates/releases).
+Grab these templates from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-item-templates) and even more easier, can be installed from within Visual Studio itself (Extensions -> Manage Extensions / Alt + X + M)
 
-* MauiPageCS.zip
-* MauiPageXaml.zip
+It has templates for ContentPage, in both XAML and C#, and has been named as:
 
-To make it work, copy the 2 zip files to any of the below mentioned directory in your local machine (Create the folder structure, if not already present).
-
-For current user - %UserProfile% is the users' directory, run echo command to know the exact location
-
-```console
-echo %UserProfile%
-```
-```console
-mkdir "%UserProfile%\Documents\Visual Studio 2019\Templates\ItemTemplates\Visual C#\MAUI"
-```
-
-For all users:
-
-Copy to this folder, if you want this to be available for all users accessing that machine (requires Administrator privilege) 
-
-_(Note: Visual Studio edition needs to be updated properly, have mentioned below as **Preview**):_
-
-```console
-echo %ProgramFiles(x86)%
-```
-
-```console
-mkdir "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Preview\Common7\IDE\ItemTemplates\CSharp\MAUI"
-```
-
-***After copying those Zip files, it is mandatory to restart the Visual Studio instance for custom templates like these to take effect.***
-
-Screenshot shown for reference - Templates categorized as MAUI for quick access:
+* Content Page (.NET MAUI)
+* Content Page (C#) (.NET MAUI)
 
 ![Add New Item dialog - Visual Studio](images/add-new-item.png)
 
