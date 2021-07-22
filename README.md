@@ -11,15 +11,21 @@ To provide an integrated experience, a VS extension has been developed to host t
 
 Extension is made available in the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-templates) and even more easier, can be installed from within Visual Studio itself (Extensions -> Manage Extensions / Alt + X + M).
 
+![Manage Extensions - Visual Studio](images/vs-manage-extensions.png)
+
 This has project template for both MAUI and MAUI Blazor project and it has been named as:
 
 * .NET MAUI App (Preview)
 * .NET MAUI Blazor App (Preview)
 
+![Create Project - Visual Studio](images/maui-project-templates.png)
+
 And Item template for ContentPage, in both XAML and C#, and has been named as:
 
 * Content Page (.NET MAUI)
 * Content Page (C#) (.NET MAUI)
+
+![Add New Item dialog - Visual Studio](images/add-new-item.png)
 
 ### For VS2019 users:
 
