@@ -1,6 +1,10 @@
 ﻿using MauiTemplates;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using Microsoft.VisualStudio.Shell;
+
+// For Visual Studio to locate and load the component assembly during runtime
+[assembly: ProvideCodeBase(AssemblyName = "VijayAnand.MauiTemplates")]
 
 [assembly: AssemblyTitle(Vsix.Name)]
 [assembly: AssemblyDescription(Vsix.Description)]

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="MauiTemplates.20dca96a-7311-401f-84ed-980478fb319b" Version="1.0.0.0" Language="en-US" Publisher="Vijay Anand E G" />
+        <Identity Id="MauiTemplates.20dca96a-7311-401f-84ed-980478fb319b" Version="1.0.0.1" Language="en-US" Publisher="Vijay Anand E G" />
         <DisplayName>.NET MAUI Project and Item Templates</DisplayName>
         <Description xml:space="preserve">.NET MAUI Project and Item Templates for Visual Studio 2022 (.NET 6 Preview 6).</Description>
         <MoreInfo>https://github.com/egvijayanand/dotnet-maui-templates</MoreInfo>
         <GettingStartedGuide>readme.rtf</GettingStartedGuide>
-        <ReleaseNotes>readme.rtf</ReleaseNotes>
+        <ReleaseNotes>release-notes.txt</ReleaseNotes>
         <Icon>Resources\Icon.png</Icon>
         <PreviewImage>Resources\Icon.png</PreviewImage>
-        <Tags>MAUI, iOS, Android, macOS, WinUI, Windows, Desktop, Mobile, Blazor</Tags>
+        <Tags>MAUI, iOS, Android, macOS, WinUI, Windows, Desktop, Mobile, Blazor, WinUI, .NET MAUI, Mac Catalyst, Templates, VS2022, Visual Studio, WinUI3</Tags>
         <Preview>true</Preview>
     </Metadata>
     <Installation>
