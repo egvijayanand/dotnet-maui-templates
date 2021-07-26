@@ -1,28 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+<PackageManifest Version="2.0.0"
+                 xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011"
+                 xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="MauiItemTemplates.59bfe300-83a2-4f47-ae6c-2936a6d30204" Version="1.0.0.0" Language="en-US" Publisher="Vijay Anand E G" />
+        <Identity Id="MauiItemTemplates.59bfe300-83a2-4f47-ae6c-2936a6d30204"
+                  Version="1.0.0.1"
+                  Language="en-US"
+                  Publisher="Vijay Anand E G" />
         <DisplayName>.NET MAUI Item Templates</DisplayName>
         <Description xml:space="preserve">.NET MAUI Item Templates for Visual Studio 2019 (.NET 6 Preview 5 or later).</Description>
         <MoreInfo>https://github.com/egvijayanand/dotnet-maui-templates</MoreInfo>
         <License>license.txt</License>
         <GettingStartedGuide>readme.rtf</GettingStartedGuide>
-        <ReleaseNotes>readme.rtf</ReleaseNotes>
+        <ReleaseNotes>release-notes.txt</ReleaseNotes>
         <Icon>Resources\Icon.png</Icon>
         <PreviewImage>Resources\Icon.png</PreviewImage>
-        <Tags>.NET MAUI, iOS, Android, macOS, Mac Catalyst, WinUI, Windows, Desktop, Mobile, MAUI</Tags>
+        <Tags>.NET MAUI, iOS, Android, macOS, Mac Catalyst, WinUI, Windows, Desktop, Mobile, MAUI, Templates, VS2019, Visual Studio</Tags>
         <Preview>true</Preview>
     </Metadata>
     <Installation>
-        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[16.10, 17.0)" />
-        <InstallationTarget Version="[16.10,17.0)" Id="Microsoft.VisualStudio.Pro" />
-        <InstallationTarget Version="[16.10,17.0)" Id="Microsoft.VisualStudio.Enterprise" />
+        <InstallationTarget Id="Microsoft.VisualStudio.Community"
+                            Version="[16.10, 17.0)" />
+        <InstallationTarget Version="[16.10,17.0)"
+                            Id="Microsoft.VisualStudio.Pro" />
+        <InstallationTarget Version="[16.10,17.0)"
+                            Id="Microsoft.VisualStudio.Enterprise" />
     </Installation>
     <Prerequisites>
-        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[16.0,)" DisplayName="Visual Studio core editor" />
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor"
+                      Version="[16.0,)"
+                      DisplayName="Visual Studio core editor" />
     </Prerequisites>
     <Assets>
-        <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="File" Path="ItemTemplates" TargetVersion="[16.10, 17.0)" d:TargetPath="ItemTemplates\MauiPageCS.zip" />
-        <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="File" Path="ItemTemplates" TargetVersion="[16.10, 17.0)" d:TargetPath="ItemTemplates\MauiPageXaml.zip" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate"
+               d:Source="File"
+               Path="ItemTemplates"
+               TargetVersion="[16.10, 17.0)"
+               d:TargetPath="ItemTemplates\MauiPageCS.zip" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate"
+               d:Source="File"
+               Path="ItemTemplates"
+               TargetVersion="[16.10, 17.0)"
+               d:TargetPath="ItemTemplates\MauiPageXaml.zip" />
     </Assets>
 </PackageManifest>

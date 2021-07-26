@@ -1,0 +1,3 @@
+What's new in ver. 1.0.0.1:
+
+Item Templates is categorized into sub-section titled MAUI

@@ -56,10 +56,12 @@
     <Content Include="ItemTemplates\MauiPageCS.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\MAUI</VSIXSubPath>
     </Content>
     <Content Include="ItemTemplates\MauiPageXaml.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\MAUI</VSIXSubPath>
     </Content>
     <Content Include="readme.rtf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -71,6 +73,10 @@
       <LastGenOutput>source.extension.cs</LastGenOutput>
     </None>
     <Content Include="license.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="release-notes.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
