@@ -10,6 +10,6 @@
 	</TemplateData>
 	<TemplateContent>
 		<References/>
-		<ProjectItem SubType="MAUI" TargetFileName="$fileinputname$.cs" ReplaceParameters="true">MauiPageCS.cs</ProjectItem>
+		<ProjectItem TargetFileName="$fileinputname$.cs" ReplaceParameters="true">MauiPageCS.cs</ProjectItem>
 	</TemplateContent>
 </VSTemplate>
