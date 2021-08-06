@@ -11,7 +11,7 @@ namespace MauiItemTemplates
         public const string Name = ".NET MAUI Item Templates";
         public const string Description = @".NET MAUI Item Templates for Visual Studio 2019 (.NET 6 Preview 5 or later).";
         public const string Language = "en-US";
-        public const string Version = "1.0.0.1";
+        public const string Version = "1.0.0.2";
         public const string Author = "Vijay Anand E G";
         public const string Tags = ".NET MAUI, iOS, Android, macOS, Mac Catalyst, WinUI, Windows, Desktop, Mobile, MAUI, Templates, VS2019, Visual Studio";
     }

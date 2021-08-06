@@ -4,7 +4,7 @@
                  xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
         <Identity Id="MauiItemTemplates.59bfe300-83a2-4f47-ae6c-2936a6d30204"
-                  Version="1.0.0.1"
+                  Version="1.0.0.2"
                   Language="en-US"
                   Publisher="Vijay Anand E G" />
         <DisplayName>.NET MAUI Item Templates</DisplayName>
@@ -42,5 +42,15 @@
                Path="ItemTemplates"
                TargetVersion="[16.10, 17.0)"
                d:TargetPath="ItemTemplates\MauiPageXaml.zip" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate"
+               d:Source="File"
+               Path="ItemTemplates"
+               TargetVersion="[16.0, 17.0)"
+               d:TargetPath="ItemTemplates\MauiViewCS.zip" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate"
+               d:Source="File"
+               Path="ItemTemplates"
+               TargetVersion="[16.0, 17.0)"
+               d:TargetPath="ItemTemplates\MauiViewXaml.zip" />
     </Assets>
 </PackageManifest>

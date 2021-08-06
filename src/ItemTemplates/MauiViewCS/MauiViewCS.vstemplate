@@ -1,0 +1,15 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+	<TemplateData>
+		<DefaultName>MauiView.cs</DefaultName>
+		<Name>Content View (C#) (.NET MAUI)</Name>
+		<Description>A view for displaying content using C#.</Description>
+		<ProjectType>CSharp</ProjectType>
+		<ProjectSubType>MAUI</ProjectSubType>
+		<SortOrder>100</SortOrder>
+		<Icon>__TemplateIcon.ico</Icon>
+	</TemplateData>
+	<TemplateContent>
+		<References/>
+		<ProjectItem TargetFileName="$fileinputname$.cs" ReplaceParameters="true">MauiViewCS.cs</ProjectItem>
+	</TemplateContent>
+</VSTemplate>
