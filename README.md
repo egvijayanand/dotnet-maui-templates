@@ -20,10 +20,12 @@ This has project template for both MAUI and MAUI Blazor project and it has been 
 
 ![Create Project - Visual Studio](images/maui-project-templates.png)
 
-And Item template for ContentPage, in both XAML and C#, and has been named as:
+And Item template for ContentPage and ContentView, in both XAML and C#, and has been named as:
 
 * Content Page (.NET MAUI)
 * Content Page (C#) (.NET MAUI)
+* Content View (.NET MAUI)
+* Content View (C#) (.NET MAUI)
 
 ![Add New Item dialog - Visual Studio](images/add-new-item.png)
 
@@ -37,10 +39,12 @@ Hence have created a VS extension exclusively to be used with .NET MAUI projects
 
 Grab these templates from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-item-templates) and even more easier, can be installed from within Visual Studio itself (Extensions -> Manage Extensions / Alt + X + M)
 
-It has templates for ContentPage, in both XAML and C#, and has been named as:
+It has templates for ContentPage and ContentView, in both XAML and C#, and has been named as:
 
 * Content Page (.NET MAUI)
 * Content Page (C#) (.NET MAUI)
+* Content View (.NET MAUI)
+* Content View (C#) (.NET MAUI)
 
 ![Add New Item dialog - Visual Studio](images/add-new-item.png)
 
