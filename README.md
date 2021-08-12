@@ -52,17 +52,21 @@ It has templates for ContentPage and ContentView, in both XAML and C#, and has b
 
 ### .NET CLI Template
 
-For making use of these templates cross-platform, have provided it as .NET CLI item template.
+For making use of these templates cross-platform, have provided it as .NET CLI item template distributed via NuGet.
 
-[![NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiPage/)](https://www.nuget.org/packages/VijayAnand.MauiPage/)
+[![NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/)
 
 Install the item template from NuGet with the below command.
 
 ```console
-dotnet new --install VijayAnand.MauiPage
+dotnet new --install VijayAnand.MauiTemplates
 ```
 
-The item template is named as **maui-page** and it takes two parameters:
+Starting with, ContentPage template is named as **maui-page** 
+
+And ContentView template is named as **maui-view**
+
+Both these templates takes two parameters:
 
 Name: (Short form: -n)
 
@@ -82,4 +86,12 @@ dotnet new maui-page -n MainPage -na TestApp.Views
 
 ```console
 dotnet new maui-page --name MainPage --namespace TestApp.Views
+```
+
+```console
+dotnet new maui-view -n CardView -na TestApp.Views
+```
+
+```console
+dotnet new maui-view --name CardView --namespace TestApp.Views
 ```
