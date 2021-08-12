@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace $rootnamespace$
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class $safeitemname$ : ContentView, IView
+    public partial class $safeitemname$ : ContentView
     {
         public $safeitemname$()
         {

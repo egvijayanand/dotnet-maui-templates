@@ -1,3 +1,5 @@
-What's new in ver. 1.0.0.2:
+What's new in ver. 1.0.0.3:
 
-Item templates for ContentView, in both XAML and C#.
+This release will work with .NET 6 Preview 7.
+
+IPage and IView usage is removed from ContentPage and ContentView templates respectively.

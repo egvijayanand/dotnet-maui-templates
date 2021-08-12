@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace $rootnamespace$
 {
-    public class $safeitemname$ : ContentView, IView
+    public class $safeitemname$ : ContentView
     {
         public $safeitemname$()
         {

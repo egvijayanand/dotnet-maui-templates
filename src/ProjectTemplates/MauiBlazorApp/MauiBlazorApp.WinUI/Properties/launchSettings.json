@@ -1,7 +1,8 @@
 {
   "profiles": {
     "$ext_safeprojectname$.WinUI": {
-      "commandName": "MsixPackage"
+      "commandName": "MsixPackage",
+      "nativeDebugging": false
     }
   }
 }

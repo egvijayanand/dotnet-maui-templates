@@ -49,10 +49,9 @@
 			Include="..\$ext_safeprojectname$\**\*.xaml"
 			Exclude="..\$ext_safeprojectname$\bin\**;..\$ext_safeprojectname$\obj\**"
 			Link="%(RecursiveDir)%(FileName)%(Extension)" />
-		<_ThisProjectStaticWebAsset
+		<Content
 			Include="..\$ext_safeprojectname$\wwwroot\**"
-			Link="wwwroot\%(RecursiveDir)%(Filename)%(Extension)"
-			RelativePath="%(RecursiveDir)%(Filename)%(Extension)" />
+			Link="wwwroot\%(RecursiveDir)%(Filename)%(Extension)" />
 		<None Include="@(_ThisProjectStaticWebAsset)"/>
 		<RazorComponent
 			Include="..\$ext_safeprojectname$\**\*.razor"
@@ -61,11 +60,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="6.0.0-preview.6.*" />
-		<PackageReference Include="Microsoft.ProjectReunion" Version="0.8.0" />
-		<PackageReference Include="Microsoft.ProjectReunion.Foundation" Version="0.8.0" />
-		<PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="0.8.0" />
-		<PackageReference Include="Microsoft.ProjectReunion.InteractiveExperiences" Version="0.8.0" NoWarn="NU1701" />
+		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="6.0.0-preview.7.*" />
+		<PackageReference Include="Microsoft.ProjectReunion" Version="0.8.1" />
+		<PackageReference Include="Microsoft.ProjectReunion.Foundation" Version="0.8.1" />
+		<PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="0.8.1" />
+		<PackageReference Include="Microsoft.ProjectReunion.InteractiveExperiences" Version="0.8.1" NoWarn="NU1701" />
 	</ItemGroup>
 
 </Project>

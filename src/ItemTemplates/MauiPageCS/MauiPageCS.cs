@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace $rootnamespace$
 {
-    public class $safeitemname$ : ContentPage, IPage
+    public class $safeitemname$ : ContentPage
     {
         public $safeitemname$()
         {

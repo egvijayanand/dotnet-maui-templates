@@ -4,18 +4,18 @@
                  xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
         <Identity Id="MauiItemTemplates.59bfe300-83a2-4f47-ae6c-2936a6d30204"
-                  Version="1.0.0.2"
+                  Version="1.0.0.3"
                   Language="en-US"
                   Publisher="Vijay Anand E G" />
         <DisplayName>.NET MAUI Item Templates</DisplayName>
-        <Description xml:space="preserve">.NET MAUI Item Templates for Visual Studio 2019 (.NET 6 Preview 5 or later).</Description>
+        <Description xml:space="preserve">.NET MAUI Item Templates for Visual Studio 2019 (.NET 6 Preview 7).</Description>
         <MoreInfo>https://github.com/egvijayanand/dotnet-maui-templates</MoreInfo>
         <License>license.txt</License>
         <GettingStartedGuide>readme.rtf</GettingStartedGuide>
         <ReleaseNotes>release-notes.txt</ReleaseNotes>
         <Icon>Resources\Icon.png</Icon>
         <PreviewImage>Resources\Icon.png</PreviewImage>
-        <Tags>.NET MAUI, iOS, Android, macOS, Mac Catalyst, WinUI, Windows, Desktop, Mobile, MAUI, Templates, VS2019, Visual Studio</Tags>
+        <Tags>.NET MAUI, iOS, Android, macOS, Mac Catalyst, WinUI, Windows, Desktop, Mobile, MAUI, Templates, VS2019, Visual Studio, Preview 7, Code Snippets</Tags>
         <Preview>true</Preview>
     </Metadata>
     <Installation>
@@ -30,6 +30,9 @@
         <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor"
                       Version="[16.0,)"
                       DisplayName="Visual Studio core editor" />
+        <Prerequisite Id="Microsoft.NetCore.Component.SDK"
+                      Version="[16.11.31603.221,17.0)"
+                      DisplayName=".NET SDK" />
     </Prerequisites>
     <Assets>
         <Asset Type="Microsoft.VisualStudio.ItemTemplate"

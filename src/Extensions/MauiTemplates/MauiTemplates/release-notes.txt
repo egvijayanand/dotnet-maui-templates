@@ -1,3 +1,5 @@
-What's new in ver. 1.0.0.2:
+What's new in ver. 1.0.0.3:
 
-Item Templates for ContentView in both C# and XAML.
+This release will work with VS2022 Preview 3 or later.
+
+Templates updated for .NET 6 Preview 7
