@@ -9,7 +9,7 @@
 		<RootNamespace>$ext_safeprojectname$</RootNamespace>
 
 		<!-- Display name -->
-		<ApplicationTitle>MauiApp</ApplicationTitle>
+		<ApplicationTitle>$ext_safeprojectname$</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.$ext_safeprojectname$</ApplicationId>
@@ -38,7 +38,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="6.0.0-preview.6.*" />
+		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="6.0.0-preview.7.*" />
 	</ItemGroup>
 
 	<PropertyGroup>

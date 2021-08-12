@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace $rootnamespace$
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class $safeitemname$ : ContentPage, IPage
+    public partial class $safeitemname$ : ContentPage
     {
         public $safeitemname$()
         {
