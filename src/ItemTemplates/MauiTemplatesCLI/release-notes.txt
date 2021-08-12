@@ -1,0 +1,1 @@
+An item template for .NET MAUI ContentPage and ContentView in XAML (.NET 6 Preview 7)

@@ -8,10 +8,15 @@
         "iOS",
         "Android",
         "WinUI3",
-        "MacCatalyst"
+        "Mac Catalyst",
+        "macOS",
+        "Windows",
+        ".NET MAUI",
+        "Desktop",
+        "WinUI"
     ],
     "identity": "VijayAnand.MauiPage",
-    "description": "An item template for .NET MAUI ContentPage in XAML (.NET 6 Preview 5)",
+    "description": "An item template for .NET MAUI ContentPage in XAML (.NET 6 Preview 7)",
     "name": ".NET MAUI ContentPage",
     "shortName": "maui-page",
     "sourceName": "MauiPage",
