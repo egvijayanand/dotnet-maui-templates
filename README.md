@@ -62,30 +62,32 @@ Install the item template from NuGet with the below command.
 dotnet new --install VijayAnand.MauiTemplates
 ```
 
-Starting with, ContentPage template is named as **maui-page** 
+This comes with with the following templates:
 
-And ContentView template is named as **maui-view**
+Item | Template Name
+:---: | :---:
+ContentPage | maui-page
+ContentView | maui-view
+ShellPage | maui-shell
 
-Both these templates takes two parameters:
+All of these templates takes two parameters:
 
-Name: (Short form: -n)
+Name: (Short notation: `-n`)
 
-The name of the file to create, _don't need to suffix it with xaml_, it will get added.
+The name of the file to create, _don't need to suffix it with .xaml_, it will get added.
 
 _If the name parameter is not specified, by default, the **.NET CLI template engine will take the current folder name as the filename** (current behaviour of the templating engine)._
 
-Namespace: (Short form: -na)
+Namespace: (Short notation: `-na`)
 
 The namespace for the generated files.
 
-After installation, run the below command to make use of the template (both provide the same result):
+After installation, use the below command to make use of the template  (both provide the same result):
+
+With abbreviated parameter names:
 
 ```console
 dotnet new maui-page -n MainPage -na TestApp.Views
-```
-
-```console
-dotnet new maui-page --name MainPage --namespace TestApp.Views
 ```
 
 ```console
@@ -93,5 +95,19 @@ dotnet new maui-view -n CardView -na TestApp.Views
 ```
 
 ```console
+dotnet new maui-shell -n AppShell -na TestApp
+```
+
+With parameter names expanded:
+
+```console
+dotnet new maui-page --name MainPage --namespace TestApp.Views
+```
+
+```console
 dotnet new maui-view --name CardView --namespace TestApp.Views
+```
+
+```console
+dotnet new maui-shell --name AppShell --namespace TestApp
 ```
