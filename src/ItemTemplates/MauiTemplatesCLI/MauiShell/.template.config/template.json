@@ -1,7 +1,7 @@
 {
     "$schema": "https://json.schemastore.org/template",
     "author": "Vijay Anand E G",
-    "defaultName": "MauiPage1",
+    "defaultName": "AppShell",
     "classifications": [
         "MAUI",
         "Android",
@@ -11,17 +11,17 @@
         "WinUI",
         "Windows"
     ],
-    "identity": "VijayAnand.MauiPage",
-    "description": "An item template for .NET MAUI ContentPage in XAML (.NET 6 Preview 7)",
-    "name": ".NET MAUI ContentPage",
-    "shortName": "maui-page",
-    "sourceName": "MauiPage",
+    "identity": "VijayAnand.MauiShell",
+    "description": "An item template for .NET MAUI ShellPage in XAML (.NET 6 Preview 7)",
+    "name": ".NET MAUI ShellPage",
+    "shortName": "maui-shell",
+    "sourceName": "MauiShell",
     "primaryOutputs": [
         {
-            "path": "MauiPage.xaml"
+            "path": "MauiShell.xaml"
         },
         {
-            "path": "MauiPage.xaml.cs"
+            "path": "MauiShell.xaml.cs"
         }
     ],
     "tags": {

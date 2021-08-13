@@ -4,16 +4,12 @@
     "defaultName": "MauiView1",
     "classifications": [
         "MAUI",
-        "Mobile",
-        "iOS",
         "Android",
-        "WinUI3",
-        "Mac Catalyst",
+        "iOS",
         "macOS",
-        "Windows",
-        ".NET MAUI",
-        "Desktop",
-        "WinUI"
+        "Mac Catalyst",
+        "WinUI",
+        "Windows"
     ],
     "identity": "VijayAnand.MauiView",
     "description": "An item template for .NET MAUI ContentView in XAML (.NET 6 Preview 7)",
