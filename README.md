@@ -3,7 +3,7 @@ This repository is to host the .NET MAUI Project and Item templates
 
 We all know that .NET MAUI is an evolution of Xamarin.Forms.
 
-And .NET 6 Preview 6 just got released last week (Wed, Jul 14, 2021) and now .NET 6 Preview 7 released on Tue, Aug 10, 2021.
+And now .NET 6 Preview 7 released on Tue, Aug 10, 2021.
 
 Templates have been updated to support the latest release.
 
@@ -56,9 +56,9 @@ For making use of these templates cross-platform, have provided it as .NET CLI i
 
 [![NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/)
 
-Install the item template from NuGet with the below command.
+Install the template package from NuGet with the below command.
 
-```console
+```shell
 dotnet new --install VijayAnand.MauiTemplates
 ```
 
@@ -70,44 +70,48 @@ ContentPage | maui-page
 ContentView | maui-view
 ShellPage | maui-shell
 
-All of these templates takes two parameters:
+#### Parameters:
 
-Name: (Short notation: `-n`)
+In .NET CLI, all of these templates takes two parameters:
 
-The name of the file to create, _don't need to suffix it with .xaml_, it will get added.
+* Name: (Short notation: `-n`)
 
-_If the name parameter is not specified, by default, the **.NET CLI template engine will take the current folder name as the filename** (current behaviour of the templating engine)._
+    The name of the file to create, _don't need to suffix it with .xaml_, it will get added.
 
-Namespace: (Short notation: `-na`)
+    _If the name parameter is not specified, by default, the **.NET CLI template engine will take the current folder name as the filename** (current behaviour of the templating engine)._
 
-The namespace for the generated files.
+* Namespace: (Short notation: `-na`)
 
-After installation, use the below command to make use of the template  (both provide the same result):
+    The namespace for the generated files.
 
-With abbreviated parameter names:
+#### Usage:
 
-```console
-dotnet new maui-page -n MainPage -na TestApp.Views
+After installation, use the below command(s) to create new artifacts using the template (both provide the same output):
+
+With parameter names abbreviated:
+
+```shell
+dotnet new maui-page -n MainPage -na MyApp.Views
 ```
 
-```console
-dotnet new maui-view -n CardView -na TestApp.Views
+```shell
+dotnet new maui-view -n CardView -na MyApp.Views
 ```
 
-```console
-dotnet new maui-shell -n AppShell -na TestApp
+```shell
+dotnet new maui-shell -n AppShell -na MyApp
 ```
 
 With parameter names expanded:
 
-```console
-dotnet new maui-page --name MainPage --namespace TestApp.Views
+```shell
+dotnet new maui-page --name MainPage --namespace MyApp.Views
 ```
 
-```console
-dotnet new maui-view --name CardView --namespace TestApp.Views
+```shell
+dotnet new maui-view --name CardView --namespace MyApp.Views
 ```
 
-```console
-dotnet new maui-shell --name AppShell --namespace TestApp
+```shell
+dotnet new maui-shell --name AppShell --namespace MyApp
 ```
