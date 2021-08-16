@@ -11,7 +11,7 @@ namespace MauiTemplates
         public const string Name = ".NET MAUI Project and Item Templates";
         public const string Description = @".NET MAUI Project and Item Templates for Visual Studio 2022 (.NET 6 Preview 7).";
         public const string Language = "en-US";
-        public const string Version = "1.0.0.4";
+        public const string Version = "1.0.0.5";
         public const string Author = "Vijay Anand E G";
         public const string Tags = "MAUI, iOS, Android, macOS, WinUI, Windows, Desktop, Mobile, Blazor, WinUI, .NET MAUI, Mac Catalyst, Templates, VS2022, Visual Studio, WinUI3, Preview 7, Code Snippets";
     }

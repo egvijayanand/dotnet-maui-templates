@@ -1,0 +1,29 @@
+{
+    "$schema": "https://json.schemastore.org/template",
+    "author": "Vijay Anand E G",
+    "defaultName": "MauiClassLib1",
+    "classifications": [
+        "MAUI",
+        "Android",
+        "iOS",
+        "macOS",
+        "Mac Catalyst",
+        "WinUI",
+        "Windows",
+        "Library"
+    ],
+    "identity": "VijayAnand.MauiClassLib",
+    "description": "A project template for .NET MAUI Class Library (.NET 6 Preview 7)",
+    "name": ".NET MAUI Class Library",
+    "shortName": "mauiclasslib",
+    "sourceName": "MauiClassLib",
+    "primaryOutputs": [
+        {
+            "path": "Class1.cs"
+        }
+    ],
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    }
+}

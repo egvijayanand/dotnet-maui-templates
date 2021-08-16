@@ -1,0 +1,16 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+	<TemplateData>
+		<DefaultName>AppShell.xaml</DefaultName>
+		<Name>Shell Page (.NET MAUI)</Name>
+		<Description>A page for defining app visual hierarchy and navigation using XAML.</Description>
+		<ProjectType>CSharp</ProjectType>
+		<ProjectSubType>MAUI</ProjectSubType>
+		<SortOrder>100</SortOrder>
+		<Icon>__TemplateIcon.ico</Icon>
+	</TemplateData>
+	<TemplateContent>
+		<References/>
+		<ProjectItem TargetFileName="$fileinputname$.xaml" ReplaceParameters="true">MauiShell.xaml</ProjectItem>
+		<ProjectItem TargetFileName="$fileinputname$.xaml.cs" ReplaceParameters="true">MauiShell.xaml.cs</ProjectItem>
+	</TemplateContent>
+</VSTemplate>

@@ -3,10 +3,10 @@
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<PackageType>Template</PackageType>
 		<PackageId>VijayAnand.MauiTemplates</PackageId>
-		<PackageVersion>1.0.1</PackageVersion>
-		<Title>.NET MAUI Item Templates</Title>
+		<PackageVersion>1.0.2</PackageVersion>
+		<Title>.NET MAUI Templates</Title>
 		<Authors>Vijay Anand E G</Authors>
-		<Description>Item templates for creating a .NET MAUI ContentPage, ContentView and ShellPage in XAML</Description>
+		<Description>Project and Item templates for developing .NET MAUI App that runs on iOS, Android, macOS and Windows</Description>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<IncludeContentInPack>true</IncludeContentInPack>
 		<IncludeBuildOutput>false</IncludeBuildOutput>
@@ -16,12 +16,12 @@
 		<NoWarn>$(NoWarn);NU5128</NoWarn>
 		<RepositoryType>git</RepositoryType>
 		<RepositoryUrl>https://github.com/egvijayanand/dotnet-maui-templates</RepositoryUrl>
-		<PackageTags>MAUI, Mobile, iOS, Android, WinUI3, Mac;Catalyst, macOS, VS;Code, .NET;MAUI, Desktop, Windows, WinUI, Preview;7, Templates, Shell</PackageTags>
+		<PackageTags>MAUI, Mobile, iOS, Android, WinUI3, Mac;Catalyst, macOS, VS;Code, .NET;MAUI, Desktop, Windows, WinUI, Preview;7, Templates, Shell, Library</PackageTags>
 		<PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)/release-notes.txt"))</PackageReleaseNotes>
 	</PropertyGroup>
 	<ItemGroup>
-		<Content Include="MauiPage\**\*;MauiView\**\*;MauiShell\**\*"
-		         Exclude="MauiPage\**\bin\**;MauiPage\**\obj\**;MauiView\**\bin\**;MauiView\**\obj\**;MauiShell\**\bin\**;MauiShell\**\obj\**"/>
+		<Content Include="MauiPage\**\*;MauiView\**\*;MauiShell\**\*;MauiClassLib\**\*"
+		         Exclude="**\bin\**;**\obj\**"/>
 		<Compile Remove="**\*"/>
 	</ItemGroup>
 </Project>

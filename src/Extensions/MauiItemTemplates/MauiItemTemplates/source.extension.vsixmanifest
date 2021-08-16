@@ -4,18 +4,18 @@
                  xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
         <Identity Id="MauiItemTemplates.59bfe300-83a2-4f47-ae6c-2936a6d30204"
-                  Version="1.0.0.3"
+                  Version="1.0.0.4"
                   Language="en-US"
                   Publisher="Vijay Anand E G" />
         <DisplayName>.NET MAUI Item Templates</DisplayName>
-        <Description xml:space="preserve">.NET MAUI Item Templates for Visual Studio 2019 (.NET 6 Preview 7).</Description>
+        <Description xml:space="preserve">.NET MAUI Project and Item Templates for Visual Studio 2019 (.NET 6 Preview 7).</Description>
         <MoreInfo>https://github.com/egvijayanand/dotnet-maui-templates</MoreInfo>
         <License>license.txt</License>
         <GettingStartedGuide>readme.rtf</GettingStartedGuide>
         <ReleaseNotes>release-notes.txt</ReleaseNotes>
         <Icon>Resources\Icon.png</Icon>
         <PreviewImage>Resources\Icon.png</PreviewImage>
-        <Tags>.NET MAUI, iOS, Android, macOS, Mac Catalyst, WinUI, Windows, Desktop, Mobile, MAUI, Templates, VS2019, Visual Studio, Preview 7, Code Snippets</Tags>
+        <Tags>.NET MAUI, iOS, Android, macOS, Mac Catalyst, WinUI, Windows, Desktop, Mobile, MAUI, Templates, VS2019, Visual Studio, Preview 7</Tags>
         <Preview>true</Preview>
     </Metadata>
     <Installation>
@@ -48,12 +48,27 @@
         <Asset Type="Microsoft.VisualStudio.ItemTemplate"
                d:Source="File"
                Path="ItemTemplates"
-               TargetVersion="[16.0, 17.0)"
+               TargetVersion="[16.10, 17.0)"
                d:TargetPath="ItemTemplates\MauiViewCS.zip" />
         <Asset Type="Microsoft.VisualStudio.ItemTemplate"
                d:Source="File"
                Path="ItemTemplates"
-               TargetVersion="[16.0, 17.0)"
+               TargetVersion="[16.10, 17.0)"
                d:TargetPath="ItemTemplates\MauiViewXaml.zip" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate"
+               d:Source="File"
+               Path="ItemTemplates"
+               TargetVersion="[16.10, 17.0)"
+               d:TargetPath="ItemTemplates\MauiResDict.zip" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate"
+               d:Source="File"
+               Path="ItemTemplates"
+               TargetVersion="[16.10, 17.0)"
+               d:TargetPath="ItemTemplates\MauiShell.zip" />
+        <Asset Type="Microsoft.VisualStudio.ProjectTemplate"
+               d:Source="File"
+               Path="ProjectTemplates"
+               TargetVersion="[16.10, 17.0)"
+               d:TargetPath="ProjectTemplates\MauiClassLib.zip" />
     </Assets>
 </PackageManifest>

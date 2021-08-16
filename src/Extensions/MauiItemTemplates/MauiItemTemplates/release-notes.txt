@@ -1,5 +1,5 @@
-What's new in ver. 1.0.0.3:
+What's new in ver. 1.0.0.4:
 
-This release will work with .NET 6 Preview 7.
+Project template for .NET MAUI class library
 
-IPage and IView usage is removed from ContentPage and ContentView templates respectively.
+Item template for Shell page and Resource Dictionary, both in XAML

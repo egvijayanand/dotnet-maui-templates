@@ -77,15 +77,17 @@
       <IncludeInVSIX>true</IncludeInVSIX>
       <VSIXSubPath>ItemTemplates\MAUI</VSIXSubPath>
     </Content>
-    <Content Include="CodeSnippets\horizontalStack.snippet">
+    <Content Include="ItemTemplates\MauiResDict.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\MAUI</VSIXSubPath>
     </Content>
-    <Content Include="CodeSnippets\stack.snippet">
+    <Content Include="ItemTemplates\MauiShell.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\MAUI</VSIXSubPath>
     </Content>
-    <Content Include="CodeSnippets\verticalStack.snippet">
+    <Content Include="ProjectTemplates\MauiClassLib.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>

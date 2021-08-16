@@ -1,0 +1,16 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+	<TemplateData>
+		<DefaultName>MyTheme.xaml</DefaultName>
+		<Name>Resource Dictionary (.NET MAUI)</Name>
+		<Description>A page for defining resources using XAML.</Description>
+		<ProjectType>CSharp</ProjectType>
+		<ProjectSubType>MAUI</ProjectSubType>
+		<SortOrder>100</SortOrder>
+		<Icon>__TemplateIcon.ico</Icon>
+	</TemplateData>
+	<TemplateContent>
+		<References/>
+		<ProjectItem TargetFileName="$fileinputname$.xaml" ReplaceParameters="true">MauiResDict.xaml</ProjectItem>
+		<ProjectItem TargetFileName="$fileinputname$.xaml.cs" ReplaceParameters="true">MauiResDict.xaml.cs</ProjectItem>
+	</TemplateContent>
+</VSTemplate>

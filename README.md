@@ -15,19 +15,22 @@ Extension is made available in the [Visual Studio Marketplace](https://marketpla
 
 ![Manage Extensions - Visual Studio](images/vs-manage-extensions.png)
 
-This has project template for both MAUI and MAUI Blazor project and it has been named as:
+This has Project Templates for:
 
 * .NET MAUI App (Preview 7)
 * .NET MAUI Blazor App (Preview 7)
+* .NET MAUI Class Library (Preview 7)
 
 ![Create Project - Visual Studio](images/maui-project-templates.png)
 
-And Item template for ContentPage and ContentView, in both XAML and C#, and has been named as:
+And has Item Templates for:
 
 * Content Page (.NET MAUI)
 * Content Page (C#) (.NET MAUI)
 * Content View (.NET MAUI)
 * Content View (C#) (.NET MAUI)
+* Resource Dictionary (.NET MAUI)
+* Shell Page (.NET MAUI)
 
 ![Add New Item dialog - Visual Studio](images/add-new-item.png)
 
@@ -41,12 +44,18 @@ Hence have created a VS extension exclusively to be used with .NET MAUI projects
 
 Grab these templates from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-item-templates) and even more easier, can be installed from within Visual Studio itself (Extensions -> Manage Extensions / Alt + X + M)
 
-It has templates for ContentPage and ContentView, in both XAML and C#, and has been named as:
+This has a Project Template for:
+
+* .NET MAUI Class Library (Preview 7)
+
+And has Item Templates for:
 
 * Content Page (.NET MAUI)
 * Content Page (C#) (.NET MAUI)
 * Content View (.NET MAUI)
 * Content View (C#) (.NET MAUI)
+* Resource Dictionary (.NET MAUI)
+* Shell Page (.NET MAUI)
 
 ![Add New Item dialog - Visual Studio](images/add-new-item.png)
 
@@ -62,10 +71,18 @@ Install the template package from NuGet with the below command.
 dotnet new --install VijayAnand.MauiTemplates
 ```
 
+If you've already installed this package, then this can be updated to the latest version with the below command.
+
+```shell
+dotnet new --update-check
+dotnet new --update-apply
+```
+
 This comes with with the following templates:
 
-Item | Template Name
+Type | Template Name
 :---: | :---:
+.NET MAUI Class Library | mauiclasslib
 ContentPage | maui-page
 ContentView | maui-view
 ShellPage | maui-shell
@@ -91,7 +108,11 @@ After installation, use the below command(s) to create new artifacts using the t
 With parameter names abbreviated:
 
 ```shell
-dotnet new maui-page -n MainPage -na MyApp.Views
+dotnet new mauiclasslib -n MyApp.Core
+```
+
+```shell
+dotnet new maui-page -n LoginPage -na MyApp.Views
 ```
 
 ```shell
@@ -105,7 +126,11 @@ dotnet new maui-shell -n AppShell -na MyApp
 With parameter names expanded:
 
 ```shell
-dotnet new maui-page --name MainPage --namespace MyApp.Views
+dotnet new mauiclasslib --name MyApp.Core
+```
+
+```shell
+dotnet new maui-page --name LoginPage --namespace MyApp.Views
 ```
 
 ```shell

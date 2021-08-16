@@ -1,5 +1,5 @@
-What's new in ver. 1.0.0.3:
+What's new in ver. 1.0.0.5:
 
-This release will work with VS2022 Preview 3 or later.
+Project template for .NET MAUI class library.
 
-Templates updated for .NET 6 Preview 7
+Item template for Shell page and Resource Dictionary.
