@@ -9,10 +9,10 @@ namespace MauiItemTemplates
     {
         public const string Id = "MauiItemTemplates.59bfe300-83a2-4f47-ae6c-2936a6d30204";
         public const string Name = ".NET MAUI Item Templates";
-        public const string Description = @".NET MAUI Item Templates for Visual Studio 2019 (.NET 6 Preview 7).";
+        public const string Description = @".NET MAUI Project and Item Templates for Visual Studio 2019 (.NET 6 Preview 7).";
         public const string Language = "en-US";
-        public const string Version = "1.0.0.3";
+        public const string Version = "1.0.0.4";
         public const string Author = "Vijay Anand E G";
-        public const string Tags = ".NET MAUI, iOS, Android, macOS, Mac Catalyst, WinUI, Windows, Desktop, Mobile, MAUI, Templates, VS2019, Visual Studio, Preview 7, Code Snippets";
+        public const string Tags = ".NET MAUI, iOS, Android, macOS, Mac Catalyst, WinUI, Windows, Desktop, Mobile, MAUI, Templates, VS2019, Visual Studio, Preview 7";
     }
 }
