@@ -61,7 +61,7 @@ And has Item Templates for:
 
 ### .NET CLI Template
 
-For making use of these templates cross-platform, have provided it as .NET CLI item template distributed via NuGet.
+For making use of these templates cross-platform, have provided it as .NET CLI template package distributed via NuGet.
 
 [![NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/)
 
