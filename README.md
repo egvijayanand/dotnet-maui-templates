@@ -93,7 +93,7 @@ In .NET CLI, all of these templates takes two parameters:
 
 * Name: (Short notation: `-n`)
 
-    The name of the file to create, _don't need to suffix it with .xaml_, it will get added.
+    The name of the project/page/view to create. _For pages/views, don't need to suffix it with .xaml_, it will get added.
 
     _If the name parameter is not specified, by default, the **.NET CLI template engine will take the current folder name as the filename** (current behaviour of the templating engine)._
 
