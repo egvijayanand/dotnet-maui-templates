@@ -32,6 +32,16 @@ And has Item Templates for:
 * Resource Dictionary (.NET MAUI)
 * Shell Page (.NET MAUI)
 
+Now VS2022 extension is loaded with 25+ C# and XAML Code Snippets.
+
+XAML Snippets for new Layouts, Gestures, Color, Style.
+
+C# Snippets for Properties such as Attached, Bindable, ViewModel and Comet (MVU design pattern).
+
+Types such as `record` and `record struct`.
+
+Snippets for Method definition, Event Handler definition (async version also).
+
 ![Add New Item dialog - Visual Studio](images/add-new-item.png)
 
 ### For VS2019 users:

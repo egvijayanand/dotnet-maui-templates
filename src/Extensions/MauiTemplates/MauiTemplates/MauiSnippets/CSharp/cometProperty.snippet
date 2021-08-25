@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Comet Property</Title>
+			<Shortcut>propcomet</Shortcut>
+			<Description>Code snippet for Comet Property</Description>
+			<Author>Vijay Anand E G</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>type</ID>
+					<ToolTip>Property type</ToolTip>
+					<Default>int</Default>
+				</Literal>
+				<Literal>
+					<ID>property</ID>
+					<ToolTip>Property name</ToolTip>
+					<Default>MyProperty</Default>
+				</Literal>
+				<Literal>
+					<ID>field</ID>
+					<ToolTip>The variable backing this property</ToolTip>
+					<Default>myVar</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp" Kind="type decl">
+				<![CDATA[public $type$ $property$
+	{
+		get => GetProperty<$type$>();
+		set => SetProperty(value);
+	}
+	$end$]]>
+			</Code>
+			<Imports>
+				<Import>
+					<Namespace>Comet</Namespace>
+				</Import>
+			</Imports>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Async Event Handler</Title>
+			<Shortcut>aeh</Shortcut>
+			<Description>Code snippet for async event handler</Description>
+			<Author>Vijay Anand E G</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>name</ID>
+					<ToolTip>Event handler method name</ToolTip>
+					<Default>MyMethod</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp" Kind="method decl">
+				<![CDATA[private async void $name$(object sender, EventArgs e)
+	{
+		$selected$$end$
+	}]]>
+			</Code>
+			<Imports>
+				<Import>
+					<Namespace>System</Namespace>
+				</Import>
+			</Imports>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
