@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Define an Attached Property</Title>
+			<Shortcut>propap</Shortcut>
+			<Description>Code snippet for an attached property using Xamarin.Forms/.NET MAUI BindableProperty as the backing store</Description>
+			<Author>Vijay Anand E G</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>type</ID>
+					<ToolTip>Property type</ToolTip>
+					<Default>int</Default>
+				</Literal>
+				<Literal>
+					<ID>property</ID>
+					<ToolTip>Property name</ToolTip>
+					<Default>MyProperty</Default>
+				</Literal>
+				<Literal Editable="false">
+					<ID>classname</ID>
+					<ToolTip>Class name</ToolTip>
+					<Function>ClassName()</Function>
+					<Default>ClassNamePlaceholder</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp" Kind="type decl">
+				<![CDATA[public static readonly BindableProperty $property$Property = BindableProperty.CreateAttached(nameof($property$Property), typeof($type$), typeof($classname$), default($type$));
+			
+			public static bool Get$property$(BindableObject bindable) => ($type$)bindable.GetValue($property$Property);
+			
+			public static void Set$property$(BindableObject bindable, $type$ value) => bindable.SetValue($property$Property, value);
+			$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
