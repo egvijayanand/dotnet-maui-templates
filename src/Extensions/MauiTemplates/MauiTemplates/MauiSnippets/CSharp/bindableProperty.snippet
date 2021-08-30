@@ -15,12 +15,12 @@
 				<Literal>
 					<ID>type</ID>
 					<ToolTip>Property type</ToolTip>
-					<Default>int</Default>
+					<Default>string</Default>
 				</Literal>
 				<Literal>
 					<ID>property</ID>
 					<ToolTip>Property name</ToolTip>
-					<Default>MyProperty</Default>
+					<Default>Name</Default>
 				</Literal>
 				<Literal Editable="false">
 					<ID>classname</ID>
@@ -36,8 +36,7 @@
 			{		
 				get => ($type$)GetValue($property$Property);
 				set => SetValue($property$Property, value);
-			}
-			$end$]]>
+			}$end$]]>
 			</Code>
 		</Snippet>
 	</CodeSnippet>

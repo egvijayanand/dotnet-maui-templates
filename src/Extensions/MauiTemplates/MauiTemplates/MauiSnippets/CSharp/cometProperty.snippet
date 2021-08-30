@@ -15,17 +15,12 @@
 				<Literal>
 					<ID>type</ID>
 					<ToolTip>Property type</ToolTip>
-					<Default>int</Default>
+					<Default>string</Default>
 				</Literal>
 				<Literal>
 					<ID>property</ID>
 					<ToolTip>Property name</ToolTip>
-					<Default>MyProperty</Default>
-				</Literal>
-				<Literal>
-					<ID>field</ID>
-					<ToolTip>The variable backing this property</ToolTip>
-					<Default>myVar</Default>
+					<Default>Name</Default>
 				</Literal>
 			</Declarations>
 			<Code Language="CSharp" Kind="type decl">
@@ -33,8 +28,7 @@
 	{
 		get => GetProperty<$type$>();
 		set => SetProperty(value);
-	}
-	$end$]]>
+	}$end$]]>
 			</Code>
 			<Imports>
 				<Import>
