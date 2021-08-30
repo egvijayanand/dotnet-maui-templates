@@ -1,5 +1,7 @@
-What's new in ver. 1.0.0.6:
+What's new in ver. 1.0.0.7:
 
-C# and XAML Code Snippets.
+Project Template for .NET MAUI App (C#)
 
-Refer the Readme file for list of code snippets and their shortcuts.
+Usability improvements in the C# and XAML Code Snippets.
+
+Refer the Getting Started file for the list of code snippets and their shortcuts with output format.

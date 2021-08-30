@@ -18,6 +18,7 @@ Extension is made available in the [Visual Studio Marketplace](https://marketpla
 This has Project Templates for:
 
 * .NET MAUI App (Preview 7)
+* .NET MAUI App (C#) (Preview 7)
 * .NET MAUI Blazor App (Preview 7)
 * .NET MAUI Class Library (Preview 7)
 
