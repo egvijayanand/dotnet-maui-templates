@@ -1,7 +1,3 @@
-What's new in ver. 1.0.0.7:
+What's new in ver. 1.0.0.8:
 
-Project Template for .NET MAUI App (C#)
-
-Usability improvements in the C# and XAML Code Snippets.
-
-Refer the Getting Started file for the list of code snippets and their shortcuts with output format.
+Project templates updated for .NET MAUI Preview 8 with Single Project for all supported Platforms.
