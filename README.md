@@ -3,7 +3,7 @@ This repository is to host the .NET MAUI Project and Item templates
 
 We all know that .NET MAUI is an evolution of Xamarin.Forms.
 
-And now .NET 6 Preview 7 released on Tue, Aug 10, 2021.
+And now .NET MAUI Preview 8 (.NET 6 RC1) released on Tue, Sep 14, 2021 with support for its Workload installation from within Visual Studio.
 
 Templates have been updated to support the latest release.
 
@@ -17,10 +17,10 @@ Extension is made available in the [Visual Studio Marketplace](https://marketpla
 
 This has Project Templates for:
 
-* .NET MAUI App (Preview 7)
-* .NET MAUI App (C#) (Preview 7)
-* .NET MAUI Blazor App (Preview 7)
-* .NET MAUI Class Library (Preview 7)
+* .NET MAUI App (Preview 8)
+* .NET MAUI App (C#) (Preview 8)
+* .NET MAUI Blazor App (Preview 8)
+* .NET MAUI Class Library (Preview 8)
 
 ![Create Project - Visual Studio](images/maui-project-templates.png)
 
