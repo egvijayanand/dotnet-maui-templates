@@ -18,15 +18,15 @@ namespace $ext_safeprojectname$
 		private void Build()
         {
             WinApp.SetImageDirectory(this, "Assets");
-            Resources.Add("PageBackgroundColor", Color.FromArgb("#512BDF"));
-            Resources.Add("PrimaryTextColor", Colors.White);
+            Resources.Add("PrimaryColor", Color.FromArgb("#512BDF"));
+            Resources.Add("SecondaryColor", Colors.White);
 
             Resources.Add(new Style(typeof(Label))
             {
                 Setters =
                 {
-                    new() { Property = Label.TextColorProperty, Value = Resources["PrimaryTextColor"] },
-                    new() { Property = Label.FontFamilyProperty, Value = "OSR" }
+                    new() { Property = Label.TextColorProperty, Value = Resources["PrimaryColor"] },
+                    new() { Property = Label.FontFamilyProperty, Value = "OpenSansRegular" }
                 }
             });
 
@@ -34,9 +34,9 @@ namespace $ext_safeprojectname$
             {
                 Setters =
                 {
-                    new() { Property = Button.TextColorProperty, Value = Resources["PrimaryTextColor"] },
-                    new() { Property = Button.FontFamilyProperty, Value = "OSR" },
-                    new() { Property = VisualElement.BackgroundColorProperty, Value = Color.FromArgb("#2B0B98") },
+                    new() { Property = Button.TextColorProperty, Value = Resources["SecondaryColor"] },
+                    new() { Property = Button.FontFamilyProperty, Value = "OpenSansRegular" },
+                    new() { Property = VisualElement.BackgroundColorProperty, Value = Resources["PrimaryColor"] },
                     new() { Property = Button.PaddingProperty, Value = new Thickness(14,10) }
                 }
             });
