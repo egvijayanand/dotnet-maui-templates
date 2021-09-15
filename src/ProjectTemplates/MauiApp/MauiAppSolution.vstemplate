@@ -1,6 +1,6 @@
 <VSTemplate Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
 	<TemplateData>
-		<Name>.NET MAUI App (Preview 7)</Name>
+		<Name>.NET MAUI App (Preview 8)</Name>
 		<Description>A project for creating a .NET MAUI application for iOS, Android, Mac Catalyst, and WinUI</Description>
 		<ProjectType>CSharp</ProjectType>
 		<ProjectSubType>MAUI</ProjectSubType>
@@ -26,7 +26,6 @@
 	<TemplateContent>
 		<ProjectCollection>
 			<ProjectTemplateLink ProjectName="$safeprojectname$" CopyParameters="true">MauiApp\MauiApp.vstemplate</ProjectTemplateLink>
-			<ProjectTemplateLink ProjectName="$safeprojectname$.WinUI" CopyParameters="true">MauiApp.WinUI\MauiApp.WinUI.vstemplate</ProjectTemplateLink>
 		</ProjectCollection>
 	</TemplateContent>
 	<WizardExtension>

@@ -21,7 +21,7 @@ namespace $ext_safeprojectname$.WinUI
             this.InitializeComponent();
         }
 
-        protected override IStartup OnCreateStartup() => new Startup();
+        protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
 
         protected override void OnLaunched(LaunchActivatedEventArgs args)
         {

@@ -3,8 +3,9 @@ using Microsoft.Maui;
 
 namespace $ext_safeprojectname$
 {
-	[Register("AppDelegate")]
-	public class AppDelegate : MauiUIApplicationDelegate<Startup>
+	[Register(nameof(AppDelegate))]
+	public class AppDelegate : MauiUIApplicationDelegate
 	{
+		protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
 	}
 }

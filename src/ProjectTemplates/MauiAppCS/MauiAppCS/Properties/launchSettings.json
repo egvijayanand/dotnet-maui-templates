@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "$ext_safeprojectname$.WinUI": {
+    "Windows Machine": {
       "commandName": "MsixPackage",
       "nativeDebugging": false
     }

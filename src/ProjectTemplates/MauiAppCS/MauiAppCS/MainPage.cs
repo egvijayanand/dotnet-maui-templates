@@ -1,5 +1,6 @@
 ﻿using Microsoft.Maui;
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.Essentials;
 using Microsoft.Maui.Graphics;
 using System;
 
@@ -17,7 +18,7 @@ namespace $ext_safeprojectname$
 
         private void Build()
         {
-            SetDynamicResource(BackgroundColorProperty, "PageBackgroundColor");
+            SetDynamicResource(BackgroundColorProperty, "SecondaryColor");
             var grid1 = new Grid()
             {
                 RowSpacing = 25,
@@ -35,7 +36,7 @@ namespace $ext_safeprojectname$
             {
                 Text = "Hello, World!",
                 FontSize = 32,
-                HorizontalOptions = LayoutOptions.CenterAndExpand
+                HorizontalOptions = LayoutOptions.Center
             };
 
             GridLayout.SetRow(label1, 0);
@@ -45,26 +46,27 @@ namespace $ext_safeprojectname$
             {
                 Text = "Welcome to .NET Multi-platform App UI",
                 FontSize = 16,
-                HorizontalOptions = LayoutOptions.CenterAndExpand
+                HorizontalOptions = LayoutOptions.Center
             };
 
             GridLayout.SetRow(label2, 1);
-            SemanticProperties.SetDescription(label2, "Welcome to .NET MAUI");
+            SemanticProperties.SetHeadingLevel(label2, SemanticHeadingLevel.Level1);
+            SemanticProperties.SetDescription(label2, "Welcome to dot net Multi platform App U I");
 
             counter = new Label()
             {
                 Text = "Current count: 0",
                 FontSize = 18,
                 FontAttributes = FontAttributes.Bold,
-                HorizontalOptions = LayoutOptions.CenterAndExpand
+                HorizontalOptions = LayoutOptions.Center
             };
 
             GridLayout.SetRow(counter, 2);
-            SemanticProperties.SetHint(counter, "Counts the number of times you click");
 
             var button1 = new Button()
             {
                 Text = "Click me",
+                FontAttributes = FontAttributes.Bold,
                 HorizontalOptions = LayoutOptions.Center
             };
 
@@ -76,8 +78,8 @@ namespace $ext_safeprojectname$
             {
                 Source = "dotnet_bot.png",
                 HorizontalOptions = LayoutOptions.Center,
-                WidthRequest = 300,
-                HeightRequest = 372
+                WidthRequest = 250,
+                HeightRequest = 310
             };
 
             GridLayout.SetRow(image1, 4);
@@ -96,13 +98,7 @@ namespace $ext_safeprojectname$
                     Device.iOS => new Thickness(30, 60, 30, 30),
                     _ => new Thickness(30),
                 },
-                Content = new StackLayout()
-                {
-                    Children =
-                    {
-                        grid1
-                    }
-                }
+                Content = grid1
             };
         }
 
@@ -110,6 +106,8 @@ namespace $ext_safeprojectname$
         {
             count++;
             counter.Text = $"Current count: {count}";
+
+			SemanticScreenReader.Announce(counter.Text);
         }
     }
 }
