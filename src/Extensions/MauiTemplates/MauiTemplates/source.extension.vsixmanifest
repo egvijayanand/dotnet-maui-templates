@@ -1,46 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+<PackageManifest Version="2.0.0"
+                 xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011"
+                 xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="MauiTemplates.20dca96a-7311-401f-84ed-980478fb319b" Version="1.0.0.7" Language="en-US" Publisher="Vijay Anand E G" />
+        <Identity Id="MauiTemplates.20dca96a-7311-401f-84ed-980478fb319b"
+                  Version="1.0.0.8"
+                  Language="en-US"
+                  Publisher="Vijay Anand E G" />
         <DisplayName>.NET MAUI Project and Item Templates</DisplayName>
-        <Description xml:space="preserve">.NET MAUI Project, Item Templates, and Code Snippets for Visual Studio 2022 (.NET 6 Preview 7).</Description>
+        <Description xml:space="preserve">.NET MAUI Project, Item Templates, and Code Snippets for Visual Studio 2022 (.NET 6 Preview 8).</Description>
         <MoreInfo>https://github.com/egvijayanand/dotnet-maui-templates</MoreInfo>
         <License>license.txt</License>
         <GettingStartedGuide>readme.rtf</GettingStartedGuide>
         <ReleaseNotes>release-notes.txt</ReleaseNotes>
         <Icon>Resources\Icon.png</Icon>
         <PreviewImage>Resources\Icon.png</PreviewImage>
-        <Tags>MAUI, iOS, Android, macOS, WinUI, Windows, Desktop, Mobile, Blazor, WinUI, .NET MAUI, Mac Catalyst, Templates, VS2022, Visual Studio, WinUI3, Preview 7, Code Snippets</Tags>
+        <Tags>MAUI, iOS, Android, macOS, WinUI, Windows, Desktop, Mobile, Blazor, WinUI, .NET MAUI, Mac Catalyst, Templates, VS2022, Visual Studio, WinUI3, Preview 8, Code Snippets</Tags>
         <Preview>true</Preview>
     </Metadata>
     <Installation>
-        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 18.0)">
+        <InstallationTarget Id="Microsoft.VisualStudio.Community"
+                            Version="[17.0, 18.0)">
             <ProductArchitecture>amd64</ProductArchitecture>
         </InstallationTarget>
-        <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[17.0,18.0)">
+        <InstallationTarget Id="Microsoft.VisualStudio.Pro"
+                            Version="[17.0,18.0)">
             <ProductArchitecture>amd64</ProductArchitecture>
         </InstallationTarget>
-        <InstallationTarget Id="Microsoft.VisualStudio.Enterprise" Version="[17.0,18.0)">
+        <InstallationTarget Id="Microsoft.VisualStudio.Enterprise"
+                            Version="[17.0,18.0)">
             <ProductArchitecture>amd64</ProductArchitecture>
         </InstallationTarget>
     </Installation>
     <Prerequisites>
-        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[17.0,)" DisplayName="Visual Studio core editor" />
-        <Prerequisite Id="Microsoft.NetCore.Component.SDK" Version="[17.0.31604.169,18.0)" DisplayName=".NET SDK" />
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor"
+                      Version="[17.0,)"
+                      DisplayName="Visual Studio core editor" />
+        <Prerequisite Id="Microsoft.VisualStudio.ComponentGroup.Maui.All"
+                      Version="[17.0.31709.181,18.0)"
+                      DisplayName=".NET MAUI (Preview)" />
     </Prerequisites>
     <Assets>
-        <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplates" TargetVersion="[17.0, 18.0)" d:TargetPath="ProjectTemplates\MauiApp.zip" />
-        <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplates" TargetVersion="[17.0, 18.0)" d:TargetPath="ProjectTemplates\MauiBlazorApp.zip" />
-        <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="File" Path="ItemTemplates" TargetVersion="[17.0, 18.0)" d:TargetPath="ItemTemplates\MauiPageCS.zip" />
-        <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="File" Path="ItemTemplates" TargetVersion="[17.0, 18.0)" d:TargetPath="ItemTemplates\MauiPageXaml.zip" />
-        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
-        <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="File" Path="ItemTemplates" TargetVersion="[17.0, 18.0)" d:TargetPath="ItemTemplates\MauiViewXaml.zip" />
-        <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="File" Path="ItemTemplates" TargetVersion="[17.0, 18.0)" d:TargetPath="ItemTemplates\MauiViewCS.zip" />
-        <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplates" TargetVersion="[17.0, 18.0)" d:TargetPath="ProjectTemplates\MauiClassLib.zip" />
-        <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="File" Path="ItemTemplates" TargetVersion="[17.0, 18.0)" d:TargetPath="ItemTemplates\MauiShell.zip" />
-        <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="File" Path="ItemTemplates" TargetVersion="[17.0, 18.0)" d:TargetPath="ItemTemplates\MauiResDict.zip" />
-        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="File" Path="MauiSnippets\CSharp\MauiCSharpSnippets.pkgdef" />
-        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="File" Path="MauiSnippets\Xaml\MauiXamlSnippets.pkgdef" />
-        <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplates" TargetVersion="[17.0, 18.0)" d:TargetPath="ProjectTemplates\MauiAppCS.zip" />
+        <Asset Type="Microsoft.VisualStudio.ProjectTemplate"
+               d:Source="File"
+               Path="ProjectTemplates"
+               TargetVersion="[17.0, 18.0)"
+               d:TargetPath="ProjectTemplates\MauiApp.zip" />
+        <Asset Type="Microsoft.VisualStudio.ProjectTemplate"
+               d:Source="File"
+               Path="ProjectTemplates"
+               TargetVersion="[17.0, 18.0)"
+               d:TargetPath="ProjectTemplates\MauiBlazorApp.zip" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate"
+               d:Source="File"
+               Path="ItemTemplates"
+               TargetVersion="[17.0, 18.0)"
+               d:TargetPath="ItemTemplates\MauiPageCS.zip" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate"
+               d:Source="File"
+               Path="ItemTemplates"
+               TargetVersion="[17.0, 18.0)"
+               d:TargetPath="ItemTemplates\MauiPageXaml.zip" />
+        <Asset Type="Microsoft.VisualStudio.VsPackage"
+               d:Source="Project"
+               d:ProjectName="%CurrentProject%"
+               Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate"
+               d:Source="File"
+               Path="ItemTemplates"
+               TargetVersion="[17.0, 18.0)"
+               d:TargetPath="ItemTemplates\MauiViewXaml.zip" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate"
+               d:Source="File"
+               Path="ItemTemplates"
+               TargetVersion="[17.0, 18.0)"
+               d:TargetPath="ItemTemplates\MauiViewCS.zip" />
+        <Asset Type="Microsoft.VisualStudio.ProjectTemplate"
+               d:Source="File"
+               Path="ProjectTemplates"
+               TargetVersion="[17.0, 18.0)"
+               d:TargetPath="ProjectTemplates\MauiClassLib.zip" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate"
+               d:Source="File"
+               Path="ItemTemplates"
+               TargetVersion="[17.0, 18.0)"
+               d:TargetPath="ItemTemplates\MauiShell.zip" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate"
+               d:Source="File"
+               Path="ItemTemplates"
+               TargetVersion="[17.0, 18.0)"
+               d:TargetPath="ItemTemplates\MauiResDict.zip" />
+        <Asset Type="Microsoft.VisualStudio.VsPackage"
+               d:Source="File"
+               Path="MauiSnippets\CSharp\MauiCSharpSnippets.pkgdef" />
+        <Asset Type="Microsoft.VisualStudio.VsPackage"
+               d:Source="File"
+               Path="MauiSnippets\Xaml\MauiXamlSnippets.pkgdef" />
+        <Asset Type="Microsoft.VisualStudio.ProjectTemplate"
+               d:Source="File"
+               Path="ProjectTemplates"
+               TargetVersion="[17.0, 18.0)"
+               d:TargetPath="ProjectTemplates\MauiAppCS.zip" />
     </Assets>
 </PackageManifest>
