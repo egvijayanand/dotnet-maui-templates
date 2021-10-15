@@ -3,9 +3,10 @@
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<PackageType>Template</PackageType>
 		<PackageId>VijayAnand.MauiTemplates</PackageId>
-		<PackageVersion>1.0.2</PackageVersion>
+		<PackageVersion>1.0.3</PackageVersion>
 		<Title>.NET MAUI Templates</Title>
 		<Authors>Vijay Anand E G</Authors>
+		<Copyright>Copyright (c) 2021 Vijay Anand E G</Copyright>
 		<Description>Project and Item templates for developing .NET MAUI App that runs on iOS, Android, macOS and Windows</Description>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<IncludeContentInPack>true</IncludeContentInPack>
@@ -16,12 +17,15 @@
 		<NoWarn>$(NoWarn);NU5128</NoWarn>
 		<RepositoryType>git</RepositoryType>
 		<RepositoryUrl>https://github.com/egvijayanand/dotnet-maui-templates</RepositoryUrl>
-		<PackageTags>MAUI, Mobile, iOS, Android, WinUI3, Mac;Catalyst, macOS, VS;Code, .NET;MAUI, Desktop, Windows, WinUI, Preview;7, Templates, Shell, Library</PackageTags>
+		<PackageTags>MAUI, Mobile, iOS, Android, WinUI3, Mac;Catalyst, macOS, VS;Code, .NET;MAUI, Desktop, Windows, WinUI, Preview;9, Templates, Shell, Class;Library, Visual;Studio;Code, Library</PackageTags>
 		<PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)/release-notes.txt"))</PackageReleaseNotes>
+		<PackageReadmeFile>overview.md</PackageReadmeFile>
+		<PackageProjectUrl>https://egvijayanand.in/</PackageProjectUrl>
 	</PropertyGroup>
 	<ItemGroup>
 		<Content Include="MauiPage\**\*;MauiView\**\*;MauiShell\**\*;MauiClassLib\**\*"
 		         Exclude="**\bin\**;**\obj\**"/>
 		<Compile Remove="**\*"/>
+		<None Include="overview.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 </Project>

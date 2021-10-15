@@ -1,13 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
 	<PropertyGroup>
-		<TargetFrameworks>net6.0;net6.0-ios;net6.0-android;net6.0-maccatalyst</TargetFrameworks>
-		<TargetFrameworks Condition="'$(OS)' == 'Windows_NT'">$(TargetFrameworks);net6.0-windows10.0.19041</TargetFrameworks>
+		<TargetFrameworks>net6.0;net6.0-android</TargetFrameworks>
+		<!-- Targets possible from Windows OS -->
+		<TargetFrameworks Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">$(TargetFrameworks);net6.0-ios;net6.0-maccatalyst;net6.0-windows10.0.19041</TargetFrameworks>
+		<!-- Targets possible from macOS -->
+		<TargetFrameworks Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' == 'true'">$(TargetFrameworks);net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
+		<!-- Minimum Target OS Version for Windows Platform -->
 		<TargetPlatformMinVersion Condition="$(TargetFramework.Contains('-windows'))">10.0.17763.0</TargetPlatformMinVersion>
 		<Nullable>enable</Nullable>
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
 		<RootNamespace>MauiClassLib</RootNamespace>
 	</PropertyGroup>
-
 </Project>
