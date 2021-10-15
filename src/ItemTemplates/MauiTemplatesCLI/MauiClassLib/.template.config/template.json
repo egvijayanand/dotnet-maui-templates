@@ -13,7 +13,7 @@
         "Library"
     ],
     "identity": "VijayAnand.MauiClassLib",
-    "description": "A project template for .NET MAUI Class Library (.NET 6 Preview 7)",
+    "description": "A project template for .NET MAUI Class Library (.NET MAUI Preview 9)",
     "name": ".NET MAUI Class Library",
     "shortName": "mauiclasslib",
     "sourceName": "MauiClassLib",

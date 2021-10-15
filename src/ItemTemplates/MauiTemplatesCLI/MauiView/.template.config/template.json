@@ -12,7 +12,7 @@
         "Windows"
     ],
     "identity": "VijayAnand.MauiView",
-    "description": "An item template for .NET MAUI ContentView in XAML (.NET 6 Preview 7)",
+    "description": "An item template for .NET MAUI ContentView in XAML (.NET MAUI Preview 9)",
     "name": ".NET MAUI ContentView",
     "shortName": "maui-view",
     "sourceName": "MauiView",
