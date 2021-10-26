@@ -9,10 +9,10 @@ if "%packageVersion%"=="" (echo Version # not configured && goto end)
 
 echo Version #: %packageVersion%
 
-if exist .\bin\Release\VijayAnand.MauiTemplates.%packageVersion%.nupkg del .\bin\Release\VijayAnand.MauiTemplates.%packageVersion%.nupkg
+if exist .\bin\Debug\VijayAnand.MauiTemplates.%packageVersion%.nupkg del .\bin\Debug\VijayAnand.MauiTemplates.%packageVersion%.nupkg
 
-echo Creating NuGet package ...
-dotnet pack .\VijayAnand.MauiTemplates.csproj -c Release -p:PackageVersion=%packageVersion%
+echo Creating NuGet package . . .
+dotnet pack .\VijayAnand.MauiTemplates.csproj -c Debug -p:PackageVersion=%packageVersion%
 echo Process completed
 
 :end
