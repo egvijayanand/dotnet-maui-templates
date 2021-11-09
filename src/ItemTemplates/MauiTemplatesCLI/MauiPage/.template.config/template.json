@@ -12,8 +12,8 @@
         "Windows"
     ],
     "identity": "VijayAnand.MauiPage",
-    "description": "An item template for .NET MAUI ContentPage in XAML (.NET MAUI Preview 9)",
-    "name": ".NET MAUI ContentPage",
+    "description": "An item template for .NET MAUI ContentPage in XAML (.NET MAUI Preview 10)",
+    "name": ".NET MAUI ContentPage (Preview 10)",
     "shortName": "maui-page",
     "sourceName": "MauiPage",
     "primaryOutputs": [
