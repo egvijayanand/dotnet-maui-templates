@@ -1,0 +1,127 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+	<TemplateData>
+		<Name>.NET MAUI Blazor App (Preview 10)</Name>
+		<Description>A project for creating a .NET MAUI application for iOS, Android, Mac Catalyst, and Windows using Blazor</Description>
+		<ProjectType>CSharp</ProjectType>
+		<ProjectSubType>MAUI</ProjectSubType>
+		<SortOrder>120</SortOrder>
+		<CreateNewFolder>true</CreateNewFolder>
+		<DefaultName>MauiBlazorApp</DefaultName>
+		<ProvideDefaultName>true</ProvideDefaultName>
+		<LocationField>Enabled</LocationField>
+		<EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+		<CreateInPlace>true</CreateInPlace>
+		<Icon>__TemplateIcon.ico</Icon>
+		<LanguageTag>CSharp</LanguageTag>
+		<PlatformTag>Android</PlatformTag>
+		<PlatformTag>iOS</PlatformTag>
+		<PlatformTag>macOS</PlatformTag>
+		<PlatformTag>Windows</PlatformTag>
+		<ProjectTypeTag>Blazor</ProjectTypeTag>
+		<ProjectTypeTag>Desktop</ProjectTypeTag>
+		<ProjectTypeTag>MAUI</ProjectTypeTag>
+		<ProjectTypeTag>Mac Catalyst</ProjectTypeTag>
+		<ProjectTypeTag>Mobile</ProjectTypeTag>
+		<ProjectTypeTag>WinUI</ProjectTypeTag>
+	</TemplateData>
+	<TemplateContent>
+		<Project TargetFileName="$safeprojectname$.csproj" File="MauiBlazorApp.csproj" ReplaceParameters="true">
+			<Folder Name="Data" TargetFolderName="Data">
+				<ProjectItem ReplaceParameters="true" TargetFileName="WeatherForecast.cs">WeatherForecast.cs</ProjectItem>
+				<ProjectItem ReplaceParameters="true" TargetFileName="WeatherForecastService.cs">WeatherForecastService.cs</ProjectItem>
+			</Folder>
+			<Folder Name="Pages" TargetFolderName="Pages">
+				<ProjectItem ReplaceParameters="false" TargetFileName="Counter.razor">Counter.razor</ProjectItem>
+				<ProjectItem ReplaceParameters="true" TargetFileName="FetchData.razor">FetchData.razor</ProjectItem>
+				<ProjectItem ReplaceParameters="false" TargetFileName="Index.razor">Index.razor</ProjectItem>
+			</Folder>
+			<Folder Name="Platforms" TargetFolderName="Platforms">
+				<Folder Name="Android" TargetFolderName="Android">
+					<Folder Name="Resources" TargetFolderName="Resources">
+						<Folder Name="values" TargetFolderName="values">
+							<ProjectItem ReplaceParameters="false" TargetFileName="colors.xml">colors.xml</ProjectItem>
+						</Folder>
+					</Folder>
+					<ProjectItem ReplaceParameters="false" TargetFileName="AndroidManifest.xml">AndroidManifest.xml</ProjectItem>
+					<ProjectItem ReplaceParameters="true" TargetFileName="MainActivity.cs">MainActivity.cs</ProjectItem>
+					<ProjectItem ReplaceParameters="true" TargetFileName="MainApplication.cs">MainApplication.cs</ProjectItem>
+				</Folder>
+				<Folder Name="iOS" TargetFolderName="iOS">
+					<Folder Name="Resources" TargetFolderName="Resources">
+						<ProjectItem ReplaceParameters="false" TargetFileName="LaunchScreen.xib">LaunchScreen.xib</ProjectItem>
+					</Folder>
+					<ProjectItem ReplaceParameters="true" TargetFileName="AppDelegate.cs">AppDelegate.cs</ProjectItem>
+					<ProjectItem ReplaceParameters="false" TargetFileName="Info.plist">Info.plist</ProjectItem>
+					<ProjectItem ReplaceParameters="true" TargetFileName="Program.cs">Program.cs</ProjectItem>
+				</Folder>
+				<Folder Name="MacCatalyst" TargetFolderName="MacCatalyst">
+					<ProjectItem ReplaceParameters="true" TargetFileName="AppDelegate.cs">AppDelegate.cs</ProjectItem>
+					<ProjectItem ReplaceParameters="false" TargetFileName="Info.plist">Info.plist</ProjectItem>
+					<ProjectItem ReplaceParameters="true" TargetFileName="Program.cs">Program.cs</ProjectItem>
+				</Folder>
+				<Folder Name="Windows" TargetFolderName="Windows">
+					<ProjectItem ReplaceParameters="true" TargetFileName="app.manifest">app.manifest</ProjectItem>
+					<ProjectItem ReplaceParameters="true" TargetFileName="App.xaml">App.xaml</ProjectItem>
+					<ProjectItem ReplaceParameters="true" TargetFileName="App.xaml.cs">App.xaml.cs</ProjectItem>
+					<ProjectItem ReplaceParameters="true" TargetFileName="Package.appxmanifest">Package.appxmanifest</ProjectItem>
+				</Folder>
+			</Folder>
+			<Folder Name="Properties" TargetFolderName="Properties">
+				<ProjectItem ReplaceParameters="false" TargetFileName="launchSettings.json">launchSettings.json</ProjectItem>
+			</Folder>
+			<Folder Name="Resources" TargetFolderName="Resources">
+				<Folder Name="Fonts" TargetFolderName="Fonts">
+					<ProjectItem ReplaceParameters="false" TargetFileName="OpenSans-Regular.ttf">OpenSans-Regular.ttf</ProjectItem>
+				</Folder>
+				<Folder Name="Images" TargetFolderName="Images">
+					<ProjectItem ReplaceParameters="false" TargetFileName="dotnet_bot.svg">dotnet_bot.svg</ProjectItem>
+				</Folder>
+				<ProjectItem ReplaceParameters="false" TargetFileName="appicon.svg">appicon.svg</ProjectItem>
+				<ProjectItem ReplaceParameters="false" TargetFileName="appiconfg.svg">appiconfg.svg</ProjectItem>
+			</Folder>
+			<Folder Name="Shared" TargetFolderName="Shared">
+				<ProjectItem ReplaceParameters="false" TargetFileName="MainLayout.razor">MainLayout.razor</ProjectItem>
+				<ProjectItem ReplaceParameters="true" TargetFileName="NavMenu.razor">NavMenu.razor</ProjectItem>
+				<ProjectItem ReplaceParameters="false" TargetFileName="SurveyPrompt.razor">SurveyPrompt.razor</ProjectItem>
+			</Folder>
+			<Folder Name="wwwroot" TargetFolderName="wwwroot">
+				<Folder Name="css" TargetFolderName="css">
+					<Folder Name="bootstrap" TargetFolderName="bootstrap">
+						<ProjectItem ReplaceParameters="false" TargetFileName="bootstrap.min.css">bootstrap.min.css</ProjectItem>
+						<ProjectItem ReplaceParameters="false" TargetFileName="bootstrap.min.css.map">bootstrap.min.css.map</ProjectItem>
+					</Folder>
+					<Folder Name="open-iconic" TargetFolderName="open-iconic">
+						<Folder Name="font" TargetFolderName="font">
+							<Folder Name="css" TargetFolderName="css">
+								<ProjectItem ReplaceParameters="false" TargetFileName="open-iconic-bootstrap.min.css">open-iconic-bootstrap.min.css</ProjectItem>
+							</Folder>
+							<Folder Name="fonts" TargetFolderName="fonts">
+								<ProjectItem ReplaceParameters="false" TargetFileName="open-iconic.eot">open-iconic.eot</ProjectItem>
+								<ProjectItem ReplaceParameters="false" TargetFileName="open-iconic.otf">open-iconic.otf</ProjectItem>
+								<ProjectItem ReplaceParameters="false" TargetFileName="open-iconic.svg">open-iconic.svg</ProjectItem>
+								<ProjectItem ReplaceParameters="false" TargetFileName="open-iconic.ttf">open-iconic.ttf</ProjectItem>
+								<ProjectItem ReplaceParameters="false" TargetFileName="open-iconic.woff">open-iconic.woff</ProjectItem>
+							</Folder>
+						</Folder>
+						<ProjectItem ReplaceParameters="false" TargetFileName="FONT-LICENSE">FONT-LICENSE</ProjectItem>
+						<ProjectItem ReplaceParameters="false" TargetFileName="ICON-LICENSE">ICON-LICENSE</ProjectItem>
+						<ProjectItem ReplaceParameters="false" TargetFileName="README.md">README.md</ProjectItem>
+					</Folder>
+					<ProjectItem ReplaceParameters="false" TargetFileName="app.css">app.css</ProjectItem>
+				</Folder>
+				<ProjectItem ReplaceParameters="true" TargetFileName="index.html">index.html</ProjectItem>
+			</Folder>
+			<ProjectItem ReplaceParameters="true" TargetFileName="_Imports.razor">_Imports.razor</ProjectItem>
+			<ProjectItem ReplaceParameters="true" TargetFileName="App.xaml">App.xaml</ProjectItem>
+			<ProjectItem ReplaceParameters="true" TargetFileName="App.xaml.cs">App.xaml.cs</ProjectItem>
+			<ProjectItem ReplaceParameters="false" TargetFileName="Main.razor">Main.razor</ProjectItem>
+			<ProjectItem ReplaceParameters="true" TargetFileName="MainPage.xaml">MainPage.xaml</ProjectItem>
+			<ProjectItem ReplaceParameters="true" TargetFileName="MainPage.xaml.cs">MainPage.xaml.cs</ProjectItem>
+			<ProjectItem ReplaceParameters="true" TargetFileName="MauiProgram.cs">MauiProgram.cs</ProjectItem>
+		</Project>
+	</TemplateContent>
+	<!-- <WizardExtension>
+		<Assembly>VijayAnand.MauiTemplates, Version=1.0.0.1, Culture=neutral, PublicKeyToken=7550554040ebdd44</Assembly>
+		<FullClassName>MauiTemplates.CustomActionWizard</FullClassName>
+	</WizardExtension> -->
+</VSTemplate>

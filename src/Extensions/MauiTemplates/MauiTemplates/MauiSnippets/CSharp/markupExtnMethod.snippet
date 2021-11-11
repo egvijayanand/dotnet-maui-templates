@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>C# Markup Extension Method</Title>
+			<Shortcut>cmem</Shortcut>
+			<Description>Code snippet for C# markup extension method</Description>
+			<Author>Vijay Anand E G</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>type</ID>
+					<ToolTip>Type name</ToolTip>
+					<Default>TBindable</Default>
+				</Literal>
+				<Literal>
+					<ID>base</ID>
+					<ToolTip>Base type name</ToolTip>
+					<Default>BindableObject</Default>
+				</Literal>
+				<Literal>
+					<ID>name</ID>
+					<ToolTip>Method name</ToolTip>
+					<Default>MyMethod</Default>
+				</Literal>
+				<Literal>
+					<ID>param</ID>
+					<ToolTip>Parameter name</ToolTip>
+					<Default>bindable</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp" Kind="method decl">
+			<![CDATA[public static $type$ $name$<$type$>(this $type$ $param$) where $type$ : $base$
+	{
+		$end$
+		return $param$;
+	}]]></Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
