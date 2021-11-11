@@ -1,10 +1,10 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
 	<TemplateData>
-		<Name>.NET MAUI Class Library (Preview 8)</Name>
+		<Name>.NET MAUI Class Library (Preview 10)</Name>
 		<Description>A project for creating a .NET MAUI class library.</Description>
 		<ProjectType>CSharp</ProjectType>
 		<ProjectSubType>MAUI</ProjectSubType>
-		<SortOrder>120</SortOrder>
+		<SortOrder>130</SortOrder>
 		<CreateNewFolder>true</CreateNewFolder>
 		<DefaultName>MauiClassLib</DefaultName>
 		<ProvideDefaultName>true</ProvideDefaultName>
