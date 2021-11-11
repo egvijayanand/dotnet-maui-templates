@@ -1,5 +1,3 @@
-What's new in ver. 1.0.0.4:
+What's new in ver. 1.0.0.5:
 
-Project template for .NET MAUI class library
-
-Item template for Shell page and Resource Dictionary, both in XAML
+Templates have been updated to support .NET MAUI Preview 10.
