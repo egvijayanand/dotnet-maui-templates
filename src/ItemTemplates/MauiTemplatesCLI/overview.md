@@ -4,7 +4,7 @@ Project template for .NET MAUI Class Library and is named as `mauiclasslib`
 
 Item templates for ContentPage, ContentView, and ShellPage in XAML and named as `maui-page`, `maui-view`, and `maui-shell` respectively.
 
-All of these templates currently target .NET MAUI Preview 10.
+All of these templates currently target .NET MAUI Preview 12.
 
 To install the template NuGet package, use the below .NET CLI command:
 
