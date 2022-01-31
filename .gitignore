@@ -348,3 +348,5 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/src/ItemTemplates/MauiTemplatesCLI/Push-Release-Template.bat
+/src/ItemTemplates/MauiTemplatesCLI/PackageName.txt

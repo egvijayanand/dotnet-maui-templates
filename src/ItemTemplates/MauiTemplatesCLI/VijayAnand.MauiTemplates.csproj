@@ -1,31 +1,33 @@
 <Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<TargetFramework>netstandard2.0</TargetFramework>
-		<PackageType>Template</PackageType>
-		<PackageId>VijayAnand.MauiTemplates</PackageId>
-		<PackageVersion>1.0.4</PackageVersion>
-		<Title>.NET MAUI Templates</Title>
-		<Authors>Vijay Anand E G</Authors>
-		<Copyright>Copyright (c) 2021 Vijay Anand E G</Copyright>
-		<Description>Project and Item templates for developing .NET MAUI App that runs on iOS, Android, macOS and Windows</Description>
-		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<IncludeContentInPack>true</IncludeContentInPack>
-		<IncludeBuildOutput>false</IncludeBuildOutput>
-		<IncludeSymbols>false</IncludeSymbols>
-		<ContentTargetFolders>Content</ContentTargetFolders>
-		<!-- This project has no .NET assemblies, so disable the warning for that -->
-		<NoWarn>$(NoWarn);NU5128</NoWarn>
-		<RepositoryType>git</RepositoryType>
-		<RepositoryUrl>https://github.com/egvijayanand/dotnet-maui-templates</RepositoryUrl>
-		<PackageTags>MAUI, Mobile, iOS, Android, WinUI3, Mac;Catalyst, macOS, VS;Code, .NET;MAUI, Desktop, Windows, WinUI, Preview;10, Templates, Shell, Class;Library, Visual;Studio;Code, Library</PackageTags>
-		<PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)/release-notes.txt"))</PackageReleaseNotes>
-		<PackageReadmeFile>overview.md</PackageReadmeFile>
-		<PackageProjectUrl>https://egvijayanand.in/</PackageProjectUrl>
-	</PropertyGroup>
-	<ItemGroup>
-		<Content Include="MauiPage\**\*;MauiView\**\*;MauiShell\**\*;MauiClassLib\**\*"
-		         Exclude="**\bin\**;**\obj\**"/>
-		<Compile Remove="**\*"/>
-		<None Include="overview.md" Pack="true" PackagePath="\" />
-	</ItemGroup>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <PackageType>Template</PackageType>
+        <PackageId>VijayAnand.MauiTemplates</PackageId>
+        <PackageVersion>1.0.5</PackageVersion>
+        <Title>.NET MAUI Templates</Title>
+        <Authors>Vijay Anand E G</Authors>
+        <Copyright>Copyright &#169; 2022 Vijay Anand E G</Copyright>
+        <Description>Project and Item templates for developing .NET MAUI App that runs on iOS, Android, macOS and Windows</Description>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <IncludeContentInPack>true</IncludeContentInPack>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <IncludeSymbols>false</IncludeSymbols>
+        <ContentTargetFolders>Content</ContentTargetFolders>
+        <!-- This project has no .NET assemblies, so disable the warning for that -->
+        <NoWarn>$(NoWarn);NU5128</NoWarn>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/egvijayanand/dotnet-maui-templates</RepositoryUrl>
+        <PackageTags>MAUI, Mobile, iOS, Android, WinUI3, Mac;Catalyst, macOS, VS;Code, .NET;MAUI, Desktop, Windows, WinUI, Preview;12, Templates, Shell, Class;Library, Visual;Studio;Code, Library</PackageTags>
+        <PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)/release-notes.txt"))</PackageReleaseNotes>
+        <PackageReadmeFile>overview.md</PackageReadmeFile>
+        <PackageProjectUrl>https://egvijayanand.in/</PackageProjectUrl>
+        <!-- Source Linking -->
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    </PropertyGroup>
+    <ItemGroup>
+        <Content Include="MauiPage\**\*;MauiView\**\*;MauiShell\**\*;MauiClassLib\**\*"
+                 Exclude="**\bin\**;**\obj\**"/>
+        <Compile Remove="**\*"/>
+        <None Include="overview.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
 </Project>
