@@ -1,6 +1,4 @@
-﻿using Microsoft.Maui;
-using Microsoft.Maui.Hosting;
-using Microsoft.UI.Xaml;
+﻿using Microsoft.UI.Xaml;
 using Windows.ApplicationModel;
 
 // To learn more about WinUI, the WinUI project structure,

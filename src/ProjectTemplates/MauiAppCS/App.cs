@@ -1,21 +1,17 @@
-﻿using Microsoft.Maui;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Graphics;
-using Application = Microsoft.Maui.Controls.Application;
-using WinApp = Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific.Application;
+﻿using WinApp = Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific.Application;
 
 namespace $safeprojectname$
 {
-	public partial class App : Application
-	{
-		public App()
-		{
-			Build();
+    public partial class App : Application
+    {
+        public App()
+        {
+            Build();
 
-			MainPage = new MainPage();
-		}
-		
-		private void Build()
+            MainPage = new MainPage();
+        }
+        
+        private void Build()
         {
             WinApp.SetImageDirectory(this, "Assets");
             Resources.Add("PrimaryColor", Color.FromArgb("#512BDF"));
@@ -41,5 +37,5 @@ namespace $safeprojectname$
                 }
             });
         }
-	}
+    }
 }

@@ -1,13 +1,10 @@
-﻿using System;
-using Microsoft.Maui.Controls;
-
-namespace $safeprojectname$
+﻿namespace $safeprojectname$
 {
-	public partial class MainPage : ContentPage
-	{
-		public MainPage()
-		{
-			InitializeComponent();
-		}
-	}
+    public partial class MainPage : ContentPage
+    {
+        public MainPage()
+        {
+            InitializeComponent();
+        }
+    }
 }

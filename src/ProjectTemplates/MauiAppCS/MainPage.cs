@@ -1,12 +1,6 @@
-﻿using Microsoft.Maui;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Essentials;
-using Microsoft.Maui.Graphics;
-using System;
-
-namespace $safeprojectname$
+﻿namespace $safeprojectname$
 {
-	public partial class MainPage : ContentPage
+    public partial class MainPage : ContentPage
     {
         int count;
         Label counter;
@@ -90,7 +84,7 @@ namespace $safeprojectname$
             GridLayout.SetRow(image1, 4);
             SemanticProperties.SetDescription(image1, "Cute dotnet bot waving hi to you!");
             
-			grid1.Add(label1);
+            grid1.Add(label1);
             grid1.Add(label2);
             grid1.Add(counter);
             grid1.Add(button1);
@@ -107,7 +101,7 @@ namespace $safeprojectname$
             count++;
             counter.Text = $"Current count: {count}";
 
-			SemanticScreenReader.Announce(counter.Text);
+            SemanticScreenReader.Announce(counter.Text);
         }
     }
 }
