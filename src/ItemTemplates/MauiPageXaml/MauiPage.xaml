@@ -4,12 +4,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:$rootnamespace$"
              BackgroundColor="White">
-	<ContentPage.Content>
-		<StackLayout>
-			<Label Text="Welcome to .NET MAUI!!!"
-			       HorizontalOptions="CenterAndExpand"
-			       TextColor="Purple"
-			       VerticalOptions="CenterAndExpand"/>
-		</StackLayout>
-	</ContentPage.Content>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to .NET MAUI!!!"
+                   HorizontalOptions="Center"
+                   TextColor="Purple"
+                   VerticalOptions="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
