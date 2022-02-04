@@ -1,5 +1,4 @@
 ﻿using Microsoft.UI.Xaml;
-using Windows.ApplicationModel;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -26,7 +25,7 @@ namespace $safeprojectname$.WinUI
         {
             base.OnLaunched(args);
 
-            Microsoft.Maui.Essentials.Platform.OnLaunched(args);
+            Platform.OnLaunched(args);
         }
     }
 }

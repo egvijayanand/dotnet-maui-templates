@@ -2,9 +2,9 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
 	<CodeSnippet Format="1.0.0">
 		<Header>
-			<Title>Method</Title>
-			<Shortcut>method</Shortcut>
-			<Description>Code snippet for Method</Description>
+			<Title>Async Method</Title>
+			<Shortcut>amethod</Shortcut>
+			<Description>Code snippet for async method</Description>
 			<Author>Vijay Anand E G</Author>
 			<SnippetTypes>
 				<SnippetType>Expansion</SnippetType>
@@ -14,22 +14,22 @@
 		<Snippet>
 			<Declarations>
 				<Literal>
-					<ID>type</ID>
-					<ToolTip>Return type</ToolTip>
-					<Default>void</Default>
-				</Literal>
-				<Literal>
 					<ID>name</ID>
 					<ToolTip>Method name</ToolTip>
 					<Default>MyMethod</Default>
 				</Literal>
 			</Declarations>
 			<Code Language="CSharp" Kind="method decl">
-				<![CDATA[private $type$ $name$()
+				<![CDATA[private async Task $name$()
 	{
 		$selected$$end$
 	}]]>
 			</Code>
+			<Imports>
+				<Import>
+					<Namespace>System.Threading.Tasks</Namespace>
+				</Import>
+			</Imports>
 		</Snippet>
 	</CodeSnippet>
 </CodeSnippets>

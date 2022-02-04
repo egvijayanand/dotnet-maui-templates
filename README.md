@@ -3,7 +3,7 @@ This repository is to host the .NET MAUI Project and Item templates and Code Sni
 
 We all know that .NET MAUI is an evolution of Xamarin.Forms.
 
-And now, .NET MAUI Preview 10 released on Mon, Nov 8, 2021 along with VS2022 Preview 1.0 (17.1.0)
+And now, .NET MAUI Preview 12 released on 19 Jan 2022 along with VS2022 Version 17.1.0 Preview 3.0
 
 Templates have been updated to support the latest release.
 
@@ -17,10 +17,10 @@ Extension is made available in the [Visual Studio Marketplace](https://marketpla
 
 This has Project Templates for:
 
-* .NET MAUI App (Preview 10)
-* .NET MAUI App (C#) (Preview 10)
-* .NET MAUI Blazor App (Preview 10)
-* .NET MAUI Class Library (Preview 10)
+* .NET MAUI App (Preview 12)
+* .NET MAUI App (C#) (Preview 12)
+* .NET MAUI Blazor App (Preview 12)
+* .NET MAUI Class Library (Preview 12)
 
 ![Create Project - Visual Studio](images/maui-project-templates.png)
 
@@ -31,6 +31,7 @@ And has Item Templates for:
 * Content View (.NET MAUI)
 * Content View (C#) (.NET MAUI)
 * Resource Dictionary (.NET MAUI)
+* Resource Dictionary (XAML only)(.NET MAUI)
 * Shell Page (.NET MAUI)
 
 Now VS2022 extension is loaded with 25+ C# and XAML Code Snippets.
