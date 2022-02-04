@@ -226,6 +226,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="ItemTemplates\MauiResDictXaml.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <VSIXSubPath>ItemTemplates\MAUI</VSIXSubPath>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <None Include="MauiSnippets\CSharp\asyncMethod.snippet" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
       <Generator>VsixManifestGenerator</Generator>

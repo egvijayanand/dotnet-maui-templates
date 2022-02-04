@@ -2,12 +2,9 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
 	<CodeSnippet Format="1.0.0">
 		<Header>
-			<Title>Record Struct</Title>
-			<Shortcut>rstruct</Shortcut>
-			<Description>
-				Code snippet for Record Struct
-				Language Version: C# 10.0 or higher
-			</Description>
+			<Title>Async Method</Title>
+			<Shortcut>amethod</Shortcut>
+			<Description>Code snippet for async method</Description>
 			<Author>Vijay Anand E G</Author>
 			<SnippetTypes>
 				<SnippetType>Expansion</SnippetType>
@@ -18,16 +15,21 @@
 			<Declarations>
 				<Literal>
 					<ID>name</ID>
-					<ToolTip>Record struct name</ToolTip>
-					<Default>MyRecStruct</Default>
+					<ToolTip>Method name</ToolTip>
+					<Default>MyMethod</Default>
 				</Literal>
 			</Declarations>
-			<Code Language="CSharp" Kind="type decl">
-				<![CDATA[record struct $name$
+			<Code Language="CSharp" Kind="method decl">
+				<![CDATA[private async Task $name$()
 	{
 		$selected$$end$
 	}]]>
 			</Code>
+			<Imports>
+				<Import>
+					<Namespace>System.Threading.Tasks</Namespace>
+				</Import>
+			</Imports>
 		</Snippet>
 	</CodeSnippet>
 </CodeSnippets>

@@ -14,13 +14,18 @@
 		<Snippet>
 			<Declarations>
 				<Literal>
+					<ID>type</ID>
+					<ToolTip>Return type</ToolTip>
+					<Default>void</Default>
+				</Literal>
+				<Literal>
 					<ID>name</ID>
 					<ToolTip>Method name</ToolTip>
 					<Default>MyMethod</Default>
 				</Literal>
 			</Declarations>
 			<Code Language="CSharp" Kind="method decl">
-				<![CDATA[private void $name$()
+				<![CDATA[private $type$ $name$()
 	{
 		$selected$$end$
 	}]]>

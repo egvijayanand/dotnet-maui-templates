@@ -13,7 +13,7 @@ namespace $rootnamespace$
     {
         public $safeitemname$()
         {
-			BackgroundColor = Colors.White;
+            BackgroundColor = Colors.White;
             Content = new StackLayout
             {
                 Children =
@@ -22,8 +22,8 @@ namespace $rootnamespace$
                     {
                         Text = "Welcome to .NET MAUI!!!",
                         TextColor = Colors.Purple,
-                        HorizontalOptions = LayoutOptions.CenterAndExpand,
-                        VerticalOptions = LayoutOptions.CenterAndExpand
+                        HorizontalOptions = LayoutOptions.Center,
+                        VerticalOptions = LayoutOptions.Center
                     }
                 }
             };
