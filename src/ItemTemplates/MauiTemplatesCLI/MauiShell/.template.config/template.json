@@ -12,7 +12,8 @@
         "Windows"
     ],
     "identity": "VijayAnand.MauiShell",
-    "description": "An item template for .NET MAUI ShellPage in XAML (.NET MAUI Preview 12)",
+    "groupIdentity": "VijayAnand.MauiTemplates.Shell",
+    "description": "An item template for .NET MAUI ShellPage in XAML (Preview 12)",
     "name": ".NET MAUI ShellPage (Preview 12)",
     "shortName": "maui-shell",
     "sourceName": "MauiShell",

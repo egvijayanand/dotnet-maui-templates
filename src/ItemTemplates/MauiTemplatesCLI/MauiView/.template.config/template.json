@@ -12,7 +12,8 @@
         "Windows"
     ],
     "identity": "VijayAnand.MauiView",
-    "description": "An item template for .NET MAUI ContentView in XAML (.NET MAUI Preview 12)",
+    "groupIdentity": "VijayAnand.MauiTemplates.View",
+    "description": "An item template for .NET MAUI ContentView in XAML (Preview 12)",
     "name": ".NET MAUI ContentView (Preview 12)",
     "shortName": "maui-view",
     "sourceName": "MauiView",

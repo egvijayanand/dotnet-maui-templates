@@ -1,5 +1,7 @@
-What's new in ver. 1.0.6:
+What's new in ver. 1.0.7:
 
-Templates have been updated for .NET MAUI Preview 12.
+Introduced the ability to add CommunityToolkit.Maui and CommunityToolkit.Maui.Markup NuGet package reference while creating a new .NET MAUI class library project.
 
-Added the target platform options to the project file.
+For more details: run this command in the terminal:
+
+dotnet new mauiclasslib --help

@@ -1,6 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
+        <LanguageVersion>latest</LanguageVersion>
+        <!-- Package Options -->
         <PackageType>Template</PackageType>
         <PackageId>VijayAnand.MauiTemplates</PackageId>
         <PackageVersion>1.0.6</PackageVersion>
@@ -26,7 +28,7 @@
     </PropertyGroup>
     <ItemGroup>
         <Content Include="MauiPage\**\*;MauiView\**\*;MauiShell\**\*;MauiClassLib\**\*"
-                 Exclude="**\bin\**;**\obj\**"/>
+                 Exclude="**\bin\**;**\obj\**;**\ide\*"/>
         <Compile Remove="**\*"/>
         <None Include="overview.md" Pack="true" PackagePath="\" />
     </ItemGroup>
