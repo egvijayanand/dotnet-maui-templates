@@ -1,4 +1,8 @@
-What's new in ver. 1.0.7:
+What's new in ver. 1.0.8:
+
+This version comes with a workaround for the Visual Studio blank solution issue that occurs when none of the newly introduced options are opted-in during the Class Library project creation. This issue is observed in Visual Studio with .NET CLI Templates and is reported as an issue to VS team for an official resolution.
+
+Apart from that, this has the same features as v1.0.7 as listed below:
 
 Introduced C# Item Templates for MauiPage and MauiView.
 
