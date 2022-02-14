@@ -87,6 +87,8 @@ If you've already installed this package, then this can be updated to the latest
 
 ```shell
 dotnet new --update-check
+```
+```shell
 dotnet new --update-apply
 ```
 
@@ -96,7 +98,9 @@ Type | Template Name
 :---: | :---:
 .NET MAUI Class Library | mauiclasslib
 ContentPage | maui-page
+ContentPage (C#) | maui-page-cs
 ContentView | maui-view
+ContentView (C#) | maui-view-cs
 ShellPage | maui-shell
 
 #### Parameters:
@@ -113,42 +117,66 @@ In .NET CLI, all of these templates takes two parameters:
 
     The namespace for the generated files.
 
+* Now with more options while creating the class library project, ability to include CommunityToolkit.Maui, CommunityToolkit.Maui.Markup, or both NuGet packages on the fly. For more details: run the below command in the terminal:
+
+```shell
+dotnet new mauiclasslib --help
+```
+
 #### Usage:
 
 After installation, use the below command(s) to create new artifacts using the template (both provide the same output):
 
 With parameter names abbreviated:
-
+Library:
 ```shell
 dotnet new mauiclasslib -n MyApp.Core
 ```
-
+```shell
+dotnet new mauiclasslib -n MyApp.Core -it yes -im yes
+```
+Pages:
 ```shell
 dotnet new maui-page -n LoginPage -na MyApp.Views
 ```
-
+```shell
+dotnet new maui-page-cs -n HomePage -na MyApp.Views
+```
+Views:
 ```shell
 dotnet new maui-view -n CardView -na MyApp.Views
 ```
-
+```shell
+dotnet new maui-view-cs -n OrderView -na MyApp.Views
+```
+Shell:
 ```shell
 dotnet new maui-shell -n AppShell -na MyApp
 ```
 
 With parameter names expanded:
-
+Library:
 ```shell
 dotnet new mauiclasslib --name MyApp.Core
 ```
-
+```shell
+dotnet new mauiclasslib --name MyApp.Core --include-toolkit yes --include-markup yes
+```
+Pages:
 ```shell
 dotnet new maui-page --name LoginPage --namespace MyApp.Views
 ```
-
+```shell
+dotnet new maui-page-cs --name HomePage --namespace MyApp.Views
+```
+Views:
 ```shell
 dotnet new maui-view --name CardView --namespace MyApp.Views
 ```
-
+```shell
+dotnet new maui-view-cs --name OrderView --namespace MyApp.Views
+```
+Shell:
 ```shell
 dotnet new maui-shell --name AppShell --namespace MyApp
 ```
