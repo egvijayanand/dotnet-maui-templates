@@ -1,9 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
+        <LanguageVersion>latest</LanguageVersion>
+        <!-- Package Options -->
         <PackageType>Template</PackageType>
         <PackageId>VijayAnand.MauiTemplates</PackageId>
-        <PackageVersion>1.0.6</PackageVersion>
+        <PackageVersion>1.0.0</PackageVersion>
         <Title>.NET MAUI Templates</Title>
         <Authors>Vijay Anand E G</Authors>
         <Copyright>Copyright &#169; 2022 Vijay Anand E G</Copyright>
@@ -25,8 +27,8 @@
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>
     <ItemGroup>
-        <Content Include="MauiPage\**\*;MauiView\**\*;MauiShell\**\*;MauiClassLib\**\*"
-                 Exclude="**\bin\**;**\obj\**"/>
+        <Content Include="MauiPage\**\*;MauiPageCS\**\*;MauiView\**\*;MauiViewCS\**\*;MauiShell\**\*;MauiClassLib\**\*"
+                 Exclude="**\bin\**;**\obj\**;**\ide\*"/>
         <Compile Remove="**\*"/>
         <None Include="overview.md" Pack="true" PackagePath="\" />
     </ItemGroup>

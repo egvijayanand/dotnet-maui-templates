@@ -1,5 +1,0 @@
-What's new in ver. 1.0.6:
-
-Templates have been updated for .NET MAUI Preview 12.
-
-Added the target platform options to the project file.

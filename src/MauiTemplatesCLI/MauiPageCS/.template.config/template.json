@@ -7,21 +7,18 @@
         "Android",
         "iOS",
         "macOS",
-        "Mac Catalyst",
-        "WinUI",
-        "Windows"
+        "Windows",
+        "Code"
     ],
-    "identity": "VijayAnand.MauiPage",
-    "description": "An item template for .NET MAUI ContentPage in XAML (.NET MAUI Preview 12)",
-    "name": ".NET MAUI ContentPage (Preview 12)",
-    "shortName": "maui-page",
+    "identity": "VijayAnand.MauiPageCS",
+    "groupIdentity": "VijayAnand.MauiTemplates.Page.Code",
+    "description": "An item template for .NET MAUI ContentPage in C# (Preview 12)",
+    "name": ".NET MAUI ContentPage (C#) (Preview 12)",
+    "shortName": "maui-page-cs",
     "sourceName": "MauiPage",
     "primaryOutputs": [
         {
-            "path": "MauiPage.xaml"
-        },
-        {
-            "path": "MauiPage.xaml.cs"
+            "path": "MauiPage.cs"
         }
     ],
     "tags": {

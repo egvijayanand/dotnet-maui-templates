@@ -1,0 +1,100 @@
+{
+    "$schema": "https://json.schemastore.org/template",
+    "author": "Vijay Anand E G",
+    "defaultName": "MauiClassLib1",
+    "classifications": [
+        "MAUI",
+        "Android",
+        "iOS",
+        "macOS",
+        "Mac Catalyst",
+        "WinUI",
+        "Windows",
+        "Library"
+    ],
+    "identity": "VijayAnand.MauiClassLib",
+    "groupIdentity": "VijayAnand.MauiTemplates.Library",
+    "description": "A project template for .NET MAUI Class Library (Preview 12)",
+    "name": ".NET MAUI Class Library (Preview 12)",
+    "shortName": "mauiclasslib",
+    "sourceName": "MauiClassLib",
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "symbols": {
+        "include-toolkit-ui": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add CommunityToolkit.Maui NuGet package reference."
+        },
+        "include-markup-ui": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add CommunityToolkit.Maui.Markup NuGet package reference."
+        },
+        "include-toolkit": {
+            "type": "parameter",
+            "datatype": "choice",
+            "defaultValue": "No",
+            "description": "Option to add CommunityToolkit.Maui NuGet package reference.",
+            "choices": [
+                {
+                    "choice": "Yes",
+                    "description": "Add package reference."
+                },
+                {
+                    "choice": "No",
+                    "description": "Skip adding reference, the default option."
+                }
+            ]
+        },
+        "include-markup": {
+            "type": "parameter",
+            "datatype": "choice",
+            "defaultValue": "No",
+            "description": "Option to add CommunityToolkit.Maui.Markup NuGet package reference.",
+            "choices": [
+                {
+                    "choice": "Yes",
+                    "description": "Add package reference."
+                },
+                {
+                    "choice": "No",
+                    "description": "Skip adding reference, the default option."
+                }
+            ]
+        },
+        "includeToolkitLower": {
+            "type": "generated",
+            "generator": "casing",
+            "parameters": {
+                "source": "include-toolkit",
+                "toLower": true
+            }
+        },
+        "includeMarkupLower": {
+            "type": "generated",
+            "generator": "casing",
+            "parameters": {
+                "source": "include-markup",
+                "toLower": true
+            }
+        },
+        "AddToolkitPackage": {
+            "type": "computed",
+            "value": "(include-toolkit-ui || includeToolkitLower == \"yes\")"
+        },
+        "AddMarkupPackage": {
+            "type": "computed",
+            "value": "(include-markup-ui || includeMarkupLower == \"yes\")"
+        }
+    },
+    "primaryOutputs": [
+        {
+            "path": "Class1.cs"
+        }
+    ]
+}

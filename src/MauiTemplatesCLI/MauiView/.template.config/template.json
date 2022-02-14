@@ -1,0 +1,39 @@
+{
+    "$schema": "https://json.schemastore.org/template",
+    "author": "Vijay Anand E G",
+    "defaultName": "MauiView1",
+    "classifications": [
+        "MAUI",
+        "Android",
+        "iOS",
+        "macOS",
+        "Windows",
+        "Xaml"
+    ],
+    "identity": "VijayAnand.MauiView",
+    "groupIdentity": "VijayAnand.MauiTemplates.View.Xaml",
+    "description": "An item template for .NET MAUI ContentView in XAML (Preview 12)",
+    "name": ".NET MAUI ContentView (Preview 12)",
+    "shortName": "maui-view",
+    "sourceName": "MauiView",
+    "primaryOutputs": [
+        {
+            "path": "MauiView.xaml"
+        },
+        {
+            "path": "MauiView.xaml.cs"
+        }
+    ],
+    "tags": {
+        "language": "C#",
+        "type": "item"
+    },
+    "symbols": {
+        "namespace": {
+            "type": "parameter",
+            "replaces": "MyApp.Namespace",
+            "datatype": "text",
+            "description": "namespace for the generated code"
+        }
+    }
+}

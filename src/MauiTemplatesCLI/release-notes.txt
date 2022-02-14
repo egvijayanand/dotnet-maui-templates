@@ -1,0 +1,9 @@
+What's new in ver. 1.0.7:
+
+Introduced C# Item Templates for MauiPage and MauiView.
+
+Introduced the ability to add CommunityToolkit.Maui and CommunityToolkit.Maui.Markup NuGet package reference while creating a new .NET MAUI class library project.
+
+For more details: run this command in the terminal:
+
+dotnet new mauiclasslib --help

@@ -7,19 +7,16 @@
         "Android",
         "iOS",
         "macOS",
-        "Mac Catalyst",
-        "WinUI",
-        "Windows"
+        "Windows",
+        "Code"
     ],
-    "identity": "VijayAnand.MauiView",
-    "description": "An item template for .NET MAUI ContentView in XAML (.NET MAUI Preview 12)",
-    "name": ".NET MAUI ContentView (Preview 12)",
-    "shortName": "maui-view",
+    "identity": "VijayAnand.MauiViewCS",
+    "groupIdentity": "VijayAnand.MauiTemplates.View.Code",
+    "description": "An item template for .NET MAUI ContentView in C# (Preview 12)",
+    "name": ".NET MAUI ContentView (C#) (Preview 12)",
+    "shortName": "maui-view-cs",
     "sourceName": "MauiView",
     "primaryOutputs": [
-        {
-            "path": "MauiView.xaml"
-        },
         {
             "path": "MauiView.xaml.cs"
         }

@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json.schemastore.org/vs-2017.3.host",
+    "icon": "ide/mauiclasslib.png",
+    "symbolInfo": [
+        {
+            "id": "include-toolkit-ui",
+            "name": {
+                "text": "Add Community_Toolkit.Maui NuGet package reference"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
+            "id": "include-markup-ui",
+            "name": {
+                "text": "Add CommunityToolkit.Maui._Markup NuGet package reference"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        }
+    ]
+}

@@ -1,27 +1,27 @@
 {
     "$schema": "https://json.schemastore.org/template",
     "author": "Vijay Anand E G",
-    "defaultName": "AppShell",
+    "defaultName": "MauiPage1",
     "classifications": [
         "MAUI",
         "Android",
         "iOS",
         "macOS",
-        "Mac Catalyst",
-        "WinUI",
-        "Windows"
+        "Windows",
+        "Xaml"
     ],
-    "identity": "VijayAnand.MauiShell",
-    "description": "An item template for .NET MAUI ShellPage in XAML (.NET MAUI Preview 12)",
-    "name": ".NET MAUI ShellPage (Preview 12)",
-    "shortName": "maui-shell",
-    "sourceName": "MauiShell",
+    "identity": "VijayAnand.MauiPage",
+    "groupIdentity": "VijayAnand.MauiTemplates.Page.Xaml",
+    "description": "An item template for .NET MAUI ContentPage in XAML (Preview 12)",
+    "name": ".NET MAUI ContentPage (Preview 12)",
+    "shortName": "maui-page",
+    "sourceName": "MauiPage",
     "primaryOutputs": [
         {
-            "path": "MauiShell.xaml"
+            "path": "MauiPage.xaml"
         },
         {
-            "path": "MauiShell.xaml.cs"
+            "path": "MauiPage.xaml.cs"
         }
     ],
     "tags": {
