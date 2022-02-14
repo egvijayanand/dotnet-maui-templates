@@ -117,7 +117,7 @@ In .NET CLI, all of these templates takes two parameters:
 
     The namespace for the generated files.
 
-* Now with more options while creating the class library project, ability to include CommunityToolkit.Maui, CommunityToolkit.Maui.Markup, or both NuGet packages on the fly. For more details: run the below command in the terminal:
+* Now with more options while creating the class library project, ability to include NuGet packages on the fly for `CommunityToolkit.Maui`, `CommunityToolkit.Maui.Markup`, or both. For more details: run the below command in the terminal:
 
 ```shell
 dotnet new mauiclasslib --help
@@ -128,6 +128,7 @@ dotnet new mauiclasslib --help
 After installation, use the below command(s) to create new artifacts using the template (both provide the same output):
 
 With parameter names abbreviated:
+
 Library:
 ```shell
 dotnet new mauiclasslib -n MyApp.Core
@@ -155,6 +156,7 @@ dotnet new maui-shell -n AppShell -na MyApp
 ```
 
 With parameter names expanded:
+
 Library:
 ```shell
 dotnet new mauiclasslib --name MyApp.Core
