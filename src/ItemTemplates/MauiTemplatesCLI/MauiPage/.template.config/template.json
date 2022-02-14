@@ -7,12 +7,11 @@
         "Android",
         "iOS",
         "macOS",
-        "Mac Catalyst",
-        "WinUI",
-        "Windows"
+        "Windows",
+        "Xaml"
     ],
     "identity": "VijayAnand.MauiPage",
-    "groupIdentity": "VijayAnand.MauiTemplates.Page",
+    "groupIdentity": "VijayAnand.MauiTemplates.Page.Xaml",
     "description": "An item template for .NET MAUI ContentPage in XAML (Preview 12)",
     "name": ".NET MAUI ContentPage (Preview 12)",
     "shortName": "maui-page",

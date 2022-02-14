@@ -27,7 +27,7 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to add and configure CommunityToolkit.Maui NuGet package reference."
+            "description": "Option to add CommunityToolkit.Maui NuGet package reference."
         },
         "include-markup-ui": {
             "type": "parameter",
@@ -92,58 +92,7 @@
             "value": "(include-markup-ui || includeMarkupLower == \"yes\")"
         }
     },
-    "postActions": [
-        {
-            "description": "Adding reference to CommunityToolkit.Maui NuGet package",
-            "actionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
-            "continueOnError": true,
-            "condition": "(AddToolkitPackage)",
-            "manualInstructions": [
-                {
-                    "text": "dotnet add package CommunityToolkit.Maui --version 1.0.0-pre5"
-                }
-            ],
-            "args": {
-                "referenceType": "package",
-                "reference": "CommunityToolkit.Maui",
-                "version": "1.0.0-pre5",
-                "projectFileExtensions": ".csproj"
-            }
-        },
-        {
-            "description": "Adding reference to CommunityToolkit.Maui.Markup NuGet package",
-            "actionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
-            "continueOnError": true,
-            "condition": "(AddMarkupPackage)",
-            "manualInstructions": [
-                {
-                    "text": "dotnet add package CommunityToolkit.Maui.Markup --version 1.0.0-pre5"
-                }
-            ],
-            "args": {
-                "referenceType": "package",
-                "reference": "CommunityToolkit.Maui.Markup",
-                "version": "1.0.0-pre5",
-                "projectFileExtensions": ".csproj"
-            }
-        }
-    ],
-    "sources": [
-        {
-            "modifiers": [
-                {
-                    "condition": "(!AddMarkupPackage)",
-                    "exclude": [
-                        "Markup.cs"
-                    ]
-                }
-            ]
-        }
-    ],
     "primaryOutputs": [
-        {
-            "path": "MauiClassLib.csproj"
-        },
         {
             "path": "Class1.cs"
         }

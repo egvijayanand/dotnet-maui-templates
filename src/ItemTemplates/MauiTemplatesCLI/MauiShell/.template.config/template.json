@@ -9,7 +9,8 @@
         "macOS",
         "Mac Catalyst",
         "WinUI",
-        "Windows"
+        "Windows",
+        "Shell"
     ],
     "identity": "VijayAnand.MauiShell",
     "groupIdentity": "VijayAnand.MauiTemplates.Shell",

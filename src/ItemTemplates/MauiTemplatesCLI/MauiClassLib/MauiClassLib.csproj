@@ -20,4 +20,12 @@
         <!-- Minimum Target OS Version for Windows Platform -->
         <TargetPlatformMinVersion Condition="$(TargetFramework.Contains('-windows'))">10.0.17763.0</TargetPlatformMinVersion>
     </PropertyGroup>
+    <ItemGroup Condition="'$(AddToolkitPackage)' == 'True' OR '$(AddMarkupPackage)' == 'True'">
+        <!--#if (AddToolkitPackage)-->
+        <PackageReference Include="CommunityToolkit.Maui" Version="1.0.0-pre6"/>
+        <!--#endif-->
+        <!--#if (AddMarkupPackage)-->
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.0.0-pre5"/>
+        <!--#endif -->
+    </ItemGroup>
 </Project>
