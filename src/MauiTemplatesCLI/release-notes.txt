@@ -1,10 +1,14 @@
-What's new in ver. 1.1.0:
+What's new in ver. 1.1.1:
 -------------------------
-Introduced an all-in-one .NET MAUI App project template with the ability to choose 
-the design pattern during project creation.
+This is a fix release, Windows target platform build issue caused by CommunityToolkit.Maui NuGet package ver. 1.0.0-pre6 has been resolved by their team with an update.
 
-Introduced the ability to include CommunityToolkit.Maui and CommunityToolkit.Maui.Markup 
-NuGet package reference while creating a new .NET MAUI App.
+The dependent release version has been updated so that manual step will be avoided.
+
+Refer below for features of v1.1.0:
+
+Introduced an all-in-one .NET MAUI App project template with the ability to choose the design pattern during project creation.
+
+Introduced the ability to include CommunityToolkit.Maui and CommunityToolkit.Maui.Markup NuGet package reference while creating a new .NET MAUI App.
 
 These options are controlled by the below parameters:
 
@@ -32,16 +36,6 @@ dotnet new mauiapp --help
 
 Known Limitations:
 ------------------
-While using the .NET CLI Templates within Visual Studio IDE, the last used values of 
-the project options like the above ones are retained in the consecutive iteration 
-rather than defaulting to their original values as defined by the developer.
+While using the .NET CLI Templates within Visual Studio IDE, the last used values of the project options like the above ones are retained in the consecutive iteration rather than defaulting to their original values as defined by the developer.
 
-Have already reported this issue to the VS product team and is actively being followed up, 
-until this is clarified / fixed, requesting the users to make of this feature with bit of caution.
-
-Known Issues:
--------------
-When using CommunityToolkit.Maui NuGet package with Windows as a target platform, 
-it ends up in the build error whereas other platform builds without any error.
-
-This is also reported in their GitHub issue tracker and will be resolved by the respective team.
+Have already reported this issue to the VS product team and is actively being followed up, until this is clarified / fixed, requesting the users to make of this feature with bit of caution.
