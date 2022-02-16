@@ -67,7 +67,7 @@
     <ItemGroup>
     <!--#endif-->
         <!--#if (AddToolkitPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="1.0.0-pre6"/>
+        <PackageReference Include="CommunityToolkit.Maui" Version="1.0.0-pre7"/>
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.0.0-pre5"/>
