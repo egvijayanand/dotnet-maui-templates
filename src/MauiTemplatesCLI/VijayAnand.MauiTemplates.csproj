@@ -27,7 +27,7 @@
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>
     <ItemGroup>
-        <Content Include="MauiPage\**\*;MauiPageCS\**\*;MauiView\**\*;MauiViewCS\**\*;MauiShell\**\*;MauiClassLib\**\*"
+        <Content Include="MauiPage\**\*;MauiPageCS\**\*;MauiView\**\*;MauiViewCS\**\*;MauiShell\**\*;MauiClassLib\**\*;MauiAppX\**\*"
                  Exclude="**\bin\**;**\obj\**;**\ide\*"/>
         <Compile Remove="**\*"/>
         <None Include="overview.md" Pack="true" PackagePath="\" />

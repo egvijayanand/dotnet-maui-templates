@@ -1,13 +1,47 @@
-What's new in ver. 1.0.8:
+What's new in ver. 1.1.0:
+-------------------------
+Introduced an all-in-one .NET MAUI App project template with the ability to choose 
+the design pattern during project creation.
 
-This version comes with a workaround for the Visual Studio blank solution issue that occurs when none of the newly introduced options are opted-in during the Class Library project creation. This issue is observed in Visual Studio with .NET CLI Templates and is reported as an issue to VS team for an official resolution.
+Introduced the ability to include CommunityToolkit.Maui and CommunityToolkit.Maui.Markup 
+NuGet package reference while creating a new .NET MAUI App.
 
-Apart from that, this has the same features as v1.0.7 as listed below:
+These options are controlled by the below parameters:
 
-Introduced C# Item Templates for MauiPage and MauiView.
+-dp | --design-pattern
 
-Introduced the ability to add CommunityToolkit.Maui and CommunityToolkit.Maui.Markup NuGet package reference while creating a new .NET MAUI class library project.
+Can take any one of the following values, with default option set to Plain:
+
+Plain        - App configured to work with a single, initial screen.
+Hierarchical - App configured to work in a hierarchical pattern using NavigationPage.
+Tab          - App configured to work in a Tabbed fashion using TabbedPage.
+Shell        - App configured to work with Routes using Shell page.
+Hybrid       - App configured to work in a Hybrid fashion using BlazorWebView.
+
+-it | --include-toolkit
+
+Can be any of the following values: Yes | No
+
+-it | --include-markup
+
+Can be any of the following values: Yes | No
 
 For more details: run this command in the terminal:
 
-dotnet new mauiclasslib --help
+dotnet new mauiapp --help
+
+Known Limitations:
+------------------
+While using the .NET CLI Templates within Visual Studio IDE, the last used values of 
+the project options like the above ones are retained in the consecutive iteration 
+rather than defaulting to their original values as defined by the developer.
+
+Have already reported this issue to the VS product team and is actively being followed up, 
+until this is clarified / fixed, requesting the users to make of this feature with bit of caution.
+
+Known Issues:
+-------------
+When using CommunityToolkit.Maui NuGet package with Windows as a target platform, 
+it ends up in the build error whereas other platform builds without any error.
+
+This is also reported in their GitHub issue tracker and will be resolved by the respective team.

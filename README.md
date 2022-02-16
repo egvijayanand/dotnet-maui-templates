@@ -94,14 +94,15 @@ dotnet new --update-apply
 
 This comes with with the following templates:
 
-Type | Template Name
-:---: | :---:
-.NET MAUI Class Library | mauiclasslib
-ContentPage | maui-page
-ContentPage (C#) | maui-page-cs
-ContentView | maui-view
-ContentView (C#) | maui-view-cs
-ShellPage | maui-shell
+Name | Template Name | Type
+:---: | :---: | :---:
+All-in-One .NET MAUI App | mauiapp | Project
+.NET MAUI Class Library | mauiclasslib | Project
+ContentPage | maui-page | Item
+ContentPage (C#) | maui-page-cs | Item
+ContentView | maui-view | Item
+ContentView (C#) | maui-view-cs | Item
+ShellPage | maui-shell | Item
 
 #### Parameters:
 
@@ -117,8 +118,35 @@ In .NET CLI, all of these templates takes two parameters:
 
     The namespace for the generated files.
 
-* Now with more options while creating the class library project, ability to include NuGet packages on the fly for `CommunityToolkit.Maui`, `CommunityToolkit.Maui.Markup`, or both. For more details: run the below command in the terminal:
+* Now with more options while creating the class library project, ability to include NuGet packages on the fly for `CommunityToolkit.Maui`, `CommunityToolkit.Maui.Markup`, or both.
 
+*Note: Parameter values are case-insensitive.*
+
+Both project templates take the below optional parameters to include the official CommunityToolkit NuGet packages:
+
+* `-it` | `--include-toolkit` - Accepted Values are `Yes` or `No` (default is `No`)
+* `-im` | `--include-markup` - Accepted Values are `Yes` or `No` (default is `No`)
+
+All-in-One .NET MAUI App project takes one additional parameter to define the application design pattern:
+
+* `-dp` | `--design-pattern`
+
+Can take any one of the following values, with default value set to `Plain`:
+
+
+|Parameter Value|Description|
+|:---:|:---|
+|Plain|App configured to work with a single, initial screen.|
+|Hierarchical|App configured to work in a hierarchical pattern using NavigationPage.|
+|Tab|App configured to work in a Tabbed fashion using TabbedPage.|
+|Shell|App configured to work with Routes using Shell page.|
+|Hybrid|App configured to work in a Hybrid fashion using BlazorWebView.|
+
+For more details: run this command in the terminal (use `-h` to save some keystrokes):
+
+```shell
+dotnet new mauiapp --help
+```
 ```shell
 dotnet new mauiclasslib --help
 ```
@@ -129,13 +157,25 @@ After installation, use the below command(s) to create new artifacts using the t
 
 With parameter names abbreviated:
 
-Library:
+
+.NET MAUI App:
+```shell
+dotnet new mauiapp -n MyApp -dp Hybrid
+```
+Option to include NuGet packages:
+```shell
+dotnet new mauiapp -n MyApp -dp Shell -it yes -im yes
+```
+
+.NET MAUI Class Library:
 ```shell
 dotnet new mauiclasslib -n MyApp.Core
 ```
+Option to include NuGet packages:
 ```shell
 dotnet new mauiclasslib -n MyApp.Core -it yes -im yes
 ```
+
 Pages:
 ```shell
 dotnet new maui-page -n LoginPage -na MyApp.Views
@@ -143,6 +183,7 @@ dotnet new maui-page -n LoginPage -na MyApp.Views
 ```shell
 dotnet new maui-page-cs -n HomePage -na MyApp.Views
 ```
+
 Views:
 ```shell
 dotnet new maui-view -n CardView -na MyApp.Views
@@ -150,6 +191,7 @@ dotnet new maui-view -n CardView -na MyApp.Views
 ```shell
 dotnet new maui-view-cs -n OrderView -na MyApp.Views
 ```
+
 Shell:
 ```shell
 dotnet new maui-shell -n AppShell -na MyApp
@@ -157,7 +199,16 @@ dotnet new maui-shell -n AppShell -na MyApp
 
 With parameter names expanded:
 
-Library:
+.NET MAUI App:
+```shell
+dotnet new mauiapp --name MyApp --design-pattern Hybrid
+```
+Option to include NuGet packages:
+```shell
+dotnet new mauiapp --name MyApp --design-pattern Shell --include-toolkit yes --include-markup yes
+```
+
+.NET MAUI Class Library:
 ```shell
 dotnet new mauiclasslib --name MyApp.Core
 ```

@@ -1,0 +1,93 @@
+﻿<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:windows="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;assembly=Microsoft.Maui.Controls"
+             xmlns:local="clr-namespace:MauiApp1"
+             x:Class="MauiApp1.App">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <!--#if (Hybrid)-->
+            <Color x:Key="PageBackgroundColor">#512BDF</Color>
+            <Color x:Key="PrimaryTextColor">White</Color>
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}" />
+                <Setter Property="FontFamily" Value="OpenSansRegular" />
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}" />
+                <Setter Property="FontFamily" Value="OpenSansRegular" />
+                <Setter Property="BackgroundColor" Value="#2B0B98" />
+                <Setter Property="Padding" Value="14,10" />
+            </Style>
+            <!--#else-->
+            <Color x:Key="PrimaryColor">#512BDF</Color>
+            <Color x:Key="PrimaryTextColor">Black</Color>
+            <Color x:Key="SecondaryColor">White</Color>
+
+            <Style TargetType="ContentPage"
+                   ApplyToDerivedTypes="True">
+                <Setter Property="Padding"
+                        Value="{OnPlatform iOS='30,60,30,30', Default='30'}" />
+            </Style>
+
+            <Style TargetType="StackLayout">
+                <Setter Property="Spacing"
+                        Value="10" />
+            </Style>
+
+            <Style TargetType="HorizontalStackLayout">
+                <Setter Property="Spacing"
+                        Value="10" />
+            </Style>
+
+            <Style TargetType="VerticalStackLayout">
+                <Setter Property="Spacing"
+                        Value="10" />
+            </Style>
+
+            <Style TargetType="Label">
+                <!--#if (Plain)-->
+                <Setter Property="TextColor"
+                        Value="{DynamicResource PrimaryColor}" />
+                <!--#else-->
+                <Setter Property="TextColor"
+                        Value="{DynamicResource PrimaryTextColor}" />
+                <!--#endif-->
+                <Setter Property="FontFamily"
+                        Value="OpenSansRegular" />
+            </Style>
+
+            <Style x:Key="Action"
+                   TargetType="Button">
+                <Setter Property="TextColor"
+                        Value="{DynamicResource PrimaryTextColor}" />
+                <Setter Property="FontFamily"
+                        Value="OpenSansRegular" />
+                <Setter Property="Padding"
+                        Value="14,10" />
+            </Style>
+
+            <Style x:Key="PrimaryAction"
+                   TargetType="Button"
+                   BasedOn="{StaticResource Action}">
+                <Setter Property="TextColor"
+                        Value="{DynamicResource SecondaryColor}" />
+                <Setter Property="BackgroundColor"
+                        Value="{DynamicResource PrimaryColor}" />
+            </Style>
+
+            <Style TargetType="DatePicker">
+                <Setter Property="TextColor"
+                        Value="{DynamicResource PrimaryTextColor}" />
+            </Style>
+
+            <Style TargetType="TimePicker">
+                <Setter Property="TextColor"
+                        Value="{DynamicResource PrimaryTextColor}" />
+            </Style>
+            <!--#endif-->
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
