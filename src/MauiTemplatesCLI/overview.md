@@ -60,7 +60,7 @@ dotnet new mauiclasslib --help
 
 .NET MAUI App:
 ```shell
-dotnet new mauiclasslib -n MyApp -dp Hybrid
+dotnet new mauiapp -n MyApp -dp Hybrid
 ```
 Option to include NuGet packages:
 ```shell
@@ -81,7 +81,7 @@ Pages:
 dotnet new maui-page -n LoginPage -na MyApp.Views
 ```
 ```shell
-dotnet new maui-page-cs -n LoginPage -na MyApp.Views
+dotnet new maui-page-cs -n HomePage -na MyApp.Views
 ```
 
 Views:
@@ -89,7 +89,7 @@ Views:
 dotnet new maui-view -n CardView -na MyApp.Views
 ```
 ```shell
-dotnet new maui-view-cs -n CardView -na MyApp.Views
+dotnet new maui-view-cs -n OrderView -na MyApp.Views
 ```
 
 Shell:

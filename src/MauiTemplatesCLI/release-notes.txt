@@ -1,6 +1,6 @@
 What's new in ver. 1.1.0:
 -------------------------
-Introduced an all-in-one .NET MAUI App project template with ability to choose 
+Introduced an all-in-one .NET MAUI App project template with the ability to choose 
 the design pattern during project creation.
 
 Introduced the ability to include CommunityToolkit.Maui and CommunityToolkit.Maui.Markup 
