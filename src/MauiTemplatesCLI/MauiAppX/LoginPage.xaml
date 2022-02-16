@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage x:Class="MauiApp1.LoginPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiApp1"
+             BackgroundColor="{DynamicResource SecondaryColor}">
+    <StackLayout HorizontalOptions="Center"
+                 VerticalOptions="Center">
+        <Button Style="{StaticResource PrimaryAction}"
+                Text="Login"
+                Clicked="OnLoginClicked" />
+    </StackLayout>
+</ContentPage>

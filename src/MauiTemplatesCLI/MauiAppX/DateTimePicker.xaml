@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView x:Class="MauiApp1.DateTimePicker"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiApp1"
+             BackgroundColor="White">
+    <ContentView.Content>
+        <Grid ColumnDefinitions="45,Auto,Auto">
+            <Label Grid.Column="0"
+                   x:Name="lblTitle"
+                   VerticalOptions="Center" />
+            <DatePicker Grid.Column="1"
+                        x:Name="occursOn" />
+            <TimePicker Grid.Column="2"
+                        x:Name="occursAt" />
+        </Grid>
+    </ContentView.Content>
+</ContentView>

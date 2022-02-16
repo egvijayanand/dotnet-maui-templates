@@ -1,0 +1,83 @@
+<!--#if (Hybrid)-->
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+<!--#else-->
+<Project Sdk="Microsoft.NET.Sdk">
+<!--#endif-->
+    <PropertyGroup>
+        <TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
+        <!-- Targets possible from Windows OS -->
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows')) AND '$(MSBuildRuntimeType)' == 'Full'">$(TargetFrameworks);net6.0-windows10.0.19041</TargetFrameworks>
+        <OutputType>Exe</OutputType>
+
+        <!-- .NET MAUI -->
+        <UseMaui>true</UseMaui>
+        <SingleProject>true</SingleProject>
+        <EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+        <!--#if (Hybrid)-->
+        <EnableDefaultCssItems>false</EnableDefaultCssItems>
+        <!--#endif-->
+
+        <!-- Project Options -->
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>MauiApp1</RootNamespace>
+
+        <!-- Display name -->
+        <ApplicationTitle>MauiApp1</ApplicationTitle>
+
+        <!-- App Identifier -->
+        <ApplicationId>com.companyname.mauiAppId</ApplicationId>
+
+        <!-- Versions -->
+        <ApplicationVersion>1</ApplicationVersion>
+
+        <!-- Required for C# Hot Reload -->
+        <UseInterpreter Condition="'$(Configuration)' == 'Debug'">True</UseInterpreter>
+
+        <!-- Target Platform Options -->
+        <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-ios'">14.2</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-maccatalyst'">14.0</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-android'">21.0</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$(TargetFramework.Contains('-windows'))">10.0.17763.0</SupportedOSPlatformVersion>
+
+        <!-- Minimum Target OS Version for Windows Platform -->
+        <TargetPlatformMinVersion Condition="$(TargetFramework.Contains('-windows'))">10.0.17763.0</TargetPlatformMinVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- App Icon -->
+        <MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#512BD4"/>
+        <!-- Splash Screen -->
+        <MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4"/>
+        <!-- Images -->
+        <MauiImage Include="Resources\Images\*"/>
+        <!-- Custom Fonts -->
+        <MauiFont Include="Resources\Fonts\*"/>
+        <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+        <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('-windows'))">
+        <!-- Required - WinUI does not yet have buildTransitive for everything -->
+        <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0"/>
+        <PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.0.30"/>
+    </ItemGroup>
+
+    <!--#if (AddToolkitPackage || AddMarkupPackage)-->
+    <ItemGroup>
+    <!--#endif-->
+        <!--#if (AddToolkitPackage)-->
+        <PackageReference Include="CommunityToolkit.Maui" Version="1.0.0-pre6"/>
+        <!--#endif-->
+        <!--#if (AddMarkupPackage)-->
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.0.0-pre5"/>
+        <!--#endif-->
+    <!--#if (AddToolkitPackage || AddMarkupPackage)-->
+    </ItemGroup>
+    <!--#endif-->
+
+    <PropertyGroup Condition="$(TargetFramework.Contains('-windows'))">
+        <OutputType>WinExe</OutputType>
+        <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
+    </PropertyGroup>
+</Project>

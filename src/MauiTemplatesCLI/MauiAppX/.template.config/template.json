@@ -1,0 +1,253 @@
+{
+    "$schema": "https://json.schemastore.org/template",
+    "author": "Vijay Anand E G",
+    "defaultName": "MauiApp1",
+    "classifications": [
+        "MAUI",
+        "Android",
+        "iOS",
+        "macOS",
+        "Mac Catalyst",
+        "WinUI",
+        "Windows"
+    ],
+    "identity": "VijayAnand.MauiApp",
+    "groupIdentity": "VijayAnand.MauiTemplates.App",
+    "description": "A project for creating a .NET MAUI (Preview 13) App for iOS, Android, Mac Catalyst, and WinUI.",
+    "name": ".NET MAUI App (Preview 13)",
+    "shortName": "mauiapp",
+    "sourceName": "MauiApp1",
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "sources": [
+        {
+            "source": "./",
+            "target": "./",
+            "copyOnly": [
+                "**/*.svg",
+                "**/*.ttf",
+                "**/*.txt"
+            ],
+            "modifiers": [
+                {
+                    "condition": "(!(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
+                    "exclude": [
+                        "MauiApp1.sln"
+                    ]
+                },
+                {
+                    "condition": "(!Hybrid)",
+                    "exclude": [
+                        "**/Data/**",
+                        "**/Pages/**",
+                        "**/Shared/**",
+                        "**/wwwroot/**",
+                        "**/*.razor"
+                    ]
+                },
+                {
+                    "condition": "(Shell)",
+                    "exclude": [
+                        "MainPage.xaml",
+                        "MainPage.xaml.cs"
+                    ]
+                },
+                {
+                    "condition": "(!Shell)",
+                    "exclude": [
+                        "AppShell.xaml",
+                        "AppShell.xaml.cs",
+                        "LoginPage.xaml",
+                        "LoginPage.xaml.cs"
+                    ]
+                },
+                {
+                    "condition": "(!(Tabbed || Shell))",
+                    "exclude": [
+                        "EventsPage.xaml",
+                        "EventsPage.xaml.cs"
+                    ]
+                },
+                {
+                    "condition": "(Hierarchical)",
+                    "exclude": [
+                        "SearchPage.xaml",
+                        "SearchPage.xaml.cs",
+                        "SettingsPage.xaml",
+                        "SettingsPage.xaml.cs"
+                    ]
+                },
+                {
+                    "condition": "(Plain || Hybrid)",
+                    "exclude": [
+                        "NewEventPage.xaml",
+                        "NewEventPage.xaml.cs",
+                        "DateTimePicker.xaml",
+                        "DateTimePicker.xaml.cs",
+                        "SearchPage.xaml",
+                        "SearchPage.xaml.cs",
+                        "SettingsPage.xaml",
+                        "SettingsPage.xaml.cs"
+                    ]
+                }
+            ]
+        }
+    ],
+    "preferNameDirectory": true,
+    "guids": [
+        "E3234856-C63F-46B8-A907-866DE058A7C1",
+        "81a9fb0a-63f5-4ef6-b38e-0cf88600102a"
+    ],
+    "symbols": {
+        "applicationId": {
+            "type": "parameter",
+            "description": "Overrides the App Identifier of the project",
+            "datatype": "string",
+            "replaces": "com.companyname.mauiAppId"
+        },
+        "design-pattern": {
+            "type": "parameter",
+            "datatype": "choice",
+            "defaultValue": "Plain",
+            "description": "Option to choose the application design pattern.",
+            "choices": [
+                {
+                    "choice": "Plain",
+                    "description": "App configured to work with a single, initial screen."
+                },
+                {
+                    "choice": "Hierarchical",
+                    "description": "App configured to work in a hierarchical pattern using NavigationPage."
+                },
+                {
+                    "choice": "Tab",
+                    "description": "App configured to work in a Tabbed fashion using TabbedPage."
+                },
+                {
+                    "choice": "Shell",
+                    "description": "App configured to work with Routes using Shell page."
+                },
+                {
+                    "choice": "Hybrid",
+                    "description": "App configured to work in a Hybrid fashion using BlazorWebView."
+                }
+            ]
+        },
+        "include-toolkit-ui": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add and configure CommunityToolkit.Maui NuGet package reference."
+        },
+        "include-markup-ui": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add CommunityToolkit.Maui.Markup NuGet package reference."
+        },
+        "include-toolkit": {
+            "type": "parameter",
+            "datatype": "choice",
+            "defaultValue": "No",
+            "description": "Option to add and configure CommunityToolkit.Maui NuGet package reference.",
+            "choices": [
+                {
+                    "choice": "Yes",
+                    "description": "Add package reference."
+                },
+                {
+                    "choice": "No",
+                    "description": "Skip adding reference, the default option."
+                }
+            ]
+        },
+        "include-markup": {
+            "type": "parameter",
+            "datatype": "choice",
+            "defaultValue": "No",
+            "description": "Option to add CommunityToolkit.Maui.Markup NuGet package reference.",
+            "choices": [
+                {
+                    "choice": "Yes",
+                    "description": "Add package reference."
+                },
+                {
+                    "choice": "No",
+                    "description": "Skip adding reference, the default option."
+                }
+            ]
+        },
+        "includeToolkitLower": {
+            "type": "generated",
+            "generator": "casing",
+            "parameters": {
+                "source": "include-toolkit",
+                "toLower": true
+            }
+        },
+        "includeMarkupLower": {
+            "type": "generated",
+            "generator": "casing",
+            "parameters": {
+                "source": "include-markup",
+                "toLower": true
+            }
+        },
+        "nameLower": {
+            "type": "generated",
+            "generator": "casing",
+            "parameters": {
+                "source": "name",
+                "toLower": true
+            },
+            "replaces": "mauiAppId"
+        },
+        "designPatternLower": {
+            "type": "generated",
+            "generator": "casing",
+            "parameters": {
+                "source": "design-pattern",
+                "toLower": true
+            }
+        },
+        "Plain": {
+            "type": "computed",
+            "value": "(design-pattern == \"Plain\" || designPatternLower == \"plain\")"
+        },
+        "Hierarchical": {
+            "type": "computed",
+            "value": "(design-pattern == \"Hierarchical\" || designPatternLower == \"hierarchical\")"
+        },
+        "Tabbed": {
+            "type": "computed",
+            "value": "(design-pattern == \"Tab\" || designPatternLower == \"tab\")"
+        },
+        "Shell": {
+            "type": "computed",
+            "value": "(design-pattern == \"Shell\" || designPatternLower == \"shell\")"
+        },
+        "Hybrid": {
+            "type": "computed",
+            "value": "(design-pattern == \"Hybrid\" || designPatternLower == \"hybrid\")"
+        },
+        "AddToolkitPackage": {
+            "type": "computed",
+            "value": "(include-toolkit-ui || includeToolkitLower == \"yes\")"
+        },
+        "AddMarkupPackage": {
+            "type": "computed",
+            "value": "(include-markup-ui || includeMarkupLower == \"yes\")"
+        },
+        "HostIdentifier": {
+            "type": "bind",
+            "binding": "HostIdentifier"
+        }
+    },
+    "primaryOutputs": [
+        {
+            "path": "MauiApp1.csproj"
+        }
+    ]
+}
