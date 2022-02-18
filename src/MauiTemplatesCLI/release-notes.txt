@@ -1,10 +1,12 @@
-What's new in ver. 1.1.1:
+What's new in ver. 1.1.2:
 -------------------------
-This is a fix release, Windows target platform build issue caused by CommunityToolkit.Maui NuGet package ver. 1.0.0-pre6 has been resolved by their team with an update.
+When handling the Save button click event in the 'New Event' page, the app flow is modified such that it returns to the calling page after dismissing the Alert dialog.
 
-The dependent release version has been updated so that manual step will be avoided.
+Added .NET MAUI-themed branding icon to templates in Visual Studio IDE.
 
-Refer below for features of v1.1.0:
+Icon Courtesy: Braja Omar Justico's community contribution.
+
+Other than that, these are the features of the v1.1 series:
 
 Introduced an all-in-one .NET MAUI App project template with the ability to choose the design pattern during project creation.
 
