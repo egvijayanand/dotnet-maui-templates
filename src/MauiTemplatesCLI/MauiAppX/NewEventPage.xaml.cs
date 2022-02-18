@@ -53,7 +53,12 @@
 
         private async void OnSave(object sender, EventArgs e)
         {
-            await Application.Current?.MainPage.DisplayAlert("Add Event", "Save the event details to a data store.", "OK");
+            await Application.Current?.MainPage?.DisplayAlert("Add Event", "Save the event details to a data store.", "OK");
+#if (Hierarchical || Tabbed)
+            await Navigation.PopModalAsync();
+#else
+            await Shell.Current.GoToAsync("..");
+#endif
         }
 
         private async void OnCancel(object sender, EventArgs e)

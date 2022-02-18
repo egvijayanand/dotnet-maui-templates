@@ -28,7 +28,7 @@
     </PropertyGroup>
     <ItemGroup>
         <Content Include="MauiPage\**\*;MauiPageCS\**\*;MauiView\**\*;MauiViewCS\**\*;MauiShell\**\*;MauiClassLib\**\*;MauiAppX\**\*"
-                 Exclude="**\bin\**;**\obj\**;**\ide\*"/>
+                 Exclude="**\bin\**;**\obj\**"/>
         <Compile Remove="**\*"/>
         <None Include="overview.md" Pack="true" PackagePath="\" />
     </ItemGroup>
