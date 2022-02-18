@@ -96,13 +96,15 @@ This comes with with the following templates:
 
 Name | Template Name | Type
 :---: | :---: | :---:
-All-in-One .NET MAUI App | mauiapp | Project
+.NET MAUI App | mauiapp | Project
 .NET MAUI Class Library | mauiclasslib | Project
 ContentPage | maui-page | Item
 ContentPage (C#) | maui-page-cs | Item
 ContentView | maui-view | Item
 ContentView (C#) | maui-view-cs | Item
 ShellPage | maui-shell | Item
+
+![All-in-One .NET MAUI App Project Template](images/dotnetmaui-all-in-one-project-template-pinned.png)
 
 #### Parameters:
 
