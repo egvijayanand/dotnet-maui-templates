@@ -45,19 +45,19 @@ namespace MauiApp1
         {
             base.OnPropertyChanged(propertyName);
 
-            if (propertyName == nameof(Title))
+            if (propertyName == TitleProperty.PropertyName)
             {
                 lblTitle.Text = Title;
             }
-            else if (propertyName == nameof(Date))
+            else if (propertyName == DateProperty.PropertyName)
             {
                 occursOn.Date = Date;
             }
-            else if (propertyName == nameof(Time))
+            else if (propertyName == TimeProperty.PropertyName)
             {
                 occursAt.Time = Time;
             }
-            else if (propertyName == nameof(MinimumDate))
+            else if (propertyName == MinimumDateProperty.PropertyName)
             {
                 occursOn.MinimumDate = MinimumDate;
             }
