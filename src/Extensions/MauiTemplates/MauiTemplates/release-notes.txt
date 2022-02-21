@@ -1,5 +1,13 @@
-What's new in ver. 1.0.0.10:
+What's new in ver. 1.1.0.0:
 
-Templates updated to support .NET MAUI Preview 12
+Added Xaml code snippet for BlazorWebView with shortcut titled bwv with xmlns prefix as b.
 
-Added XAML only ResourceDictionary template
+Note: Adding xmlns is not supported for Xaml snippets, hence it's a manual action.
+
+In any of the Xaml file, type bwv and press tab to insert the snippet.
+
+Introduced an All-in-One .NET MAUI App Project Template.
+
+Refer to this article for more details:
+
+https://egvijayanand.in/all-in-one-dotnet-maui-app-project-template/
