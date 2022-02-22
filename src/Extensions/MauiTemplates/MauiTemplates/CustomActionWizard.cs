@@ -52,6 +52,11 @@ namespace MauiTemplates
             ThreadHelper.ThrowIfNotOnUIThread();
             ide = automationObject as DTE;
             replacementsDictionary.TryGetValue("$destinationdirectory$", out destinationFolder);
+
+            if (replacementsDictionary.ContainsKey("$MauiAppId$"))
+            {
+                replacementsDictionary["$MauiAppId$"] = replacementsDictionary["$safeprojectname$"].ToLowerInvariant();
+            }
         }
 
         public bool ShouldAddProjectItem(string filePath)
