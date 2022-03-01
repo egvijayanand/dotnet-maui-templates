@@ -5,7 +5,11 @@ We all know that .NET MAUI is an evolution of Xamarin.Forms.
 
 And now, .NET MAUI Preview 13 released on 15 Feb 2022 along with VS2022 Version 17.2.0 Preview 1.0
 
-Templates have been updated to support the latest release.
+Templates have been updated to support the latest release and is available to install from.
+
+|NuGet|VS Marketplace|
+|:---:|:---:|
+|[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/)|[![.NET MAUI Project and Item Templates - VS Marketplace](https://badgen.net/vs-marketplace/v/egvijayanand.maui-templates)](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-templates)|
 
 ### For VS2022 users:
 
@@ -74,7 +78,7 @@ And has Item Templates for:
 
 For making use of these templates cross-platform, have provided it as .NET CLI template package distributed via NuGet.
 
-[![NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/)
+[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/)
 
 Install the template package from NuGet with the below command.
 
