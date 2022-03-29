@@ -1,16 +1,6 @@
-What's new in ver. 1.1.1.0:
+What's new in ver. 1.2.0.0:
 
-Added Xaml code snippet for BlazorWebView with shortcut titled bwv (with xmlns prefix as b).
-
-In any of the Xaml files, type bwv and press the tab to insert the snippet.
-
-Note: Adding xml namespace (xmlns) implicitly is not yet supported for Xaml snippets.
-
-So in order to effectively support the BlazorWebView snippet, included the .NET MAUI Blazor namespace itself as a code snippet with a shortcut titled mb (stands for Maui Blazor).
-
-Also includes the WPF Blazor namespace as a code snippet with a shortcut titled wb.
-
-For the namespace, type the snippet shortcut in the context of the root element attribute and press tab to insert the same.
+Templates have been updated to latest .NET MAUI Preview release, Preview 14 as of Mar 2022
 
 Other features that you may give it a try:
 
