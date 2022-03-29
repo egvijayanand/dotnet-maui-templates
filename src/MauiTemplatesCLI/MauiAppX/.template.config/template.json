@@ -13,8 +13,8 @@
     ],
     "identity": "VijayAnand.MauiApp",
     "groupIdentity": "VijayAnand.MauiTemplates.App",
-    "description": "A project for creating a .NET MAUI (Preview 13) App for iOS, Android, Mac Catalyst, and WinUI.",
-    "name": ".NET MAUI App (Preview 13)",
+    "description": "A project for creating a .NET MAUI (Preview 14) App for iOS, Android, Mac Catalyst, and WinUI.",
+    "name": ".NET MAUI App (Preview 14)",
     "shortName": "mauiapp",
     "sourceName": "MauiApp1",
     "tags": {

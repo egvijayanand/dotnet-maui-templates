@@ -27,8 +27,10 @@
 
         <!-- App Identifier -->
         <ApplicationId>com.companyname.mauiAppId</ApplicationId>
+        <ApplicationId Condition="$(TargetFramework.Contains('-windows'))">81a9fb0a-63f5-4ef6-b38e-0cf88600102a</ApplicationId>
 
         <!-- Versions -->
+        <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
         <ApplicationVersion>1</ApplicationVersion>
 
         <!-- Required for C# Hot Reload -->
@@ -48,9 +50,10 @@
         <!-- App Icon -->
         <MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#512BD4"/>
         <!-- Splash Screen -->
-        <MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4"/>
+        <MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" BaseSize="128,128"/>
         <!-- Images -->
         <MauiImage Include="Resources\Images\*"/>
+        <MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
         <!-- Custom Fonts -->
         <MauiFont Include="Resources\Fonts\*"/>
         <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
@@ -67,10 +70,10 @@
     <ItemGroup>
     <!--#endif-->
         <!--#if (AddToolkitPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="1.0.0-pre7"/>
+        <PackageReference Include="CommunityToolkit.Maui" Version="1.0.0-pre8"/>
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.0.0-pre7"/>
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.0.0-pre8"/>
         <!--#endif-->
     <!--#if (AddToolkitPackage || AddMarkupPackage)-->
     </ItemGroup>

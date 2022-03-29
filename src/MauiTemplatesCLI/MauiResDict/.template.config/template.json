@@ -1,0 +1,53 @@
+{
+    "$schema": "https://json.schemastore.org/template",
+    "author": "Vijay Anand E G",
+    "defaultName": "MauiResDict1",
+    "classifications": [
+        "MAUI",
+        "Android",
+        "iOS",
+        "macOS",
+        "Windows",
+        "Xaml"
+    ],
+    "identity": "VijayAnand.MauiResDict",
+    "groupIdentity": "VijayAnand.MauiTemplates.ResDict",
+    "description": "An item template for .NET MAUI Resource Dictionary in XAML (Preview 14)",
+    "name": ".NET MAUI ResourceDictionary (Preview 14)",
+    "shortName": "maui-resdict",
+    "sourceName": "MauiResDict",
+    "tags": {
+        "language": "C#",
+        "type": "item"
+    },
+    "symbols": {
+        "namespace": {
+            "type": "parameter",
+            "replaces": "MyApp.Namespace",
+            "datatype": "text",
+            "description": "namespace for the generated code."
+        },
+        "no-code-behind": {
+            "type": "parameter",
+            "datatype": "bool",
+            "default": "false",
+            "description": "If true, the output is generated without a C# code-behind file."
+        },
+        "XamlOnly": {
+            "type": "computed",
+            "value": "(no-code-behind)"
+        }
+    },
+    "sources": [
+        {
+            "modifiers": [
+                {
+                    "condition": "(XamlOnly)",
+                    "exclude": [
+                        "MauiResDict.xaml.cs"
+                    ]
+                }
+            ]
+        }
+    ]
+}

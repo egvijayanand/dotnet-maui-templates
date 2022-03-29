@@ -1,9 +1,6 @@
 :: Installs the NuGet package
 @echo off
 
-:: Modify .NET SDK Version
-if exist global.json ren global.json global.json.bak
-
 :: Package Name
 
 if not exist PackageName.txt (call Error "Package name file not available." & goto end)
@@ -20,8 +17,11 @@ set /P packageVersion=<PackageVersion.txt
 
 if [%packageVersion%]==[] (call Error "Version # not configured." & goto end)
 
-::call Info "Package Name: %packageName%"
-::call Info "Version #: %packageVersion%"
+:: Modify .NET SDK Version
+::if exist global.json (call Error "Verify the .NET SDK Version" & goto end)
+
+call Info ".NET SDK Version"
+dotnet --version
 
 call Info "Installing the %packageName% Debug build template ver. %packageVersion% ..."
 

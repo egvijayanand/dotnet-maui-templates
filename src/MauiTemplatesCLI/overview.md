@@ -4,11 +4,18 @@ All-in-One project template for .NET MAUI App and is named as `mauiapp`
 
 .NET MAUI Class Library project template and is named as `mauiclasslib`
 
-Item templates for ContentPage, ContentView, and ShellPage in XAML, named as `maui-page`, `maui-view`, and `maui-shell` respectively.
+Item templates for the following:
 
-Item template for ContentPage and ContentView in C#, named as `maui-page-cs` and `maui-view-cs` respectively.
+|Item|Template Name|
+|:---:|:---:|
+|ContentPage (XAML)|maui-page|
+|ContentPage (C#)|maui-page-cs|
+|ContentView (XAML)|maui-view|
+|ContentView (C#)|maui-view-cs|
+|Shell (XAML)|maui-shell|
+|ResourceDictionary (XAML)|maui-resdict|
 
-All of these templates currently target `.NET MAUI Preview 13`.
+All of these templates currently target `.NET MAUI Preview 14`.
 
 To install the template NuGet package, use the below .NET CLI command:
 
@@ -97,7 +104,18 @@ Shell:
 dotnet new maui-shell -n AppShell -na MyApp
 ```
 
-Here `-n` denotes the name of the project/page/view that is to be created (for pages/views, don't need to suffix it with .xaml, it will be added automatically) (Can also be specified as `--name`).
+Resource Dictionary:
+
+With code-behind C# file:
+```shell
+dotnet new maui-resdict -n DarkTheme -na MyApp
+```
+Without code-behind C# file (Here `-ncb` | `--no-code-behind` denotes the option to exclude the C# file):
+```shell
+dotnet new maui-resdict -n DarkTheme -na MyApp -ncb
+```
+
+In all the examples, `-n` denotes the name of the project/page/view that is to be created (for pages/views, don't need to suffix it with .xaml, it will be added automatically) (Can also be specified as `--name`).
 
 *Note: If `name` parameter input is not provided, the .NET CLI template engine will take the current folder name in the context as its name (default behavior).*
 

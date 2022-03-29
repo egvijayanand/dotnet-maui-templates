@@ -1,9 +1,6 @@
 :: Removes the installed project template
 @echo off
 
-:: Modify .NET SDK Version
-if exist global.json ren global.json global.json.bak
-
 :: Package Name
 
 if not exist PackageName.txt (call Error "Package name file not available." & goto end)
@@ -12,7 +9,8 @@ set /P packageName=<PackageName.txt
 
 if [%packageName%]==[] (call Error "Package name not configured." & goto end)
 
-::echo Package Name: %packageName%
+:: Modify .NET SDK Version
+::if exist global.json (call Error "Verify the .NET SDK Version" & goto end)
 
 call Info ".NET SDK Version"
 dotnet --version
