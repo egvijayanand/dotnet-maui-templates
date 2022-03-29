@@ -223,7 +223,6 @@
       <VSIXSubPath>ItemTemplates\MAUI</VSIXSubPath>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <None Include="Assets\VijayAnand.MauiTemplates.1.1.3.nupkg" />
     <Content Include="MauiSnippets\CSharp\asyncMethod.snippet">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -240,6 +239,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <None Include="Assets\VijayAnand.MauiTemplates.1.2.0.nupkg" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
       <Generator>VsixManifestGenerator</Generator>
