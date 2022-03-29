@@ -24,10 +24,10 @@
     <ItemGroup>
     <!--#endif-->
         <!--#if (AddToolkitPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="1.0.0-pre7"/>
+        <PackageReference Include="CommunityToolkit.Maui" Version="1.0.0-pre8"/>
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.0.0-pre7"/>
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.0.0-pre8"/>
         <!--#endif-->
     <!--#if (AddToolkitPackage || AddMarkupPackage)-->
     </ItemGroup>

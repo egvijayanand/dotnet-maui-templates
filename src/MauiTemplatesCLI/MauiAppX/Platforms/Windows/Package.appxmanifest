@@ -6,15 +6,10 @@
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
   IgnorableNamespaces="uap rescap">
 
-  <Identity
-    Name="81a9fb0a-63f5-4ef6-b38e-0cf88600102a"
-    Publisher="CN=User Name"
-    Version="1.0.0.0" />
+  <Identity Publisher="CN=User Name" />
 
   <Properties>
-    <DisplayName>MauiApp1</DisplayName>
-    <PublisherDisplayName>Microsoft</PublisherDisplayName>
-    <Logo>appiconStoreLogo.png</Logo>
+    <PublisherDisplayName>User Name</PublisherDisplayName>
   </Properties>
 
   <Dependencies>
@@ -30,24 +25,7 @@
     <Application Id="App"
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
-      <uap:VisualElements
-        DisplayName="MauiApp1"
-        Description="MauiApp1"
-        BackgroundColor="transparent"
-        Square150x150Logo="appiconMediumTile.png"
-        Square44x44Logo="appiconLogo.png">
-        <uap:DefaultTile
-          Wide310x150Logo="appiconWideTile.png"
-          Square71x71Logo="appiconSmallTile.png"
-          Square310x310Logo="appiconLargeTile.png"
-          ShortName="MauiApp1">
-          <uap:ShowNameOnTiles>
-            <uap:ShowOn Tile="square150x150Logo"/>
-            <uap:ShowOn Tile="wide310x150Logo"/>
-          </uap:ShowNameOnTiles>
-        </uap:DefaultTile >
-        <uap:SplashScreen Image="appiconfgSplashScreen.png" />
-      </uap:VisualElements>
+      <uap:VisualElements />
     </Application>
   </Applications>
 

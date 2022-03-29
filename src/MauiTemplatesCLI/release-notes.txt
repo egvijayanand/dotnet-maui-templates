@@ -1,39 +1,5 @@
-What's new in ver. 1.1.3:
+What's new in ver. 1.2.0:
 -------------------------
-CommunityToolkit.Maui.Markup NuGet package version updated to 1.0.0-pre7, the one compatible with Preview 13.
+Introduced an item template for .NET MAUI Resource Dictionary (Option to create with or without C# code-behind file).
 
-Other than that, these are the features of the v1.1 series:
-
-Introduced an all-in-one .NET MAUI App project template with the ability to choose the design pattern during project creation.
-
-Introduced the ability to include CommunityToolkit.Maui and CommunityToolkit.Maui.Markup NuGet package reference while creating a new .NET MAUI App.
-
-These options are controlled by the below parameters:
-
--dp | --design-pattern
-
-Can take any one of the following values, with default option set to Plain:
-
-Plain        - App configured to work with a single, initial screen.
-Hierarchical - App configured to work in a hierarchical pattern using NavigationPage.
-Tab          - App configured to work in a Tabbed fashion using TabbedPage.
-Shell        - App configured to work with Routes using Shell page.
-Hybrid       - App configured to work in a Hybrid fashion using BlazorWebView.
-
--it | --include-toolkit
-
-Can be any of the following values: Yes | No
-
--it | --include-markup
-
-Can be any of the following values: Yes | No
-
-For more details: run this command in the terminal:
-
-dotnet new mauiapp --help
-
-Known Limitations:
-------------------
-While using the .NET CLI Templates within Visual Studio IDE, the last used values of the project options like the above ones are retained in the consecutive iteration rather than defaulting to their original values as defined by the developer.
-
-Have already reported this issue to the VS product team and is actively being followed up, until this is clarified / fixed, requesting the users to make of this feature with bit of caution.
+Templates have been updated to .NET MAUI Preview 14, latest release as of Mar 2022.

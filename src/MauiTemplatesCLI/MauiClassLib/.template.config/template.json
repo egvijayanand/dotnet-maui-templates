@@ -14,14 +14,17 @@
     ],
     "identity": "VijayAnand.MauiClassLib",
     "groupIdentity": "VijayAnand.MauiTemplates.Library",
-    "description": "A project template for .NET MAUI Class Library (Preview 13)",
-    "name": ".NET MAUI Class Library (Preview 13)",
+    "description": "A project template for .NET MAUI Class Library (Preview 14)",
+    "name": ".NET MAUI Class Library (Preview 14)",
     "shortName": "mauiclasslib",
     "sourceName": "MauiClassLib",
     "tags": {
         "language": "C#",
         "type": "project"
     },
+    "guids": [
+        "AE77891F-8A16-49C9-8887-1EF9692988CE"
+    ],
     "symbols": {
         "include-toolkit-ui": {
             "type": "parameter",
@@ -67,6 +70,12 @@
                 }
             ]
         },
+        "no-solution-file": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to skip creating a solution file."
+        },
         "includeToolkitLower": {
             "type": "generated",
             "generator": "casing",
@@ -90,11 +99,27 @@
         "AddMarkupPackage": {
             "type": "computed",
             "value": "(include-markup-ui || includeMarkupLower == \"yes\")"
+        },
+        "HostIdentifier": {
+            "type": "bind",
+            "binding": "HostIdentifier"
         }
     },
     "primaryOutputs": [
         {
             "path": "Class1.cs"
+        }
+    ],
+    "sources": [
+        {
+            "modifiers": [
+                {
+                    "condition": "(no-solution-file || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
+                    "exclude": [
+                        "MauiClassLib.sln"
+                    ]
+                }
+            ]
         }
     ]
 }
