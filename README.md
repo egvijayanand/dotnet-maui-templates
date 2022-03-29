@@ -3,7 +3,7 @@ This repository is to host the .NET MAUI Project Templates, Item Templates and C
 
 We all know that .NET MAUI is an evolution of Xamarin.Forms.
 
-And now, .NET MAUI Preview 13 released on 15 Feb 2022 along with VS2022 Version 17.2.0 Preview 1.0
+And now, .NET MAUI Preview 14 released on 16 Mar 2022 along with VS2022 Version 17.2.0 Preview 2.0
 
 Templates have been updated to support the latest release and is available to install from.
 
@@ -21,9 +21,9 @@ Extension is made available in the [Visual Studio Marketplace](https://marketpla
 
 This has Project Templates for:
 
-* .NET MAUI App (Preview 13) - An All-in-One .NET MAUI App Project Template - For more details, check out this [article](https://egvijayanand.in/all-in-one-dotnet-maui-app-project-template/)
-* .NET MAUI App (C#) (Preview 13)
-* .NET MAUI Class Library (Preview 13)
+* .NET MAUI App (Preview 14) - An All-in-One .NET MAUI App Project Template - For more details, check out this [article](https://egvijayanand.in/all-in-one-dotnet-maui-app-project-template/)
+* .NET MAUI App (C#) (Preview 14)
+* .NET MAUI Class Library (Preview 14)
 
 ![Create Project - Visual Studio](images/maui-project-templates.png)
 
@@ -46,31 +46,6 @@ C# Snippets for Properties such as Attached, Bindable, ViewModel and Comet (MVU 
 Types such as `record` and `record struct`.
 
 Snippets for Method definition, Event Handler definition (async version also).
-
-![Add New Item dialog - Visual Studio](images/add-new-item.png)
-
-### For VS2019 users:
-
-Now, ContentPage is completely moved into .NET MAUI world with a brand new xml namespace and using directive.
-
-So that the existing Xamarin.Forms item templates cannot be used as is from now on and modifying it every time is painful.
-
-Hence have created a VS extension exclusively to be used with .NET MAUI projects.
-
-Grab these templates from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-item-templates) and even more easier, can be installed from within Visual Studio itself (Extensions -> Manage Extensions / Alt + X + M)
-
-This has a Project Template for:
-
-* .NET MAUI Class Library (Preview 10)
-
-And has Item Templates for:
-
-* Content Page (.NET MAUI)
-* Content Page (C#) (.NET MAUI)
-* Content View (.NET MAUI)
-* Content View (C#) (.NET MAUI)
-* Resource Dictionary (.NET MAUI)
-* Shell Page (.NET MAUI)
 
 ![Add New Item dialog - Visual Studio](images/add-new-item.png)
 
@@ -238,3 +213,28 @@ Shell:
 ```shell
 dotnet new maui-shell --name AppShell --namespace MyApp
 ```
+
+### For VS2019 users:
+
+Now, ContentPage is completely moved into .NET MAUI world with a brand new xml namespace and using directive.
+
+So that the existing Xamarin.Forms item templates cannot be used as is from now on and modifying it every time is painful.
+
+Hence have created a VS extension exclusively to be used with .NET MAUI projects.
+
+Grab these templates from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-item-templates) and even more easier, can be installed from within Visual Studio itself (Extensions -> Manage Extensions / Alt + X + M)
+
+This has a Project Template for:
+
+* .NET MAUI Class Library (Preview 10)
+
+And has Item Templates for:
+
+* Content Page (.NET MAUI)
+* Content Page (C#) (.NET MAUI)
+* Content View (.NET MAUI)
+* Content View (C#) (.NET MAUI)
+* Resource Dictionary (.NET MAUI)
+* Shell Page (.NET MAUI)
+
+![Add New Item dialog - Visual Studio](images/add-new-item.png)
