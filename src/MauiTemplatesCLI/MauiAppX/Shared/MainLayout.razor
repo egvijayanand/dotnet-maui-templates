@@ -1,4 +1,5 @@
 ﻿@inherits LayoutComponentBase
+@inject IAppInfo appInfo
 
 <div class="page">
 	<div class="sidebar">
@@ -6,7 +7,7 @@
 	</div>
 
 	<main>
-		<div class="top-row px-4">
+		<div class="top-row px-4" style="@divStyle">
 			<a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
 		</div>
 
@@ -15,3 +16,18 @@
 		</article>
 	</main>
 </div>
+
+@code {
+	private string? divStyle;
+
+	protected override void OnInitialized()
+	{
+		base.OnInitialized();
+
+		divStyle = appInfo.RequestedTheme switch
+		{
+			AppTheme.Dark => "background-color: #1f1f1f;",
+			_ => "background-color: #f7f7f7;"
+		};
+	}
+}

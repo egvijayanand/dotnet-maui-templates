@@ -12,13 +12,13 @@
     ],
     "identity": "VijayAnand.MauiViewCS",
     "groupIdentity": "VijayAnand.MauiTemplates.View.Code",
-    "description": "An item template for .NET MAUI ContentView in C# (Preview 14)",
-    "name": ".NET MAUI ContentView (C#) (Preview 14)",
+    "description": "An item template for .NET MAUI ContentView in C# (RC1)",
+    "name": ".NET MAUI ContentView (C#) (RC1)",
     "shortName": "maui-view-cs",
     "sourceName": "MauiView",
     "primaryOutputs": [
         {
-            "path": "MauiView.xaml.cs"
+            "path": "MauiView.cs"
         }
     ],
     "tags": {

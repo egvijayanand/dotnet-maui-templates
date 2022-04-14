@@ -51,12 +51,15 @@
             }
         }
 
+        protected override bool OnBackButtonPressed() => false;
+
         private async void OnSave(object sender, EventArgs e)
         {
-            await Application.Current?.MainPage?.DisplayAlert("Add Event", "Save the event details to a data store.", "OK");
 #if (Hierarchical || Tabbed)
+            await Application.Current?.MainPage?.DisplayAlert("Add Event", "Save the event details to a data store.", "OK");
             await Navigation.PopModalAsync();
 #else
+            await Shell.Current.DisplayAlert("Add Event", "Save the event details to a data store.", "OK");
             await Shell.Current.GoToAsync("..");
 #endif
         }

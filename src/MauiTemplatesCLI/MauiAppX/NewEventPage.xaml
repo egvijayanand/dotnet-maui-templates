@@ -5,7 +5,9 @@
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:local="clr-namespace:MauiApp1"
              Title="New Event"
-             BackgroundColor="{DynamicResource SecondaryColor}">
+             Shell.PresentationMode="ModalAnimated"
+             Padding="{OnPlatform iOS={StaticResource ApplePadding},
+                                  Default={StaticResource DefaultPadding}}">
     <ContentPage.Content>
         <StackLayout>
             <Entry Text=""

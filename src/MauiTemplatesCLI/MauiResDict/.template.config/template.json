@@ -12,10 +12,15 @@
     ],
     "identity": "VijayAnand.MauiResDict",
     "groupIdentity": "VijayAnand.MauiTemplates.ResDict",
-    "description": "An item template for .NET MAUI Resource Dictionary in XAML (Preview 14)",
-    "name": ".NET MAUI ResourceDictionary (Preview 14)",
+    "description": "An item template for .NET MAUI Resource Dictionary in XAML (RC1)",
+    "name": ".NET MAUI ResourceDictionary (RC1)",
     "shortName": "maui-resdict",
     "sourceName": "MauiResDict",
+    "primaryOutputs": [
+        {
+            "path": "MauiResDict.xaml"
+        }
+    ],
     "tags": {
         "language": "C#",
         "type": "item"

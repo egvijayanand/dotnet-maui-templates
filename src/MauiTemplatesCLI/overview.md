@@ -15,7 +15,7 @@ Item templates for the following:
 |Shell (XAML)|maui-shell|
 |ResourceDictionary (XAML)|maui-resdict|
 
-All of these templates currently target `.NET MAUI Preview 14`.
+All of these templates currently target `.NET MAUI RC1`, latest release as of Apr 2022.
 
 To install the template NuGet package, use the below .NET CLI command:
 
