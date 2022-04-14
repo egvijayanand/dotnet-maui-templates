@@ -19,7 +19,7 @@
         <NoWarn>$(NoWarn);NU5128</NoWarn>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/egvijayanand/dotnet-maui-templates</RepositoryUrl>
-        <PackageTags>MAUI, Mobile, iOS, Android, WinUI3, Mac;Catalyst, macOS, VS;Code, .NET;MAUI, Desktop, Windows, WinUI, Preview;13, Templates, Shell, Class;Library, Visual;Studio;Code, Library</PackageTags>
+        <PackageTags>MAUI, Mobile, iOS, Android, WinUI3, Mac;Catalyst, macOS, VS;Code, .NET;MAUI, Desktop, Windows, WinUI, RC1, Templates, Shell, Class;Library, Visual;Studio;Code, Library</PackageTags>
         <PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)/release-notes.txt"))</PackageReleaseNotes>
         <PackageReadmeFile>overview.md</PackageReadmeFile>
         <PackageProjectUrl>https://egvijayanand.in/</PackageProjectUrl>

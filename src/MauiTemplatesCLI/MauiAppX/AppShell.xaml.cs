@@ -6,6 +6,11 @@
         {
             InitializeComponent();
             // Register the routes of the detail pages
+            RegisterRoutes();
+        }
+
+        private void RegisterRoutes()
+        {
             Routing.RegisterRoute("newevent", typeof(NewEventPage));
         }
 

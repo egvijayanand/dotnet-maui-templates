@@ -14,8 +14,8 @@
     ],
     "identity": "VijayAnand.MauiClassLib",
     "groupIdentity": "VijayAnand.MauiTemplates.Library",
-    "description": "A project template for .NET MAUI Class Library (Preview 14)",
-    "name": ".NET MAUI Class Library (Preview 14)",
+    "description": "A project template for .NET MAUI Class Library (RC1)",
+    "name": ".NET MAUI Class Library (RC1)",
     "shortName": "mauiclasslib",
     "sourceName": "MauiClassLib",
     "tags": {

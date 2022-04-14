@@ -2,8 +2,7 @@
 <ContentView x:Class="MauiApp1.DateTimePicker"
              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:MauiApp1"
-             BackgroundColor="White">
+             xmlns:local="clr-namespace:MauiApp1">
     <ContentView.Content>
         <Grid ColumnDefinitions="45,Auto,Auto">
             <Label Grid.Column="0"
