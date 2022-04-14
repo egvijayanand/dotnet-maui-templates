@@ -1,6 +1,7 @@
 ﻿@page "/fetchdata"
 
 @using MauiApp1.Data
+@inject IAppInfo appInfo
 @inject WeatherForecastService ForecastService
 
 <h1>Weather forecast</h1>
@@ -13,7 +14,7 @@
 }
 else
 {
-	<table class="table">
+	<table class="@tableStyle">
 		<thead>
 			<tr>
 				<th>Date</th>
@@ -37,10 +38,18 @@ else
 }
 
 @code {
-	private WeatherForecast[] forecasts;
+	private WeatherForecast[]? forecasts;
+
+	private string? tableStyle;
 
 	protected override async Task OnInitializedAsync()
 	{
+		tableStyle = appInfo.RequestedTheme switch
+		{
+			AppTheme.Dark => "table table-dark",
+			_ => "table"
+		};
+
 		forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
 	}
 }

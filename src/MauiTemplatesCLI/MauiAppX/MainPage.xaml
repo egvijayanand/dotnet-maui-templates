@@ -33,7 +33,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MauiApp1"
-             x:Class="MauiApp1.MainPage">
+             x:Class="MauiApp1.MainPage"
+             Title="Calendar">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center"
                      VerticalOptions="Center">
@@ -78,7 +79,6 @@
 
             <Button
                 Clicked="OnCounterClicked"
-                FontAttributes="Bold"
                 HorizontalOptions="Center"
                 SemanticProperties.Hint="Counts the number of times you click"
                 Style="{StaticResource PrimaryAction}"

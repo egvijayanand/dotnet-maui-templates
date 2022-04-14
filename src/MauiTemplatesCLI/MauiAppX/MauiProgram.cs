@@ -22,12 +22,14 @@ namespace MauiApp1
                    .ConfigureFonts(fonts =>
                    {
                        fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                       fonts.AddFont("OpenSans-SemiBold.ttf", "OpenSansSemiBold");
                    });
 
 #if Hybrid
             builder.Services.AddMauiBlazorWebView();
             // Caution: Recommended to enable Developer Tools only for development!!!
             builder.Services.AddBlazorWebViewDeveloperTools();
+            builder.Services.AddSingleton(AppInfo.Current);
             builder.Services.AddSingleton<WeatherForecastService>();
 #endif
 

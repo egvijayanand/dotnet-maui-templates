@@ -51,6 +51,8 @@
             }
         }
 
+        protected override bool OnBackButtonPressed() => false;
+
         private async void OnSave(object sender, EventArgs e)
         {
 #if (Hierarchical || Tabbed)
