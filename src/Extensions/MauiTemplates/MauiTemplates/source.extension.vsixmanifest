@@ -4,18 +4,18 @@
                  xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
         <Identity Id="MauiTemplates.20dca96a-7311-401f-84ed-980478fb319b"
-                  Version="1.2.0.0"
+                  Version="1.3.0.0"
                   Language="en-US"
                   Publisher="Vijay Anand E G"/>
         <DisplayName>.NET MAUI Project and Item Templates</DisplayName>
-        <Description xml:space="preserve">.NET MAUI Project, Item Templates, and Code Snippets for Visual Studio 2022 (.NET MAUI Preview 14).</Description>
-        <MoreInfo>https://github.com/egvijayanand/dotnet-maui-templates</MoreInfo>
+        <Description xml:space="preserve">.NET MAUI Project, Item Templates, and Code Snippets for Visual Studio 2022 (.NET MAUI RC1).</Description>
+        <MoreInfo>https://egvijayanand.in/all-in-one-dotnet-maui-app-project-template/</MoreInfo>
         <License>license.txt</License>
         <GettingStartedGuide>readme.rtf</GettingStartedGuide>
         <ReleaseNotes>release-notes.txt</ReleaseNotes>
         <Icon>Resources\Icon.png</Icon>
         <PreviewImage>Resources\Icon.png</PreviewImage>
-        <Tags>MAUI, iOS, Android, macOS, WinUI, Windows, Desktop, Mobile, Blazor, WinUI, .NET MAUI, Mac Catalyst, Templates, VS2022, Visual Studio, WinUI3, Preview 14, Code Snippets, Unified, All-in-One, Hybrid</Tags>
+        <Tags>MAUI, iOS, Android, macOS, WinUI, Windows, Desktop, Mobile, Blazor, WinUI, .NET MAUI, Mac Catalyst, Templates, VS2022, Visual Studio, WinUI3, RC1, Code Snippets, Unified, All-in-One, Hybrid</Tags>
         <Preview>true</Preview>
     </Metadata>
     <Installation>
@@ -34,7 +34,7 @@
         <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor"
                       Version="[17.2,)"
                       DisplayName="Visual Studio core editor"/>
-        <Prerequisite Id="Microsoft.VisualStudio.ComponentGroup.Maui.All" Version="[17.2.32310.305,18.0)" DisplayName=".NET MAUI (Preview)" />
+        <Prerequisite Id="Microsoft.VisualStudio.ComponentGroup.Maui.All" Version="[17.2.32408.312,18.0)" DisplayName=".NET MAUI (Preview)" />
     </Prerequisites>
     <Assets>
         <Asset Type="Microsoft.VisualStudio.ItemTemplate"
