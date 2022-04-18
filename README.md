@@ -7,6 +7,8 @@ And now, Production supported .NET MAUI RC1 released on 12 Apr 2022 along with V
 
 Templates have been updated to support the latest release and is available to install from.
 
+Join me on [**Developer Thoughts**](https://egvijayanand.in/), an exclusive blog for .NET MAUI and Blazor, for articles on working with these templates and much more.
+
 |NuGet|VS Marketplace|
 |:---:|:---:|
 |[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/)|[![.NET MAUI Project and Item Templates - VS Marketplace](https://badgen.net/vs-marketplace/v/egvijayanand.maui-templates)](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-templates)|
@@ -214,7 +216,7 @@ Shell:
 ```shell
 dotnet new maui-shell --name AppShell --namespace MyApp
 ```
-
+<!--
 ### For VS2019 users:
 
 Now, ContentPage is completely moved into .NET MAUI world with a brand new xml namespace and using directive.
@@ -239,3 +241,4 @@ And has Item Templates for:
 * Shell Page (.NET MAUI)
 
 ![Add New Item dialog - Visual Studio](images/add-new-item.png)
+-->
