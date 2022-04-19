@@ -8,7 +8,7 @@
             <!-- Additional Styles -->
             <!--#if (!(Plain && Hybrid))-->
             <Thickness x:Key="ApplePadding">30,60,30,30</Thickness>
-            <Thickness x:Key="DefaultPadding">30,60,30,30</Thickness>
+            <Thickness x:Key="DefaultPadding">30</Thickness>
             <!--#endif-->
 
             <x:Double x:Key="ItemSpacing">10</x:Double>

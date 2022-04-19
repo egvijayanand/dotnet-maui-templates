@@ -28,7 +28,11 @@ namespace MauiApp1
 #if Hybrid
             builder.Services.AddMauiBlazorWebView();
             // Caution: Recommended to enable Developer Tools only for development!!!
+//-:cnd:noEmit
+#if DEBUG
             builder.Services.AddBlazorWebViewDeveloperTools();
+#endif
+//+:cnd:noEmit
             builder.Services.AddSingleton(AppInfo.Current);
             builder.Services.AddSingleton<WeatherForecastService>();
 #endif
