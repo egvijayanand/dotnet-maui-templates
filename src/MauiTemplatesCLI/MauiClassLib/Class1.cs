@@ -2,6 +2,7 @@
 {
     public class Class1
     {
+//-:cnd:noEmit
 #if ANDROID
         // Code block for Android
 #elif IOS
@@ -11,5 +12,6 @@
 #elif WINDOWS
         // Code block for Windows
 #endif
+//+:cnd:noEmit
     }
 }

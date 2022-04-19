@@ -1,5 +1,9 @@
-What's new in ver. 1.3.0:
+What's new in ver. 1.3.1:
 -------------------------
 Templates have been updated to .NET MAUI RC1, latest release as of Apr 2022.
 
 Added Theming support for .NET MAUI Blazor Hybrid App project.
+
+Conditionally enabled the BlazorWebView Developer Tools for crafting a pixel-perfect UI.
+
+Included a VS Code Workspace file with the project to work seamlessly across IDEs.

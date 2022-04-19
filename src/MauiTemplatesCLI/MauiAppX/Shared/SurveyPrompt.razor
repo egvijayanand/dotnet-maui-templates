@@ -1,14 +1,20 @@
 ﻿@inject IAppInfo appInfo
 
 <div class="@alertStyle">
-	<span class="oi oi-pencil me-2" aria-hidden="true"></span>
+	<div class="card-text p-3">
+		<p>
+			<span class="oi oi-pencil me-2" aria-hidden="true" style="display: inline;"></span>
 	<strong>@Title</strong>
-
-	<span class="text-nowrap">
+		</p>
+		<p>
+			<span class="text-nowrap" style="display: inline;">
 		Please take our
-		<a target="_blank" class="font-weight-bold" href="https://go.microsoft.com/fwlink/?linkid=2149017">brief survey</a>
+				<a target="_blank" class="font-weight-bold" href="https://go.microsoft.com/fwlink/?linkid=2149017">brief
+					survey</a>
 	</span>
 	and tell us what you think.
+		</p>
+	</div>
 </div>
 
 @code {
@@ -22,8 +28,8 @@
 	{
 		alertStyle = appInfo.RequestedTheme switch
 		{
-			AppTheme.Dark => "alert alert-dark mt-4",
-			_ => "alert alert-secondary mt-4"
+			AppTheme.Dark => "card bg-dark text-white mt-3",
+			_ => "card bg-light text-dark mt-3"
 		};
 	}
 }
