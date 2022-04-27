@@ -1,7 +1,7 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
 	<TemplateData>
-		<Name>.NET MAUI App (C#) (Preview 12)</Name>
-		<Description>A project for creating a .NET MAUI application, in C#, for iOS, Android, Mac Catalyst, and Windows</Description>
+		<Name>.NET MAUI App (C#) (RC2)</Name>
+		<Description>A project for creating a .NET MAUI application, in C#, for iOS, Android, Mac Catalystm, Tizen, and Windows</Description>
 		<ProjectType>CSharp</ProjectType>
 		<ProjectSubType>MAUI</ProjectSubType>
 		<SortOrder>110</SortOrder>
@@ -11,7 +11,7 @@
 		<LocationField>Enabled</LocationField>
 		<EnableLocationBrowseButton>true</EnableLocationBrowseButton>
 		<CreateInPlace>true</CreateInPlace>
-		<Icon>__TemplateIcon.ico</Icon>
+		<Icon>Icon.png</Icon>
 		<LanguageTag>CSharp</LanguageTag>
 		<PlatformTag>Android</PlatformTag>
 		<PlatformTag>iOS</PlatformTag>
@@ -21,6 +21,7 @@
 		<ProjectTypeTag>MAUI</ProjectTypeTag>
 		<ProjectTypeTag>Mac Catalyst</ProjectTypeTag>
 		<ProjectTypeTag>Mobile</ProjectTypeTag>
+		<ProjectTypeTag>Tizen</ProjectTypeTag>
 		<ProjectTypeTag>WinUI</ProjectTypeTag>
 	</TemplateData>
 	<TemplateContent>
@@ -46,6 +47,10 @@
 					<ProjectItem ReplaceParameters="false" TargetFileName="Info.plist">Info.plist</ProjectItem>
 					<ProjectItem ReplaceParameters="true" TargetFileName="Program.cs">Program.cs</ProjectItem>
 				</Folder>
+				<Folder Name="Tizen" TargetFolderName="Tizen">
+					<ProjectItem ReplaceParameters="true" TargetFileName="Main.cs">Main.cs</ProjectItem>
+					<ProjectItem ReplaceParameters="true" TargetFileName="tizen-manifest.xml">tizen-manifest.xml</ProjectItem>
+				</Folder>
 				<Folder Name="Windows" TargetFolderName="Windows">
 					<ProjectItem ReplaceParameters="true" TargetFileName="app.manifest">app.manifest</ProjectItem>
 					<ProjectItem ReplaceParameters="true" TargetFileName="App.xaml">App.xaml</ProjectItem>
@@ -59,20 +64,28 @@
 			<Folder Name="Resources" TargetFolderName="Resources">
 				<Folder Name="Fonts" TargetFolderName="Fonts">
 					<ProjectItem ReplaceParameters="false" TargetFileName="OpenSans-Regular.ttf">OpenSans-Regular.ttf</ProjectItem>
+					<ProjectItem ReplaceParameters="false" TargetFileName="OpenSans-SemiBold.ttf">OpenSans-SemiBold.ttf</ProjectItem>
 				</Folder>
 				<Folder Name="Images" TargetFolderName="Images">
 					<ProjectItem ReplaceParameters="false" TargetFileName="dotnet_bot.svg">dotnet_bot.svg</ProjectItem>
 				</Folder>
 				<ProjectItem ReplaceParameters="false" TargetFileName="appicon.svg">appicon.svg</ProjectItem>
 				<ProjectItem ReplaceParameters="false" TargetFileName="appiconfg.svg">appiconfg.svg</ProjectItem>
+				<ProjectItem ReplaceParameters="true" TargetFileName="Styles.xaml">Styles.xaml</ProjectItem>
+				<ProjectItem ReplaceParameters="true" TargetFileName="Styles.xaml.cs">Styles.xaml.cs</ProjectItem>
 			</Folder>
 			<ProjectItem ReplaceParameters="true" TargetFileName="App.cs">App.cs</ProjectItem>
+			<ProjectItem ReplaceParameters="true" TargetFileName="Imports.cs">Imports.cs</ProjectItem>
 			<ProjectItem ReplaceParameters="true" TargetFileName="MainPage.cs">MainPage.cs</ProjectItem>
 			<ProjectItem ReplaceParameters="true" TargetFileName="MauiProgram.cs">MauiProgram.cs</ProjectItem>
+			<ProjectItem ReplaceParameters="true" TargetFileName="MauiAppCS.code-workspace">MauiAppCS.code-workspace</ProjectItem>
 		</Project>
+		<CustomParameters>
+			<CustomParameter Name="$MauiAppId$" Value=""/>
+		</CustomParameters>
 	</TemplateContent>
-	<!-- <WizardExtension>
-		<Assembly>VijayAnand.MauiTemplates, Version=1.0.0.1, Culture=neutral, PublicKeyToken=7550554040ebdd44</Assembly>
+	<WizardExtension>
+		<Assembly>VijayAnand.MauiTemplates, Version=1.4.0.0, Culture=neutral, PublicKeyToken=7550554040ebdd44</Assembly>
 		<FullClassName>MauiTemplates.CustomActionWizard</FullClassName>
-	</WizardExtension> -->
+	</WizardExtension>
 </VSTemplate>
