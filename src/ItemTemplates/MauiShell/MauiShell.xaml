@@ -1,26 +1,26 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <Shell x:Class="$rootnamespace$.$safeitemname$"
        xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:$rootnamespace$">
-	<!--
-	    The overall app visual hierarchy is defined here, along with navigation.
-		Ensure atleast a Flyout item or a TabBar is defined for Shell to work
+    <!--
+        The overall app visual hierarchy is defined here, along with navigation.
+        Ensure atleast a Flyout item or a TabBar is defined for Shell to work
     -->
-	<Shell.Resources>
-	<!--
-		Define the resources to be used within this Shell visual hierarchy
+    <Shell.Resources>
+    <!--
+        Define the resources to be used within this Shell visual hierarchy
     -->
-	</Shell.Resources>
-	<!--
+    </Shell.Resources>
+    <!--
         When the Flyout is visible this defines the content to display in the flyout.
         FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element
     -->
-	<!--
+    <!--
         Uncomment the below section to enable Shell Flyout item(s)
         And ensure appropriate page definitions are available for it work as expected
     -->
-	<!--
+    <!--
     <FlyoutItem Title="Home">
         <ShellContent ContentTemplate="{DataTemplate local:HomePage}" Route="home" />
     </FlyoutItem>
@@ -28,33 +28,33 @@
         <ShellContent ContentTemplate="{DataTemplate local:SearchPage}" Route="search" />
     </FlyoutItem>
     -->
-	<!--
+    <!--
         When the Flyout is visible this will be a menu item you can tie a click behavior to
     -->
-	<!--
+    <!--
         Uncomment the below section to enable Menu item(s)
         And ensure appropriate page definitions are available for it work as expected
     -->
-	<!--
+    <!--
     <MenuItem Clicked="OnMenuItemClicked" Text="Logout" />
     -->
-	<!--
+    <!--
         TabBar lets you define content that won't show up in a Flyout menu. When this content is active
         the flyout menu won't be available. This is useful for creating areas of the application where
         you don't want users to be able to navigate away from. If you would like to navigate to this
         content you can do so by calling
         await Shell.Current.GoToAsync("//login");
     -->
-	<!--
+    <!--
         Uncomment the below section to enable TabBar item(s)
         And ensure appropriate page definitions are available for it work as expected
     -->
-	<!--
+    <!--
     <TabBar>
         <ShellContent ContentTemplate="{DataTemplate local:LoginPage}" Route="login" />
     </TabBar>
     -->
-	<!-- Optional Templates
+    <!-- Optional Templates
     // These may be provided inline as below or as separate classes.
 
     // This header appears at the top of the Flyout

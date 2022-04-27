@@ -3,7 +3,7 @@ This repository is to host the .NET MAUI Project Templates, Item Templates and C
 
 We all know that .NET MAUI is an evolution of Xamarin.Forms.
 
-And now, Production supported .NET MAUI RC1 released on 12 Apr 2022 along with VS2022 Version 17.2.0 Preview 3.0, almost ready for GA.
+And now, Production supported .NET MAUI RC2 released on 27 Apr 2022 along with VS2022 Version 17.2.0 Preview 5.0, inching closer to GA.
 
 Templates have been updated to support the latest release and is available to install from.
 
@@ -23,9 +23,9 @@ Extension is made available in the [Visual Studio Marketplace](https://marketpla
 
 This has Project Templates for:
 
-* .NET MAUI App (RC1) - An All-in-One .NET MAUI App Project Template - For more details, check out this [article](https://egvijayanand.in/all-in-one-dotnet-maui-app-project-template/)
-* .NET MAUI App (C#) (RC1)
-* .NET MAUI Class Library (RC1)
+* .NET MAUI App (RC2) - An All-in-One .NET MAUI App Project Template - For more details, check out this [article](https://egvijayanand.in/all-in-one-dotnet-maui-app-project-template/)
+* .NET MAUI App (C#) (RC2)
+* .NET MAUI Class Library (RC2)
 
 ![Create Project - Visual Studio](images/maui-project-templates.png)
 
@@ -101,14 +101,15 @@ In .NET CLI, all of these templates takes two parameters:
 
     The namespace for the generated files.
 
-* Now with more options while creating the class library project, ability to include NuGet packages on the fly for `CommunityToolkit.Maui`, `CommunityToolkit.Maui.Markup`, or both.
+* Now with more options while creating the app or class library project, ability to include NuGet packages on the fly for `CommunityToolkit.Maui`, `CommunityToolkit.Maui.Markup`, `CommunityToolkit.Mvvm` or all.
 
 *Note: Parameter values are case-insensitive.*
 
-Both project templates take the below optional parameters to include the official CommunityToolkit NuGet packages:
+Both project templates take the below optional parameters to include the officially supported CommunityToolkit NuGet packages:
 
 * `-it` | `--include-toolkit` - Accepted Values are `Yes` or `No` (default is `No`)
 * `-im` | `--include-markup` - Accepted Values are `Yes` or `No` (default is `No`)
+* `-imt` | `--include-mvvm-toolkit` - Accepted Values are `Yes` or `No` (default is `No`)
 
 All-in-One .NET MAUI App project takes one additional parameter to define the application design pattern:
 
@@ -147,7 +148,7 @@ dotnet new mauiapp -n MyApp -dp Hybrid
 ```
 Option to include NuGet packages:
 ```shell
-dotnet new mauiapp -n MyApp -dp Shell -it yes -im yes
+dotnet new mauiapp -n MyApp -dp Shell -it yes -im yes -imt yes
 ```
 
 .NET MAUI Class Library:
@@ -156,7 +157,7 @@ dotnet new mauiclasslib -n MyApp.Core
 ```
 Option to include NuGet packages:
 ```shell
-dotnet new mauiclasslib -n MyApp.Core -it yes -im yes
+dotnet new mauiclasslib -n MyApp.Core -it yes -im yes -imt yes
 ```
 
 Pages:
@@ -188,7 +189,7 @@ dotnet new mauiapp --name MyApp --design-pattern Hybrid
 ```
 Option to include NuGet packages:
 ```shell
-dotnet new mauiapp --name MyApp --design-pattern Shell --include-toolkit yes --include-markup yes
+dotnet new mauiapp --name MyApp --design-pattern Shell --include-toolkit yes --include-markup yes --include-mvvm-toolkit yes
 ```
 
 .NET MAUI Class Library:
@@ -196,7 +197,7 @@ dotnet new mauiapp --name MyApp --design-pattern Shell --include-toolkit yes --i
 dotnet new mauiclasslib --name MyApp.Core
 ```
 ```shell
-dotnet new mauiclasslib --name MyApp.Core --include-toolkit yes --include-markup yes
+dotnet new mauiclasslib --name MyApp.Core --include-toolkit yes --include-markup yes --include-mvvm-toolkit yes
 ```
 Pages:
 ```shell
