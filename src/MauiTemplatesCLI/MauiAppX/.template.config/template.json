@@ -8,13 +8,14 @@
         "iOS",
         "macOS",
         "Mac Catalyst",
+        "Tizen",
         "WinUI",
         "Windows"
     ],
     "identity": "VijayAnand.MauiApp",
     "groupIdentity": "VijayAnand.MauiTemplates.App",
-    "description": "A project for creating a .NET MAUI (RC1) App for iOS, Android, Mac Catalyst, and WinUI.",
-    "name": ".NET MAUI App (RC1)",
+    "description": "A project for creating a .NET MAUI (RC2) App for iOS, Android, Mac Catalyst, Tizen, and WinUI.",
+    "name": ".NET MAUI App (RC2)",
     "shortName": "mauiapp",
     "sourceName": "MauiApp1",
     "tags": {
@@ -147,6 +148,12 @@
             "defaultValue": "false",
             "description": "Option to add CommunityToolkit.Maui.Markup NuGet package reference."
         },
+        "include-mvvm-toolkit-ui": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add CommunityToolkit.Mvvm (aka Microsoft MVVM Toolkit) NuGet package reference."
+        },
         "include-toolkit": {
             "type": "parameter",
             "datatype": "choice",
@@ -179,6 +186,22 @@
                 }
             ]
         },
+        "include-mvvm-toolkit": {
+            "type": "parameter",
+            "datatype": "choice",
+            "defaultValue": "No",
+            "description": "Option to add CommunityToolkit.Mvvm (aka Microsoft MVVM Toolkit) NuGet package reference.",
+            "choices": [
+                {
+                    "choice": "Yes",
+                    "description": "Add package reference."
+                },
+                {
+                    "choice": "No",
+                    "description": "Skip adding reference, the default option."
+                }
+            ]
+        },
         "includeToolkitLower": {
             "type": "generated",
             "generator": "casing",
@@ -192,6 +215,14 @@
             "generator": "casing",
             "parameters": {
                 "source": "include-markup",
+                "toLower": true
+            }
+        },
+        "includeMvvmToolkitLower": {
+            "type": "generated",
+            "generator": "casing",
+            "parameters": {
+                "source": "include-mvvm-toolkit",
                 "toLower": true
             }
         },
@@ -239,6 +270,10 @@
         "AddMarkupPackage": {
             "type": "computed",
             "value": "(include-markup-ui || includeMarkupLower == \"yes\")"
+        },
+        "AddMvvmToolkitPackage": {
+            "type": "computed",
+            "value": "(include-mvvm-toolkit-ui || includeMvvmToolkitLower == \"yes\")"
         },
         "HostIdentifier": {
             "type": "bind",

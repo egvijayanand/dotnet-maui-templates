@@ -6,6 +6,9 @@
     },
     "include-markup-ui": {
       "isHidden": true
+    },
+    "include-mvvm-toolkit-ui": {
+      "isHidden": true
     }
   }
 }

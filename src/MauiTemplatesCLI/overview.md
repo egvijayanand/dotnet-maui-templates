@@ -15,7 +15,7 @@ Item templates for the following:
 |Shell (XAML)|maui-shell|
 |ResourceDictionary (XAML)|maui-resdict|
 
-All of these templates currently target `.NET MAUI RC1`, latest release as of Apr 2022.
+All of these templates currently target `.NET MAUI RC2`, latest release as of Apr 2022.
 
 To install the template NuGet package, use the below .NET CLI command:
 
@@ -40,6 +40,7 @@ Both project templates take the below optional parameters to include the officia
 
 * `-it` | `--include-toolkit` - Accepted Values are `Yes` or `No` (default is `No`)
 * `-im` | `--include-markup` - Accepted Values are `Yes` or `No` (default is `No`)
+* `-imt` | `--include-mvvm-toolkit` - Accepted Values are `Yes` or `No` (default is `No`)
 
 All-in-One .NET MAUI App project takes one additional parameter to define the application design pattern:
 
@@ -71,7 +72,7 @@ dotnet new mauiapp -n MyApp -dp Hybrid
 ```
 Option to include NuGet packages:
 ```shell
-dotnet new mauiapp -n MyApp -dp Shell -it yes -im yes
+dotnet new mauiapp -n MyApp -dp Shell -it yes -im yes -imt yes
 ```
 
 .NET MAUI Class Library:
@@ -80,7 +81,7 @@ dotnet new mauiclasslib -n MyApp.Core
 ```
 Option to include NuGet packages:
 ```shell
-dotnet new mauiclasslib -n MyApp.Core -it yes -im yes
+dotnet new mauiclasslib -n MyApp.Core -it yes -im yes -imt yes
 ```
 
 Pages:
