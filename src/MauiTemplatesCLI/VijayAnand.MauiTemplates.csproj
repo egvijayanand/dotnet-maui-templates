@@ -9,7 +9,7 @@
         <Title>.NET MAUI Templates</Title>
         <Authors>Vijay Anand E G</Authors>
         <Copyright>Copyright &#169; 2022 Vijay Anand E G</Copyright>
-        <Description>Project and Item templates for developing .NET MAUI App that runs on iOS, Android, macOS and Windows</Description>
+        <Description>Project and Item templates for developing .NET MAUI App that runs on iOS, Android, macOS, Tizen, and Windows</Description>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <IncludeContentInPack>true</IncludeContentInPack>
         <IncludeBuildOutput>false</IncludeBuildOutput>
@@ -19,7 +19,7 @@
         <NoWarn>$(NoWarn);NU5128</NoWarn>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/egvijayanand/dotnet-maui-templates</RepositoryUrl>
-        <PackageTags>MAUI, Mobile, iOS, Android, WinUI3, Mac;Catalyst, macOS, VS;Code, .NET;MAUI, Desktop, Windows, WinUI, RC1, Templates, Shell, Class;Library, Visual;Studio;Code, Library</PackageTags>
+        <PackageTags>MAUI, Mobile, iOS, Android, WinUI3, Mac;Catalyst, macOS, VS;Code, .NET;MAUI, Desktop, Windows, WinUI, RC2, Templates, Shell, Class;Library, Visual;Studio;Code, Library, Tizen</PackageTags>
         <PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)/release-notes.txt"))</PackageReleaseNotes>
         <PackageReadmeFile>overview.md</PackageReadmeFile>
         <PackageProjectUrl>https://egvijayanand.in/</PackageProjectUrl>

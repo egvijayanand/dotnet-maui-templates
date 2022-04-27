@@ -1,9 +1,13 @@
-What's new in ver. 1.3.1:
+What's new in ver. 1.4.0:
 -------------------------
-Templates have been updated to .NET MAUI RC1, latest release as of Apr 2022.
+Templates have been updated to .NET MAUI RC2, latest release as of Apr 2022.
 
-Added Theming support for .NET MAUI Blazor Hybrid App project.
+VS Code Workspace file included the project is made hidden while working with Visual Studio.
 
-Conditionally enabled the BlazorWebView Developer Tools for crafting a pixel-perfect UI.
+Project templates updated to include Tizen platform artifacts
 
-Included a VS Code Workspace file with the project to work seamlessly across IDEs.
+Included an option to reference CommunityToolkit.Mvvm (aka Microsoft MVVM Toolkit) NuGet package while creating the project.
+
+More details on this exciting MVVM Toolkit here:
+
+https://egvijayanand.in/2022/04/22/mvvm-made-easy/

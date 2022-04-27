@@ -12,8 +12,8 @@
     ],
     "identity": "VijayAnand.MauiResDict",
     "groupIdentity": "VijayAnand.MauiTemplates.ResDict",
-    "description": "An item template for .NET MAUI Resource Dictionary in XAML (RC1)",
-    "name": ".NET MAUI ResourceDictionary (RC1)",
+    "description": "An item template for .NET MAUI Resource Dictionary in XAML (RC2)",
+    "name": ".NET MAUI ResourceDictionary (RC2)",
     "shortName": "maui-resdict",
     "sourceName": "MauiResDict",
     "primaryOutputs": [
