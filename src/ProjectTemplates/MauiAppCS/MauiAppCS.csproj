@@ -2,7 +2,7 @@
     <PropertyGroup>
         <!-- Android, iOS, MacCatalyst -->
         <TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
-        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net6.0-windows10.0.19041</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net6.0-windows10.0.19041.0</TargetFrameworks>
         <!-- Uncomment to also build the Tizen app. You will need to install Tizen by following this: https://github.com/Samsung/Tizen.NET -->
         <!-- <TargetFrameworks>$(TargetFrameworks);net6.0-tizen</TargetFrameworks> -->
         <OutputType>Exe</OutputType>
@@ -57,7 +57,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.0.0-rc1"/>
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.0.0-rc2"/>
         <PackageReference Include="VijayAnand.MauiToolkit" Version="1.0.0-pre8"/>
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0-preview3"/>
     </ItemGroup>

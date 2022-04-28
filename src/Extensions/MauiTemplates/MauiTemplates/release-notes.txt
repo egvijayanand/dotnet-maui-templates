@@ -1,5 +1,7 @@
-What's new in ver. 1.4.0.0:
+What's new in ver. 1.4.1.0:
 ---------------------------
+Service release on top v1.4.0.0 - CommunityToolkit.Maui and CommunityToolkit.Maui.Markup package versions bumped to v1.0.0-rc2
+
 Templates have been updated to .NET MAUI RC2, latest release as of Apr 2022.
 
 VS Code Workspace file included the project is made hidden while working with Visual Studio.
