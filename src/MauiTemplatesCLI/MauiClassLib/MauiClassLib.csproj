@@ -33,10 +33,10 @@
     <ItemGroup>
     <!--#endif-->
         <!--#if (AddToolkitPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="1.0.0-rc1"/>
+        <PackageReference Include="CommunityToolkit.Maui" Version="1.0.0-rc2"/>
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.0.0-rc1"/>
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.0.0-rc2"/>
         <!--#endif-->
         <!--#if (AddMvvmToolkitPackage)-->
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0-preview3"/>
