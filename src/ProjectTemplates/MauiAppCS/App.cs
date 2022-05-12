@@ -11,6 +11,7 @@
 
         private void Build()
         {
+            Resources.Add(new Colors());
             Resources.Add(new Styles());
             Resources.Add("MauiLabel", new Style(typeof(Label))
             {

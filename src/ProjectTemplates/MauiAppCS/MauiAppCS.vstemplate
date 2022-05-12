@@ -1,6 +1,6 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
 	<TemplateData>
-		<Name>.NET MAUI App (C#) (RC2)</Name>
+		<Name>.NET MAUI App (C#) (RC3)</Name>
 		<Description>A project for creating a .NET MAUI application, in C#, for iOS, Android, Mac Catalystm, Tizen, and Windows</Description>
 		<ProjectType>CSharp</ProjectType>
 		<ProjectSubType>MAUI</ProjectSubType>
@@ -71,6 +71,8 @@
 				</Folder>
 				<ProjectItem ReplaceParameters="false" TargetFileName="appicon.svg">appicon.svg</ProjectItem>
 				<ProjectItem ReplaceParameters="false" TargetFileName="appiconfg.svg">appiconfg.svg</ProjectItem>
+				<ProjectItem ReplaceParameters="true" TargetFileName="Colors.xaml">Colors.xaml</ProjectItem>
+				<ProjectItem ReplaceParameters="true" TargetFileName="Colors.xaml.cs">Colors.xaml.cs</ProjectItem>
 				<ProjectItem ReplaceParameters="true" TargetFileName="Styles.xaml">Styles.xaml</ProjectItem>
 				<ProjectItem ReplaceParameters="true" TargetFileName="Styles.xaml.cs">Styles.xaml.cs</ProjectItem>
 			</Folder>
@@ -85,7 +87,7 @@
 		</CustomParameters>
 	</TemplateContent>
 	<WizardExtension>
-		<Assembly>VijayAnand.MauiTemplates, Version=1.4.0.0, Culture=neutral, PublicKeyToken=7550554040ebdd44</Assembly>
+		<Assembly>VijayAnand.MauiTemplates, Version=1.5.0.0, Culture=neutral, PublicKeyToken=7550554040ebdd44</Assembly>
 		<FullClassName>MauiTemplates.CustomActionWizard</FullClassName>
 	</WizardExtension>
 </VSTemplate>
