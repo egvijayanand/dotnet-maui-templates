@@ -14,8 +14,8 @@
     ],
     "identity": "VijayAnand.MauiApp",
     "groupIdentity": "VijayAnand.MauiTemplates.App",
-    "description": "A project for creating a .NET MAUI (RC2) App for iOS, Android, Mac Catalyst, Tizen, and WinUI.",
-    "name": ".NET MAUI App (RC2)",
+    "description": "A project for creating a .NET MAUI (RC3) App for iOS, Android, Mac Catalyst, Tizen, and WinUI.",
+    "name": ".NET MAUI App (RC3)",
     "shortName": "mauiapp",
     "sourceName": "MauiApp1",
     "tags": {
