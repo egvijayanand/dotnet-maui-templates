@@ -1,18 +1,6 @@
-What's new in ver. 1.4.1.0:
+What's new in ver. 1.5.0.0:
 ---------------------------
-Service release on top v1.4.0.0 - CommunityToolkit.Maui and CommunityToolkit.Maui.Markup package versions bumped to v1.0.0-rc2
-
-Templates have been updated to .NET MAUI RC2, latest release as of Apr 2022.
-
-VS Code Workspace file included the project is made hidden while working with Visual Studio.
-
-Project templates updated to include Tizen platform artifacts.
-
-Included an option to reference CommunityToolkit.Mvvm (aka Microsoft MVVM Toolkit) NuGet package while creating the project.
-
-More details on this exciting MVVM Toolkit here:
-
-https://egvijayanand.in/2022/04/22/mvvm-made-easy/
+Templates have been updated to .NET MAUI RC3, the latest release as of May 2022.
 
 Other features that you may give it a try:
 

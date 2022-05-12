@@ -4,29 +4,31 @@
                  xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
         <Identity Id="MauiTemplates.20dca96a-7311-401f-84ed-980478fb319b"
-                  Version="1.4.1.0"
+                  Version="1.5.0.0"
                   Language="en-US"
                   Publisher="Vijay Anand E G"/>
         <DisplayName>.NET MAUI Project and Item Templates</DisplayName>
-        <Description xml:space="preserve">.NET MAUI Project, Item Templates, and Code Snippets for Visual Studio 2022 (.NET MAUI RC2).</Description>
+        <Description xml:space="preserve">.NET MAUI Project, Item Templates, and Code Snippets for Visual Studio 2022 (.NET MAUI RC3).</Description>
         <MoreInfo>https://egvijayanand.in/2022/04/20/all-in-one-dotnet-maui-app-project-template-what-is-new/</MoreInfo>
         <License>license.txt</License>
         <GettingStartedGuide>readme.rtf</GettingStartedGuide>
         <ReleaseNotes>release-notes.txt</ReleaseNotes>
         <Icon>Resources\Icon.png</Icon>
         <PreviewImage>Resources\Icon.png</PreviewImage>
-        <Tags>MAUI, iOS, Android, macOS, WinUI, Windows, Desktop, Mobile, Blazor, WinUI, .NET MAUI, Mac Catalyst, Templates, VS2022, Visual Studio, WinUI3, RC2, Code Snippets, Unified, All-in-One, Hybrid, Tizen</Tags>
+        <Tags>MAUI, iOS, Android, macOS, WinUI, Windows, Desktop, Mobile, Blazor, WinUI, .NET MAUI, Mac Catalyst, Templates, VS2022, Visual Studio, WinUI3, RC3, Code Snippets, Unified, All-in-One, Hybrid, Tizen</Tags>
         <Preview>true</Preview>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community"
-                            Version="[17.2, 18.0)">
+                            Version="[17.3, 18.0)">
             <ProductArchitecture>amd64</ProductArchitecture>
         </InstallationTarget>
-        <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[17.2, 18.0)">
+        <InstallationTarget Id="Microsoft.VisualStudio.Pro"
+                            Version="[17.3, 18.0)">
             <ProductArchitecture>amd64</ProductArchitecture>
         </InstallationTarget>
-        <InstallationTarget Id="Microsoft.VisualStudio.Enterprise" Version="[17.2, 18.0)">
+        <InstallationTarget Id="Microsoft.VisualStudio.Enterprise"
+                            Version="[17.3, 18.0)">
             <ProductArchitecture>amd64</ProductArchitecture>
         </InstallationTarget>
     </Installation>
@@ -34,18 +36,20 @@
         <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor"
                       Version="[17.2,)"
                       DisplayName="Visual Studio core editor"/>
-        <Prerequisite Id="Microsoft.VisualStudio.ComponentGroup.Maui.All" Version="[17.2.32408.312,18.0)" DisplayName=".NET MAUI (Preview)" />
+        <Prerequisite Id="Microsoft.VisualStudio.ComponentGroup.Maui.All"
+                      Version="[17.3.32505.122,18.0)"
+                      DisplayName=".NET MAUI"/>
     </Prerequisites>
     <Assets>
         <Asset Type="Microsoft.VisualStudio.ItemTemplate"
                d:Source="File"
                Path="ItemTemplates"
-               TargetVersion="[17.2, 18.0)"
+               TargetVersion="[17.3, 18.0)"
                d:TargetPath="ItemTemplates\MauiPageCS.zip"/>
         <Asset Type="Microsoft.VisualStudio.ItemTemplate"
                d:Source="File"
                Path="ItemTemplates"
-               TargetVersion="[17.2, 18.0)"
+               TargetVersion="[17.3, 18.0)"
                d:TargetPath="ItemTemplates\MauiPageXaml.zip"/>
         <Asset Type="Microsoft.VisualStudio.VsPackage"
                d:Source="Project"
@@ -54,35 +58,41 @@
         <Asset Type="Microsoft.VisualStudio.ItemTemplate"
                d:Source="File"
                Path="ItemTemplates"
-               TargetVersion="[17.2, 18.0)"
+               TargetVersion="[17.3, 18.0)"
                d:TargetPath="ItemTemplates\MauiViewXaml.zip"/>
         <Asset Type="Microsoft.VisualStudio.ItemTemplate"
                d:Source="File"
                Path="ItemTemplates"
-               TargetVersion="[17.2, 18.0)"
+               TargetVersion="[17.3, 18.0)"
                d:TargetPath="ItemTemplates\MauiViewCS.zip"/>
         <Asset Type="Microsoft.VisualStudio.ItemTemplate"
                d:Source="File"
                Path="ItemTemplates"
-               TargetVersion="[17.2, 18.0)"
+               TargetVersion="[17.3, 18.0)"
                d:TargetPath="ItemTemplates\MauiShell.zip"/>
         <Asset Type="Microsoft.VisualStudio.ItemTemplate"
                d:Source="File"
                Path="ItemTemplates"
-               TargetVersion="[17.2, 18.0)"
+               TargetVersion="[17.3, 18.0)"
                d:TargetPath="ItemTemplates\MauiResDict.zip"/>
         <Asset Type="Microsoft.VisualStudio.ProjectTemplate"
                d:Source="File"
                Path="ProjectTemplates"
-               TargetVersion="[17.2, 18.0)"
+               TargetVersion="[17.3, 18.0)"
                d:TargetPath="ProjectTemplates\MauiAppCS.zip"/>
         <Asset Type="Microsoft.VisualStudio.ItemTemplate"
                d:Source="File"
                Path="ItemTemplates"
-               TargetVersion="[17.2, 18.0)"
+               TargetVersion="[17.3, 18.0)"
                d:TargetPath="ItemTemplates\MauiResDictXaml.zip"/>
-        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="File" Path="MauiCSharpSnippets.pkgdef" />
-        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="File" Path="MauiXamlSnippets.pkgdef" />
-        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="File" Path="NuGetTemplates.pkgdef" />
+        <Asset Type="Microsoft.VisualStudio.VsPackage"
+               d:Source="File"
+               Path="MauiCSharpSnippets.pkgdef"/>
+        <Asset Type="Microsoft.VisualStudio.VsPackage"
+               d:Source="File"
+               Path="MauiXamlSnippets.pkgdef"/>
+        <Asset Type="Microsoft.VisualStudio.VsPackage"
+               d:Source="File"
+               Path="NuGetTemplates.pkgdef"/>
     </Assets>
 </PackageManifest>
