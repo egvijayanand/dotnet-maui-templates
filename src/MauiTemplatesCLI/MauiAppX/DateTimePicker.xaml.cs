@@ -41,7 +41,7 @@ namespace MauiApp1
             set => SetValue(MinimumDateProperty, value);
         }
 
-        protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        protected override void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
             base.OnPropertyChanged(propertyName);
 

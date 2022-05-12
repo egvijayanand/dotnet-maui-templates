@@ -4,7 +4,11 @@
              xmlns:local="clr-namespace:MauiApp1"
              x:Class="MauiApp1.App">
     <Application.Resources>
-        <ResourceDictionary Source="Resources/Styles.xaml">
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
             <!-- Additional Styles -->
             <!--#if (!(Plain && Hybrid))-->
             <Thickness x:Key="ApplePadding">30,60,30,30</Thickness>

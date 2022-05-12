@@ -9,6 +9,8 @@
         // Code block for iOS
 #elif MACCATALYST
         // Code block for Mac Catalyst
+#elif TIZEN
+        // Code block for Tizen
 #elif WINDOWS
         // Code block for Windows
 #endif
