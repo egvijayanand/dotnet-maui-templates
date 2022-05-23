@@ -26,6 +26,7 @@ This has Project Templates for:
 * .NET MAUI App (RC3) - An All-in-One .NET MAUI App Project Template - For more details, check out this [article](https://egvijayanand.in/all-in-one-dotnet-maui-app-project-template/)
 * .NET MAUI App (C#) (RC3)
 * .NET MAUI Class Library (RC3)
+* Shared Class Library (Xamarin.Forms and .NET MAUI)
 
 ![Create Project - Visual Studio](images/maui-project-templates.png)
 
@@ -78,6 +79,7 @@ Name | Template Name | Type
 :---: | :---: | :---:
 .NET MAUI App | mauiapp | Project
 .NET MAUI Class Library | mauiclasslib | Project
+Shared Class Library | sharedclasslib | Project
 ContentPage | maui-page | Item
 ContentPage (C#) | maui-page-cs | Item
 ContentView | maui-view | Item
@@ -105,7 +107,7 @@ In .NET CLI, all of these templates takes two parameters:
 
 *Note: Parameter values are case-insensitive.*
 
-Both project templates take the below optional parameters to include the officially supported CommunityToolkit NuGet packages:
+Both .NET MAUI App and Class Library templates take the below optional parameters to include the officially supported CommunityToolkit NuGet packages:
 
 * `-it` | `--include-toolkit` - Accepted Values are `Yes` or `No` (default is `No`)
 * `-im` | `--include-markup` - Accepted Values are `Yes` or `No` (default is `No`)
@@ -117,7 +119,6 @@ All-in-One .NET MAUI App project takes one additional parameter to define the ap
 
 Can take any one of the following values, with default value set to `Plain`:
 
-
 |Parameter Value|Description|
 |:---:|:---|
 |Plain|App configured to work with a single, initial screen.|
@@ -126,6 +127,23 @@ Can take any one of the following values, with default value set to `Plain`:
 |Shell|App configured to work with Routes using Shell page.|
 |Hybrid|App configured to work in a Hybrid fashion using BlazorWebView.|
 
+Shared Class Library template take the below optional parameters to include the officially supported NuGet packages:
+
+Specific to Xamarin.Forms:
+
+* `-ife` | `--include-forms-essentials` - Default is `false`
+* `-ift` | `--include-forms-toolkit` - Default is `false`
+* `-ifm` | `--include-forms-markup` - Default is `false`
+
+Specific to .NET MAUI:
+
+* `-imt` | `--include-maui-toolkit` - Default is `false`
+* `-imm` | `--include-maui-markup` - Default is `false`
+
+Common to both:
+
+* `-inmt` | `--include-mvvm-toolkit` - Default is `false`
+
 For more details: run this command in the terminal (use `-h` to save some keystrokes):
 
 ```shell
@@ -133,6 +151,9 @@ dotnet new mauiapp --help
 ```
 ```shell
 dotnet new mauiclasslib --help
+```
+```shell
+dotnet new sharedclasslib --help
 ```
 
 #### Usage:
@@ -158,6 +179,15 @@ dotnet new mauiclasslib -n MyApp.Core
 Option to include NuGet packages:
 ```shell
 dotnet new mauiclasslib -n MyApp.Core -it yes -im yes -imt yes
+```
+
+Shared Class Library:
+```shell
+dotnet new sharedclasslib -n MyApp.UI
+```
+Option to include NuGet packages:
+```shell
+dotnet new sharedclasslib -n MyApp.UI -ife -ift -ifm -imt -imm -inmt
 ```
 
 Pages:
