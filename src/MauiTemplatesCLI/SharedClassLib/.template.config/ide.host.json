@@ -1,0 +1,54 @@
+{
+    "$schema": "http://json.schemastore.org/vs-2017.3.host",
+    "icon": "ide/icon.png",
+    "symbolInfo": [
+        {
+            "id": "include-forms-essentials",
+            "name": {
+                "text": "Add Xamarin._Essentials NuGet package reference"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
+            "id": "include-forms-toolkit",
+            "name": {
+                "text": "Add _Xamarin.CommunityToolkit. NuGet package reference"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
+            "id": "include-forms-markup",
+            "name": {
+                "text": "Add Xamarin._CommunityToolkit.Markup NuGet package reference"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        }
+        {
+            "id": "include-maui-toolkit",
+            "name": {
+                "text": "Add Community_Toolkit.Maui NuGet package reference"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
+            "id": "include-maui-markup",
+            "name": {
+                "text": "Add CommunityToolkit.Maui._Markup NuGet package reference"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
+            "id": "include-mvvm-toolkit",
+            "name": {
+                "text": "Add CommunityToolkit.Mvvm (aka Microsoft MV_VM Toolkit) NuGet package reference"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        }
+    ]
+}

@@ -1,0 +1,121 @@
+{
+    "$schema": "https://json.schemastore.org/template",
+    "author": "Vijay Anand E G",
+    "defaultName": "SharedClassLib1",
+    "classifications": [
+        "MAUI",
+        "Android",
+        "iOS",
+        "macOS",
+        "Mac Catalyst",
+        "Tizen",
+        "WinUI",
+        "UWP",
+        "Windows",
+        "Xamarin",
+        "Xamarin.Forms",
+        "Library"
+    ],
+    "identity": "VijayAnand.SharedClassLib",
+    "groupIdentity": "VijayAnand.MauiTemplates.Library.Shared",
+    "description": "A project template for Shared Class Library (Xamarin.Forms and .NET MAUI)",
+    "name": "Shared Class Library (Xamarin.Forms and .NET MAUI)",
+    "shortName": "sharedclasslib",
+    "sourceName": "SharedClassLib",
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "guids": [
+        "EA69D029-EF28-47BB-88FE-F5835B1E854E"
+    ],
+    "symbols": {
+        "include-forms-essentials": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add Xamarin.Essentials NuGet package reference.",
+            "displayName": "Add Xamarin._Essentials NuGet package reference"
+        },
+        "include-forms-toolkit": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add Xamarin.CommunityToolkit NuGet package reference.",
+            "displayName": "Add _Xamarin.CommunityToolkit NuGet package reference"
+        },
+        "include-forms-markup": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add Xamarin.CommunityToolkit.Markup NuGet package reference.",
+            "displayName": "Add Xamarin._CommunityToolkit.Markup NuGet package reference"
+        },
+        "include-maui-toolkit": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add CommunityToolkit.Maui NuGet package reference.",
+            "displayName": "Add Community_Toolkit.Maui NuGet package reference"
+        },
+        "include-maui-markup": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add CommunityToolkit.Maui.Markup NuGet package reference.",
+            "displayName": "Add CommunityToolkit.Maui._Markup NuGet package reference"
+        },
+        "include-mvvm-toolkit": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add CommunityToolkit.Mvvm (aka Microsoft MVVM Toolkit) NuGet package reference.",
+            "displayName": "Add CommunityToolkit.Mvvm (aka Microsoft MV_VM Toolkit) NuGet package reference"
+        },
+        "AddFormsEssentials": {
+            "type": "computed",
+            "value": "(include-forms-essentials)"
+        },
+        "AddFormsToolkit": {
+            "type": "computed",
+            "value": "(include-forms-toolkit)"
+        },
+        "AddFormsMarkup": {
+            "type": "computed",
+            "value": "(include-forms-markup)"
+        },
+        "AddMauiToolkit": {
+            "type": "computed",
+            "value": "(include-maui-toolkit)"
+        },
+        "AddMauiMarkup": {
+            "type": "computed",
+            "value": "(include-maui-markup)"
+        },
+        "AddMvvmToolkit": {
+            "type": "computed",
+            "value": "(include-mvvm-toolkit)"
+        },
+        "HostIdentifier": {
+            "type": "bind",
+            "binding": "HostIdentifier"
+        }
+    },
+    "primaryOutputs": [
+        {
+            "path": "Imports.shared.cs"
+        }
+    ],
+    "sources": [
+        {
+            "modifiers": [
+                {
+                    "condition": "(!(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
+                    "exclude": [
+                        "SharedClassLib.sln"
+                    ]
+                }
+            ]
+        }
+    ]
+}
