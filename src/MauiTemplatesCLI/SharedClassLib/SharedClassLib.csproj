@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>SharedClassLib</RootNamespace>
+        <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+        <DefineConstants>$(DefineConstants);FORMS</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(TargetFramework)' == 'net6.0'">
+        <UseMaui>true</UseMaui>
+        <SingleProject>true</SingleProject>
+        <DefineConstants>$(DefineConstants);MAUI</DefineConstants>
+    </PropertyGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+        <Compile Include="**\*.shared.cs;**\*.logic.cs;**\*.forms.cs" />
+        <None Include="**\*.maui.cs" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+        <Compile Include="**\*.shared.cs;**\*.logic.cs;**\*.maui.cs" />
+        <None Include="**\*.forms.cs" />
+    </ItemGroup>
+
+    <!-- Xamarin.Forms NuGet packages -->
+    <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
+        <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
+        <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.2" />
+        <PackageReference Include="Xamarin.CommunityToolkit.Markup" Version="2.0.2" />
+    </ItemGroup>
+
+    <!-- .NET MAUI NuGet packages -->
+    <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+        <PackageReference Include="CommunityToolkit.Maui" Version="1.0.0-rc3" />
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.0.0-rc3" />
+    </ItemGroup>
+
+    <!-- Common NuGet packages -->
+    <ItemGroup>
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0-preview3" />
+    </ItemGroup>
+
+</Project>

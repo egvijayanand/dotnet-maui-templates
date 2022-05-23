@@ -1,5 +1,17 @@
-What's new in ver. 1.5.0:
+What's new in ver. 1.6.0:
 -------------------------
-Templates have been updated to .NET MAUI RC3, latest release as of May 2022.
+Included a Project Template for creating a Shared Class Library that produces assemblies targeting Xamarin.Forms and .NET MAUI.
+
+With C# Markup, Global usings and Compiler directives, both Xamarin.Forms and .NET MAUI can be targeted from single project.
+
+dotnet new sharedclasslib --name MySharedLib
+
+In which:
+
+*.forms.cs source files will be specific to Xamarin.Forms
+*.maui.cs source files will be specific to .NET MAUI
+*.shared.cs / *.logic.s will be common to both Xamarin.Forms and .NET MAUI
+
+Refer to VijayAnand.Toolkit.Markup NuGet package source made available here https://github.com/egvijayanand/dotnet-maui-toolkit for a sample.
 
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
