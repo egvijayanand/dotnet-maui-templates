@@ -12,11 +12,11 @@ global using Microsoft.Maui.Devices.Sensors;
 global using Microsoft.Maui.Media;
 global using Microsoft.Maui.Networking;
 global using Microsoft.Maui.Storage;
-
-// CommunityToolkit usings
+#if AddMauiToolkit
 global using CommunityToolkit.Maui;
+#endif
+#if AddMauiToolkit
 global using CommunityToolkit.Maui.Markup;
-
-// Static usings
 global using static CommunityToolkit.Maui.Markup.GridRowsColumns;
+#endif
 global using static Microsoft.Maui.Graphics.Colors;
