@@ -30,71 +30,41 @@
         "EA69D029-EF28-47BB-88FE-F5835B1E854E"
     ],
     "symbols": {
-        "include-toolkit-ui": {
+        "include-forms-essentials": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add Xamarin.Essentials NuGet package reference."
+        },
+        "include-forms-toolkit": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add Xamarin.CommunityToolkit NuGet package reference."
+        },
+        "include-forms-markup": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add Xamarin.CommunityToolkit.Markup NuGet package reference."
+        },
+        "include-maui-toolkit": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to add CommunityToolkit.Maui NuGet package reference."
         },
-        "include-markup-ui": {
+        "include-maui-markup": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to add CommunityToolkit.Maui.Markup NuGet package reference."
         },
-        "include-mvvm-toolkit-ui": {
+        "include-mvvm-toolkit": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to add CommunityToolkit.Mvvm (aka Microsoft MVVM Toolkit) NuGet package reference."
-        },
-        "include-toolkit": {
-            "type": "parameter",
-            "datatype": "choice",
-            "defaultValue": "No",
-            "description": "Option to add CommunityToolkit.Maui NuGet package reference.",
-            "choices": [
-                {
-                    "choice": "Yes",
-                    "description": "Add package reference."
-                },
-                {
-                    "choice": "No",
-                    "description": "Skip adding reference, the default option."
-                }
-            ]
-        },
-        "include-markup": {
-            "type": "parameter",
-            "datatype": "choice",
-            "defaultValue": "No",
-            "description": "Option to add CommunityToolkit.Maui.Markup NuGet package reference.",
-            "choices": [
-                {
-                    "choice": "Yes",
-                    "description": "Add package reference."
-                },
-                {
-                    "choice": "No",
-                    "description": "Skip adding reference, the default option."
-                }
-            ]
-        },
-        "include-mvvm-toolkit": {
-            "type": "parameter",
-            "datatype": "choice",
-            "defaultValue": "No",
-            "description": "Option to add CommunityToolkit.Mvvm (aka Microsoft MVVM Toolkit) NuGet package reference.",
-            "choices": [
-                {
-                    "choice": "Yes",
-                    "description": "Add package reference."
-                },
-                {
-                    "choice": "No",
-                    "description": "Skip adding reference, the default option."
-                }
-            ]
         },
         "no-solution-file": {
             "type": "parameter",
@@ -102,41 +72,29 @@
             "defaultValue": "false",
             "description": "Option to skip creating a solution file."
         },
-        "includeToolkitLower": {
-            "type": "generated",
-            "generator": "casing",
-            "parameters": {
-                "source": "include-toolkit",
-                "toLower": true
-            }
-        },
-        "includeMarkupLower": {
-            "type": "generated",
-            "generator": "casing",
-            "parameters": {
-                "source": "include-markup",
-                "toLower": true
-            }
-        },
-        "includeMvvmToolkitLower": {
-            "type": "generated",
-            "generator": "casing",
-            "parameters": {
-                "source": "include-mvvm-toolkit",
-                "toLower": true
-            }
-        },
-        "AddToolkitPackage": {
+        "AddFormsEssentials": {
             "type": "computed",
-            "value": "(include-toolkit-ui || includeToolkitLower == \"yes\")"
+            "value": "(include-forms-essentials)"
         },
-        "AddMarkupPackage": {
+        "AddFormsToolkitPackage": {
             "type": "computed",
-            "value": "(include-markup-ui || includeMarkupLower == \"yes\")"
+            "value": "(include-forms-toolkit)"
+        },
+        "AddFormsMarkupPackage": {
+            "type": "computed",
+            "value": "(include-forms-markup)"
+        },
+        "AddMauiToolkitPackage": {
+            "type": "computed",
+            "value": "(include-maui-toolkit)"
+        },
+        "AddMauiMarkupPackage": {
+            "type": "computed",
+            "value": "(include-maui-markup)"
         },
         "AddMvvmToolkitPackage": {
             "type": "computed",
-            "value": "(include-mvvm-toolkit-ui || includeMvvmToolkitLower == \"yes\")"
+            "value": "(include-mvvm-toolkit)"
         },
         "HostIdentifier": {
             "type": "bind",
