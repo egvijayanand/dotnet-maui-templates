@@ -1,6 +1,10 @@
-What's new in ver. 1.6.0:
+What's new in ver. 1.7.0:
 -------------------------
-Included a Project Template for creating a Shared Class Library that produces assemblies targeting Xamarin.Forms and .NET MAUI.
+Templates have been updated to .NET MAUI GA, stable release version.
+
+Breaking change: To make things easier, All-in-One and Class Library templates parameters for various package inclusion have been updated to Boolean parameter type.
+
+Also check out the newly included project template for creating a Shared Class Library that produces assemblies targeting Xamarin.Forms and .NET MAUI.
 
 With C# Markup, Global usings and Compiler directives, both Xamarin.Forms and .NET MAUI can be targeted from single project.
 
