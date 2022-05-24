@@ -1,8 +1,8 @@
 ### Project and Item Templates for developing .NET MAUI App that runs on iOS, Android, macOS, and Windows 
 
-All-in-One project template for .NET MAUI App and is named as `mauiapp`
-
-.NET MAUI Class Library project template and is named as `mauiclasslib`
+* All-in-One project template for .NET MAUI App and is named as `mauiapp`
+* .NET MAUI Class Library project template and is named as `mauiclasslib`
+* Shared Class Library (Xamarin.Forms and .NET MAUI) project template and is named as `sharedclasslib`
 
 Item templates for the following:
 
@@ -15,7 +15,7 @@ Item templates for the following:
 |Shell (XAML)|maui-shell|
 |ResourceDictionary (XAML)|maui-resdict|
 
-All of these templates currently target `.NET MAUI RC3`, latest release as of May 2022.
+All of these templates currently target `.NET MAUI GA`, stable release as of May 2022.
 
 To install the template NuGet package, use the below .NET CLI command:
 
@@ -32,22 +32,23 @@ dotnet new --update-check
 dotnet new --update-apply
 ```
 
-Use the below .NET CLI command to create the all-in-one .NET MAUI App, library project, pages, and views out these templates:
+Use the below .NET CLI command to create the All-in-One .NET MAUI App, library project, pages, and views out these templates:
 
 *Note: Parameter values are case-insensitive.*
 
-Both project templates take the below optional parameters to include the official CommunityToolkit NuGet packages:
+Both .NET MAUI *App* and *Class Library* templates take the below optional Boolean parameters to include the officially supported CommunityToolkit NuGet packages:
 
-* `-it` | `--include-toolkit` - Accepted Values are `Yes` or `No` (default is `No`)
-* `-im` | `--include-markup` - Accepted Values are `Yes` or `No` (default is `No`)
-* `-imt` | `--include-mvvm-toolkit` - Accepted Values are `Yes` or `No` (default is `No`)
+*Specifying the parameter name, either in short or full notation, implies that it is defined.*
+
+* `-it` | `--include-toolkit` - Default is `false`
+* `-im` | `--include-markup` - Default is `false`
+* `-imt` | `--include-mvvm-toolkit` - Default is `false`
 
 All-in-One .NET MAUI App project takes one additional parameter to define the application design pattern:
 
 * `-dp` | `--design-pattern`
 
 Can take any one of the following values, with default value set to `Plain`:
-
 
 |Parameter Value|Description|
 |:---:|:---|
@@ -57,6 +58,25 @@ Can take any one of the following values, with default value set to `Plain`:
 |Shell|App configured to work with Routes using Shell page.|
 |Hybrid|App configured to work in a Hybrid fashion using BlazorWebView.|
 
+Shared Class Library template take the below optional Boolean parameters to include the officially supported NuGet packages:
+
+*Specifying the parameter name, either in short or full notation, implies that it is defined.*
+
+Specific to `Xamarin.Forms`:
+
+* `-ife` | `--include-forms-essentials` - Default is `false`
+* `-ift` | `--include-forms-toolkit` - Default is `false`
+* `-ifm` | `--include-forms-markup` - Default is `false`
+
+Specific to `.NET MAUI`:
+
+* `-imt` | `--include-maui-toolkit` - Default is `false`
+* `-imm` | `--include-maui-markup` - Default is `false`
+
+Common to both:
+
+* `-inmt` | `--include-mvvm-toolkit` - Default is `false`
+
 For more details: run this command in the terminal (use `-h` to save some keystrokes):
 
 ```shell
@@ -65,6 +85,9 @@ dotnet new mauiapp --help
 ```shell
 dotnet new mauiclasslib --help
 ```
+```shell
+dotnet new sharedclasslib --help
+```
 
 .NET MAUI App:
 ```shell
@@ -72,7 +95,7 @@ dotnet new mauiapp -n MyApp -dp Hybrid
 ```
 Option to include NuGet packages:
 ```shell
-dotnet new mauiapp -n MyApp -dp Shell -it yes -im yes -imt yes
+dotnet new mauiapp -n MyApp -dp Shell -it -im -imt
 ```
 
 .NET MAUI Class Library:
@@ -81,7 +104,16 @@ dotnet new mauiclasslib -n MyApp.Core
 ```
 Option to include NuGet packages:
 ```shell
-dotnet new mauiclasslib -n MyApp.Core -it yes -im yes -imt yes
+dotnet new mauiclasslib -n MyApp.Core -it -im -imt
+```
+
+Shared Class Library:
+```shell
+dotnet new sharedclasslib -n MyApp.UI
+```
+Option to include NuGet packages:
+```shell
+dotnet new sharedclasslib -n MyApp.UI -ife -ift -ifm -imt -imm -inmt
 ```
 
 Pages:

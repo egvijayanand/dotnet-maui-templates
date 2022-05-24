@@ -1,13 +1,13 @@
 ## .NET MAUI Project and Item Templates
 This repository is to host the .NET MAUI Project Templates, Item Templates and Code Snippets.
 
+Join me on [**Developer Thoughts**](https://egvijayanand.in/), an exclusive blog for .NET MAUI and Blazor, for articles on working with these templates and much more.
+
 We all know that .NET MAUI is an evolution of Xamarin.Forms.
 
-And now, Production supported `.NET MAUI RC3` released on 10 May 2022 along with VS2022 Version 17.3.0 Preview 1.0, just one step away from GA.
+The stable version `.NET MAUI GA` is now released on 23 May 2022 along with Visual Studio 2022 Version 17.3.0 Preview 1.1
 
 Templates have been updated to support the latest release and is available to install from.
-
-Join me on [**Developer Thoughts**](https://egvijayanand.in/), an exclusive blog for .NET MAUI and Blazor, for articles on working with these templates and much more.
 
 |NuGet|VS Marketplace|
 |:---:|:---:|
@@ -23,9 +23,9 @@ Extension is made available in the [Visual Studio Marketplace](https://marketpla
 
 This has Project Templates for:
 
-* .NET MAUI App (RC3) - An All-in-One .NET MAUI App Project Template - For more details, check out this [article](https://egvijayanand.in/all-in-one-dotnet-maui-app-project-template/)
-* .NET MAUI App (C#) (RC3)
-* .NET MAUI Class Library (RC3)
+* .NET MAUI App - An All-in-One .NET MAUI App Project Template - For more details, check out this [article](https://egvijayanand.in/all-in-one-dotnet-maui-app-project-template/)
+* .NET MAUI App (C#)
+* .NET MAUI Class Library
 * Shared Class Library (Xamarin.Forms and .NET MAUI)
 
 ![Create Project - Visual Studio](images/maui-project-templates.png)
@@ -107,11 +107,13 @@ In .NET CLI, all of these templates takes two parameters:
 
 *Note: Parameter values are case-insensitive.*
 
-Both .NET MAUI App and Class Library templates take the below optional parameters to include the officially supported CommunityToolkit NuGet packages:
+Both .NET MAUI App and Class Library templates take the below optional Boolean parameters to include the officially supported CommunityToolkit NuGet packages:
 
-* `-it` | `--include-toolkit` - Accepted Values are `Yes` or `No` (default is `No`)
-* `-im` | `--include-markup` - Accepted Values are `Yes` or `No` (default is `No`)
-* `-imt` | `--include-mvvm-toolkit` - Accepted Values are `Yes` or `No` (default is `No`)
+*Specifying the parameter name, either in short or full notation, implies that it is defined.*
+
+* `-it` | `--include-toolkit` - Default is `false`
+* `-im` | `--include-markup` - Default is `false`
+* `-imt` | `--include-mvvm-toolkit` - Default is `false`
 
 All-in-One .NET MAUI App project takes one additional parameter to define the application design pattern:
 
@@ -127,15 +129,17 @@ Can take any one of the following values, with default value set to `Plain`:
 |Shell|App configured to work with Routes using Shell page.|
 |Hybrid|App configured to work in a Hybrid fashion using BlazorWebView.|
 
-Shared Class Library template take the below optional parameters to include the officially supported NuGet packages:
+Shared Class Library template take the below optional Boolean parameters to include the officially supported NuGet packages:
 
-Specific to Xamarin.Forms:
+*Specifying the parameter name, either in short or full notation, implies that it is defined.*
+
+Specific to `Xamarin.Forms`:
 
 * `-ife` | `--include-forms-essentials` - Default is `false`
 * `-ift` | `--include-forms-toolkit` - Default is `false`
 * `-ifm` | `--include-forms-markup` - Default is `false`
 
-Specific to .NET MAUI:
+Specific to `.NET MAUI`:
 
 * `-imt` | `--include-maui-toolkit` - Default is `false`
 * `-imm` | `--include-maui-markup` - Default is `false`
@@ -169,7 +173,7 @@ dotnet new mauiapp -n MyApp -dp Hybrid
 ```
 Option to include NuGet packages:
 ```shell
-dotnet new mauiapp -n MyApp -dp Shell -it yes -im yes -imt yes
+dotnet new mauiapp -n MyApp -dp Shell -it -im -imt
 ```
 
 .NET MAUI Class Library:
@@ -178,7 +182,7 @@ dotnet new mauiclasslib -n MyApp.Core
 ```
 Option to include NuGet packages:
 ```shell
-dotnet new mauiclasslib -n MyApp.Core -it yes -im yes -imt yes
+dotnet new mauiclasslib -n MyApp.Core -it -im -imt
 ```
 
 Shared Class Library:
@@ -211,6 +215,11 @@ Shell:
 dotnet new maui-shell -n AppShell -na MyApp
 ```
 
+Resource Dictionary:
+```shell
+dotnet new maui-resdict -n LightTheme -na MyApp.Themes
+```
+
 With parameter names expanded:
 
 .NET MAUI App:
@@ -219,7 +228,7 @@ dotnet new mauiapp --name MyApp --design-pattern Hybrid
 ```
 Option to include NuGet packages:
 ```shell
-dotnet new mauiapp --name MyApp --design-pattern Shell --include-toolkit yes --include-markup yes --include-mvvm-toolkit yes
+dotnet new mauiapp --name MyApp --design-pattern Shell --include-toolkit --include-markup --include-mvvm-toolkit
 ```
 
 .NET MAUI Class Library:
@@ -227,8 +236,17 @@ dotnet new mauiapp --name MyApp --design-pattern Shell --include-toolkit yes --i
 dotnet new mauiclasslib --name MyApp.Core
 ```
 ```shell
-dotnet new mauiclasslib --name MyApp.Core --include-toolkit yes --include-markup yes --include-mvvm-toolkit yes
+dotnet new mauiclasslib --name MyApp.Core --include-toolkit --include-markup --include-mvvm-toolkit
 ```
+
+Shared Class Library:
+```shell
+dotnet new sharedclasslib --name MyApp.UI
+```
+```shell
+dotnet new sharedclasslib --name MyApp.UI --include-forms-essentials --include-forms-toolkit --include-forms-markup --include-maui-toolkit --include-maui-markup --include-mvvm-toolkit
+```
+
 Pages:
 ```shell
 dotnet new maui-page --name LoginPage --namespace MyApp.Views
@@ -236,6 +254,7 @@ dotnet new maui-page --name LoginPage --namespace MyApp.Views
 ```shell
 dotnet new maui-page-cs --name HomePage --namespace MyApp.Views
 ```
+
 Views:
 ```shell
 dotnet new maui-view --name CardView --namespace MyApp.Views
@@ -243,9 +262,15 @@ dotnet new maui-view --name CardView --namespace MyApp.Views
 ```shell
 dotnet new maui-view-cs --name OrderView --namespace MyApp.Views
 ```
+
 Shell:
 ```shell
 dotnet new maui-shell --name AppShell --namespace MyApp
+```
+
+Resource Dictionary:
+```shell
+dotnet new maui-resdict --name LightTheme --namespace MyApp.Themes
 ```
 <!--
 ### For VS2019 users:
