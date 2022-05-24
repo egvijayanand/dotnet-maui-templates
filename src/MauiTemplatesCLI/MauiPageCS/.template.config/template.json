@@ -12,8 +12,8 @@
     ],
     "identity": "VijayAnand.MauiPageCS",
     "groupIdentity": "VijayAnand.MauiTemplates.Page.Code",
-    "description": "An item template for .NET MAUI ContentPage in C# (RC3)",
-    "name": ".NET MAUI ContentPage (C#) (RC3)",
+    "description": "An item template for .NET MAUI ContentPage in C#",
+    "name": ".NET MAUI ContentPage (C#)",
     "shortName": "maui-page-cs",
     "sourceName": "MauiPage",
     "primaryOutputs": [

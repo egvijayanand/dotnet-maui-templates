@@ -12,8 +12,8 @@
     ],
     "identity": "VijayAnand.MauiViewCS",
     "groupIdentity": "VijayAnand.MauiTemplates.View.Code",
-    "description": "An item template for .NET MAUI ContentView in C# (RC3)",
-    "name": ".NET MAUI ContentView (C#) (RC3)",
+    "description": "An item template for .NET MAUI ContentView in C#",
+    "name": ".NET MAUI ContentView (C#)",
     "shortName": "maui-view-cs",
     "sourceName": "MauiView",
     "primaryOutputs": [

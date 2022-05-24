@@ -48,10 +48,10 @@
     <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
     <!--#endif-->
         <!--#if (AddMauiToolkit)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="1.0.0-rc3"/>
+        <PackageReference Include="CommunityToolkit.Maui" Version="1.0.0"/>
         <!--#endif-->
         <!--#if (AddMauiMarkup)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.0.0-rc3" />
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.0.0" />
         <!--#endif-->
     <!--#if (AddMauiToolkit || AddMauiMarkup)-->
     </ItemGroup>

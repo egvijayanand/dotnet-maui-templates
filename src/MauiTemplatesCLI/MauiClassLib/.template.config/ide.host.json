@@ -3,7 +3,7 @@
     "icon": "ide/icon.png",
     "symbolInfo": [
         {
-            "id": "include-toolkit-ui",
+            "id": "include-toolkit",
             "name": {
                 "text": "Add Community_Toolkit.Maui NuGet package reference"
             },
@@ -11,7 +11,7 @@
             "defaultValue": "false"
         },
         {
-            "id": "include-markup-ui",
+            "id": "include-markup",
             "name": {
                 "text": "Add CommunityToolkit.Maui._Markup NuGet package reference"
             },
@@ -19,11 +19,19 @@
             "defaultValue": "false"
         },
         {
-            "id": "include-mvvm-toolkit-ui",
+            "id": "include-mvvm-toolkit",
             "name": {
                 "text": "Add CommunityToolkit.Mvvm (aka Microsoft MV_VM Toolkit) NuGet package reference"
             },
             "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
+            "id": "no-solution-file",
+            "name": {
+                "text": "Skip creating a solution file"
+            },
+            "isVisible": false,
             "defaultValue": "false"
         }
     ]

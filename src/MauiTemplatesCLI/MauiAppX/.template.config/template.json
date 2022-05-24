@@ -14,8 +14,8 @@
     ],
     "identity": "VijayAnand.MauiApp",
     "groupIdentity": "VijayAnand.MauiTemplates.App",
-    "description": "A project for creating a .NET MAUI (RC3) App for iOS, Android, Mac Catalyst, Tizen, and WinUI.",
-    "name": ".NET MAUI App (RC3)",
+    "description": "A project for creating a .NET MAUI App for iOS, Android, Mac Catalyst, Tizen, and WinUI.",
+    "name": ".NET MAUI App",
     "shortName": "mauiapp",
     "sourceName": "MauiApp1",
     "tags": {
@@ -136,95 +136,26 @@
                 }
             ]
         },
-        "include-toolkit-ui": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Option to add and configure CommunityToolkit.Maui NuGet package reference."
-        },
-        "include-markup-ui": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Option to add CommunityToolkit.Maui.Markup NuGet package reference."
-        },
-        "include-mvvm-toolkit-ui": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Option to add CommunityToolkit.Mvvm (aka Microsoft MVVM Toolkit) NuGet package reference."
-        },
         "include-toolkit": {
             "type": "parameter",
-            "datatype": "choice",
-            "defaultValue": "No",
+            "datatype": "bool",
+            "defaultValue": "false",
             "description": "Option to add and configure CommunityToolkit.Maui NuGet package reference.",
-            "choices": [
-                {
-                    "choice": "Yes",
-                    "description": "Add package reference."
-                },
-                {
-                    "choice": "No",
-                    "description": "Skip adding reference, the default option."
-                }
-            ]
+            "displayName": "Add and configure Community_Toolkit.Maui NuGet package reference"
         },
         "include-markup": {
             "type": "parameter",
-            "datatype": "choice",
-            "defaultValue": "No",
+            "datatype": "bool",
+            "defaultValue": "false",
             "description": "Option to add CommunityToolkit.Maui.Markup NuGet package reference.",
-            "choices": [
-                {
-                    "choice": "Yes",
-                    "description": "Add package reference."
-                },
-                {
-                    "choice": "No",
-                    "description": "Skip adding reference, the default option."
-                }
-            ]
+            "displayName": "Add CommunityToolkit.Maui._Markup NuGet package reference"
         },
         "include-mvvm-toolkit": {
             "type": "parameter",
-            "datatype": "choice",
-            "defaultValue": "No",
+            "datatype": "bool",
+            "defaultValue": "false",
             "description": "Option to add CommunityToolkit.Mvvm (aka Microsoft MVVM Toolkit) NuGet package reference.",
-            "choices": [
-                {
-                    "choice": "Yes",
-                    "description": "Add package reference."
-                },
-                {
-                    "choice": "No",
-                    "description": "Skip adding reference, the default option."
-                }
-            ]
-        },
-        "includeToolkitLower": {
-            "type": "generated",
-            "generator": "casing",
-            "parameters": {
-                "source": "include-toolkit",
-                "toLower": true
-            }
-        },
-        "includeMarkupLower": {
-            "type": "generated",
-            "generator": "casing",
-            "parameters": {
-                "source": "include-markup",
-                "toLower": true
-            }
-        },
-        "includeMvvmToolkitLower": {
-            "type": "generated",
-            "generator": "casing",
-            "parameters": {
-                "source": "include-mvvm-toolkit",
-                "toLower": true
-            }
+            "displayName": "Add CommunityToolkit.Mvvm (aka Microsoft MV_VM Toolkit) NuGet package reference"
         },
         "nameLower": {
             "type": "generated",
@@ -265,15 +196,15 @@
         },
         "AddToolkitPackage": {
             "type": "computed",
-            "value": "(include-toolkit-ui || includeToolkitLower == \"yes\")"
+            "value": "(include-toolkit)"
         },
         "AddMarkupPackage": {
             "type": "computed",
-            "value": "(include-markup-ui || includeMarkupLower == \"yes\")"
+            "value": "(include-markup)"
         },
         "AddMvvmToolkitPackage": {
             "type": "computed",
-            "value": "(include-mvvm-toolkit-ui || includeMvvmToolkitLower == \"yes\")"
+            "value": "(include-mvvm-toolkit)"
         },
         "HostIdentifier": {
             "type": "bind",
@@ -282,7 +213,7 @@
     },
     "primaryOutputs": [
         {
-            "path": "MauiApp1.csproj"
+            "path": "App.xaml.cs"
         }
     ]
 }
