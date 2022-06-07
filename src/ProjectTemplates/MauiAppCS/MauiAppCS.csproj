@@ -59,6 +59,6 @@
     <ItemGroup>
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.0.0"/>
         <PackageReference Include="VijayAnand.MauiToolkit" Version="1.0.0"/>
-        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0-preview3"/>
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0-preview4"/>
     </ItemGroup>
 </Project>

@@ -133,6 +133,10 @@ Shared Class Library template take the below optional Boolean parameters to incl
 
 *Specifying the parameter name, either in short or full notation, implies that it is defined.*
 
+Single parameter to include all the supported NuGet packages:
+
+* `-asp` | `--all-supported-packages` - Default is `false`
+
 Specific to `Xamarin.Forms`:
 
 * `-ife` | `--include-forms-essentials` - Default is `false`
@@ -189,9 +193,9 @@ Shared Class Library:
 ```shell
 dotnet new sharedclasslib -n MyApp.UI
 ```
-Option to include NuGet packages:
+Option to include all supported NuGet packages:
 ```shell
-dotnet new sharedclasslib -n MyApp.UI -ife -ift -ifm -imt -imm -inmt
+dotnet new sharedclasslib -n MyApp.UI -asp
 ```
 
 Pages:
@@ -244,7 +248,7 @@ Shared Class Library:
 dotnet new sharedclasslib --name MyApp.UI
 ```
 ```shell
-dotnet new sharedclasslib --name MyApp.UI --include-forms-essentials --include-forms-toolkit --include-forms-markup --include-maui-toolkit --include-maui-markup --include-mvvm-toolkit
+dotnet new sharedclasslib --name MyApp.UI --all-supported-packages
 ```
 
 Pages:
