@@ -1,5 +1,13 @@
-What's new in ver. 1.7.0:
+What's new in ver. 1.7.1:
 -------------------------
+Introduced a new parameter to include all supported packages in the Shared Class Library template.
+
+-asp | --all-supported-packages
+
+Which will add reference to all 6 supported NuGet packages.
+
+Included IsExternalInit type definition to support C# Records while compiling for Xamarin.Forms
+
 Templates have been updated to .NET MAUI GA, stable release version.
 
 Breaking change: To make things easier, All-in-One and Class Library templates parameters for various package inclusion have been updated to Boolean parameter type.
@@ -8,13 +16,13 @@ Also check out the newly included project template for creating a Shared Class L
 
 With C# Markup, Global usings and Compiler directives, both Xamarin.Forms and .NET MAUI can be targeted from single project.
 
-dotnet new sharedclasslib --name MySharedLib
+dotnet new sharedclasslib --name MyApp.UI
 
 In which:
 
 *.forms.cs source files will be specific to Xamarin.Forms
 *.maui.cs source files will be specific to .NET MAUI
-*.shared.cs / *.logic.s will be common to both Xamarin.Forms and .NET MAUI
+*.shared.cs / *.logic.cs will be common to both Xamarin.Forms and .NET MAUI
 
 Refer to VijayAnand.Toolkit.Markup NuGet package source made available here https://github.com/egvijayanand/dotnet-maui-toolkit for a sample.
 

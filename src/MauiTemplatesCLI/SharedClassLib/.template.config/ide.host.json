@@ -3,6 +3,14 @@
     "icon": "ide/icon.png",
     "symbolInfo": [
         {
+            "id": "all-supported-packages",
+            "name": {
+                "text": "_Add all supported NuGet package reference"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
             "id": "include-forms-essentials",
             "name": {
                 "text": "Add Xamarin._Essentials NuGet package reference"

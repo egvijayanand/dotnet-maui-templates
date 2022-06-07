@@ -60,7 +60,7 @@
     <!--#if (AddMvvmToolkit)-->
     <!-- Common NuGet packages -->
     <ItemGroup>
-        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0-preview3" />
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0-preview4" />
     </ItemGroup>
     <!--#endif-->
 

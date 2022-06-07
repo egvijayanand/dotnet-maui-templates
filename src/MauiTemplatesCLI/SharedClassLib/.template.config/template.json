@@ -24,12 +24,20 @@
     "sourceName": "SharedClassLib",
     "tags": {
         "language": "C#",
-        "type": "project"
+        "type": "project",
+        "vs_parametersToHide": "no-solution-file"
     },
     "guids": [
         "EA69D029-EF28-47BB-88FE-F5835B1E854E"
     ],
     "symbols": {
+        "all-supported-packages": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add all supported NuGet package reference.",
+            "displayName": "_Add all supported NuGet package reference"
+        },
         "include-forms-essentials": {
             "type": "parameter",
             "datatype": "bool",
@@ -72,29 +80,35 @@
             "description": "Option to add CommunityToolkit.Mvvm (aka Microsoft MVVM Toolkit) NuGet package reference.",
             "displayName": "Add CommunityToolkit.Mvvm (aka Microsoft MV_VM Toolkit) NuGet package reference"
         },
+        "no-solution-file": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to skip creating a solution file."
+        },
         "AddFormsEssentials": {
             "type": "computed",
-            "value": "(include-forms-essentials)"
+            "value": "(include-forms-essentials || all-supported-packages)"
         },
         "AddFormsToolkit": {
             "type": "computed",
-            "value": "(include-forms-toolkit)"
+            "value": "(include-forms-toolkit || all-supported-packages)"
         },
         "AddFormsMarkup": {
             "type": "computed",
-            "value": "(include-forms-markup)"
+            "value": "(include-forms-markup || all-supported-packages)"
         },
         "AddMauiToolkit": {
             "type": "computed",
-            "value": "(include-maui-toolkit)"
+            "value": "(include-maui-toolkit || all-supported-packages)"
         },
         "AddMauiMarkup": {
             "type": "computed",
-            "value": "(include-maui-markup)"
+            "value": "(include-maui-markup || all-supported-packages)"
         },
         "AddMvvmToolkit": {
             "type": "computed",
-            "value": "(include-mvvm-toolkit)"
+            "value": "(include-mvvm-toolkit || all-supported-packages)"
         },
         "HostIdentifier": {
             "type": "bind",
@@ -110,7 +124,7 @@
         {
             "modifiers": [
                 {
-                    "condition": "(!(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
+                    "condition": "(no-solution-file || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
                     "exclude": [
                         "SharedClassLib.sln"
                     ]
