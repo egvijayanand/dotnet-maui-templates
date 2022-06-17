@@ -42,12 +42,12 @@ And now conditional compilation can be configured so that platform source files 
 
 This will allow maintaining related source files in the same place, especially MAUI Handlers.
 
-*.Standard.cs - Files targeting the BCL
-*.Android.cs - Files specific to Android
-*.iOS.cs - Files shared with both iOS and MacCatalyst
-*.MacCatalyst.cs - Files specific to MacCatalyst
-*.Tizen.cs - Files specific to Tizen
-*.Windows.cs - Files specific to Windows
+* \*.Standard.cs - Files targeting the BCL
+* \*.Android.cs - Files specific to Android
+* \*.iOS.cs - Files shared with both iOS and MacCatalyst
+* \*.MacCatalyst.cs - Files specific to MacCatalyst
+* \*.Tizen.cs - Files specific to Tizen
+* \*.Windows.cs - Files specific to Windows
 
 *Specifying the parameter name, either in short or full notation, implies that it is defined.*
 
