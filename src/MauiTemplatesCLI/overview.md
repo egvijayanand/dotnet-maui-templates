@@ -38,11 +38,23 @@ Use the below .NET CLI command to create the All-in-One .NET MAUI App, library p
 
 Both .NET MAUI *App* and *Class Library* templates take the below optional Boolean parameters to include the officially supported CommunityToolkit NuGet packages:
 
+And now conditional compilation can be configured so that platform source files can be defined anywhere in the project provided they follow a naming convention as mentioned below.
+
+This will allow maintaining related source files in the same place, especially MAUI Handlers.
+
+*.Standard.cs - Files targeting the BCL
+*.Android.cs - Files specific to Android
+*.iOS.cs - Files shared with both iOS and MacCatalyst
+*.MacCatalyst.cs - Files specific to MacCatalyst
+*.Tizen.cs - Files specific to Tizen
+*.Windows.cs - Files specific to Windows
+
 *Specifying the parameter name, either in short or full notation, implies that it is defined.*
 
 * `-it` | `--include-toolkit` - Default is `false`
 * `-im` | `--include-markup` - Default is `false`
 * `-imt` | `--include-mvvm-toolkit` - Default is `false`
+* `-cc` | `--conditional-compilation` - Default is `false`
 
 All-in-One .NET MAUI App project takes one additional parameter to define the application design pattern:
 
@@ -101,6 +113,10 @@ Option to include NuGet packages:
 ```shell
 dotnet new mauiapp -n MyApp -dp Shell -it -im -imt
 ```
+Option to configure conditional compilation:
+```shell
+dotnet new mauiapp -n MyApp -dp Shell -cc
+```
 
 .NET MAUI Class Library:
 ```shell
@@ -109,6 +125,10 @@ dotnet new mauiclasslib -n MyApp.Core
 Option to include NuGet packages:
 ```shell
 dotnet new mauiclasslib -n MyApp.Core -it -im -imt
+```
+Option to configure conditional compilation:
+```shell
+dotnet new mauiclasslib -n MyApp.Core -cc
 ```
 
 Shared Class Library:

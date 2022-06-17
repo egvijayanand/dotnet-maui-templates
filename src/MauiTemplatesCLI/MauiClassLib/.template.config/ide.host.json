@@ -27,11 +27,11 @@
             "defaultValue": "false"
         },
         {
-            "id": "no-solution-file",
+            "id": "conditional-compilation",
             "name": {
-                "text": "Skip creating a solution file"
+                "text": "_Configure conditional compilation for the project"
             },
-            "isVisible": false,
+            "isVisible": true,
             "defaultValue": "false"
         }
     ]

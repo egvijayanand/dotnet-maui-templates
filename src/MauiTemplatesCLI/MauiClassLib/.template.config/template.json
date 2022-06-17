@@ -48,6 +48,12 @@
             "description": "Option to add CommunityToolkit.Mvvm (aka Microsoft MVVM Toolkit) NuGet package reference.",
             "displayName": "Add CommunityToolkit.Mvvm (aka Microsoft MV_VM Toolkit) NuGet package reference"
         },
+        "conditional-compilation": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to configure conditional compilation so that platform source files can be anywhere."
+        },
         "no-solution-file": {
             "type": "parameter",
             "datatype": "bool",
@@ -65,6 +71,10 @@
         "AddMvvmToolkitPackage": {
             "type": "computed",
             "value": "(include-mvvm-toolkit)"
+        },
+        "ConditionalCompilation": {
+            "type": "computed",
+            "value": "(conditional-compilation)"
         },
         "HostIdentifier": {
             "type": "bind",

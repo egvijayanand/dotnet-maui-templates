@@ -1,12 +1,17 @@
-What's new in ver. 1.7.1:
+What's new in ver. 1.7.2:
 -------------------------
-Introduced a new parameter to include all supported packages in the Shared Class Library template.
+Added the option to configure conditional compilation so that platform source files can be defined anywhere in the project provided they follow a naming convention as mentioned below.
 
--asp | --all-supported-packages
+This will allow maintaining related source files in the same place, especially MAUI Handlers.
 
-Which will add reference to all 6 supported NuGet packages.
+*.Standard.cs - Files targeting the BCL
+*.Android.cs - Files specific to Android
+*.iOS.cs - Files shared with both iOS and MacCatalyst
+*.MacCatalyst.cs - Files specific to MacCatalyst
+*.Tizen.cs - Files specific to Tizen
+*.Windows.cs - Files specific to Windows
 
-Included IsExternalInit type definition to support C# Records while compiling for Xamarin.Forms
+Parameter name: -cc | --conditional-compilation
 
 Templates have been updated to .NET MAUI GA, stable release version.
 
