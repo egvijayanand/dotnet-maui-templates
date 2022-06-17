@@ -5,7 +5,7 @@ Join me on [**Developer Thoughts**](https://egvijayanand.in/), an exclusive blog
 
 We all know that .NET MAUI is an evolution of Xamarin.Forms.
 
-The stable version `.NET MAUI GA` is now released on 23 May 2022 along with Visual Studio 2022 Version 17.3.0 Preview 1.1
+The stable version `.NET MAUI SR1 (Service Release 1)` is now released on 14 Jun 2022 along with Visual Studio 2022 Version 17.3.0 Preview 2.0
 
 Templates have been updated to support the latest release and is available to install from.
 
@@ -107,13 +107,25 @@ In .NET CLI, all of these templates takes two parameters:
 
 *Note: Parameter values are case-insensitive.*
 
-Both .NET MAUI App and Class Library templates take the below optional Boolean parameters to include the officially supported CommunityToolkit NuGet packages:
+Both .NET MAUI *App* and *Class Library* templates take the below optional Boolean parameters to include the officially supported CommunityToolkit NuGet packages:
+
+And now conditional compilation can be configured so that platform source files can be defined anywhere in the project provided they follow a naming convention as mentioned below.
+
+This will allow maintaining related source files in the same place, especially MAUI Handlers.
+
+* \*.Standard.cs - Files targeting the BCL
+* \*.Android.cs - Files specific to Android
+* \*.iOS.cs - Files shared with both iOS and MacCatalyst
+* \*.MacCatalyst.cs - Files specific to MacCatalyst
+* \*.Tizen.cs - Files specific to Tizen
+* \*.Windows.cs - Files specific to Windows
 
 *Specifying the parameter name, either in short or full notation, implies that it is defined.*
 
 * `-it` | `--include-toolkit` - Default is `false`
 * `-im` | `--include-markup` - Default is `false`
 * `-imt` | `--include-mvvm-toolkit` - Default is `false`
+* `-cc` | `--conditional-compilation` - Default is `false`
 
 All-in-One .NET MAUI App project takes one additional parameter to define the application design pattern:
 
@@ -179,6 +191,10 @@ Option to include NuGet packages:
 ```shell
 dotnet new mauiapp -n MyApp -dp Shell -it -im -imt
 ```
+Option to configure conditional compilation:
+```shell
+dotnet new mauiapp -n MyApp -dp Shell -cc
+```
 
 .NET MAUI Class Library:
 ```shell
@@ -187,6 +203,10 @@ dotnet new mauiclasslib -n MyApp.Core
 Option to include NuGet packages:
 ```shell
 dotnet new mauiclasslib -n MyApp.Core -it -im -imt
+```
+Option to configure conditional compilation:
+```shell
+dotnet new mauiclasslib -n MyApp.Core -cc
 ```
 
 Shared Class Library:
@@ -234,6 +254,9 @@ Option to include NuGet packages:
 ```shell
 dotnet new mauiapp --name MyApp --design-pattern Shell --include-toolkit --include-markup --include-mvvm-toolkit
 ```
+```shell
+dotnet new mauiapp -n MyApp --design-pattern Shell --conditional-compilation
+```
 
 .NET MAUI Class Library:
 ```shell
@@ -241,6 +264,9 @@ dotnet new mauiclasslib --name MyApp.Core
 ```
 ```shell
 dotnet new mauiclasslib --name MyApp.Core --include-toolkit --include-markup --include-mvvm-toolkit
+```
+```shell
+dotnet new mauiclasslib --name MyApp.Core --conditional-compilation
 ```
 
 Shared Class Library:
