@@ -239,7 +239,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <None Include="Assets\VijayAnand.MauiTemplates.1.7.1.nupkg" />
+    <None Include="Assets\VijayAnand.MauiTemplates.1.7.2.nupkg" />
+    <Content Include="ItemTemplates\MauiHandler.zip">
+      <VSIXSubPath>ItemTemplates\MAUI</VSIXSubPath>
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
       <Generator>VsixManifestGenerator</Generator>

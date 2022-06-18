@@ -4,11 +4,11 @@
                  xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
         <Identity Id="MauiTemplates.20dca96a-7311-401f-84ed-980478fb319b"
-                  Version="1.7.1.0"
+                  Version="1.7.2.1"
                   Language="en-US"
                   Publisher="Vijay Anand E G"/>
         <DisplayName>.NET MAUI Project and Item Templates</DisplayName>
-        <Description xml:space="preserve">.NET MAUI Project, Item Templates, and Code Snippets for Visual Studio 2022 (.NET MAUI GA).</Description>
+        <Description xml:space="preserve">.NET MAUI Project, Item Templates, and Code Snippets for Visual Studio 2022 (.NET MAUI GA and SR1).</Description>
         <MoreInfo>https://egvijayanand.in/2022/04/20/all-in-one-dotnet-maui-app-project-template-what-is-new/</MoreInfo>
         <License>license.txt</License>
         <GettingStartedGuide>readme.rtf</GettingStartedGuide>
@@ -93,5 +93,10 @@
         <Asset Type="Microsoft.VisualStudio.VsPackage"
                d:Source="File"
                Path="NuGetTemplates.pkgdef"/>
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate"
+               d:Source="File"
+               Path="ItemTemplates"
+               TargetVersion="[17.3, 18.0)"
+               d:TargetPath="ItemTemplates\MauiHandler.zip" />
     </Assets>
 </PackageManifest>
