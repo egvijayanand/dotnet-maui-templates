@@ -39,6 +39,7 @@ And has Item Templates for:
 * Resource Dictionary (.NET MAUI)
 * Resource Dictionary (XAML only)(.NET MAUI)
 * Shell Page (.NET MAUI)
+* .NET MAUI Custom View and Handler
 
 Now VS2022 extension is loaded with 25+ C# and XAML Code Snippets.
 

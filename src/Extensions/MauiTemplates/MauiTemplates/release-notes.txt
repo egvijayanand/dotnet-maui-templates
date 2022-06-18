@@ -1,12 +1,23 @@
-What's new in ver. 1.7.1.0:
+What's new in ver. 1.7.2.1:
 ---------------------------
-Introduced a new parameter to include all supported packages in the Shared Class Library template.
+1. Added a new Item Template for creating a Custom Control and its Handler definition.
 
--asp | --all-supported-packages
+Check out the ".NET MAUI Custom View and Handler" made available in the MAUI section in the Add New Item dialog.
 
-Which will add reference to all 6 supported NuGet packages.
+Ensure conditional compilation is configured for this to work properly. Refer below for enabling it.
 
-Included IsExternalInit type definition to support C# Records while compiling for Xamarin.Forms
+2. Added the option to configure conditional compilation so that platform source files can be defined anywhere in the project provided they follow a naming convention as mentioned below.
+
+This will allow maintaining related source files in the same place, especially MAUI Handlers.
+
+*.Standard.cs - Files targeting the BCL
+*.Android.cs - Files specific to Android
+*.iOS.cs - Files shared with both iOS and MacCatalyst
+*.MacCatalyst.cs - Files specific to MacCatalyst
+*.Tizen.cs - Files specific to Tizen
+*.Windows.cs - Files specific to Windows
+
+Parameter name: -cc | --conditional-compilation
 
 Templates have been updated to .NET MAUI GA, stable release version.
 

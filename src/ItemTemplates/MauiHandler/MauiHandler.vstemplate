@@ -1,0 +1,27 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+	<TemplateData>
+		<DefaultName>CustomView.cs</DefaultName>
+		<Name>.NET MAUI Custom View and Handler</Name>
+		<Description>.NET MAUI Custom View and its Handler definition.</Description>
+		<ProjectType>CSharp</ProjectType>
+		<ProjectSubType>MAUI</ProjectSubType>
+		<SortOrder>120</SortOrder>
+		<Icon>__TemplateIcon.ico</Icon>
+	</TemplateData>
+	<TemplateContent>
+		<References/>
+		<Folder Name="Controls" TargetFolderName="Controls">
+			<ProjectItem TargetFileName="$fileinputname$.cs" ReplaceParameters="true">CustomView.cs</ProjectItem>
+			<ProjectItem TargetFileName="I$fileinputname$.cs" ReplaceParameters="true">ICustomView.cs</ProjectItem>
+		</Folder>
+		<Folder Name="Handlers" TargetFolderName="Handlers">
+			<ProjectItem TargetFileName="$fileinputname$Handler.cs" ReplaceParameters="true">CustomViewHandler.cs</ProjectItem>
+			<ProjectItem TargetFileName="$fileinputname$Handler.Android.cs" ReplaceParameters="true">CustomViewHandler.Android.cs</ProjectItem>
+			<ProjectItem TargetFileName="$fileinputname$Handler.iOS.cs" ReplaceParameters="true">CustomViewHandler.iOS.cs</ProjectItem>
+			<ProjectItem TargetFileName="$fileinputname$Handler.Standard.cs" ReplaceParameters="true">CustomViewHandler.Standard.cs</ProjectItem>
+			<ProjectItem TargetFileName="$fileinputname$Handler.Tizen.cs" ReplaceParameters="true">CustomViewHandler.Tizen.cs</ProjectItem>
+			<ProjectItem TargetFileName="$fileinputname$Handler.Windows.cs" ReplaceParameters="true">CustomViewHandler.Windows.cs</ProjectItem>
+			<ProjectItem TargetFileName="I$fileinputname$Handler.cs" ReplaceParameters="true">ICustomViewHandler.cs</ProjectItem>
+		</Folder>
+	</TemplateContent>
+</VSTemplate>
