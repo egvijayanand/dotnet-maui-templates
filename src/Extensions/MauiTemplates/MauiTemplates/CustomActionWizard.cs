@@ -1,6 +1,5 @@
 ﻿using EnvDTE;
 using Microsoft.VisualStudio.Shell;
-//using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.TemplateWizard;
 using System.Collections.Generic;
 using System.IO;
@@ -83,18 +82,6 @@ namespace MauiTemplates
                 }
             }
         }
-
-        /*public void RunStarted(object automationObject,
-                               Dictionary<string, string> replacementsDictionary,
-                               WizardRunKind runKind,
-                               object[] customParams,
-                               IVsProject project,
-                               uint parentItemId)
-        {
-            ThreadHelper.ThrowIfNotOnUIThread();
-            ide = automationObject as DTE;
-            replacementsDictionary.TryGetValue("$destinationdirectory$", out destinationFolder);
-        }*/
 
         /// <summary>This method is only called for item templates, not for project templates.</summary>
         public bool ShouldAddProjectItem(string filePath)
