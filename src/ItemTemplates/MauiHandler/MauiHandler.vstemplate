@@ -2,7 +2,7 @@
 	<TemplateData>
 		<DefaultName>CustomView.cs</DefaultName>
 		<Name>.NET MAUI Custom View and Handler</Name>
-		<Description>.NET MAUI Custom View and its Handler definition.</Description>
+		<Description>.NET MAUI Custom View and its Handler definition (in conditional compilation format).</Description>
 		<ProjectType>CSharp</ProjectType>
 		<ProjectSubType>MAUI</ProjectSubType>
 		<SortOrder>120</SortOrder>
@@ -23,5 +23,12 @@
 			<ProjectItem TargetFileName="$fileinputname$Handler.Windows.cs" ReplaceParameters="true">CustomViewHandler.Windows.cs</ProjectItem>
 			<ProjectItem TargetFileName="I$fileinputname$Handler.cs" ReplaceParameters="true">ICustomViewHandler.cs</ProjectItem>
 		</Folder>
+		<CustomParameters>
+			<CustomParameter Name="$basenamespace$" Value=""/>
+		</CustomParameters>
 	</TemplateContent>
+	<WizardExtension>
+		<Assembly>VijayAnand.MauiTemplates, Version=1.7.1.0, Culture=neutral, PublicKeyToken=7550554040ebdd44</Assembly>
+		<FullClassName>MauiTemplates.CustomActionWizard</FullClassName>
+	</WizardExtension>
 </VSTemplate>

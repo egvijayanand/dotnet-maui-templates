@@ -1,4 +1,6 @@
 ﻿using TPlatformView = Microsoft.UI.Xaml.FrameworkElement;
+using $basenamespace$.Controls;
+using Microsoft.Maui.Handlers;
 
 namespace $rootnamespace$
 {

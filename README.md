@@ -39,7 +39,11 @@ And has Item Templates for:
 * Resource Dictionary (.NET MAUI)
 * Resource Dictionary (XAML only)(.NET MAUI)
 * Shell Page (.NET MAUI)
+* .NET MAUI Custom View and Handler (Regular)
+  - Handler definitions generated in the Platforms folder
 * .NET MAUI Custom View and Handler
+  - Handler definitions generated in the same folder in conditional compilation format
+  - For this to work properly, ensure conditional compilation is enabled (mentioned in detail [here](#conditional-compilation))
 
 Now VS2022 extension is loaded with 25+ C# and XAML Code Snippets.
 
@@ -110,6 +114,8 @@ In .NET CLI, all of these templates takes two parameters:
 
 Both .NET MAUI *App* and *Class Library* templates take the below optional Boolean parameters to include the officially supported CommunityToolkit NuGet packages:
 
+##### Conditional Compilation
+
 And now conditional compilation can be configured so that platform source files can be defined anywhere in the project provided they follow a naming convention as mentioned below.
 
 This will allow maintaining related source files in the same place, especially MAUI Handlers.
@@ -120,6 +126,50 @@ This will allow maintaining related source files in the same place, especially M
 * \*.MacCatalyst.cs - Files specific to MacCatalyst
 * \*.Tizen.cs - Files specific to Tizen
 * \*.Windows.cs - Files specific to Windows
+
+For existing projects, add this block of code in the project file (.csproj). _This can affect the existing behaviour so take due care must be taken while doing so._
+
+```xml
+<ItemGroup Condition="'$(TargetFramework)' != 'net6.0'">
+	<Compile Remove="**\*.Standard.cs" />
+	<None Include="**\*.Standard.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+</ItemGroup>
+
+<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'ios' AND $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'maccatalyst'">
+	<Compile Remove="**\*.iOS.cs" />
+	<None Include="**\*.iOS.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+	<Compile Remove="**\iOS\**\*.cs" />
+	<None Include="**\iOS\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+</ItemGroup>
+
+<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'android'">
+	<Compile Remove="**\*.Android.cs" />
+	<None Include="**\*.Android.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+	<Compile Remove="**\Android\**\*.cs" />
+	<None Include="**\Android\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+</ItemGroup>
+
+<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'maccatalyst'">
+	<Compile Remove="**\*.macOS.cs" />
+	<None Include="**\*.macOS.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+	<Compile Remove="**\MacCatalyst\**\*.cs" />
+	<None Include="**\MacCatalyst\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+</ItemGroup>
+
+<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'tizen'">
+	<Compile Remove="**\*.Tizen.cs" />
+	<None Include="**\*.Tizen.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+	<Compile Remove="**\Tizen\**\*.cs" />
+	<None Include="**\Tizen\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+</ItemGroup>
+
+<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'windows'">
+	<Compile Remove="**\*.Windows.cs" />
+	<None Include="**\*.Windows.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+	<Compile Remove="**\Windows\**\*.cs" />
+	<None Include="**\Windows\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+</ItemGroup>
+```
 
 *Specifying the parameter name, either in short or full notation, implies that it is defined.*
 
