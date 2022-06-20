@@ -1,4 +1,4 @@
-What's new in ver. 1.7.3.0:
+What's new in ver. 1.7.3.1:
 ---------------------------
 1. Added a new Item Template for creating a Custom View and its associated Handler definitions.
 
