@@ -2,7 +2,7 @@
 using $basenamespace$.Controls;
 using Microsoft.Maui.Handlers;
 
-namespace $rootnamespace$
+namespace $basenamespace$.Handlers
 {
     public partial class $safeitemname$ : ViewHandler<I$fileinputname$, TPlatformView>
     {

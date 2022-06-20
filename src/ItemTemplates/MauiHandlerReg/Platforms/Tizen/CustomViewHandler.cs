@@ -1,12 +1,14 @@
-﻿using TPlatformView = Android.Views.View;
+﻿using TPlatformView = System.Object;
 using $basenamespace$.Controls;
 using Microsoft.Maui.Handlers;
 
-namespace $rootnamespace$
+namespace $basenamespace$.Handlers
 {
     public partial class $safeitemname$ : ViewHandler<I$fileinputname$, TPlatformView>
     {
-        protected override TPlatformView CreatePlatformView() => new TPlatformView(Context);
+        // PlatformParent need to be passed as an input parameter for a Tizen view
+        // Uncomment it once actual Tizen platform type is mapped
+        protected override TPlatformView CreatePlatformView() => new TPlatformView(/*PlatformParent*/);
 
         protected override void ConnectHandler(TPlatformView platformView)
         {

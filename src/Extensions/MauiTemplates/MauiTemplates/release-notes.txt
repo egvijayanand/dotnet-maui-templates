@@ -1,10 +1,12 @@
-What's new in ver. 1.7.2.1:
+What's new in ver. 1.7.3.0:
 ---------------------------
-1. Added a new Item Template for creating a Custom Control and its Handler definition.
+1. Added a new Item Template for creating a Custom View and its associated Handler definitions.
 
 Check out the ".NET MAUI Custom View and Handler" made available in the MAUI section in the Add New Item dialog.
 
-Ensure conditional compilation is configured for this to work properly. Refer below for enabling it.
+Available in both Regular definition with Handler source files in corresponding Platforms folder or Defined with Conditional Definition in a single folder
+
+For conditional compilation format, ensure it is enabled for this particular item template to work properly. An additional option provided during project creation
 
 2. Added the option to configure conditional compilation so that platform source files can be defined anywhere in the project provided they follow a naming convention as mentioned below.
 

@@ -1,4 +1,6 @@
 ﻿using TPlatformView = UIKit.UIView;
+using $basenamespace$.Controls;
+using Microsoft.Maui.Handlers;
 
 namespace $rootnamespace$
 {
