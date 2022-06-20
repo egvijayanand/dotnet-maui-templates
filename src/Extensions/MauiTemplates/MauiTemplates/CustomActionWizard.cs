@@ -1,8 +1,10 @@
 ﻿using EnvDTE;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.TemplateWizard;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace MauiTemplates
 {
@@ -69,9 +71,16 @@ namespace MauiTemplates
                     {
                         if (!string.IsNullOrEmpty(rootNamespace))
                         {
-                            if (rootNamespace.IndexOf('.') > 0)
+                            var match = Regex.Match(rootNamespace, @"\.Platforms\.\w{3,}");
+
+                            if (rootNamespace.EndsWith("Controls", StringComparison.OrdinalIgnoreCase)
+                                || rootNamespace.EndsWith("Handlers", StringComparison.OrdinalIgnoreCase))
                             {
-                                replacementsDictionary["$basenamespace$"] = rootNamespace.Substring(0, rootNamespace.IndexOf('.'));
+                                replacementsDictionary["$basenamespace$"] = rootNamespace.Substring(0, rootNamespace.LastIndexOf('.'));
+                            }
+                            else if (match.Success)
+                            {
+                                replacementsDictionary["$basenamespace$"] = rootNamespace.Substring(0, match.Index);
                             }
                             else
                             {
