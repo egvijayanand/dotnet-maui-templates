@@ -127,7 +127,7 @@ This will allow maintaining related source files in the same place, especially M
 * \*.Tizen.cs - Files specific to Tizen
 * \*.Windows.cs - Files specific to Windows
 
-For existing projects, add this block of code in the project file (.csproj). _This can affect the existing behaviour so take due care must be taken while doing so._
+For existing projects, add this block of code in the project file (.csproj). _This can affect the existing behaviour so due care must be taken while doing so._
 
 ```xml
 <ItemGroup Condition="'$(TargetFramework)' != 'net6.0'">
