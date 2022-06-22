@@ -1,0 +1,33 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+	<TemplateData>
+		<DefaultName>CustomView.cs</DefaultName>
+		<Name>.NET MAUI Custom View and Renderer (Cond.)</Name>
+		<Description>.NET MAUI Custom View and its Renderer definitions (in conditional compilation format).</Description>
+		<ProjectType>CSharp</ProjectType>
+		<ProjectSubType>MAUI</ProjectSubType>
+		<SortOrder>120</SortOrder>
+		<Icon>__TemplateIcon.ico</Icon>
+	</TemplateData>
+	<TemplateContent>
+		<References/>
+		<Folder Name="Controls" TargetFolderName="Controls">
+			<ProjectItem TargetFileName="$fileinputname$.cs" ReplaceParameters="true">CustomView.cs</ProjectItem>
+			<ProjectItem TargetFileName="I$fileinputname$.cs" ReplaceParameters="true">ICustomView.cs</ProjectItem>
+		</Folder>
+		<Folder Name="Renderers" TargetFolderName="Renderers">
+			<ProjectItem TargetFileName="$fileinputname$Renderer.Android.cs" ReplaceParameters="true">CustomViewRenderer.Android.cs</ProjectItem>
+			<ProjectItem TargetFileName="$fileinputname$Renderer.iOS.cs" ReplaceParameters="true">CustomViewRenderer.iOS.cs</ProjectItem>
+			<ProjectItem TargetFileName="$fileinputname$Renderer.MacCatalyst.cs" ReplaceParameters="true">CustomViewRenderer.MacCatalyst.cs</ProjectItem>
+			<!-- <ProjectItem TargetFileName="$fileinputname$Renderer.Tizen.cs" ReplaceParameters="true">CustomViewRenderer.Tizen.cs</ProjectItem> -->
+			<ProjectItem TargetFileName="$fileinputname$Renderer.Windows.cs" ReplaceParameters="true">CustomViewRenderer.Windows.cs</ProjectItem>
+		</Folder>
+		<!-- Common -->
+		<CustomParameters>
+			<CustomParameter Name="$basenamespace$" Value=""/>
+		</CustomParameters>
+	</TemplateContent>
+	<WizardExtension>
+		<Assembly>VijayAnand.MauiTemplates, Version=1.7.1.0, Culture=neutral, PublicKeyToken=7550554040ebdd44</Assembly>
+		<FullClassName>MauiTemplates.CustomActionWizard</FullClassName>
+	</WizardExtension>
+</VSTemplate>

@@ -1,0 +1,46 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+	<TemplateData>
+		<DefaultName>CustomView.cs</DefaultName>
+		<Name>.NET MAUI Custom View and Renderer (Regular)</Name>
+		<Description>.NET MAUI Custom View and its Renderer definition in the Platforms folder.</Description>
+		<ProjectType>CSharp</ProjectType>
+		<ProjectSubType>MAUI</ProjectSubType>
+		<SortOrder>110</SortOrder>
+		<Icon>__TemplateIcon.ico</Icon>
+	</TemplateData>
+	<TemplateContent>
+		<References/>
+		<Folder Name="Controls" TargetFolderName="Controls">
+			<ProjectItem TargetFileName="$fileinputname$.cs" ReplaceParameters="true">CustomView.cs</ProjectItem>
+			<ProjectItem TargetFileName="I$fileinputname$.cs" ReplaceParameters="true">ICustomView.cs</ProjectItem>
+		</Folder>
+		<Folder Name="Platforms" TargetFolderName="Platforms">
+			<Folder Name="Android" TargetFolderName="Android">
+				<ProjectItem TargetFileName="$fileinputname$Renderer.cs" ReplaceParameters="true">CustomViewRenderer.cs</ProjectItem>
+			</Folder>
+		</Folder>
+		<Folder Name="Platforms" TargetFolderName="Platforms">
+			<Folder Name="iOS" TargetFolderName="iOS">
+				<ProjectItem TargetFileName="$fileinputname$Renderer.cs" ReplaceParameters="true">CustomViewRenderer.cs</ProjectItem>
+			</Folder>
+		</Folder>
+		<Folder Name="Platforms" TargetFolderName="Platforms">
+			<Folder Name="MacCatalyst" TargetFolderName="MacCatalyst">
+				<ProjectItem TargetFileName="$fileinputname$Renderer.cs" ReplaceParameters="true">CustomViewRenderer.cs</ProjectItem>
+			</Folder>
+		</Folder>
+		<Folder Name="Platforms" TargetFolderName="Platforms">
+			<Folder Name="Windows" TargetFolderName="Windows">
+				<ProjectItem TargetFileName="$fileinputname$Renderer.cs" ReplaceParameters="true">CustomViewRenderer.cs</ProjectItem>
+			</Folder>
+		</Folder>
+		<!-- Common -->
+		<CustomParameters>
+			<CustomParameter Name="$basenamespace$" Value=""/>
+		</CustomParameters>
+	</TemplateContent>
+	<WizardExtension>
+		<Assembly>VijayAnand.MauiTemplates, Version=1.7.1.0, Culture=neutral, PublicKeyToken=7550554040ebdd44</Assembly>
+		<FullClassName>MauiTemplates.CustomActionWizard</FullClassName>
+	</WizardExtension>
+</VSTemplate>
