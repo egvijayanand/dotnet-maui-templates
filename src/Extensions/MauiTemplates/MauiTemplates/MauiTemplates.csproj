@@ -250,6 +250,16 @@
       <VSIXSubPath>ItemTemplates\MAUI</VSIXSubPath>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="ItemTemplates\MauiRendererReg.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\MAUI</VSIXSubPath>
+    </Content>
+    <Content Include="ItemTemplates\MauiRenderer.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\MAUI</VSIXSubPath>
+    </Content>
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
       <Generator>VsixManifestGenerator</Generator>
