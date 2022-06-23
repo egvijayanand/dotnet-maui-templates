@@ -41,9 +41,13 @@ And has Item Templates for:
 * Shell Page (.NET MAUI)
 * .NET MAUI Custom View and Handler (Regular)
   - Handler definitions generated in the Platforms folder
-* .NET MAUI Custom View and Handler
+* .NET MAUI Custom View and Handler (Cond.)
   - Handler definitions generated in the same folder in conditional compilation format
-  - For this to work properly, ensure conditional compilation is enabled (mentioned in detail [here](#conditional-compilation))
+* .NET MAUI Custom View and Renderer (Regular)
+  - Renderer definitions generated in the Platforms folder
+* .NET MAUI Custom View and Renderer (Cond.)
+  - Renderer definitions generated in the same folder in conditional compilation format
+* For Cond. type template to work properly, ensure Conditional Compilation is enabled (mentioned in detail [**here**](https://github.com/egvijayanand/dotnet-maui-templates#conditional-compilation "Conditional Compilation"))
 
 Now VS2022 extension is loaded with 25+ C# and XAML Code Snippets.
 
@@ -116,9 +120,7 @@ Both .NET MAUI *App* and *Class Library* templates take the below optional Boole
 
 ##### Conditional Compilation
 
-And now conditional compilation can be configured so that platform source files can be defined anywhere in the project provided they follow a naming convention as mentioned below.
-
-This will allow maintaining related source files in the same place, especially MAUI Handlers.
+And now conditional compilation can be configured so that platform source files can be defined anywhere in the project provided they follow a naming convention as mentioned below. This will allow maintaining related source files in the same place, especially MAUI Handlers.
 
 * \*.Standard.cs - Files targeting the BCL
 * \*.Android.cs - Files specific to Android
@@ -127,7 +129,7 @@ This will allow maintaining related source files in the same place, especially M
 * \*.Tizen.cs - Files specific to Tizen
 * \*.Windows.cs - Files specific to Windows
 
-For existing projects, add this block of code in the project file (.csproj). _This can affect the existing behaviour so due care must be taken while doing so._
+For existing projects, add the below block of code in the project file (.csproj). _This will modify the behaviour of build process so due care must be taken if doing so._
 
 ```xml
 <ItemGroup Condition="'$(TargetFramework)' != 'net6.0'">
