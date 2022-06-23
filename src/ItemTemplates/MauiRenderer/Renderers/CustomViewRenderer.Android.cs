@@ -11,7 +11,7 @@ using TPlatformView = Android.Views.View;
 
 namespace $rootnamespace$
 {
-    public class $safeitemname$ : ViewRenderer<$fileinputname$, TPlatformView>
+    public partial class $safeitemname$ : ViewRenderer<$fileinputname$, TPlatformView>
     {
         public $safeitemname$(Context context) : base(context)
         {

@@ -1,11 +1,11 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
 	<TemplateData>
 		<DefaultName>CustomView.cs</DefaultName>
-		<Name>.NET MAUI Custom View and Renderer (Regular)</Name>
+		<Name>Custom View and Renderer (Regular) (.NET MAUI)</Name>
 		<Description>.NET MAUI Custom View and its Renderer definition in the Platforms folder.</Description>
 		<ProjectType>CSharp</ProjectType>
 		<ProjectSubType>MAUI</ProjectSubType>
-		<SortOrder>110</SortOrder>
+		<SortOrder>130</SortOrder>
 		<Icon>__TemplateIcon.ico</Icon>
 	</TemplateData>
 	<TemplateContent>

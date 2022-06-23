@@ -1,7 +1,7 @@
 ## .NET MAUI Project and Item Templates
 This repository is to host the .NET MAUI Project Templates, Item Templates and Code Snippets.
 
-Join me on [**Developer Thoughts**](https://egvijayanand.in/), an exclusive blog for .NET MAUI and Blazor, for articles on working with these templates and much more.
+Join me on [**Developer Thoughts**](https://egvijayanand.in/ "Developer Thoughts"), an exclusive blog for .NET MAUI and Blazor, for articles on working with these templates and much more.
 
 We all know that .NET MAUI is an evolution of Xamarin.Forms.
 
@@ -17,13 +17,13 @@ Templates have been updated to support the latest release and is available to in
 
 To provide an integrated experience, a VS extension has been developed to host these templates.
 
-Extension is made available in the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-templates) and even more easier, can be installed from within Visual Studio itself (Extensions -> Manage Extensions / Alt + X + M).
+Extension is made available in the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-templates ".NET MAUI Templates Pack") and even more easier, can be installed from within Visual Studio itself (Extensions -> Manage Extensions / Alt + X + M).
 
 ![Manage Extensions - Visual Studio](images/vs-manage-extensions.png)
 
 This has Project Templates for:
 
-* .NET MAUI App - An All-in-One .NET MAUI App Project Template - For more details, check out this [article](https://egvijayanand.in/all-in-one-dotnet-maui-app-project-template/)
+* .NET MAUI App - An All-in-One .NET MAUI App Project Template - For more details, check out this [article](https://egvijayanand.in/all-in-one-dotnet-maui-app-project-template/ "All-in-One .NET MAUI App Project Template")
 * .NET MAUI App (C#)
 * .NET MAUI Class Library
 * Shared Class Library (Xamarin.Forms and .NET MAUI)
@@ -39,12 +39,14 @@ And has Item Templates for:
 * Resource Dictionary (.NET MAUI)
 * Resource Dictionary (XAML only)(.NET MAUI)
 * Shell Page (.NET MAUI)
-* .NET MAUI Custom View and Handler (Regular)
+* Custom View and Handler (Regular) (.NET MAUI)
   - Handler definitions generated in the Platforms folder
-* .NET MAUI Custom View and Handler (Cond.)
+* Custom View and Handler (Cond.) (.NET MAUI)
   - Handler definitions generated in the same folder in conditional compilation format
-* .NET MAUI Custom View and Renderer (Regular)
+* Custom View and Renderer (Regular) (.NET MAUI)
   - Renderer definitions generated in the Platforms folder
+* Custom View and Renderer (Cond.) (.NET MAUI)
+  - Renderer definitions generated in the same folder in conditional compilation format
 \
 &nbsp;
 * For Cond. type template to work properly, ensure Conditional Compilation is enabled (mentioned in detail [**here**](https://github.com/egvijayanand/dotnet-maui-templates#conditional-compilation "Conditional Compilation"))
@@ -152,8 +154,8 @@ For existing projects, add the below block of code in the project file (.csproj)
 </ItemGroup>
 
 <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'maccatalyst'">
-    <Compile Remove="**\*.macOS.cs" />
-    <None Include="**\*.macOS.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+    <Compile Remove="**\*.MacCatalyst.cs" />
+    <None Include="**\*.MacCatalyst.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
     <Compile Remove="**\MacCatalyst\**\*.cs" />
     <None Include="**\MacCatalyst\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
 </ItemGroup>
