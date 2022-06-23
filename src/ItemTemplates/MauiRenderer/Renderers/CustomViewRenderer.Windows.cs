@@ -10,7 +10,7 @@ using TPlatformView = Microsoft.UI.Xaml.FrameworkElement;
 
 namespace $rootnamespace$
 {
-    public class $safeitemname$ : ViewRenderer<$fileinputname$, TPlatformView>
+    public partial class $safeitemname$ : ViewRenderer<$fileinputname$, TPlatformView>
     {
         public $safeitemname$()
         {
