@@ -1,11 +1,10 @@
-What's new in ver. 1.7.4.0:
+What's new in ver. 1.7.4.1:
 ---------------------------
 1. Added the following new Item Templates for creating a Custom View definition made available in the MAUI section in the Add New Item dialog.
 
 .NET MAUI Custom View and Handler (Regular)
 .NET MAUI Custom View and Handler (Cond.)
 .NET MAUI Custom View and Renderer (Regular)
-.NET MAUI Custom View and Renderer (Cond.)
 
 Regular type template generates the Handler source files in the Platforms folder whereas Cond. type template houses them in a single folder.
 
