@@ -45,8 +45,8 @@ And has Item Templates for:
   - Handler definitions generated in the same folder in conditional compilation format
 * .NET MAUI Custom View and Renderer (Regular)
   - Renderer definitions generated in the Platforms folder
-* .NET MAUI Custom View and Renderer (Cond.)
-  - Renderer definitions generated in the same folder in conditional compilation format
+\
+&nbsp;
 * For Cond. type template to work properly, ensure Conditional Compilation is enabled (mentioned in detail [**here**](https://github.com/egvijayanand/dotnet-maui-templates#conditional-compilation "Conditional Compilation"))
 
 Now VS2022 extension is loaded with 25+ C# and XAML Code Snippets.
