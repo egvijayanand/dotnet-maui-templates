@@ -1,6 +1,18 @@
-What's new in ver. 1.7.5.0:
+What's new in ver. 1.7.6.1:
 ---------------------------
-1. Added the following new Item Templates for creating a Custom View definition made available in the MAUI section in the Add New Item dialog.
+1. A new item template for Content Page, in both XAML and C#, with ViewModel following the MVVM design pattern.
+
+The ViewModels are generated with the base class titled BaseViewModel (implementation left to the user).
+
+Recommended to add CommunityToolkit.Mvvm, an officially supported NuGet package, to make it easy to work with MVVM design pattern.
+
+These two articles can help you to get started with this brand-new NuGet package:
+
+https://egvijayanand.in/2022/04/22/mvvm-made-easy/
+
+https://egvijayanand.in/2022/05/09/mvvm-made-easy-with-microsoft-mvvm-toolkit-part-2/
+
+2. Added the following new Item Templates for creating a Custom View definition made available in the MAUI section in the Add New Item dialog.
 
 Custom View and Handler (Regular) (.NET MAUI)
 Custom View and Handler (Cond.) (.NET MAUI)
@@ -11,7 +23,7 @@ Regular type template generates the Handler / Renderer source files in the Platf
 
 For conditional type format, ensure Conditional Compilation is configured in the project file for the build to succeed. An additional option is provisioned during project creation (or manually thereafter).
 
-2. Added the option to configure Conditional Compilation so that platform source files can be defined anywhere in the project provided they follow a naming convention as mentioned below.
+3. Added the option to configure Conditional Compilation so that platform source files can be defined anywhere in the project provided they follow a naming convention as mentioned below.
 
 This will allow maintaining related source files in the same place, especially MAUI Handlers.
 

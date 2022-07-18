@@ -1,0 +1,29 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+	<TemplateData>
+		<DefaultName>Maui</DefaultName>
+		<Name>Content Page with ViewModel (.NET MAUI)</Name>
+		<Description>A page for displaying content using XAML and following the MVVM design pattern.</Description>
+		<ProjectType>CSharp</ProjectType>
+		<ProjectSubType>MAUI</ProjectSubType>
+		<SortOrder>150</SortOrder>
+		<Icon>__TemplateIcon.ico</Icon>
+	</TemplateData>
+	<TemplateContent>
+		<References/>
+		<Folder Name="Views" TargetFolderName="Views">
+			<ProjectItem TargetFileName="$fileinputname$Page.xaml" ReplaceParameters="true">MauiPage.xaml</ProjectItem>
+			<ProjectItem TargetFileName="$fileinputname$Page.xaml.cs" ReplaceParameters="true">MauiPage.xaml.cs</ProjectItem>
+		</Folder>
+		<Folder Name="ViewModels" TargetFolderName="ViewModels">
+			<!-- <ProjectItem TargetFileName="BaseViewModel.cs" ReplaceParameters="true">BaseViewModel.cs</ProjectItem> -->
+			<ProjectItem TargetFileName="$fileinputname$ViewModel.cs" ReplaceParameters="true">MauiViewModel.cs</ProjectItem>
+		</Folder>
+		<CustomParameters>
+			<CustomParameter Name="$basenamespace$" Value=""/>
+		</CustomParameters>
+	</TemplateContent>
+	<WizardExtension>
+		<Assembly>VijayAnand.MauiTemplates, Version=1.7.1.0, Culture=neutral, PublicKeyToken=7550554040ebdd44</Assembly>
+		<FullClassName>MauiTemplates.CustomActionWizard</FullClassName>
+	</WizardExtension>
+</VSTemplate>

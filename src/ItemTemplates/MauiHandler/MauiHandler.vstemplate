@@ -5,7 +5,7 @@
 		<Description>.NET MAUI Custom View and its Handler definition (in conditional compilation format).</Description>
 		<ProjectType>CSharp</ProjectType>
 		<ProjectSubType>MAUI</ProjectSubType>
-		<SortOrder>120</SortOrder>
+		<SortOrder>210</SortOrder>
 		<Icon>__TemplateIcon.ico</Icon>
 	</TemplateData>
 	<TemplateContent>
