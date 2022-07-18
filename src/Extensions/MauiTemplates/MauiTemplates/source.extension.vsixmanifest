@@ -4,11 +4,11 @@
                  xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
         <Identity Id="MauiTemplates.20dca96a-7311-401f-84ed-980478fb319b"
-                  Version="1.7.5.0"
+                  Version="1.7.6.1"
                   Language="en-US"
                   Publisher="Vijay Anand E G"/>
         <DisplayName>.NET MAUI Project and Item Templates</DisplayName>
-        <Description xml:space="preserve">.NET MAUI Project, Item Templates, and Code Snippets for Visual Studio 2022 (.NET MAUI GA and SR1).</Description>
+        <Description xml:space="preserve">.NET MAUI Project, Item Templates, and Code Snippets for Visual Studio 2022 (.NET MAUI GA and Service Releases).</Description>
         <MoreInfo>https://egvijayanand.in/2022/04/20/all-in-one-dotnet-maui-app-project-template-what-is-new/</MoreInfo>
         <License>license.txt</License>
         <GettingStartedGuide>readme.rtf</GettingStartedGuide>
@@ -37,7 +37,7 @@
                       DisplayName="Visual Studio core editor"/>
         <Prerequisite Id="Microsoft.VisualStudio.ComponentGroup.Maui.All"
                       Version="[17.3.32505.122,18.0)"
-                      DisplayName=".NET MAUI"/>
+                      DisplayName=".NET MAUI" />
     </Prerequisites>
     <Assets>
         <Asset Type="Microsoft.VisualStudio.ItemTemplate"
@@ -111,5 +111,14 @@
                d:Source="File" Path="ItemTemplates"
                TargetVersion="[17.3, 18.0)"
                d:TargetPath="ItemTemplates\MauiRendererReg.zip" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate"
+               d:Source="File" Path="ItemTemplates"
+               TargetVersion="[17.3, 18.0)"
+               d:TargetPath="ItemTemplates\MauiPageWithViewModel.zip" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate"
+               d:Source="File"
+               Path="ItemTemplates"
+               TargetVersion="[17.3, 18.0)"
+               d:TargetPath="ItemTemplates\MauiPageCSWithViewModel.zip" />
     </Assets>
 </PackageManifest>
