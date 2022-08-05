@@ -5,7 +5,7 @@ Join me on [**Developer Thoughts**](https://egvijayanand.in/ "Developer Thoughts
 
 We all know that .NET MAUI is an evolution of Xamarin.Forms.
 
-The updated stable version `.NET MAUI SR2 (Service Release 2)` is now released on 12 Jul 2022 along with Visual Studio 2022 Version 17.3.0 Preview 3.0
+The updated stable version `.NET MAUI SR3.1 (Service Release 3.1)` is now released on 1 Aug 2022 along with Visual Studio 2022 Version 17.3.0 Preview 6.0 (most probably to get released in the stable channel by this month).
 
 Templates have been updated to support the latest release and is available to install from.
 
