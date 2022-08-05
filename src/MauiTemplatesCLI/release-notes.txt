@@ -1,5 +1,7 @@
-What's new in ver. 1.7.2:
+What's new in ver. 1.7.3:
 -------------------------
+CommunityToolkit.Mvvm NuGet package is out of preview and now stable, hence package version (8.0.0) updated.
+
 Added the option to configure conditional compilation so that platform source files can be defined anywhere in the project provided they follow a naming convention as mentioned below.
 
 This will allow maintaining related source files in the same place, especially MAUI Handlers.
