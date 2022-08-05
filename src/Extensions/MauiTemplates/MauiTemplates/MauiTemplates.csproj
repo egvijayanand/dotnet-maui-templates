@@ -239,7 +239,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <None Include="Assets\VijayAnand.MauiTemplates.1.7.2.nupkg" />
     <Content Include="ItemTemplates\MauiHandler.zip">
       <VSIXSubPath>ItemTemplates\MAUI</VSIXSubPath>
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -269,6 +268,19 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
       <VSIXSubPath>ItemTemplates\MAUI</VSIXSubPath>
+    </Content>
+    <None Include="Assets\VijayAnand.MauiTemplates.1.7.3.nupkg" />
+    <Content Include="MauiSnippets\CSharp\asyncRelayCommand.snippet">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="MauiSnippets\CSharp\observableProperty.snippet">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="MauiSnippets\CSharp\relayCommand.snippet">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
