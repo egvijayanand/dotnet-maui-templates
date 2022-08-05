@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Define an Observable Property</Title>
+			<Shortcut>propop</Shortcut>
+			<Description>Code snippet for an Observable Property</Description>
+			<Author>Vijay Anand E G</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>type</ID>
+					<ToolTip>Property type</ToolTip>
+					<Default>string</Default>
+				</Literal>
+				<Literal>
+					<ID>field</ID>
+					<ToolTip>The field backing this property</ToolTip>
+					<Default>name</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp" Kind="type decl">
+				<![CDATA[[ObservableProperty]
+				private $type$ $field$;$end$]]>
+			</Code>
+			<Imports>
+				<Import>
+					<Namespace>CommunityToolkit.Mvvm.ComponentModel</Namespace>
+				</Import>
+			</Imports>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

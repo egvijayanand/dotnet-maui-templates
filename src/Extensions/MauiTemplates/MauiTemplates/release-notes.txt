@@ -1,5 +1,7 @@
-What's new in ver. 1.7.6.1:
+What's new in ver. 1.7.6.3:
 ---------------------------
+CommunityToolkit.Mvvm NuGet package is out of preview and now stable, hence package version (8.0.0) updated.
+
 1. A new item template for Content Page, in both XAML and C#, with ViewModel following the MVVM design pattern.
 
 The ViewModels are generated with the base class titled BaseViewModel (implementation left to the user).
