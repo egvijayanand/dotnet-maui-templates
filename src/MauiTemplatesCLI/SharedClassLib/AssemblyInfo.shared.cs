@@ -1,4 +1,5 @@
-﻿#if FORMS
+﻿//-:cnd:noEmit
+#if FORMS
 namespace System.Runtime.CompilerServices
 {
     public class IsExternalInit
@@ -7,3 +8,4 @@ namespace System.Runtime.CompilerServices
     }
 }
 #endif
+//+:cnd:noEmit

@@ -6,7 +6,7 @@ namespace MyApp.Namespace
     {
         public MauiPage()
         {
-            Content = new StackLayout()
+            Content = new Grid()
             {
                 Children =
                 {

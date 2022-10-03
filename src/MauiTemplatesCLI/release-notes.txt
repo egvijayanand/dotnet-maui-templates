@@ -1,35 +1,16 @@
-What's new in ver. 1.7.3:
+What's new in ver. 2.0.0:
 -------------------------
-CommunityToolkit.Mvvm NuGet package is out of preview and now stable, hence package version (8.0.0) updated.
+Templates have been updated to support .NET MAUI on .NET 7 (RC1 - Preview release).
 
-Added the option to configure conditional compilation so that platform source files can be defined anywhere in the project provided they follow a naming convention as mentioned below.
+For projects targeting .NET 7 framework, option to add and configure Maui Maps NuGet package.
 
-This will allow maintaining related source files in the same place, especially MAUI Handlers.
+Note: If project target .NET 6 framework, selecting this option will not have any impact.
 
-*.Standard.cs - Files targeting the BCL
-*.Android.cs - Files specific to Android
-*.iOS.cs - Files shared with both iOS and MacCatalyst
-*.MacCatalyst.cs - Files specific to MacCatalyst
-*.Tizen.cs - Files specific to Tizen
-*.Windows.cs - Files specific to Windows
+A parameter named framework has been introduced that takes either net6.0 or net7.0 as its options (with net7.0 being the default value).
 
-Parameter name: -cc | --conditional-compilation
+dotnet new mauiapp --framework net6.0
 
-Templates have been updated to .NET MAUI GA, stable release version.
-
-Breaking change: To make things easier, All-in-One and Class Library templates parameters for various package inclusion have been updated to Boolean parameter type.
-
-Also check out the newly included project template for creating a Shared Class Library that produces assemblies targeting Xamarin.Forms and .NET MAUI.
-
-With C# Markup, Global usings and Compiler directives, both Xamarin.Forms and .NET MAUI can be targeted from single project.
-
-dotnet new sharedclasslib --name MyApp.UI
-
-In which:
-
-*.forms.cs source files will be specific to Xamarin.Forms
-*.maui.cs source files will be specific to .NET MAUI
-*.shared.cs / *.logic.cs will be common to both Xamarin.Forms and .NET MAUI
+dotnet new mauiapp -f net7.0
 
 Refer to VijayAnand.Toolkit.Markup NuGet package source made available here https://github.com/egvijayanand/dotnet-maui-toolkit for a sample.
 

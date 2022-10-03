@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
+        <TargetFrameworks>netstandard2.0;MAUI_TFM</TargetFrameworks>
         <Nullable>enable</Nullable>
         <LangVersion>latest</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
@@ -13,7 +13,7 @@
         <DefineConstants>$(DefineConstants);FORMS</DefineConstants>
     </PropertyGroup>
 
-    <PropertyGroup Condition="'$(TargetFramework)' == 'net6.0'">
+    <PropertyGroup Condition="'$(TargetFramework)' == 'MAUI_TFM'">
         <UseMaui>true</UseMaui>
         <SingleProject>true</SingleProject>
         <DefineConstants>$(DefineConstants);MAUI</DefineConstants>
@@ -24,34 +24,34 @@
         <None Include="**\*.maui.cs" />
     </ItemGroup>
 
-    <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+    <ItemGroup Condition="'$(TargetFramework)' == 'MAUI_TFM'">
         <Compile Include="**\*.shared.cs;**\*.logic.cs;**\*.maui.cs" />
         <None Include="**\*.forms.cs" />
     </ItemGroup>
 
     <!-- Xamarin.Forms NuGet packages -->
     <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
-        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
+        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
         <!--#if (AddFormsEssentials)-->
         <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
         <!--#endif-->
         <!--#if (AddFormsToolkit)-->
-        <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.2" />
+        <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.5" />
         <!--#endif-->
         <!--#if (AddFormsMarkup)-->
-        <PackageReference Include="Xamarin.CommunityToolkit.Markup" Version="2.0.2" />
+        <PackageReference Include="Xamarin.CommunityToolkit.Markup" Version="2.0.5" />
         <!--#endif-->
     </ItemGroup>
 
     <!--#if (AddMauiToolkit || AddMauiMarkup)-->
     <!-- .NET MAUI NuGet packages -->
-    <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+    <ItemGroup Condition="'$(TargetFramework)' == 'MAUI_TFM'">
     <!--#endif-->
         <!--#if (AddMauiToolkit)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="1.0.0"/>
+        <PackageReference Include="CommunityToolkit.Maui" Version="1.3.0"/>
         <!--#endif-->
         <!--#if (AddMauiMarkup)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.0.0" />
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.1.1" />
         <!--#endif-->
     <!--#if (AddMauiToolkit || AddMauiMarkup)-->
     </ItemGroup>
