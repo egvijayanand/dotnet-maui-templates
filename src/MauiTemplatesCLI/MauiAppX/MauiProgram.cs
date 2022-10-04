@@ -1,13 +1,13 @@
 ﻿#if AddToolkitPackage
 using CommunityToolkit.Maui;
-
 #endif
 #if Hybrid
 using MauiApp1.Data;
-
 #endif
 #if Net7
 using Microsoft.Extensions.Logging;
+#endif
+#if (AddToolkitPackage || Hybrid || Net7)
 
 #endif
 namespace MauiApp1

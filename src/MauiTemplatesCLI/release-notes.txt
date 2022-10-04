@@ -2,15 +2,15 @@ What's new in ver. 2.0.0:
 -------------------------
 Templates have been updated to support .NET MAUI on .NET 7 (RC1 - Preview release).
 
-For projects targeting .NET 7 framework, option to add and configure Maui Maps NuGet package.
-
-Note: If project target .NET 6 framework, selecting this option will not have any impact.
-
-A parameter named framework has been introduced that takes either net6.0 or net7.0 as its options (with net7.0 being the default value).
+1. A parameter named framework has been introduced that takes either net6.0 or net7.0 as its options (with net7.0 being the default value).
 
 dotnet new mauiapp --framework net6.0
 
 dotnet new mauiapp -f net7.0
+
+2. For projects targeting .NET 7, option to add and configure Maui Maps NuGet package.
+
+Note: If project target .NET 6, selecting the Maps option will NOT have any impact.
 
 Refer to VijayAnand.Toolkit.Markup NuGet package source made available here https://github.com/egvijayanand/dotnet-maui-toolkit for a sample.
 
