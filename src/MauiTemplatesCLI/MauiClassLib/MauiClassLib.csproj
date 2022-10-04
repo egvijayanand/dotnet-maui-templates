@@ -1,12 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFrameworks>net6.0;net6.0-android</TargetFrameworks>
+        <TargetFrameworks>MAUI_TFM;MAUI_TFM-android</TargetFrameworks>
         <!-- Targets possible from Windows OS -->
-        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net6.0-ios;net6.0-maccatalyst;net6.0-windows10.0.19041.0</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst;MAUI_TFM-windows10.0.19041.0</TargetFrameworks>
         <!-- Targets possible from macOS -->
-        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('osx'))">$(TargetFrameworks);net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('osx'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst</TargetFrameworks>
         <!-- Uncomment to also build the Tizen app. You will need to install Tizen by following this: https://github.com/Samsung/Tizen.NET -->
-        <!-- <TargetFrameworks>$(TargetFrameworks);net6.0-tizen</TargetFrameworks> -->
+        <!-- <TargetFrameworks>$(TargetFrameworks);MAUI_TFM-tizen</TargetFrameworks> -->
+
         <!-- .NET MAUI -->
         <UseMaui>true</UseMaui>
         <SingleProject>true</SingleProject>
@@ -33,10 +34,10 @@
     <ItemGroup>
     <!--#endif-->
         <!--#if (AddToolkitPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="1.0.0"/>
+        <PackageReference Include="CommunityToolkit.Maui" Version="1.3.0"/>
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.0.0"/>
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.1.1"/>
         <!--#endif-->
         <!--#if (AddMvvmToolkitPackage)-->
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0"/>
