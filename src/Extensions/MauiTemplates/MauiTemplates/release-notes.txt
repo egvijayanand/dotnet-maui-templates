@@ -1,64 +1,18 @@
-What's new in ver. 1.7.6.3:
+What's new in ver. 2.0.0.0:
 ---------------------------
-CommunityToolkit.Mvvm NuGet package is out of preview and now stable, hence package version (8.0.0) updated.
+Templates have been updated to support .NET MAUI on .NET 7 (RC1 - Preview release).
 
-1. A new item template for Content Page, in both XAML and C#, with ViewModel following the MVVM design pattern.
+1. A parameter named framework has been introduced that takes either net6.0 or net7.0 as its options (with net7.0 being the default value).
 
-The ViewModels are generated with the base class titled BaseViewModel (implementation left to the user).
+dotnet new mauiapp --framework net6.0
 
-Recommended to add CommunityToolkit.Mvvm, an officially supported NuGet package, to make it easy to work with MVVM design pattern.
+dotnet new mauiapp -f net7.0
 
-These two articles can help you to get started with this brand-new NuGet package:
+While creating the project within Visual Studio 2022, this would be a dropdown menu in the project creation option.
 
-https://egvijayanand.in/2022/04/22/mvvm-made-easy/
+2. For projects targeting .NET 7, option to add and configure Maui Maps NuGet package.
 
-https://egvijayanand.in/2022/05/09/mvvm-made-easy-with-microsoft-mvvm-toolkit-part-2/
-
-2. Added the following new Item Templates for creating a Custom View definition made available in the MAUI section in the Add New Item dialog.
-
-Custom View and Handler (Regular) (.NET MAUI)
-Custom View and Handler (Cond.) (.NET MAUI)
-Custom View and Renderer (Regular) (.NET MAUI)
-Custom View and Renderer (Cond.) (.NET MAUI)
-
-Regular type template generates the Handler / Renderer source files in the Platforms folder whereas Cond. type template houses them in a single folder.
-
-For conditional type format, ensure Conditional Compilation is configured in the project file for the build to succeed. An additional option is provisioned during project creation (or manually thereafter).
-
-3. Added the option to configure Conditional Compilation so that platform source files can be defined anywhere in the project provided they follow a naming convention as mentioned below.
-
-This will allow maintaining related source files in the same place, especially MAUI Handlers.
-
-*.Standard.cs - Files targeting the BCL
-*.Android.cs - Files specific to Android
-*.iOS.cs - Files shared with both iOS and MacCatalyst
-*.MacCatalyst.cs - Files specific to MacCatalyst
-*.Tizen.cs - Files specific to Tizen
-*.Windows.cs - Files specific to Windows
-
-Parameter name: -cc | --conditional-compilation
-
-Templates have been updated to .NET MAUI GA, stable release version. Also compatible with recent SR1 release too.
-
-Breaking change: To make things easier, All-in-One and Class Library templates parameters for various package inclusion have been updated to Boolean parameter type.
-
-Also check out the newly included project template for creating a Shared Class Library that produces assemblies targeting Xamarin.Forms and .NET MAUI from the same project.
-
-With C# Markup, Global usings and Compiler directives, both Xamarin.Forms and .NET MAUI can be targeted from single project.
-
-dotnet new sharedclasslib --name MyApp.UI
-
-In which:
-
-*.forms.cs source files will be specific to Xamarin.Forms
-*.maui.cs source files will be specific to .NET MAUI
-*.shared.cs / *.logic.cs will be common to both Xamarin.Forms and .NET MAUI
-
-Run the command dotnet new sharedclasslib --help for further details.
-
-https://egvijayanand.in/2022/05/25/introducing-shared-class-library-multi-target-xamarin-forms-and-dotnet-maui-from-a-single-project/
-
-As a sample, refer to VijayAnand.Toolkit.Markup NuGet package source made available here https://github.com/egvijayanand/dotnet-maui-toolkit
+Note: If project target .NET 6, selecting the Maps option will NOT have any impact.
 
 Other features that you may give it a try:
 

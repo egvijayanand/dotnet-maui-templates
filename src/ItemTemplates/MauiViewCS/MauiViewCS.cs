@@ -4,7 +4,7 @@
     {
         public $safeitemname$()
         {
-            Content = new StackLayout
+            Content = new Grid
             {
                 Children =
                 {
