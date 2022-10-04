@@ -4,11 +4,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:$rootnamespace$">
     <ContentView.Content>
-        <StackLayout>
+        <Grid>
             <Label Text="Welcome to .NET MAUI!!!"
                    HorizontalOptions="Center"
                    TextColor="Purple"
                    VerticalOptions="Center"/>
-        </StackLayout>
+        </Grid>
     </ContentView.Content>
 </ContentView>
