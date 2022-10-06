@@ -151,6 +151,12 @@ Both .NET MAUI *App* and *Class Library* templates take the below optional Boole
 * `-imt` | `--include-mvvm-toolkit` - Default is `false`
 * `-cc` | `--conditional-compilation` - Default is `false`
 
+For **App** projects targeting `.NET 7`, option to add and configure `Microsoft.Maui.Controls.Maps` NuGet package.
+
+* `-inm` | `--include-maps` - Default is `false`
+
+*Note: If project targets `.NET 6`, selecting the Maps option will NOT have any impact.*
+
 ##### Conditional Compilation
 
 And now conditional compilation can be configured so that platform source files can be defined anywhere in the project provided they follow a naming convention as mentioned below. This will allow maintaining related source files in the same place, especially MAUI Handlers.
