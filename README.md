@@ -108,7 +108,25 @@ ShellPage | maui-shell | Item
 
 #### Parameters:
 
-In .NET CLI, all of these templates takes two parameters:
+Starting with [v2.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/2.0.0) of the template package, to effectively support .NET MAUI on both `.NET 6` and `.NET 7`, CLI project templates defines a new parameter named `framework`:
+
+* Framework: (Short notation: `-f`)
+
+  This can take either `net6.0` or `net7.0` as its options (with `net7.0` being the default value, if not provided).
+
+  Examples:
+
+  ```shell
+  dotnet new mauiapp --framework net6.0
+  ```
+
+  Below command can be simplified to `dotnet new mauiapp` as default value of `framework` parameter is `net7.0`
+
+  ```shell
+  dotnet new mauiapp -f net7.0
+  ```
+
+In .NET CLI, all of these item templates takes two parameters:
 
 * Name: (Short notation: `-n`)
 
@@ -126,6 +144,13 @@ In .NET CLI, all of these templates takes two parameters:
 
 Both .NET MAUI *App* and *Class Library* templates take the below optional Boolean parameters to include the officially supported CommunityToolkit NuGet packages:
 
+*Specifying the parameter name, either in short or full notation, implies that it is defined.*
+
+* `-it` | `--include-toolkit` - Default is `false`
+* `-im` | `--include-markup` - Default is `false`
+* `-imt` | `--include-mvvm-toolkit` - Default is `false`
+* `-cc` | `--conditional-compilation` - Default is `false`
+
 ##### Conditional Compilation
 
 And now conditional compilation can be configured so that platform source files can be defined anywhere in the project provided they follow a naming convention as mentioned below. This will allow maintaining related source files in the same place, especially MAUI Handlers.
@@ -137,7 +162,7 @@ And now conditional compilation can be configured so that platform source files 
 * \*.Tizen.cs - Files specific to Tizen
 * \*.Windows.cs - Files specific to Windows
 
-For existing projects, add the below block of code in the project file (.csproj). _This will modify the behaviour of build process so due care must be taken if doing so._
+For existing projects, add the below block of code in the project file (.csproj). _This will modify the behavior of build process so due care must be taken if doing so._
 
 ```xml
 <ItemGroup Condition="'$(TargetFramework)' != 'net6.0'">
@@ -181,13 +206,6 @@ For existing projects, add the below block of code in the project file (.csproj)
 </ItemGroup>
 ```
 
-*Specifying the parameter name, either in short or full notation, implies that it is defined.*
-
-* `-it` | `--include-toolkit` - Default is `false`
-* `-im` | `--include-markup` - Default is `false`
-* `-imt` | `--include-mvvm-toolkit` - Default is `false`
-* `-cc` | `--conditional-compilation` - Default is `false`
-
 All-in-One .NET MAUI App project takes one additional parameter to define the application design pattern:
 
 * `-dp` | `--design-pattern`
@@ -197,7 +215,7 @@ Can take any one of the following values, with default value set to `Plain`:
 |Parameter Value|Description|
 |:---:|:---|
 |Plain|App configured to work with a single, initial screen.|
-|Hierarchical|App configured to work in a hierarchical pattern using NavigationPage.|
+|Hierarchical|App configured to work in a Hierarchical pattern using NavigationPage.|
 |Tab|App configured to work in a Tabbed fashion using TabbedPage.|
 |Shell|App configured to work with Routes using Shell page.|
 |Hybrid|App configured to work in a Hybrid fashion using BlazorWebView.|
