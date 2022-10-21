@@ -71,9 +71,9 @@
     <ItemGroup>
     <!--#endif-->
         <!--#if (Net7)-->
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0-rc.1.22426.10" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0-rc.2.22472.3" />
         <!--#if (AddMapsPackage)-->
-        <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.0-rc.1.6683" />
+        <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.0-rc.2.6866" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddToolkitPackage)-->

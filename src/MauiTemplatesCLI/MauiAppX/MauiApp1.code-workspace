@@ -4,5 +4,12 @@
             "path": "."
         }
     ],
-    "settings": {}
+    "settings": {},
+    "extensions": {
+        "recommendations": [
+            "ms-dotnettools.csharp",
+            "clancey.comet-debug",
+            "VisualStudioExptTeam.vscodeintellicode"
+        ]
+    }
 }
