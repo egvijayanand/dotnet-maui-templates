@@ -5,9 +5,11 @@ Join me on [**Developer Thoughts**](https://egvijayanand.in/ "Developer Thoughts
 
 We all know that .NET MAUI is an evolution of Xamarin.Forms.
 
-The updated stable version `.NET MAUI SR3.1 (Service Release 3.1)` is now released on 1 Aug 2022 along with Visual Studio 2022 Version 17.3.0 Preview 6.0 (most probably to get released in the stable channel by this month).
+On the Release channel, `.NET MAUI SR6 (Service Release 6)` is now released on Tue, Oct 11, 2022 along with VS2022 17.3.6
 
-Templates have been updated to support the latest release and is available to install from.
+And on the Preview channel, `.NET MAUI 7.0.0-rc.2.6866 (.NET 7 RC2)` is now released on Tue, Oct 18, 2022 along with VS2022 17.4 Preview 4.0
+
+Templates have been updated to support both the release and preview channel and is available to install from.
 
 |NuGet|VS Marketplace|
 |:---:|:---:|
@@ -78,16 +80,16 @@ For making use of these templates cross-platform, have provided it as .NET CLI t
 Install the template package from NuGet with the below command.
 
 ```shell
-dotnet new --install VijayAnand.MauiTemplates
+dotnet new install VijayAnand.MauiTemplates
 ```
 
 If you've already installed this package, then this can be updated to the latest version with the below command.
 
 ```shell
-dotnet new --update-check
+dotnet new update --check-only
 ```
 ```shell
-dotnet new --update-apply
+dotnet new update
 ```
 
 This comes with with the following templates:

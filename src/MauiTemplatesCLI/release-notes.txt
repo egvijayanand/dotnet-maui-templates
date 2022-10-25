@@ -1,5 +1,11 @@
-What's new in ver. 2.0.1:
+What's new in ver. 2.0.2:
 -------------------------
+Android targetSdkVersion set in accordance with the framework version selected.
+
+.NET 7 - targetSdkVersion 33
+
+.NET 6 - targetSdkVersion 31
+
 Templates have been updated to support .NET MAUI on .NET 7 (RC2 - Preview release).
 
 1. A parameter named framework has been introduced that takes either net6.0 or net7.0 as its options (with net7.0 being the default value).
