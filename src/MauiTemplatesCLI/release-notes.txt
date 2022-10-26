@@ -1,12 +1,34 @@
-What's new in ver. 2.0.2:
+What's new in ver. 2.0.3:
 -------------------------
+1. A parameter named target-platform has been introduced that takes any one of the following values (with All being the default value).
+
+All - Targets all possible .NET MAUI supported platforms.
+Android - Targets Android platform.
+iOS - Targets iOS platform.
+macOS - Targets macOS platform via Mac Catalyst.
+Windows - Targets Windows platform.
+Tizen - Targets Tizen platform.
+Mobile - Targets Android and iOS platforms.
+Desktop - Targets Windows and macOS platforms.
+Apple - Targets iOS and macOS platforms.
+
+dotnet new mauiapp --target-platform Mobile
+
+dotnet new mauiapp -tp Android
+
+v2.0.2:
+
 Android targetSdkVersion set in accordance with the framework version selected.
 
 .NET 7 - targetSdkVersion 33
 
 .NET 6 - targetSdkVersion 31
 
+v2.0.1:
+
 Templates have been updated to support .NET MAUI on .NET 7 (RC2 - Preview release).
+
+v2.0.0:
 
 1. A parameter named framework has been introduced that takes either net6.0 or net7.0 as its options (with net7.0 being the default value).
 

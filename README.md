@@ -128,7 +128,7 @@ Starting with [v2.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/2
   dotnet new mauiapp -f net7.0
   ```
 
-In .NET CLI, all of these item templates takes two parameters:
+In .NET CLI, all of these _Item Templates_ takes two parameters:
 
 * Name: (Short notation: `-n`)
 
@@ -214,7 +214,7 @@ For existing projects, add the below block of code in the project file (.csproj)
 </ItemGroup>
 ```
 
-All-in-One .NET MAUI App project takes one additional parameter to define the application design pattern:
+All-in-One .NET MAUI **App** project takes two additional parameters to define the application design pattern and target platform respectively:
 
 * `-dp` | `--design-pattern`
 
@@ -227,6 +227,32 @@ Can take any one of the following values, with default value set to `Plain`:
 |Tab|App configured to work in a Tabbed fashion using TabbedPage.|
 |Shell|App configured to work with Routes using Shell page.|
 |Hybrid|App configured to work in a Hybrid fashion using BlazorWebView.|
+
+* `-tp` | `--target-platform`
+
+Can take any one of the following values, with default value set to `All`:
+
+|Parameter Value|Description|
+|:---:|:---|
+|All|Targets all possible .NET MAUI supported platforms.|
+|Android|Targets Android platform.|
+|iOS|Targets iOS platform.|
+|macOS|Targets macOS platform via Mac Catalyst.|
+|Windows|Targets Windows platform.|
+|Tizen|Targets Tizen platform.|
+|Mobile|Targets Android and iOS platforms.|
+|Desktop|Targets Windows and macOS platforms.|
+|Apple|Targets iOS and macOS platforms.|
+
+Examples:
+
+```shell
+dotnet new mauiapp --design-pattern Hybrid --target-platform Mobile
+```
+
+  ```shell
+dotnet new mauiapp -dp Shell -tp Android
+```
 
 Shared Class Library template take the below optional Boolean parameters to include the officially supported NuGet packages:
 

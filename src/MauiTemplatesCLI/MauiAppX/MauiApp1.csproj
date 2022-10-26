@@ -4,11 +4,32 @@
 <Project Sdk="Microsoft.NET.Sdk">
 <!--#endif-->
     <PropertyGroup>
+        <!--#if (AllPlatforms)-->
         <TargetFrameworks>MAUI_TFM-android;MAUI_TFM-ios;MAUI_TFM-maccatalyst</TargetFrameworks>
         <!-- Targets possible from Windows OS -->
         <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-windows10.0.19041.0</TargetFrameworks>
         <!-- Uncomment to also build the Tizen app. You will need to install Tizen by following this: https://github.com/Samsung/Tizen.NET -->
         <!-- <TargetFrameworks>$(TargetFrameworks);MAUI_TFM-tizen</TargetFrameworks> -->
+        <!--#elif (Desktop)-->
+        <TargetFrameworks>MAUI_TFM-maccatalyst</TargetFrameworks>
+        <!-- Targets possible from Windows OS -->
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-windows10.0.19041.0</TargetFrameworks>
+        <!--#elif (Mobile)-->
+        <TargetFrameworks>MAUI_TFM-android;MAUI_TFM-ios</TargetFrameworks>
+        <!--#elif (Apple)-->
+        <TargetFrameworks>MAUI_TFM-ios;MAUI_TFM-maccatalyst</TargetFrameworks>
+        <!--#elif (Android)-->
+        <TargetFrameworks>MAUI_TFM-android</TargetFrameworks>
+        <!--#elif (iOS)-->
+        <TargetFrameworks>MAUI_TFM-ios</TargetFrameworks>
+        <!--#elif (macOS)-->
+        <TargetFrameworks>MAUI_TFM-maccatalyst</TargetFrameworks>
+        <!--#elif (Windows)-->
+        <!-- Targets possible from Windows OS -->
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">MAUI_TFM-windows10.0.19041.0</TargetFrameworks>
+        <!--#elif (Tizen)-->
+        <TargetFrameworks>MAUI_TFM-tizen</TargetFrameworks>
+        <!--#endif-->
         <OutputType>Exe</OutputType>
 
         <!-- .NET MAUI -->

@@ -159,6 +159,50 @@
                 }
             ]
         },
+        "target-platform": {
+            "type": "parameter",
+            "datatype": "choice",
+            "defaultValue": "All",
+            "description": "Option to choose the application target platform.",
+            "choices": [
+                {
+                    "choice": "All",
+                    "description": "Targets all possible .NET MAUI supported platforms."
+                },
+                {
+                    "choice": "Android",
+                    "description": "Targets Android platform."
+                },
+                {
+                    "choice": "iOS",
+                    "description": "Targets iOS platform."
+                },
+                {
+                    "choice": "macOS",
+                    "description": "Targets macOS platform via Mac Catalyst."
+                },
+                {
+                    "choice": "Windows",
+                    "description": "Targets Windows platform.."
+                },
+                {
+                    "choice": "Tizen",
+                    "description": "Targets Tizen platform.."
+                },
+                {
+                    "choice": "Mobile",
+                    "description": "Targets Android and iOS platforms."
+                },
+                {
+                    "choice": "Desktop",
+                    "description": "Targets Windows and macOS platforms."
+                },
+                {
+                    "choice": "Apple",
+                    "description": "Targets iOS and macOS platforms."
+                }
+            ]
+        },
         "include-toolkit": {
             "type": "parameter",
             "datatype": "bool",
@@ -216,6 +260,14 @@
                 "toLower": true
             }
         },
+        "targetPlatformLower": {
+            "type": "generated",
+            "generator": "casing",
+            "parameters": {
+                "source": "target-platform",
+                "toLower": true
+            }
+        },
         "frameworkLower": {
             "type": "generated",
             "generator": "casing",
@@ -247,6 +299,42 @@
         "Net7": {
             "type": "computed",
             "value": "(frameworkLower == \"net7.0\" || frameworkLower == \".net 7.0 (preview)\")"
+        },
+        "AllPlatforms": {
+            "type": "computed",
+            "value": "(target-platform == \"All\" || targetPlatformLower == \"all\")"
+        },
+        "Android": {
+            "type": "computed",
+            "value": "(target-platform == \"Android\" || targetPlatformLower == \"android\")"
+        },
+        "iOS": {
+            "type": "computed",
+            "value": "(target-platform == \"iOS\" || targetPlatformLower == \"ios\")"
+        },
+        "macOS": {
+            "type": "computed",
+            "value": "(target-platform == \"macOS\" || targetPlatformLower == \"macos\")"
+        },
+        "Windows": {
+            "type": "computed",
+            "value": "(target-platform == \"Windows\" || targetPlatformLower == \"windows\")"
+        },
+        "Tizen": {
+            "type": "computed",
+            "value": "(target-platform == \"Tizen\" || targetPlatformLower == \"tizen\")"
+        },
+        "Desktop": {
+            "type": "computed",
+            "value": "(target-platform == \"Desktop\" || targetPlatformLower == \"desktop\")"
+        },
+        "Mobile": {
+            "type": "computed",
+            "value": "(target-platform == \"Mobile\" || targetPlatformLower == \"mobile\")"
+        },
+        "Apple": {
+            "type": "computed",
+            "value": "(target-platform == \"Apple\" || targetPlatformLower == \"apple\")"
         },
         "AddMapsPackage": {
             "type": "computed",

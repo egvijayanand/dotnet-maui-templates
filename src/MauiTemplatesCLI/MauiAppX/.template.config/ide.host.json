@@ -11,6 +11,14 @@
             "defaultValue": "Plain"
         },
         {
+            "id": "target-platform",
+            "name": {
+                "text": "Select the Application Target _Platform:"
+            },
+            "isVisible": true,
+            "defaultValue": "All"
+        },
+        {
             "id": "include-toolkit",
             "name": {
                 "text": "Add and configure Community_Toolkit.Maui NuGet package reference"
