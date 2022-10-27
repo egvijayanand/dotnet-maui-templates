@@ -1,21 +1,39 @@
-What's new in ver. 2.0.0.0:
+What's new in ver. 2.0.3.0:
 ---------------------------
-Templates have been updated to support .NET MAUI on .NET 7 (RC1 - Preview release).
+1. A parameter named target-platform has been introduced that takes any one of the following values (with All being the default value).
+
+While creating the project within Visual Studio 2022, this would be a dropdown menu in the project creation option.
+
+All - Targets all possible .NET MAUI supported platforms.
+Android - Targets Android platform.
+iOS - Targets iOS platform.
+macOS - Targets macOS platform via Mac Catalyst.
+Windows - Targets Windows platform.
+Tizen - Targets Tizen platform.
+Mobile - Targets Android and iOS platforms.
+Desktop - Targets Windows and macOS platforms.
+Apple - Targets iOS and macOS platforms.
+
+dotnet new mauiapp --target-platform Mobile
+
+dotnet new mauiapp -tp Android
+
+Templates have been updated to support .NET MAUI on .NET 7 RC2 (Preview release).
+
+Earlier version:
 
 1. A parameter named framework has been introduced that takes either net6.0 or net7.0 as its options (with net7.0 being the default value).
+
+While creating the project within Visual Studio 2022, this would be a dropdown menu in the project creation option.
 
 dotnet new mauiapp --framework net6.0
 
 dotnet new mauiapp -f net7.0
 
-While creating the project within Visual Studio 2022, this would be a dropdown menu in the project creation option.
-
 2. For projects targeting .NET 7, option to add and configure Maui Maps NuGet package.
 
-Note: If project target .NET 6, selecting the Maps option will NOT have any impact.
+Note: If project targets .NET 6, selecting the Maps option will NOT have any impact.
 
-Other features that you may give it a try:
-
-The All-in-One .NET MAUI App Project Template. Refer to this article for more details:
+For other features, refer to this article for more details:
 
 https://egvijayanand.in/2022/04/20/all-in-one-dotnet-maui-app-project-template-what-is-new/
