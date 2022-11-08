@@ -33,7 +33,7 @@
             },
             "isVisible": true,
             "defaultValue": "false"
-        }
+        },
         {
             "id": "include-maui-toolkit",
             "name": {

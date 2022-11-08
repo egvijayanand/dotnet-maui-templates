@@ -1,5 +1,9 @@
-What's new in ver. 2.0.3:
+What's new in ver. 2.1.0:
 -------------------------
+Template package updated to .NET 7 GA release.
+
+v2.0.3:
+
 1. A parameter named target-platform has been introduced that takes any one of the following values (with All being the default value).
 
 All - Targets all possible .NET MAUI supported platforms.

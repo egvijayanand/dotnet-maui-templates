@@ -4,5 +4,9 @@
     "Framework": {
       "longName": "framework"
     }
-  }
+  },
+  "usageExamples": [
+    "--framework net7.0",
+    "-f net6.0"
+  ]
 }
