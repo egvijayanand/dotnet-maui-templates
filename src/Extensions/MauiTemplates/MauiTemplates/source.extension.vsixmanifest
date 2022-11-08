@@ -4,18 +4,18 @@
                  xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
         <Identity Id="MauiTemplates.20dca96a-7311-401f-84ed-980478fb319b"
-                  Version="2.0.3.0"
+                  Version="2.1.0.0"
                   Language="en-US"
                   Publisher="Vijay Anand E G"/>
         <DisplayName>.NET MAUI Project and Item Templates</DisplayName>
-        <Description xml:space="preserve">.NET MAUI Project, Item Templates, and Code Snippets for Visual Studio 2022 (.NET MAUI GA and its Service Releases and .NET 7 RC2 - Preview Release).</Description>
+        <Description xml:space="preserve">.NET MAUI Project, Item Templates, and Code Snippets for Visual Studio 2022 (.NET MAUI GA and its Service Releases and .NET 7 GA).</Description>
         <MoreInfo>https://egvijayanand.in/2022/04/20/all-in-one-dotnet-maui-app-project-template-what-is-new/</MoreInfo>
         <License>license.txt</License>
         <GettingStartedGuide>readme.rtf</GettingStartedGuide>
         <ReleaseNotes>release-notes.txt</ReleaseNotes>
         <Icon>Resources\Icon.png</Icon>
         <PreviewImage>Resources\Icon.png</PreviewImage>
-        <Tags>MAUI, iOS, Android, macOS, WinUI, Windows, Desktop, Mobile, Blazor, .NET MAUI, Mac Catalyst, Templates, VS2022, Visual Studio, WinUI3, GA, Code Snippets, Unified, All-in-One, Hybrid, Tizen, Stable, .NET 7, Blazor Hybrid, BlazorWebView, C#, Handlers, Maps, MAUI Maps, MVVM, RC2, XAML</Tags>
+        <Tags>MAUI, iOS, Android, macOS, WinUI, Windows, Desktop, Mobile, Blazor, .NET MAUI, Mac Catalyst, Templates, VS2022, Visual Studio, WinUI3, GA, Code Snippets, Unified, All-in-One, Hybrid, Tizen, Stable, .NET 7, Blazor Hybrid, BlazorWebView, C#, Handlers, Maps, MAUI Maps, MVVM, XAML</Tags>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community"

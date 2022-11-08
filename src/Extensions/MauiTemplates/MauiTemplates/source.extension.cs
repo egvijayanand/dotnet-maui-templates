@@ -9,10 +9,10 @@ namespace MauiTemplates
     {
         public const string Id = "MauiTemplates.20dca96a-7311-401f-84ed-980478fb319b";
         public const string Name = ".NET MAUI Project and Item Templates";
-        public const string Description = @".NET MAUI Project, Item Templates, and Code Snippets for Visual Studio 2022 (.NET MAUI GA and its Service Releases and .NET 7 RC2 - Preview Release).";
+        public const string Description = @".NET MAUI Project, Item Templates, and Code Snippets for Visual Studio 2022 (.NET MAUI GA and its Service Releases and .NET 7 GA).";
         public const string Language = "en-US";
-        public const string Version = "2.0.3.0";
+        public const string Version = "2.1.0.0";
         public const string Author = "Vijay Anand E G";
-        public const string Tags = "MAUI, iOS, Android, macOS, WinUI, Windows, Desktop, Mobile, Blazor, .NET MAUI, Mac Catalyst, Templates, VS2022, Visual Studio, WinUI3, GA, Code Snippets, Unified, All-in-One, Hybrid, Tizen, Stable, .NET 7, Blazor Hybrid, BlazorWebView, C#, Handlers, Maps, MAUI Maps, MVVM, RC2, XAML";
+        public const string Tags = "MAUI, iOS, Android, macOS, WinUI, Windows, Desktop, Mobile, Blazor, .NET MAUI, Mac Catalyst, Templates, VS2022, Visual Studio, WinUI3, GA, Code Snippets, Unified, All-in-One, Hybrid, Tizen, Stable, .NET 7, Blazor Hybrid, BlazorWebView, C#, Handlers, Maps, MAUI Maps, MVVM, XAML";
     }
 }
