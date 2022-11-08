@@ -3,7 +3,8 @@
     public partial class MainPage : ContentPage
     {
         int count;
-        Label counter;
+        Label currentCount;
+        Button counter;
 
         public MainPage()
         {
@@ -34,12 +35,12 @@
                             FontAttributes = FontAttributes.Bold,
                             Style = AppResource<Style>("MauiLabel"),
                             Text = "Current count: 0",
-                        }.FontSize(18).CenterHorizontal().Assign(out counter),
+                        }.FontSize(18).CenterHorizontal().Assign(out currentCount),
                         new Button()
                         {
                             Style = AppResource<Style>("PrimaryAction"),
                             Text = "Click me",
-                        }.CenterHorizontal().Invoke(btn => btn.Clicked += OnCounterClicked).SemanticHint("Counts the number of times you click"),
+                        }.CenterHorizontal().Invoke(btn => btn.Clicked += OnCounterClicked).Assign(out counter),
                         new Image()
                         {
                             Source = "dotnet_bot.png",
@@ -47,14 +48,16 @@
                     }
                 }.Padding(30)
             };
+
+            SemanticProperties.SetHint(counter, "Counts the number of times you click");
         }
 
         private void OnCounterClicked(object? sender, EventArgs e)
         {
             count++;
-            counter.Text = $"Current count: {count}";
+            currentCount.Text = $"Current count: {count}";
 
-            SemanticScreenReader.Announce(counter.Text);
+            SemanticScreenReader.Announce(currentCount.Text);
         }
     }
 }

@@ -1,5 +1,9 @@
-What's new in ver. 2.0.3.0:
+What's new in ver. 2.1.0.0:
 ---------------------------
+Templates have been updated to support .NET 7 GA release.
+
+v2.0.3.0:
+
 1. A parameter named target-platform has been introduced that takes any one of the following values (with All being the default value).
 
 While creating the project within Visual Studio 2022, this would be a dropdown menu in the project creation option.
