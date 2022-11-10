@@ -91,17 +91,27 @@
     <!--#if (AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage || Net7)-->
     <ItemGroup>
     <!--#endif-->
-        <!--#if (Net7)-->
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+        <!--#if (AddFoldablePackage)-->
+        <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="7.0.49" />
+        <!--#endif-->
         <!--#if (AddMapsPackage)-->
         <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.49" />
         <!--#endif-->
-        <!--#endif-->
+        <!--#if (Net7)-->
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
         <!--#if (AddToolkitPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="1.3.0"/>
+        <PackageReference Include="CommunityToolkit.Maui" Version="3.0.0"/>
+        <!--#endif-->
+        <!--#if (AddMarkupPackage)-->
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="2.0.0"/>
+        <!--#endif-->
+        <!--#else-->
+        <!--#if (AddToolkitPackage)-->
+        <PackageReference Include="CommunityToolkit.Maui" Version="2.0.0"/>
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.2.1"/>
+        <!--#endif-->
         <!--#endif-->
         <!--#if (AddMvvmToolkitPackage)-->
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0"/>

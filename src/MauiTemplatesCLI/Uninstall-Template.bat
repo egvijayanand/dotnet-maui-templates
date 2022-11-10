@@ -17,7 +17,7 @@ dotnet --version
 
 call Info "Uninstalling %packageName% ..."
 
-dotnet new --uninstall %packageName%
+dotnet new uninstall %packageName%
 
 if %errorlevel% == 0 (call Success "Process completed.") else (call Error "Package uninstall failed.")
 

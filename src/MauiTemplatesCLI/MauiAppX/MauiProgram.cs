@@ -7,7 +7,10 @@ using MauiApp1.Data;
 #if Net7
 using Microsoft.Extensions.Logging;
 #endif
-#if (AddToolkitPackage || Hybrid || Net7)
+#if AddFoldablePackage
+using Microsoft.Maui.Foldable;
+#endif
+#if (AddToolkitPackage || Hybrid || Net7 || AddFoldablePackage)
 
 #endif
 namespace MauiApp1
@@ -18,7 +21,10 @@ namespace MauiApp1
         {
             var builder = MauiApp.CreateBuilder();
             builder.UseMauiApp<App>()
-#if (Net7 && AddMapsPackage)
+#if AddFoldablePackage
+                   .UseFoldable()
+#endif
+#if AddMapsPackage
                    .UseMauiMaps()
 #endif
 #if AddToolkitPackage

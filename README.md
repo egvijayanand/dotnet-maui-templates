@@ -142,6 +142,8 @@ In .NET CLI, all of these _Item Templates_ takes two parameters:
 
     The namespace for the generated files.
 
+    *While working with .NET 7 SDK, the namespace parameter in short notation needs to be passed as `-p:na` (i.e., it needs to be prefixed with `-p:`).*
+
 * Now with more options while creating the app or class library project, ability to include NuGet packages on the fly for `CommunityToolkit.Maui`, `CommunityToolkit.Maui.Markup`, `CommunityToolkit.Mvvm` or all.
 
 *Note: Parameter values are case-insensitive.*
@@ -155,11 +157,12 @@ Both .NET MAUI *App* and *Class Library* templates take the below optional Boole
 * `-imt` | `--include-mvvm-toolkit` - Default is `false`
 * `-cc` | `--conditional-compilation` - Default is `false`
 
-For **App** projects targeting `.NET 7`, option to add and configure `Microsoft.Maui.Controls.Maps` NuGet package.
+For **App** projects targeting `.NET 7`, an option to add and configure `Microsoft.Maui.Controls.Foldable`, `Microsoft.Maui.Controls.Maps`, or both NuGet packages.
 
+* `-if` | `--include-foldable` - Default is `false`
 * `-inm` | `--include-maps` - Default is `false`
 
-*Note: If project targets `.NET 6`, selecting the Maps option will NOT have any impact.*
+*Note: If the project target `.NET 6`, selecting the Foldable/Maps option will NOT have any impact.*
 
 ##### Conditional Compilation
 
@@ -304,7 +307,7 @@ dotnet new mauiapp -n MyApp -dp Hybrid
 ```
 Option to include NuGet packages:
 ```shell
-dotnet new mauiapp -n MyApp -dp Shell -it -im -imt
+dotnet new mauiapp -n MyApp -dp Shell -it -im -imt -inm -if
 ```
 Option to configure conditional compilation:
 ```shell
@@ -367,7 +370,7 @@ dotnet new mauiapp --name MyApp --design-pattern Hybrid
 ```
 Option to include NuGet packages:
 ```shell
-dotnet new mauiapp --name MyApp --design-pattern Shell --include-toolkit --include-markup --include-mvvm-toolkit
+dotnet new mauiapp --name MyApp --design-pattern Shell --include-toolkit --include-markup --include-mvvm-toolkit --include-maps --include-foldable
 ```
 ```shell
 dotnet new mauiapp -n MyApp --design-pattern Shell --conditional-compilation

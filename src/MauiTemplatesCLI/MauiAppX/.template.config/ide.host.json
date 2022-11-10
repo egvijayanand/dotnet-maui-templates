@@ -51,6 +51,14 @@
             "defaultValue": "false"
         },
         {
+            "id": "include-foldable",
+            "name": {
+                "text": "Add and configure Microsoft.Maui.Controls._Foldable NuGet package reference (.NET 7)"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
             "id": "conditional-compilation",
             "name": {
                 "text": "_Configure conditional compilation for the project"

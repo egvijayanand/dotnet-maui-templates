@@ -231,6 +231,13 @@
             "description": "Option to add and configure Microsoft.Maui.Controls.Maps NuGet package reference (.NET 7).",
             "displayName": "Add and configure Microsoft.Maui._Controls.Maps NuGet package reference"
         },
+        "include-foldable": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add and configure Microsoft.Maui.Controls.Foldable NuGet package reference (.NET 7).",
+            "displayName": "Add and configure Microsoft.Maui.Controls._Foldable NuGet package reference"
+        },
         "conditional-compilation": {
             "type": "parameter",
             "datatype": "bool",
@@ -298,7 +305,7 @@
         },
         "Net7": {
             "type": "computed",
-            "value": "(frameworkLower == \"net7.0\" || frameworkLower == \".net 7.0 (preview)\")"
+            "value": "(frameworkLower == \"net7.0\")"
         },
         "AllPlatforms": {
             "type": "computed",
@@ -338,7 +345,11 @@
         },
         "AddMapsPackage": {
             "type": "computed",
-            "value": "(include-maps)"
+            "value": "(Net7 && include-maps)"
+        },
+        "AddFoldablePackage": {
+            "type": "computed",
+            "value": "(Net7 && include-foldable)"
         },
         "AddToolkitPackage": {
             "type": "computed",
