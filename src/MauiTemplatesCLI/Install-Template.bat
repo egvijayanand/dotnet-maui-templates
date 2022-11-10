@@ -42,7 +42,7 @@ if %errorlevel% == 0 (call Info "Package validated.") else (call Error "Package 
 echo.
 call Info "Installing the %packageName% %config% build template ver. %packageVersion% ..."
 
-dotnet new --install .\bin\%config%\%packageName%.%packageVersion%.nupkg
+dotnet new install .\bin\%config%\%packageName%.%packageVersion%.nupkg
 
 if %errorlevel% == 0 (call Success "Process completed.") else (call Error "Package install failed.")
 
