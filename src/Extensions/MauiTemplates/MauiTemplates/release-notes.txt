@@ -1,5 +1,13 @@
-What's new in ver. 2.1.0.0:
+What's new in ver. 2.1.1.1:
 ---------------------------
+1. Template package updated to support newly released .NET 7 NuGet dependencies.
+
+2. For App project targeting .NET 7, option to add and configure Maui Foldable NuGet package.
+
+Note: If the project target .NET 6, selecting the Foldable/Maps option will NOT have any impact.
+
+v2.1.0.0:
+
 Templates have been updated to support .NET 7 GA release.
 
 v2.0.3.0:

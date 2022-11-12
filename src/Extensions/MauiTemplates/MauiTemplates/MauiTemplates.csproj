@@ -269,7 +269,7 @@
       <IncludeInVSIX>true</IncludeInVSIX>
       <VSIXSubPath>ItemTemplates\MAUI</VSIXSubPath>
     </Content>
-    <None Include="Assets\VijayAnand.MauiTemplates.2.1.0.nupkg" />
+    <None Include="Assets\VijayAnand.MauiTemplates.2.1.1.nupkg" />
     <Content Include="MauiSnippets\CSharp\asyncRelayCommand.snippet">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
