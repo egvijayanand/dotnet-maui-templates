@@ -81,7 +81,7 @@
 			<ProjectItem ReplaceParameters="true" TargetFileName="Imports.cs">Imports.cs</ProjectItem>
 			<ProjectItem ReplaceParameters="true" TargetFileName="MainPage.cs">MainPage.cs</ProjectItem>
 			<ProjectItem ReplaceParameters="true" TargetFileName="MauiProgram.cs">MauiProgram.cs</ProjectItem>
-			<ProjectItem ReplaceParameters="true" TargetFileName="MauiAppCS.code-workspace">MauiAppCS.code-workspace</ProjectItem>
+			<ProjectItem ReplaceParameters="true" TargetFileName="$safeprojectname$.code-workspace">MauiAppCS.code-workspace</ProjectItem>
 		</Project>
 		<CustomParameters>
 			<CustomParameter Name="$MauiAppId$" Value=""/>
