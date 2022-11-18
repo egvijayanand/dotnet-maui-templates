@@ -12,42 +12,65 @@ Item templates for the following:
 |ContentPage (C#)|maui-page-cs|
 |ContentView (XAML)|maui-view|
 |ContentView (C#)|maui-view-cs|
-|Shell (XAML)|maui-shell|
 |ResourceDictionary (XAML)|maui-resdict|
+|Shell (XAML)|maui-shell|
 
-All of these templates currently target `.NET MAUI GA`, stable release as of May 2022.
+All of these templates currently target `.NET MAUI on .NET 7 GA`, stable release as of Nov 2022.
 
-To install the template NuGet package, use the below .NET CLI command:
-
-```shell
-dotnet new --install VijayAnand.MauiTemplates
-```
-
-If you've already installed this package, then it can be updated to the latest version with the below command:
+Install the template package from NuGet with the below command.
 
 ```shell
-dotnet new --update-check
-```
-```shell
-dotnet new --update-apply
+dotnet new install VijayAnand.MauiTemplates
 ```
 
-Use the below .NET CLI command to create the All-in-One .NET MAUI App, library project, pages, and views out these templates:
+If you've already installed this package, then this can be updated to the latest version with the below command.
+
+```shell
+dotnet new update --check-only
+```
+```shell
+dotnet new update
+```
+
+#### Parameters:
+
+Starting with [v2.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/2.0.0) of the template package, to effectively support .NET MAUI on both `.NET 6` and `.NET 7`, CLI project templates defines a new parameter named `framework`:
+
+* Framework: (Short notation: `-f`)
+
+  This can take either `net6.0` or `net7.0` as its options (with `net7.0` being the default value, if not provided).
+
+  Examples:
+
+  ```shell
+  dotnet new mauiapp --framework net6.0
+  ```
+
+  Below command can be simplified to `dotnet new mauiapp` as default value of `framework` parameter is `net7.0`
+
+  ```shell
+  dotnet new mauiapp -f net7.0
+  ```
+
+In .NET CLI, all of these _Item Templates_ takes two parameters:
+
+* Name: (Short notation: `-n`)
+
+    The name of the project/page/view to create. _For pages/views, don't need to suffix it with .xaml_, it will get added.
+
+    _If the name parameter is not specified, by default, the **.NET CLI template engine will take the current folder name as the filename** (current behaviour of the templating engine)._
+
+* Namespace: (Short notation: `-na`)
+
+    The namespace for the generated files.
+
+    *While working with .NET 7 SDK, the namespace parameter in short notation needs to be passed as `-p:na` (i.e., it needs to be prefixed with `-p:`).*
+
+* Now with more options while creating the app or class library project, ability to include NuGet packages on the fly for `CommunityToolkit.Maui`, `CommunityToolkit.Maui.Markup`, `CommunityToolkit.Mvvm` or all.
 
 *Note: Parameter values are case-insensitive.*
 
 Both .NET MAUI *App* and *Class Library* templates take the below optional Boolean parameters to include the officially supported CommunityToolkit NuGet packages:
-
-And now conditional compilation can be configured so that platform source files can be defined anywhere in the project provided they follow a naming convention as mentioned below.
-
-This will allow maintaining related source files in the same place, especially MAUI Handlers.
-
-* \*.Standard.cs - Files targeting the BCL
-* \*.Android.cs - Files specific to Android
-* \*.iOS.cs - Files shared with both iOS and MacCatalyst
-* \*.MacCatalyst.cs - Files specific to MacCatalyst
-* \*.Tizen.cs - Files specific to Tizen
-* \*.Windows.cs - Files specific to Windows
 
 *Specifying the parameter name, either in short or full notation, implies that it is defined.*
 
@@ -56,7 +79,75 @@ This will allow maintaining related source files in the same place, especially M
 * `-imt` | `--include-mvvm-toolkit` - Default is `false`
 * `-cc` | `--conditional-compilation` - Default is `false`
 
-All-in-One .NET MAUI App project takes one additional parameter to define the application design pattern:
+Additional parameters for **App** project:
+
+The target for the Windows platform can be either `Package` (MSIX) or `Unpackaged`. By default, it is set as `Package`, this can be overridden while creating the project by including the below parameter:
+
+* `-wu` | `--windows-unpackaged` - Default is `false`
+
+While targeting `.NET 7`, an option to add and configure `Microsoft.Maui.Controls.Foldable`, `Microsoft.Maui.Controls.Maps`, or both NuGet packages.
+
+* `-if` | `--include-foldable` - Default is `false`
+* `-inm` | `--include-maps` - Default is `false`
+
+*Note: If the project target `.NET 6`, selecting the Foldable/Maps option will NOT have any impact.*
+
+##### Conditional Compilation
+
+And now conditional compilation can be configured so that platform source files can be defined anywhere in the project provided they follow a naming convention as mentioned below. This will allow maintaining related source files in the same place, especially MAUI Handlers.
+
+* \*.Standard.cs - Files targeting the BCL
+* \*.Android.cs - Files specific to Android
+* \*.iOS.cs - Files shared with both iOS and MacCatalyst
+* \*.MacCatalyst.cs - Files specific to MacCatalyst
+* \*.Tizen.cs - Files specific to Tizen
+* \*.Windows.cs - Files specific to Windows
+
+For existing projects, add the below block of code in the project file (.csproj). _This will modify the behavior of build process so due care must be taken if doing so._
+
+```xml
+<ItemGroup Condition="'$(TargetFramework)' != 'net6.0'">
+    <Compile Remove="**\*.Standard.cs" />
+    <None Include="**\*.Standard.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+</ItemGroup>
+
+<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'ios' AND $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'maccatalyst'">
+    <Compile Remove="**\*.iOS.cs" />
+    <None Include="**\*.iOS.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+    <Compile Remove="**\iOS\**\*.cs" />
+    <None Include="**\iOS\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+</ItemGroup>
+
+<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'android'">
+    <Compile Remove="**\*.Android.cs" />
+    <None Include="**\*.Android.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+    <Compile Remove="**\Android\**\*.cs" />
+    <None Include="**\Android\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+</ItemGroup>
+
+<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'maccatalyst'">
+    <Compile Remove="**\*.MacCatalyst.cs" />
+    <None Include="**\*.MacCatalyst.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+    <Compile Remove="**\MacCatalyst\**\*.cs" />
+    <None Include="**\MacCatalyst\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+</ItemGroup>
+
+<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'tizen'">
+    <Compile Remove="**\*.Tizen.cs" />
+    <None Include="**\*.Tizen.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+    <Compile Remove="**\Tizen\**\*.cs" />
+    <None Include="**\Tizen\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+</ItemGroup>
+
+<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'windows'">
+    <Compile Remove="**\*.Windows.cs" />
+    <None Include="**\*.Windows.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+    <Compile Remove="**\Windows\**\*.cs" />
+    <None Include="**\Windows\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+</ItemGroup>
+```
+
+All-in-One .NET MAUI **App** project takes two additional parameters to define the application design pattern and target platform respectively:
 
 * `-dp` | `--design-pattern`
 
@@ -65,10 +156,36 @@ Can take any one of the following values, with default value set to `Plain`:
 |Parameter Value|Description|
 |:---:|:---|
 |Plain|App configured to work with a single, initial screen.|
-|Hierarchical|App configured to work in a hierarchical pattern using NavigationPage.|
+|Hierarchical|App configured to work in a Hierarchical pattern using NavigationPage.|
 |Tab|App configured to work in a Tabbed fashion using TabbedPage.|
 |Shell|App configured to work with Routes using Shell page.|
 |Hybrid|App configured to work in a Hybrid fashion using BlazorWebView.|
+
+* `-tp` | `--target-platform`
+
+Can take any one of the following values, with default value set to `All`:
+
+|Parameter Value|Description|
+|:---:|:---|
+|All|Targets all possible .NET MAUI supported platforms.|
+|Android|Targets Android platform.|
+|iOS|Targets iOS platform.|
+|macOS|Targets macOS platform via Mac Catalyst.|
+|Windows|Targets Windows platform.|
+|Tizen|Targets Tizen platform.|
+|Mobile|Targets Android and iOS platforms.|
+|Desktop|Targets Windows and macOS platforms.|
+|Apple|Targets iOS and macOS platforms.|
+
+Examples:
+
+```shell
+dotnet new mauiapp --design-pattern Hybrid --target-platform Mobile
+```
+
+  ```shell
+dotnet new mauiapp -dp Shell -tp Android
+```
 
 Shared Class Library template take the below optional Boolean parameters to include the officially supported NuGet packages:
 
@@ -105,13 +222,20 @@ dotnet new mauiclasslib --help
 dotnet new sharedclasslib --help
 ```
 
+#### Usage:
+
+After installation, use the below command(s) to create new artifacts using the template (both provide the same output):
+
+With parameter names abbreviated:
+
+
 .NET MAUI App:
 ```shell
 dotnet new mauiapp -n MyApp -dp Hybrid
 ```
 Option to include NuGet packages:
 ```shell
-dotnet new mauiapp -n MyApp -dp Shell -it -im -imt
+dotnet new mauiapp -n MyApp -dp Shell -it -im -imt -inm -if
 ```
 Option to configure conditional compilation:
 ```shell
@@ -162,18 +286,65 @@ dotnet new maui-shell -n AppShell -na MyApp
 ```
 
 Resource Dictionary:
-
-With code-behind C# file:
 ```shell
-dotnet new maui-resdict -n DarkTheme -na MyApp
-```
-Without code-behind C# file (Here `-ncb` | `--no-code-behind` denotes the option to exclude the C# file):
-```shell
-dotnet new maui-resdict -n DarkTheme -na MyApp -ncb
+dotnet new maui-resdict -n LightTheme -na MyApp.Themes
 ```
 
-In all the examples, `-n` denotes the name of the project/page/view that is to be created (for pages/views, don't need to suffix it with .xaml, it will be added automatically) (Can also be specified as `--name`).
+With parameter names expanded:
 
-*Note: If `name` parameter input is not provided, the .NET CLI template engine will take the current folder name in the context as its name (default behavior).*
+.NET MAUI App:
+```shell
+dotnet new mauiapp --name MyApp --design-pattern Hybrid
+```
+Option to include NuGet packages:
+```shell
+dotnet new mauiapp --name MyApp --design-pattern Shell --include-toolkit --include-markup --include-mvvm-toolkit --include-maps --include-foldable
+```
+```shell
+dotnet new mauiapp -n MyApp --design-pattern Shell --conditional-compilation
+```
 
-And `-na` denotes the namespace under which the file is to be created (Can also be specified as `--namespace`).
+.NET MAUI Class Library:
+```shell
+dotnet new mauiclasslib --name MyApp.Core
+```
+```shell
+dotnet new mauiclasslib --name MyApp.Core --include-toolkit --include-markup --include-mvvm-toolkit
+```
+```shell
+dotnet new mauiclasslib --name MyApp.Core --conditional-compilation
+```
+
+Shared Class Library:
+```shell
+dotnet new sharedclasslib --name MyApp.UI
+```
+```shell
+dotnet new sharedclasslib --name MyApp.UI --all-supported-packages
+```
+
+Pages:
+```shell
+dotnet new maui-page --name LoginPage --namespace MyApp.Views
+```
+```shell
+dotnet new maui-page-cs --name HomePage --namespace MyApp.Views
+```
+
+Views:
+```shell
+dotnet new maui-view --name CardView --namespace MyApp.Views
+```
+```shell
+dotnet new maui-view-cs --name OrderView --namespace MyApp.Views
+```
+
+Shell:
+```shell
+dotnet new maui-shell --name AppShell --namespace MyApp
+```
+
+Resource Dictionary:
+```shell
+dotnet new maui-resdict --name LightTheme --namespace MyApp.Themes
+```

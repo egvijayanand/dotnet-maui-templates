@@ -43,6 +43,9 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>MauiApp1</RootNamespace>
+        <!--#if (Unpackaged)-->
+        <WindowsPackageType>None</WindowsPackageType>
+        <!--#endif-->
 
         <!-- Display name -->
         <ApplicationTitle>MauiApp1</ApplicationTitle>

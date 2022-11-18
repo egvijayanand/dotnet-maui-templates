@@ -1,7 +1,11 @@
 {
   "profiles": {
     "Windows Machine": {
+      //#if (Unpackaged)
+      "commandName": "Project",
+      //#else
       "commandName": "MsixPackage",
+      //#endif
       "nativeDebugging": false
     }
   }

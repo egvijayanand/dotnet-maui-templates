@@ -59,6 +59,14 @@
             "defaultValue": "false"
         },
         {
+            "id": "windows-unpackaged",
+            "name": {
+                "text": "Option to configure Windows target as _Unpackaged type."
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
             "id": "conditional-compilation",
             "name": {
                 "text": "_Configure conditional compilation for the project"

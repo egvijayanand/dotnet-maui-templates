@@ -238,6 +238,13 @@
             "description": "Option to add and configure Microsoft.Maui.Controls.Foldable NuGet package reference (.NET 7).",
             "displayName": "Add and configure Microsoft.Maui.Controls._Foldable NuGet package reference"
         },
+        "windows-unpackaged": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to configure Windows target as Unpackaged type.",
+            "displayName": "Option to configure Windows target as _Unpackaged type"
+        },
         "conditional-compilation": {
             "type": "parameter",
             "datatype": "bool",
@@ -342,6 +349,10 @@
         "Apple": {
             "type": "computed",
             "value": "(target-platform == \"Apple\" || targetPlatformLower == \"apple\")"
+        },
+        "Unpackaged": {
+            "type": "computed",
+            "value": "(windows-unpackaged)"
         },
         "AddMapsPackage": {
             "type": "computed",

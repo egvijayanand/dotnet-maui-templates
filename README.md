@@ -157,7 +157,13 @@ Both .NET MAUI *App* and *Class Library* templates take the below optional Boole
 * `-imt` | `--include-mvvm-toolkit` - Default is `false`
 * `-cc` | `--conditional-compilation` - Default is `false`
 
-For **App** projects targeting `.NET 7`, an option to add and configure `Microsoft.Maui.Controls.Foldable`, `Microsoft.Maui.Controls.Maps`, or both NuGet packages.
+Additional parameters for **App** project:
+
+The target for the Windows platform can be either `Package` (MSIX) or `Unpackaged`. By default, it is set as `Package`, this can be overridden while creating the project by including the below parameter:
+
+* `-wu` | `--windows-unpackaged` - Default is `false`
+
+While targeting `.NET 7`, an option to add and configure `Microsoft.Maui.Controls.Foldable`, `Microsoft.Maui.Controls.Maps`, or both NuGet packages.
 
 * `-if` | `--include-foldable` - Default is `false`
 * `-inm` | `--include-maps` - Default is `false`
