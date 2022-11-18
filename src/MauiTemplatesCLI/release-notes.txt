@@ -1,5 +1,9 @@
-What's new in ver. 2.1.1:
+What's new in ver. 2.1.2:
 -------------------------
+Option to configure Windows target as Unpackaged type.
+
+v2.1.1:
+
 1. Template package updated to support newly released .NET 7 NuGet dependencies.
 
 2. For App project targeting .NET 7, option to add and configure Maui Foldable NuGet package.
