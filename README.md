@@ -7,7 +7,7 @@ We all know that .NET MAUI is an evolution of Xamarin.Forms.
 
 Release Channel:
 
-On .NET 6, `.NET MAUI SR7 (6.0.547)` and on .NET 7, `.NET MAUI GA (7.0.49)` is now released on Tue, Nov 08, 2022 along with VS2022 17.4.0
+On .NET 6, `.NET MAUI SR7 (6.0.547)` and on .NET 7, `.NET MAUI GA (7.0.49)` is now released on Tue, Nov 08, 2022 along with VS2022 17.4.0 and 17.5.0 Preview 1.0
 
 <!-- And on the Preview channel, `.NET MAUI 7.0.0-rc.2.6866 (.NET 7 RC2)` is now released on Tue, Oct 18, 2022 along with VS2022 17.4 Preview 4.0 -->
 
