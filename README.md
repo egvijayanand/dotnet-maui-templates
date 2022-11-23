@@ -241,7 +241,7 @@ Can take any one of the following values, with default value set to `Plain`:
 
 * `-tp` | `--target-platform`
 
-Can take a combination of the following values, with default value set to `Android iOS macOS Windows`:
+Can take a combination of the following values, with default value set to `All`:
 
 |Parameter Value|Description|
 |:---:|:---|

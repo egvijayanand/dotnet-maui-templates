@@ -162,7 +162,7 @@
         "target-platform": {
             "type": "parameter",
             "datatype": "choice",
-            "defaultValue": "Android|iOS|macOS|Windows",
+            "defaultValue": "All",
             "description": "Option to choose the application target platform.",
             "allowMultipleValues": true,
             "choices": [

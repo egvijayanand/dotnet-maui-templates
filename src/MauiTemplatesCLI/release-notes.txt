@@ -2,8 +2,6 @@ What's new in ver. 2.1.3:
 -------------------------
 The target-platform parameter is now updated as a multi-choice value. Can be opted-in according to the need.
 
-The default value would be Android, iOS, macOS, and Windows.
-
 And little housekeeping to improve the reliability of the templates.
 
 v2.1.1:
