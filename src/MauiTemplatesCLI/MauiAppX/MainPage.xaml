@@ -2,8 +2,8 @@
 <!--#if (Hybrid)-->
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:MauiApp1"
-             x:Class="MauiApp1.MainPage">
+             xmlns:local="clr-namespace:MauiApp._1"
+             x:Class="MauiApp._1.MainPage">
 
     <BlazorWebView HostPage="wwwroot/index.html">
         <BlazorWebView.RootComponents>
@@ -16,8 +16,8 @@
 <TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
-            xmlns:local="clr-namespace:MauiApp1"
-            x:Class="MauiApp1.MainPage"
+            xmlns:local="clr-namespace:MauiApp._1"
+            x:Class="MauiApp._1.MainPage"
             android:TabbedPage.ToolbarPlacement="Bottom">
     <NavigationPage x:Name="calendar"
                     Title="Calendar">
@@ -31,8 +31,8 @@
 <!--#elif (Hierarchical)-->
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:MauiApp1"
-             x:Class="MauiApp1.MainPage"
+             xmlns:local="clr-namespace:MauiApp._1"
+             x:Class="MauiApp._1.MainPage"
              Title="Calendar">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center"
@@ -48,7 +48,7 @@
 <!--#else-->
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp1.MainPage">
+             x:Class="MauiApp._1.MainPage">
 
     <ScrollView>
         <StackLayout Padding="30" Spacing="25">

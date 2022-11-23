@@ -1,8 +1,8 @@
 ﻿namespace MyApp.Namespace
 {
-    public partial class MauiShell : Shell
+    public partial class MauiShell__1 : Shell
     {
-        public MauiShell()
+        public MauiShell__1()
         {
             InitializeComponent();
         }

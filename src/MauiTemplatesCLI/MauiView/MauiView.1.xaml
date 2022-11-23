@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<ContentPage x:Class="MyApp.Namespace.MauiPage"
+<ContentView x:Class="MyApp.Namespace.MauiView__1"
              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MyApp.Namespace">
-    <ContentPage.Content>
+    <ContentView.Content>
         <Grid>
             <Label Text="Welcome to .NET MAUI!!!"
                    TextColor="Purple"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"/>
         </Grid>
-    </ContentPage.Content>
-</ContentPage>
+    </ContentView.Content>
+</ContentView>

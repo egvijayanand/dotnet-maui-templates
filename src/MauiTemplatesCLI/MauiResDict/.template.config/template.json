@@ -15,10 +15,10 @@
     "description": "An item template for .NET MAUI Resource Dictionary in XAML",
     "name": ".NET MAUI ResourceDictionary",
     "shortName": "maui-resdict",
-    "sourceName": "MauiResDict",
+    "sourceName": "MauiResDict.1",
     "primaryOutputs": [
         {
-            "path": "MauiResDict.xaml"
+            "path": "MauiResDict.1.xaml"
         }
     ],
     "tags": {
@@ -49,7 +49,7 @@
                 {
                     "condition": "(XamlOnly)",
                     "exclude": [
-                        "MauiResDict.xaml.cs"
+                        "MauiResDict.1.xaml.cs"
                     ]
                 }
             ]

@@ -2,7 +2,7 @@
 using CommunityToolkit.Maui;
 #endif
 #if Hybrid
-using MauiApp1.Data;
+using MauiApp._1.Data;
 #endif
 #if Net7
 using Microsoft.Extensions.Logging;
@@ -13,7 +13,7 @@ using Microsoft.Maui.Foldable;
 #if (AddToolkitPackage || Hybrid || Net7 || AddFoldablePackage)
 
 #endif
-namespace MauiApp1
+namespace MauiApp._1
 {
     public static class MauiProgram
     {

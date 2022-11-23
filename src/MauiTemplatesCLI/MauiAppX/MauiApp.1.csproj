@@ -1,26 +1,69 @@
+<!--#if (Hybrid)-->
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+<!--#else-->
 <Project Sdk="Microsoft.NET.Sdk">
+<!--#endif-->
     <PropertyGroup>
-        <TargetFrameworks>MAUI_TFM;MAUI_TFM-android</TargetFrameworks>
+        <!--#if (AllPlatforms)-->
+        <TargetFrameworks>MAUI_TFM-android;MAUI_TFM-ios;MAUI_TFM-maccatalyst</TargetFrameworks>
+        <!--#elif (IsAndroid && IsiOS && IsmacOS)-->
+        <TargetFrameworks>MAUI_TFM-android;MAUI_TFM-ios;MAUI_TFM-maccatalyst</TargetFrameworks>
+        <!--#elif (IsAndroid && IsiOS)-->
+        <TargetFrameworks>MAUI_TFM-android;MAUI_TFM-ios</TargetFrameworks>
+        <!--#elif (IsiOS && IsmacOS)-->
+        <TargetFrameworks>MAUI_TFM-ios;MAUI_TFM-maccatalyst</TargetFrameworks>
+        <!--#elif (IsAndroid && IsmacOS)-->
+        <TargetFrameworks>MAUI_TFM-android;MAUI_TFM-maccatalyst</TargetFrameworks>
+        <!--#elif (IsAndroid)-->
+        <TargetFrameworks>MAUI_TFM-android</TargetFrameworks>
+        <!--#elif (IsiOS)-->
+        <TargetFrameworks>MAUI_TFM-ios</TargetFrameworks>
+        <!--#elif (IsmacOS)-->
+        <TargetFrameworks>MAUI_TFM-maccatalyst</TargetFrameworks>
+        <!--#endif-->
+        <!--#if (AllPlatforms || IsWindows)-->
         <!-- Targets possible from Windows OS -->
-        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst;MAUI_TFM-windows10.0.19041.0</TargetFrameworks>
-        <!-- Targets possible from macOS -->
-        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('osx'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst</TargetFrameworks>
-        <!-- Uncomment to also build the Tizen app. You will need to install Tizen by following this: https://github.com/Samsung/Tizen.NET -->
-        <!-- <TargetFrameworks>$(TargetFrameworks);MAUI_TFM-tizen</TargetFrameworks> -->
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-windows10.0.19041.0</TargetFrameworks>
+        <!--#endif-->
+        <!--#if (AllPlatforms || IsTizen)-->
+        <TargetFrameworks>$(TargetFrameworks);MAUI_TFM-tizen</TargetFrameworks>
+        <!--#endif-->
+        <OutputType>Exe</OutputType>
 
         <!-- .NET MAUI -->
         <UseMaui>true</UseMaui>
         <SingleProject>true</SingleProject>
+        <!--#if (Hybrid)-->
+        <EnableDefaultCssItems>false</EnableDefaultCssItems>
+        <!--#endif-->
 
         <!-- Project Options -->
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <RootNamespace>MauiClassLib</RootNamespace>
+        <RootNamespace>MauiApp._1</RootNamespace>
+        <!--#if (Unpackaged)-->
+        <WindowsPackageType>None</WindowsPackageType>
+        <!--#endif-->
+
+        <!-- Display name -->
+        <ApplicationTitle>MauiApp.1</ApplicationTitle>
+
+        <!-- App Identifier -->
+        <ApplicationId>com.companyname.mauiAppId</ApplicationId>
+        <ApplicationIdGuid>81a9fb0a-63f5-4ef6-b38e-0cf88600102a</ApplicationIdGuid>
+
+        <!-- Versions -->
+        <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+        <ApplicationVersion>1</ApplicationVersion>
 
         <!-- Target Platform Options -->
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
+        <!--#if (Hybrid)-->
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">24.0</SupportedOSPlatformVersion>
+        <!--#else-->
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+        <!--#endif-->
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 
@@ -29,13 +72,34 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Remove="MauiClassLib.code-workspace" />
+        <!-- App Icon -->
+        <MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#512BD4"/>
+        <!-- Splash Screen -->
+        <MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" BaseSize="128,128"/>
+        <!-- Images -->
+        <MauiImage Include="Resources\Images\*"/>
+        <MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+        <!-- Custom Fonts -->
+        <MauiFont Include="Resources\Fonts\*"/>
+        <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+        <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
     </ItemGroup>
 
-    <!--#if (AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage)-->
+    <ItemGroup>
+        <None Remove="MauiApp.1.code-workspace" />
+    </ItemGroup>
+
+    <!--#if (AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage || Net7)-->
     <ItemGroup>
     <!--#endif-->
+        <!--#if (AddFoldablePackage)-->
+        <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="7.0.49" />
+        <!--#endif-->
+        <!--#if (AddMapsPackage)-->
+        <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.49" />
+        <!--#endif-->
         <!--#if (Net7)-->
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
         <!--#if (AddToolkitPackage)-->
         <PackageReference Include="CommunityToolkit.Maui" Version="3.0.0"/>
         <!--#endif-->
@@ -53,7 +117,7 @@
         <!--#if (AddMvvmToolkitPackage)-->
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0"/>
         <!--#endif-->
-    <!--#if (AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage)-->
+    <!--#if (AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage || Net7)-->
     </ItemGroup>
     <!--#endif-->
 

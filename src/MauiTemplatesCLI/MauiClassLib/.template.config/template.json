@@ -18,7 +18,7 @@
     "description": "A project template for .NET MAUI Class Library",
     "name": ".NET MAUI Class Library",
     "shortName": "mauiclasslib",
-    "sourceName": "MauiClassLib",
+    "sourceName": "MauiClassLib.1",
     "tags": {
         "language": "C#",
         "type": "project",
@@ -124,7 +124,7 @@
                 {
                     "condition": "(no-solution-file || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
                     "exclude": [
-                        "MauiClassLib.sln"
+                        "MauiClassLib.1.sln"
                     ]
                 }
             ]
