@@ -1,8 +1,8 @@
 ﻿namespace MyApp.Namespace
 {
-    public partial class MauiResDict : ResourceDictionary
+    public partial class MauiView__1 : ContentView
     {
-        public MauiResDict()
+        public MauiView__1()
         {
             InitializeComponent();
         }

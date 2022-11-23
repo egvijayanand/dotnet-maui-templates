@@ -15,10 +15,10 @@
     "description": "An item template for .NET MAUI ContentView in C#",
     "name": ".NET MAUI ContentView (C#)",
     "shortName": "maui-view-cs",
-    "sourceName": "MauiView",
+    "sourceName": "MauiView.1",
     "primaryOutputs": [
         {
-            "path": "MauiView.cs"
+            "path": "MauiView.1.cs"
         }
     ],
     "tags": {

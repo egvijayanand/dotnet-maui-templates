@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<ContentPage x:Class="MauiApp1.NewEventPage"
+<ContentPage x:Class="MauiApp._1.NewEventPage"
              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             xmlns:local="clr-namespace:MauiApp1"
+             xmlns:local="clr-namespace:MauiApp._1"
              Title="New Event"
              Shell.PresentationMode="ModalAnimated"
              Padding="{OnPlatform iOS={StaticResource ApplePadding},

@@ -20,7 +20,7 @@
     "description": "A project for creating a .NET MAUI App for iOS, Android, Mac Catalyst, Tizen, and WinUI.",
     "name": ".NET MAUI App",
     "shortName": "mauiapp",
-    "sourceName": "MauiApp1",
+    "sourceName": "MauiApp.1",
     "tags": {
         "language": "C#",
         "type": "project",
@@ -39,7 +39,7 @@
                 {
                     "condition": "(no-solution-file || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
                     "exclude": [
-                        "MauiApp1.sln"
+                        "MauiApp.1.sln"
                     ]
                 },
                 {
@@ -164,6 +164,7 @@
             "datatype": "choice",
             "defaultValue": "All",
             "description": "Option to choose the application target platform.",
+            "allowMultipleValues": true,
             "choices": [
                 {
                     "choice": "All",
@@ -316,39 +317,27 @@
         },
         "AllPlatforms": {
             "type": "computed",
-            "value": "(target-platform == \"All\" || targetPlatformLower == \"all\")"
+            "value": "(target-platform == \"All\")"
         },
-        "Android": {
+        "IsAndroid": {
             "type": "computed",
-            "value": "(target-platform == \"Android\" || targetPlatformLower == \"android\")"
+            "value": "(target-platform == \"Android\" || target-platform == \"Mobile\")"
         },
-        "iOS": {
+        "IsiOS": {
             "type": "computed",
-            "value": "(target-platform == \"iOS\" || targetPlatformLower == \"ios\")"
+            "value": "(target-platform == \"Apple\" || target-platform == \"iOS\" || target-platform == \"Mobile\")"
         },
-        "macOS": {
+        "IsmacOS": {
             "type": "computed",
-            "value": "(target-platform == \"macOS\" || targetPlatformLower == \"macos\")"
+            "value": "(target-platform == \"Apple\" || target-platform == \"Desktop\" || target-platform == \"macOS\")"
         },
-        "Windows": {
+        "IsWindows": {
             "type": "computed",
-            "value": "(target-platform == \"Windows\" || targetPlatformLower == \"windows\")"
+            "value": "(target-platform == \"Desktop\" || target-platform == \"Windows\")"
         },
-        "Tizen": {
+        "IsTizen": {
             "type": "computed",
-            "value": "(target-platform == \"Tizen\" || targetPlatformLower == \"tizen\")"
-        },
-        "Desktop": {
-            "type": "computed",
-            "value": "(target-platform == \"Desktop\" || targetPlatformLower == \"desktop\")"
-        },
-        "Mobile": {
-            "type": "computed",
-            "value": "(target-platform == \"Mobile\" || targetPlatformLower == \"mobile\")"
-        },
-        "Apple": {
-            "type": "computed",
-            "value": "(target-platform == \"Apple\" || targetPlatformLower == \"apple\")"
+            "value": "(target-platform == \"Tizen\")"
         },
         "Unpackaged": {
             "type": "computed",

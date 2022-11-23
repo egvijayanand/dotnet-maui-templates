@@ -17,13 +17,13 @@
     "description": "An item template for .NET MAUI ShellPage in XAML",
     "name": ".NET MAUI ShellPage",
     "shortName": "maui-shell",
-    "sourceName": "MauiShell",
+    "sourceName": "MauiShell.1",
     "primaryOutputs": [
         {
-            "path": "MauiShell.xaml"
+            "path": "MauiShell.1.xaml"
         },
         {
-            "path": "MauiShell.xaml.cs"
+            "path": "MauiShell.1.xaml.cs"
         }
     ],
     "tags": {

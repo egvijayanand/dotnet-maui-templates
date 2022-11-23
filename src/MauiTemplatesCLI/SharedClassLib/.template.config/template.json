@@ -21,7 +21,7 @@
     "description": "A project template for Shared Class Library (Xamarin.Forms and .NET MAUI)",
     "name": "Shared Class Library (Xamarin.Forms and .NET MAUI)",
     "shortName": "sharedclasslib",
-    "sourceName": "SharedClassLib",
+    "sourceName": "SharedClassLib.1",
     "tags": {
         "language": "C#",
         "type": "project",
@@ -157,7 +157,7 @@
                 {
                     "condition": "(no-solution-file || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
                     "exclude": [
-                        "SharedClassLib.sln"
+                        "SharedClassLib.1.sln"
                     ]
                 }
             ]

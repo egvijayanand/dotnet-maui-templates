@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<ContentView x:Class="MauiApp1.DateTimePicker"
+<ContentView x:Class="MauiApp._1.DateTimePicker"
              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:MauiApp1">
+             xmlns:local="clr-namespace:MauiApp._1">
     <ContentView.Content>
         <Grid ColumnDefinitions="45,Auto,Auto">
             <Label Grid.Column="0"

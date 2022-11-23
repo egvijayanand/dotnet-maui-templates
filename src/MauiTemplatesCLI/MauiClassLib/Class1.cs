@@ -1,4 +1,4 @@
-﻿namespace MauiClassLib
+﻿namespace MauiClassLib._1
 {
     public class Class1
     {

@@ -241,7 +241,7 @@ Can take any one of the following values, with default value set to `Plain`:
 
 * `-tp` | `--target-platform`
 
-Can take any one of the following values, with default value set to `All`:
+Can take a combination of the following values, with default value set to `All`:
 
 |Parameter Value|Description|
 |:---:|:---|
@@ -255,14 +255,16 @@ Can take any one of the following values, with default value set to `All`:
 |Desktop|Targets Windows and macOS platforms.|
 |Apple|Targets iOS and macOS platforms.|
 
-Examples:
+![Target Platform Options - Visual Studio](images/dotnetmaui-all-in-one-app-project-options.png)
+
+Examples (passing one or more values):
 
 ```shell
 dotnet new mauiapp --design-pattern Hybrid --target-platform Mobile
 ```
 
   ```shell
-dotnet new mauiapp -dp Shell -tp Android
+dotnet new mauiapp -dp Shell -tp Android iOS Windows
 ```
 
 Shared Class Library template take the below optional Boolean parameters to include the officially supported NuGet packages:

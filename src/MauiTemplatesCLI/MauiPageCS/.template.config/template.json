@@ -15,10 +15,10 @@
     "description": "An item template for .NET MAUI ContentPage in C#",
     "name": ".NET MAUI ContentPage (C#)",
     "shortName": "maui-page-cs",
-    "sourceName": "MauiPage",
+    "sourceName": "MauiPage.1",
     "primaryOutputs": [
         {
-            "path": "MauiPage.cs"
+            "path": "MauiPage.1.cs"
         }
     ],
     "tags": {

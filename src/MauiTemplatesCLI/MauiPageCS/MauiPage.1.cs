@@ -2,9 +2,9 @@
 
 namespace MyApp.Namespace
 {
-    public partial class MauiPage : ContentPage
+    public partial class MauiPage__1 : ContentPage
     {
-        public MauiPage()
+        public MauiPage__1()
         {
             Content = new Grid()
             {

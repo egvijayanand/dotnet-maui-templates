@@ -1,4 +1,4 @@
-﻿namespace MauiApp1
+﻿namespace MauiApp._1
 {
 #if Tabbed
     public partial class MainPage : TabbedPage
