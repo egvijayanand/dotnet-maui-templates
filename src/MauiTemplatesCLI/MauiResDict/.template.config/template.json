@@ -38,16 +38,26 @@
             "default": "false",
             "description": "If true, the output is generated without a C# code-behind file."
         },
-        "XamlOnly": {
+        "xaml-only": {
+            "type": "parameter",
+            "datatype": "bool",
+            "default": "false",
+            "description": "If true, the output is generated without a C# code-behind file."
+        },
+        "NoCodeBehind": {
             "type": "computed",
             "value": "(no-code-behind)"
+        },
+        "XamlOnly": {
+            "type": "computed",
+            "value": "(xaml-only)"
         }
     },
     "sources": [
         {
             "modifiers": [
                 {
-                    "condition": "(XamlOnly)",
+                    "condition": "(NoCodeBehind || XamlOnly)",
                     "exclude": [
                         "MauiResDict.1.xaml.cs"
                     ]
