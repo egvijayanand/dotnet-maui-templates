@@ -5,7 +5,9 @@
 <!--#endif-->
     <PropertyGroup>
         <!--#if (AllPlatforms)-->
-        <TargetFrameworks>MAUI_TFM-android;MAUI_TFM-ios;MAUI_TFM-maccatalyst</TargetFrameworks>
+        <TargetFrameworks>MAUI_TFM;MAUI_TFM-android</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('osx'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst;MAUI_TFM-windows10.0.19041.0</TargetFrameworks>
         <!--#elif (IsAndroid && IsiOS && IsmacOS)-->
         <TargetFrameworks>MAUI_TFM-android;MAUI_TFM-ios;MAUI_TFM-maccatalyst</TargetFrameworks>
         <!--#elif (IsAndroid && IsiOS)-->
@@ -21,14 +23,14 @@
         <!--#elif (IsmacOS)-->
         <TargetFrameworks>MAUI_TFM-maccatalyst</TargetFrameworks>
         <!--#endif-->
-        <!--#if (AllPlatforms || IsWindows)-->
+        <!--#if (IsWindows)-->
         <!-- Targets possible from Windows OS -->
         <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-windows10.0.19041.0</TargetFrameworks>
         <!--#endif-->
         <!--#if (AllPlatforms || IsTizen)-->
         <TargetFrameworks>$(TargetFrameworks);MAUI_TFM-tizen</TargetFrameworks>
         <!--#endif-->
-        <OutputType>Exe</OutputType>
+        <OutputType Condition="'$(TargetFramework)' != 'MAUI_TFM'">Exe</OutputType>
 
         <!-- .NET MAUI -->
         <UseMaui>true</UseMaui>
@@ -93,18 +95,18 @@
     <ItemGroup>
     <!--#endif-->
         <!--#if (AddFoldablePackage)-->
-        <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="7.0.49" />
+        <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="7.0.52" />
         <!--#endif-->
         <!--#if (AddMapsPackage)-->
-        <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.49" />
+        <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.52" />
         <!--#endif-->
         <!--#if (Net7)-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
         <!--#if (AddToolkitPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="3.0.0"/>
+        <PackageReference Include="CommunityToolkit.Maui" Version="3.1.0"/>
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="2.0.0"/>
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="2.1.0"/>
         <!--#endif-->
         <!--#else-->
         <!--#if (AddToolkitPackage)-->

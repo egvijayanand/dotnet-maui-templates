@@ -1,5 +1,11 @@
-What's new in ver. 2.1.3:
+What's new in ver. 2.2.0:
 -------------------------
+1. Template package updated to support .NET 7 SR1 (v7.0.52).
+2. Base framework is also included as a target (net6.0/net7.0) to .NET MAUI App project template when the target-platform is set to All.
+3. To create a XAML-only resource dictionary template, include either --xaml-only (-xo) or --no-code-behind (-ncb) parameter.
+
+v2.1.3:
+
 The target-platform parameter is now updated as a multi-choice value. Can be opted-in according to the need.
 
 And little housekeeping to improve the reliability of the templates.
