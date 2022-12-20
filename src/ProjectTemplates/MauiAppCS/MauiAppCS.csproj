@@ -1,28 +1,29 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <!-- Android, iOS, MacCatalyst -->
-        <TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
-        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
+        <TargetFrameworks>net7.0;net7.0-android</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('osx'))">$(TargetFrameworks);net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-ios;net7.0-maccatalyst;net7.0-windows10.0.19041.0</TargetFrameworks>
         <!-- Uncomment to also build the Tizen app. You will need to install Tizen by following this: https://github.com/Samsung/Tizen.NET -->
         <!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
-        <OutputType>Exe</OutputType>
-        
+        <OutputType Condition="'$(TargetFramework)' != 'net7.0'">Exe</OutputType>
+
         <!-- .NET MAUI -->
         <UseMaui>true</UseMaui>
         <SingleProject>true</SingleProject>
-        
+
         <!-- Project Options -->
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>$safeprojectname$</RootNamespace>
-        
+
         <!-- Display name -->
         <ApplicationTitle>$safeprojectname$</ApplicationTitle>
-        
+
         <!-- App Identifier -->
         <ApplicationId>com.companyname.$MauiAppId$</ApplicationId>
         <ApplicationIdGuid>$guid10$</ApplicationIdGuid>
-        
+
         <!-- Versions -->
         <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
         <ApplicationVersion>1</ApplicationVersion>
@@ -58,8 +59,8 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="2.0.0"/>
-        <PackageReference Include="VijayAnand.MauiToolkit" Version="2.0.0"/>
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="2.1.0"/>
+        <PackageReference Include="VijayAnand.MauiToolkit" Version="2.0.1"/>
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0"/>
     </ItemGroup>
 </Project>
