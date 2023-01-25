@@ -1,4 +1,4 @@
-﻿#if AddToolkitPackage
+﻿#if (AddToolkitPackage || AddMediaPackage)
 using CommunityToolkit.Maui;
 #endif
 #if Hybrid
@@ -32,6 +32,9 @@ namespace MauiApp._1
 #endif
 #if AddMarkupPackage
                    .UseMauiCommunityToolkitMarkup()
+#endif
+#if AddMediaPackage
+                   .UseMauiCommunityToolkitMediaElement()
 #endif
                    .ConfigureFonts(fonts =>
                    {

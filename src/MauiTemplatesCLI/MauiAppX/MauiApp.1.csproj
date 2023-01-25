@@ -5,7 +5,7 @@
 <!--#endif-->
     <PropertyGroup>
         <!--#if (AllPlatforms)-->
-        <TargetFrameworks>MAUI_TFM;MAUI_TFM-android</TargetFrameworks>
+        <TargetFrameworks>MAUI_TFM-android;MAUI_TFM</TargetFrameworks>
         <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('osx'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst</TargetFrameworks>
         <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst;MAUI_TFM-windows10.0.19041.0</TargetFrameworks>
         <!--#elif (IsAndroid && IsiOS && IsmacOS)-->
@@ -103,10 +103,13 @@
         <!--#if (Net7)-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
         <!--#if (AddToolkitPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="3.1.0"/>
+        <PackageReference Include="CommunityToolkit.Maui" Version="4.0.0"/>
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="2.1.0"/>
+        <!--#endif-->
+        <!--#if (AddMediaPackage)-->
+        <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="1.0.0"/>
         <!--#endif-->
         <!--#else-->
         <!--#if (AddToolkitPackage)-->
@@ -117,9 +120,15 @@
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMvvmToolkitPackage)-->
-        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0"/>
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0"/>
         <!--#endif-->
     <!--#if (AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage || Net7)-->
+    </ItemGroup>
+    <!--#endif-->
+
+    <!--#if (AddMediaPackage)-->
+    <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
+        <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.221209.1" />
     </ItemGroup>
     <!--#endif-->
 
