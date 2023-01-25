@@ -51,6 +51,14 @@
             "defaultValue": "false"
         },
         {
+            "id": "include-media-element",
+            "name": {
+                "text": "Add and configure CommunityToolkit.Maui.Media_Element NuGet package reference (.NET 7)"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
             "id": "include-foldable",
             "name": {
                 "text": "Add and configure Microsoft.Maui.Controls._Foldable NuGet package reference (.NET 7)"

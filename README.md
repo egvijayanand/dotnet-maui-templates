@@ -7,7 +7,7 @@ We all know that .NET MAUI is an evolution of Xamarin.Forms.
 
 Release Channel:
 
-On .NET 6, `.NET MAUI SR8 (6.0.548)` and on .NET 7, `.NET MAUI SR1.1 (7.0.52)` is now released on Tue, Dec 13, 2022 along with VS2022 17.4.3 and 17.5.0 Preview 2.0
+On .NET 6, `.NET MAUI SR9 (6.0.550)` and on .NET 7, `.NET MAUI SR2 (7.0.58)` is now released on Wed, Jan 18, 2023 along with VS2022 17.4.4 and 17.5.0 Preview 3.0
 
 <!-- And on the Preview channel, `.NET MAUI 7.0.0-rc.2.6866 (.NET 7 RC2)` is now released on Tue, Oct 18, 2022 along with VS2022 17.4 Preview 4.0 -->
 
@@ -163,12 +163,13 @@ The target for the Windows platform can be either `Package` (MSIX) or `Unpackage
 
 * `-wu` | `--windows-unpackaged` - Default is `false`
 
-While targeting `.NET 7`, an option to add and configure `Microsoft.Maui.Controls.Foldable`, `Microsoft.Maui.Controls.Maps`, or both NuGet packages.
+While targeting `.NET 7`, an option to add and configure `CommunityToolkit.Maui.MediaElement`, `Microsoft.Maui.Controls.Foldable`, `Microsoft.Maui.Controls.Maps`, or all NuGet packages.
 
+* `-ime` | `--include-media-element` - Default is `false`
 * `-if` | `--include-foldable` - Default is `false`
 * `-inm` | `--include-maps` - Default is `false`
 
-*Note: If the project target `.NET 6`, selecting the Foldable/Maps option will NOT have any impact.*
+*Note: If the project target `.NET 6`, selecting the MediaElement/Foldable/Maps option will NOT have any impact.*
 
 ##### Conditional Compilation
 
@@ -315,7 +316,7 @@ dotnet new mauiapp -n MyApp -dp Hybrid
 ```
 Option to include NuGet packages:
 ```shell
-dotnet new mauiapp -n MyApp -dp Shell -it -im -imt -inm -if
+dotnet new mauiapp -n MyApp -dp Shell -it -im -imt -ime -inm -if
 ```
 Option to configure conditional compilation:
 ```shell
@@ -378,7 +379,7 @@ dotnet new mauiapp --name MyApp --design-pattern Hybrid
 ```
 Option to include NuGet packages:
 ```shell
-dotnet new mauiapp --name MyApp --design-pattern Shell --include-toolkit --include-markup --include-mvvm-toolkit --include-maps --include-foldable
+dotnet new mauiapp --name MyApp --design-pattern Shell --include-toolkit --include-markup --include-mvvm-toolkit --include-media-element --include-maps --include-foldable
 ```
 ```shell
 dotnet new mauiapp -n MyApp --design-pattern Shell --conditional-compilation
