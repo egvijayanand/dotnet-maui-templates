@@ -1,5 +1,9 @@
-What's new in ver. 2.3.0.0:
+What's new in ver. 2.3.1.0:
 ---------------------------
+CommunityToolkit.Maui.MediaElement NuGet package bumped to v1.0.1 with the explicit WindowsAppSDK reference removed.
+
+v2.3.0.0:
+
 1. Ability to add reference to CommunityToolkit.Maui.MediaElement NuGet package and configure it in startup pipeline for playing audio/video in a .NET MAUI app
 
 2. Dependent packages have been updated to reference latest stable version

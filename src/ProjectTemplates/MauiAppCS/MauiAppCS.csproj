@@ -61,6 +61,6 @@
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="2.1.0"/>
         <PackageReference Include="VijayAnand.MauiToolkit" Version="2.0.1"/>
-        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0"/>
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0"/>
     </ItemGroup>
 </Project>
