@@ -109,7 +109,7 @@
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="2.1.0"/>
         <!--#endif-->
         <!--#if (AddMediaPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="1.0.0"/>
+        <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="1.0.1"/>
         <!--#endif-->
         <!--#else-->
         <!--#if (AddToolkitPackage)-->
@@ -123,12 +123,6 @@
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0"/>
         <!--#endif-->
     <!--#if (AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage || Net7)-->
-    </ItemGroup>
-    <!--#endif-->
-
-    <!--#if (AddMediaPackage)-->
-    <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
-        <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.221209.1" />
     </ItemGroup>
     <!--#endif-->
 

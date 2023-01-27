@@ -8,7 +8,7 @@
         <PackageVersion>1.0.0</PackageVersion>
         <Title>.NET MAUI Templates</Title>
         <Authors>Vijay Anand E G</Authors>
-        <Copyright>Copyright &#169; 2022 Vijay Anand E G</Copyright>
+        <Copyright>Copyright &#169; 2021-2023 Vijay Anand E G</Copyright>
         <Description>Project and Item templates for developing .NET MAUI App that runs on iOS, Android, macOS, Tizen, and Windows</Description>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <IncludeContentInPack>true</IncludeContentInPack>
