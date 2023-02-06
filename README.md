@@ -107,6 +107,7 @@ ContentView | maui-view | Item
 ContentView (C#) | maui-view-cs | Item
 ResourceDictionary | maui-resdict | Item
 ShellPage | maui-shell | Item
+Partial Class | class | Item
 
 ![All-in-One .NET MAUI App Project Template](images/dotnetmaui-all-in-one-project-template-pinned.png)
 
@@ -371,6 +372,11 @@ Resource Dictionary:
 dotnet new maui-resdict -n LightTheme -na MyApp.Themes
 ```
 
+Partial Class:
+```shell
+dotnet new class -n BaseViewModel
+```
+
 With parameter names expanded:
 
 .NET MAUI App:
@@ -428,6 +434,11 @@ dotnet new maui-shell --name AppShell --namespace MyApp
 Resource Dictionary:
 ```shell
 dotnet new maui-resdict --name LightTheme --namespace MyApp.Themes
+```
+
+Partial Class:
+```shell
+dotnet new class --name BaseViewModel
 ```
 <!--
 ### For VS2019 users:
