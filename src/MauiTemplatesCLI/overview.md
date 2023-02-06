@@ -14,8 +14,9 @@ Item templates for the following:
 |ContentView (C#)|maui-view-cs|
 |ResourceDictionary (XAML)|maui-resdict|
 |Shell (XAML)|maui-shell|
+|Partial Class (C#)|class|
 
-All of these templates currently target `.NET MAUI on .NET 7 GA`, stable release as of Nov 2022.
+All of these templates currently target `.NET MAUI on .NET 6/7 GA and its Service Releases`.
 
 Install the template package from NuGet with the below command.
 
@@ -85,12 +86,13 @@ The target for the Windows platform can be either `Package` (MSIX) or `Unpackage
 
 * `-wu` | `--windows-unpackaged` - Default is `false`
 
-While targeting `.NET 7`, an option to add and configure `Microsoft.Maui.Controls.Foldable`, `Microsoft.Maui.Controls.Maps`, or both NuGet packages.
+While targeting `.NET 7`, an option to add and configure `CommunityToolkit.Maui.MediaElement`, `Microsoft.Maui.Controls.Foldable`, `Microsoft.Maui.Controls.Maps`, or all NuGet packages.
 
+* `-ime` | `--include-media-element` - Default is `false`
 * `-if` | `--include-foldable` - Default is `false`
 * `-inm` | `--include-maps` - Default is `false`
 
-*Note: If the project target `.NET 6`, selecting the Foldable/Maps option will NOT have any impact.*
+*Note: If the project target `.NET 6`, selecting the MediaElement/Foldable/Maps option will NOT have any impact.*
 
 ##### Conditional Compilation
 
@@ -163,7 +165,7 @@ Can take any one of the following values, with default value set to `Plain`:
 
 * `-tp` | `--target-platform`
 
-Can take any one of the following values, with default value set to `All`:
+Can take a combination of the following values, with default value set to `All`:
 
 |Parameter Value|Description|
 |:---:|:---|
@@ -235,7 +237,7 @@ dotnet new mauiapp -n MyApp -dp Hybrid
 ```
 Option to include NuGet packages:
 ```shell
-dotnet new mauiapp -n MyApp -dp Shell -it -im -imt -inm -if
+dotnet new mauiapp -n MyApp -dp Shell -it -im -imt -ime -inm -if
 ```
 Option to configure conditional compilation:
 ```shell
@@ -290,6 +292,11 @@ Resource Dictionary:
 dotnet new maui-resdict -n LightTheme -na MyApp.Themes
 ```
 
+Partial Class:
+```shell
+dotnet new class -n BaseViewModel
+```
+
 With parameter names expanded:
 
 .NET MAUI App:
@@ -298,7 +305,7 @@ dotnet new mauiapp --name MyApp --design-pattern Hybrid
 ```
 Option to include NuGet packages:
 ```shell
-dotnet new mauiapp --name MyApp --design-pattern Shell --include-toolkit --include-markup --include-mvvm-toolkit --include-maps --include-foldable
+dotnet new mauiapp --name MyApp --design-pattern Shell --include-toolkit --include-markup --include-mvvm-toolkit --include-media-element --include-maps --include-foldable
 ```
 ```shell
 dotnet new mauiapp -n MyApp --design-pattern Shell --conditional-compilation
@@ -347,4 +354,9 @@ dotnet new maui-shell --name AppShell --namespace MyApp
 Resource Dictionary:
 ```shell
 dotnet new maui-resdict --name LightTheme --namespace MyApp.Themes
+```
+
+Partial Class:
+```shell
+dotnet new class --name BaseViewModel
 ```

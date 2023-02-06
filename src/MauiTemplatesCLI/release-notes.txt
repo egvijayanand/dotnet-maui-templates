@@ -1,5 +1,21 @@
-What's new in ver. 2.3.1:
+What's new in ver. 2.4.0:
 -------------------------
+1. CommunityToolkit.Maui.Markup NuGet package bumped to v3.0.0 that supports TypedBindings
+
+2. Introduced a new item template for creating a C# class (partial) from CLI
+
+dotnet new class -n BaseViewModel
+
+Note:
+
+Auto binding the project's RootNamespace as the namespace for newly created class type is supported only on .NET 7 SDK or later.
+
+While running on earlier SDK versions, it has to be manually modified.
+
+And due to the limitation in the templating engine, only the RootNamespace would get added, need to manually adjust for sub-folders, if any.
+
+v2.3.1:
+
 CommunityToolkit.Maui.MediaElement NuGet package bumped to v1.0.1 with the explicit WindowsAppSDK reference removed.
 
 v2.3.0:
