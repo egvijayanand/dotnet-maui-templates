@@ -106,7 +106,7 @@
         <PackageReference Include="CommunityToolkit.Maui" Version="4.0.0"/>
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="2.1.0"/>
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.0.0"/>
         <!--#endif-->
         <!--#if (AddMediaPackage)-->
         <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="1.0.1"/>

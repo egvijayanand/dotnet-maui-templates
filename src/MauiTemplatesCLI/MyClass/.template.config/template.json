@@ -1,0 +1,43 @@
+{
+    "$schema": "https://json.schemastore.org/template",
+    "author": "Vijay Anand E G",
+    "defaultName": "Class1",
+    "classifications": [
+        "Code"
+    ],
+    "identity": "VijayAnand.MyClass",
+    "groupIdentity": "VijayAnand.MauiTemplates.Class.Code",
+    "description": "An item template for Partial Class in C#",
+    "name": "Partial Class",
+    "shortName": "class",
+    "sourceName": "MyClass.1",
+    "primaryOutputs": [
+        {
+            "path": "MyClass.1.cs"
+        }
+    ],
+    "tags": {
+        "language": "C#",
+        "type": "item"
+    },
+    "symbols": {
+        "namespace": {
+            "type": "bind",
+            "binding": "msbuild:RootNamespace",
+            "replaces": "MyApp.Namespace",
+            "defaultValue": "MyApp.Namespace"
+        }
+    },
+    "constraints": {
+        "dotnet7-sts": {
+            "type": "sdk-version",
+            "args": [
+                "[7.0,)"
+            ]
+        },
+        "csharp-only": {
+            "type": "project-capability",
+            "args": "CSharp"
+        }
+    }
+}
