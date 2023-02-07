@@ -1,5 +1,11 @@
-What's new in ver. 2.3.1.0:
+What's new in ver. 2.4.0.0:
 ---------------------------
+1. CommunityToolkit.Maui.Markup NuGet package bumped to v3.0.0 that supports TypedBindings
+
+2. Introduced an ItemTemplate for C# Class (Partial). Made available in the section titled Code
+
+v2.3.1.0:
+
 CommunityToolkit.Maui.MediaElement NuGet package bumped to v1.0.1 with the explicit WindowsAppSDK reference removed.
 
 v2.3.0.0:
