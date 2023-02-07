@@ -57,6 +57,8 @@ And has Item Templates for:
   - Renderer definitions generated in the Platforms folder
 * Custom View and Renderer (Cond.) (.NET MAUI)
   - Renderer definitions generated in the same folder in conditional compilation format
+* Partial Class (C#)
+  - Made available in the section titled `Code`
 \
 &nbsp;
 * For Cond. type template to work properly, ensure Conditional Compilation is enabled (mentioned in detail [**here**](https://github.com/egvijayanand/dotnet-maui-templates#conditional-compilation "Conditional Compilation"))
