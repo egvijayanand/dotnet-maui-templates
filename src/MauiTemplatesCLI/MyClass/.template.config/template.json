@@ -8,8 +8,8 @@
     "identity": "VijayAnand.MyClass",
     "groupIdentity": "VijayAnand.MauiTemplates.Class.Code",
     "description": "An item template for Partial Class in C#",
-    "name": "Partial Class",
-    "shortName": "class",
+    "name": "Partial Class (C#)",
+    "shortName": "class-cs",
     "sourceName": "MyClass.1",
     "primaryOutputs": [
         {

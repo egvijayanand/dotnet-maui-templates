@@ -1,5 +1,21 @@
-What's new in ver. 2.4.0:
+What's new in ver. 2.4.1:
 -------------------------
+1. Short name for Partial Class (C#) item template is now renamed as class-cs to avoid conflict with .NET SDK Class template (available from v7.0.200).
+
+dotnet new class-cs -n BaseViewModel
+
+2. While creating a .NET MAUI APP, Base framework is now an option for target-platform parameter
+
+Will be auto included when the target-platform value is set to All (the default value, if not supplied)
+
+dotnet new mauiapp -o MyApp -tp Mobile Base
+
+3. An item template for Shell definition in C#
+
+dotnet new maui-shell-cs -n AppShell -p:na MyApp
+
+v2.4.0:
+
 1. CommunityToolkit.Maui.Markup NuGet package bumped to v3.0.0 that supports TypedBindings
 
 2. Introduced a new item template for creating a C# class (partial) from CLI

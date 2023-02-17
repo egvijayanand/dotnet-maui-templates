@@ -5,7 +5,7 @@
 <!--#endif-->
     <PropertyGroup>
         <!--#if (AllPlatforms)-->
-        <TargetFrameworks>MAUI_TFM-android;MAUI_TFM</TargetFrameworks>
+        <TargetFrameworks>MAUI_TFM-android</TargetFrameworks>
         <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('osx'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst</TargetFrameworks>
         <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst;MAUI_TFM-windows10.0.19041.0</TargetFrameworks>
         <!--#elif (IsAndroid && IsiOS && IsmacOS)-->
@@ -29,6 +29,9 @@
         <!--#endif-->
         <!--#if (AllPlatforms || IsTizen)-->
         <TargetFrameworks>$(TargetFrameworks);MAUI_TFM-tizen</TargetFrameworks>
+        <!--#endif-->
+        <!--#if (AllPlatforms || IsBase)-->
+        <TargetFrameworks>$(TargetFrameworks);MAUI_TFM</TargetFrameworks>
         <!--#endif-->
         <OutputType Condition="'$(TargetFramework)' != 'MAUI_TFM'">Exe</OutputType>
 

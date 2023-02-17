@@ -103,13 +103,14 @@ Name | Template Name | Type
 .NET MAUI App | mauiapp | Project
 .NET MAUI Class Library | mauiclasslib | Project
 Shared Class Library | sharedclasslib | Project
-ContentPage | maui-page | Item
+ContentPage (XAML) | maui-page | Item
 ContentPage (C#) | maui-page-cs | Item
-ContentView | maui-view | Item
+ContentView (XAML) | maui-view | Item
 ContentView (C#) | maui-view-cs | Item
 ResourceDictionary | maui-resdict | Item
-ShellPage | maui-shell | Item
-Partial Class | class | Item
+ShellPage (XAML) | maui-shell | Item
+ShellPage (C#) | maui-shell-cs | Item
+Partial Class (C#) | class-cs | Item
 
 ![All-in-One .NET MAUI App Project Template](images/dotnetmaui-all-in-one-project-template-pinned.png)
 
@@ -250,6 +251,7 @@ Can take a combination of the following values, with default value set to `All`:
 |Parameter Value|Description|
 |:---:|:---|
 |All|Targets all possible .NET MAUI supported platforms.|
+|Base|Base framework (.NET 6/7)|
 |Android|Targets Android platform.|
 |iOS|Targets iOS platform.|
 |macOS|Targets macOS platform via Mac Catalyst.|
@@ -368,6 +370,9 @@ Shell:
 ```shell
 dotnet new maui-shell -n AppShell -na MyApp
 ```
+```shell
+dotnet new maui-shell-cs -n AppShell -na MyApp
+```
 
 Resource Dictionary:
 ```shell
@@ -376,7 +381,7 @@ dotnet new maui-resdict -n LightTheme -na MyApp.Themes
 
 Partial Class:
 ```shell
-dotnet new class -n BaseViewModel
+dotnet new class-cs -n BaseViewModel
 ```
 
 With parameter names expanded:
@@ -432,6 +437,9 @@ Shell:
 ```shell
 dotnet new maui-shell --name AppShell --namespace MyApp
 ```
+```shell
+dotnet new maui-shell-cs --name AppShell --namespace MyApp
+```
 
 Resource Dictionary:
 ```shell
@@ -440,7 +448,7 @@ dotnet new maui-resdict --name LightTheme --namespace MyApp.Themes
 
 Partial Class:
 ```shell
-dotnet new class --name BaseViewModel
+dotnet new class-cs --name BaseViewModel
 ```
 <!--
 ### For VS2019 users:

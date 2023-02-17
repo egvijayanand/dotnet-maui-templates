@@ -13,8 +13,9 @@ Item templates for the following:
 |ContentView (XAML)|maui-view|
 |ContentView (C#)|maui-view-cs|
 |ResourceDictionary (XAML)|maui-resdict|
-|Shell (XAML)|maui-shell|
-|Partial Class (C#)|class|
+|ShellPage (XAML)|maui-shell|
+|ShellPage (C#)|maui-shell-cs|
+|Partial Class (C#)|class-cs|
 
 All of these templates currently target `.NET MAUI on .NET 6/7 GA and its Service Releases`.
 
@@ -170,6 +171,7 @@ Can take a combination of the following values, with default value set to `All`:
 |Parameter Value|Description|
 |:---:|:---|
 |All|Targets all possible .NET MAUI supported platforms.|
+|Base|Targets base framework (.NET 6/7).|
 |Android|Targets Android platform.|
 |iOS|Targets iOS platform.|
 |macOS|Targets macOS platform via Mac Catalyst.|
@@ -286,6 +288,9 @@ Shell:
 ```shell
 dotnet new maui-shell -n AppShell -na MyApp
 ```
+```shell
+dotnet new maui-shell-cs -n AppShell -na MyApp
+```
 
 Resource Dictionary:
 ```shell
@@ -294,7 +299,7 @@ dotnet new maui-resdict -n LightTheme -na MyApp.Themes
 
 Partial Class:
 ```shell
-dotnet new class -n BaseViewModel
+dotnet new class-cs -n BaseViewModel
 ```
 
 With parameter names expanded:
@@ -350,6 +355,9 @@ Shell:
 ```shell
 dotnet new maui-shell --name AppShell --namespace MyApp
 ```
+```shell
+dotnet new maui-shell-cs --name AppShell --namespace MyApp
+```
 
 Resource Dictionary:
 ```shell
@@ -358,5 +366,5 @@ dotnet new maui-resdict --name LightTheme --namespace MyApp.Themes
 
 Partial Class:
 ```shell
-dotnet new class --name BaseViewModel
+dotnet new class-cs --name BaseViewModel
 ```
