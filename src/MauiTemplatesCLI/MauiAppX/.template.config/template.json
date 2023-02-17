@@ -171,6 +171,10 @@
                     "description": "Targets all possible .NET MAUI supported platforms."
                 },
                 {
+                    "choice": "Base",
+                    "description": "Targets base framework (.NET 6/7)."
+                },
+                {
                     "choice": "Android",
                     "description": "Targets Android platform."
                 },
@@ -345,6 +349,10 @@
         "IsTizen": {
             "type": "computed",
             "value": "(target-platform == \"Tizen\")"
+        },
+        "IsBase": {
+            "type": "computed",
+            "value": "(target-platform == \"Base\")"
         },
         "Unpackaged": {
             "type": "computed",

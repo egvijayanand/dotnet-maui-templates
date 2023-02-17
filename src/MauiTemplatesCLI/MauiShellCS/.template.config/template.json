@@ -1,0 +1,38 @@
+{
+    "$schema": "https://json.schemastore.org/template",
+    "author": "Vijay Anand E G",
+    "defaultName": "AppShell",
+    "classifications": [
+        "MAUI",
+        "Android",
+        "iOS",
+        "macOS",
+        "Mac Catalyst",
+        "WinUI",
+        "Windows",
+        "Shell"
+    ],
+    "identity": "VijayAnand.MauiShellCS",
+    "groupIdentity": "VijayAnand.MauiTemplates.Shell.Code",
+    "description": "An item template for .NET MAUI ShellPage in C#",
+    "name": ".NET MAUI ShellPage (C#)",
+    "shortName": "maui-shell-cs",
+    "sourceName": "MauiShell.1",
+    "primaryOutputs": [
+        {
+            "path": "MauiShell.1.cs"
+        }
+    ],
+    "tags": {
+        "language": "C#",
+        "type": "item"
+    },
+    "symbols": {
+        "namespace": {
+            "type": "parameter",
+            "replaces": "MyApp.Namespace",
+            "datatype": "text",
+            "description": "namespace for the generated code"
+        }
+    }
+}
