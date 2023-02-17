@@ -110,7 +110,7 @@ ContentView (C#) | maui-view-cs | Item
 ResourceDictionary | maui-resdict | Item
 ShellPage (XAML) | maui-shell | Item
 ShellPage (C#) | maui-shell-cs | Item
-Partial Class | class-cs | Item
+Partial Class (C#) | class-cs | Item
 
 ![All-in-One .NET MAUI App Project Template](images/dotnetmaui-all-in-one-project-template-pinned.png)
 
