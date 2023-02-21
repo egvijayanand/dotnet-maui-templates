@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <!--#if (Net7)-->
+    <!--#if (Net7OrLater)-->
     <!--#if (Hybrid)-->
     <uses-sdk android:minSdkVersion="23" android:targetSdkVersion="33" />
     <!--#else-->

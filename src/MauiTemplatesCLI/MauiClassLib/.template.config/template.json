@@ -34,9 +34,14 @@
             "description": "Option to choose the application target framework.",
             "choices": [
                 {
+                    "choice": "net8.0",
+                    "description": "Target .NET 8",
+                    "displayName": ".NET 8 (Preview)"
+                },
+                {
                     "choice": "net7.0",
                     "description": "Target net7.0",
-                    "displayName": ".NET 7 (Preview)"
+                    "displayName": ".NET 7 (STS)"
                 },
                 {
                     "choice": "net6.0",
@@ -88,9 +93,9 @@
                 "toLower": true
             }
         },
-        "Net7": {
+        "Net7OrLater": {
             "type": "computed",
-            "value": "(frameworkLower == \"net7.0\")"
+            "value": "(frameworkLower == \"net7.0\" || frameworkLower == \"net8.0\")"
         },
         "AddToolkitPackage": {
             "type": "computed",

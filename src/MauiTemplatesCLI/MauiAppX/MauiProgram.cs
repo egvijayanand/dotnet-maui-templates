@@ -4,13 +4,13 @@ using CommunityToolkit.Maui;
 #if Hybrid
 using MauiApp._1.Data;
 #endif
-#if Net7
+#if Net7OrLater
 using Microsoft.Extensions.Logging;
 #endif
 #if AddFoldablePackage
 using Microsoft.Maui.Foldable;
 #endif
-#if (AddToolkitPackage || Hybrid || Net7 || AddFoldablePackage)
+#if (AddToolkitPackage || Hybrid || Net7OrLater || AddFoldablePackage)
 
 #endif
 namespace MauiApp._1
@@ -45,7 +45,7 @@ namespace MauiApp._1
 #if Hybrid
             builder.Services.AddMauiBlazorWebView();
             // Caution: Recommended to enable Developer Tools only for development!!!
-#if Net7
+#if Net7OrLater
 //-:cnd:noEmit
 #if DEBUG
             builder.Services.AddBlazorWebViewDeveloperTools();
@@ -61,7 +61,7 @@ namespace MauiApp._1
 #endif
             builder.Services.AddSingleton(AppInfo.Current);
             builder.Services.AddSingleton<WeatherForecastService>();
-#elif Net7
+#elif Net7OrLater
 //-:cnd:noEmit
 #if DEBUG
             builder.Logging.AddDebug();

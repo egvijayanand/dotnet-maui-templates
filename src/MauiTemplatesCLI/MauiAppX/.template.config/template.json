@@ -112,6 +112,11 @@
             "description": "Option to choose the application target framework.",
             "choices": [
                 {
+                    "choice": "net8.0",
+                    "description": "Target .NET 8",
+                    "displayName": ".NET 8 (Preview)"
+                },
+                {
                     "choice": "net7.0",
                     "description": "Target .NET 7",
                     "displayName": ".NET 7 (STS)"
@@ -233,21 +238,21 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to add and configure Microsoft.Maui.Controls.Maps NuGet package reference (.NET 7).",
+            "description": "Option to add and configure Microsoft.Maui.Controls.Maps NuGet package reference (.NET 7 or later).",
             "displayName": "Add and configure Microsoft.Maui._Controls.Maps NuGet package reference"
         },
         "include-media-element": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to add and configure CommunityToolkit.Maui.MediaElement NuGet package reference (.NET 7).",
+            "description": "Option to add and configure CommunityToolkit.Maui.MediaElement NuGet package reference (.NET 7 or later).",
             "displayName": "Add and configure CommunityToolkit.Maui.Media_Element NuGet package reference"
         },
         "include-foldable": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to add and configure Microsoft.Maui.Controls.Foldable NuGet package reference (.NET 7).",
+            "description": "Option to add and configure Microsoft.Maui.Controls.Foldable NuGet package reference (.NET 7 or later).",
             "displayName": "Add and configure Microsoft.Maui.Controls._Foldable NuGet package reference"
         },
         "windows-unpackaged": {
@@ -326,6 +331,14 @@
             "type": "computed",
             "value": "(frameworkLower == \"net7.0\")"
         },
+        "Net8": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net8.0\")"
+        },
+        "Net7OrLater": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net7.0\" || frameworkLower == \"net8.0\")"
+        },
         "AllPlatforms": {
             "type": "computed",
             "value": "(target-platform == \"All\")"
@@ -360,15 +373,15 @@
         },
         "AddMapsPackage": {
             "type": "computed",
-            "value": "(Net7 && include-maps)"
+            "value": "(Net7OrLater && include-maps)"
         },
         "AddMediaPackage": {
             "type": "computed",
-            "value": "(Net7 && include-media-element)"
+            "value": "(Net7OrLater && include-media-element)"
         },
         "AddFoldablePackage": {
             "type": "computed",
-            "value": "(Net7 && include-foldable)"
+            "value": "(Net7OrLater && include-foldable)"
         },
         "AddToolkitPackage": {
             "type": "computed",

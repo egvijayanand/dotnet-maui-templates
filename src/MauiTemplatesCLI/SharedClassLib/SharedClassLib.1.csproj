@@ -31,9 +31,9 @@
 
     <!-- Xamarin.Forms NuGet packages -->
     <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
-        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
+        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2545" />
         <!--#if (AddFormsEssentials)-->
-        <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
+        <PackageReference Include="Xamarin.Essentials" Version="1.7.5" />
         <!--#endif-->
         <!--#if (AddFormsToolkit)-->
         <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.5" />
@@ -48,14 +48,14 @@
     <ItemGroup Condition="'$(TargetFramework)' == 'MAUI_TFM'">
     <!--#endif-->
         <!--#if (AddMauiToolkit)-->
-        <!--#if (Net7)-->
+        <!--#if (Net7OrLater)-->
         <PackageReference Include="CommunityToolkit.Maui" Version="4.0.0"/>
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui" Version="2.0.0"/>
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMauiMarkup)-->
-        <!--#if (Net7)-->
+        <!--#if (Net7OrLater)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.0.0" />
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.2.1" />

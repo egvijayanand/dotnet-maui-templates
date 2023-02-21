@@ -7,9 +7,9 @@ We all know that .NET MAUI is an evolution of Xamarin.Forms.
 
 Release Channel:
 
-On .NET 6, `.NET MAUI SR9 (6.0.550)` and on .NET 7, `.NET MAUI SR2 (7.0.58)` is now released on Wed, Jan 18, 2023 along with VS2022 17.4.4 and 17.5.0 Preview 3.0
+On .NET 6, `.NET MAUI SR10 (6.0.552)` and on .NET 7, `.NET MAUI SR3 (7.0.59)` is now released on Tue, Jan 31, 2023 along with VS2022 17.4.4
 
-<!-- And on the Preview channel, `.NET MAUI 7.0.0-rc.2.6866 (.NET 7 RC2)` is now released on Tue, Oct 18, 2022 along with VS2022 17.4 Preview 4.0 -->
+And on the Preview channel, `.NET MAUI 8.0.0-preview.1.7762 (.NET 8 Preview 1)` is now released on Tue, Feb 21, 2023 along with VS2022 17.6.0 Preview 1.0
 
 Templates have been updated to support both .NET 6 and .NET 7 and is available to install from.
 
@@ -120,7 +120,7 @@ Starting with [v2.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/2
 
 * Framework: (Short notation: `-f`)
 
-  This can take either `net6.0` or `net7.0` as its options (with `net7.0` being the default value, if not provided).
+  This can take `net6.0` / `net7.0` / `net8.0` as its options (with `net7.0` being the default value, if not specified).
 
   Examples:
 
@@ -132,6 +132,12 @@ Starting with [v2.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/2
 
   ```shell
   dotnet new mauiapp -f net7.0
+  ```
+
+  For creating a .NET MAUI App on .NET 8 Preview
+
+  ```shell
+  dotnet new mauiapp -f net8.0
   ```
 
 In .NET CLI, all of these _Item Templates_ takes two parameters:
@@ -251,7 +257,7 @@ Can take a combination of the following values, with default value set to `All`:
 |Parameter Value|Description|
 |:---:|:---|
 |All|Targets all possible .NET MAUI supported platforms.|
-|Base|Base framework (.NET 6/7)|
+|Base|Base framework (.NET 6/7/8)|
 |Android|Targets Android platform.|
 |iOS|Targets iOS platform.|
 |macOS|Targets macOS platform via Mac Catalyst.|
