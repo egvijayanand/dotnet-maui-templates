@@ -11,7 +11,7 @@ On .NET 6, `.NET MAUI SR10 (6.0.552)` and on .NET 7, `.NET MAUI SR3 (7.0.59)` is
 
 And on the Preview channel, `.NET MAUI 8.0.0-preview.1.7762 (.NET 8 Preview 1)` is now released on Tue, Feb 21, 2023 along with VS2022 17.6.0 Preview 1.0
 
-Templates have been updated to support both .NET 6 and .NET 7 and is available to install from.
+Templates have been updated to support .NET 6/7/8 and is available to install from.
 
 |NuGet|VS Marketplace|
 |:---:|:---:|
@@ -116,7 +116,7 @@ Partial Class (C#) | class-cs | Item
 
 #### Parameters:
 
-Starting with [v2.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/2.0.0) of the template package, to effectively support .NET MAUI on both `.NET 6` and `.NET 7`, CLI project templates defines a new parameter named `framework`:
+Starting with [v3.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/3.0.0) of the template package, to effectively support .NET MAUI on `.NET 6/7/8`, CLI project templates defines a new parameter named `framework`:
 
 * Framework: (Short notation: `-f`)
 
@@ -152,7 +152,7 @@ In .NET CLI, all of these _Item Templates_ takes two parameters:
 
     The namespace for the generated files.
 
-    *While working with .NET 7 SDK, the namespace parameter in short notation needs to be passed as `-p:na` (i.e., it needs to be prefixed with `-p:`).*
+    *While working with .NET 7 SDK or later, the namespace parameter in short notation needs to be passed as `-p:na` (i.e., it needs to be prefixed with `-p:`).*
 
 * Now with more options while creating the app or class library project, ability to include NuGet packages on the fly for `CommunityToolkit.Maui`, `CommunityToolkit.Maui.Markup`, `CommunityToolkit.Mvvm` or all.
 
@@ -173,7 +173,7 @@ The target for the Windows platform can be either `Package` (MSIX) or `Unpackage
 
 * `-wu` | `--windows-unpackaged` - Default is `false`
 
-While targeting `.NET 7`, an option to add and configure `CommunityToolkit.Maui.MediaElement`, `Microsoft.Maui.Controls.Foldable`, `Microsoft.Maui.Controls.Maps`, or all NuGet packages.
+While targeting `.NET 7` or later, an option to add and configure `CommunityToolkit.Maui.MediaElement`, `Microsoft.Maui.Controls.Foldable`, `Microsoft.Maui.Controls.Maps`, or all NuGet packages.
 
 * `-ime` | `--include-media-element` - Default is `false`
 * `-if` | `--include-foldable` - Default is `false`
