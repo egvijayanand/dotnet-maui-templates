@@ -35,7 +35,7 @@
     <!--#if (AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage)-->
     <ItemGroup>
     <!--#endif-->
-        <!--#if (Net7)-->
+        <!--#if (Net7OrLater)-->
         <!--#if (AddToolkitPackage)-->
         <PackageReference Include="CommunityToolkit.Maui" Version="4.0.0"/>
         <!--#endif-->

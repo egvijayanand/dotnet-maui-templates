@@ -1,5 +1,23 @@
-What's new in ver. 2.4.1:
+What's new in ver. 3.0.0:
 -------------------------
+Templates updated for .NET 8 Preview 1.
+
+Supported values for target framework parameter, can be specified with --framework / -f
+
+net6.0
+net7.0 (the default value)
+net8.0
+
+Examples:
+
+dotnet new mauiapp -f net8.0 -o MyApp
+
+dotnet new mauiclasslib -f net8.0 -o MyLib
+
+dotnet new sharedclasslib -f net8.0 -o MyApp.UI
+
+v2.4.1:
+
 1. Short name for Partial Class (C#) item template is now renamed as class-cs to avoid conflict with .NET SDK Class template (available from v7.0.200).
 
 dotnet new class-cs -n BaseViewModel

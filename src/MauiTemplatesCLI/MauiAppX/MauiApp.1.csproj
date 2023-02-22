@@ -94,7 +94,7 @@
         <None Remove="MauiApp.1.code-workspace" />
     </ItemGroup>
 
-    <!--#if (AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage || Net7)-->
+    <!--#if (AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage || Net7OrLater)-->
     <ItemGroup>
     <!--#endif-->
         <!--#if (AddFoldablePackage)-->
@@ -103,8 +103,12 @@
         <!--#if (AddMapsPackage)-->
         <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.52" />
         <!--#endif-->
-        <!--#if (Net7)-->
+        <!--#if (Net7OrLater)-->
+        <!--#if (Net8)-->
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0-preview.1.23110.8" />
+        <!--#else-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+        <!--#endif-->
         <!--#if (AddToolkitPackage)-->
         <PackageReference Include="CommunityToolkit.Maui" Version="4.0.0"/>
         <!--#endif-->
@@ -125,7 +129,7 @@
         <!--#if (AddMvvmToolkitPackage)-->
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0"/>
         <!--#endif-->
-    <!--#if (AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage || Net7)-->
+    <!--#if (AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage || Net7OrLater)-->
     </ItemGroup>
     <!--#endif-->
 
