@@ -1,5 +1,9 @@
-What's new in ver. 2.4.0.0:
+What's new in ver. 3.0.0.0:
 ---------------------------
+Templates updated to support .NET 8 Preview 1.
+
+v2.4.0.0:
+
 1. CommunityToolkit.Maui.Markup NuGet package bumped to v3.0.0 that supports TypedBindings
 
 2. Introduced an ItemTemplate for C# Class (Partial). Made available in the section titled Code
