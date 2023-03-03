@@ -36,6 +36,17 @@
             "replaces": "MyApp.Namespace",
             "datatype": "text",
             "description": "namespace for the generated code"
+        },
+        "no-comments": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to remove comments.",
+            "displayName": "Option to remove comments"
+        },
+        "AddComments": {
+            "type": "computed",
+            "value": "(!no-comments)"
         }
     }
 }

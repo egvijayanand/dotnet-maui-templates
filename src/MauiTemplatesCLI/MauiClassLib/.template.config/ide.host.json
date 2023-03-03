@@ -3,6 +3,30 @@
     "icon": "ide/icon.png",
     "symbolInfo": [
         {
+            "id": "target-platform",
+            "name": {
+                "text": "Select the Application Target _Platform:"
+            },
+            "isVisible": true,
+            "defaultValue": "All"
+        },
+        {
+            "id": "use-razor-sdk",
+            "name": {
+                "text": "Use .NET _Razor SDK"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
+            "id": "use-maui-core",
+            "name": {
+                "text": "Use .NET MAUI _Core"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
             "id": "include-toolkit",
             "name": {
                 "text": "Add Community_Toolkit.Maui NuGet package reference"
@@ -29,10 +53,23 @@
         {
             "id": "conditional-compilation",
             "name": {
-                "text": "_Configure conditional compilation for the project"
+                "text": "Configure c_onditional compilation for the project"
             },
             "isVisible": true,
             "defaultValue": "false"
+        }
+    ],
+    "unsupportedHosts": [
+        {
+            "id": "vs",
+            "version": "(,17.3)"
+        }
+    ],
+    "requiredComponents": [
+        {
+            "id": "Microsoft.VisualStudio.ComponentGroup.Maui.All",
+            "hostId": "vs",
+            "componentType": "setupComponent"
         }
     ]
 }
