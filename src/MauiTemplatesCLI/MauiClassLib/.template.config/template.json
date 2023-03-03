@@ -95,11 +95,11 @@
                 },
                 {
                     "choice": "Windows",
-                    "description": "Targets Windows platform.."
+                    "description": "Targets Windows platform via WinUI 3."
                 },
                 {
                     "choice": "Tizen",
-                    "description": "Targets Tizen platform.."
+                    "description": "Targets Tizen platform."
                 },
                 {
                     "choice": "Mobile",

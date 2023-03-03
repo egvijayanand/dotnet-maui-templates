@@ -1,14 +1,14 @@
 What's new in ver. 3.1.0-preview.1:
 -----------------------------------
-1. Similar to All-in-One .NET MAUI App, Class Library project template also takes target-platform as a parameter that takes a combination of the following values (with All being the default value).
+1. Similar to the All-in-One .NET MAUI App, the Class Library project template also takes target-platform as a parameter that takes a combination of the following values (with All being the default value).
 
-All      Targets all possible .NET MAUI supported platforms.
+All      Targets all possible .NET MAUI-supported platforms.
 Base     Targets base framework (.NET 6/7/8) based on the framework selected.
 Android  Targets Android platform.
 iOS      Targets iOS platform.
 macOS    Targets macOS platform via Mac Catalyst.
 Windows  Targets Windows platform via WinUI 3.
-Tizen    Targets Tizen platform..
+Tizen    Targets Tizen platform.
 Mobile   Targets Android and iOS platforms.
 Desktop  Targets Windows and macOS platforms.
 Apple    Targets iOS and macOS platforms.
