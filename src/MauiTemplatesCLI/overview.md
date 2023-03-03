@@ -17,7 +17,7 @@ Item templates for the following:
 |ShellPage (C#)|maui-shell-cs|
 |Partial Class (C#)|class-cs|
 
-All of these templates currently target `.NET MAUI on .NET 6/7 GA and its Service Releases`.
+All of these templates currently target `.NET MAUI on .NET 6/7 GA and its Service Releases and .NET 8 Previews`.
 
 Install the template package from NuGet with the below command.
 
@@ -36,22 +36,30 @@ dotnet new update
 
 #### Parameters:
 
-Starting with [v2.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/2.0.0) of the template package, to effectively support .NET MAUI on both `.NET 6` and `.NET 7`, CLI project templates defines a new parameter named `framework`:
+Starting with [v2.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/2.0.0) of the template package, to effectively support .NET MAUI on both `.NET 6` and `.NET 7`, CLI project template defines a new parameter named `framework`:
+
+Starting with [v3.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/3.0.0) of the template package, CLI project template `framework` parameter adds `.NET 8` as another option.
 
 * Framework: (Short notation: `-f`)
 
-  This can take either `net6.0` or `net7.0` as its options (with `net7.0` being the default value, if not provided).
+  This can take `net6.0` / `net7.0` / `net8.0` as its options (with `net7.0` being the default value, if not provided).
 
   Examples:
 
   ```shell
-  dotnet new mauiapp --framework net6.0
+  dotnet new mauiapp -f net6.0
   ```
 
   Below command can be simplified to `dotnet new mauiapp` as default value of `framework` parameter is `net7.0`
 
   ```shell
   dotnet new mauiapp -f net7.0
+  ```
+
+  For creating a .NET MAUI App on .NET 8 Preview:
+
+  ```shell
+  dotnet new mauiapp -f net8.0
   ```
 
 In .NET CLI, all of these _Item Templates_ takes two parameters:
@@ -66,7 +74,7 @@ In .NET CLI, all of these _Item Templates_ takes two parameters:
 
     The namespace for the generated files.
 
-    *While working with .NET 7 SDK, the namespace parameter in short notation needs to be passed as `-p:na` (i.e., it needs to be prefixed with `-p:`).*
+    *While working with .NET 7 or higher SDK, the namespace parameter in short notation needs to be passed as `-p:na` (i.e., it needs to be prefixed with `-p:`).*
 
 * Now with more options while creating the app or class library project, ability to include NuGet packages on the fly for `CommunityToolkit.Maui`, `CommunityToolkit.Maui.Markup`, `CommunityToolkit.Mvvm` or all.
 
@@ -87,7 +95,7 @@ The target for the Windows platform can be either `Package` (MSIX) or `Unpackage
 
 * `-wu` | `--windows-unpackaged` - Default is `false`
 
-While targeting `.NET 7`, an option to add and configure `CommunityToolkit.Maui.MediaElement`, `Microsoft.Maui.Controls.Foldable`, `Microsoft.Maui.Controls.Maps`, or all NuGet packages.
+While targeting `.NET 7` or later, an option to add and configure `CommunityToolkit.Maui.MediaElement`, `Microsoft.Maui.Controls.Foldable`, `Microsoft.Maui.Controls.Maps`, or all NuGet packages.
 
 * `-ime` | `--include-media-element` - Default is `false`
 * `-if` | `--include-foldable` - Default is `false`
@@ -150,7 +158,9 @@ For existing projects, add the below block of code in the project file (.csproj)
 </ItemGroup>
 ```
 
-All-in-One .NET MAUI **App** project takes two additional parameters to define the application design pattern and target platform respectively:
+#### All-in-One .NET MAUI App Project Template:
+
+This takes two additional parameters to define the application design pattern and target platform respectively:
 
 * `-dp` | `--design-pattern`
 
@@ -171,7 +181,7 @@ Can take a combination of the following values, with default value set to `All`:
 |Parameter Value|Description|
 |:---:|:---|
 |All|Targets all possible .NET MAUI supported platforms.|
-|Base|Targets base framework (.NET 6/7).|
+|Base|Targets base framework (.NET 6/7/8).|
 |Android|Targets Android platform.|
 |iOS|Targets iOS platform.|
 |macOS|Targets macOS platform via Mac Catalyst.|
@@ -191,7 +201,9 @@ dotnet new mauiapp --design-pattern Hybrid --target-platform Mobile
 dotnet new mauiapp -dp Shell -tp Android
 ```
 
-Shared Class Library template take the below optional Boolean parameters to include the officially supported NuGet packages:
+#### Shared Class Library Project Template:
+
+This takes the below optional Boolean parameters to include the officially supported NuGet packages:
 
 *Specifying the parameter name, either in short or full notation, implies that it is defined.*
 
@@ -299,7 +311,10 @@ dotnet new maui-resdict -n LightTheme -na MyApp.Themes
 
 Partial Class:
 ```shell
-dotnet new class-cs -n BaseViewModel
+dotnet new class-cs -n BaseViewModel -b ObservableObject
+```
+```shell
+dotnet new class-cs -n OrderDataStore -b IDataStore -p false
 ```
 
 With parameter names expanded:
@@ -367,4 +382,7 @@ dotnet new maui-resdict --name LightTheme --namespace MyApp.Themes
 Partial Class:
 ```shell
 dotnet new class-cs --name BaseViewModel
+```
+```shell
+dotnet new class-cs --name OrderDataStore --base IDataStore --partial false
 ```

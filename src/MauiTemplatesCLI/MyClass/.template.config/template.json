@@ -26,6 +26,56 @@
             "binding": "msbuild:RootNamespace",
             "replaces": "MyApp.Namespace",
             "defaultValue": "MyApp.Namespace"
+        },
+        "base": {
+            "type": "parameter",
+            "description": "Base type for the class.",
+            "datatype": "text",
+            "replaces": "object"
+        },
+        "abstract": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to create the class as abstract.",
+            "displayName": "Option to create the class as abstract"
+        },
+        "partial": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "true",
+            "description": "Option to create the class as partial.",
+            "displayName": "Option to create the class as partial"
+        },
+        "sealed": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to create the class as sealed.",
+            "displayName": "Option to create the class as sealed"
+        },
+        "static": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to create the class as static.",
+            "displayName": "Option to create the class as static"
+        },
+        "IsAbstract": {
+            "type": "computed",
+            "value": "(abstract)"
+        },
+        "IsPartial": {
+            "type": "computed",
+            "value": "(partial)"
+        },
+        "IsSealed": {
+            "type": "computed",
+            "value": "(sealed)"
+        },
+        "IsStatic": {
+            "type": "computed",
+            "value": "(static)"
         }
     },
     "constraints": {
