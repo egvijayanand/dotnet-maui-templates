@@ -466,7 +466,7 @@ Partial Class:
 dotnet new class-cs --name BaseViewModel
 ```
 ```shell
-dotnet new class-cs -n OrderDataStore -b IDataStore -p false
+dotnet new class-cs --name OrderDataStore --base IDataStore --partial false
 ```
 <!--
 ### For VS2019 users:

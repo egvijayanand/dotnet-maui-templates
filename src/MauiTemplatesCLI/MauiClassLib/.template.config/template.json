@@ -52,6 +52,69 @@
             "replaces": "MAUI_TFM",
             "defaultValue": "net7.0"
         },
+        "use-razor-sdk": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to use Razor SDK.",
+            "displayName": "Option to use Razor SDK"
+        },
+        "use-maui-core": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to use .NET MAUI Core.",
+            "displayName": "Option to use .NET MAUI _Core"
+        },
+        "target-platform": {
+            "type": "parameter",
+            "datatype": "choice",
+            "defaultValue": "All",
+            "description": "Option to choose the application target platform.",
+            "allowMultipleValues": true,
+            "choices": [
+                {
+                    "choice": "All",
+                    "description": "Targets all possible .NET MAUI supported platforms."
+                },
+                {
+                    "choice": "Base",
+                    "description": "Targets base framework (.NET 6/7/8)."
+                },
+                {
+                    "choice": "Android",
+                    "description": "Targets Android platform."
+                },
+                {
+                    "choice": "iOS",
+                    "description": "Targets iOS platform."
+                },
+                {
+                    "choice": "macOS",
+                    "description": "Targets macOS platform via Mac Catalyst."
+                },
+                {
+                    "choice": "Windows",
+                    "description": "Targets Windows platform.."
+                },
+                {
+                    "choice": "Tizen",
+                    "description": "Targets Tizen platform.."
+                },
+                {
+                    "choice": "Mobile",
+                    "description": "Targets Android and iOS platforms."
+                },
+                {
+                    "choice": "Desktop",
+                    "description": "Targets Windows and macOS platforms."
+                },
+                {
+                    "choice": "Apple",
+                    "description": "Targets iOS and macOS platforms."
+                }
+            ]
+        },
         "include-toolkit": {
             "type": "parameter",
             "datatype": "bool",
@@ -93,9 +156,45 @@
                 "toLower": true
             }
         },
+        "UseRazorSdk": {
+            "type": "computed",
+            "value": "(use-razor-sdk)"
+        },
+        "UseMauiCore": {
+            "type": "computed",
+            "value": "(use-maui-core)"
+        },
         "Net7OrLater": {
             "type": "computed",
             "value": "(frameworkLower == \"net7.0\" || frameworkLower == \"net8.0\")"
+        },
+        "AllPlatforms": {
+            "type": "computed",
+            "value": "(target-platform == \"All\")"
+        },
+        "IsAndroid": {
+            "type": "computed",
+            "value": "(target-platform == \"Android\" || target-platform == \"Mobile\")"
+        },
+        "IsiOS": {
+            "type": "computed",
+            "value": "(target-platform == \"Apple\" || target-platform == \"iOS\" || target-platform == \"Mobile\")"
+        },
+        "IsmacOS": {
+            "type": "computed",
+            "value": "(target-platform == \"Apple\" || target-platform == \"Desktop\" || target-platform == \"macOS\")"
+        },
+        "IsWindows": {
+            "type": "computed",
+            "value": "(target-platform == \"Desktop\" || target-platform == \"Windows\")"
+        },
+        "IsTizen": {
+            "type": "computed",
+            "value": "(target-platform == \"Tizen\")"
+        },
+        "IsBase": {
+            "type": "computed",
+            "value": "(target-platform == \"Base\")"
         },
         "AddToolkitPackage": {
             "type": "computed",

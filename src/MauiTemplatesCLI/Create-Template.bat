@@ -31,14 +31,20 @@ if %errorlevel% == 0 (for /F "tokens=*" %%g in ('git rev-parse --short HEAD') do
 ::if exist global.json (call Error "Verify the .NET SDK Version" & goto end)
 ::if exist global.json.net6.bak ren global.json.net6.bak global.json
 
+echo.
 call Info ".NET SDK Version"
+
 dotnet --version
+
+echo.
+call Info "Deleting existing package ..."
 
 if exist .\bin\%config%\%packageName%.%packageVersion%.nupkg del .\bin\%config%\%packageName%.%packageVersion%.nupkg
 
 echo.
 call Info "Creating %packageName% template ver. %packageVersion% NuGet package in %config% mode ..."
 
+echo.
 dotnet pack .\VijayAnand.MauiTemplates.csproj -c %config% -p:PackageVersion=%packageVersion%%revisionId%
 
 echo.

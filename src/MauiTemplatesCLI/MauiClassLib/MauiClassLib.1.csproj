@@ -1,15 +1,45 @@
+<!--#if (UseRazorSdk)-->
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+<!--#else-->
 <Project Sdk="Microsoft.NET.Sdk">
+<!--#endif-->
     <PropertyGroup>
-        <TargetFrameworks>MAUI_TFM;MAUI_TFM-android</TargetFrameworks>
-        <!-- Targets possible from Windows OS -->
-        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst;MAUI_TFM-windows10.0.19041.0</TargetFrameworks>
-        <!-- Targets possible from macOS -->
+        <!--#if (AllPlatforms)-->
+        <TargetFrameworks>MAUI_TFM-android</TargetFrameworks>
         <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('osx'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst</TargetFrameworks>
-        <!-- Uncomment to also build the Tizen app. You will need to install Tizen by following this: https://github.com/Samsung/Tizen.NET -->
-        <!-- <TargetFrameworks>$(TargetFrameworks);MAUI_TFM-tizen</TargetFrameworks> -->
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst;MAUI_TFM-windows10.0.19041.0</TargetFrameworks>
+        <!--#elif (IsAndroid && IsiOS && IsmacOS)-->
+        <TargetFrameworks>MAUI_TFM-android;MAUI_TFM-ios;MAUI_TFM-maccatalyst</TargetFrameworks>
+        <!--#elif (IsAndroid && IsiOS)-->
+        <TargetFrameworks>MAUI_TFM-android;MAUI_TFM-ios</TargetFrameworks>
+        <!--#elif (IsiOS && IsmacOS)-->
+        <TargetFrameworks>MAUI_TFM-ios;MAUI_TFM-maccatalyst</TargetFrameworks>
+        <!--#elif (IsAndroid && IsmacOS)-->
+        <TargetFrameworks>MAUI_TFM-android;MAUI_TFM-maccatalyst</TargetFrameworks>
+        <!--#elif (IsAndroid)-->
+        <TargetFrameworks>MAUI_TFM-android</TargetFrameworks>
+        <!--#elif (IsiOS)-->
+        <TargetFrameworks>MAUI_TFM-ios</TargetFrameworks>
+        <!--#elif (IsmacOS)-->
+        <TargetFrameworks>MAUI_TFM-maccatalyst</TargetFrameworks>
+        <!--#endif-->
+        <!--#if (IsWindows)-->
+        <!-- Targets possible from Windows OS -->
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-windows10.0.19041.0</TargetFrameworks>
+        <!--#endif-->
+        <!--#if (AllPlatforms || IsTizen)-->
+        <TargetFrameworks>$(TargetFrameworks);MAUI_TFM-tizen</TargetFrameworks>
+        <!--#endif-->
+        <!--#if (AllPlatforms || IsBase)-->
+        <TargetFrameworks>$(TargetFrameworks);MAUI_TFM</TargetFrameworks>
+        <!--#endif-->
 
         <!-- .NET MAUI -->
+        <!--#if (UseMauiCore)-->
+        <UseMauiCore>true</UseMauiCore>
+        <!--#else-->
         <UseMaui>true</UseMaui>
+        <!--#endif-->
         <SingleProject>true</SingleProject>
 
         <!-- Project Options -->

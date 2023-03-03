@@ -1,14 +1,47 @@
-What's new in ver. 3.0.1:
--------------------------
+What's new in ver. 3.1.0-preview.1:
+-----------------------------------
+1. Similar to All-in-One .NET MAUI App, Class Library project template also takes target-platform as a parameter that takes a combination of the following values (with All being the default value).
+
+All      Targets all possible .NET MAUI supported platforms.
+Base     Targets base framework (.NET 6/7/8) based on the framework selected.
+Android  Targets Android platform.
+iOS      Targets iOS platform.
+macOS    Targets macOS platform via Mac Catalyst.
+Windows  Targets Windows platform via WinUI 3.
+Tizen    Targets Tizen platform..
+Mobile   Targets Android and iOS platforms.
+Desktop  Targets Windows and macOS platforms.
+Apple    Targets iOS and macOS platforms.
+
+2. .NET MAUI Class Library can be created target .NET Razor SDK.
+
+Parameter name: --use-razor-sdk | -usr
+
+3.  .NET MAUI Class Library can be created target .NET MAUI Core.
+
+Parameter name: --use-maui-core | -umc
+
+Examples:
+
+With default values, below command creates a library project for .NET 7 with Target Platform set to All.
+
+dotnet new mauiclasslib -o MyLib -urs -umc
+
+Below command creates a library project for .NET 8 with Target Platform set to Mobile (iOS and Android) and .NET 8 (Base framework).
+
+dotnet new mauiclasslib -f net8.0 -o MyLib -urs -umc -tp Mobile Base
+
+v3.0.1:
+
 1. Additional parameters added to the Partial Class (class-cs) item template.
 
-Parameter Name - Type - Default value - Remarks
------------------------------------------------
-base - text - object - Specifies the base type for the class.
-abstract - bool - false - Option to create the type as abstract.
-partial - bool - true - Option to create the type as partial.
-sealed - bool - false - Option to create the type as sealed.
-static - bool - false - Option to create the type as static.
+Name        Type    Default Value   Remarks
+--------------------------------------------------------------------------
+base        text    object          Specifies the base type for the class.
+abstract    bool    false           Option to create the type as abstract.
+partial     bool    true            Option to create the type as partial.
+sealed      bool    false           Option to create the type as sealed.
+static      bool    false           Option to create the type as static.
 
 Examples:
 

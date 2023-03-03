@@ -16,10 +16,12 @@
         When the Flyout is visible this defines the content to display in the flyout.
         FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element
     -->
+    <!--#if (AddComments)-->
     <!--
         Uncomment the below section to enable Shell Flyout item(s)
         And ensure appropriate page definitions are available for it work as expected
     -->
+    <!--#endif-->
     <!--
     <FlyoutItem Title="Home">
         <ShellContent ContentTemplate="{DataTemplate local:HomePage}" Route="home" />
@@ -31,10 +33,12 @@
     <!--
         When the Flyout is visible this will be a menu item you can tie a click behavior to
     -->
+    <!--#if (AddComments)-->
     <!--
         Uncomment the below section to enable Menu item(s)
         And ensure appropriate page definitions are available for it work as expected
     -->
+    <!--#endif-->
     <!--
     <MenuItem Clicked="OnMenuItemClicked" Text="Logout" />
     -->
@@ -45,10 +49,12 @@
         content you can do so by calling
         await Shell.Current.GoToAsync("//login");
     -->
+    <!--#if (AddComments)-->
     <!--
         Uncomment the below section to enable TabBar item(s)
         And ensure appropriate page definitions are available for it work as expected
     -->
+    <!--#endif-->
     <!--
     <TabBar>
         <ShellContent ContentTemplate="{DataTemplate local:LoginPage}" Route="login" />
