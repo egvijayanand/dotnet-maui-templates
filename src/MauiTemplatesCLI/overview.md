@@ -203,7 +203,7 @@ dotnet new mauiapp -dp Shell -tp Android
 
 #### Shared Class Library Project Template:
 
-This template take the below optional Boolean parameters to include the officially supported NuGet packages:
+This takes the below optional Boolean parameters to include the officially supported NuGet packages:
 
 *Specifying the parameter name, either in short or full notation, implies that it is defined.*
 
