@@ -15,7 +15,7 @@ Templates have been updated to support .NET 6/7/8 and is available to install fr
 
 |NuGet|VS Marketplace|
 |:---:|:---:|
-|[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/)|[![.NET MAUI Project and Item Templates - VS Marketplace](https://badgen.net/vs-marketplace/v/egvijayanand.maui-templates)](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-templates)|
+|[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/?icon=nuget)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/)|[![.NET MAUI Project and Item Templates - VS Marketplace](https://badgen.net/vs-marketplace/v/egvijayanand.maui-templates?icon=visualstudio)](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-templates)|
 
 ### For VS2022 users:
 
@@ -79,7 +79,7 @@ Snippets for Method definition, Event Handler definition (async version also).
 
 For making use of these templates cross-platform, have provided it as .NET CLI template package distributed via NuGet.
 
-[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/)
+<!-- [![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/) -->
 
 Install the template package from NuGet with the below command.
 
@@ -116,7 +116,9 @@ Partial Class (C#) | class-cs | Item
 
 #### Parameters:
 
-Starting with [v3.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/3.0.0) of the template package, to effectively support .NET MAUI on `.NET 6/7/8`, CLI project templates defines a new parameter named `framework`:
+Starting with [v2.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/2.0.0) of the template package, to effectively support .NET MAUI on both `.NET 6` and `.NET 7`, CLI project template defines a new parameter named `framework`:
+
+And from [v3.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/3.0.0) of the template package, CLI project template `framework` parameter adds `.NET 8` as another option.
 
 * Framework: (Short notation: `-f`)
 
@@ -125,7 +127,7 @@ Starting with [v3.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/3
   Examples:
 
   ```shell
-  dotnet new mauiapp --framework net6.0
+  dotnet new mauiapp -f net6.0
   ```
 
   Below command can be simplified to `dotnet new mauiapp` as default value of `framework` parameter is `net7.0`
@@ -236,7 +238,9 @@ For existing projects, add the below block of code in the project file (.csproj)
 </ItemGroup>
 ```
 
-All-in-One .NET MAUI **App** project takes two additional parameters to define the application design pattern and target platform respectively:
+#### All-in-One .NET MAUI **App** Project Template:
+
+This takes two additional parameters to define the application design pattern and target platform respectively:
 
 * `-dp` | `--design-pattern`
 
@@ -279,7 +283,9 @@ dotnet new mauiapp --design-pattern Hybrid --target-platform Mobile
 dotnet new mauiapp -dp Shell -tp Android iOS Windows
 ```
 
-Shared Class Library template take the below optional Boolean parameters to include the officially supported NuGet packages:
+#### Shared Class Library Template:
+
+This takes the below optional Boolean parameters to include the officially supported NuGet packages:
 
 *Specifying the parameter name, either in short or full notation, implies that it is defined.*
 
@@ -389,6 +395,9 @@ Partial Class:
 ```shell
 dotnet new class-cs -n BaseViewModel
 ```
+```shell
+dotnet new class-cs -n OrderDataStore -b IDataStore -p false
+```
 
 With parameter names expanded:
 
@@ -455,6 +464,9 @@ dotnet new maui-resdict --name LightTheme --namespace MyApp.Themes
 Partial Class:
 ```shell
 dotnet new class-cs --name BaseViewModel
+```
+```shell
+dotnet new class-cs -n OrderDataStore -b IDataStore -p false
 ```
 <!--
 ### For VS2019 users:

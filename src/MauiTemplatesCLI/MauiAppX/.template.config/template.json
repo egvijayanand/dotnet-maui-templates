@@ -133,7 +133,7 @@
         "applicationId": {
             "type": "parameter",
             "description": "Overrides the App Identifier of the project",
-            "datatype": "string",
+            "datatype": "text",
             "replaces": "com.companyname.mauiAppId"
         },
         "design-pattern": {
@@ -177,7 +177,7 @@
                 },
                 {
                     "choice": "Base",
-                    "description": "Targets base framework (.NET 6/7)."
+                    "description": "Targets base framework (.NET 6/7/8)."
                 },
                 {
                     "choice": "Android",

@@ -15,7 +15,7 @@ using Microsoft.Maui.Foldable;
 #endif
 namespace MauiApp._1
 {
-    public static class MauiProgram
+    public static partial class MauiProgram
     {
         public static MauiApp CreateMauiApp()
         {
