@@ -13,9 +13,10 @@ And on the Preview channel, `.NET MAUI 8.0.0-preview.1.7762 (.NET 8 Preview 1)` 
 
 Templates have been updated to support .NET 6/7/8 and is available to install from.
 
-|NuGet|VS Marketplace|
-|:---:|:---:|
-|[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/?icon=nuget)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/)|[![.NET MAUI Project and Item Templates - VS Marketplace](https://badgen.net/vs-marketplace/v/egvijayanand.maui-templates?icon=visualstudio)](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-templates)|
+|Channel|NuGet|VS Marketplace|
+|:---:|:---:|:---:|
+|Stable|[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/?icon=nuget)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/)|[![.NET MAUI Project and Item Templates - VS Marketplace](https://badgen.net/vs-marketplace/v/egvijayanand.maui-templates?icon=visualstudio)](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-templates)|
+|Preview|[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/latest?icon=nuget)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/absoluteLatest)| - |
 
 ### For VS2022 users:
 
