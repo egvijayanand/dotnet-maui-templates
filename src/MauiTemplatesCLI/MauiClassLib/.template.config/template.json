@@ -56,15 +56,22 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to use Razor SDK.",
-            "displayName": "Option to use Razor SDK"
+            "description": "Option to use .NET Razor SDK.",
+            "displayName": "Option to use .NET Razor SDK"
         },
         "use-maui-core": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to use .NET MAUI Core.",
-            "displayName": "Option to use .NET MAUI _Core"
+            "description": "Option to use .NET MAUI Core (includes MAUI Essentials).",
+            "displayName": "Option to use .NET MAUI _Core (includes MAUI Essentials)"
+        },
+        "use-maui-essentials": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to use .NET MAUI Essentials.",
+            "displayName": "Option to use .NET MAUI _Essentials"
         },
         "target-platform": {
             "type": "parameter",
@@ -164,6 +171,14 @@
             "type": "computed",
             "value": "(use-maui-core)"
         },
+        "UseMauiEssentials": {
+            "type": "computed",
+            "value": "(use-maui-essentials)"
+        },
+        "Net8": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net8.0\")"
+        },
         "Net7OrLater": {
             "type": "computed",
             "value": "(frameworkLower == \"net7.0\" || frameworkLower == \"net8.0\")"
@@ -195,6 +210,14 @@
         "IsBase": {
             "type": "computed",
             "value": "(target-platform == \"Base\")"
+        },
+        "FirstLine": {
+            "type": "computed",
+            "value": "(IsAndroid || IsiOS || IsmacOS)"
+        },
+        "MorePlatforms": {
+            "type": "computed",
+            "value": "(IsWindows || IsTizen || IsBase)"
         },
         "AddToolkitPackage": {
             "type": "computed",
