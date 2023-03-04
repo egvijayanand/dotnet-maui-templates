@@ -1,5 +1,29 @@
-What's new in ver. 3.1.0-preview.1:
+What's new in ver. 3.1.0-preview.2:
 -----------------------------------
+1. .NET MAUI App and Library project framework targets were restructured to better align with the development/build platforms.
+
+This enables to make use of the template without any modification across OS such as Windows, macOS, and Linux.
+
+2. .NET MAUI Class Library can be created target .NET MAUI Essentials.
+
+Parameter name: --use-maui-essentials | -ume
+
+3. While targeting .NET 8 Preview, the Tizen platform target is commented out in the project file as a public preview of the Tizen workload is yet to be made available.
+
+This will be re-enabled once the workload is made available.
+
+Examples:
+
+With default values, below command creates a library project for .NET 7 with Target Platform set to All.
+
+dotnet new mauiclasslib -o MyLib -ume
+
+Below command creates a library project for .NET 8 with Target Platform set to Mobile (iOS and Android) and .NET 8 (Base framework).
+
+dotnet new mauiclasslib -f net8.0 -o MyLib -ume -tp Mobile Base
+
+v3.1.0-preview.1:
+
 1. Similar to the All-in-One .NET MAUI App, the Class Library project template also takes target-platform as a parameter that takes a combination of the following values (with All being the default value).
 
 All      Targets all possible .NET MAUI-supported platforms.
@@ -17,9 +41,11 @@ Apple    Targets iOS and macOS platforms.
 
 Parameter name: --use-razor-sdk | -usr
 
-3.  .NET MAUI Class Library can be created target .NET MAUI Core.
+3. .NET MAUI Class Library can be created target .NET MAUI Core.
 
 Parameter name: --use-maui-core | -umc
+
+Note: .NET MAUI Essentials is a transitive dependency to .NET MAUI Core.
 
 Examples:
 

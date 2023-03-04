@@ -367,6 +367,14 @@
             "type": "computed",
             "value": "(target-platform == \"Base\")"
         },
+        "FirstLine": {
+            "type": "computed",
+            "value": "(IsAndroid || IsiOS || IsmacOS)"
+        },
+        "MorePlatforms": {
+            "type": "computed",
+            "value": "(IsWindows || IsTizen || IsBase)"
+        },
         "Unpackaged": {
             "type": "computed",
             "value": "(windows-unpackaged)"
