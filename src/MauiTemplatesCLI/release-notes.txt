@@ -57,6 +57,10 @@ Below command creates a library project for .NET 8 with Target Platform set to M
 
 dotnet new mauiclasslib -f net8.0 -o MyLib -urs -umc -tp Mobile Base
 
+v3.0.2:
+
+Fix for https://github.com/egvijayanand/dotnet-maui-templates/issues/110
+
 v3.0.1:
 
 1. Additional parameters added to the Partial Class (class-cs) item template.
