@@ -22,7 +22,9 @@
 #endif
 #endif
     {
-#if IsStatic
+#if IsAbstract
+        public MyClass__1()
+#elif IsStatic
         static MyClass__1()
 #else
         public MyClass__1()
