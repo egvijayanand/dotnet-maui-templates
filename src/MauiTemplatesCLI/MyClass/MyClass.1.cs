@@ -1,9 +1,7 @@
 ﻿namespace MyApp.Namespace
 {
 #if IsPartial
-#if (IsAbstract && IsStatic)
-    public static abstract partial class MyClass__1 : object
-#elif IsAbstract
+#if IsAbstract
     public abstract partial class MyClass__1 : object
 #elif IsSealed
     public sealed partial class MyClass__1 : object
@@ -13,9 +11,7 @@
     public partial class MyClass__1 : object
 #endif
 #else
-#if (IsAbstract && IsStatic)
-    public static abstract class MyClass__1 : object
-#elif IsAbstract
+#if IsAbstract
     public abstract class MyClass__1 : object
 #elif IsSealed
     public sealed class MyClass__1 : object

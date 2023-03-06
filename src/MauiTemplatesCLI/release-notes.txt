@@ -1,5 +1,9 @@
-What's new in ver. 3.0.1:
+What's new in ver. 3.0.2:
 -------------------------
+Fix for https://github.com/egvijayanand/dotnet-maui-templates/issues/110
+
+v3.0.1:
+
 1. Additional parameters added to the Partial Class (class-cs) item template.
 
 Parameter Name - Type - Default value - Remarks
