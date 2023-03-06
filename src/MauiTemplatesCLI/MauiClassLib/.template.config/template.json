@@ -40,17 +40,87 @@
                 },
                 {
                     "choice": "net7.0",
-                    "description": "Target net7.0",
+                    "description": "Target .NET 7",
                     "displayName": ".NET 7 (STS)"
                 },
                 {
                     "choice": "net6.0",
-                    "description": "Target net6.0",
+                    "description": "Target .NET 6",
                     "displayName": ".NET 6 (LTS)"
                 }
             ],
             "replaces": "MAUI_TFM",
             "defaultValue": "net7.0"
+        },
+        "use-razor-sdk": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to use .NET Razor SDK.",
+            "displayName": "Option to use .NET Razor SDK"
+        },
+        "use-maui-core": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to use .NET MAUI Core (includes MAUI Essentials).",
+            "displayName": "Option to use .NET MAUI _Core (includes MAUI Essentials)"
+        },
+        "use-maui-essentials": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to use .NET MAUI Essentials.",
+            "displayName": "Option to use .NET MAUI _Essentials"
+        },
+        "target-platform": {
+            "type": "parameter",
+            "datatype": "choice",
+            "defaultValue": "All",
+            "description": "Option to choose the application target platform.",
+            "allowMultipleValues": true,
+            "choices": [
+                {
+                    "choice": "All",
+                    "description": "Targets all possible .NET MAUI supported platforms."
+                },
+                {
+                    "choice": "Base",
+                    "description": "Targets base framework (.NET 6/7/8)."
+                },
+                {
+                    "choice": "Android",
+                    "description": "Targets Android platform."
+                },
+                {
+                    "choice": "iOS",
+                    "description": "Targets iOS platform."
+                },
+                {
+                    "choice": "macOS",
+                    "description": "Targets macOS platform via Mac Catalyst."
+                },
+                {
+                    "choice": "Windows",
+                    "description": "Targets Windows platform via WinUI 3."
+                },
+                {
+                    "choice": "Tizen",
+                    "description": "Targets Tizen platform."
+                },
+                {
+                    "choice": "Mobile",
+                    "description": "Targets Android and iOS platforms."
+                },
+                {
+                    "choice": "Desktop",
+                    "description": "Targets Windows and macOS platforms."
+                },
+                {
+                    "choice": "Apple",
+                    "description": "Targets iOS and macOS platforms."
+                }
+            ]
         },
         "include-toolkit": {
             "type": "parameter",
@@ -93,9 +163,61 @@
                 "toLower": true
             }
         },
+        "UseRazorSdk": {
+            "type": "computed",
+            "value": "(use-razor-sdk)"
+        },
+        "UseMauiCore": {
+            "type": "computed",
+            "value": "(use-maui-core)"
+        },
+        "UseMauiEssentials": {
+            "type": "computed",
+            "value": "(use-maui-essentials)"
+        },
+        "Net8": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net8.0\")"
+        },
         "Net7OrLater": {
             "type": "computed",
             "value": "(frameworkLower == \"net7.0\" || frameworkLower == \"net8.0\")"
+        },
+        "AllPlatforms": {
+            "type": "computed",
+            "value": "(target-platform == \"All\")"
+        },
+        "IsAndroid": {
+            "type": "computed",
+            "value": "(target-platform == \"Android\" || target-platform == \"Mobile\")"
+        },
+        "IsiOS": {
+            "type": "computed",
+            "value": "(target-platform == \"Apple\" || target-platform == \"iOS\" || target-platform == \"Mobile\")"
+        },
+        "IsmacOS": {
+            "type": "computed",
+            "value": "(target-platform == \"Apple\" || target-platform == \"Desktop\" || target-platform == \"macOS\")"
+        },
+        "IsWindows": {
+            "type": "computed",
+            "value": "(target-platform == \"Desktop\" || target-platform == \"Windows\")"
+        },
+        "IsTizen": {
+            "type": "computed",
+            "value": "(target-platform == \"Tizen\")"
+        },
+        "IsBase": {
+            "type": "computed",
+            "value": "(target-platform == \"Base\")"
+        },
+        "FirstLine": {
+            "type": "computed",
+            "value": "(IsAndroid || IsiOS || IsmacOS)"
+        },
+        "MorePlatforms": {
+            "type": "computed",
+            "value": "(IsWindows || IsTizen || IsBase)"
         },
         "AddToolkitPackage": {
             "type": "computed",

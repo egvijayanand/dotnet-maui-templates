@@ -1,15 +1,102 @@
+<!--#if (UseRazorSdk)-->
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+<!--#else-->
 <Project Sdk="Microsoft.NET.Sdk">
+<!--#endif-->
     <PropertyGroup>
-        <TargetFrameworks>MAUI_TFM;MAUI_TFM-android</TargetFrameworks>
-        <!-- Targets possible from Windows OS -->
-        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst;MAUI_TFM-windows10.0.19041.0</TargetFrameworks>
-        <!-- Targets possible from macOS -->
+        <!--#if (AllPlatforms)-->
+        <TargetFrameworks>MAUI_TFM-android</TargetFrameworks>
         <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('osx'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst</TargetFrameworks>
-        <!-- Uncomment to also build the Tizen app. You will need to install Tizen by following this: https://github.com/Samsung/Tizen.NET -->
-        <!-- <TargetFrameworks>$(TargetFrameworks);MAUI_TFM-tizen</TargetFrameworks> -->
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst;MAUI_TFM-windows10.0.19041.0</TargetFrameworks>
+        <!--#if (Net8)-->
+        <!-- <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-tizen</TargetFrameworks> -->
+        <!--#else-->
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-tizen</TargetFrameworks>
+        <!--#endif-->
+        <TargetFrameworks>$(TargetFrameworks);MAUI_TFM</TargetFrameworks>
+        <!--#elif (IsAndroid && IsiOS && IsmacOS)-->
+        <TargetFrameworks>MAUI_TFM-android</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('osx'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst</TargetFrameworks>
+        <!--#elif (IsAndroid && IsiOS)-->
+        <TargetFrameworks>MAUI_TFM-android</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('osx'))">$(TargetFrameworks);MAUI_TFM-ios</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-ios</TargetFrameworks>
+        <!--#elif (IsiOS && IsmacOS)-->
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('osx'))">MAUI_TFM-ios;MAUI_TFM-maccatalyst</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">MAUI_TFM-ios;MAUI_TFM-maccatalyst</TargetFrameworks>
+        <!--#elif (IsAndroid && IsmacOS)-->
+        <TargetFrameworks>MAUI_TFM-android</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('osx'))">$(TargetFrameworks);MAUI_TFM-maccatalyst</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-maccatalyst</TargetFrameworks>
+        <!--#elif (IsAndroid)-->
+        <!--#if (MorePlatforms)-->
+        <TargetFrameworks>MAUI_TFM-android</TargetFrameworks>
+        <!--#else-->
+        <TargetFramework>MAUI_TFM-android</TargetFramework>
+        <!--#endif-->
+        <!--#elif (IsiOS)-->
+        <!--#if (MorePlatforms)-->
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('osx'))">MAUI_TFM-ios</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">MAUI_TFM-ios</TargetFrameworks>
+        <!--#else-->
+        <TargetFramework Condition="$([MSBuild]::IsOSPlatform('osx'))">MAUI_TFM-ios</TargetFramework>
+        <TargetFramework Condition="$([MSBuild]::IsOSPlatform('windows'))">MAUI_TFM-ios</TargetFramework>
+        <!--#endif-->
+        <!--#elif (IsmacOS)-->
+        <!--#if (MorePlatforms)-->
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('osx'))">MAUI_TFM-maccatalyst</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">MAUI_TFM-maccatalyst</TargetFrameworks>
+        <!--#else-->
+        <TargetFramework Condition="$([MSBuild]::IsOSPlatform('osx'))">MAUI_TFM-maccatalyst</TargetFramework>
+        <TargetFramework Condition="$([MSBuild]::IsOSPlatform('windows'))">MAUI_TFM-maccatalyst</TargetFramework>
+        <!--#endif-->
+        <!--#endif-->
+        <!--#if (IsWindows)-->
+        <!-- Targets possible from Windows OS -->
+        <!--#if (FirstLine)-->
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-windows10.0.19041.0</TargetFrameworks>
+        <!--#elif (IsTizen || IsBase)-->
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">MAUI_TFM-windows10.0.19041.0</TargetFrameworks>
+        <!--#else-->
+        <TargetFramework Condition="$([MSBuild]::IsOSPlatform('windows'))">MAUI_TFM-windows10.0.19041.0</TargetFramework>
+        <!--#endif-->
+        <!--#endif-->
+        <!--#if (IsTizen)-->
+        <!--#if (Net8)-->
+        <!--#if (FirstLine || IsWindows)-->
+        <!-- <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-tizen</TargetFrameworks> -->
+        <!--#elif (IsBase)-->
+        <!-- <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">MAUI_TFM-tizen</TargetFrameworks> -->
+        <!--#else-->
+        <!-- <TargetFramework Condition="$([MSBuild]::IsOSPlatform('windows'))">MAUI_TFM-tizen</TargetFramework> -->
+        <!--#endif-->
+        <!--#else-->
+        <!--#if (FirstLine || IsWindows)-->
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-tizen</TargetFrameworks>
+        <!--#elif (IsBase)-->
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">MAUI_TFM-tizen</TargetFrameworks>
+        <!--#else-->
+        <TargetFramework Condition="$([MSBuild]::IsOSPlatform('windows'))">MAUI_TFM-tizen</TargetFramework>
+        <!--#endif-->
+        <!--#endif-->
+        <!--#endif-->
+        <!--#if (IsBase)-->
+        <!--#if (FirstLine || IsWindows || IsTizen)-->
+        <TargetFrameworks>$(TargetFrameworks);MAUI_TFM</TargetFrameworks>
+        <!--#else-->
+        <TargetFramework>MAUI_TFM</TargetFramework>
+        <!--#endif-->
+        <!--#endif-->
 
         <!-- .NET MAUI -->
+        <!--#if (UseMauiCore)-->
+        <UseMauiCore>true</UseMauiCore>
+        <!--#elif (UseMauiEssentials)-->
+        <UseMauiEssentials>true</UseMauiEssentials>
+        <!--#else-->
         <UseMaui>true</UseMaui>
+        <!--#endif-->
         <SingleProject>true</SingleProject>
 
         <!-- Project Options -->

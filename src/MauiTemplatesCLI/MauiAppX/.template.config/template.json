@@ -193,11 +193,11 @@
                 },
                 {
                     "choice": "Windows",
-                    "description": "Targets Windows platform.."
+                    "description": "Targets Windows platform via WinUI 3."
                 },
                 {
                     "choice": "Tizen",
-                    "description": "Targets Tizen platform.."
+                    "description": "Targets Tizen platform."
                 },
                 {
                     "choice": "Mobile",
@@ -366,6 +366,14 @@
         "IsBase": {
             "type": "computed",
             "value": "(target-platform == \"Base\")"
+        },
+        "FirstLine": {
+            "type": "computed",
+            "value": "(IsAndroid || IsiOS || IsmacOS)"
+        },
+        "MorePlatforms": {
+            "type": "computed",
+            "value": "(IsWindows || IsTizen || IsBase)"
         },
         "Unpackaged": {
             "type": "computed",
