@@ -58,5 +58,18 @@
             "isVisible": true,
             "defaultValue": "false"
         }
+    ],
+    "unsupportedHosts": [
+        {
+            "id": "vs",
+            "version": "(,17.3)"
+        }
+    ],
+    "requiredComponents": [
+        {
+            "id": "Microsoft.VisualStudio.ComponentGroup.Maui.All",
+            "hostId": "vs",
+            "componentType": "setupComponent"
+        }
     ]
 }
