@@ -101,17 +101,20 @@ This comes with with the following templates:
 
 Name | Template Name | Type
 :---: | :---: | :---:
-.NET MAUI App | mauiapp | Project
-.NET MAUI Class Library | mauiclasslib | Project
-Shared Class Library | sharedclasslib | Project
+[All-in-One .NET MAUI App](#all-in-one-net-maui-app-project-template) | mauiapp | Project
+[.NET MAUI Class Library](#net-maui-class-library-template) | mauiclasslib | Project
+[Shared Class Library](#shared-class-library-template) | sharedclasslib | Project
 ContentPage (XAML) | maui-page | Item
 ContentPage (C#) | maui-page-cs | Item
+ContentPage (Razor) | maui-page-razor | Item
 ContentView (XAML) | maui-view | Item
 ContentView (C#) | maui-view-cs | Item
+ContentView (Razor) | maui-view-razor | Item
 ResourceDictionary | maui-resdict | Item
 ShellPage (XAML) | maui-shell | Item
 ShellPage (C#) | maui-shell-cs | Item
-Partial Class (C#) | class-cs | Item
+ShellPage (Razor) | maui-shell-razor | Item
+[Partial Class (C#)](#partial-class-item-template) | class-cs | Item
 
 ![All-in-One .NET MAUI App Project Template](images/dotnetmaui-all-in-one-project-template-pinned.png)
 
@@ -254,6 +257,7 @@ Can take any one of the following values, with default value set to `Plain`:
 |Tab|App configured to work in a Tabbed fashion using TabbedPage.|
 |Shell|App configured to work with Routes using Shell page.|
 |Hybrid|App configured to work in a Hybrid fashion using BlazorWebView.|
+|Razor|App configured to work with Razor syntax.|
 
 * `-tp` | `--target-platform`
 
@@ -262,7 +266,7 @@ Can take a combination of the following values, with default value set to `All`:
 |Parameter Value|Description|
 |:---:|:---|
 |All|Targets all possible .NET MAUI supported platforms.|
-|Base|Base framework (.NET 6/7/8)|
+|Base|Base framework (.NET 6/7/8) based on the framework opted.|
 |Android|Targets Android platform.|
 |iOS|Targets iOS platform.|
 |macOS|Targets macOS platform via Mac Catalyst.|
@@ -283,6 +287,17 @@ dotnet new mauiapp --design-pattern Hybrid --target-platform Mobile
   ```shell
 dotnet new mauiapp -dp Shell -tp Android iOS Windows
 ```
+
+#### .NET MAUI Class Library Template:
+
+Similar to All-in-One .NET MAUI App, the Class Library project template also takes `target-platform` as a parameter that takes a combination from the same set of values (with `All` being the default value).
+
+* Can be created targeting .NET Razor SDK
+  - Parameter name: `--use-razor-sdk` | `-usr`
+* Can be created targeting .NET MAUI Core
+  - Parameter name: `--use-maui-core` | `-umc`
+* Can be created targeting .NET MAUI Essentials
+  - Parameter name: `--use-maui-essentials` | `-ume`
 
 #### Shared Class Library Template:
 
@@ -321,6 +336,28 @@ dotnet new mauiclasslib --help
 dotnet new sharedclasslib --help
 ```
 
+#### Partial Class Item Template:
+
+This item template (short name: `class-cs`) allows to create a C# class from CLI with support for multiple options.
+
+|Parameter Name|Type|Default Value|Remarks|
+|:--:|:---:|:---:|:---|
+access-modifier|choice|public|Specifies the accessibility of the class type.|
+base|text|object|Specifies the base type for the class.|
+abstract|bool|false|Option to create the type as abstract.|
+partial|bool|true|Option to create the type as partial.|
+sealed|bool|false|Option to create the type as sealed.|
+static|bool|false|Option to create the type as static.|
+
+Access Modifier parameter (`--access-modifier` | `-am`):
+
+Supported values are:
+
+* public (default value, if not provided)
+* internal
+* protected
+* private
+
 #### Usage:
 
 After installation, use the below command(s) to create new artifacts using the template (both provide the same output):
@@ -330,7 +367,13 @@ With parameter names abbreviated:
 
 .NET MAUI App:
 ```shell
+dotnet new mauiapp -n MyApp -dp Shell
+```
+```shell
 dotnet new mauiapp -n MyApp -dp Hybrid
+```
+```shell
+dotnet new mauiapp -n MyApp -dp Razor
 ```
 Option to include NuGet packages:
 ```shell
@@ -370,6 +413,9 @@ dotnet new maui-page -n LoginPage -na MyApp.Views
 ```shell
 dotnet new maui-page-cs -n HomePage -na MyApp.Views
 ```
+```shell
+dotnet new maui-page-razor -n HomePage
+```
 
 Views:
 ```shell
@@ -378,6 +424,9 @@ dotnet new maui-view -n CardView -na MyApp.Views
 ```shell
 dotnet new maui-view-cs -n OrderView -na MyApp.Views
 ```
+```shell
+dotnet new maui-view-razor -n OrderView
+```
 
 Shell:
 ```shell
@@ -385,6 +434,9 @@ dotnet new maui-shell -n AppShell -na MyApp
 ```
 ```shell
 dotnet new maui-shell-cs -n AppShell -na MyApp
+```
+```shell
+dotnet new maui-shell-razor -n AppShell
 ```
 
 Resource Dictionary:
@@ -397,14 +449,20 @@ Partial Class:
 dotnet new class-cs -n BaseViewModel
 ```
 ```shell
-dotnet new class-cs -n OrderDataStore -b IDataStore -p false
+dotnet new class-cs -n OrderDataStore -b IDataStore -p false -am internal
 ```
 
 With parameter names expanded:
 
 .NET MAUI App:
 ```shell
+dotnet new mauiapp --name MyApp --design-pattern Shell
+```
+```shell
 dotnet new mauiapp --name MyApp --design-pattern Hybrid
+```
+```shell
+dotnet new mauiapp --name MyApp --design-pattern Razor
 ```
 Option to include NuGet packages:
 ```shell
@@ -440,6 +498,9 @@ dotnet new maui-page --name LoginPage --namespace MyApp.Views
 ```shell
 dotnet new maui-page-cs --name HomePage --namespace MyApp.Views
 ```
+```shell
+dotnet new maui-page-razor --name HomePage
+```
 
 Views:
 ```shell
@@ -448,6 +509,9 @@ dotnet new maui-view --name CardView --namespace MyApp.Views
 ```shell
 dotnet new maui-view-cs --name OrderView --namespace MyApp.Views
 ```
+```shell
+dotnet new maui-view-razor --name OrderView
+```
 
 Shell:
 ```shell
@@ -455,6 +519,9 @@ dotnet new maui-shell --name AppShell --namespace MyApp
 ```
 ```shell
 dotnet new maui-shell-cs --name AppShell --namespace MyApp
+```
+```shell
+dotnet new maui-shell-razor --name AppShell
 ```
 
 Resource Dictionary:
@@ -467,7 +534,7 @@ Partial Class:
 dotnet new class-cs --name BaseViewModel
 ```
 ```shell
-dotnet new class-cs --name OrderDataStore --base IDataStore --partial false
+dotnet new class-cs --name OrderDataStore --base IDataStore --partial false --access-modifier internal
 ```
 <!--
 ### For VS2019 users:
