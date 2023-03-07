@@ -1,3 +1,7 @@
+#if Razor
+global using BlazorBindings.Maui;
+
+#endif
 #if AddToolkitPackage
 // .NET MAUI Toolkit
 global using CommunityToolkit.Maui;

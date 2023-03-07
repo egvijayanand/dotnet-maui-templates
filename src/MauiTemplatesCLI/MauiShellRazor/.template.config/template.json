@@ -1,0 +1,30 @@
+{
+    "$schema": "https://json.schemastore.org/template",
+    "author": "Vijay Anand E G",
+    "defaultName": "AppShell",
+    "classifications": [
+        "MAUI",
+        "Android",
+        "iOS",
+        "macOS",
+        "Mac Catalyst",
+        "WinUI",
+        "Windows",
+        "Shell"
+    ],
+    "identity": "VijayAnand.MauiShellRazor",
+    "groupIdentity": "VijayAnand.MauiTemplates.Shell.Razor",
+    "description": "An item template for .NET MAUI ShellPage in Razor",
+    "name": ".NET MAUI ShellPage (Razor)",
+    "shortName": "maui-shell-razor",
+    "sourceName": "MauiShell.1",
+    "primaryOutputs": [
+        {
+            "path": "MauiShell.1.razor"
+        }
+    ],
+    "tags": {
+        "language": "C#",
+        "type": "item"
+    }
+}

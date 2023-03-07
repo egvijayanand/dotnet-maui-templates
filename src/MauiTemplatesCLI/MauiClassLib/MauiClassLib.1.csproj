@@ -94,6 +94,9 @@
         <UseMauiCore>true</UseMauiCore>
         <!--#elif (UseMauiEssentials)-->
         <UseMauiEssentials>true</UseMauiEssentials>
+        <!--#if (AllPlatforms || IsWindows)-->
+        <EnableMsixTooling>true</EnableMsixTooling>
+        <!--#endif-->
         <!--#else-->
         <UseMaui>true</UseMaui>
         <!--#endif-->

@@ -1,4 +1,7 @@
-﻿#if (AddToolkitPackage || AddMediaPackage)
+﻿#if Razor
+using BlazorBindings.Maui;
+#endif
+#if (AddToolkitPackage || AddMediaPackage)
 using CommunityToolkit.Maui;
 #endif
 #if Hybrid
@@ -10,7 +13,7 @@ using Microsoft.Extensions.Logging;
 #if AddFoldablePackage
 using Microsoft.Maui.Foldable;
 #endif
-#if (AddToolkitPackage || Hybrid || Net7OrLater || AddFoldablePackage)
+#if (AddToolkitPackage || Hybrid || Net7OrLater || AddFoldablePackage || Razor)
 
 #endif
 namespace MauiApp._1
@@ -21,6 +24,9 @@ namespace MauiApp._1
         {
             var builder = MauiApp.CreateBuilder();
             builder.UseMauiApp<App>()
+#if Razor
+                   .UseMauiBlazorBindings()
+#endif
 #if AddFoldablePackage
                    .UseFoldable()
 #endif

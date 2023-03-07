@@ -27,6 +27,30 @@
             "replaces": "MyApp.Namespace",
             "defaultValue": "MyApp.Namespace"
         },
+        "access-modifier": {
+            "type": "parameter",
+            "datatype": "choice",
+            "defaultValue": "public",
+            "description": "Option to set the class access modifier.",
+            "choices": [
+                {
+                    "choice": "public",
+                    "description": "Class with public accessibility."
+                },
+                {
+                    "choice": "internal",
+                    "description": "Class with internal accessibility."
+                },
+                {
+                    "choice": "protected",
+                    "description": "Class with protected accessibility."
+                },
+                {
+                    "choice": "private",
+                    "description": "Class with private accessibility."
+                }
+            ]
+        },
         "base": {
             "type": "parameter",
             "description": "Base type for the class.",
@@ -60,6 +84,22 @@
             "defaultValue": "false",
             "description": "Option to create the class as static.",
             "displayName": "Option to create the class as static"
+        },
+        "IsPublic": {
+            "type": "computed",
+            "value": "(access-modifier == \"public\")"
+        },
+        "IsInternal": {
+            "type": "computed",
+            "value": "(access-modifier == \"internal\")"
+        },
+        "IsProtected": {
+            "type": "computed",
+            "value": "(access-modifier == \"protected\")"
+        },
+        "IsPrivate": {
+            "type": "computed",
+            "value": "(access-modifier == \"private\")"
         },
         "IsAbstract": {
             "type": "computed",

@@ -43,14 +43,30 @@
                     ]
                 },
                 {
-                    "condition": "(!Hybrid)",
+                    "condition": "(Xaml)",
                     "exclude": [
                         "**/Data/**",
                         "**/Pages/**",
                         "**/Shared/**",
                         "**/wwwroot/**",
-                        "**/*.razor"
+                        "**/*.razor",
+                        "**/*.razor.cs"
                     ]
+                },
+                {
+                    "condition": "(Razor)",
+                    "exclude": [
+                        "Main.razor",
+                        "**/Data/**",
+                        "**/Pages/**",
+                        "**/Shared/**",
+                        "**/wwwroot/**",
+                        "*.xaml",
+                        "*.xaml.cs"
+                    ],
+                    "rename": {
+                        "App.razor.cs": "App.cs"
+                    }
                 },
                 {
                     "condition": "(Shell)",
@@ -85,8 +101,15 @@
                     ]
                 },
                 {
+                    "condition": "(Hybrid)",
+                    "exclude": [
+                        "MainPage.razor"
+                    ]
+                },
+                {
                     "condition": "(Plain || Hybrid)",
                     "exclude": [
+                        "App.razor.cs",
                         "NewEventPage.xaml",
                         "NewEventPage.xaml.cs",
                         "DateTimePicker.xaml",
@@ -161,6 +184,10 @@
                 {
                     "choice": "Hybrid",
                     "description": "App configured to work in a Hybrid fashion using BlazorWebView."
+                },
+                {
+                    "choice": "Razor",
+                    "description": "App configured to work with Razor syntax."
                 }
             ]
         },
@@ -326,6 +353,14 @@
         "Hybrid": {
             "type": "computed",
             "value": "(design-pattern == \"Hybrid\" || designPatternLower == \"hybrid\")"
+        },
+        "Razor": {
+            "type": "computed",
+            "value": "(design-pattern == \"Razor\" || designPatternLower == \"razor\")"
+        },
+        "Xaml": {
+            "type": "computed",
+            "value": "(Plain || Hierarchical || Tabbed || Shell)"
         },
         "Net7": {
             "type": "computed",

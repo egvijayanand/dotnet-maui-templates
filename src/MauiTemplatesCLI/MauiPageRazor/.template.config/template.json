@@ -1,0 +1,28 @@
+{
+    "$schema": "https://json.schemastore.org/template",
+    "author": "Vijay Anand E G",
+    "defaultName": "MauiPage1",
+    "classifications": [
+        "MAUI",
+        "Android",
+        "iOS",
+        "macOS",
+        "Windows",
+        "Razor"
+    ],
+    "identity": "VijayAnand.MauiPageRazor",
+    "groupIdentity": "VijayAnand.MauiTemplates.Page.Razor",
+    "description": "An item template for .NET MAUI ContentPage in Razor",
+    "name": ".NET MAUI ContentPage (Razor)",
+    "shortName": "maui-page-razor",
+    "sourceName": "MauiPage.1",
+    "primaryOutputs": [
+        {
+            "path": "MauiPage.1.razor"
+        }
+    ],
+    "tags": {
+        "language": "C#",
+        "type": "item"
+    }
+}
