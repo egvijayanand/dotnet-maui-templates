@@ -1,0 +1,28 @@
+{
+    "$schema": "https://json.schemastore.org/template",
+    "author": "Vijay Anand E G",
+    "defaultName": "MauiView1",
+    "classifications": [
+        "MAUI",
+        "Android",
+        "iOS",
+        "macOS",
+        "Windows",
+        "Razor"
+    ],
+    "identity": "VijayAnand.MauiViewRazor",
+    "groupIdentity": "VijayAnand.MauiTemplates.View.Razor",
+    "description": "An item template for .NET MAUI ContentView in Razor",
+    "name": ".NET MAUI ContentView (Razor)",
+    "shortName": "maui-view-razor",
+    "sourceName": "MauiView.1",
+    "primaryOutputs": [
+        {
+            "path": "MauiView.1.razor"
+        }
+    ],
+    "tags": {
+        "language": "C#",
+        "type": "item"
+    }
+}

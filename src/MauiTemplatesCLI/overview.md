@@ -1,8 +1,8 @@
 ### Project and Item Templates for developing .NET MAUI App that runs on iOS, Android, macOS, and Windows 
 
-* All-in-One project template for .NET MAUI App and is named as `mauiapp`
-* .NET MAUI Class Library project template and is named as `mauiclasslib`
-* Shared Class Library (Xamarin.Forms and .NET MAUI) project template and is named as `sharedclasslib`
+* [All-in-One .NET MAUI App](#all-in-one-net-maui-app-project-template) project template and is named as `mauiapp`
+* [.NET MAUI Class Library](#net-maui-class-library-project-template) project template and is named as `mauiclasslib`
+* [Shared Class Library](#shared-class-library-project-template) (Xamarin.Forms and .NET MAUI) project template and is named as `sharedclasslib`
 
 Item templates for the following:
 
@@ -10,12 +10,15 @@ Item templates for the following:
 |:---:|:---:|
 |ContentPage (XAML)|maui-page|
 |ContentPage (C#)|maui-page-cs|
+|ContentPage (Razor)|maui-page-razor|
 |ContentView (XAML)|maui-view|
 |ContentView (C#)|maui-view-cs|
+|ContentView (Razor)|maui-view-razor|
 |ResourceDictionary (XAML)|maui-resdict|
 |ShellPage (XAML)|maui-shell|
 |ShellPage (C#)|maui-shell-cs|
-|Partial Class (C#)|class-cs|
+|ShellPage (Razor)|maui-shell-razor|
+|[Partial Class (C#)](#partial-class-item-template)|class-cs|
 
 All of these templates currently target `.NET MAUI on .NET 6/7 GA and its Service Releases and .NET 8 Previews`.
 
@@ -173,6 +176,7 @@ Can take any one of the following values, with default value set to `Plain`:
 |Tab|App configured to work in a Tabbed fashion using TabbedPage.|
 |Shell|App configured to work with Routes using Shell page.|
 |Hybrid|App configured to work in a Hybrid fashion using BlazorWebView.|
+|Razor|App configured to work with Razor syntax.|
 
 * `-tp` | `--target-platform`
 
@@ -181,7 +185,7 @@ Can take a combination of the following values, with default value set to `All`:
 |Parameter Value|Description|
 |:---:|:---|
 |All|Targets all possible .NET MAUI supported platforms.|
-|Base|Targets base framework (.NET 6/7/8).|
+|Base|Targets base framework (.NET 6/7/8) based on the framework opted.|
 |Android|Targets Android platform.|
 |iOS|Targets iOS platform.|
 |macOS|Targets macOS platform via Mac Catalyst.|
@@ -200,6 +204,17 @@ dotnet new mauiapp --design-pattern Hybrid --target-platform Mobile
   ```shell
 dotnet new mauiapp -dp Shell -tp Android
 ```
+
+#### .NET MAUI Class Library Project Template:
+
+Similar to All-in-One .NET MAUI App, the Class Library project template also takes `target-platform` as a parameter that takes a combination from the same set of values (with `All` being the default value).
+
+* Can be created targeting .NET Razor SDK
+  - Parameter name: `--use-razor-sdk` | `-usr`
+* Can be created targeting .NET MAUI Core
+  - Parameter name: `--use-maui-core` | `-umc`
+* Can be created targeting .NET MAUI Essentials
+  - Parameter name: `--use-maui-essentials` | `-ume`
 
 #### Shared Class Library Project Template:
 
@@ -238,6 +253,28 @@ dotnet new mauiclasslib --help
 dotnet new sharedclasslib --help
 ```
 
+#### Partial Class Item Template:
+
+This item template (short name: `class-cs`) allows to create a C# class from CLI with support for multiple options.
+
+|Parameter Name|Type|Default Value|Remarks|
+|:--:|:---:|:---:|:---|
+access-modifier|choice|public|Specifies the accessibility of the class type.|
+base|text|object|Specifies the base type for the class.|
+abstract|bool|false|Option to create the type as abstract.|
+partial|bool|true|Option to create the type as partial.|
+sealed|bool|false|Option to create the type as sealed.|
+static|bool|false|Option to create the type as static.|
+
+Access Modifier parameter (`--access-modifier` | `-am`):
+
+Supported values are:
+
+* public (default value, if not provided)
+* internal
+* protected
+* private
+
 #### Usage:
 
 After installation, use the below command(s) to create new artifacts using the template (both provide the same output):
@@ -247,7 +284,13 @@ With parameter names abbreviated:
 
 .NET MAUI App:
 ```shell
+dotnet new mauiapp -n MyApp -dp Shell
+```
+```shell
 dotnet new mauiapp -n MyApp -dp Hybrid
+```
+```shell
+dotnet new mauiapp -n MyApp -dp Razor
 ```
 Option to include NuGet packages:
 ```shell
@@ -287,6 +330,9 @@ dotnet new maui-page -n LoginPage -na MyApp.Views
 ```shell
 dotnet new maui-page-cs -n HomePage -na MyApp.Views
 ```
+```shell
+dotnet new maui-page-razor -n HomePage
+```
 
 Views:
 ```shell
@@ -295,6 +341,9 @@ dotnet new maui-view -n CardView -na MyApp.Views
 ```shell
 dotnet new maui-view-cs -n OrderView -na MyApp.Views
 ```
+```shell
+dotnet new maui-view-razor -n OrderView
+```
 
 Shell:
 ```shell
@@ -302,6 +351,9 @@ dotnet new maui-shell -n AppShell -na MyApp
 ```
 ```shell
 dotnet new maui-shell-cs -n AppShell -na MyApp
+```
+```shell
+dotnet new maui-shell-razor -n AppShell
 ```
 
 Resource Dictionary:
@@ -314,14 +366,20 @@ Partial Class:
 dotnet new class-cs -n BaseViewModel -b ObservableObject
 ```
 ```shell
-dotnet new class-cs -n OrderDataStore -b IDataStore -p false
+dotnet new class-cs -n OrderDataStore -b IDataStore -p false -am internal
 ```
 
 With parameter names expanded:
 
 .NET MAUI App:
 ```shell
+dotnet new mauiapp --name MyApp --design-pattern Shell
+```
+```shell
 dotnet new mauiapp --name MyApp --design-pattern Hybrid
+```
+```shell
+dotnet new mauiapp --name MyApp --design-pattern Razor
 ```
 Option to include NuGet packages:
 ```shell
@@ -357,6 +415,9 @@ dotnet new maui-page --name LoginPage --namespace MyApp.Views
 ```shell
 dotnet new maui-page-cs --name HomePage --namespace MyApp.Views
 ```
+```shell
+dotnet new maui-page-razor --name HomePage
+```
 
 Views:
 ```shell
@@ -365,6 +426,9 @@ dotnet new maui-view --name CardView --namespace MyApp.Views
 ```shell
 dotnet new maui-view-cs --name OrderView --namespace MyApp.Views
 ```
+```shell
+dotnet new maui-view-razor --name OrderView
+```
 
 Shell:
 ```shell
@@ -372,6 +436,9 @@ dotnet new maui-shell --name AppShell --namespace MyApp
 ```
 ```shell
 dotnet new maui-shell-cs --name AppShell --namespace MyApp
+```
+```shell
+dotnet new maui-shell-razor --name AppShell
 ```
 
 Resource Dictionary:
@@ -384,5 +451,5 @@ Partial Class:
 dotnet new class-cs --name BaseViewModel
 ```
 ```shell
-dotnet new class-cs --name OrderDataStore --base IDataStore --partial false
+dotnet new class-cs --name OrderDataStore --base IDataStore --partial false --access-modifier internal
 ```

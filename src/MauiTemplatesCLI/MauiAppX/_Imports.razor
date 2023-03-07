@@ -1,8 +1,15 @@
-﻿@using System.Net.Http
+﻿@*#if (Razor)*@
+@using BlazorBindings.Maui
+@using BlazorBindings.Maui.Elements
+@using MC = Microsoft.Maui.Controls
+@*#endif*@
+@using System.Net.Http
 @using Microsoft.AspNetCore.Components.Forms
 @using Microsoft.AspNetCore.Components.Routing
 @using Microsoft.AspNetCore.Components.Web
 @using Microsoft.AspNetCore.Components.Web.Virtualization
 @using Microsoft.JSInterop
 @using MauiApp._1
+@*#if (Hybrid)*@
 @using MauiApp._1.Shared
+@*#endif*@

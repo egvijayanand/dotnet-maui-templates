@@ -1,4 +1,4 @@
-<!--#if (Hybrid)-->
+<!--#if (Hybrid || Razor)-->
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 <!--#else-->
 <Project Sdk="Microsoft.NET.Sdk">
@@ -93,7 +93,7 @@
         <!-- .NET MAUI -->
         <UseMaui>true</UseMaui>
         <SingleProject>true</SingleProject>
-        <!--#if (Hybrid)-->
+        <!--#if (Hybrid || Razor)-->
         <EnableDefaultCssItems>false</EnableDefaultCssItems>
         <!--#endif-->
 
@@ -149,9 +149,12 @@
         <None Remove="MauiApp.1.code-workspace" />
     </ItemGroup>
 
-    <!--#if (AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage || Net7OrLater)-->
+    <!--#if (AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage || Net7OrLater || Razor)-->
     <ItemGroup>
     <!--#endif-->
+        <!--#if (Razor)-->
+        <PackageReference Include="BlazorBindings.Maui" Version="1.0.1" />
+        <!--#endif-->
         <!--#if (AddFoldablePackage)-->
         <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="7.0.52" />
         <!--#endif-->
@@ -184,7 +187,7 @@
         <!--#if (AddMvvmToolkitPackage)-->
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0"/>
         <!--#endif-->
-    <!--#if (AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage || Net7OrLater)-->
+    <!--#if (AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage || Net7OrLater || Razor)-->
     </ItemGroup>
     <!--#endif-->
 

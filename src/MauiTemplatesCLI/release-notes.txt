@@ -1,5 +1,31 @@
-What's new in ver. 3.1.0-preview.2:
+What's new in ver. 3.1.0-preview.3:
 -----------------------------------
+1. Fixed the build issue (#109) of the .NET MAUI class library with .NET MAUI Essentials targeting the Windows platform.
+
+2. Added the option to create a .NET MAUI App using Razor syntax with BlazorBindings.Maui NuGet package.
+
+To facilitate this, the design-pattern parameter now takes the option of Razor.
+
+dotnet new mauiapp -o BlazorBindings -dp Razor
+
+dotnet new mauiapp -o BlazorBindings -f net8.0 -dp Razor
+
+3. Item templates for .NET MAUI ContentPage, ContentView, and ShellPage using Razor syntax.
+
+dotnet new maui-page-razor -n SearchPage
+
+dotnet new maui-view-razor -n OrderView
+
+dotnet new maui-shell-razor -n AppShell
+
+4. Ability to set the access modifier (--access-modifier | --am) while creating a C# class from CLI.
+
+The default value is public.
+
+dotnet new class-cs -n Routes -am internal
+
+v3.1.0-preview.2:
+
 1. .NET MAUI App and Library project framework targets were restructured to better align with the development/build platforms.
 
 This enables to make use of the template without any modification across OS such as Windows, macOS, and Linux.
