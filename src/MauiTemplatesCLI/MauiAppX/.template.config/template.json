@@ -103,6 +103,7 @@
                 {
                     "condition": "(Hybrid)",
                     "exclude": [
+                        "AppShell.razor",
                         "MainPage.razor"
                     ]
                 },
