@@ -43,7 +43,7 @@ And has Item Templates for:
 * Content Page (C#) with ViewModel (.NET MAUI)
   - For both the `Page with ViewModel` templates, ensure only the real page name alone is provided as input like `Settings` as the `Page` and `ViewModel` will be suffixed to it like `SettingsPage` and `SettingsViewModel`. And Page will be generated in the `Views` folder and ViewModel will be generated in the `ViewModels` folder.
   - The ViewModels are generated with the base class titled `BaseViewModel` (implementation left to the user).
-  - Recommended to add [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm), an officially supported NuGet package (currently in preview), to make it easy to work with MVVM design pattern.
+  - Recommended to add [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm), an officially supported NuGet package, to make it easy to work with MVVM design pattern.
   - This MVVM - Made Easy [Part 1](https://egvijayanand.in/2022/04/22/mvvm-made-easy/) and [Part 2](https://egvijayanand.in/2022/05/09/mvvm-made-easy-with-microsoft-mvvm-toolkit-part-2/) articles can help you to get started with this brand-new NuGet package.
 * Content View (.NET MAUI)
 * Content View (C#) (.NET MAUI)
@@ -299,6 +299,8 @@ Similar to All-in-One .NET MAUI App, the Class Library project template also tak
   - Parameter name: `--use-maui-core` | `-umc`
 * Can be created targeting .NET MAUI Essentials
   - Parameter name: `--use-maui-essentials` | `-ume`
+
+![Class Library Project Options - Visual Studio](images/dotnetmaui-class-library-project-options.png)
 
 #### Shared Class Library Template:
 
