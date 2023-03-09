@@ -1,5 +1,15 @@
-What's new in ver. 3.1.0-preview.3:
+What's new in ver. 3.1.0-preview.4:
 -----------------------------------
+1. Added the option to create a .NET MAUI App using C# Markup syntax with CommunityToolkit.Maui.Markup NuGet package.
+
+To facilitate this, the design-pattern parameter now takes the option of Markup.
+
+dotnet new mauiapp -o MarkupApp -dp Markup
+
+dotnet new mauiapp -o MarkupApp -f net8.0 -dp Markup
+
+v3.1.0-preview.3:
+
 1. Fixed the build issue (#109) of the .NET MAUI class library with .NET MAUI Essentials targeting the Windows platform.
 
 2. Added the option to create a .NET MAUI App using Razor syntax with BlazorBindings.Maui NuGet package.

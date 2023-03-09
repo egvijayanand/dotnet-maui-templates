@@ -176,6 +176,7 @@ Can take any one of the following values, with default value set to `Plain`:
 |Tab|App configured to work in a Tabbed fashion using TabbedPage.|
 |Shell|App configured to work with Routes using Shell page.|
 |Hybrid|App configured to work in a Hybrid fashion using BlazorWebView.|
+|Markup|App configured to work with C# Markup syntax.|
 |Razor|App configured to work with Razor syntax.|
 
 * `-tp` | `--target-platform`
@@ -290,6 +291,9 @@ dotnet new mauiapp -n MyApp -dp Shell
 dotnet new mauiapp -n MyApp -dp Hybrid
 ```
 ```shell
+dotnet new mauiapp -n MyApp -dp Markup
+```
+```shell
 dotnet new mauiapp -n MyApp -dp Razor
 ```
 Option to include NuGet packages:
@@ -377,6 +381,9 @@ dotnet new mauiapp --name MyApp --design-pattern Shell
 ```
 ```shell
 dotnet new mauiapp --name MyApp --design-pattern Hybrid
+```
+```shell
+dotnet new mauiapp --name MyApp --design-pattern Markup
 ```
 ```shell
 dotnet new mauiapp --name MyApp --design-pattern Razor
