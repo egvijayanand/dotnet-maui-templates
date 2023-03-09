@@ -43,7 +43,7 @@
                     ]
                 },
                 {
-                    "condition": "(Xaml)",
+                    "condition": "(Xaml || Markup)",
                     "exclude": [
                         "**/Data/**",
                         "**/Pages/**",
@@ -67,6 +67,28 @@
                     "rename": {
                         "App.razor.cs": "App.cs"
                     }
+                },
+                {
+                    "condition": "(Markup)",
+                    "exclude": [
+                        "*.xaml",
+                        "*.xaml.cs",
+                        "**/Resources/*.xaml"
+                    ],
+                    "rename": {
+                        "App.markup.cs": "App.cs",
+                        "MainPage.markup.cs": "MainPage.cs",
+                        "ResourceHelper.markup.cs": "ResourceHelper.cs",
+                        "VisualStateHelper.markup.cs": "VisualStateHelper.cs"
+                    }
+                },
+                {
+                    "condition": "(!Markup)",
+                    "exclude": [
+                        "*.markup.cs",
+                        "**/Resources/AppColors.cs",
+                        "**/Resources/AppStyles.cs"
+                    ]
                 },
                 {
                     "condition": "(Shell)",
@@ -108,7 +130,7 @@
                     ]
                 },
                 {
-                    "condition": "(Plain || Hybrid)",
+                    "condition": "(Plain || Hybrid || Markup)",
                     "exclude": [
                         "App.razor.cs",
                         "NewEventPage.xaml",
@@ -185,6 +207,10 @@
                 {
                     "choice": "Hybrid",
                     "description": "App configured to work in a Hybrid fashion using BlazorWebView."
+                },
+                {
+                    "choice": "Markup",
+                    "description": "App configured to work with C# Markup syntax."
                 },
                 {
                     "choice": "Razor",
@@ -355,6 +381,10 @@
             "type": "computed",
             "value": "(design-pattern == \"Hybrid\" || designPatternLower == \"hybrid\")"
         },
+        "Markup": {
+            "type": "computed",
+            "value": "(design-pattern == \"Markup\" || designPatternLower == \"markup\")"
+        },
         "Razor": {
             "type": "computed",
             "value": "(design-pattern == \"Razor\" || designPatternLower == \"razor\")"
@@ -433,7 +463,7 @@
         },
         "AddMarkupPackage": {
             "type": "computed",
-            "value": "(include-markup)"
+            "value": "(include-markup || Markup)"
         },
         "AddMvvmToolkitPackage": {
             "type": "computed",
@@ -442,6 +472,10 @@
         "ConditionalCompilation": {
             "type": "computed",
             "value": "(conditional-compilation)"
+        },
+        "PackageRef": {
+            "type": "computed",
+            "value": "(AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage || Net7OrLater || Razor)"
         },
         "HostIdentifier": {
             "type": "bind",

@@ -2,6 +2,7 @@
 {
     public partial class App : Application
     {
+#if (!Markup)
         public App()
         {
             InitializeComponent();
@@ -14,5 +15,6 @@
             MainPage = new MainPage();
 #endif
         }
+#endif
     }
 }

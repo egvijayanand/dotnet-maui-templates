@@ -7,7 +7,7 @@
 #endif
     {
 #if Plain
-        int count = 0;
+        private int count = 0;
 #endif
         public MainPage()
         {

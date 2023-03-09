@@ -19,6 +19,10 @@ global using CommunityToolkit.Maui.Markup;
 // Static
 global using static CommunityToolkit.Maui.Markup.GridRowsColumns;
 global using static Microsoft.Maui.Graphics.Colors;
+#if Markup
+global using static MauiApp._1.ResourceHelper;
+global using static MauiApp._1.VisualStateHelper;
+#endif
 #else
 // Static
 global using static Microsoft.Maui.Graphics.Colors;

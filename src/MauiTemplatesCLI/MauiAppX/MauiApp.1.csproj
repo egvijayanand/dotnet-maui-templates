@@ -149,7 +149,7 @@
         <None Remove="MauiApp.1.code-workspace" />
     </ItemGroup>
 
-    <!--#if (AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage || Net7OrLater || Razor)-->
+    <!--#if (PackageRef)-->
     <ItemGroup>
     <!--#endif-->
         <!--#if (Razor)-->
@@ -187,7 +187,7 @@
         <!--#if (AddMvvmToolkitPackage)-->
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0"/>
         <!--#endif-->
-    <!--#if (AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage || Net7OrLater || Razor)-->
+    <!--#if (PackageRef)-->
     </ItemGroup>
     <!--#endif-->
 
