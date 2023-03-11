@@ -184,7 +184,7 @@
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.2.1"/>
         <!--#endif-->
         <!--#endif-->
-        <!--#if (AddMvvmToolkitPackage)-->
+        <!--#if (AddMvvmToolkitPackage || (Mvvm && !(Hybrid || Razor)))-->
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0"/>
         <!--#endif-->
     <!--#if (PackageRef)-->

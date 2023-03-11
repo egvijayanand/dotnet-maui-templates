@@ -3,10 +3,17 @@
   "symbolInfo": {
     "Framework": {
       "longName": "framework"
+    },
+    "application-id": {
+      "shortName": "ap"
+    },
+    "use-mvvm": {
+      "shortName": "mvvm"
     }
   },
   "usageExamples": [
     "--framework net7.0",
-    "-f net6.0"
+    "-f net6.0",
+    "-f net8.0"
   ]
 }

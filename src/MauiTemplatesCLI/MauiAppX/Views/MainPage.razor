@@ -11,7 +11,9 @@
             <Label Text="Welcome to .NET Multi-platform App UI" FontSize="18"
                 HorizontalOptions="LayoutOptions.Center" />
 
-            <Button Text="@ButtonText" HorizontalOptions="LayoutOptions.Center" OnClick="OnCounterClicked" />
+            <Label Text="@CountText" FontSize="18" HorizontalOptions="LayoutOptions.Center" />
+
+            <Button Text="Click me" HorizontalOptions="LayoutOptions.Center" OnClick="OnCounterClicked" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
@@ -21,11 +23,10 @@
 
     int count = 0;
 
-    string ButtonText => count switch
+    string CountText => count switch
     {
-        0 => "Click me",
-        1 => $"Clicked 1 time",
-        _ => $"Clicked {count} times"
+        0 => "Current count: 0",
+        _ => $"Current count: {count}"
     };
 
     void OnCounterClicked()

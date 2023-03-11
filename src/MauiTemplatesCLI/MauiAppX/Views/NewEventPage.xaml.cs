@@ -1,7 +1,14 @@
-﻿namespace MauiApp._1
+﻿namespace MauiApp._1.Views
 {
     public partial class NewEventPage : ContentPage
     {
+#if Mvvm
+        public NewEventPage(NewEventViewModel viewModel)
+        {
+            InitializeComponent();
+            BindingContext = viewModel;
+        }
+#else
         public NewEventPage()
         {
             InitializeComponent();
@@ -51,8 +58,6 @@
             }
         }
 
-        protected override bool OnBackButtonPressed() => false;
-
         private async void OnSave(object sender, EventArgs e)
         {
 #if (Hierarchical || Tabbed)
@@ -72,5 +77,8 @@
             await Shell.Current.GoToAsync("..");
 #endif
         }
+#endif
+
+        protected override bool OnBackButtonPressed() => false;
     }
 }

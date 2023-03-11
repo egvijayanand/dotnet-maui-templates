@@ -19,6 +19,14 @@
             "defaultValue": "All"
         },
         {
+            "id": "use-mvvm",
+            "name": {
+                "text": "U_se MVVM."
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
             "id": "include-toolkit",
             "name": {
                 "text": "Add and configure Community_Toolkit.Maui NuGet package reference"
@@ -77,7 +85,7 @@
         {
             "id": "conditional-compilation",
             "name": {
-                "text": "_Configure conditional compilation for the project"
+                "text": "C_onfigure conditional compilation for the project"
             },
             "isVisible": true,
             "defaultValue": "false"

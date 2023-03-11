@@ -1,4 +1,4 @@
-namespace MauiApp._1
+namespace MauiApp._1.Helpers
 {
     public static class VisualStateHelper
     {

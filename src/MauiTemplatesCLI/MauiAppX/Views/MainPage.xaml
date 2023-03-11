@@ -3,7 +3,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MauiApp._1"
-             x:Class="MauiApp._1.MainPage">
+             x:Class="MauiApp._1.Views.MainPage">
 
     <BlazorWebView HostPage="wwwroot/index.html">
         <BlazorWebView.RootComponents>
@@ -17,22 +17,43 @@
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
             xmlns:local="clr-namespace:MauiApp._1"
-            x:Class="MauiApp._1.MainPage"
+            xmlns:vw="clr-namespace:MauiApp._1.Views"
+            x:Class="MauiApp._1.Views.MainPage"
             android:TabbedPage.ToolbarPlacement="Bottom">
     <NavigationPage x:Name="calendar"
                     Title="Calendar">
         <x:Arguments>
-            <local:EventsPage />
+            <vw:EventsPage />
         </x:Arguments>
     </NavigationPage>
-    <local:SearchPage />
-    <local:SettingsPage />
+    <vw:SearchPage />
+    <vw:SettingsPage />
 </TabbedPage>
 <!--#elif (Hierarchical)-->
+<!--#if (Mvvm)-->
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MauiApp._1"
-             x:Class="MauiApp._1.MainPage"
+             xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
+             x:Class="MauiApp._1.Views.MainPage"
+             Title="{Binding Title}"
+             x:DataType="vm:MainViewModel">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center"
+                     VerticalOptions="Center">
+            <Label Text="You don't have anything scheduled today." />
+            <Button Command="{Binding AddEventCommand}"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Add Event" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+<!--#else-->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiApp._1"
+             x:Class="MauiApp._1.Views.MainPage"
              Title="Calendar">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center"
@@ -45,11 +66,22 @@
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
+<!--#endif-->
+<!--#else-->
+<!--#if (Mvvm)-->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiApp._1"
+             xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
+             x:Class="MauiApp._1.Views.MainPage"
+             x:DataType="vm:MainViewModel"
+             Title="{Binding Title}">
 <!--#else-->
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MauiApp._1"
-             x:Class="MauiApp._1.MainPage">
+             x:Class="MauiApp._1.Views.MainPage">
+<!--#endif-->
 
     <ScrollView>
         <StackLayout Padding="30" Spacing="25">
@@ -69,6 +101,23 @@
                 Style="{StaticResource MauiLabel}"
                 Text="Welcome to .NET Multi-platform App UI" />
 
+<!--#if (Mvvm)-->
+            <Label
+                x:Name="CounterLabel"
+                FontAttributes="Bold"
+                FontSize="18"
+                HorizontalOptions="Center"
+                Style="{StaticResource MauiLabel}"
+                Text="{Binding CountText}" />
+
+            <Button
+                Command="{Binding IncrementCommand}"
+                HorizontalOptions="Center"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Style="{StaticResource PrimaryAction}"
+                Text="Click me" />
+
+<!--#else-->
             <Label
                 x:Name="CounterLabel"
                 FontAttributes="Bold"
@@ -84,6 +133,7 @@
                 Style="{StaticResource PrimaryAction}"
                 Text="Click me" />
 
+<!--#endif-->
             <Image
                 HeightRequest="310"
                 HorizontalOptions="Center"

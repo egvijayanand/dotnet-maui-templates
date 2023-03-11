@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--#if (Mvvm)-->
+<ContentPage x:Class="MauiApp._1.Views.LoginPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiApp._1"
+             xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
+             Shell.NavBarIsVisible="False"
+             x:DataType="vm:LoginViewModel">
+    <StackLayout HorizontalOptions="Center"
+                 VerticalOptions="Center">
+        <Button Command="{Binding LoginCommand}"
+                Style="{StaticResource PrimaryAction}"
+                Text="Login" />
+    </StackLayout>
+</ContentPage>
+<!--#else-->
+<ContentPage x:Class="MauiApp._1.Views.LoginPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiApp._1"
+             Shell.NavBarIsVisible="False">
+    <StackLayout HorizontalOptions="Center"
+                 VerticalOptions="Center">
+        <Button Style="{StaticResource PrimaryAction}"
+                Text="Login"
+                Clicked="OnLoginClicked" />
+    </StackLayout>
+</ContentPage>
+<!--#endif-->

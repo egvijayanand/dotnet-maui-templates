@@ -94,7 +94,14 @@ Both .NET MAUI *App* and *Class Library* templates take the below optional Boole
 
 Additional parameters for **App** project:
 
+MVVM is a delightful and development-friendly design pattern to work with. To support this, a new parameter has been introduced:
+
+* `-mvvm` | `--use-mvvm` - Default is `false`
+
+*Note: Opting for this MVVM option will not have any impact on the Web-based AppModels such as Blazor syntax (Hybrid) / Razor syntax.*
+
 The target for the Windows platform can be either `Package` (MSIX) or `Unpackaged`. By default, it is set as `Package`, this can be overridden while creating the project by including the below parameter:
+
 
 * `-wu` | `--windows-unpackaged` - Default is `false`
 
@@ -296,6 +303,13 @@ dotnet new mauiapp -n MyApp -dp Markup
 ```shell
 dotnet new mauiapp -n MyApp -dp Razor
 ```
+Option to use MVVM:
+```shell
+dotnet new mauiapp -n MyApp -mvvm
+```
+```shell
+dotnet new mauiapp -n MyApp -dp Markup -mvvm
+```
 Option to include NuGet packages:
 ```shell
 dotnet new mauiapp -n MyApp -dp Shell -it -im -imt -ime -inm -if
@@ -387,6 +401,13 @@ dotnet new mauiapp --name MyApp --design-pattern Markup
 ```
 ```shell
 dotnet new mauiapp --name MyApp --design-pattern Razor
+```
+Option to use MVVM:
+```shell
+dotnet new mauiapp --name MyApp --use-mvvm
+```
+```shell
+dotnet new mauiapp --name MyApp --design-pattern Markup --use-mvvm
 ```
 Option to include NuGet packages:
 ```shell
