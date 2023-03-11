@@ -1,5 +1,23 @@
-What's new in ver. 3.1.0-preview.4:
+What's new in ver. 3.1.0-preview.5:
 -----------------------------------
+1. MVVM is a delightful and development-friendly design pattern to work with. To support this, a new parameter has been introduced:
+
+-mvvm | --use-mvvm and its default value is false.
+
+XAML with MVVM:
+
+dotnet new mauiapp -o MyApp -mvvm
+
+C# Markup with MVVM:
+
+dotnet new mauiapp -o MyApp -dp Markup -mvvm
+
+To work with .NET 8 Previews: specify the framework parameter and its value: -f net8.0
+
+Note: Opting for this MVVM option will not have any impact on the Web-based AppModels such as Blazor syntax (Hybrid) / Razor syntax.
+
+v3.1.0-preview.4:
+
 1. Added the option to create a .NET MAUI App using C# Markup syntax with CommunityToolkit.Maui.Markup NuGet package.
 
 To facilitate this, the design-pattern parameter now takes the option of Markup.

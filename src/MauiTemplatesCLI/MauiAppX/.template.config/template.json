@@ -62,7 +62,12 @@
                         "**/Shared/**",
                         "**/wwwroot/**",
                         "*.xaml",
-                        "*.xaml.cs"
+                        "*.xaml.cs",
+                        "Controls/*.xaml",
+                        "Controls/*.xaml.cs",
+                        "Views/*.xaml",
+                        "Views/*.xaml.cs",
+                        "Resources/*.xaml"
                     ],
                     "rename": {
                         "App.razor.cs": "App.cs"
@@ -73,28 +78,43 @@
                     "exclude": [
                         "*.xaml",
                         "*.xaml.cs",
-                        "**/Resources/*.xaml"
+                        "Controls/*.xaml",
+                        "Controls/*.xaml.cs",
+                        "Views/*.xaml",
+                        "Views/*.xaml.cs",
+                        "Resources/*.xaml"
                     ],
                     "rename": {
                         "App.markup.cs": "App.cs",
-                        "MainPage.markup.cs": "MainPage.cs",
-                        "ResourceHelper.markup.cs": "ResourceHelper.cs",
-                        "VisualStateHelper.markup.cs": "VisualStateHelper.cs"
+                        "Views/MainPage.markup.cs": "Views/MainPage.cs",
+                        "Helpers/ResourceHelper.markup.cs": "Helpers/ResourceHelper.cs",
+                        "Helpers/VisualStateHelper.markup.cs": "Helpers/VisualStateHelper.cs"
                     }
                 },
                 {
                     "condition": "(!Markup)",
                     "exclude": [
-                        "*.markup.cs",
+                        "**/*.markup.cs",
                         "**/Resources/AppColors.cs",
                         "**/Resources/AppStyles.cs"
                     ]
                 },
                 {
+                    "condition": "(!Mvvm || Hybrid || Razor)",
+                    "exclude": [
+                        "**/ViewModels/*",
+                        "**/Exceptions/*",
+                        "**/Models/*",
+                        "**/Services/*"
+                    ]
+                },
+                {
                     "condition": "(Shell)",
                     "exclude": [
-                        "MainPage.xaml",
-                        "MainPage.xaml.cs"
+                        "Exceptions/*",
+                        "Views/MainPage.xaml",
+                        "Views/MainPage.xaml.cs",
+                        "ViewModels/MainViewModel.cs"
                     ]
                 },
                 {
@@ -102,45 +122,55 @@
                     "exclude": [
                         "AppShell.xaml",
                         "AppShell.xaml.cs",
-                        "LoginPage.xaml",
-                        "LoginPage.xaml.cs"
+                        "Views/LoginPage.xaml",
+                        "Views/LoginPage.xaml.cs",
+                        "ViewModels/LoginViewModel.cs"
                     ]
                 },
                 {
                     "condition": "(!(Tabbed || Shell))",
                     "exclude": [
-                        "EventsPage.xaml",
-                        "EventsPage.xaml.cs"
+                        "Views/EventsPage.xaml",
+                        "Views/EventsPage.xaml.cs",
+                        "ViewModels/EventsViewModel.cs"
                     ]
                 },
                 {
                     "condition": "(Hierarchical)",
                     "exclude": [
-                        "SearchPage.xaml",
-                        "SearchPage.xaml.cs",
-                        "SettingsPage.xaml",
-                        "SettingsPage.xaml.cs"
+                        "Views/SearchPage.xaml",
+                        "Views/SearchPage.xaml.cs",
+                        "ViewModels/SearchViewModel.cs",
+                        "Views/SettingsPage.xaml",
+                        "Views/SettingsPage.xaml.cs",
+                        "ViewModels/SettingsViewModel.cs"
                     ]
                 },
                 {
                     "condition": "(Hybrid)",
                     "exclude": [
                         "AppShell.razor",
-                        "MainPage.razor"
+                        "Views/MainPage.razor"
                     ]
                 },
                 {
                     "condition": "(Plain || Hybrid || Markup)",
                     "exclude": [
+                        "**/Exceptions/*",
+                        "**/Models/*",
+                        "**/Services/*",
                         "App.razor.cs",
-                        "NewEventPage.xaml",
-                        "NewEventPage.xaml.cs",
-                        "DateTimePicker.xaml",
-                        "DateTimePicker.xaml.cs",
-                        "SearchPage.xaml",
-                        "SearchPage.xaml.cs",
-                        "SettingsPage.xaml",
-                        "SettingsPage.xaml.cs"
+                        "Views/NewEventPage.xaml",
+                        "Views/NewEventPage.xaml.cs",
+                        "ViewModels/NewEventViewModel.cs",
+                        "Controls/DateTimePicker.xaml",
+                        "Controls/DateTimePicker.xaml.cs",
+                        "Views/SearchPage.xaml",
+                        "Views/SearchPage.xaml.cs",
+                        "ViewModels/SearchViewModel.cs",
+                        "Views/SettingsPage.xaml",
+                        "Views/SettingsPage.xaml.cs",
+                        "ViewModels/SettingsViewModel.cs"
                     ]
                 }
             ]
@@ -176,11 +206,10 @@
             "replaces": "MAUI_TFM",
             "defaultValue": "net7.0"
         },
-        "applicationId": {
+        "application-id": {
             "type": "parameter",
             "description": "Overrides the App Identifier of the project",
-            "datatype": "text",
-            "replaces": "com.companyname.mauiAppId"
+            "datatype": "text"
         },
         "design-pattern": {
             "type": "parameter",
@@ -267,6 +296,13 @@
                 }
             ]
         },
+        "use-mvvm": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to use MVVM.",
+            "displayName": "Option to use MVVM"
+        },
         "include-toolkit": {
             "type": "parameter",
             "datatype": "bool",
@@ -327,6 +363,15 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to skip creating a solution file."
+        },
+        "appIdLower": {
+            "type": "generated",
+            "generator": "casing",
+            "parameters": {
+                "source": "application-id",
+                "toLower": true
+            },
+            "replaces": "com.companyname.mauiAppId"
         },
         "nameLower": {
             "type": "generated",
@@ -392,6 +437,10 @@
         "Xaml": {
             "type": "computed",
             "value": "(Plain || Hierarchical || Tabbed || Shell)"
+        },
+        "Mvvm": {
+            "type": "computed",
+            "value": "(use-mvvm)"
         },
         "Net7": {
             "type": "computed",

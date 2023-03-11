@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace MauiApp._1
+namespace MauiApp._1.Controls
 {
     public partial class DateTimePicker : ContentView
     {

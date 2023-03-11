@@ -3,7 +3,11 @@
     public partial class App : Application
     {
 #if Markup
+#if Mvvm
+        public App(IServiceProvider services)
+#else
         public App()
+#endif
         {
             Resources.MergedDictionaries.Add(AppColors.Instance);
             Resources.MergedDictionaries.Add(AppStyles.Instance);
@@ -47,7 +51,11 @@
                 },
             });
             
+#if Mvvm
+            MainPage = services.GetService<MainPage>();
+#else
             MainPage = new MainPage();
+#endif
         }
 #endif
     }

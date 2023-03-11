@@ -1,4 +1,4 @@
-﻿namespace MauiApp._1
+﻿namespace MauiApp._1.Views
 {
 #if Tabbed
     public partial class MainPage : TabbedPage
@@ -6,20 +6,28 @@
     public partial class MainPage : ContentPage
 #endif
     {
-#if Plain
+#if (Plain && !Mvvm)
         private int count = 0;
 #endif
+#if (Mvvm && !(Tabbed || Hybrid))
+        public MainPage(MainViewModel viewModel)
+#else
         public MainPage()
+#endif
         {
             InitializeComponent();
+#if (Mvvm && !(Tabbed || Hybrid))
+            BindingContext = viewModel;
+#endif
         }
+#if (Hierarchical && !Mvvm)
 
-#if Hierarchical
         private async void OnAddEvent(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new NewEventPage());
         }
-#elif Plain
+#elif (Plain && !Mvvm)
+
         private void OnCounterClicked(object sender, EventArgs e)
         {
             count++;

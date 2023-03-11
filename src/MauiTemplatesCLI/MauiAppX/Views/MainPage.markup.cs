@@ -1,14 +1,25 @@
-﻿namespace MauiApp._1
+﻿namespace MauiApp._1.Views
 {
 #if Markup
     public partial class MainPage : ContentPage
     {
+#if (!Mvvm)
         private int count = 0;
         private Label CounterLabel;
 
+#endif
+#if Mvvm
+        public MainPage(MainViewModel viewModel)
+#else
         public MainPage()
+#endif
         {
+#if Mvvm
+            BindingContext = viewModel;
+            SetBinding(Page.TitleProperty, new Binding(nameof(MainViewModel.Title)));
+#else
             Title = "Home";
+#endif
             Content = new ScrollView()
             {
                 Content = new StackLayout()
@@ -34,16 +45,26 @@
                         new Label()
                         {
                             Style = AppStyle("MauiLabel"),
+#if (!Mvvm)
                             Text = "Current count: 0",
+#endif
                         }.Font(size: 18, bold: true)
                          .CenterHorizontal()
+#if Mvvm
+                         .Bind(Label.TextProperty, static (MainViewModel vm) => vm.CountText),
+#else
                          .Assign(out CounterLabel),
+#endif
                         new Button()
                         {
                             Style = AppStyle("PrimaryAction"),
                             Text = "Click me",
                         }.CenterHorizontal()
-                         .Invoke(btn => btn.Clicked += OnCounterClicked)
+#if Mvvm
+                         .BindCommand(static (MainViewModel vm) => vm.IncrementCommand)
+#else
+                        .Invoke(btn => btn.Clicked += OnCounterClicked)
+#endif
                          .SemanticHint("Counts the number of times you click"),
                         new Image()
                         {
@@ -56,6 +77,7 @@
                 }.Padding(30)
             };
         }
+#if (!Mvvm)
 
         private void OnCounterClicked(object? sender, EventArgs e)
         {
@@ -64,6 +86,7 @@
 
             SemanticScreenReader.Announce(CounterLabel.Text);
         }
+#endif
     }
 #endif
 }
