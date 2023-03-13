@@ -9,14 +9,14 @@
 #if (Plain && !Mvvm)
         private int count = 0;
 #endif
-#if (Mvvm && !(Tabbed || Hybrid))
+#if (Mvvm && !Tabbed)
         public MainPage(MainViewModel viewModel)
 #else
         public MainPage()
 #endif
         {
             InitializeComponent();
-#if (Mvvm && !(Tabbed || Hybrid))
+#if (Mvvm && !Tabbed)
             BindingContext = viewModel;
 #endif
         }

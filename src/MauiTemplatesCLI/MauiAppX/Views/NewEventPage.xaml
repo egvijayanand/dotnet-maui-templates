@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--#if (Mvvm)-->
-<ContentPage x:Class="MauiApp._1.Views.NewEventPage"
-             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             xmlns:local="clr-namespace:MauiApp._1"
-             xmlns:ctrl="clr-namespace:MauiApp._1.Controls"
-             xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
-             Title="{Binding Title}"
-             Shell.PresentationMode="ModalAnimated"
-             Padding="{OnPlatform iOS={StaticResource ApplePadding},
-                                  Default={StaticResource DefaultPadding}}"
-             x:DataType="vm:NewEventViewModel">
+<ContentPage
+    x:Class="MauiApp._1.Views.NewEventPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ctrl="clr-namespace:MauiApp._1.Controls"
+    xmlns:local="clr-namespace:MauiApp._1"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
+    Padding="{OnPlatform iOS={StaticResource ApplePadding},
+                         Default={StaticResource DefaultPadding}}"
+    Shell.PresentationMode="ModalAnimated"
+    Title="{Binding Title}"
+    x:DataType="vm:NewEventViewModel">
     <ContentPage.Content>
         <StackLayout>
             <Entry Text="{Binding Event.Name}"
@@ -44,16 +45,18 @@
     </ContentPage.Content>
 </ContentPage>
 <!--#else-->
-<ContentPage x:Class="MauiApp._1.Views.NewEventPage"
-             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             xmlns:local="clr-namespace:MauiApp._1"
-             xmlns:ctrl="clr-namespace:MauiApp._1.Controls"
-             Title="New Event"
-             Shell.PresentationMode="ModalAnimated"
-             Padding="{OnPlatform iOS={StaticResource ApplePadding},
-                                  Default={StaticResource DefaultPadding}}">
+<ContentPage
+    x:Class="MauiApp._1.Views.NewEventPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ctrl="clr-namespace:MauiApp._1.Controls"
+    xmlns:local="clr-namespace:MauiApp._1"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
+    Padding="{OnPlatform iOS={StaticResource ApplePadding},
+                         Default={StaticResource DefaultPadding}}"
+    Shell.PresentationMode="ModalAnimated"
+    Title="New Event">
     <ContentPage.Content>
         <StackLayout>
             <Entry Text=""

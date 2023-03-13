@@ -92,28 +92,7 @@ Both .NET MAUI *App* and *Class Library* templates take the below optional Boole
 * `-imt` | `--include-mvvm-toolkit` - Default is `false`
 * `-cc` | `--conditional-compilation` - Default is `false`
 
-Additional parameters for **App** project:
-
-MVVM is a delightful and development-friendly design pattern to work with. To support this, a new parameter has been introduced:
-
-* `-mvvm` | `--use-mvvm` - Default is `false`
-
-*Note: Opting for this MVVM option will not have any impact on the Web-based AppModels such as Blazor syntax (Hybrid) / Razor syntax.*
-
-The target for the Windows platform can be either `Package` (MSIX) or `Unpackaged`. By default, it is set as `Package`, this can be overridden while creating the project by including the below parameter:
-
-
-* `-wu` | `--windows-unpackaged` - Default is `false`
-
-While targeting `.NET 7` or later, an option to add and configure `CommunityToolkit.Maui.MediaElement`, `Microsoft.Maui.Controls.Foldable`, `Microsoft.Maui.Controls.Maps`, or all NuGet packages.
-
-* `-ime` | `--include-media-element` - Default is `false`
-* `-if` | `--include-foldable` - Default is `false`
-* `-inm` | `--include-maps` - Default is `false`
-
-*Note: If the project target `.NET 6`, selecting the MediaElement/Foldable/Maps option will NOT have any impact.*
-
-##### Conditional Compilation
+#### Conditional Compilation
 
 And now conditional compilation can be configured so that platform source files can be defined anywhere in the project provided they follow a naming convention as mentioned below. This will allow maintaining related source files in the same place, especially MAUI Handlers.
 
@@ -185,6 +164,7 @@ Can take any one of the following values, with default value set to `Plain`:
 |Hybrid|App configured to work in a Hybrid fashion using BlazorWebView.|
 |Markup|App configured to work with C# Markup syntax.|
 |Razor|App configured to work with Razor syntax.|
+|Comet|App configured to work with MVU pattern using Comet.|
 
 * `-tp` | `--target-platform`
 
@@ -202,6 +182,26 @@ Can take a combination of the following values, with default value set to `All`:
 |Mobile|Targets Android and iOS platforms.|
 |Desktop|Targets Windows and macOS platforms.|
 |Apple|Targets iOS and macOS platforms.|
+
+Additional parameters supported:
+
+MVVM is a delightful and development-friendly design pattern to work with. To support this, a new parameter has been introduced:
+
+* `-mvvm` | `--use-mvvm` - Default is `false`
+
+*Note: Opting for this MVVM option will not have any impact on the App created with Web-based Razor syntax or MVU based Comet.*
+
+The target for the Windows platform can be either `Package` (MSIX) or `Unpackaged`. By default, it is set as `Package`, this can be overridden while creating the project by including the below parameter:
+
+* `-wu` | `--windows-unpackaged` - Default is `false`
+
+While targeting `.NET 7` or later, an option to add and configure `CommunityToolkit.Maui.MediaElement`, `Microsoft.Maui.Controls.Foldable`, `Microsoft.Maui.Controls.Maps`, or all NuGet packages.
+
+* `-ime` | `--include-media-element` - Default is `false`
+* `-if` | `--include-foldable` - Default is `false`
+* `-inm` | `--include-maps` - Default is `false`
+
+*Note: If the project target `.NET 6`, selecting the MediaElement/Foldable/Maps option will NOT have any impact.*
 
 Examples:
 
@@ -303,6 +303,9 @@ dotnet new mauiapp -n MyApp -dp Markup
 ```shell
 dotnet new mauiapp -n MyApp -dp Razor
 ```
+```shell
+dotnet new mauiapp -n MyApp -dp Comet
+```
 Option to use MVVM:
 ```shell
 dotnet new mauiapp -n MyApp -mvvm
@@ -401,6 +404,9 @@ dotnet new mauiapp --name MyApp --design-pattern Markup
 ```
 ```shell
 dotnet new mauiapp --name MyApp --design-pattern Razor
+```
+```shell
+dotnet new mauiapp --name MyApp --design-pattern Comet
 ```
 Option to use MVVM:
 ```shell

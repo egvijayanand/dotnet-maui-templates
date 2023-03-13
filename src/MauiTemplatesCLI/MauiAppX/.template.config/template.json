@@ -43,7 +43,7 @@
                     ]
                 },
                 {
-                    "condition": "(Xaml || Markup)",
+                    "condition": "(Xaml || Markup || Comet)",
                     "exclude": [
                         "**/Data/**",
                         "**/Pages/**",
@@ -67,10 +67,29 @@
                         "Controls/*.xaml.cs",
                         "Views/*.xaml",
                         "Views/*.xaml.cs",
+                        "Resources/*.cs",
                         "Resources/*.xaml"
                     ],
                     "rename": {
                         "App.razor.cs": "App.cs"
+                    }
+                },
+                {
+                    "condition": "(Comet)",
+                    "exclude": [
+                        "*.xaml",
+                        "*.xaml.cs",
+                        "Controls/*.xaml",
+                        "Controls/*.xaml.cs",
+                        "Helpers/*.cs",
+                        "Resources/*.cs",
+                        "Resources/*.xaml",
+                        "Views/*.xaml",
+                        "Views/*.xaml.cs"
+                    ],
+                    "rename": {
+                        "App.markup.cs": "App.cs",
+                        "Views/MainPage.markup.cs": "Views/MainPage.cs"
                     }
                 },
                 {
@@ -92,15 +111,14 @@
                     }
                 },
                 {
-                    "condition": "(!Markup)",
+                    "condition": "(!(Markup || Comet))",
                     "exclude": [
                         "**/*.markup.cs",
-                        "**/Resources/AppColors.cs",
-                        "**/Resources/AppStyles.cs"
+                        "Resources/*.cs"
                     ]
                 },
                 {
-                    "condition": "(!Mvvm || Hybrid || Razor)",
+                    "condition": "(!Mvvm || Razor || Comet)",
                     "exclude": [
                         "**/ViewModels/*",
                         "**/Exceptions/*",
@@ -154,7 +172,7 @@
                     ]
                 },
                 {
-                    "condition": "(Plain || Hybrid || Markup)",
+                    "condition": "(Plain || Hybrid || Markup || Comet)",
                     "exclude": [
                         "**/Exceptions/*",
                         "**/Models/*",
@@ -209,7 +227,8 @@
         "application-id": {
             "type": "parameter",
             "description": "Overrides the App Identifier of the project",
-            "datatype": "text"
+            "datatype": "text",
+            "defaultValue": "com.companyname.mauiappid"
         },
         "design-pattern": {
             "type": "parameter",
@@ -244,6 +263,10 @@
                 {
                     "choice": "Razor",
                     "description": "App configured to work with Razor syntax."
+                },
+                {
+                    "choice": "Comet",
+                    "description": "App configured to work with MVU pattern using Comet."
                 }
             ]
         },
@@ -371,7 +394,7 @@
                 "source": "application-id",
                 "toLower": true
             },
-            "replaces": "com.companyname.mauiAppId"
+            "replaces": "com.companyname.mauiappid"
         },
         "nameLower": {
             "type": "generated",
@@ -380,7 +403,10 @@
                 "source": "name",
                 "toLower": true
             },
-            "replaces": "mauiAppId"
+            "replaces": "mauiappid",
+            "onlyIf": {
+                "after": "appIdLower"
+            }
         },
         "designPatternLower": {
             "type": "generated",
@@ -433,6 +459,10 @@
         "Razor": {
             "type": "computed",
             "value": "(design-pattern == \"Razor\" || designPatternLower == \"razor\")"
+        },
+        "Comet": {
+            "type": "computed",
+            "value": "(design-pattern == \"Comet\" || designPatternLower == \"comet\")"
         },
         "Xaml": {
             "type": "computed",
@@ -524,7 +554,7 @@
         },
         "PackageRef": {
             "type": "computed",
-            "value": "(AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage || Net7OrLater || Razor)"
+            "value": "(AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage || Net7OrLater || Razor || Comet)"
         },
         "HostIdentifier": {
             "type": "bind",
