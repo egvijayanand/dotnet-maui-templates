@@ -10,6 +10,8 @@ To facilitate this, the design-pattern parameter now takes the option of Comet.
 
 dotnet new mauiapp -o MyApp -dp Comet
 
+Since this Comet is still in the PoC stage and no published roadmap for future updates. So, try it at your own risk.
+
 Note: MVVM option won't have any impact on the App created with Comet option as it is based on the MVU design pattern.
 
 v3.1.0-preview.5:

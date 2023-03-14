@@ -15,6 +15,7 @@
         public App()
 #else
         public App(IServiceProvider services)
+#endif
         {
             InitializeComponent();
 
@@ -28,10 +29,9 @@
             MainPage = new MainPage();
 #endif
         }
-
 #if (Hierarchical || Tabbed)
+
         public static IDictionary<string, Type> Routes => _routes;
-#endif
 #endif
 #else
         public App()
