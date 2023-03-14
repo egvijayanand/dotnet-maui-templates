@@ -2,7 +2,7 @@
 {
     public partial class BaseViewModel : ObservableObject
     {
-#if (Plain || Markup)
+#if (Plain || Hybrid || Markup)
         public BaseViewModel()
         {
             

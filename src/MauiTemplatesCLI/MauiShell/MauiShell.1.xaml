@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Shell x:Class="MyApp.Namespace.MauiShell__1"
-       xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:local="clr-namespace:MyApp.Namespace">
+<Shell
+    x:Class="MyApp.Namespace.MauiShell__1"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MyApp.Namespace">
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
         Ensure atleast a Flyout item or a TabBar is defined for Shell to work

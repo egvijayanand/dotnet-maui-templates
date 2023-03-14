@@ -23,7 +23,11 @@ namespace MauiApp._1
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
+#if Comet
+            builder.UseCometApp<App>()
+#else
             builder.UseMauiApp<App>()
+#endif
 #if Razor
                    .UseMauiBlazorBindings()
 #endif
@@ -44,12 +48,25 @@ namespace MauiApp._1
 #endif
                    .ConfigureFonts(fonts =>
                    {
+#if Comet
+                       fonts.AddFont("OpenSans-Regular.ttf", AppFont);
+#else
                        fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+#endif
                        fonts.AddFont("OpenSans-SemiBold.ttf", "OpenSansSemiBold");
                    });
 
-#if (Mvvm && !(Hybrid || Razor))
-#if (Plain || Markup)
+#if (Comet)
+            builder.Services.AddSingleton(SemanticScreenReader.Default);
+            builder.Services.AddSingleton<MainPage>();
+
+#endif
+#if (Mvvm && !(Razor || Comet))
+#if Hybrid
+            builder.Services.AddSingleton<MainViewModel>();
+            builder.Services.AddSingleton<MainPage>();
+
+#elif (Plain || Markup)
             builder.Services.AddSingleton(SemanticScreenReader.Default);
             builder.Services.AddSingleton<MainViewModel>();
             builder.Services.AddSingleton<MainPage>();
@@ -89,10 +106,10 @@ namespace MauiApp._1
 #endif
 #if Hybrid
             builder.Services.AddMauiBlazorWebView();
-            // Caution: Recommended to enable Developer Tools only for development!!!
 #if Net7OrLater
 //-:cnd:noEmit
 #if DEBUG
+            // Caution: Recommended to enable Developer Tools only for development!!!
             builder.Services.AddBlazorWebViewDeveloperTools();
             builder.Logging.AddDebug();
 #endif

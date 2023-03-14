@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--#if (Hybrid)-->
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:MauiApp._1"
-             x:Class="MauiApp._1.Views.MainPage">
+<!--#if (Mvvm)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp._1"
+    xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
+    Title="{Binding Title}"
+    x:DataType="vm:MainViewModel">
 
     <BlazorWebView HostPage="wwwroot/index.html">
         <BlazorWebView.RootComponents>
@@ -12,14 +17,30 @@
     </BlazorWebView>
 
 </ContentPage>
+<!--#else-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp._1">
+
+    <BlazorWebView HostPage="wwwroot/index.html">
+        <BlazorWebView.RootComponents>
+            <RootComponent Selector="#app" ComponentType="{x:Type local:Main}" />
+        </BlazorWebView.RootComponents>
+    </BlazorWebView>
+
+</ContentPage>
+<!--#endif-->
 <!--#elif (Tabbed)-->
-<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
-            xmlns:local="clr-namespace:MauiApp._1"
-            xmlns:vw="clr-namespace:MauiApp._1.Views"
-            x:Class="MauiApp._1.Views.MainPage"
-            android:TabbedPage.ToolbarPlacement="Bottom">
+<TabbedPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
+    xmlns:local="clr-namespace:MauiApp._1"
+    xmlns:vw="clr-namespace:MauiApp._1.Views"
+    android:TabbedPage.ToolbarPlacement="Bottom">
     <NavigationPage x:Name="calendar"
                     Title="Calendar">
         <x:Arguments>
@@ -31,13 +52,14 @@
 </TabbedPage>
 <!--#elif (Hierarchical)-->
 <!--#if (Mvvm)-->
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:MauiApp._1"
-             xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
-             x:Class="MauiApp._1.Views.MainPage"
-             Title="{Binding Title}"
-             x:DataType="vm:MainViewModel">
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp._1"
+    xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
+    Title="{Binding Title}"
+    x:DataType="vm:MainViewModel">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center"
                      VerticalOptions="Center">
@@ -50,11 +72,12 @@
     </ContentPage.Content>
 </ContentPage>
 <!--#else-->
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:MauiApp._1"
-             x:Class="MauiApp._1.Views.MainPage"
-             Title="Calendar">
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp._1"
+    Title="Calendar">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center"
                      VerticalOptions="Center">
@@ -69,18 +92,20 @@
 <!--#endif-->
 <!--#else-->
 <!--#if (Mvvm)-->
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:MauiApp._1"
-             xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
-             x:Class="MauiApp._1.Views.MainPage"
-             x:DataType="vm:MainViewModel"
-             Title="{Binding Title}">
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp._1"
+    xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
+    Title="{Binding Title}"
+    x:DataType="vm:MainViewModel">
 <!--#else-->
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:MauiApp._1"
-             x:Class="MauiApp._1.Views.MainPage">
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp._1">
 <!--#endif-->
 
     <ScrollView>

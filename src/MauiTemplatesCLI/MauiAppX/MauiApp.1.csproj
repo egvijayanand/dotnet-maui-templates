@@ -99,7 +99,9 @@
 
         <!-- Project Options -->
         <Nullable>enable</Nullable>
+        <!--#if (!Comet)-->
         <ImplicitUsings>enable</ImplicitUsings>
+        <!--#endif-->
         <RootNamespace>MauiApp._1</RootNamespace>
         <!--#if (Unpackaged)-->
         <WindowsPackageType>None</WindowsPackageType>
@@ -109,7 +111,7 @@
         <ApplicationTitle>MauiApp.1</ApplicationTitle>
 
         <!-- App Identifier -->
-        <ApplicationId>com.companyname.mauiAppId</ApplicationId>
+        <ApplicationId>com.companyname.mauiappid</ApplicationId>
         <ApplicationIdGuid>81a9fb0a-63f5-4ef6-b38e-0cf88600102a</ApplicationIdGuid>
 
         <!-- Versions -->
@@ -155,6 +157,9 @@
         <!--#if (Razor)-->
         <PackageReference Include="BlazorBindings.Maui" Version="1.0.1" />
         <!--#endif-->
+        <!--#if (Comet)-->
+        <PackageReference Include="Clancey.Comet" Version="0.3.467-beta" />
+        <!--#endif-->
         <!--#if (AddFoldablePackage)-->
         <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="7.0.52" />
         <!--#endif-->
@@ -184,7 +189,7 @@
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.2.1"/>
         <!--#endif-->
         <!--#endif-->
-        <!--#if (AddMvvmToolkitPackage || (Mvvm && !(Hybrid || Razor)))-->
+        <!--#if (AddMvvmToolkitPackage || (Mvvm && !Razor))-->
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0"/>
         <!--#endif-->
     <!--#if (PackageRef)-->

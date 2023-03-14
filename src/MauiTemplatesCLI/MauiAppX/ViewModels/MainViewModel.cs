@@ -2,7 +2,12 @@
 {
     public partial class MainViewModel : BaseViewModel
     {
-#if (Plain || Markup)
+#if Hybrid
+        public MainViewModel()
+        {
+            Title = "Home";
+        }
+#elif (Plain || Markup)
         private int count = 0;
         private readonly ISemanticScreenReader _screenReader;
 
