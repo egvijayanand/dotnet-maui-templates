@@ -9,9 +9,9 @@ Release Details:
 
 |Channel|.NET MAUI Version|IDE Version|Release Date|
 |:---:|:---:|:---:|:---:|
-|Stable|.NET 6 SR10 (6.0.552)|VS2022 17.5.0|Tue, Jan 31, 2023|
-|Stable|.NET 7 SR3 (7.0.59)|VS2022 17.5.0|Tue, Jan 31, 2023|
-|Preview|.NET 8 Preview 1 (8.0.0-preview.1.7762)|VS2022 17.6.0 Preview 1.0|Tue, Feb 21, 2023|
+|Stable|.NET 6 SR10 (6.0.552)|VS2022 17.4.x/17.5.x|Tue, Jan 31, 2023|
+|Stable|.NET 7 SR3 (7.0.59)|VS2022 17.4.x/17.5.x|Tue, Jan 31, 2023|
+|Preview|.NET 8 Preview 2 (8.0.0-preview.2.7871)|VS2022 17.6.0 Preview 2.0|Tue, Mar 14, 2023|
 
 Use the below commands to verify the version installed:
 
@@ -257,6 +257,7 @@ Can take any one of the following values, with default value set to `Plain`:
 |Markup|App configured to work with C# Markup syntax.|
 |Razor|App configured to work with Razor syntax.|
 |Comet|App configured to work with MVU pattern using Comet.|
+|Reactor|App configured to work with MVU pattern using Reactor.|
 
 * `-tp` | `--target-platform`
 
@@ -402,6 +403,9 @@ dotnet new mauiapp -n MyApp -dp Razor
 ```shell
 dotnet new mauiapp -n MyApp -dp Comet
 ```
+```shell
+dotnet new mauiapp -n MyApp -dp Reactor
+```
 Option to use MVVM:
 ```shell
 dotnet new mauiapp -n MyApp -mvvm
@@ -503,6 +507,9 @@ dotnet new mauiapp --name MyApp --design-pattern Razor
 ```
 ```shell
 dotnet new mauiapp --name MyApp --design-pattern Comet
+```
+```shell
+dotnet new mauiapp --name MyApp --design-pattern Reactor
 ```
 Option to use MVVM:
 ```shell

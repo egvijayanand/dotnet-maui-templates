@@ -5,31 +5,41 @@
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MauiApp._1"
     xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
     Title="{Binding Title}"
-    x:DataType="vm:MainViewModel">
-
-    <BlazorWebView HostPage="wwwroot/index.html">
-        <BlazorWebView.RootComponents>
-            <RootComponent Selector="#app" ComponentType="{x:Type local:Main}" />
-        </BlazorWebView.RootComponents>
-    </BlazorWebView>
-
+    x:DataType="vm:MainViewModel"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <BlazorWebView HostPage="wwwroot/index.html">
+            <BlazorWebView.RootComponents>
+                <RootComponent
+                    Selector="#app"
+                    ComponentType="{x:Type local:Main}" />
+            </BlazorWebView.RootComponents>
+        </BlazorWebView>
+    </ContentPage.Content>
 </ContentPage>
 <!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:MauiApp._1">
-
-    <BlazorWebView HostPage="wwwroot/index.html">
-        <BlazorWebView.RootComponents>
-            <RootComponent Selector="#app" ComponentType="{x:Type local:Main}" />
-        </BlazorWebView.RootComponents>
-    </BlazorWebView>
-
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MauiApp._1"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <BlazorWebView HostPage="wwwroot/index.html">
+            <BlazorWebView.RootComponents>
+                <RootComponent
+                    Selector="#app"
+                    ComponentType="{x:Type local:Main}" />
+            </BlazorWebView.RootComponents>
+        </BlazorWebView>
+    </ContentPage.Content>
 </ContentPage>
 <!--#endif-->
 <!--#elif (Tabbed)-->
@@ -37,12 +47,16 @@
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
     xmlns:local="clr-namespace:MauiApp._1"
     xmlns:vw="clr-namespace:MauiApp._1.Views"
-    android:TabbedPage.ToolbarPlacement="Bottom">
-    <NavigationPage x:Name="calendar"
-                    Title="Calendar">
+    android:TabbedPage.ToolbarPlacement="Bottom"
+    mc:Ignorable="d">
+    <NavigationPage
+        x:Name="calendar"
+        Title="Calendar">
         <x:Arguments>
             <vw:EventsPage />
         </x:Arguments>
@@ -56,13 +70,17 @@
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MauiApp._1"
     xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
     Title="{Binding Title}"
-    x:DataType="vm:MainViewModel">
+    x:DataType="vm:MainViewModel"
+    mc:Ignorable="d">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="Center"
-                     VerticalOptions="Center">
+        <StackLayout
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
             <Label Text="You don't have anything scheduled today." />
             <Button Command="{Binding AddEventCommand}"
                     HorizontalOptions="Center"
@@ -76,11 +94,15 @@
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MauiApp._1"
+    mc:Ignorable="d"
     Title="Calendar">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="Center"
-                     VerticalOptions="Center">
+        <StackLayout
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
             <Label Text="You don't have anything scheduled today." />
             <Button Style="{StaticResource PrimaryAction}"
                     Text="Add Event"
@@ -96,77 +118,84 @@
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MauiApp._1"
     xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
     Title="{Binding Title}"
-    x:DataType="vm:MainViewModel">
+    x:DataType="vm:MainViewModel"
+    mc:Ignorable="d">
 <!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:MauiApp._1">
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MauiApp._1"
+    mc:Ignorable="d">
 <!--#endif-->
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="30" Spacing="25">
 
-    <ScrollView>
-        <StackLayout Padding="30" Spacing="25">
+                <Label
+                    FontSize="32"
+                    HorizontalOptions="Center"
+                    SemanticProperties.HeadingLevel="Level1"
+                    Style="{StaticResource MauiLabel}"
+                    Text="Hello, World!" />
 
-            <Label
-                FontSize="32"
-                HorizontalOptions="Center"
-                SemanticProperties.HeadingLevel="Level1"
-                Style="{StaticResource MauiLabel}"
-                Text="Hello, World!" />
-
-            <Label
-                FontSize="18"
-                HorizontalOptions="Center"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                SemanticProperties.HeadingLevel="Level1"
-                Style="{StaticResource MauiLabel}"
-                Text="Welcome to .NET Multi-platform App UI" />
+                <Label
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                    SemanticProperties.HeadingLevel="Level1"
+                    Style="{StaticResource MauiLabel}"
+                    Text="Welcome to .NET Multi-platform App UI" />
 
 <!--#if (Mvvm)-->
-            <Label
-                x:Name="CounterLabel"
-                FontAttributes="Bold"
-                FontSize="18"
-                HorizontalOptions="Center"
-                Style="{StaticResource MauiLabel}"
-                Text="{Binding CountText}" />
+                <Label
+                    x:Name="CounterLabel"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource MauiLabel}"
+                    Text="{Binding CountText}" />
 
-            <Button
-                Command="{Binding IncrementCommand}"
-                HorizontalOptions="Center"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Style="{StaticResource PrimaryAction}"
-                Text="Click me" />
+                <Button
+                    Command="{Binding IncrementCommand}"
+                    HorizontalOptions="Center"
+                    SemanticProperties.Hint="Counts the number of times you click"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Click me" />
 
 <!--#else-->
-            <Label
-                x:Name="CounterLabel"
-                FontAttributes="Bold"
-                FontSize="18"
-                HorizontalOptions="Center"
-                Style="{StaticResource MauiLabel}"
-                Text="Current count: 0" />
+                <Label
+                    x:Name="CounterLabel"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource MauiLabel}"
+                    Text="Current count: 0" />
 
-            <Button
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Style="{StaticResource PrimaryAction}"
-                Text="Click me" />
+                <Button
+                    Clicked="OnCounterClicked"
+                    HorizontalOptions="Center"
+                    SemanticProperties.Hint="Counts the number of times you click"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Click me" />
 
 <!--#endif-->
-            <Image
-                HeightRequest="310"
-                HorizontalOptions="Center"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                Source="dotnet_bot.png"
-                WidthRequest="250" />
+                <Image
+                    HeightRequest="310"
+                    HorizontalOptions="Center"
+                    SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                    Source="dotnet_bot.png"
+                    WidthRequest="250" />
 
-        </StackLayout>
-    </ScrollView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>
 <!--#endif-->

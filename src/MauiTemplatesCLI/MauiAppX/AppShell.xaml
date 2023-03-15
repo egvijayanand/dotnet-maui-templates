@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Shell x:Class="MauiApp._1.AppShell"
-       xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:local="clr-namespace:MauiApp._1"
-       xmlns:vw="clr-namespace:MauiApp._1.Views">
+<Shell
+    x:Class="MauiApp._1.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MauiApp._1"
+    xmlns:vw="clr-namespace:MauiApp._1.Views"
+    mc:Ignorable="d">
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
         Ensure atleast a Flyout item or a TabBar is defined for Shell to work
@@ -22,13 +26,19 @@
         And ensure appropriate page definitions are available for it work as expected
     -->
     <FlyoutItem Title="Calendar">
-        <ShellContent ContentTemplate="{DataTemplate vw:EventsPage}" Route="home" />
+        <ShellContent
+            ContentTemplate="{DataTemplate vw:EventsPage}"
+            Route="home" />
     </FlyoutItem>
     <FlyoutItem Title="Search">
-        <ShellContent ContentTemplate="{DataTemplate vw:SearchPage}" Route="search" />
+        <ShellContent
+            ContentTemplate="{DataTemplate vw:SearchPage}"
+            Route="search" />
     </FlyoutItem>
     <FlyoutItem Title="Settings">
-        <ShellContent ContentTemplate="{DataTemplate vw:SettingsPage}" Route="settings" />
+        <ShellContent
+            ContentTemplate="{DataTemplate vw:SettingsPage}"
+            Route="settings" />
     </FlyoutItem>
     <!--
         When the Flyout is visible this will be a menu item you can tie a click behavior to
@@ -37,7 +47,9 @@
         Uncomment the below section to enable Menu item(s)
         And ensure appropriate page definitions are available for it work as expected
     -->
-    <MenuItem Clicked="OnMenuItemClicked" Text="Logout" />
+    <MenuItem
+        Clicked="OnMenuItemClicked"
+        Text="Logout" />
     <!--
         TabBar lets you define content that won't show up in a Flyout menu. When this content is active
         the flyout menu won't be available. This is useful for creating areas of the application where
@@ -50,7 +62,9 @@
         And ensure appropriate page definitions are available for it work as expected
     -->
     <TabBar>
-        <ShellContent ContentTemplate="{DataTemplate vw:LoginPage}" Route="login" />
+        <ShellContent
+            ContentTemplate="{DataTemplate vw:LoginPage}"
+            Route="login" />
     </TabBar>
     <!-- Optional Templates
     // These may be provided inline as below or as separate classes.

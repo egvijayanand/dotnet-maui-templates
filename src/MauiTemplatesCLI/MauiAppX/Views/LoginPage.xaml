@@ -4,29 +4,44 @@
     x:Class="MauiApp._1.Views.LoginPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MauiApp._1"
     xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
     Shell.NavBarIsVisible="False"
-    x:DataType="vm:LoginViewModel">
-    <StackLayout HorizontalOptions="Center"
-                 VerticalOptions="Center">
-        <Button Command="{Binding LoginCommand}"
+    x:DataType="vm:LoginViewModel"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <StackLayout
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Button
+                Command="{Binding LoginCommand}"
                 Style="{StaticResource PrimaryAction}"
                 Text="Login" />
-    </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
 <!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.LoginPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MauiApp._1"
-    Shell.NavBarIsVisible="False">
-    <StackLayout HorizontalOptions="Center"
-                 VerticalOptions="Center">
-        <Button Style="{StaticResource PrimaryAction}"
-                Text="Login"
-                Clicked="OnLoginClicked" />
-    </StackLayout>
+    xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
+    Shell.NavBarIsVisible="False"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <StackLayout
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Button
+                Clicked="OnLoginClicked"
+                Style="{StaticResource PrimaryAction}"
+                Text="Login" />
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
 <!--#endif-->

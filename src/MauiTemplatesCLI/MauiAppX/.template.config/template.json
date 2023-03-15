@@ -43,7 +43,7 @@
                     ]
                 },
                 {
-                    "condition": "(Xaml || Markup || Comet)",
+                    "condition": "(Xaml || CSharp)",
                     "exclude": [
                         "**/Data/**",
                         "**/Pages/**",
@@ -93,6 +93,24 @@
                     }
                 },
                 {
+                    "condition": "(Reactor)",
+                    "exclude": [
+                        "*.xaml",
+                        "*.xaml.cs",
+                        "App.markup.cs",
+                        "Controls/*.xaml",
+                        "Controls/*.xaml.cs",
+                        "Resources/*.cs",
+                        "Views/*.xaml",
+                        "Views/*.xaml.cs"
+                    ],
+                    "rename": {
+                        "Views/MainPage.markup.cs": "Views/MainPage.cs",
+                        "Helpers/ResourceHelper.markup.cs": "Helpers/ResourceHelper.cs",
+                        "Helpers/VisualStateHelper.markup.cs": "Helpers/VisualStateHelper.cs"
+                    }
+                },
+                {
                     "condition": "(Markup)",
                     "exclude": [
                         "*.xaml",
@@ -111,14 +129,20 @@
                     }
                 },
                 {
-                    "condition": "(!(Markup || Comet))",
+                    "condition": "(!CSharp)",
                     "exclude": [
                         "**/*.markup.cs",
                         "Resources/*.cs"
                     ]
                 },
                 {
-                    "condition": "(!Mvvm || Razor || Comet)",
+                    "condition": "(!Reactor)",
+                    "exclude": [
+                        "Resources/AppStyles.xaml"
+                    ]
+                },
+                {
+                    "condition": "(!Mvvm || Razor || Mvu)",
                     "exclude": [
                         "**/ViewModels/*",
                         "**/Exceptions/*",
@@ -172,7 +196,7 @@
                     ]
                 },
                 {
-                    "condition": "(Plain || Hybrid || Markup || Comet)",
+                    "condition": "(Plain || Hybrid || CSharp)",
                     "exclude": [
                         "**/Exceptions/*",
                         "**/Models/*",
@@ -267,6 +291,10 @@
                 {
                     "choice": "Comet",
                     "description": "App configured to work with MVU pattern using Comet."
+                },
+                {
+                    "choice": "Reactor",
+                    "description": "App configured to work with MVU pattern using Reactor."
                 }
             ]
         },
@@ -464,6 +492,14 @@
             "type": "computed",
             "value": "(design-pattern == \"Comet\" || designPatternLower == \"comet\")"
         },
+        "Reactor": {
+            "type": "computed",
+            "value": "(design-pattern == \"Reactor\" || designPatternLower == \"reactor\")"
+        },
+        "CSharp": {
+            "type": "computed",
+            "value": "(Markup || Mvu)"
+        },
         "Xaml": {
             "type": "computed",
             "value": "(Plain || Hierarchical || Tabbed || Shell)"
@@ -471,6 +507,10 @@
         "Mvvm": {
             "type": "computed",
             "value": "(use-mvvm)"
+        },
+        "Mvu": {
+            "type": "computed",
+            "value": "(Comet || Reactor)"
         },
         "Net7": {
             "type": "computed",
@@ -554,7 +594,7 @@
         },
         "PackageRef": {
             "type": "computed",
-            "value": "(AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage || Net7OrLater || Razor || Comet)"
+            "value": "(AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage || Net7OrLater || Razor || Mvu)"
         },
         "HostIdentifier": {
             "type": "bind",

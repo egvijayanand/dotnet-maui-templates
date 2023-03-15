@@ -1,4 +1,8 @@
-﻿namespace MauiApp._1.Helpers
+﻿#if Mvu
+using Microsoft.Maui.Controls;
+
+#endif
+namespace MauiApp._1.Helpers
 {
     public static class ResourceHelper
     {
