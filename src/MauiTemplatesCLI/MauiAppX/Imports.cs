@@ -29,6 +29,9 @@ global using Comet;
 
 // Reactor
 global using MauiReactor;
+#if AddMapsPackage
+global using MauiReactor.Maps;
+#endif
 
 #endif
 #if AddToolkitPackage
