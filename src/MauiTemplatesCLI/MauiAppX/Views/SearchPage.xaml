@@ -4,20 +4,28 @@
     x:Class="MauiApp._1.Views.SearchPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MauiApp._1"
     xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
     Title="{Binding Title}"
-    x:DataType="vm:SearchViewModel">
+    x:DataType="vm:SearchViewModel"
+    mc:Ignorable="d">
 <!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.SearchPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MauiApp._1"
-    Title="Search">
+    Title="Search"
+    mc:Ignorable="d">
 <!--#endif-->
-    <Label
-        HorizontalOptions="Center"
-        Text="Search"
-        VerticalOptions="Center" />
+    <ContentPage.Content>
+        <Label
+            HorizontalOptions="Center"
+            Text="Search"
+            VerticalOptions="Center" />
+    </ContentPage.Content>
 </ContentPage>

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <!--#if (Hybrid || Razor)-->
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 <!--#else-->
@@ -99,7 +100,7 @@
 
         <!-- Project Options -->
         <Nullable>enable</Nullable>
-        <!--#if (!Comet)-->
+        <!--#if (!Mvu)-->
         <ImplicitUsings>enable</ImplicitUsings>
         <!--#endif-->
         <RootNamespace>MauiApp._1</RootNamespace>
@@ -168,7 +169,7 @@
         <!--#endif-->
         <!--#if (Net7OrLater)-->
         <!--#if (Net8)-->
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0-preview.1.23110.8" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0-preview.2.*" />
         <!--#else-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
         <!--#endif-->
@@ -191,6 +192,13 @@
         <!--#endif-->
         <!--#if (AddMvvmToolkitPackage || (Mvvm && !Razor))-->
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0"/>
+        <!--#endif-->
+        <!--#if (Reactor)-->
+        <PackageReference Include="Reactor.Maui" Version="1.0.113" />
+        <PackageReference Include="Reactor.Maui.Canvas" Version="1.0.113" />
+        <!--#if (AddMapsPackage)-->
+        <PackageReference Include="Reactor.Maui.Maps" Version="1.0.113" />
+        <!--#endif-->
         <!--#endif-->
     <!--#if (PackageRef)-->
     </ItemGroup>

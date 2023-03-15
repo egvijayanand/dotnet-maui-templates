@@ -25,6 +25,20 @@ namespace MauiApp._1
             var builder = MauiApp.CreateBuilder();
 #if Comet
             builder.UseCometApp<App>()
+#elif Reactor
+            builder.UseMauiReactorApp<MainPage>(app =>
+                   {
+                       app.AddResource("Resources/Colors.xaml");
+                       app.AddResource("Resources/Styles.xaml");
+                       app.AddResource("Resources/AppStyles.xaml");
+
+                       app.SetWindowsSpecificAssectDirectory("Assets");
+                   })
+//-:cnd:noEmit
+#if DEBUG
+                   .EnableMauiReactorHotReload()
+#endif
+//+:cnd:noEmit
 #else
             builder.UseMauiApp<App>()
 #endif
@@ -56,12 +70,16 @@ namespace MauiApp._1
                        fonts.AddFont("OpenSans-SemiBold.ttf", "OpenSansSemiBold");
                    });
 
-#if (Comet)
+#if Comet
             builder.Services.AddSingleton(SemanticScreenReader.Default);
             builder.Services.AddSingleton<MainPage>();
 
 #endif
-#if (Mvvm && !(Razor || Comet))
+#if Reactor
+            builder.Services.AddSingleton(SemanticScreenReader.Default);
+
+#endif
+#if (Mvvm && !(Razor || Mvu))
 #if Hybrid
             builder.Services.AddSingleton<MainViewModel>();
             builder.Services.AddSingleton<MainPage>();

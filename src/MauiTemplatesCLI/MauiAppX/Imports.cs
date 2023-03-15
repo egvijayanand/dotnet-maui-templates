@@ -1,5 +1,9 @@
-#if Comet
+#if Mvu
 global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Text;
+global using System.Threading.Tasks;
 global using Microsoft.Extensions.DependencyInjection;
 
 #endif
@@ -7,15 +11,27 @@ global using Microsoft.Extensions.DependencyInjection;
 global using BlazorBindings.Maui;
 
 #endif
-#if Comet
+#if Mvu
 // .NET MAUI
 global using Microsoft.Maui;
 global using Microsoft.Maui.Accessibility;
 global using Microsoft.Maui.Graphics;
 global using Microsoft.Maui.Hosting;
+global using MC = Microsoft.Maui.Controls;
+#endif
+#if Comet
 
 // Comet
 global using Comet;
+
+#endif
+#if Reactor
+
+// Reactor
+global using MauiReactor;
+#if AddMapsPackage
+global using MauiReactor.Maps;
+#endif
 
 #endif
 #if AddToolkitPackage
@@ -32,7 +48,7 @@ global using CommunityToolkit.Mvvm.Input;
 #if (Hierarchical || Tabbed || Shell)
 global using MauiApp._1.Controls;
 #endif
-#if (Mvvm && !(Razor || Comet))
+#if (Mvvm && !(Razor || Mvu))
 #if (Hierarchical || Tabbed || Shell)
 #if (!Shell)
 global using MauiApp._1.Exceptions;
@@ -61,5 +77,8 @@ global using static Microsoft.Maui.Graphics.Colors;
 #if Comet
 global using static Microsoft.Maui.TextAlignment;
 global using static MauiApp._1.App;
+#endif
+#if Reactor
+global using static MauiApp._1.Helpers.ResourceHelper;
 #endif
 #endif

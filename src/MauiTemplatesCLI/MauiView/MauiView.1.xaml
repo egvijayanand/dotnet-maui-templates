@@ -3,7 +3,10 @@
     x:Class="MyApp.Namespace.MauiView__1"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:MyApp.Namespace">
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MyApp.Namespace"
+    mc:Ignorable="d">
     <ContentView.Content>
         <Grid>
             <Label

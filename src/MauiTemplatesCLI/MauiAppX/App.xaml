@@ -1,9 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <Application
-        x:Class="MauiApp._1.App"
-        xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-        xmlns:local="clr-namespace:MauiApp._1">
+    x:Class="MauiApp._1.App"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MauiApp._1"
+    mc:Ignorable="d">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -19,11 +22,13 @@
             <x:Double x:Key="ItemSpacing">10</x:Double>
 
             <Style ApplyToDerivedTypes="True" TargetType="StackBase">
-                <Setter Property="Spacing" Value="{StaticResource ItemSpacing}" />
+                <Setter Property="Spacing" 
+                        Value="{StaticResource ItemSpacing}" />
             </Style>
 
             <Style x:Key="MauiLabel" TargetType="Label">
-                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource White}, Light={StaticResource Primary}}" />
+                <Setter Property="TextColor" 
+                        Value="{AppThemeBinding Dark={StaticResource White}, Light={StaticResource Primary}}" />
             </Style>
 
             <Style x:Key="Action" TargetType="Button">

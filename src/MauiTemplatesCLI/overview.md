@@ -165,6 +165,7 @@ Can take any one of the following values, with default value set to `Plain`:
 |Markup|App configured to work with C# Markup syntax.|
 |Razor|App configured to work with Razor syntax.|
 |Comet|App configured to work with MVU pattern using Comet.|
+|Reactor|App configured to work with MVU pattern using Reactor.|
 
 * `-tp` | `--target-platform`
 
@@ -306,6 +307,9 @@ dotnet new mauiapp -n MyApp -dp Razor
 ```shell
 dotnet new mauiapp -n MyApp -dp Comet
 ```
+```shell
+dotnet new mauiapp -n MyApp -dp Reactor
+```
 Option to use MVVM:
 ```shell
 dotnet new mauiapp -n MyApp -mvvm
@@ -407,6 +411,9 @@ dotnet new mauiapp --name MyApp --design-pattern Razor
 ```
 ```shell
 dotnet new mauiapp --name MyApp --design-pattern Comet
+```
+```shell
+dotnet new mauiapp --name MyApp --design-pattern Reactor
 ```
 Option to use MVVM:
 ```shell

@@ -4,17 +4,22 @@
     x:Class="MauiApp._1.Views.EventsPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MauiApp._1"
     xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
-    x:DataType="vm:EventsViewModel">
+    x:DataType="vm:EventsViewModel"
+    mc:Ignorable="d">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="Center"
-                     VerticalOptions="Center">
+        <StackLayout
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
             <Label Text="You don't have anything scheduled today." />
-            <Button Command="{Binding AddEventCommand}"
-                    HorizontalOptions="Center"
-                    Style="{StaticResource PrimaryAction}"
-                    Text="Add Event" />
+            <Button
+                Command="{Binding AddEventCommand}"
+                HorizontalOptions="Center"
+                Style="{StaticResource PrimaryAction}"
+                Text="Add Event" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
@@ -23,15 +28,20 @@
     x:Class="MauiApp._1.Views.EventsPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:MauiApp._1">
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MauiApp._1"
+    mc:Ignorable="d">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="Center"
-                     VerticalOptions="Center">
+        <StackLayout
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
             <Label Text="You don't have anything scheduled today." />
-            <Button Clicked="OnAddEvent"
-                    HorizontalOptions="Center"
-                    Style="{StaticResource PrimaryAction}"
-                    Text="Add Event" />
+            <Button
+                Clicked="OnAddEvent"
+                HorizontalOptions="Center"
+                Style="{StaticResource PrimaryAction}"
+                Text="Add Event" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
