@@ -194,8 +194,11 @@
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0"/>
         <!--#endif-->
         <!--#if (Reactor)-->
-        <PackageReference Include="Reactor.Maui" Version="1.0.108" />
-        <PackageReference Include="Reactor.Maui.Canvas" Version="1.0.108" />
+        <PackageReference Include="Reactor.Maui" Version="1.0.113" />
+        <PackageReference Include="Reactor.Maui.Canvas" Version="1.0.113" />
+        <!--#if (AddMapsPackage)-->
+        <PackageReference Include="Reactor.Maui.Maps" Version="1.0.113" />
+        <!--#endif-->
         <!--#endif-->
     <!--#if (PackageRef)-->
     </ItemGroup>
