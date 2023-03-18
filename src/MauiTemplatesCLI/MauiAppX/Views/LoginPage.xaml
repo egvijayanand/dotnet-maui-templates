@@ -15,10 +15,17 @@
         <StackLayout
             HorizontalOptions="Center"
             VerticalOptions="Center">
+            <!--#if (CompiledBindings)-->
+            <Button
+                Command="{x:Bind LoginCommand}"
+                Style="{StaticResource PrimaryAction}"
+                Text="Login" />
+            <!--#else-->
             <Button
                 Command="{Binding LoginCommand}"
                 Style="{StaticResource PrimaryAction}"
                 Text="Login" />
+            <!--#endif-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

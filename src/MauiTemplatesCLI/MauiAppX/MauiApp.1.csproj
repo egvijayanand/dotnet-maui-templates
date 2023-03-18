@@ -100,6 +100,7 @@
 
         <!-- Project Options -->
         <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
         <!--#if (!Mvu)-->
         <ImplicitUsings>enable</ImplicitUsings>
         <!--#endif-->
@@ -156,16 +157,16 @@
     <ItemGroup>
     <!--#endif-->
         <!--#if (Razor)-->
-        <PackageReference Include="BlazorBindings.Maui" Version="1.0.1" />
+        <PackageReference Include="BlazorBindings.Maui" Version="1.0.*" />
         <!--#endif-->
         <!--#if (Comet)-->
         <PackageReference Include="Clancey.Comet" Version="0.3.467-beta" />
         <!--#endif-->
         <!--#if (AddFoldablePackage)-->
-        <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="7.0.52" />
+        <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="7.0.*" />
         <!--#endif-->
         <!--#if (AddMapsPackage)-->
-        <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.52" />
+        <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.*" />
         <!--#endif-->
         <!--#if (Net7OrLater)-->
         <!--#if (Net8)-->
@@ -180,24 +181,27 @@
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.1.0"/>
         <!--#endif-->
         <!--#if (AddMediaPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="1.0.2"/>
+        <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="1.0.*"/>
         <!--#endif-->
         <!--#else-->
         <!--#if (AddToolkitPackage)-->
         <PackageReference Include="CommunityToolkit.Maui" Version="2.0.0"/>
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.2.1"/>
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.2.*"/>
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMvvmToolkitPackage || (Mvvm && !Razor))-->
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0"/>
         <!--#endif-->
+        <!--#if (CompiledBindings)-->
+        <PackageReference Include="CompiledBindings.MAUI" Version="1.0.*" />
+        <!--#endif-->
         <!--#if (Reactor)-->
-        <PackageReference Include="Reactor.Maui" Version="1.0.113" />
-        <PackageReference Include="Reactor.Maui.Canvas" Version="1.0.113" />
+        <PackageReference Include="Reactor.Maui" Version="1.0.*" />
+        <PackageReference Include="Reactor.Maui.Canvas" Version="1.0.*" />
         <!--#if (AddMapsPackage)-->
-        <PackageReference Include="Reactor.Maui.Maps" Version="1.0.113" />
+        <PackageReference Include="Reactor.Maui.Maps" Version="1.0.*" />
         <!--#endif-->
         <!--#endif-->
     <!--#if (PackageRef)-->

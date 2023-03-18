@@ -105,6 +105,7 @@
 
         <!-- Project Options -->
         <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>MauiClassLib._1</RootNamespace>
 
@@ -138,7 +139,7 @@
         <PackageReference Include="CommunityToolkit.Maui" Version="2.0.0"/>
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.2.1"/>
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.2.*"/>
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMvvmToolkitPackage)-->

@@ -10,10 +10,13 @@ using MauiApp._1.Data;
 #if Net7OrLater
 using Microsoft.Extensions.Logging;
 #endif
+#if AddMapsPackage
+using Microsoft.Maui.Controls.Hosting;
+#endif
 #if AddFoldablePackage
 using Microsoft.Maui.Foldable;
 #endif
-#if (AddToolkitPackage || Hybrid || Net7OrLater || AddFoldablePackage || Razor)
+#if (AddToolkitPackage || Hybrid || Net7OrLater || Razor)
 
 #endif
 namespace MauiApp._1
