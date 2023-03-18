@@ -354,6 +354,13 @@
             "description": "Option to use MVVM.",
             "displayName": "Option to use MVVM"
         },
+        "include-compiled-bindings": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add CompiledBindings.MAUI NuGet package reference.",
+            "displayName": "Option to add Compiled_Bindings.MAUI NuGet package reference"
+        },
         "include-toolkit": {
             "type": "parameter",
             "datatype": "bool",
@@ -588,13 +595,17 @@
             "type": "computed",
             "value": "(include-mvvm-toolkit)"
         },
+        "CompiledBindings": {
+            "type": "computed",
+            "value": "(include-compiled-bindings)"
+        },
         "ConditionalCompilation": {
             "type": "computed",
             "value": "(conditional-compilation)"
         },
         "PackageRef": {
             "type": "computed",
-            "value": "(AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage || Net7OrLater || Razor || Mvu)"
+            "value": "(AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage || Net7OrLater || Razor || Mvu || CompiledBindings)"
         },
         "HostIdentifier": {
             "type": "bind",

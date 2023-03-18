@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--#if (Hybrid)-->
 <!--#if (Mvvm)-->
+<!--#if (CompiledBindings)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MauiApp._1"
+    xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
+    Title="{x:Bind Title}"
+    x:DataType="vm:MainViewModel"
+    mc:Ignorable="d">
+<!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -12,6 +25,7 @@
     Title="{Binding Title}"
     x:DataType="vm:MainViewModel"
     mc:Ignorable="d">
+<!--#endif-->
     <ContentPage.Content>
         <BlazorWebView HostPage="wwwroot/index.html">
             <BlazorWebView.RootComponents>
@@ -66,6 +80,31 @@
 </TabbedPage>
 <!--#elif (Hierarchical)-->
 <!--#if (Mvvm)-->
+<!--#if (CompiledBindings)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MauiApp._1"
+    xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
+    Title="{x:Bind Title}"
+    x:DataType="vm:MainViewModel"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <StackLayout
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Label Text="You don't have anything scheduled today." />
+            <Button Command="{x:Bind AddEventCommand}"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Add Event" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+<!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -89,6 +128,7 @@
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
+<!--#endif-->
 <!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
@@ -114,6 +154,19 @@
 <!--#endif-->
 <!--#else-->
 <!--#if (Mvvm)-->
+<!--#if (CompiledBindings)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MauiApp._1"
+    xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
+    Title="{x:Bind Title}"
+    x:DataType="vm:MainViewModel"
+    mc:Ignorable="d">
+<!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -125,6 +178,7 @@
     Title="{Binding Title}"
     x:DataType="vm:MainViewModel"
     mc:Ignorable="d">
+<!--#endif-->
 <!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
@@ -155,6 +209,23 @@
                     Text="Welcome to .NET Multi-platform App UI" />
 
 <!--#if (Mvvm)-->
+<!--#if (CompiledBindings)-->
+                <Label
+                    x:Name="CounterLabel"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource MauiLabel}"
+                    Text="{x:Bind CountText}" />
+
+                <Button
+                    Command="{x:Bind IncrementCommand}"
+                    HorizontalOptions="Center"
+                    SemanticProperties.Hint="Counts the number of times you click"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Click me" />
+
+<!--#else-->
                 <Label
                     x:Name="CounterLabel"
                     FontAttributes="Bold"
@@ -170,6 +241,7 @@
                     Style="{StaticResource PrimaryAction}"
                     Text="Click me" />
 
+<!--#endif-->
 <!--#else-->
                 <Label
                     x:Name="CounterLabel"

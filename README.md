@@ -283,6 +283,7 @@ Additional parameters supported:
 MVVM is a delightful and development-friendly design pattern to work with. To support this, a new parameter has been introduced:
 
 * `-mvvm` | `--use-mvvm` - Default is `false`
+* `-icb` | `--include-compiled-bindings` - Default is `false`
 
 *Note: Opting for this MVVM option will not have any impact on the App created with Web-based Razor syntax or MVU based Comet.*
 
@@ -413,6 +414,10 @@ dotnet new mauiapp -n MyApp -mvvm
 ```shell
 dotnet new mauiapp -n MyApp -dp Markup -mvvm
 ```
+Option to use MVVM (Compiled Bindings):
+```shell
+dotnet new mauiapp -n MyApp -mvvm -icb
+```
 Option to include NuGet packages:
 ```shell
 dotnet new mauiapp -n MyApp -dp Shell -it -im -imt -ime -inm -if
@@ -517,6 +522,10 @@ dotnet new mauiapp --name MyApp --use-mvvm
 ```
 ```shell
 dotnet new mauiapp --name MyApp --design-pattern Markup --use-mvvm
+```
+Option to use MVVM (Compiled Bindings):
+```shell
+dotnet new mauiapp --name MyApp --use-mvvm --include-compiled-bindings
 ```
 Option to include NuGet packages:
 ```shell

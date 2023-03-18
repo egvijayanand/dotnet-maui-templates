@@ -15,8 +15,10 @@ if [%packageName%]==[] (call Error "Package name not configured." & goto end)
 call Info ".NET SDK Version"
 dotnet --version
 
+echo.
 call Info "Uninstalling %packageName% ..."
 
+echo.
 dotnet new uninstall %packageName%
 
 if %errorlevel% == 0 (call Success "Process completed.") else (call Error "Package uninstall failed.")

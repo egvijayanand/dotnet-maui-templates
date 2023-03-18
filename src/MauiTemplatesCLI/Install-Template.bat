@@ -32,6 +32,7 @@ dotnet --version
 echo.
 call Info "Validating %packageName% ver. %packageVersion% ..."
 
+echo.
 templates analyze -p .\bin\%config%\%packageName%.%packageVersion%.nupkg
 
 echo.
@@ -42,6 +43,7 @@ if %errorlevel% == 0 (call Info "Package validated.") else (call Error "Package 
 echo.
 call Info "Installing the %packageName% %config% build template ver. %packageVersion% ..."
 
+echo.
 dotnet new install .\bin\%config%\%packageName%.%packageVersion%.nupkg
 
 if %errorlevel% == 0 (call Success "Process completed.") else (call Error "Package install failed.")

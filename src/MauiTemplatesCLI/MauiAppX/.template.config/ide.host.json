@@ -27,6 +27,14 @@
             "defaultValue": "false"
         },
         {
+            "id": "include-compiled-bindings",
+            "name": {
+                "text": "Use Compiled_Bindings.MAUI."
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
             "id": "include-toolkit",
             "name": {
                 "text": "Add and configure Community_Toolkit.Maui NuGet package reference"

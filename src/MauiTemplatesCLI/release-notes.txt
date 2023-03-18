@@ -1,5 +1,17 @@
-What's new in ver. 3.1.0-preview.7:
+Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
+
+What's new in ver. 3.1.0-preview.8:
 -----------------------------------
+1. Added the option to use Compiled Bindings option while using the MVVM option. This will make use of the x:Bind extension instead of the Binding extension.
+
+-icb | --include-compiled-bindings - Default value is false.
+
+dotnet new mauiapp -n MyApp -mvvm -icb
+
+Note: When the MVVM option is not opted-in, selecting this compiled binding option will include only the NuGet package reference.
+
+v3.1.0-preview.7:
+
 1. Added the option to create a .NET MAUI App with the MVU pattern using Reactor.
 
 To facilitate this, the design-pattern parameter now takes the option of Reactor.
@@ -293,5 +305,3 @@ dotnet new mauiapp -f net7.0
 2. For App project targeting .NET 7, option to add and configure Maui Maps NuGet package.
 
 Note: If project target .NET 6, selecting the Maps option will NOT have any impact.
-
-Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.

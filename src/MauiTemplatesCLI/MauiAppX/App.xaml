@@ -17,17 +17,17 @@
             <!--#if (!(Plain || Hybrid))-->
             <Thickness x:Key="ApplePadding">30,60,30,30</Thickness>
             <Thickness x:Key="DefaultPadding">30</Thickness>
-            <!--#endif-->
 
+            <!--#endif-->
             <x:Double x:Key="ItemSpacing">10</x:Double>
 
             <Style ApplyToDerivedTypes="True" TargetType="StackBase">
-                <Setter Property="Spacing" 
+                <Setter Property="Spacing"
                         Value="{StaticResource ItemSpacing}" />
             </Style>
 
             <Style x:Key="MauiLabel" TargetType="Label">
-                <Setter Property="TextColor" 
+                <Setter Property="TextColor"
                         Value="{AppThemeBinding Dark={StaticResource White}, Light={StaticResource Primary}}" />
             </Style>
 
