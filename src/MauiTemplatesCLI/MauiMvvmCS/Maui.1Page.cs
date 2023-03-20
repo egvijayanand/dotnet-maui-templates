@@ -1,4 +1,8 @@
-﻿#if SameFolder
+﻿#if (!SameFolder)
+using MyApp.Namespace.ViewModels;
+
+#endif
+#if SameFolder
 namespace MyApp.Namespace
 #else
 namespace MyApp.Namespace.Views
