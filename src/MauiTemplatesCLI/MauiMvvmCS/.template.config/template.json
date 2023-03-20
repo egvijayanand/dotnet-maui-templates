@@ -1,0 +1,78 @@
+{
+    "$schema": "https://json.schemastore.org/template",
+    "author": "Vijay Anand E G",
+    "defaultName": "Maui1",
+    "classifications": [
+        "MAUI",
+        "Android",
+        "iOS",
+        "macOS",
+        "Windows",
+        "MVVM",
+        "Code"
+    ],
+    "identity": "VijayAnand.MauiMvvmCS",
+    "groupIdentity": "VijayAnand.MauiTemplates.Mvvm.Code",
+    "description": "An item template for .NET MAUI ContentPage in C# and its ViewModel",
+    "name": ".NET MAUI ContentPage (C#) and ViewModel",
+    "shortName": "maui-mvvm-cs",
+    "sourceName": "Maui.1",
+    "primaryOutputs": [
+        {
+            "path": "Maui.1Page.cs"
+        },
+        {
+            "path": "Maui.1ViewModel.cs"
+        }
+    ],
+    "tags": {
+        "language": "C#",
+        "type": "item"
+    },
+    "sources": [
+        {
+            "condition": "(SameFolder)",
+            "include": [
+                "**/*"
+            ]
+        },
+        {
+            "condition": "(!SameFolder)",
+            "rename": {
+                "Maui.1Page.cs": "Views/Maui.1Page.cs",
+                "Maui.1ViewModel.cs": "ViewModels/Maui.1ViewModel.cs"
+            }
+        }
+    ],
+    "symbols": {
+        "namespace": {
+            "type": "bind",
+            "binding": "msbuild:RootNamespace",
+            "replaces": "MyApp.Namespace",
+            "defaultValue": "MyApp.Namespace"
+        },
+        "same-folder": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to create the artifacts in the same folder.",
+            "displayName": "Option to create the artifacts in the same folder"
+        },
+        "SameFolder": {
+            "type": "computed",
+            "value": "(same-folder)"
+        }
+    },
+    "constraints": {
+        "dotnet7-sts": {
+            "type": "sdk-version",
+            "args": [
+                "[7.0,)"
+            ]
+        },
+        "csharp-only": {
+            "type": "project-capability",
+            "args": "CSharp"
+        }
+    }
+}

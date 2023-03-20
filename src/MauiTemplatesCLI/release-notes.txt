@@ -1,7 +1,44 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
 
-What's new in ver. 3.1.0-preview.8:
+What's new in ver. 3.1.0-preview.9:
 -----------------------------------
+1. Introduced an item template to generate Page and its ViewModel in a single command, available for both XAML and C#.
+
+The Page will be generated in the Views folder and ViewModel will be generated in the ViewModels folder.
+
+Can also be overridden to generate in the same folder with the -sf | --same-folder option.
+
+The ViewModels are generated with the base class titled BaseViewModel (implementation left to the user).
+
+Recommended to add CommunityToolkit.Mvvm, an officially supported NuGet package, to make it easy to work with MVVM design pattern.
+
+Since it makes use of the .NET 7 SDK feature of auto namespace resolution, so restore the project before executing the commands.
+
+Note: Don't suffix anything to the name, it'll be included automatically.
+
+dotnet new maui-mvvm -n Login
+
+dotnet new maui-mvvm-cs -n Login
+
+Output structure:
+
+XAML:
+
+ViewModels
+    LoginViewModel.cs
+Views
+    LoginPage.xaml
+    LoginPage.xaml.cs
+
+C#:
+
+ViewModels
+    LoginViewModel.cs
+Views
+    LoginPage.cs
+
+v3.1.0-preview.8:
+
 1. Added the option to use Compiled Bindings option while using the MVVM option. This will make use of the x:Bind extension instead of the Binding extension.
 
 -icb | --include-compiled-bindings - Default value is false.

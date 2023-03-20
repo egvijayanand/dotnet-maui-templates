@@ -1,4 +1,4 @@
-### Project and Item Templates for developing .NET MAUI App that runs on iOS, Android, macOS, and Windows 
+### Project and Item Templates for developing .NET MAUI App that runs on Android, iOS, macOS, Windows, and Tizen
 
 * [All-in-One .NET MAUI App](#all-in-one-net-maui-app-project-template) project template and is named as `mauiapp`
 * [.NET MAUI Class Library](#net-maui-class-library-project-template) project template and is named as `mauiclasslib`
@@ -18,6 +18,8 @@ Item templates for the following:
 |ShellPage (XAML)|maui-shell|
 |ShellPage (C#)|maui-shell-cs|
 |ShellPage (Razor)|maui-shell-razor|
+|[ContentPage (XAML) with ViewModel](#page-with-viewmodel)|maui-mvvm|
+|[ContentPage (C#) with ViewModel](#page-with-viewmodel)|maui-mvvm-cs|
 |[Partial Class (C#)](#partial-class-item-template)|class-cs|
 
 All of these templates currently target `.NET MAUI on .NET 6/7 GA and its Service Releases and .NET 8 Previews`.
@@ -364,6 +366,17 @@ dotnet new maui-page-cs -n HomePage -na MyApp.Views
 dotnet new maui-page-razor -n HomePage
 ```
 
+#### Page with ViewModel:
+
+*Don't suffix anything to the name, it'll be included automatically.*
+
+```shell
+dotnet new maui-mvvm -n Login
+```
+```shell
+dotnet new maui-mvvm-cs -n Login
+```
+
 Views:
 ```shell
 dotnet new maui-view -n CardView -na MyApp.Views
@@ -467,6 +480,17 @@ dotnet new maui-page-cs --name HomePage --namespace MyApp.Views
 ```
 ```shell
 dotnet new maui-page-razor --name HomePage
+```
+
+#### Page with ViewModel:
+
+*Don't suffix anything to the name, it'll be included automatically.*
+
+```shell
+dotnet new maui-mvvm --name Login
+```
+```shell
+dotnet new maui-mvvm-cs --name Login
 ```
 
 Views:

@@ -1,4 +1,5 @@
 ## .NET MAUI Project and Item Templates
+
 This repository is to host the .NET MAUI Project Templates, Item Templates and Code Snippets.
 
 Join me on [**Developer Thoughts**](https://egvijayanand.in/ "Developer Thoughts"), an exclusive blog for .NET MAUI and Blazor, for articles on working with these templates and much more.
@@ -112,20 +113,22 @@ This comes with with the following templates:
 
 Name | Template Name | Type
 :---: | :---: | :---:
-[All-in-One .NET MAUI App](#all-in-one-net-maui-app-project-template) | mauiapp | Project
-[.NET MAUI Class Library](#net-maui-class-library-template) | mauiclasslib | Project
-[Shared Class Library](#shared-class-library-template) | sharedclasslib | Project
-ContentPage (XAML) | maui-page | Item
-ContentPage (C#) | maui-page-cs | Item
-ContentPage (Razor) | maui-page-razor | Item
-ContentView (XAML) | maui-view | Item
-ContentView (C#) | maui-view-cs | Item
-ContentView (Razor) | maui-view-razor | Item
-ResourceDictionary | maui-resdict | Item
-ShellPage (XAML) | maui-shell | Item
-ShellPage (C#) | maui-shell-cs | Item
-ShellPage (Razor) | maui-shell-razor | Item
-[Partial Class (C#)](#partial-class-item-template) | class-cs | Item
+|[All-in-One .NET MAUI App](#all-in-one-net-maui-app-project-template)|mauiapp|Project|
+|[.NET MAUI Class Library](#net-maui-class-library-template)|mauiclasslib|Project|
+|[Shared Class Library](#shared-class-library-template)|sharedclasslib|Project|
+|ContentPage (XAML)|maui-page|Item|
+|ContentPage (C#)|maui-page-cs|Item|
+|ContentPage (Razor)|maui-page-razor|Item|
+|ContentView (XAML)|maui-view|Item|
+|ContentView (C#)|maui-view-cs|Item|
+|ContentView (Razor)|maui-view-razor|Item|
+|ResourceDictionary|maui-resdict|Item|
+|ShellPage (XAML)|maui-shell|Item|
+|ShellPage (C#)|maui-shell-cs|Item|
+|ShellPage (Razor)|maui-shell-razor|Item|
+|[ContentPage (XAML) with ViewModel](#page-with-viewmodel)|maui-mvvm|Item|
+|[ContentPage (C#) with ViewModel](#page-with-viewmodel)|maui-mvvm-cs|Item|
+|[Partial Class (C#)](#partial-class-item-template)|class-cs|Item|
 
 ![All-in-One .NET MAUI App Project Template](images/dotnetmaui-all-in-one-project-template-pinned.png)
 
@@ -460,6 +463,17 @@ dotnet new maui-page-cs -n HomePage -na MyApp.Views
 dotnet new maui-page-razor -n HomePage
 ```
 
+#### Page with ViewModel:
+
+*Don't suffix anything to the name, it'll be included automatically.*
+
+```shell
+dotnet new maui-mvvm -n Login
+```
+```shell
+dotnet new maui-mvvm-cs -n Login
+```
+
 Views:
 ```shell
 dotnet new maui-view -n CardView -na MyApp.Views
@@ -563,6 +577,17 @@ dotnet new maui-page-cs --name HomePage --namespace MyApp.Views
 ```
 ```shell
 dotnet new maui-page-razor --name HomePage
+```
+
+Page with ViewModel:
+
+*Don't suffix anything to the name, it'll be included automatically.*
+
+```shell
+dotnet new maui-mvvm --name Login
+```
+```shell
+dotnet new maui-mvvm-cs --name Login
 ```
 
 Views:
