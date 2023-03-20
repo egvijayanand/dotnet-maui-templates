@@ -1,0 +1,82 @@
+{
+    "$schema": "https://json.schemastore.org/template",
+    "author": "Vijay Anand E G",
+    "defaultName": "Maui1",
+    "classifications": [
+        "MAUI",
+        "Android",
+        "iOS",
+        "macOS",
+        "Windows",
+        "MVVM",
+        "Xaml"
+    ],
+    "identity": "VijayAnand.MauiMvvm",
+    "groupIdentity": "VijayAnand.MauiTemplates.Mvvm.Xaml",
+    "description": "An item template for .NET MAUI ContentPage in XAML and its ViewModel",
+    "name": ".NET MAUI ContentPage (XAML) and ViewModel",
+    "shortName": "maui-mvvm",
+    "sourceName": "Maui.1",
+    "primaryOutputs": [
+        {
+            "path": "Maui.1Page.xaml"
+        },
+        {
+            "path": "Maui.1Page.xaml.cs"
+        },
+        {
+            "path": "Maui.1ViewModel.cs"
+        }
+    ],
+    "tags": {
+        "language": "C#",
+        "type": "item"
+    },
+    "sources": [
+        {
+            "condition": "(SameFolder)",
+            "include": [
+                "**/*"
+            ]
+        },
+        {
+            "condition": "(!SameFolder)",
+            "rename": {
+                "Maui.1Page.xaml": "Views/Maui.1Page.xaml",
+                "Maui.1Page.xaml.cs": "Views/Maui.1Page.xaml.cs",
+                "Maui.1ViewModel.cs": "ViewModels/Maui.1ViewModel.cs"
+            }
+        }
+    ],
+    "symbols": {
+        "namespace": {
+            "type": "bind",
+            "binding": "msbuild:RootNamespace",
+            "replaces": "MyApp.Namespace",
+            "defaultValue": "MyApp.Namespace"
+        },
+        "same-folder": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to create the artifacts in the same folder.",
+            "displayName": "Option to create the artifacts in the same folder"
+        },
+        "SameFolder": {
+            "type": "computed",
+            "value": "(same-folder)"
+        }
+    },
+    "constraints": {
+        "dotnet7-sts": {
+            "type": "sdk-version",
+            "args": [
+                "[7.0,)"
+            ]
+        },
+        "csharp-only": {
+            "type": "project-capability",
+            "args": "CSharp"
+        }
+    }
+}
