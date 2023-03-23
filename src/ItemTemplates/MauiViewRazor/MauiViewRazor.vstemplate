@@ -1,0 +1,15 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+	<TemplateData>
+		<DefaultName>MauiView.razor</DefaultName>
+		<Name>Content View (Razor) (.NET MAUI)</Name>
+		<Description>A view for displaying content using Razor syntax.</Description>
+		<ProjectType>CSharp</ProjectType>
+		<ProjectSubType>MAUI</ProjectSubType>
+		<SortOrder>110</SortOrder>
+		<Icon>__TemplateIcon.ico</Icon>
+	</TemplateData>
+	<TemplateContent>
+		<References/>
+		<ProjectItem TargetFileName="$fileinputname$.razor" ReplaceParameters="true">MauiView.razor</ProjectItem>
+	</TemplateContent>
+</VSTemplate>
