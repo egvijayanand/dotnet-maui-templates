@@ -21,7 +21,7 @@
         {
             "id": "use-maui-core",
             "name": {
-                "text": "Use .NET MAUI _Core (includes MAUI Essentials)"
+                "text": "Use .NET M_AUI Core (includes MAUI Essentials)"
             },
             "isVisible": true,
             "defaultValue": "false"

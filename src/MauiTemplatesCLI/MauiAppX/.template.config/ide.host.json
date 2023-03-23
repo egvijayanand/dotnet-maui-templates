@@ -29,7 +29,7 @@
         {
             "id": "include-compiled-bindings",
             "name": {
-                "text": "Use Com_piledBindings.MAUI."
+                "text": "Use Comp_iledBindings.MAUI."
             },
             "isVisible": true,
             "defaultValue": "false"
@@ -45,7 +45,7 @@
         {
             "id": "include-markup",
             "name": {
-                "text": "Add CommunityToolkit.Maui._Markup NuGet package reference"
+                "text": "Add and configure CommunityToolkit.Maui._Markup NuGet package reference"
             },
             "isVisible": true,
             "defaultValue": "false"
@@ -77,7 +77,7 @@
         {
             "id": "include-foldable",
             "name": {
-                "text": "Add and configure Microsoft.Maui.Controls._Foldable NuGet package reference (.NET 7 or later)"
+                "text": "Add and configure Microsoft.Maui.Controls.Fo_ldable NuGet package reference (.NET 7 or later)"
             },
             "isVisible": true,
             "defaultValue": "false"

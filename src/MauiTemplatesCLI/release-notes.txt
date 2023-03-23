@@ -1,7 +1,11 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
 
-What's new in ver. 3.1.0-preview.9:
------------------------------------
+What's new in ver. 3.1.0:
+-------------------------
+All the preview features have reached stable.
+
+v3.1.0-preview.9:
+
 1. Introduced an item template to generate Page and its ViewModel in a single command, available for both XAML and C#.
 
 The Page will be generated in the Views folder and ViewModel will be generated in the ViewModels folder.

@@ -14,7 +14,7 @@
     "identity": "VijayAnand.MauiMvvm",
     "groupIdentity": "VijayAnand.MauiTemplates.Mvvm.Xaml",
     "description": "An item template for .NET MAUI ContentPage in XAML and its ViewModel",
-    "name": ".NET MAUI ContentPage (XAML) and ViewModel",
+    "name": ".NET MAUI ContentPage and ViewModel",
     "shortName": "maui-mvvm",
     "sourceName": "Maui.1",
     "primaryOutputs": [

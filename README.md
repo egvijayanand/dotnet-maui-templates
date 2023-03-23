@@ -28,7 +28,7 @@ Templates have been updated to support .NET 6/7/8 and is available to install fr
 |Channel|NuGet|VS Marketplace|
 |:---:|:---:|:---:|
 |Stable|[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/?icon=nuget)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/)|[![.NET MAUI Project and Item Templates - VS Marketplace](https://badgen.net/vs-marketplace/v/egvijayanand.maui-templates?icon=visualstudio)](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-templates)|
-|Preview|[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/latest?icon=nuget)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/absoluteLatest)| - |
+<!--|Preview|[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/latest?icon=nuget)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/absoluteLatest)| - |-->
 
 ### For VS2022 users:
 
@@ -126,8 +126,8 @@ Name | Template Name | Type
 |ShellPage (XAML)|maui-shell|Item|
 |ShellPage (C#)|maui-shell-cs|Item|
 |ShellPage (Razor)|maui-shell-razor|Item|
-|[ContentPage (XAML) with ViewModel](#page-with-viewmodel)|maui-mvvm|Item|
-|[ContentPage (C#) with ViewModel](#page-with-viewmodel)|maui-mvvm-cs|Item|
+|[ContentPage with ViewModel](#page-with-viewmodel)|maui-mvvm|Item|
+|[ContentPage with ViewModel (C#)](#page-with-viewmodel)|maui-mvvm-cs|Item|
 |[Partial Class (C#)](#partial-class-item-template)|class-cs|Item|
 
 ![All-in-One .NET MAUI App Project Template](images/dotnetmaui-all-in-one-project-template-pinned.png)

@@ -64,7 +64,7 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to use .NET MAUI Core (includes MAUI Essentials).",
-            "displayName": "Option to use .NET MAUI _Core (includes MAUI Essentials)"
+            "displayName": "Option to use .NET M_AUI Core (includes MAUI Essentials)"
         },
         "use-maui-essentials": {
             "type": "parameter",
