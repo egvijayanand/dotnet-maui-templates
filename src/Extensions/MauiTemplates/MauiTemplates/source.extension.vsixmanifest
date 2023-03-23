@@ -4,7 +4,7 @@
                  xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
         <Identity Id="MauiTemplates.20dca96a-7311-401f-84ed-980478fb319b"
-                  Version="3.0.0.0"
+                  Version="3.1.0.0"
                   Language="en-US"
                   Publisher="Vijay Anand E G"/>
         <DisplayName>.NET MAUI Project and Item Templates</DisplayName>
@@ -15,7 +15,7 @@
         <ReleaseNotes>release-notes.txt</ReleaseNotes>
         <Icon>Resources\Icon.png</Icon>
         <PreviewImage>Resources\Icon.png</PreviewImage>
-        <Tags>MAUI, iOS, Android, macOS, WinUI, Windows, Desktop, Mobile, Blazor, .NET MAUI, Mac Catalyst, Templates, VS2022, Visual Studio, WinUI3, GA, Code Snippets, Unified, All-in-One, Hybrid, Tizen, Stable, .NET 7, Blazor Hybrid, BlazorWebView, C#, Handlers, Maps, MAUI Maps, MVVM, XAML, SR, WinUI, Service Release, .NET 6, Dual Screen, Foldable, Surface Duo, General Availability, Markup, Fluent, C# Markup, Media, Audio, Video, Playback, Streaming, AV, Class, .NET 8</Tags>
+        <Tags>MAUI, iOS, Android, macOS, WinUI, Windows, Desktop, Mobile, Blazor, .NET MAUI, Mac Catalyst, Templates, VS2022, Visual Studio, WinUI3, GA, Code Snippets, Unified, All-in-One, Hybrid, Tizen, Stable, .NET 7, Blazor Hybrid, BlazorWebView, C#, Handlers, Maps, MAUI Maps, MVVM, XAML, SR, WinUI, Service Release, .NET 6, Dual Screen, Foldable, Surface Duo, General Availability, Markup, Fluent, C# Markup, Media, Audio, Video, Playback, Streaming, AV, Class, .NET 8, Razor, Comet, Reactor, Compiled, Bindings, MVU</Tags>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community"
@@ -74,11 +74,6 @@
                Path="ItemTemplates"
                TargetVersion="[17.3, 18.0)"
                d:TargetPath="ItemTemplates\MauiResDict.zip"/>
-        <Asset Type="Microsoft.VisualStudio.ProjectTemplate"
-               d:Source="File"
-               Path="ProjectTemplates"
-               TargetVersion="[17.3, 18.0)"
-               d:TargetPath="ProjectTemplates\MauiAppCS.zip"/>
         <Asset Type="Microsoft.VisualStudio.ItemTemplate"
                d:Source="File"
                Path="ItemTemplates"
@@ -125,5 +120,30 @@
                Path="ItemTemplates"
                TargetVersion="[17.3, 18.0)"
                d:TargetPath="ItemTemplates\PartialClass.zip" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate"
+               d:Source="File"
+               Path="ItemTemplates"
+               TargetVersion="[17.3, 18.0)"
+               d:TargetPath="ItemTemplates\CometPageCS.zip" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate"
+               d:Source="File"
+               Path="ItemTemplates"
+               TargetVersion="[17.3, 18.0)"
+               d:TargetPath="ItemTemplates\MauiPageRazor.zip" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate"
+               d:Source="File"
+               Path="ItemTemplates"
+               TargetVersion="[17.3, 18.0)"
+               d:TargetPath="ItemTemplates\MauiShellCS.zip" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate"
+               d:Source="File"
+               Path="ItemTemplates"
+               TargetVersion="[17.3, 18.0)"
+               d:TargetPath="ItemTemplates\MauiShellRazor.zip" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate"
+               d:Source="File"
+               Path="ItemTemplates"
+               TargetVersion="[17.3, 18.0)"
+               d:TargetPath="ItemTemplates\MauiViewRazor.zip" />
     </Assets>
 </PackageManifest>

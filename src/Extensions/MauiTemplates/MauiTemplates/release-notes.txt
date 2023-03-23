@@ -1,5 +1,13 @@
-What's new in ver. 3.0.0.0:
+What's new in ver. 3.1.0.0:
 ---------------------------
+1. Added support for Markup, Razor Bindings, Comet, Reactor AppModels in the All-in-One .NET MAUI App project template
+
+2. New Item Templates for Comet, Razor Bindings (Page, View and Shell) and Shell (C#)
+
+3. Removed the explicit C# App project template, instead use the .NET MAUI App template with Design Pattern option selected as Markup for the same feature with more options
+
+v3.0.0.0:
+
 Templates updated to support .NET 8 Preview 1.
 
 v2.4.0.0:
