@@ -372,8 +372,8 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to add CommunityToolkit.Maui.Markup NuGet package reference.",
-            "displayName": "Add CommunityToolkit.Maui._Markup NuGet package reference"
+            "description": "Option to add and configure CommunityToolkit.Maui.Markup NuGet package reference.",
+            "displayName": "Add and configure CommunityToolkit.Maui._Markup NuGet package reference"
         },
         "include-mvvm-toolkit": {
             "type": "parameter",

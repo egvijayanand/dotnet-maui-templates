@@ -7,6 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MauiApp._1"
     xmlns:vw="clr-namespace:MauiApp._1.Views"
+    Title="MauiApp._1"
     mc:Ignorable="d">
     <!--
         The overall app visual hierarchy is defined here, along with navigation.

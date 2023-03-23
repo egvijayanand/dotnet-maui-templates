@@ -71,6 +71,13 @@
             MainPage = new MainPage();
 #endif
         }
+
+        protected override Window CreateWindow(IActivationState? activationState)
+        {
+            var window = base.CreateWindow(activationState);
+            window.Title = "MauiApp._1";
+            return window;
+        }
     }
 #endif
 }

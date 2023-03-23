@@ -10,7 +10,7 @@
         "Mac Catalyst",
         "WinUI",
         "Windows",
-        "Shell"
+        "Razor"
     ],
     "identity": "VijayAnand.MauiShellRazor",
     "groupIdentity": "VijayAnand.MauiTemplates.Shell.Razor",

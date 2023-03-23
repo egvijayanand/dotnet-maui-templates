@@ -45,7 +45,7 @@
         {
             "id": "include-markup",
             "name": {
-                "text": "Add CommunityToolkit.Maui._Markup NuGet package reference"
+                "text": "Add and configure CommunityToolkit.Maui._Markup NuGet package reference"
             },
             "isVisible": true,
             "defaultValue": "false"
