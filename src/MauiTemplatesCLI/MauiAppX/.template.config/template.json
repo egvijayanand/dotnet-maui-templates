@@ -359,7 +359,7 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to add CompiledBindings.MAUI NuGet package reference.",
-            "displayName": "Option to add Com_piledBindings.MAUI NuGet package reference"
+            "displayName": "Option to add Comp_iledBindings.MAUI NuGet package reference"
         },
         "include-toolkit": {
             "type": "parameter",
@@ -401,7 +401,7 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to add and configure Microsoft.Maui.Controls.Foldable NuGet package reference (.NET 7 or later).",
-            "displayName": "Add and configure Microsoft.Maui.Controls._Foldable NuGet package reference"
+            "displayName": "Add and configure Microsoft.Maui.Controls.Fo_ldable NuGet package reference"
         },
         "windows-unpackaged": {
             "type": "parameter",

@@ -29,7 +29,7 @@
         {
             "id": "include-forms-markup",
             "name": {
-                "text": "Add Xamarin._CommunityToolkit.Markup NuGet package reference"
+                "text": "Add Xamarin.CommunityToolkit.Ma_rkup NuGet package reference"
             },
             "isVisible": true,
             "defaultValue": "false"

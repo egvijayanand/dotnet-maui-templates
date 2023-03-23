@@ -81,7 +81,7 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to add Xamarin.CommunityToolkit.Markup NuGet package reference.",
-            "displayName": "Add Xamarin._CommunityToolkit.Markup NuGet package reference"
+            "displayName": "Add Xamarin.CommunityToolkit.Ma_rkup NuGet package reference"
         },
         "include-maui-toolkit": {
             "type": "parameter",
