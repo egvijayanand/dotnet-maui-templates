@@ -1,4 +1,8 @@
+#if RazorLib
+namespace MauiApp._1.RazorLib.Data
+#else
 namespace MauiApp._1.Data
+#endif
 {
     public class WeatherForecast
     {

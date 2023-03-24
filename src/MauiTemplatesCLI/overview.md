@@ -195,6 +195,10 @@ MVVM is a delightful and development-friendly design pattern to work with. To su
 
 *Note: Opting for this MVVM option will not have any impact on the App created with Web-based Razor syntax or MVU based Comet.*
 
+While creating a Blazor Hybrid App, an option to abstract the Razor components as a separate Razor class library.
+
+* `-rcl` | `--razor-class-library` - Default is `false`
+
 The target for the Windows platform can be either `Package` (MSIX) or `Unpackaged`. By default, it is set as `Package`, this can be overridden while creating the project by including the below parameter:
 
 * `-wu` | `--windows-unpackaged` - Default is `false`
@@ -324,6 +328,10 @@ Option to use MVVM (Compiled Bindings):
 ```shell
 dotnet new mauiapp -n MyApp -mvvm -icb
 ```
+Option to create Razor class library while creating Blazor Hybrid App:
+```shell
+dotnet new mauiapp -n MyApp -dp Hybrid -rcl
+```
 Option to include NuGet packages:
 ```shell
 dotnet new mauiapp -n MyApp -dp Shell -it -im -imt -ime -inm -if
@@ -443,6 +451,10 @@ dotnet new mauiapp --name MyApp --design-pattern Markup --use-mvvm
 Option to use MVVM (Compiled Bindings):
 ```shell
 dotnet new mauiapp --name MyApp --use-mvvm --include-compiled-bindings
+```
+Option to create Razor class library while creating Blazor Hybrid App:
+```shell
+dotnet new mauiapp --name MyApp --design-pattern Hybrid --razor-class-library
 ```
 Option to include NuGet packages:
 ```shell

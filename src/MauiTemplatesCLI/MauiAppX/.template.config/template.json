@@ -196,6 +196,108 @@
                     ]
                 },
                 {
+                    "condition": "(!Hybrid)",
+                    "exclude": [
+                        "MauiApp.1/_Imports.razor",
+                        "MauiApp.1.RazorLib/MauiApp.1.RazorLib.csproj",
+                        "MauiApp.1.RazorLib/_Imports.razor",
+                        "MauiApp.1.RazorLib.sln"
+                    ]
+                },
+                {
+                    "condition": "(Hybrid && RazorLib)",
+                    "exclude": [
+                        "MauiApp.1.sln"
+                    ],
+                    "rename": {
+                        "Data/WeatherForecast.cs": "MauiApp.1.RazorLib/Data/WeatherForecast.cs",
+                        "Data/WeatherForecastService.cs": "MauiApp.1.RazorLib/Data/WeatherForecastService.cs",
+                        "Pages/Counter.razor": "MauiApp.1.RazorLib/Pages/Counter.razor",
+                        "Pages/FetchData.razor": "MauiApp.1.RazorLib/Pages/FetchData.razor",
+                        "Pages/Index.razor": "MauiApp.1.RazorLib/Pages/Index.razor",
+                        "Shared/MainLayout.razor": "MauiApp.1.RazorLib/Shared/MainLayout.razor",
+                        "Shared/MainLayout.razor.css": "MauiApp.1.RazorLib/Shared/MainLayout.razor.css",
+                        "Shared/NavMenu.razor": "MauiApp.1.RazorLib/Shared/NavMenu.razor",
+                        "Shared/NavMenu.razor.css": "MauiApp.1.RazorLib/Shared/NavMenu.razor.css",
+                        "Shared/SurveyPrompt.razor": "MauiApp.1.RazorLib/Shared/SurveyPrompt.razor",
+                        "App.xaml": "MauiApp.1/App.xaml",
+                        "App.xaml.cs": "MauiApp.1/App.xaml.cs",
+                        "Imports.cs": "MauiApp.1/Imports.cs",
+                        "Main.razor": "MauiApp.1/Main.razor",
+                        "MauiApp.1.csproj": "MauiApp.1/MauiApp.1.csproj",
+                        "MauiProgram.cs": "MauiApp.1/MauiProgram.cs",
+                        "Platforms/Android/Resources/values/colors.xml": "MauiApp.1/Platforms/Android/Resources/values/colors.xml",
+                        "Platforms/Android/AndroidManifest.xml": "MauiApp.1/Platforms/Android/AndroidManifest.xml",
+                        "Platforms/Android/MainActivity.cs": "MauiApp.1/Platforms/Android/MainActivity.cs",
+                        "Platforms/Android/MainApplication.cs": "MauiApp.1/Platforms/Android/MainApplication.cs",
+                        "Platforms/iOS/AppDelegate.cs": "MauiApp.1/Platforms/iOS/AppDelegate.cs",
+                        "Platforms/iOS/Info.plist": "MauiApp.1/Platforms/iOS/Info.plist",
+                        "Platforms/iOS/Program.cs": "MauiApp.1/Platforms/iOS/Program.cs",
+                        "Platforms/MacCatalyst/AppDelegate.cs": "MauiApp.1/Platforms/MacCatalyst/AppDelegate.cs",
+                        "Platforms/MacCatalyst/Info.plist": "MauiApp.1/Platforms/MacCatalyst/Info.plist",
+                        "Platforms/MacCatalyst/Program.cs": "MauiApp.1/Platforms/MacCatalyst/Program.cs",
+                        "Platforms/Tizen/Main.cs": "MauiApp.1/Platforms/Tizen/Main.cs",
+                        "Platforms/Tizen/tizen-manifest.xml": "MauiApp.1/Platforms/Tizen/tizen-manifest.xml",
+                        "Platforms/Windows/app.manifest": "MauiApp.1/Platforms/Windows/app.manifest",
+                        "Platforms/Windows/App.xaml": "MauiApp.1/Platforms/Windows/App.xaml",
+                        "Platforms/Windows/App.xaml.cs": "MauiApp.1/Platforms/Windows/App.xaml.cs",
+                        "Platforms/Windows/Package.appxmanifest": "MauiApp.1/Platforms/Windows/Package.appxmanifest",
+                        "Properties/launchSettings.json": "MauiApp.1/Properties/launchSettings.json",
+                        "Resources/Fonts/OpenSans-Regular.ttf": "MauiApp.1/Resources/Fonts/OpenSans-Regular.ttf",
+                        "Resources/Fonts/OpenSans-SemiBold.ttf": "MauiApp.1/Resources/Fonts/OpenSans-SemiBold.ttf",
+                        "Resources/Images/dotnet_bot.svg": "MauiApp.1/Resources/Images/dotnet_bot.svg",
+                        "Resources/Raw/AboutAssets.txt": "MauiApp.1/Resources/Raw/AboutAssets.txt",
+                        "Resources/appicon.svg": "MauiApp.1/Resources/appicon.svg",
+                        "Resources/appiconfg.svg": "MauiApp.1/Resources/appiconfg.svg",
+                        "Resources/Colors.xaml": "MauiApp.1/Resources/Colors.xaml",
+                        "Resources/Styles.xaml": "MauiApp.1/Resources/Styles.xaml",
+                        "Views/MainPage.xaml": "MauiApp.1/Views/MainPage.xaml",
+                        "Views/MainPage.xaml.cs": "MauiApp.1/Views/MainPage.xaml.cs",
+                        "wwwroot/css/bootstrap/bootstrap.min.css": "MauiApp.1/wwwroot/css/bootstrap/bootstrap.min.css",
+                        "wwwroot/css/bootstrap/bootstrap.min.css.map": "MauiApp.1/wwwroot/css/bootstrap/bootstrap.min.css.map",
+                        "wwwroot/css/font-awesome/css/all.min.css": "MauiApp.1/wwwroot/css/font-awesome/css/all.min.css",
+                        "wwwroot/css/font-awesome/webfonts/fa-brands-400.ttf": "MauiApp.1/wwwroot/css/font-awesome/webfonts/fa-brands-400.ttf",
+                        "wwwroot/css/font-awesome/webfonts/fa-brands-400.woff2": "MauiApp.1/wwwroot/css/font-awesome/webfonts/fa-brands-400.woff2",
+                        "wwwroot/css/font-awesome/webfonts/fa-regular-400.ttf": "MauiApp.1/wwwroot/css/font-awesome/webfonts/fa-regular-400.ttf",
+                        "wwwroot/css/font-awesome/webfonts/fa-regular-400.woff2": "MauiApp.1/wwwroot/css/font-awesome/webfonts/fa-regular-400.woff2",
+                        "wwwroot/css/font-awesome/webfonts/fa-solid-900.ttf": "MauiApp.1/wwwroot/css/font-awesome/webfonts/fa-solid-900.ttf",
+                        "wwwroot/css/font-awesome/webfonts/fa-solid-900.woff2": "MauiApp.1/wwwroot/css/font-awesome/webfonts/fa-solid-900.woff2",
+                        "wwwroot/css/font-awesome/webfonts/fa-v4compatibility.ttf": "MauiApp.1/wwwroot/css/font-awesome/webfonts/fa-v4compatibility.ttf",
+                        "wwwroot/css/font-awesome/webfonts/fa-v4compatibility.woff2": "MauiApp.1/wwwroot/css/font-awesome/webfonts/fa-v4compatibility.woff2",
+                        "wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css": "MauiApp.1/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css",
+                        "wwwroot/css/open-iconic/font/fonts/open-iconic.eot": "MauiApp.1/wwwroot/css/open-iconic/font/fonts/open-iconic.eot",
+                        "wwwroot/css/open-iconic/font/fonts/open-iconic.otf": "MauiApp.1/wwwroot/css/open-iconic/font/fonts/open-iconic.otf",
+                        "wwwroot/css/open-iconic/font/fonts/open-iconic.svg": "MauiApp.1/wwwroot/css/open-iconic/font/fonts/open-iconic.svg",
+                        "wwwroot/css/open-iconic/font/fonts/open-iconic.ttf": "MauiApp.1/wwwroot/css/open-iconic/font/fonts/open-iconic.ttf",
+                        "wwwroot/css/open-iconic/font/fonts/open-iconic.woff": "MauiApp.1/wwwroot/css/open-iconic/font/fonts/open-iconic.woff",
+                        "wwwroot/css/open-iconic/FONT-LICENSE": "MauiApp.1/wwwroot/css/open-iconic/FONT-LICENSE",
+                        "wwwroot/css/open-iconic/ICON-LICENSE": "MauiApp.1/wwwroot/css/open-iconic/ICON-LICENSE",
+                        "wwwroot/css/open-iconic/README.md": "MauiApp.1/wwwroot/css/open-iconic/README.md",
+                        "wwwroot/css/app.css": "MauiApp.1/wwwroot/css/app.css",
+                        "wwwroot/favicon.ico": "MauiApp.1/wwwroot/favicon.ico",
+                        "wwwroot/index.html": "MauiApp.1/wwwroot/index.html",
+                        "MauiApp.1.RazorLib.sln": "MauiApp.1.sln"
+                    }
+                },
+                {
+                    "condition": "(Hybrid && RazorLib && Mvvm)",
+                    "rename": {
+                        "ViewModels/BaseViewModel.cs": "MauiApp.1/ViewModels/BaseViewModel.cs",
+                        "ViewModels/MainViewModel.cs": "MauiApp.1/ViewModels/MainViewModel.cs"
+                    }
+                },
+                {
+                    "condition": "(Hybrid && !RazorLib)",
+                    "exclude": [
+                        "MauiApp.1.RazorLib/MauiApp.1.RazorLib.csproj",
+                        "MauiApp.1.RazorLib/_Imports.razor",
+                        "MauiApp.1.RazorLib.sln"
+                    ],
+                    "rename": {
+                        "MauiApp.1/_Imports.razor": "_Imports.razor"
+                    }
+                },
+                {
                     "condition": "(Plain || Hybrid || CSharp)",
                     "exclude": [
                         "**/Exceptions/*",
@@ -221,6 +323,8 @@
     "preferNameDirectory": true,
     "guids": [
         "E3234856-C63F-46B8-A907-866DE058A7C1",
+        "96D0A57E-E5F3-4E8A-A320-5A6DF01DF74A",
+        "61F7FB11-1E47-470C-91E2-47F8143E1572",
         "81a9fb0a-63f5-4ef6-b38e-0cf88600102a"
     ],
     "symbols": {
@@ -360,6 +464,13 @@
             "defaultValue": "false",
             "description": "Option to add CompiledBindings.MAUI NuGet package reference.",
             "displayName": "Option to add Comp_iledBindings.MAUI NuGet package reference"
+        },
+        "razor-class-library": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to create a Razor class library for the Blazor Hybrid solution.",
+            "displayName": "Option to create a _Razor class library for the Blazor Hybrid solution"
         },
         "include-toolkit": {
             "type": "parameter",
@@ -507,6 +618,10 @@
         "CSharp": {
             "type": "computed",
             "value": "(Markup || Mvu)"
+        },
+        "RazorLib": {
+            "type": "computed",
+            "value": "(razor-class-library)"
         },
         "Xaml": {
             "type": "computed",

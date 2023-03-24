@@ -5,7 +5,11 @@ using BlazorBindings.Maui;
 using CommunityToolkit.Maui;
 #endif
 #if Hybrid
+#if RazorLib
+using MauiApp._1.RazorLib.Data;
+#else
 using MauiApp._1.Data;
+#endif
 #endif
 #if Net7OrLater
 using Microsoft.Extensions.Logging;

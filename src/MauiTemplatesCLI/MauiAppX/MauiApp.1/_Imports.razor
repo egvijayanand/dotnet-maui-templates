@@ -13,6 +13,14 @@
 
 @using MauiApp._1
 @*#if (Hybrid)*@
+@*#if (RazorLib)*@
+@using MauiApp._1.RazorLib.Data
+@using MauiApp._1.RazorLib.Pages
+@using MauiApp._1.RazorLib.Shared
+@*#else*@
+@using MauiApp._1.Data
+@using MauiApp._1.Pages
 @using MauiApp._1.Shared
+@*#endif*@
 @*#endif*@
 @using MauiApp._1.Views

@@ -1,5 +1,7 @@
 ﻿@inherits LayoutComponentBase
+@*#if (!RazorLib)*@
 @inject IAppInfo appInfo
+@*#endif*@
 
 <div class="page">
 	<div class="sidebar">
@@ -23,11 +25,16 @@
 	protected override void OnInitialized()
 	{
 		base.OnInitialized();
+@*#if (RazorLib)*@
+
+		divStyle = "background-color: #f7f7f7;";
+@*#else*@
 
 		divStyle = appInfo.RequestedTheme switch
 		{
 			AppTheme.Dark => "background-color: #1f1f1f;",
 			_ => "background-color: #f7f7f7;"
 		};
+@*#endif*@
 	}
 }
