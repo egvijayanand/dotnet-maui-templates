@@ -28,7 +28,7 @@ Templates have been updated to support .NET 6/7/8 and is available to install fr
 |Channel|NuGet|VS Marketplace|
 |:---:|:---:|:---:|
 |Stable|[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/?icon=nuget)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/)|[![.NET MAUI Project and Item Templates - VS Marketplace](https://badgen.net/vs-marketplace/v/egvijayanand.maui-templates?icon=visualstudio)](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-templates)|
-<!--|Preview|[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/latest?icon=nuget)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/absoluteLatest)| - |-->
+|Preview|[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/latest?icon=nuget)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/absoluteLatest)| - |
 
 ### For VS2022 users:
 
@@ -41,7 +41,6 @@ Extension is made available in the [Visual Studio Marketplace](https://marketpla
 This has Project Templates for:
 
 * .NET MAUI App - An All-in-One .NET MAUI App Project Template - For more details, check out this [article](https://egvijayanand.in/all-in-one-dotnet-maui-app-project-template/ "All-in-One .NET MAUI App Project Template")
-* .NET MAUI App (C#)
 * .NET MAUI Class Library
 * Shared Class Library (Xamarin.Forms and .NET MAUI)
 
@@ -49,27 +48,31 @@ This has Project Templates for:
 
 And has Item Templates for:
 
-* Content Page (.NET MAUI)
-* Content Page (C#) (.NET MAUI)
-* Content Page with ViewModel (.NET MAUI)
-* Content Page (C#) with ViewModel (.NET MAUI)
+* Content Page
+* Content Page (C#)
+* Content Page (Razor)
+* Content Page with ViewModel
+* Content Page (C#) with ViewModel
   - For both the `Page with ViewModel` templates, ensure only the real page name alone is provided as input like `Settings` as the `Page` and `ViewModel` will be suffixed to it like `SettingsPage` and `SettingsViewModel`. And Page will be generated in the `Views` folder and ViewModel will be generated in the `ViewModels` folder.
   - The ViewModels are generated with the base class titled `BaseViewModel` (implementation left to the user).
   - Recommended to add [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm), an officially supported NuGet package, to make it easy to work with MVVM design pattern.
   - This MVVM - Made Easy [Part 1](https://egvijayanand.in/2022/04/22/mvvm-made-easy/) and [Part 2](https://egvijayanand.in/2022/05/09/mvvm-made-easy-with-microsoft-mvvm-toolkit-part-2/) articles can help you to get started with this brand-new NuGet package.
-* Content View (.NET MAUI)
-* Content View (C#) (.NET MAUI)
-* Resource Dictionary (.NET MAUI)
-* Resource Dictionary (XAML only)(.NET MAUI)
-* Shell Page (.NET MAUI)
-* Custom View and Handler (Regular) (.NET MAUI)
+* Content View
+* Content View (C#)
+* Content View (Razor)
+* Resource Dictionary
+* Resource Dictionary (XAML only)
+* Shell Page
+* Shell Page (C#)
+* Custom View and Handler (Regular)
   - Handler definitions generated in the Platforms folder
-* Custom View and Handler (Cond.) (.NET MAUI)
+* Custom View and Handler (Cond.)
   - Handler definitions generated in the same folder in conditional compilation format
-* Custom View and Renderer (Regular) (.NET MAUI)
+* Custom View and Renderer (Regular)
   - Renderer definitions generated in the Platforms folder
-* Custom View and Renderer (Cond.) (.NET MAUI)
+* Custom View and Renderer (Cond.)
   - Renderer definitions generated in the same folder in conditional compilation format
+* Comet Page (C#)
 * Partial Class (C#)
   - Made available in the section titled `Code`
 \
@@ -290,6 +293,10 @@ MVVM is a delightful and development-friendly design pattern to work with. To su
 
 *Note: Opting for this MVVM option will not have any impact on the App created with Web-based Razor syntax or MVU based Comet.*
 
+While creating a Blazor Hybrid App, an option to abstract the Razor components as a separate Razor class library.
+
+* `-rcl` | `--razor-class-library` - Default is `false`
+
 The target for the Windows platform can be either `Package` (MSIX) or `Unpackaged`. By default, it is set as `Package`, this can be overridden while creating the project by including the below parameter:
 
 * `-wu` | `--windows-unpackaged` - Default is `false`
@@ -421,6 +428,10 @@ Option to use MVVM (Compiled Bindings):
 ```shell
 dotnet new mauiapp -n MyApp -mvvm -icb
 ```
+Option to create Razor class library while creating Blazor Hybrid App:
+```shell
+dotnet new mauiapp -n MyApp -dp Hybrid -rcl
+```
 Option to include NuGet packages:
 ```shell
 dotnet new mauiapp -n MyApp -dp Shell -it -im -imt -ime -inm -if
@@ -540,6 +551,10 @@ dotnet new mauiapp --name MyApp --design-pattern Markup --use-mvvm
 Option to use MVVM (Compiled Bindings):
 ```shell
 dotnet new mauiapp --name MyApp --use-mvvm --include-compiled-bindings
+```
+Option to create Razor class library while creating Blazor Hybrid App:
+```shell
+dotnet new mauiapp --name MyApp --design-pattern Hybrid --razor-class-library
 ```
 Option to include NuGet packages:
 ```shell

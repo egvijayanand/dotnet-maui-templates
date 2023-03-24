@@ -1,7 +1,17 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
 
-What's new in ver. 3.1.0:
--------------------------
+What's new in ver. 3.2.0-preview.1:
+-----------------------------------
+While creating a Blazor Hybrid App, an option to abstract the Razor components as a separate Razor class library.
+
+-rcl | --razor-class-library - Default value is false
+
+dotnet new mauiapp -n MyApp -dp Hybrid -rcl
+(or)
+dotnet new mauiapp --name MyApp --design-pattern Hybrid --razor-class-library
+
+v3.1.0:
+
 All the preview features have reached stable.
 
 v3.1.0-preview.9:

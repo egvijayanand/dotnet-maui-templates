@@ -1,5 +1,7 @@
-﻿@inject IAppInfo appInfo
+﻿@*#if (!RazorLib)*@
+@inject IAppInfo appInfo
 
+@*#endif*@
 <div class="@alertStyle">
 	<div class="card-text p-3">
 		<p>
@@ -26,10 +28,14 @@
 
 	protected override void OnInitialized()
 	{
+@*#if (RazorLib)*@
+		alertStyle = "card bg-light text-dark mt-3";
+@*#else*@
 		alertStyle = appInfo.RequestedTheme switch
 		{
 			AppTheme.Dark => "card bg-dark text-white mt-3",
 			_ => "card bg-light text-dark mt-3"
 		};
+@*#endif*@
 	}
 }

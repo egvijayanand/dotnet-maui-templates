@@ -208,6 +208,12 @@
     </ItemGroup>
     <!--#endif-->
 
+    <!--#if (Hybrid && RazorLib)-->
+    <ItemGroup>
+        <ProjectReference Include="..\MauiApp.1.RazorLib\MauiApp.1.RazorLib.csproj" />
+    </ItemGroup>
+    <!--#endif-->
+
     <!--#if (ConditionalCompilation)-->
     <ItemGroup Condition="'$(TargetFramework)' != 'MAUI_TFM'">
         <Compile Remove="**\*.Standard.cs" />

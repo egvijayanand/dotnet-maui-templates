@@ -35,6 +35,14 @@
             "defaultValue": "false"
         },
         {
+            "id": "razor-class-library",
+            "name": {
+                "text": "Create a _Razor class library for the Blazor Hybrid solution."
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
             "id": "include-toolkit",
             "name": {
                 "text": "Add and configure Community_Toolkit.Maui NuGet package reference"

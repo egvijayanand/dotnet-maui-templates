@@ -1,4 +1,8 @@
-﻿<Router AppAssembly="@GetType().Assembly">
+﻿@*#if (RazorLib)*@
+<Router AppAssembly="@GetType().Assembly" AdditionalAssemblies="new[] { typeof(Counter).Assembly }">
+@*#else*@
+<Router AppAssembly="@GetType().Assembly">
+@*#endif*@
 	<Found Context="routeData">
 		<RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
 	</Found>

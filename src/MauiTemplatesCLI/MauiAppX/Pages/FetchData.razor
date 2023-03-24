@@ -1,7 +1,8 @@
 ﻿@page "/fetchdata"
 
-@using MauiApp._1.Data
+@*#if (!RazorLib)*@
 @inject IAppInfo appInfo
+@*#endif*@
 @inject WeatherForecastService ForecastService
 
 <h1>Weather forecast</h1>
@@ -44,12 +45,16 @@ else
 
 	protected override async Task OnInitializedAsync()
 	{
+@*#if (RazorLib)*@
+		tableStyle = "table";
+@*#else*@
 		tableStyle = appInfo.RequestedTheme switch
 		{
 			AppTheme.Dark => "table table-dark",
 			_ => "table"
 		};
 
+@*#endif*@
 		forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
 	}
 }
