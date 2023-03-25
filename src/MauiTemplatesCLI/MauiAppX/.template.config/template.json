@@ -31,8 +31,14 @@
             "source": "./",
             "target": "./",
             "copyOnly": [
+                "**/*.eot",
                 "**/*.svg",
                 "**/*.ttf",
+                "**/*.woff",
+                "**/*.woff2",
+                "**/*.min.css",
+                "**/*.min.css.map",
+                "**/*.min.js",
                 "**/*.txt"
             ],
             "modifiers": [

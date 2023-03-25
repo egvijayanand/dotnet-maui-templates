@@ -193,7 +193,7 @@ MVVM is a delightful and development-friendly design pattern to work with. To su
 * `-mvvm` | `--use-mvvm` - Default is `false`
 * `-icb` | `--include-compiled-bindings` - Default is `false`
 
-*Note: Opting for this MVVM option will not have any impact on the App created with Web-based Razor syntax or MVU based Comet.*
+*Note: Opting for this MVVM option will not have any impact on the App created with Web-based Razor syntax or MVU based Comet/Reactor.*
 
 While creating a Blazor Hybrid App, an option to abstract the Razor components as a separate Razor class library.
 
