@@ -1,7 +1,13 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
 
-What's new in ver. 3.2.0-preview.1:
+What's new in ver. 3.2.0-preview.2:
 -----------------------------------
+1. Fixed the issue #124 - The project node is not closed properly in the solution file while creating a Blazor Hybrid with the RCL option from CLI.
+
+2. Stability improvements that extend the list of copy-only binary files.
+
+v3.2.0-preview.1:
+
 While creating a Blazor Hybrid App, an option to abstract the Razor components as a separate Razor class library.
 
 -rcl | --razor-class-library - Default value is false
