@@ -7,6 +7,11 @@
         {
             Title = "Home";
         }
+
+#if Net8
+        [ObservableProperty]
+        private string _startPath = "/counter";
+#endif
 #elif (Plain || Markup)
         private int count = 0;
         private readonly ISemanticScreenReader _screenReader;
