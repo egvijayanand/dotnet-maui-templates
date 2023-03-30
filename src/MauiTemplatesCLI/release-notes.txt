@@ -1,7 +1,11 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
 
-What's new in ver. 3.2.0-preview.3:
+What's new in ver. 3.2.0-preview.4:
 -----------------------------------
+Conditionally defined supported platforms properties based on the target platform opted-in.
+
+v3.2.0-preview.3:
+
 1. While targeting .NET 8, the StartPath property is set to load a Razor component other than the one defined with the default route address of '/'
 
 2. A change in the navigation menu style for better interop
