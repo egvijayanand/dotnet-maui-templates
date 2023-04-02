@@ -20,6 +20,8 @@ Item templates for the following:
 |ShellPage (Razor)|maui-shell-razor|
 |[ContentPage (XAML) with ViewModel](#page-with-viewmodel)|maui-mvvm|
 |[ContentPage (C#) with ViewModel](#page-with-viewmodel)|maui-mvvm-cs|
+|ContentPage with BlazorWebView (XAML)|maui-bwv|
+|ContentPage with BlazorWebView (C#)|maui-bwv-cs|
 |[Partial Class (C#)](#partial-class-item-template)|class-cs|
 
 All of these templates currently target `.NET MAUI on .NET 6/7 GA and its Service Releases and .NET 8 Previews`.
@@ -365,7 +367,7 @@ dotnet new sharedclasslib -n MyApp.UI -asp
 
 Pages:
 ```shell
-dotnet new maui-page -n LoginPage -na MyApp.Views
+dotnet new maui-page -n HomePage -na MyApp.Views
 ```
 ```shell
 dotnet new maui-page-cs -n HomePage -na MyApp.Views
@@ -385,9 +387,18 @@ dotnet new maui-mvvm -n Login
 dotnet new maui-mvvm-cs -n Login
 ```
 
+ContentPage with BlazorWebView:
+
+```shell
+dotnet new maui-bwv -n HomePage -na MyApp.Views
+```
+```shell
+dotnet new maui-bwv-cs -n HomePage -na MyApp.Views
+```
+
 Views:
 ```shell
-dotnet new maui-view -n CardView -na MyApp.Views
+dotnet new maui-view -n OrderView -na MyApp.Views
 ```
 ```shell
 dotnet new maui-view-cs -n OrderView -na MyApp.Views
@@ -485,7 +496,7 @@ dotnet new sharedclasslib --name MyApp.UI --all-supported-packages
 
 Pages:
 ```shell
-dotnet new maui-page --name LoginPage --namespace MyApp.Views
+dotnet new maui-page --name HomePage --namespace MyApp.Views
 ```
 ```shell
 dotnet new maui-page-cs --name HomePage --namespace MyApp.Views
@@ -505,9 +516,18 @@ dotnet new maui-mvvm --name Login
 dotnet new maui-mvvm-cs --name Login
 ```
 
+ContentPage with BlazorWebView:
+
+```shell
+dotnet new maui-bwv --name HomePage --namespace MyApp.Views
+```
+```shell
+dotnet new maui-bwv-cs --name HomePage --namespace MyApp.Views
+```
+
 Views:
 ```shell
-dotnet new maui-view --name CardView --namespace MyApp.Views
+dotnet new maui-view --name OrderView --namespace MyApp.Views
 ```
 ```shell
 dotnet new maui-view-cs --name OrderView --namespace MyApp.Views

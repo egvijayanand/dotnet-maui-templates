@@ -1,7 +1,23 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
 
-What's new in ver. 3.2.0-preview.4:
+What's new in ver. 3.2.0-preview.5:
 -----------------------------------
+An item template for BlazorWebView in XAML and C#.
+
+Note: While working with .NET 7 or higher SDK, the namespace parameter in short notation needs to be passed as -p:na (i.e., it needs to be prefixed with -p:).
+
+dotnet new maui-bwv -n HomePage -na MyApp.Views
+
+dotnet new maui-bwv-cs -n HomePage -na MyApp.Views
+
+On .NET 7 or later:
+
+dotnet new maui-bwv -n HomePage -p:na MyApp.Views
+
+dotnet new maui-bwv-cs -n HomePage -p:na MyApp.Views
+
+v3.2.0-preview.4:
+
 Conditionally defined supported platforms properties based on the target platform opted-in.
 
 v3.2.0-preview.3:
