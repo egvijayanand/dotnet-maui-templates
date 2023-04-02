@@ -21,7 +21,7 @@
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/egvijayanand/dotnet-maui-templates</RepositoryUrl>
         <PackageTags>MAUI, Mobile, iOS, Android, WinUI3, Mac;Catalyst, macOS, VS;Code, .NET;MAUI, Desktop, Windows, WinUI, GA, Templates, Shell, Class;Library, Visual;Studio;Code, Library, Tizen, MVVM, MVU, Comet, Reactor, CLI, Hybrid, Blazor, Razor; Markup; Compiled; Bindings</PackageTags>
-        <PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)/release-notes.txt"))</PackageReleaseNotes>
+        <PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)\release-notes.txt"))</PackageReleaseNotes>
         <PackageReadmeFile>overview.md</PackageReadmeFile>
         <PackageProjectUrl>https://egvijayanand.in/</PackageProjectUrl>
         <PackageIcon>icon.png</PackageIcon>
@@ -29,7 +29,7 @@
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>
     <ItemGroup>
-        <Content Include="MauiAppX\**\*;MauiClassLib\**\*;SharedClassLib\**\*;MauiPage\**\*;MauiPageCS\**\*;MauiPageRazor\**\*;MauiView\**\*;MauiViewCS\**\*;MauiViewRazor\**\*;MauiResDict\**\*;MauiShell\**\*;MauiShellCS\**\*;MauiShellRazor\**\*;MauiMvvm\**\*;MauiMvvmCS\**\*;MyClass\**\*"
+        <Content Include="MauiAppX\**\*;MauiClassLib\**\*;SharedClassLib\**\*;MauiPage\**\*;MauiPageCS\**\*;MauiPageRazor\**\*;MauiView\**\*;MauiViewCS\**\*;MauiViewRazor\**\*;MauiResDict\**\*;MauiShell\**\*;MauiShellCS\**\*;MauiShellRazor\**\*;MauiMvvm\**\*;MauiMvvmCS\**\*;MauiBlazorWebView\**\*;MauiBlazorWebViewCS\**\*;MyClass\**\*"
                  Exclude="**\bin\**;**\obj\**"/>
         <Compile Remove="**\*"/>
         <None Include="overview.md" Pack="true" PackagePath="\" />

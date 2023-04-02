@@ -1,0 +1,37 @@
+{
+    "$schema": "https://json.schemastore.org/template",
+    "author": "Vijay Anand E G",
+    "defaultName": "MauiPage1",
+    "classifications": [
+        "MAUI",
+        "Android",
+        "iOS",
+        "macOS",
+        "Windows",
+        "Blazor",
+        "Code"
+    ],
+    "identity": "VijayAnand.MauiBlazorWebViewCS",
+    "groupIdentity": "VijayAnand.MauiTemplates.BlazorWebView.Code",
+    "description": "An item template for .NET MAUI ContentPage with BlazorWebView in C#",
+    "name": ".NET MAUI ContentPage with BlazorWebView (C#)",
+    "shortName": "maui-bwv-cs",
+    "sourceName": "MauiBlazorWebView.1",
+    "primaryOutputs": [
+        {
+            "path": "MauiBlazorWebView.1.cs"
+        }
+    ],
+    "tags": {
+        "language": "C#",
+        "type": "item"
+    },
+    "symbols": {
+        "namespace": {
+            "type": "parameter",
+            "replaces": "MyApp.Namespace",
+            "datatype": "text",
+            "description": "namespace for the generated code"
+        }
+    }
+}

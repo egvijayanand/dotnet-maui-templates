@@ -131,6 +131,8 @@ Name | Template Name | Type
 |ShellPage (Razor)|maui-shell-razor|Item|
 |[ContentPage with ViewModel](#page-with-viewmodel)|maui-mvvm|Item|
 |[ContentPage with ViewModel (C#)](#page-with-viewmodel)|maui-mvvm-cs|Item|
+|ContentPage with BlazorWebView (XAML)|maui-bwv|Item|
+|ContentPage with BlazorWebView (C#)|maui-bwv-cs|Item|
 |[Partial Class (C#)](#partial-class-item-template)|class-cs|Item|
 
 ![All-in-One .NET MAUI App Project Template](images/dotnetmaui-all-in-one-project-template-pinned.png)
@@ -465,7 +467,7 @@ dotnet new sharedclasslib -n MyApp.UI -asp
 
 Pages:
 ```shell
-dotnet new maui-page -n LoginPage -na MyApp.Views
+dotnet new maui-page -n HomePage -na MyApp.Views
 ```
 ```shell
 dotnet new maui-page-cs -n HomePage -na MyApp.Views
@@ -485,9 +487,18 @@ dotnet new maui-mvvm -n Login
 dotnet new maui-mvvm-cs -n Login
 ```
 
+ContentPage with BlazorWebView:
+
+```shell
+dotnet new maui-bwv -n HomePage -na MyApp.Views
+```
+```shell
+dotnet new maui-bwv-cs -n HomePage -na MyApp.Views
+```
+
 Views:
 ```shell
-dotnet new maui-view -n CardView -na MyApp.Views
+dotnet new maui-view -n OrderView -na MyApp.Views
 ```
 ```shell
 dotnet new maui-view-cs -n OrderView -na MyApp.Views
@@ -585,7 +596,7 @@ dotnet new sharedclasslib --name MyApp.UI --all-supported-packages
 
 Pages:
 ```shell
-dotnet new maui-page --name LoginPage --namespace MyApp.Views
+dotnet new maui-page --name HomePage --namespace MyApp.Views
 ```
 ```shell
 dotnet new maui-page-cs --name HomePage --namespace MyApp.Views
@@ -605,9 +616,18 @@ dotnet new maui-mvvm --name Login
 dotnet new maui-mvvm-cs --name Login
 ```
 
+ContentPage with BlazorWebView:
+
+```shell
+dotnet new maui-bwv --name HomePage --namespace MyApp.Views
+```
+```shell
+dotnet new maui-bwv-cs --name HomePage --namespace MyApp.Views
+```
+
 Views:
 ```shell
-dotnet new maui-view --name CardView --namespace MyApp.Views
+dotnet new maui-view --name OrderView --namespace MyApp.Views
 ```
 ```shell
 dotnet new maui-view-cs --name OrderView --namespace MyApp.Views

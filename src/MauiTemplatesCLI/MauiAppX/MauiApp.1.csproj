@@ -113,8 +113,12 @@
         <ApplicationTitle>MauiApp.1</ApplicationTitle>
 
         <!-- App Identifier -->
+        <!--#if (!IsWindows)-->
         <ApplicationId>com.companyname.mauiappid</ApplicationId>
+        <!--#endif-->
+        <!--#if (AllPlatforms || IsWindows)-->
         <ApplicationIdGuid>81a9fb0a-63f5-4ef6-b38e-0cf88600102a</ApplicationIdGuid>
+        <!--#endif-->
 
         <!-- Versions -->
         <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
@@ -217,14 +221,14 @@
     <!--#if (PackageRef)-->
     </ItemGroup>
     <!--#endif-->
-
     <!--#if (Hybrid && RazorLib)-->
+
     <ItemGroup>
         <ProjectReference Include="..\MauiApp.1.RazorLib\MauiApp.1.RazorLib.csproj" />
     </ItemGroup>
     <!--#endif-->
-
     <!--#if (ConditionalCompilation)-->
+
     <ItemGroup Condition="'$(TargetFramework)' != 'MAUI_TFM'">
         <Compile Remove="**\*.Standard.cs" />
         <None Include="**\*.Standard.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
