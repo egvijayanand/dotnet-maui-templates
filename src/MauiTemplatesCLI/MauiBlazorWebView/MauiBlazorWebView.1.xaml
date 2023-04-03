@@ -5,12 +5,17 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:local="clr-namespace:MyApp.Namespace"
+    xmlns:local="clr-namespace:MyApp.LocalNamespace"
     mc:Ignorable="d">
     <ContentPage.Content>
         <Grid>
-            <!-- StartPath property is supported on .NET 8 Previews -->
+<!--#if (Net8)-->
+            <BlazorWebView
+                HostPage="wwwroot/index.html"
+                StartPath="/">
+<!--#else-->
             <BlazorWebView HostPage="wwwroot/index.html">
+<!--#endif-->
                 <BlazorWebView.RootComponents>
                     <RootComponent
                         Selector="#app"

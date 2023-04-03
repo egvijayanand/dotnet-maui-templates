@@ -13,9 +13,12 @@ namespace MyApp.Namespace
             // new BlazorWebView().Configure("wwwroot/index.html", ("#app", typeof(Main), null));
             var bwv = new BlazorWebView()
             {
-                // StartPath supported on .NET 8
-                //StartPath = "/",
+#if Net8
+                HostPage = "wwwroot/index.html",
+                StartPath = "/"
+#else
                 HostPage = "wwwroot/index.html"
+#endif
             };
 
             bwv.RootComponents.Add(new RootComponent()

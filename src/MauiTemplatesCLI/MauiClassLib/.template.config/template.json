@@ -253,6 +253,12 @@
                     "exclude": [
                         "MauiClassLib.1.sln"
                     ]
+                },
+                {
+                    "condition": "(no-solution-file)",
+                    "exclude": [
+                        "MauiClassLib.1.code-workspace"
+                    ]
                 }
             ]
         }

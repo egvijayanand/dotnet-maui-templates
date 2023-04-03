@@ -119,12 +119,14 @@
         <!-- Minimum Target OS Version for Windows Platform -->
         <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
     </PropertyGroup>
+    <!--#if (!no-solution-file)-->
 
     <ItemGroup>
         <None Remove="MauiClassLib.1.code-workspace" />
     </ItemGroup>
-
+    <!--#endif-->
     <!--#if (AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage)-->
+
     <ItemGroup>
     <!--#endif-->
         <!--#if (Net7OrLater)-->
@@ -148,8 +150,8 @@
     <!--#if (AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage)-->
     </ItemGroup>
     <!--#endif-->
-
     <!--#if (ConditionalCompilation)-->
+
     <ItemGroup Condition="'$(TargetFramework)' != 'MAUI_TFM'">
         <Compile Remove="**\*.Standard.cs" />
         <None Include="**\*.Standard.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />

@@ -35,6 +35,34 @@
             "replaces": "MyApp.Namespace",
             "datatype": "text",
             "description": "namespace for the generated code"
+        },
+        "rootNamespace": {
+            "type": "bind",
+            "binding": "msbuild:RootNamespace",
+            "replaces": "MyApp.LocalNamespace",
+            "defaultValue": "MyApp.Namespace"
+        },
+        "sdkVersion": {
+            "type": "bind",
+            "binding": "msbuild:NETCoreSdkVersion"
+        },
+        "Net7": {
+            "type": "generated",
+            "generator": "regexMatch",
+            "datatype": "bool",
+            "parameters": {
+                "pattern": "^(7\\.*\\.*-?.*)$",
+                "source": "sdkVersion"
+            }
+        },
+        "Net8": {
+            "type": "generated",
+            "generator": "regexMatch",
+            "datatype": "bool",
+            "parameters": {
+                "pattern": "^(8\\.*\\.*-?.*)$",
+                "source": "sdkVersion"
+            }
         }
     }
 }
