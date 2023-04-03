@@ -1,7 +1,13 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
 
-What's new in ver. 3.2.0-preview.5:
+What's new in ver. 3.2.0-preview.6:
 -----------------------------------
+With support for StartPath property while creating the BlazorWebView item templates on .NET 8.
+
+Note: Restore the project before making use of the item template.
+
+v3.2.0-preview.5:
+
 An item template for BlazorWebView in XAML and C#.
 
 Note: While working with .NET 7 or higher SDK, the namespace parameter in short notation needs to be passed as -p:na (i.e., it needs to be prefixed with -p:).
