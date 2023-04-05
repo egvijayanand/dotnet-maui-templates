@@ -51,6 +51,8 @@ And has Item Templates for:
 * Content Page
 * Content Page (C#)
 * Content Page (Razor)
+* Content Page with BlazorWebView
+* Content Page with BlazorWebView (C#)
 * Content Page with ViewModel
 * Content Page (C#) with ViewModel
   - For both the `Page with ViewModel` templates, ensure only the real page name alone is provided as input like `Settings` as the `Page` and `ViewModel` will be suffixed to it like `SettingsPage` and `SettingsViewModel`. And Page will be generated in the `Views` folder and ViewModel will be generated in the `ViewModels` folder.

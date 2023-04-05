@@ -1,5 +1,13 @@
-What's new in ver. 3.1.0.0:
+What's new in ver. 3.2.0.0:
 ---------------------------
+1. While creating a Blazor Hybrid App, an option to abstract the Razor components as a separate Razor class library
+
+2. While targeting .NET 8, the StartPath property is set to load a Razor component other than the one defined with the default route address of '/'
+
+3. An item template for BlazorWebView in XAML and C#
+
+v3.1.0.0:
+
 1. Added support for Markup, Razor Bindings, Comet, Reactor AppModels in the All-in-One .NET MAUI App project template
 
 2. New Item Templates for Comet, Razor Bindings (Page, View and Shell) and Shell (C#)
