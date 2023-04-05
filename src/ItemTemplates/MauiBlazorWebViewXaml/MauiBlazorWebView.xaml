@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="$rootnamespace$.$safeitemname$"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:local="clr-namespace:$rootnamespace$"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <Grid>
+            <!-- StartPath property is supported on .NET 8 -->
+            <BlazorWebView HostPage="wwwroot/index.html">
+                <BlazorWebView.RootComponents>
+                    <RootComponent
+                        Selector="#app"
+                        ComponentType="{x:Type local:Main}" />
+                </BlazorWebView.RootComponents>
+            </BlazorWebView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
