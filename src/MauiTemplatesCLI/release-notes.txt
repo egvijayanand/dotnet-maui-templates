@@ -1,7 +1,11 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
 
-What's new in ver. 3.2.0-preview.6:
------------------------------------
+What's new in ver. 3.2.0:
+-------------------------
+All the preview features have reached stable.
+
+v3.2.0-preview.6:
+
 With support for StartPath property while creating the BlazorWebView item templates on .NET 8.
 
 Note: Restore the project before making use of the item template.
