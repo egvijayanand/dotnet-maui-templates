@@ -11,8 +11,8 @@ Release Details:
 |Channel|.NET MAUI Version|IDE Version|Release Date|
 |:---:|:---:|:---:|:---:|
 |Stable|.NET 6 SR10 (6.0.552)|VS2022 17.4.x/17.5.x|Tue, Jan 31, 2023|
-|Stable|.NET 7 SR3 (7.0.59)|VS2022 17.4.x/17.5.x|Tue, Jan 31, 2023|
-|Preview|.NET 8 Preview 2 (8.0.0-preview.2.7871)|VS2022 17.6.0 Preview 2.0|Tue, Mar 14, 2023|
+|Stable|.NET 7 SR4 (7.0.81)|VS2022 17.4.x/17.5.x|Tue, Apr 11, 2023|
+|Preview|.NET 8 Preview 3 (8.0.0-preview.3.8149)|VS2022 17.6.0 Preview 3.0|Tue, Apr 11, 2023|
 
 Use the below commands to verify the version installed:
 

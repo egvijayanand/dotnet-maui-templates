@@ -1,7 +1,11 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
 
-What's new in ver. 3.2.0:
+What's new in ver. 3.2.1:
 -------------------------
+Templates updated for .NET 8 Preview 3.
+
+v3.2.0:
+
 All the preview features have reached stable.
 
 v3.2.0-preview.6:
