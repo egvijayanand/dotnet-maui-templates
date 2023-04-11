@@ -184,7 +184,7 @@
         <!--#endif-->
         <!--#if (Net7OrLater)-->
         <!--#if (Net8)-->
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0-preview.2.*" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0-preview.3.*" />
         <!--#else-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
         <!--#endif-->
