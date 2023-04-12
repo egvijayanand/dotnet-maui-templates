@@ -1,5 +1,9 @@
-What's new in ver. 3.2.0.0:
+What's new in ver. 3.2.1.0:
 ---------------------------
+Templates updated to support .NET 8 Preview 3.
+
+v3.2.0.0:
+
 1. While creating a Blazor Hybrid App, an option to abstract the Razor components as a separate Razor class library
 
 2. While targeting .NET 8, the StartPath property is set to load a Razor component other than the one defined with the default route address of '/'
