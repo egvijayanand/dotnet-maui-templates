@@ -1,7 +1,11 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
 
-What's new in ver. 3.2.1:
+What's new in ver. 3.2.2:
 -------------------------
+Conditionally defined supported platforms properties based on the target platform opted-in for .NET MAUI Class Library as well.
+
+v3.2.1:
+
 Templates updated for .NET 8 Preview 3.
 
 v3.2.0:
