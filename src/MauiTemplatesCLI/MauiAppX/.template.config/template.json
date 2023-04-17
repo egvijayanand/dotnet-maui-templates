@@ -322,6 +322,36 @@
                         "Views/SettingsPage.xaml.cs",
                         "ViewModels/SettingsViewModel.cs"
                     ]
+                },
+                {
+                    "condition": "(!(AllPlatforms || IsAndroid))",
+                    "exclude": [
+                        "Platforms/Android/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!(AllPlatforms || IsiOS))",
+                    "exclude": [
+                        "Platforms/iOS/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!(AllPlatforms || IsmacOS))",
+                    "exclude": [
+                        "Platforms/MacCatalyst/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!(AllPlatforms || IsWindows))",
+                    "exclude": [
+                        "Platforms/Windows/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!(AllPlatforms || IsTizen))",
+                    "exclude": [
+                        "Platforms/Tizen/**/*"
+                    ]
                 }
             ]
         }
