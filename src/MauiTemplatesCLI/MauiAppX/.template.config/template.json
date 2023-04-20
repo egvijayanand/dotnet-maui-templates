@@ -77,7 +77,8 @@
                         "Resources/*.xaml"
                     ],
                     "rename": {
-                        "App.razor.cs": "App.cs"
+                        "App.razor.cs": "App.cs",
+                        "MauiApp.1/_Imports.razor": "_Imports.razor"
                     }
                 },
                 {
@@ -204,10 +205,15 @@
                 {
                     "condition": "(!Hybrid)",
                     "exclude": [
-                        "MauiApp.1/_Imports.razor",
                         "MauiApp.1.RazorLib/MauiApp.1.RazorLib.csproj",
                         "MauiApp.1.RazorLib/_Imports.razor",
                         "MauiApp.1.RazorLib.sln"
+                    ]
+                },
+                {
+                    "condition": "(!(Hybrid || Razor))",
+                    "exclude": [
+                        "MauiApp.1/_Imports.razor"
                     ]
                 },
                 {
