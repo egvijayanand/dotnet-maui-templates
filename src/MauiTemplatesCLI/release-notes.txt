@@ -1,7 +1,11 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
 
-What's new in ver. 3.2.3:
+What's new in ver. 3.2.4:
 -------------------------
+Fixed the issue of _Imports.razor file getting excluded while creating a project in the Razor design pattern.
+
+v3.2.3:
+
 Platforms folder filtered out based on the target platform opted-in for .NET MAUI App and Class Library project.
 
 v3.2.2:
