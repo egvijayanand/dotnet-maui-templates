@@ -10,9 +10,9 @@ Release Details:
 
 |Channel|.NET MAUI Version|IDE Version|Release Date|
 |:---:|:---:|:---:|:---:|
-|Stable|.NET 6 SR10 (6.0.552)|VS2022 17.4.x/17.5.x|Tue, Jan 31, 2023|
-|Stable|.NET 7 SR4 (7.0.81)|VS2022 17.4.x/17.5.x|Tue, Apr 11, 2023|
-|Preview|.NET 8 Preview 3 (8.0.0-preview.3.8149)|VS2022 17.6.0 Preview 3.0|Tue, Apr 11, 2023|
+|Stable|.NET 6 SR11 (6.0.553)|VS2022 17.4.x/17.5.x/17.6.x|Tue, Apr 25, 2023|
+|Stable|.NET 7 SR6 (7.0.86)|VS2022 17.4.x/17.5.x/17.6.x|Tue, May 9, 2023|
+|Preview|.NET 8 Preview 4 (8.0.0-preview.4.8333)|VS2022 17.7.0 Preview 1.0|Tue, May 16, 2023|
 
 Use the below commands to verify the version installed:
 
@@ -21,6 +21,26 @@ dotnet --version
 ```
 ```shell
 dotnet workload list
+```
+
+And to install a workload, run the following command:
+
+On Windows, this is to be executed on an `elevated prompt`:
+
+```shell
+dotnet workload install maui
+```
+
+On macOS:
+
+```shell
+sudo dotnet workload install maui
+```
+
+On Linux (Only `Android` workload is supported for now):
+
+```shell
+sudo dotnet workload install maui-android
 ```
 
 Templates have been updated to support .NET 6/7/8 and is available to install from.
