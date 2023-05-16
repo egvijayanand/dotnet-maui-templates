@@ -99,7 +99,9 @@
         <!--#endif-->
 
         <!-- Project Options -->
+        <!--#if (!Comet)-->
         <Nullable>enable</Nullable>
+        <!--#endif-->
         <LangVersion>latest</LangVersion>
         <!--#if (!Mvu)-->
         <ImplicitUsings>enable</ImplicitUsings>
@@ -177,19 +179,29 @@
         <PackageReference Include="Clancey.Comet" Version="0.3.467-beta" />
         <!--#endif-->
         <!--#if (AddFoldablePackage)-->
+        <!--#if (Net8)-->
+        <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="8.0.0-preview.4.*" />
+        <!--#else-->
         <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="7.0.*" />
         <!--#endif-->
+        <!--#endif-->
         <!--#if (AddMapsPackage)-->
+        <!--#if (Net8)-->
+        <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="8.0.0-preview.4.*" />
+        <!--#else-->
         <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.*" />
+        <!--#endif-->
         <!--#endif-->
         <!--#if (Net7OrLater)-->
         <!--#if (Net8)-->
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0-preview.3.*" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0-preview.4.*" />
+        <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.0-preview.4.*" />
+        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.0-preview.4.*" />
         <!--#else-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
         <!--#endif-->
         <!--#if (AddToolkitPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="5.0.0"/>
+        <PackageReference Include="CommunityToolkit.Maui" Version="5.1.0"/>
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.1.0"/>
@@ -206,7 +218,7 @@
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMvvmToolkitPackage || (Mvvm && !Razor))-->
-        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0"/>
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0"/>
         <!--#endif-->
         <!--#if (CompiledBindings)-->
         <PackageReference Include="CompiledBindings.MAUI" Version="1.0.*" />
