@@ -122,6 +122,10 @@
             "type": "computed",
             "value": "(frameworkLower == \"net7.0\" || frameworkLower == \"net8.0\")"
         },
+        "Net8": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net8.0\")"
+        },
         "AddFormsEssentials": {
             "type": "computed",
             "value": "(include-forms-essentials || all-supported-packages)"

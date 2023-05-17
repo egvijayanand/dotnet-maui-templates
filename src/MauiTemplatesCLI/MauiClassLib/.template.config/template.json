@@ -167,6 +167,10 @@
             "type": "computed",
             "value": "(use-razor-sdk)"
         },
+        "UseMaui": {
+            "type": "computed",
+            "value": "(!(use-maui-core || use-maui-essentials))"
+        },
         "UseMauiCore": {
             "type": "computed",
             "value": "(use-maui-core)"
@@ -288,6 +292,12 @@
                     "condition": "(!(AllPlatforms || IsTizen))",
                     "exclude": [
                         "Platforms/Tizen/**/*"
+                    ]
+                },
+                {
+                    "condition": "(UseMauiCore || UseMauiEssentials)",
+                    "exclude": [
+                        "Platforms/**/*"
                     ]
                 }
             ]
