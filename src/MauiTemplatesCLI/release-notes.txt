@@ -1,7 +1,11 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
 
-What's new in ver. 3.3.0:
+What's new in ver. 3.3.1:
 -------------------------
+For library projects on .NET 8, explicit package references for Microsoft.Maui.* NuGet packages.
+
+v3.3.0:
+
 Templates updated for .NET 8 Preview 4.
 
 On .NET 8, explicit package references for Microsoft.Maui.Controls and Microsoft.Maui.Controls.Compatibility NuGet packages.

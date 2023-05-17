@@ -43,11 +43,15 @@
         <PackageReference Include="Xamarin.CommunityToolkit.Markup" Version="2.0.*" />
         <!--#endif-->
     </ItemGroup>
+    <!--#if (Net8 || AddMauiToolkit || AddMauiMarkup)-->
 
-    <!--#if (AddMauiToolkit || AddMauiMarkup)-->
     <!-- .NET MAUI NuGet packages -->
     <ItemGroup Condition="'$(TargetFramework)' == 'MAUI_TFM'">
     <!--#endif-->
+        <!--#if (Net8)-->
+        <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.0-preview.4.*" />
+        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.0-preview.4.*" />
+        <!--#endif-->
         <!--#if (AddMauiToolkit)-->
         <!--#if (Net7OrLater)-->
         <PackageReference Include="CommunityToolkit.Maui" Version="5.1.0"/>
@@ -62,15 +66,16 @@
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.2.*" />
         <!--#endif-->
         <!--#endif-->
-    <!--#if (AddMauiToolkit || AddMauiMarkup)-->
+    <!--#if (Net8 || AddMauiToolkit || AddMauiMarkup)-->
     </ItemGroup>
-    <!--#endif-->
 
+    <!--#endif-->
     <!--#if (AddMvvmToolkit)-->
+
     <!-- Common NuGet packages -->
     <ItemGroup>
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
     </ItemGroup>
-    <!--#endif-->
 
+    <!--#endif-->
 </Project>
