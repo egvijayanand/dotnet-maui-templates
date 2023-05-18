@@ -194,6 +194,9 @@
         <!--#endif-->
         <!--#if (Net7OrLater)-->
         <!--#if (Net8)-->
+        <!--#if (Hybrid || Razor)-->
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="8.0.0-preview.4.*" />
+        <!--#endif-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0-preview.4.*" />
         <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.0-preview.4.*" />
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.0-preview.4.*" />

@@ -63,6 +63,9 @@ global using MauiApp._1.Views;
 #if AddMarkupPackage
 // .NET MAUI Markup
 global using CommunityToolkit.Maui.Markup;
+#if Markup
+global using MC = Microsoft.Maui.Controls;
+#endif
 
 // Static
 global using static CommunityToolkit.Maui.Markup.GridRowsColumns;
