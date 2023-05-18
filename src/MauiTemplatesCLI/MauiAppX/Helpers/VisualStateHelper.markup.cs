@@ -6,9 +6,9 @@ namespace MauiApp._1.Helpers
 {
     public static class VisualStateHelper
     {
-        public static VisualStateGroupList CreateVisualStateGroupList(IEnumerable<VisualStateGroup> visualStateGroups)
+        public static MC.VisualStateGroupList CreateVisualStateGroupList(IEnumerable<MC.VisualStateGroup> visualStateGroups)
         {
-            var visualStateGroupList = new VisualStateGroupList();
+            var visualStateGroupList = new MC.VisualStateGroupList();
 
             foreach (var visualStateGroup in visualStateGroups)
             {
