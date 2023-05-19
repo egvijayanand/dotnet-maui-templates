@@ -1,5 +1,11 @@
-What's new in ver. 3.3.0.0:
+What's new in ver. 3.3.2.0:
 ---------------------------
+1. For library projects on .NET 8, explicit package references for Microsoft.Maui.* NuGet packages
+
+2. Made changes in the source files of Hybrid and Reactor project templates
+
+v3.3.0.0:
+
 1. Templates updated for .NET 8 Preview 4
 
 2. On .NET 8, explicit package references for Microsoft.Maui.Controls and Microsoft.Maui.Controls.Compatibility NuGet packages
