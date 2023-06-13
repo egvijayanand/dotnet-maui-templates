@@ -145,24 +145,24 @@
     <!--#endif-->
         <!--#if (Net8)-->
         <!--#if (UseMauiCore)-->
-        <PackageReference Include="Microsoft.Maui.Core" Version="8.0.0-preview.4.*" />
+        <PackageReference Include="Microsoft.Maui.Core" Version="8.0.0-preview.5.*" />
         <!--#elif (UseMauiEssentials)-->
-        <PackageReference Include="Microsoft.Maui.Essentials" Version="8.0.0-preview.4.*" />
+        <PackageReference Include="Microsoft.Maui.Essentials" Version="8.0.0-preview.5.*" />
         <!--#else-->
-        <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.0-preview.4.*" />
-        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.0-preview.4.*" />
+        <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.0-preview.5.*" />
+        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.0-preview.5.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (Net7OrLater)-->
         <!--#if (AddToolkitPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="5.1.0"/>
+        <PackageReference Include="CommunityToolkit.Maui" Version="5.2.*"/>
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.1.0"/>
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.2.*"/>
         <!--#endif-->
         <!--#else-->
         <!--#if (AddToolkitPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="2.0.0"/>
+        <PackageReference Include="CommunityToolkit.Maui" Version="2.0.*"/>
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.2.*"/>
