@@ -169,7 +169,7 @@
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMvvmToolkitPackage)-->
-        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0"/>
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.*"/>
         <!--#endif-->
     <!--#if (Net8 || AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage)-->
     </ItemGroup>

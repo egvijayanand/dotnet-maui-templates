@@ -12,7 +12,7 @@ Release Details:
 |:---:|:---:|:---:|:---:|
 |Stable|.NET 6 SR11 (6.0.553)|VS2022 17.4.x/17.5.x/17.6.x|Tue, Apr 25, 2023|
 |Stable|.NET 7 SR6 (7.0.86)|VS2022 17.4.x/17.5.x/17.6.x|Tue, May 9, 2023|
-|Preview|.NET 8 Preview 4 (8.0.0-preview.4.8333)|VS2022 17.7.0 Preview 1.0|Tue, May 16, 2023|
+|Preview|.NET 8 Preview 5 (8.0.0-preview.5.8529)|VS2022 17.7.0 Preview 2.0|Tue, Jun 13, 2023|
 
 Use the below commands to verify the version installed:
 
