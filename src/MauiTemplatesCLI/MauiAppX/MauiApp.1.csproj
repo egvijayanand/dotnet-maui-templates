@@ -190,6 +190,9 @@
         <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="8.0.0-preview.5.*" />
         <!--#else-->
         <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.*" />
+        <!--#if (AllPlatforms || IsWindows)-->
+        <PackageReference Include="CommunityToolkit.Maui.Maps" Version="1.0.*" />
+        <!--#endif-->
         <!--#endif-->
         <!--#endif-->
         <!--#if (Net7OrLater)-->
@@ -201,7 +204,7 @@
         <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.0-preview.5.*" />
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.0-preview.5.*" />
         <!--#else-->
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.*" />
         <!--#endif-->
         <!--#if (AddToolkitPackage)-->
         <PackageReference Include="CommunityToolkit.Maui" Version="5.2.*"/>
@@ -221,7 +224,7 @@
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMvvmToolkitPackage || (Mvvm && !Razor))-->
-        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0"/>
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.*"/>
         <!--#endif-->
         <!--#if (CompiledBindings)-->
         <PackageReference Include="CompiledBindings.MAUI" Version="1.0.*" />
