@@ -2,11 +2,11 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 What's new in ver. 3.4.1:
 -------------------------
-Added support for the newly released CommunityToolkit.Maui.Maps NuGet package to support Maps feature on the Windows platform.
+Added support for the newly released CommunityToolkit.Maui.Maps NuGet package to support the Maps feature on the Windows platform.
 
 Opting for this will include the NuGet package and configure it in the .NET MAUI startup in MauiProgram.cs
 
-Update your "Bing Maps API Key" for it work properly, visit https://www.bingmapsportal.com/ to generate one.
+Update your "Bing Maps API Key" for it to work properly, visit https://www.bingmapsportal.com/ to generate one.
 
 Note: For now, this is supported only on .NET 7. Support for .NET 8 Preview in a future release.
 
