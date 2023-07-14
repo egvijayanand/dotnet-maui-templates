@@ -145,12 +145,12 @@
     <!--#endif-->
         <!--#if (Net8)-->
         <!--#if (UseMauiCore)-->
-        <PackageReference Include="Microsoft.Maui.Core" Version="8.0.0-preview.5.*" />
+        <PackageReference Include="Microsoft.Maui.Core" Version="8.0.0-preview.6.*" />
         <!--#elif (UseMauiEssentials)-->
-        <PackageReference Include="Microsoft.Maui.Essentials" Version="8.0.0-preview.5.*" />
+        <PackageReference Include="Microsoft.Maui.Essentials" Version="8.0.0-preview.6.*" />
         <!--#else-->
-        <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.0-preview.5.*" />
-        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.0-preview.5.*" />
+        <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.0-preview.6.*" />
+        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.0-preview.6.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (Net7OrLater)-->
