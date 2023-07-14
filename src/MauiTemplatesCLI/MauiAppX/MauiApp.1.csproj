@@ -180,29 +180,29 @@
         <!--#endif-->
         <!--#if (AddFoldablePackage)-->
         <!--#if (Net8)-->
-        <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="8.0.0-preview.5.*" />
+        <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="8.0.0-preview.6.*" />
         <!--#else-->
         <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="7.0.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMapsPackage)-->
         <!--#if (Net8)-->
-        <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="8.0.0-preview.5.*" />
+        <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="8.0.0-preview.6.*" />
         <!--#else-->
         <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.*" />
+        <!--#endif-->
         <!--#if (AllPlatforms || IsWindows)-->
         <PackageReference Include="CommunityToolkit.Maui.Maps" Version="1.0.*" />
-        <!--#endif-->
         <!--#endif-->
         <!--#endif-->
         <!--#if (Net7OrLater)-->
         <!--#if (Net8)-->
         <!--#if (Hybrid || Razor)-->
-        <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="8.0.0-preview.5.*" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="8.0.0-preview.6.*" />
         <!--#endif-->
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0-preview.5.*" />
-        <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.0-preview.5.*" />
-        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.0-preview.5.*" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0-preview.6.*" />
+        <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.0-preview.6.*" />
+        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.0-preview.6.*" />
         <!--#else-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.*" />
         <!--#endif-->
