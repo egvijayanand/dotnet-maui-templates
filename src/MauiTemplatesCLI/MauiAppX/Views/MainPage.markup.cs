@@ -47,13 +47,11 @@
 #if Reactor
     class MainPageState
     {
-        public string CountText { get; set; } = "Current count: 0";
+        public int Count { get; set; }
     }
 
     class MainPage : Component<MainPageState>
     {
-        int count = 0;
-
         public override VisualNode Render() => new ContentPage()
         {
             new VerticalStackLayout()
@@ -67,7 +65,7 @@
                                                                   .FontSize(18)
                                                                   .Set(MC.SemanticProperties.DescriptionProperty, "Welcome to dot net Multi platform App U I")
                                                                   .Set(MC.SemanticProperties.HeadingLevelProperty, SemanticHeadingLevel.Level1),
-                new Label(State.CountText).HCenter()
+                new Label($"Current count: {State.Count}").HCenter()
                                           .Style(AppStyle("MauiLabel"))
                                           .FontAttributes(MC.FontAttributes.Bold)
                                           .FontSize(18),
@@ -86,9 +84,8 @@
 
         private void IncrementCount()
         {
-            count++;
-            SetState(s => s.CountText = $"Current count: {count}");
-            Services.GetService<ISemanticScreenReader>()?.Announce(State.CountText);
+            SetState(s => s.Count++);
+            Services.GetService<ISemanticScreenReader>()?.Announce($"Current count: {State.Count}");
         }
     }
 #endif
