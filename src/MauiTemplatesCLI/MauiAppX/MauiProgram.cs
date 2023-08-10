@@ -42,7 +42,7 @@ namespace MauiApp._1
                        app.AddResource("Resources/Styles.xaml");
                        app.AddResource("Resources/AppStyles.xaml");
 
-                       app.SetWindowsSpecificAssectDirectory("Assets");
+                       app.SetWindowsSpecificAssetsDirectory("Assets");
                    })
 //-:cnd:noEmit
 #if DEBUG
