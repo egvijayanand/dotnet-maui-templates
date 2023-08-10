@@ -1,7 +1,15 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
 
-What's new in ver. 3.5.0:
+What's new in ver. 3.6.0:
 -------------------------
+Templates updated for .NET 8 Preview 7.
+
+For broader template usage, the .NET MAUI package references are updated to use the $(MauiVersion) variable rather than a fixed version.
+
+First community contribution from @adospace (for Reactor template changes).
+
+v3.5.0:
+
 Templates updated for .NET 8 Preview 6.
 
 CommunityToolkit.Maui.Maps for the Windows platform now work on .NET 8 as well.

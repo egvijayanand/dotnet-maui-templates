@@ -12,7 +12,7 @@ Release Details:
 |:---:|:---:|:---:|:---:|
 |Stable|.NET 6 SR11 (6.0.553)|VS2022 17.4.x/17.5.x/17.6.x|Tue, Apr 25, 2023|
 |Stable|.NET 7 SR7 (7.0.92)|VS2022 17.4.x/17.5.x/17.6.x|Tue, Jul 11, 2023|
-|Preview|.NET 8 Preview 6 (8.0.0-preview.6.8686) <br /> Requires Android SDK Platform 34|VS2022 17.7.0 Preview 3.0|Tue, Jul 11, 2023|
+|Preview|.NET 8 Preview 7 (8.0.0-preview.7.8842) <br /> Requires Android SDK Platform 34|VS2022 17.8.0 Preview 1.0|Tue, Aug 8, 2023|
 
 Use the below commands to verify the version installed:
 

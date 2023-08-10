@@ -49,8 +49,8 @@
     <ItemGroup Condition="'$(TargetFramework)' == 'MAUI_TFM'">
     <!--#endif-->
         <!--#if (Net8)-->
-        <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.0-preview.6.*" />
-        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.0-preview.6.*" />
+        <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#if (AddMauiToolkit)-->
         <!--#if (Net7OrLater)-->
