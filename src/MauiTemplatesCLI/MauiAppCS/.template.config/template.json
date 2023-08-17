@@ -15,7 +15,7 @@
         "WinUI",
         "Windows"
     ],
-    "identity": "VijayAnand.MauiApp",
+    "identity": "VijayAnand.MauiApp.CSharp",
     "groupIdentity": "VijayAnand.MauiTemplates.App",
     "description": "A project for creating a .NET MAUI App for iOS, Android, Mac Catalyst, Tizen, and WinUI.",
     "name": ".NET MAUI App",

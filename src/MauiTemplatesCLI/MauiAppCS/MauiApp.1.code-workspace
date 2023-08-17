@@ -8,7 +8,7 @@
     "extensions": {
         "recommendations": [
             "ms-dotnettools.csharp",
-            "clancey.comet-debug",
+            "ms-dotnettools.dotnet-maui",
             "VisualStudioExptTeam.vscodeintellicode"
         ]
     }

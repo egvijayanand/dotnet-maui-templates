@@ -1,0 +1,342 @@
+{
+    "$schema": "https://json.schemastore.org/template",
+    "author": "Vijay Anand E G",
+    "defaultName": "MauiApp1",
+    "classifications": [
+        "MAUI",
+        "Android",
+        "Blazor",
+        "Desktop",
+        "iOS",
+        "macOS",
+        "Mac Catalyst",
+        "Mobile",
+        "Tizen",
+        "WinUI",
+        "Windows"
+    ],
+    "identity": "VijayAnand.MauiApp.FSharp",
+    "groupIdentity": "VijayAnand.MauiTemplates.App",
+    "description": "A project for creating a .NET MAUI App for iOS, Android, Mac Catalyst, Tizen, and WinUI.",
+    "name": ".NET MAUI App",
+    "shortName": "mauiapp",
+    "sourceName": "MauiApp.1",
+    "tags": {
+        "language": "F#",
+        "type": "project",
+        "vs_parametersToHide": "no-solution-file"
+    },
+    "sources": [
+        {
+            "source": "./",
+            "target": "./",
+            "copyOnly": [
+                "**/*.eot",
+                "**/*.svg",
+                "**/*.ttf",
+                "**/*.woff",
+                "**/*.woff2",
+                "**/*.min.css",
+                "**/*.min.css.map",
+                "**/*.min.js",
+                "**/*.txt"
+            ],
+            "modifiers": [
+                {
+                    "condition": "(no-solution-file || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
+                    "exclude": [
+                        "MauiApp.1.sln"
+                    ]
+                },
+                {
+                    "condition": "(!(AllPlatforms || IsAndroid))",
+                    "exclude": [
+                        "Platforms/Android/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!(AllPlatforms || IsiOS))",
+                    "exclude": [
+                        "Platforms/iOS/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!(AllPlatforms || IsmacOS))",
+                    "exclude": [
+                        "Platforms/MacCatalyst/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!(AllPlatforms || IsWindows))",
+                    "exclude": [
+                        "Platforms/Windows/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!(AllPlatforms || IsTizen))",
+                    "exclude": [
+                        "Platforms/Tizen/**/*"
+                    ]
+                }
+            ]
+        }
+    ],
+    "preferNameDirectory": true,
+    "guids": [
+        "E3234856-C63F-46B8-A907-866DE058A7C1",
+        "96D0A57E-E5F3-4E8A-A320-5A6DF01DF74A",
+        "61F7FB11-1E47-470C-91E2-47F8143E1572",
+        "81a9fb0a-63f5-4ef6-b38e-0cf88600102a"
+    ],
+    "symbols": {
+        "Framework": {
+            "type": "parameter",
+            "datatype": "choice",
+            "description": "Option to choose the application target framework.",
+            "choices": [
+                {
+                    "choice": "net8.0",
+                    "description": "Target .NET 8",
+                    "displayName": ".NET 8 (Preview)"
+                },
+                {
+                    "choice": "net7.0",
+                    "description": "Target .NET 7",
+                    "displayName": ".NET 7 (STS)"
+                },
+                {
+                    "choice": "net6.0",
+                    "description": "Target .NET 6",
+                    "displayName": ".NET 6 (LTS)"
+                }
+            ],
+            "replaces": "MAUI_TFM",
+            "defaultValue": "net7.0"
+        },
+        "application-id": {
+            "type": "parameter",
+            "description": "Overrides the App Identifier of the project",
+            "datatype": "text",
+            "defaultValue": "com.companyname.mauiappid"
+        },
+        "target-platform": {
+            "type": "parameter",
+            "datatype": "choice",
+            "defaultValue": "All",
+            "description": "Option to choose the application target platform.",
+            "allowMultipleValues": true,
+            "choices": [
+                {
+                    "choice": "All",
+                    "description": "Targets all possible .NET MAUI supported platforms."
+                },
+                {
+                    "choice": "Base",
+                    "description": "Targets base framework (.NET 6/7/8)."
+                },
+                {
+                    "choice": "Android",
+                    "description": "Targets Android platform."
+                },
+                {
+                    "choice": "iOS",
+                    "description": "Targets iOS platform."
+                },
+                {
+                    "choice": "macOS",
+                    "description": "Targets macOS platform via Mac Catalyst."
+                },
+                {
+                    "choice": "Windows",
+                    "description": "Targets Windows platform via WinUI 3."
+                },
+                {
+                    "choice": "Tizen",
+                    "description": "Targets Tizen platform."
+                },
+                {
+                    "choice": "Mobile",
+                    "description": "Targets Android and iOS platforms."
+                },
+                {
+                    "choice": "Desktop",
+                    "description": "Targets Windows and macOS platforms."
+                },
+                {
+                    "choice": "Apple",
+                    "description": "Targets iOS and macOS platforms."
+                }
+            ]
+        },
+        "include-toolkit": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add and configure CommunityToolkit.Maui NuGet package reference.",
+            "displayName": "Add and configure Community_Toolkit.Maui NuGet package reference"
+        },
+        "include-markup": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add and configure CommunityToolkit.Maui.Markup NuGet package reference.",
+            "displayName": "Add and configure CommunityToolkit.Maui._Markup NuGet package reference"
+        },
+        "include-mvvm-toolkit": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add CommunityToolkit.Mvvm (aka Microsoft MVVM Toolkit) NuGet package reference.",
+            "displayName": "Add CommunityToolkit.Mvvm (aka Microsoft MV_VM Toolkit) NuGet package reference"
+        },
+        "include-maps": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add and configure Microsoft.Maui.Controls.Maps NuGet package reference (.NET 7 or later).",
+            "displayName": "Add and configure Microsoft.Maui.Controls.M_aps NuGet package reference"
+        },
+        "include-media-element": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add and configure CommunityToolkit.Maui.MediaElement NuGet package reference (.NET 7 or later).",
+            "displayName": "Add and configure CommunityToolkit.Maui.Media_Element NuGet package reference"
+        },
+        "include-foldable": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add and configure Microsoft.Maui.Controls.Foldable NuGet package reference (.NET 7 or later).",
+            "displayName": "Add and configure Microsoft.Maui.Controls.Fo_ldable NuGet package reference"
+        },
+        "no-solution-file": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to skip creating a solution file."
+        },
+        "appIdLower": {
+            "type": "generated",
+            "generator": "casing",
+            "parameters": {
+                "source": "application-id",
+                "toLower": true
+            },
+            "replaces": "com.companyname.mauiappid"
+        },
+        "nameLower": {
+            "type": "generated",
+            "generator": "casing",
+            "parameters": {
+                "source": "name",
+                "toLower": true
+            },
+            "replaces": "mauiappid",
+            "onlyIf": {
+                "after": "appIdLower"
+            }
+        },
+        "targetPlatformLower": {
+            "type": "generated",
+            "generator": "casing",
+            "parameters": {
+                "source": "target-platform",
+                "toLower": true
+            }
+        },
+        "frameworkLower": {
+            "type": "generated",
+            "generator": "casing",
+            "parameters": {
+                "source": "Framework",
+                "toLower": true
+            }
+        },
+        "Net7": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net7.0\")"
+        },
+        "Net8": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net8.0\")"
+        },
+        "Net7OrLater": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net7.0\" || frameworkLower == \"net8.0\")"
+        },
+        "AllPlatforms": {
+            "type": "computed",
+            "value": "(target-platform == \"All\")"
+        },
+        "IsAndroid": {
+            "type": "computed",
+            "value": "(target-platform == \"Android\" || target-platform == \"Mobile\")"
+        },
+        "IsiOS": {
+            "type": "computed",
+            "value": "(target-platform == \"Apple\" || target-platform == \"iOS\" || target-platform == \"Mobile\")"
+        },
+        "IsmacOS": {
+            "type": "computed",
+            "value": "(target-platform == \"Apple\" || target-platform == \"Desktop\" || target-platform == \"macOS\")"
+        },
+        "IsWindows": {
+            "type": "computed",
+            "value": "(target-platform == \"Desktop\" || target-platform == \"Windows\")"
+        },
+        "IsTizen": {
+            "type": "computed",
+            "value": "(target-platform == \"Tizen\")"
+        },
+        "IsBase": {
+            "type": "computed",
+            "value": "(target-platform == \"Base\")"
+        },
+        "FirstLine": {
+            "type": "computed",
+            "value": "(IsAndroid || IsiOS || IsmacOS)"
+        },
+        "MorePlatforms": {
+            "type": "computed",
+            "value": "(IsWindows || IsTizen || IsBase)"
+        },
+        "AddMapsPackage": {
+            "type": "computed",
+            "value": "(Net7OrLater && include-maps)"
+        },
+        "AddMediaPackage": {
+            "type": "computed",
+            "value": "(Net7OrLater && include-media-element)"
+        },
+        "AddFoldablePackage": {
+            "type": "computed",
+            "value": "(Net7OrLater && include-foldable)"
+        },
+        "AddToolkitPackage": {
+            "type": "computed",
+            "value": "(include-toolkit)"
+        },
+        "AddMarkupPackage": {
+            "type": "computed",
+            "value": "(include-markup)"
+        },
+        "AddMvvmToolkitPackage": {
+            "type": "computed",
+            "value": "(include-mvvm-toolkit)"
+        },
+        "PackageRef": {
+            "type": "computed",
+            "value": "(AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage || Net7OrLater)"
+        },
+        "HostIdentifier": {
+            "type": "bind",
+            "binding": "HostIdentifier"
+        }
+    },
+    "primaryOutputs": [
+        {
+            "path": "App.fs"
+        }
+    ]
+}

@@ -1,7 +1,23 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
 
-What's new in ver. 3.6.0:
+What's new in ver. 4.0.0:
 -------------------------
+.NET MAUI App F# project template with Fabulous.
+
+Note: Default language in CLI is C#. Since not all options in C# is supported in F#, refer to Help for more details.
+
+dotnet new mauiapp -h -lang F#
+
+Project targeting .NET 7 (default version):
+
+dotnet new mauiapp -o MyApp -lang F#
+
+Project targeting .NET 8:
+
+dotnet new mauiapp -o MyApp -f net8.0 -lang F#
+
+v3.6.0:
+
 Templates updated for .NET 8 Preview 7.
 
 For broader template usage, the .NET MAUI package references are updated to use the $(MauiVersion) variable rather than a fixed version.

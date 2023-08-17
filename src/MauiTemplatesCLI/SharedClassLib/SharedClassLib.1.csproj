@@ -54,7 +54,7 @@
         <!--#endif-->
         <!--#if (AddMauiToolkit)-->
         <!--#if (Net7OrLater)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="5.2.*"/>
+        <PackageReference Include="CommunityToolkit.Maui" Version="5.3.*"/>
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui" Version="2.0.*"/>
         <!--#endif-->

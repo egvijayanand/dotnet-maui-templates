@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!--#if (UseRazorSdk)-->
+<!--#if (Hybrid || Razor)-->
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 <!--#else-->
 <Project Sdk="Microsoft.NET.Sdk">
@@ -89,25 +89,42 @@
         <TargetFramework>MAUI_TFM</TargetFramework>
         <!--#endif-->
         <!--#endif-->
+        <OutputType Condition="'$(TargetFramework)' != 'MAUI_TFM'">Exe</OutputType>
 
         <!-- .NET MAUI -->
-        <!--#if (UseMauiCore)-->
-        <UseMauiCore>true</UseMauiCore>
-        <!--#elif (UseMauiEssentials)-->
-        <UseMauiEssentials>true</UseMauiEssentials>
-        <!--#if (AllPlatforms || IsWindows)-->
-        <EnableMsixTooling>true</EnableMsixTooling>
-        <!--#endif-->
-        <!--#else-->
         <UseMaui>true</UseMaui>
-        <!--#endif-->
         <SingleProject>true</SingleProject>
+        <!--#if (Hybrid || Razor)-->
+        <EnableDefaultCssItems>false</EnableDefaultCssItems>
+        <!--#endif-->
 
         <!-- Project Options -->
+        <!--#if (!Comet)-->
         <Nullable>enable</Nullable>
+        <!--#endif-->
         <LangVersion>latest</LangVersion>
+        <!--#if (!Mvu)-->
         <ImplicitUsings>enable</ImplicitUsings>
-        <RootNamespace>MauiClassLib._1</RootNamespace>
+        <!--#endif-->
+        <RootNamespace>MauiApp._1</RootNamespace>
+        <!--#if (Unpackaged)-->
+        <WindowsPackageType>None</WindowsPackageType>
+        <!--#endif-->
+
+        <!-- Display name -->
+        <ApplicationTitle>MauiApp.1</ApplicationTitle>
+
+        <!-- App Identifier -->
+        <!--#if (!IsWindows)-->
+        <ApplicationId>com.companyname.mauiappid</ApplicationId>
+        <!--#endif-->
+        <!--#if (AllPlatforms || IsWindows)-->
+        <ApplicationIdGuid>81a9fb0a-63f5-4ef6-b38e-0cf88600102a</ApplicationIdGuid>
+        <!--#endif-->
+
+        <!-- Versions -->
+        <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+        <ApplicationVersion>1</ApplicationVersion>
 
         <!-- Target Platform Options -->
         <!--#if (AllPlatforms || IsiOS)-->
@@ -133,32 +150,70 @@
         <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
         <!--#endif-->
     </PropertyGroup>
-    <!--#if (!no-solution-file)-->
 
     <ItemGroup>
-        <None Remove="MauiClassLib.1.code-workspace" />
+        <!-- App Icon -->
+        <MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#512BD4"/>
+        <!-- Splash Screen -->
+        <MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" BaseSize="128,128"/>
+        <!-- Images -->
+        <MauiImage Include="Resources\Images\*"/>
+        <MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+        <!-- Custom Fonts -->
+        <MauiFont Include="Resources\Fonts\*"/>
+        <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+        <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
     </ItemGroup>
-    <!--#endif-->
-    <!--#if (Net8 || AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage)-->
 
     <ItemGroup>
+        <None Remove="MauiApp.1.code-workspace" />
+    </ItemGroup>
+
+    <!--#if (PackageRef)-->
+    <ItemGroup>
     <!--#endif-->
+        <!--#if (Razor)-->
+        <PackageReference Include="BlazorBindings.Maui" Version="1.0.*" />
+        <!--#endif-->
+        <!--#if (Comet)-->
+        <PackageReference Include="Clancey.Comet" Version="0.3.467-beta" />
+        <!--#endif-->
+        <!--#if (AddFoldablePackage)-->
         <!--#if (Net8)-->
-        <!--#if (UseMauiCore)-->
-        <PackageReference Include="Microsoft.Maui.Core" Version="$(MauiVersion)" />
-        <!--#elif (UseMauiEssentials)-->
-        <PackageReference Include="Microsoft.Maui.Essentials" Version="$(MauiVersion)" />
+        <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="$(MauiVersion)" />
         <!--#else-->
-        <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+        <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="7.0.*" />
+        <!--#endif-->
+        <!--#endif-->
+        <!--#if (AddMapsPackage)-->
+        <!--#if (Net8)-->
+        <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
+        <!--#else-->
+        <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.*" />
+        <!--#endif-->
+        <!--#if (AllPlatforms || IsWindows)-->
+        <PackageReference Include="CommunityToolkit.Maui.Maps" Version="1.0.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (Net7OrLater)-->
+        <!--#if (Net8)-->
+        <!--#if (Hybrid || Razor)-->
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
+        <!--#endif-->
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0-preview.7.*" />
+        <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+        <!--#else-->
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.*" />
+        <!--#endif-->
         <!--#if (AddToolkitPackage)-->
         <PackageReference Include="CommunityToolkit.Maui" Version="5.3.*"/>
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.2.*"/>
+        <!--#endif-->
+        <!--#if (AddMediaPackage)-->
+        <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="2.0.*"/>
         <!--#endif-->
         <!--#else-->
         <!--#if (AddToolkitPackage)-->
@@ -168,10 +223,26 @@
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.2.*"/>
         <!--#endif-->
         <!--#endif-->
-        <!--#if (AddMvvmToolkitPackage)-->
+        <!--#if (AddMvvmToolkitPackage || (Mvvm && !Razor))-->
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.*"/>
         <!--#endif-->
-    <!--#if (Net8 || AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage)-->
+        <!--#if (CompiledBindings)-->
+        <PackageReference Include="CompiledBindings.MAUI" Version="1.0.*" />
+        <!--#endif-->
+        <!--#if (Reactor)-->
+        <PackageReference Include="Reactor.Maui" Version="1.0.*" />
+        <PackageReference Include="Reactor.Maui.Canvas" Version="1.0.*" />
+        <!--#if (AddMapsPackage)-->
+        <PackageReference Include="Reactor.Maui.Maps" Version="1.0.*" />
+        <!--#endif-->
+        <!--#endif-->
+    <!--#if (PackageRef)-->
+    </ItemGroup>
+    <!--#endif-->
+    <!--#if (Hybrid && RazorLib)-->
+
+    <ItemGroup>
+        <ProjectReference Include="..\MauiApp.1.RazorLib\MauiApp.1.RazorLib.csproj" />
     </ItemGroup>
     <!--#endif-->
     <!--#if (ConditionalCompilation)-->
