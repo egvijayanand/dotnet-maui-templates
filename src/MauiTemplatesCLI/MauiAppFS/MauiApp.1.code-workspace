@@ -1,0 +1,15 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {},
+    "extensions": {
+        "recommendations": [
+            "ms-dotnettools.csharp",
+            "ms-dotnettools.dotnet-maui",
+            "VisualStudioExptTeam.vscodeintellicode"
+        ]
+    }
+}

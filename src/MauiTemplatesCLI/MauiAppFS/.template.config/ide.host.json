@@ -1,0 +1,75 @@
+{
+    "$schema": "http://json.schemastore.org/vs-2017.3.host",
+    "icon": "ide/icon.png",
+    "symbolInfo": [
+        {
+            "id": "target-platform",
+            "name": {
+                "text": "Select the Application Target _Platform:"
+            },
+            "isVisible": true,
+            "defaultValue": "All"
+        },
+        {
+            "id": "include-toolkit",
+            "name": {
+                "text": "Add and configure Community_Toolkit.Maui NuGet package reference"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
+            "id": "include-markup",
+            "name": {
+                "text": "Add and configure CommunityToolkit.Maui._Markup NuGet package reference"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
+            "id": "include-mvvm-toolkit",
+            "name": {
+                "text": "Add CommunityToolkit.Mvvm (aka Microsoft MV_VM Toolkit) NuGet package reference"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
+            "id": "include-maps",
+            "name": {
+                "text": "Add and configure Microsoft.Maui.Controls.M_aps NuGet package reference (.NET 7 or later)"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
+            "id": "include-media-element",
+            "name": {
+                "text": "Add and configure CommunityToolkit.Maui.Media_Element NuGet package reference (.NET 7 or later)"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
+            "id": "include-foldable",
+            "name": {
+                "text": "Add and configure Microsoft.Maui.Controls.Fo_ldable NuGet package reference (.NET 7 or later)"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        }
+    ],
+    "unsupportedHosts": [
+        {
+            "id": "vs",
+            "version": "(,17.3)"
+        }
+    ],
+    "requiredComponents": [
+        {
+            "id": "Microsoft.VisualStudio.ComponentGroup.Maui.All",
+            "hostId": "vs",
+            "componentType": "setupComponent"
+        }
+    ]
+}

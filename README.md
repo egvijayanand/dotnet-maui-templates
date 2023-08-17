@@ -165,6 +165,24 @@ Starting with [v2.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/2
 
 And from [v3.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/3.0.0) of the template package, CLI project template `framework` parameter adds `.NET 8` as another option.
 
+And from [v4.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.0.0) of the template package, CLI project template defines a new parameter named `language`:
+
+* Language: (Short notation: `-lang`):
+
+  This can take `C#` / `F#` as its options (with `C#` being the default value, if not specified).
+
+  Examples:
+
+  ```shell
+  dotnet new mauiapp -lang F#
+  ```
+
+  For creating a .NET MAUI App on .NET 8 Preview
+
+  ```shell
+  dotnet new mauiapp -f net8.0 -lang F#
+  ```
+
 * Framework: (Short notation: `-f`)
 
   This can take `net6.0` / `net7.0` / `net8.0` as its options (with `net7.0` being the default value, if not specified).

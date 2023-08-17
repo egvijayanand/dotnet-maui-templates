@@ -60,7 +60,7 @@ namespace MauiApp._1
 #endif
 #if AddMapsPackage
                    .UseMauiMaps()
-#if (Net7OrLater && (AllPlatforms || IsWindows))
+#if (AllPlatforms || IsWindows)
                    .UseMauiCommunityToolkitMaps("<BING_MAPS_API_KEY_HERE>") // To generate a Bing Maps API Key, visit https://www.bingmapsportal.com/
 #endif
 #endif
