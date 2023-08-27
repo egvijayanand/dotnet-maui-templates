@@ -1,7 +1,11 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
 
-What's new in ver. 4.0.0:
+What's new in ver. 4.0.1:
 -------------------------
+Bug fix in F# template.
+
+v4.0.0:
+
 .NET MAUI App F# project template with Fabulous.
 
 Note: Default language in CLI is C#. Since not all options in C# is supported in F#, refer to Help for more details.
