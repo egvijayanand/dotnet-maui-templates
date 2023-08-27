@@ -12,5 +12,6 @@ type Program() =
 module Program =
     [<EntryPoint>]
     let main args =
-        let app = Program()
+        let app = new Program()
         app.Run(args)
+        0
