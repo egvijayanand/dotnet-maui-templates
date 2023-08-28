@@ -1,5 +1,9 @@
-What's new in ver. 4.0.0.0:
+What's new in ver. 4.0.1.0:
 ---------------------------
+Bug fix in F# template.
+
+v4.0.0.0:
+
 .NET MAUI App F# project template with Fabulous.
 
 In the Create a new project window, select Language as F# and Project type as MAUI to locate the template.
