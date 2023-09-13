@@ -1,5 +1,13 @@
-What's new in ver. 4.0.1.0:
+What's new in ver. 4.1.0.0:
 ---------------------------
+1. Templates updated for .NET 8 RC1
+
+2. Project file enhancements
+
+3. The default value for Framework parameter is now updated as net8.0
+
+v4.0.1.0:
+
 Bug fix in F# template.
 
 v4.0.0.0:
