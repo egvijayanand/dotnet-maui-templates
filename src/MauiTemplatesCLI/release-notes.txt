@@ -1,7 +1,15 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
 
-What's new in ver. 4.0.1:
+What's new in ver. 4.1.0:
 -------------------------
+Templates updated for .NET 8 RC1.
+
+Project file enhancements.
+
+The default value for Framework parameter (--framework / -f) is now updated as net8.0
+
+v4.0.1:
+
 Bug fix in F# template.
 
 v4.0.0:

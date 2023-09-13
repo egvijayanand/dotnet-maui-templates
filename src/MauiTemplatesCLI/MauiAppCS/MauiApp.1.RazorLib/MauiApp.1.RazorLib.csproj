@@ -16,7 +16,7 @@
 
     <ItemGroup>
         <!--#if (Net8)-->
-        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.0-preview.7.*" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.0-rc.1.*" />
         <!--#elif (Net7)-->
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.*" />
         <!--#else-->

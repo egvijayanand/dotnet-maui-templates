@@ -8,11 +8,11 @@ We all know that .NET MAUI is an evolution of Xamarin.Forms.
 
 Release Details:
 
-|Channel|.NET MAUI Version|IDE Version|Release Date|
-|:---:|:---:|:---:|:---:|
-|Stable|.NET 6 SR11 (6.0.553)|VS2022 17.4.x/17.5.x/17.6.x|Tue, Apr 25, 2023|
-|Stable|.NET 7 SR7 (7.0.92)|VS2022 17.4.x/17.5.x/17.6.x|Tue, Jul 11, 2023|
-|Preview|.NET 8 Preview 7 (8.0.0-preview.7.8842) <br /> Requires Android SDK Platform 34|VS2022 17.8.0 Preview 1.0|Tue, Aug 8, 2023|
+|Channel|.NET MAUI Version|IDE Version|Release Date|Remarks|
+|:---:|:---:|:---:|:---:|:---:|
+|Stable|.NET 6 SR11 (6.0.553)|VS2022 17.4.x - 17.7.x|Tue, Apr 25, 2023|Out of Support|
+|Stable|.NET 7 SR7 (7.0.92)|VS2022 17.4.x - 17.7.x|Tue, Jul 11, 2023|-|
+|Preview|.NET 8 RC1 (8.0.0-rc.1.9171) <br /> Requires Android SDK Platform 34|VS2022 17.8.0 Preview 1.0|Tue, Sep 12, 2023|Go-Live Support|
 
 Use the below commands to verify the version installed:
 
@@ -180,12 +180,12 @@ And from [v4.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.0.0)
   For creating a .NET MAUI App on .NET 8 Preview
 
   ```shell
-  dotnet new mauiapp -f net8.0 -lang F#
+  dotnet new mauiapp -lang F#
   ```
 
 * Framework: (Short notation: `-f`)
 
-  This can take `net6.0` / `net7.0` / `net8.0` as its options (with `net7.0` being the default value, if not specified).
+  This can take `net6.0` / `net7.0` / `net8.0` as its options (with `net8.0` being the default value, if not specified).
 
   Examples:
 
@@ -193,13 +193,13 @@ And from [v4.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.0.0)
   dotnet new mauiapp -f net6.0
   ```
 
-  Below command can be simplified to `dotnet new mauiapp` as default value of `framework` parameter is `net7.0`
-
   ```shell
   dotnet new mauiapp -f net7.0
   ```
 
   For creating a .NET MAUI App on .NET 8 Preview
+
+  Below command can be simplified to `dotnet new mauiapp` as default value of `framework` parameter is `net8.0`
 
   ```shell
   dotnet new mauiapp -f net8.0
