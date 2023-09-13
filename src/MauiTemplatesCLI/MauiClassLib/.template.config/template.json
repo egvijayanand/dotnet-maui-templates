@@ -50,7 +50,7 @@
                 }
             ],
             "replaces": "MAUI_TFM",
-            "defaultValue": "net7.0"
+            "defaultValue": "net8.0"
         },
         "use-razor-sdk": {
             "type": "parameter",
