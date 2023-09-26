@@ -45,11 +45,29 @@ dotnet new update
 
 Starting with [v2.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/2.0.0) of the template package, to effectively support .NET MAUI on both `.NET 6` and `.NET 7`, CLI project template defines a new parameter named `framework`:
 
-Starting with [v3.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/3.0.0) of the template package, CLI project template `framework` parameter adds `.NET 8` as another option.
+And from [v3.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/3.0.0) of the template package, CLI project template `framework` parameter adds `.NET 8` as another option.
+
+And from [v4.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.0.0) of the template package, CLI project template defines a new parameter named `language`:
+
+* Language: (Short notation: `-lang`):
+
+  This can take `C#` / `F#` as its options (with `C#` being the default value, if not specified).
+
+  Examples:
+
+  ```shell
+  dotnet new mauiapp -lang F# -f net7.0
+  ```
+
+  For creating a .NET MAUI App on .NET 8:
+
+  ```shell
+  dotnet new mauiapp -lang F#
+  ```
 
 * Framework: (Short notation: `-f`)
 
-  This can take `net6.0` / `net7.0` / `net8.0` as its options (with `net7.0` being the default value, if not provided).
+  This can take `net6.0` / `net7.0` / `net8.0` as its options (with `net8.0` being the default value, if not provided).
 
   Examples:
 
@@ -57,13 +75,13 @@ Starting with [v3.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/3
   dotnet new mauiapp -f net6.0
   ```
 
-  Below command can be simplified to `dotnet new mauiapp` as default value of `framework` parameter is `net7.0`
-
   ```shell
   dotnet new mauiapp -f net7.0
   ```
 
-  For creating a .NET MAUI App on .NET 8 Preview:
+  For creating a .NET MAUI App on .NET 8:
+
+  Below command can be simplified to `dotnet new mauiapp` as default value of `framework` parameter is `net8.0`
 
   ```shell
   dotnet new mauiapp -f net8.0

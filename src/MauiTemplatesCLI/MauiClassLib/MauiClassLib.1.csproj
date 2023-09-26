@@ -102,6 +102,9 @@
         <UseMaui>true</UseMaui>
         <!--#endif-->
         <SingleProject>true</SingleProject>
+        <!--#if (Net8 && (AllPlatforms || IsWindows))-->
+        <UseRidGraph>true</UseRidGraph>
+        <!--#endif-->
 
         <!-- Project Options -->
         <Nullable>enable</Nullable>
@@ -149,6 +152,9 @@
         <!--#elif (UseMauiEssentials)-->
         <PackageReference Include="Microsoft.Maui.Essentials" Version="$(MauiVersion)" />
         <!--#else-->
+        <!--#if (UseRazorSdk)-->
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
+        <!--#endif-->
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <!--#endif-->

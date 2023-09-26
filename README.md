@@ -174,10 +174,10 @@ And from [v4.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.0.0)
   Examples:
 
   ```shell
-  dotnet new mauiapp -lang F#
+  dotnet new mauiapp -lang F# -f net7.0
   ```
 
-  For creating a .NET MAUI App on .NET 8 Preview
+  For creating a .NET MAUI App on .NET 8:
 
   ```shell
   dotnet new mauiapp -lang F#
@@ -197,7 +197,7 @@ And from [v4.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.0.0)
   dotnet new mauiapp -f net7.0
   ```
 
-  For creating a .NET MAUI App on .NET 8 Preview
+  For creating a .NET MAUI App on .NET 8:
 
   Below command can be simplified to `dotnet new mauiapp` as default value of `framework` parameter is `net8.0`
 
