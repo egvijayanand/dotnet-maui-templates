@@ -1,7 +1,11 @@
-Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on .NET MAUI and Blazor.
+Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
 
-What's new in ver. 4.1.0:
+What's new in ver. 4.1.1:
 -------------------------
+Updated the .NET MAUI Class Library project file.
+
+v4.1.0:
+
 Templates updated for .NET 8 RC1.
 
 Project file enhancements.
