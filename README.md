@@ -289,7 +289,7 @@ For existing projects, add the below block of code in the project file (.csproj)
 
 #### All-in-One .NET MAUI **App** Project Template:
 
-This takes two additional parameters to define the application design pattern and target platform respectively:
+This takes two additional parameters to define the application design pattern and target platform respectively. Not all options are supported in the F# template. For now, only Plain and Hybrid option is available.
 
 * `-dp` | `--design-pattern`
 

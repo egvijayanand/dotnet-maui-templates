@@ -104,6 +104,13 @@
             "description": "Option to add CommunityToolkit.Mvvm (aka Microsoft MVVM Toolkit) NuGet package reference.",
             "displayName": "Add CommunityToolkit.Mvvm (aka Microsoft MV_VM Toolkit) NuGet package reference"
         },
+        "include-shared-toolkit": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add VijayAnand.Toolkit.Markup NuGet package reference.",
+            "displayName": "Add VijayAnand.Toolkit.Markup NuGet package reference"
+        },
         "no-solution-file": {
             "type": "parameter",
             "datatype": "bool",
@@ -117,6 +124,14 @@
                 "source": "Framework",
                 "toLower": true
             }
+        },
+        "Net6": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net6.0\")"
+        },
+        "Net7": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net7.0\")"
         },
         "Net7OrLater": {
             "type": "computed",
@@ -149,6 +164,10 @@
         "AddMvvmToolkit": {
             "type": "computed",
             "value": "(include-mvvm-toolkit || all-supported-packages)"
+        },
+        "AddSharedToolkit": {
+            "type": "computed",
+            "value": "(include-shared-toolkit || all-supported-packages)"
         },
         "HostIdentifier": {
             "type": "bind",

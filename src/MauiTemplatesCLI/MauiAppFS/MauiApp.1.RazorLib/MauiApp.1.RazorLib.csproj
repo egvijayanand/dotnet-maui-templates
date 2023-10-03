@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>MAUI_TFM</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>MauiApp._1.RazorLib</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--#if (Net8)-->
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.0-rc.1.*" />
+    <!--#elif (Net7)-->
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.*" />
+    <!--#else-->
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.*" />
+    <!--#endif-->
+  </ItemGroup>
+
+</Project>

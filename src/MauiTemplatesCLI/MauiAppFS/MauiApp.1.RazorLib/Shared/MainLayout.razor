@@ -1,0 +1,34 @@
+﻿@inherits LayoutComponentBase
+@* @inject IAppInfo appInfo *@
+
+<div class="page">
+	<div class="sidebar">
+		<NavMenu />
+	</div>
+
+	<main>
+		<div class="top-row px-4" style="@divStyle">
+			<a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+		</div>
+
+		<article class="content px-4">
+			@Body
+		</article>
+	</main>
+</div>
+
+@code {
+	private string? divStyle;
+
+	protected override void OnInitialized()
+	{
+		base.OnInitialized();
+
+		divStyle = "background-color: #f7f7f7;";
+		/*divStyle = appInfo.RequestedTheme switch
+		{
+			AppTheme.Dark => "background-color: #1f1f1f;",
+			_ => "background-color: #f7f7f7;"
+		};*/
+	}
+}

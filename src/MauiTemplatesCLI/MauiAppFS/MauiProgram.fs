@@ -23,6 +23,9 @@ open CommunityToolkit.Maui.Maps
 open Fabulous.Maui.MediaElement
 #endif
 open MauiApp._1.Extensions
+#if Hybrid
+open MauiApp._1.RazorLib.Data
+#endif
 
 type MauiProgram =
     static member CreateMauiApp() =
@@ -47,6 +50,9 @@ type MauiProgram =
 #if AddMediaPackage
             .UseFabulousMediaElement()
 #endif
+#if Hybrid
+            .ConfigureBlazorWebView()
+#endif
             .ConfigureFonts(fun fonts ->
                 fonts
                     .AddFont("OpenSans-Regular.ttf", "OpenSansRegular")
@@ -54,7 +60,16 @@ type MauiProgram =
                 |> ignore)
             .ConfigureServices(fun services ->
                 services
+#if Hybrid
+                    .AddSingleton<WeatherForecastService>()
+//-:cnd:noEmit
+#if DEBUG
+                    .AddBlazorWebViewDeveloperTools()
+#endif
+//+:cnd:noEmit
+#else
                     .AddSingleton(SemanticScreenReader.Default)
+#endif
                 |> ignore)
 //-:cnd:noEmit
 #if DEBUG
