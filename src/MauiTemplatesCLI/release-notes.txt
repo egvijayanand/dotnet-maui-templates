@@ -1,7 +1,11 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
 
-What's new in ver. 4.2.0:
+What's new in ver. 4.2.1:
 -------------------------
+Defect fix in solution file.
+
+v4.2.0:
+
 Support for Blazor Hybrid in F# project template. Added the design-pattern parameter for this.
 
 This takes two options, Plain and Hybrid. The default value being Plain.
