@@ -207,10 +207,10 @@
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.*" Condition="'$(Configuration)' == 'Debug'" />
         <!--#endif-->
         <!--#if (AddToolkitPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="5.3.*"/>
+        <PackageReference Include="CommunityToolkit.Maui" Version="6.*"/>
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.2.*"/>
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.*"/>
         <!--#endif-->
         <!--#if (AddMediaPackage)-->
         <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="2.0.*"/>
@@ -224,7 +224,7 @@
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMvvmToolkitPackage || (Mvvm && !Razor))-->
-        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.*"/>
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*"/>
         <!--#endif-->
         <!--#if (CompiledBindings)-->
         <PackageReference Include="CompiledBindings.MAUI" Version="1.0.*" />

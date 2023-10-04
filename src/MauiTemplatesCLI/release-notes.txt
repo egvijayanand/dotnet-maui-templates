@@ -1,7 +1,29 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
 
-What's new in ver. 4.1.1:
+What's new in ver. 4.2.0:
 -------------------------
+Support for Blazor Hybrid in F# project template. Added the design-pattern parameter for this.
+
+This takes two options, Plain and Hybrid. The default value being Plain.
+
+Note: RCL project in the F# template is C# based as Razor compilation is not working on F# as expected.
+
+The first command creates a Plain app whereas the second one creates a Hybrid app.
+
+dotnet new mauiapp -o MyApp -lang F#
+
+dotnet new mauiapp -o HybridApp -dp Hybrid -lang F#
+
+To create project targeting .NET 7, include the Framework parameter -f net7.0
+
+Option for file-scoped namespace in Partial Class C# template.
+
+Option to include reference Shared Toolkit while creating the Shared Class Library project.
+
+.NET MAUI Community Toolkit package versions bumped to their latest versions.
+
+v4.1.1:
+
 Updated the .NET MAUI Class Library project file.
 
 v4.1.0:

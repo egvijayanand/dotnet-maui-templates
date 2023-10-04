@@ -1,5 +1,10 @@
-﻿namespace MyApp.Namespace
+﻿#if IsFileScoped
+namespace MyApp.Namespace;
+
+#else
+namespace MyApp.Namespace
 {
+#endif
 #if IsInternal
 #if IsPartial
 #if IsAbstract
@@ -101,4 +106,6 @@
             
         }
     }
+#if (!IsFileScoped)
 }
+#endif

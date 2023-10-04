@@ -24,7 +24,7 @@ Item templates for the following:
 |ContentPage with BlazorWebView (C#)|maui-bwv-cs|
 |[Partial Class (C#)](#partial-class-item-template)|class-cs|
 
-All of these templates currently target `.NET MAUI on .NET 6/7 GA and its Service Releases and .NET 8 Previews`.
+All of these templates currently target `.NET MAUI on .NET 6/7 GA and its Service Releases and .NET 8 RC`.
 
 Install the template package from NuGet with the below command.
 
@@ -171,7 +171,7 @@ For existing projects, add the below block of code in the project file (.csproj)
 
 #### All-in-One .NET MAUI App Project Template:
 
-This takes two additional parameters to define the application design pattern and target platform respectively:
+This takes two additional parameters to define the application design pattern and target platform respectively. Not all options are supported in the F# template. For now, only Plain and Hybrid option is available.
 
 * `-dp` | `--design-pattern`
 

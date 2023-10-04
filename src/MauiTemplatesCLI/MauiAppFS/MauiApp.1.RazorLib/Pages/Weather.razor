@@ -1,15 +1,13 @@
-﻿@page "/fetchdata"
+﻿@page "/weather"
 
-@*#if (!RazorLib)*@
-@inject IAppInfo appInfo
-@*#endif*@
+@* @inject IAppInfo appInfo *@
 @inject WeatherForecastService ForecastService
 
 <h1>Weather forecast</h1>
 
 <p>This component demonstrates fetching data from a service.</p>
 
-@if (forecasts == null)
+@if (forecasts is null)
 {
 	<p><em>Loading...</em></p>
 }
@@ -45,16 +43,13 @@ else
 
 	protected override async Task OnInitializedAsync()
 	{
-@*#if (RazorLib)*@
 		tableStyle = "table";
-@*#else*@
-		tableStyle = appInfo.RequestedTheme switch
+		/*tableStyle = appInfo.RequestedTheme switch
 		{
 			AppTheme.Dark => "table table-dark",
 			_ => "table"
-		};
+		};*/
 
-@*#endif*@
 		forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
 	}
 }

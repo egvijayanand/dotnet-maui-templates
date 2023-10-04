@@ -57,6 +57,14 @@
             },
             "isVisible": true,
             "defaultValue": "false"
+        },
+        {
+            "id": "include-shared-toolkit",
+            "name": {
+                "text": "Add VijayAnand.Toolkit.Markup NuGet package reference"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
         }
     ],
     "unsupportedHosts": [

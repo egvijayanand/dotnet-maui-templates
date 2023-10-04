@@ -2,14 +2,34 @@ namespace MauiApp._1
 
 open Fabulous
 open Fabulous.Maui
+#if Hybrid
+open Fabulous.Maui.Blazor
+#endif
 open Microsoft.Maui
 open Microsoft.Maui.Graphics
 open Microsoft.Maui.Accessibility
 open Microsoft.Maui.Primitives
+#if Hybrid
+open MauiApp._1.RazorLib
+#endif
 
 open type Fabulous.Maui.View
 
 module App =
+#if Hybrid
+    let view _ =
+        Application(
+            ContentPage(
+#if Net8
+                BlazorWebView("wwwroot/index.html", "/counter", [ new FabRootComponent( Selector = "#app", ComponentType = typeof<Main> ) ])
+#else
+                BlazorWebView("wwwroot/index.html", [ new FabRootComponent( Selector = "#app", ComponentType = typeof<Main> ) ])
+#endif
+            )
+        )
+
+    let program = Program.stateless view
+#else
     type Model = { Count: int }
 
     type Msg = | Clicked
@@ -27,7 +47,7 @@ module App =
 
     let update msg model =
         match msg with
-        | Clicked -> { model with Count = model.Count + 1 }, [ SemanticAnnounce $"Current count: {model.Count}" ]
+        | Clicked -> { Count = model.Count + 1 }, [ SemanticAnnounce $"Current count: {model.Count}" ]
 
     let view model =
         Application(
@@ -64,3 +84,4 @@ module App =
         )
 
     let program = Program.statefulWithCmdMsg init update view mapCmd
+#endif

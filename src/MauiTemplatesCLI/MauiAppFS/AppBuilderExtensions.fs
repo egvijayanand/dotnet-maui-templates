@@ -13,6 +13,13 @@ type AppBuilderExtensions =
         configureDelegate.Invoke(builder.Services)
         builder
 
+#if Hybrid
+    [<Extension>]
+    static member inline ConfigureBlazorWebView(builder: MauiAppBuilder) =
+        builder.Services.AddMauiBlazorWebView() |> ignore
+        builder
+
+#endif
     [<Extension>]
     static member inline AddDebugLog(builder: MauiAppBuilder) =
         builder.Logging.AddDebug() |> ignore

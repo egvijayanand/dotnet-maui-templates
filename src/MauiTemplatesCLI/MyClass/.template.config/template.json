@@ -85,6 +85,13 @@
             "description": "Option to create the class as static.",
             "displayName": "Option to create the class as static"
         },
+        "file-scoped-namespace": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to use file-scoped namespace.",
+            "displayName": "Option to use file-scoped namespace"
+        },
         "IsPublic": {
             "type": "computed",
             "value": "(access-modifier == \"public\")"
@@ -116,6 +123,10 @@
         "IsStatic": {
             "type": "computed",
             "value": "(static)"
+        },
+        "IsFileScoped": {
+            "type": "computed",
+            "value": "(file-scoped-namespace)"
         }
     },
     "constraints": {

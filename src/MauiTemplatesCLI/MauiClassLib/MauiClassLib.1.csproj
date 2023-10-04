@@ -112,7 +112,9 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>MauiClassLib._1</RootNamespace>
 
+        <!--#if (AllPlatforms || IsAndroid || IsiOS || IsmacOS || IsTizen || IsWindows)-->
         <!-- Target Platform Options -->
+        <!--#endif-->
         <!--#if (AllPlatforms || IsiOS)-->
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
         <!--#endif-->
@@ -120,7 +122,7 @@
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
         <!--#endif-->
         <!--#if (AllPlatforms || IsAndroid)-->
-        <!--#if (Hybrid)-->
+        <!--#if (UseRazorSdk)-->
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">24.0</SupportedOSPlatformVersion>
         <!--#else-->
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
@@ -136,14 +138,14 @@
         <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
         <!--#endif-->
     </PropertyGroup>
-    <!--#if (!no-solution-file)-->
 
+    <!--#if (!no-solution-file)-->
     <ItemGroup>
         <None Remove="MauiClassLib.1.code-workspace" />
     </ItemGroup>
+
     <!--#endif-->
     <!--#if (Net8 || AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage)-->
-
     <ItemGroup>
     <!--#endif-->
         <!--#if (Net8)-->
@@ -161,10 +163,10 @@
         <!--#endif-->
         <!--#if (Net7OrLater)-->
         <!--#if (AddToolkitPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="5.3.*"/>
+        <PackageReference Include="CommunityToolkit.Maui" Version="6.*"/>
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.2.*"/>
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.*"/>
         <!--#endif-->
         <!--#else-->
         <!--#if (AddToolkitPackage)-->
@@ -175,13 +177,13 @@
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMvvmToolkitPackage)-->
-        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.*"/>
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*"/>
         <!--#endif-->
     <!--#if (Net8 || AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage)-->
     </ItemGroup>
+
     <!--#endif-->
     <!--#if (ConditionalCompilation)-->
-
     <ItemGroup Condition="'$(TargetFramework)' != 'MAUI_TFM'">
         <Compile Remove="**\*.Standard.cs" />
         <None Include="**\*.Standard.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
@@ -221,5 +223,6 @@
         <Compile Remove="**\Windows\**\*.cs" />
         <None Include="**\Windows\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
     </ItemGroup>
+
     <!--#endif-->
 </Project>
