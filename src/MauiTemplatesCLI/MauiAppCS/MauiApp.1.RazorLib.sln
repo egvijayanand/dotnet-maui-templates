@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiApp.1", "MauiApp.1\MauiApp.1.csproj", "{E3234856-C63F-46B8-A907-866DE058A7C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiApp.1.RazorLib", "MauiApp.1.RazorLib\MauiApp.1.RazorLib.csproj", "{96D0A57E-E5F3-4E8A-A320-5A6DF01DF74A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiApp.1.RazorLib", "MauiApp.1.RazorLib\MauiApp.1.RazorLib.csproj", "{96D0A57E-E5F3-4E8A-A320-5A6DF01DF74A}"
 EndProject
 Global
     GlobalSection(SolutionConfigurationPlatforms) = preSolution
