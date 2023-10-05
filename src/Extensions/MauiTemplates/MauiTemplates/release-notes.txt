@@ -1,5 +1,17 @@
-What's new in ver. 4.1.0.0:
+What's new in ver. 4.2.1.0:
 ---------------------------
+1. Support for Blazor Hybrid in F# project template. Added the Application Design parameter for this.
+
+1.1 This takes two options, Plain and Hybrid. The default value is Plain.
+
+Note: The RCL project in the F# template is C# based as Razor compilation is not working with F# as expected.
+
+2. Option to include reference Shared Toolkit while creating the Shared Class Library project.
+
+3. .NET MAUI Community Toolkit package versions bumped to their latest versions.
+
+v4.1.0.0:
+
 1. Templates updated for .NET 8 RC1
 
 2. Project file enhancements
