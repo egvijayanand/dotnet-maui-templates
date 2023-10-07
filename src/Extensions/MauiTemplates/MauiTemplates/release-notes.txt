@@ -1,5 +1,9 @@
-What's new in ver. 4.2.1.0:
+What's new in ver. 4.2.2.0:
 ---------------------------
+Reliability enhancement.
+
+v4.2.1.0:
+
 1. Support for Blazor Hybrid in F# project template. Added the Application Design parameter for this.
 
 1.1 This takes two options, Plain and Hybrid. The default value is Plain.
