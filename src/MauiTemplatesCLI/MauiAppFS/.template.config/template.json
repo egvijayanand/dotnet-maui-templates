@@ -23,7 +23,7 @@
     "sourceName": "MauiApp.1",
     "tags": {
         "language": "F#",
-        "type": "project",
+        "type": "solution",
         "vs_parametersToHide": "no-solution-file"
     },
     "sources": [
