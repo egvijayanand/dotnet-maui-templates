@@ -44,11 +44,11 @@
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <!--#if (Net8)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="3.0.0-preview.1" />
+        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="3.0.0-*" />
         <!--#elif (Net7)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="2.1.0-preview.1" />
+        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="2.1.0-*" />
         <!--#else-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="1.1.0-preview.1" />
+        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="1.1.0-*" />
         <!--#endif-->
         <!--#endif-->
     </ItemGroup>
@@ -77,11 +77,11 @@
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <!--#if (Net8)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="3.0.0-preview.1" />
+        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="3.0.0-*" />
         <!--#elif (Net7)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="2.1.0-preview.1" />
+        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="2.1.0-*" />
         <!--#else-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="1.1.0-preview.1" />
+        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="1.1.0-*" />
         <!--#endif-->
         <!--#endif-->
     <!--#if (Net8 || AddMauiToolkit || AddMauiMarkup)-->
