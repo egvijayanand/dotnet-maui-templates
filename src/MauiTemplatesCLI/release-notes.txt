@@ -1,7 +1,11 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
 
-What's new in ver. 4.2.2:
+What's new in ver. 4.3.0:
 -------------------------
+Templates updated for .NET 8 RC2.
+
+v4.2.2:
+
 Reliability enhancement.
 
 v4.2.1:

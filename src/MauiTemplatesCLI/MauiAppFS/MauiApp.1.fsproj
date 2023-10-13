@@ -245,7 +245,7 @@
   <!--#endif-->
   <!--#if (Net7OrLater)-->
   <!--#if (Net8)-->
-    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0-rc.1.*" Condition="'$(Configuration)' == 'Debug'" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0-*" Condition="'$(Configuration)' == 'Debug'" />
   <!--#if (Hybrid)-->
     <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
   <!--#endif-->
