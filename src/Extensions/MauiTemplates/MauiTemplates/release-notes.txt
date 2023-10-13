@@ -1,5 +1,9 @@
-What's new in ver. 4.2.2.0:
+What's new in ver. 4.3.0.0:
 ---------------------------
+1. Templates updated for .NET 8 RC2
+
+v4.2.2.0:
+
 Reliability enhancement.
 
 v4.2.1.0:
