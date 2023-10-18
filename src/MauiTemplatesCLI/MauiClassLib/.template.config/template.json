@@ -21,11 +21,12 @@
     "sourceName": "MauiClassLib.1",
     "tags": {
         "language": "C#",
-        "type": "project",
+        "type": "solution",
         "vs_parametersToHide": "no-solution-file"
     },
     "guids": [
-        "AE77891F-8A16-49C9-8887-1EF9692988CE"
+        "AE77891F-8A16-49C9-8887-1EF9692988CE",
+        "1D17E9ED-22F1-4992-AE45-B8507EFD6950"
     ],
     "symbols": {
         "Framework": {
@@ -143,6 +144,13 @@
             "description": "Option to add CommunityToolkit.Mvvm (aka Microsoft MVVM Toolkit) NuGet package reference.",
             "displayName": "Add CommunityToolkit.Mvvm (aka Microsoft MV_VM Toolkit) NuGet package reference"
         },
+        "central-pkg-mgmt": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to configure NuGet Central Package Management.",
+            "displayName": "Option to configure NuGet Central Package Management"
+        },
         "conditional-compilation": {
             "type": "parameter",
             "datatype": "bool",
@@ -235,9 +243,17 @@
             "type": "computed",
             "value": "(include-mvvm-toolkit)"
         },
+        "CentralPkgMgmt": {
+            "type": "computed",
+            "value": "(central-pkg-mgmt)"
+        },
         "ConditionalCompilation": {
             "type": "computed",
             "value": "(conditional-compilation)"
+        },
+        "PackageRef": {
+            "type": "computed",
+            "value": "(Net8 || AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage)"
         },
         "HostIdentifier": {
             "type": "bind",
@@ -256,6 +272,12 @@
                     "condition": "(no-solution-file || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
                     "exclude": [
                         "MauiClassLib.1.sln"
+                    ]
+                },
+                {
+                    "condition": "(!CentralPkgMgmt || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
+                    "exclude": [
+                        "Directory.Packages.props"
                     ]
                 },
                 {

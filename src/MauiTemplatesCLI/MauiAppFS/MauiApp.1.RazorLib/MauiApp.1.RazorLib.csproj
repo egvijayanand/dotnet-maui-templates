@@ -14,13 +14,7 @@
 
   <ItemGroup>
     <!--#if (CentralPkgMgmt)-->
-    <!--#if (Net8)-->
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" />
-    <!--#elif (Net7)-->
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" />
-    <!--#else-->
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" />
-    <!--#endif-->
     <!--#else-->
     <!--#if (Net8)-->
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.0-*" />

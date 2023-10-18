@@ -179,6 +179,14 @@ And from [v4.4.0-preview.1](https://www.nuget.org/packages/VijayAnand.MauiTempla
   dotnet new mauiapp -o MyApp -cpm
   ```
 
+  ```shell
+  dotnet new mauiclasslib -o MauiLib -cpm
+  ```
+
+  ```shell
+  dotnet new sharedclasslib -o SharedLib -cpm
+  ```
+
 * Language: (Short notation: `-lang`):
 
   This can take `C#` / `F#` as its options (with `C#` being the default value, if not specified).
