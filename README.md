@@ -12,7 +12,7 @@ Release Details:
 |:---:|:---:|:---:|:---:|:---:|
 |Stable|.NET 6 SR11 (6.0.553)|VS2022 17.4.x - 17.7.x|Tue, Apr 25, 2023|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
 |Stable|.NET 7 SR8 (7.0.96)|VS2022 17.4.x - 17.7.x|Tue, Oct 10, 2023|Active|
-|Preview|[.NET 8 RC2](https://devblogs.microsoft.com/dotnet/announcing-dotnet-maui-in-dotnet-8-rc-2/ "Announcement Blog Post") (8.0.0-rc.2.9373) <br /> Requires Android SDK Platform 34|VS2022 17.8.0 Preview 3.0|Tue, Oct 10, 2023|Go-Live Support|
+|Preview|[.NET 8 RC2](https://devblogs.microsoft.com/dotnet/announcing-dotnet-maui-in-dotnet-8-rc-2/ "Announcement Blog Post") (8.0.0-rc.2.9373) <br /> Requires Android SDK Platform 34|VS2022 17.8.0 Preview 4.0|Tue, Oct 10, 2023|Go-Live Support|
 
 Use the below commands to verify the version installed:
 
@@ -48,7 +48,7 @@ Templates have been updated to support .NET 6/7/8 and is available to install fr
 |Channel|NuGet|VS Marketplace|
 |:---:|:---:|:---:|
 |Stable|[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/?icon=nuget)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/)|[![.NET MAUI Project and Item Templates - VS Marketplace](https://badgen.net/vs-marketplace/v/egvijayanand.maui-templates?icon=visualstudio)](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-templates)|
-<!-- |Preview|[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/latest?icon=nuget)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/absoluteLatest)| - | -->
+|Preview|[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/latest?icon=nuget)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/absoluteLatest)| - |
 
 ### For VS2022 users:
 
@@ -166,6 +166,18 @@ Starting with [v2.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/2
 And from [v3.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/3.0.0) of the template package, CLI project template `framework` parameter adds `.NET 8` as another option.
 
 And from [v4.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.0.0) of the template package, CLI project template defines a new parameter named `language`:
+
+And from [v4.4.0-preview.1](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.4.0-preview.1) of the template package, CLI project template defines a new parameter named `central-pkg-mgmt`:
+
+* Central Package Management: (Short notation: `-cpm`):
+
+  This is a Boolean parameter and its default value is `false`. _For now, this option is supported only on CLI._
+
+  Examples:
+
+  ```shell
+  dotnet new mauiapp -o MyApp -cpm
+  ```
 
 * Language: (Short notation: `-lang`):
 
@@ -432,7 +444,6 @@ Supported values are:
 * internal
 * protected
 * private
-
 
 File-scoped Namespace parameter (`-fsn` | `--file-scoped-namespace`), the default value is `false`.
 

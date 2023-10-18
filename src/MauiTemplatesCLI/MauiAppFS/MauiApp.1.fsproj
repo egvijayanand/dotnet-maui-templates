@@ -183,7 +183,11 @@
     <Compile Include="$(AndroidProjectFolder)MainActivity.fs" />
     <Compile Include="$(AndroidProjectFolder)MainApplication.fs" />
 
+    <!--#if (CentralPkgMgmt)-->
+    <PackageReference Include="FSharp.Android.Resource" />
+    <!--#else-->
     <PackageReference Include="FSharp.Android.Resource" Version="1.0.*" />
+    <!--#endif-->
   </ItemGroup>
 
   <!--#endif-->
@@ -210,7 +214,11 @@
     <Compile Include="$(WindowsProjectFolder)App.fs" />
     <Compile Include="$(WindowsProjectFolder)Main.fs" />
 
+    <!--#if (CentralPkgMgmt)-->
+    <PackageReference Include="FSharp.Maui.WinUICompat" />
+    <!--#else-->
     <PackageReference Include="FSharp.Maui.WinUICompat" Version="1.1.*" />
+    <!--#endif-->
   </ItemGroup>
 
   <!--#endif-->
@@ -222,14 +230,66 @@
 
   <!--#endif-->
   <ItemGroup>
+    <!--#if (CentralPkgMgmt)-->    
+    <PackageReference Include="Fabulous" />
+    <PackageReference Include="Fabulous.MauiControls" />
+    <PackageReference Include="FSharp.Core" />
+    <!--#else-->
     <PackageReference Include="Fabulous" Version="2.4.*" />
     <PackageReference Include="Fabulous.MauiControls" Version="2.8.*" />
     <PackageReference Include="FSharp.Core" Version="7.0.*" />
+    <!--#endif-->
   </ItemGroup>
 
   <!--#if (PackageRef)-->
   <ItemGroup>
   <!--#endif-->
+  <!--#if (CentralPkgMgmt)-->
+  <!--#if (AddFoldablePackage)-->
+  <!--#if (Net8)-->
+    <PackageReference Include="Microsoft.Maui.Controls.Foldable" />
+  <!--#else-->
+    <PackageReference Include="Microsoft.Maui.Controls.Foldable" />
+  <!--#endif-->
+  <!--#endif-->
+  <!--#if (AddMapsPackage)-->
+    <PackageReference Include="Fabulous.MauiControls.Maps" />
+  <!--#if (AllPlatforms || IsWindows)-->
+    <PackageReference Include="CommunityToolkit.Maui.Maps" />
+  <!--#endif-->
+  <!--#endif-->
+  <!--#if (Net7OrLater)-->
+  <!--#if (Net8)-->
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Condition="'$(Configuration)' == 'Debug'" />
+  <!--#if (Hybrid)-->
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" />
+  <!--#endif-->
+    <PackageReference Include="Microsoft.Maui.Controls" />
+    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" />
+  <!--#else-->
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Condition="'$(Configuration)' == 'Debug'" />
+  <!--#endif-->
+  <!--#if (AddToolkitPackage)-->
+    <PackageReference Include="CommunityToolkit.Maui" />
+  <!--#endif-->
+  <!--#if (AddMarkupPackage)-->
+    <PackageReference Include="CommunityToolkit.Maui.Markup" />
+  <!--#endif-->
+  <!--#if (AddMediaPackage)-->
+    <PackageReference Include="Fabulous.MauiControls.MediaElement" />
+  <!--#endif-->
+  <!--#else-->
+  <!--#if (AddToolkitPackage)-->
+    <PackageReference Include="CommunityToolkit.Maui" />
+  <!--#endif-->
+  <!--#if (AddMarkupPackage)-->
+    <PackageReference Include="CommunityToolkit.Maui.Markup" />
+  <!--#endif-->
+  <!--#endif-->
+  <!--#if (AddMvvmToolkitPackage)-->
+    <PackageReference Include="CommunityToolkit.Mvvm" />
+  <!--#endif-->
+  <!--#else-->
   <!--#if (AddFoldablePackage)-->
   <!--#if (Net8)-->
     <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="$(MauiVersion)" />
@@ -273,6 +333,7 @@
   <!--#endif-->
   <!--#if (AddMvvmToolkitPackage)-->
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*" />
+  <!--#endif-->
   <!--#endif-->
   <!--#if (PackageRef)-->
   </ItemGroup>
