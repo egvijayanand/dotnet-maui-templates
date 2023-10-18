@@ -24,11 +24,12 @@
     "sourceName": "SharedClassLib.1",
     "tags": {
         "language": "C#",
-        "type": "project",
+        "type": "solution",
         "vs_parametersToHide": "no-solution-file"
     },
     "guids": [
-        "EA69D029-EF28-47BB-88FE-F5835B1E854E"
+        "EA69D029-EF28-47BB-88FE-F5835B1E854E",
+        "1D17E9ED-22F1-4992-AE45-B8507EFD6950"
     ],
     "symbols": {
         "Framework": {
@@ -111,6 +112,13 @@
             "description": "Option to add VijayAnand.Toolkit.Markup NuGet package reference.",
             "displayName": "Add VijayAnand.Toolkit.Markup NuGet package reference"
         },
+        "central-pkg-mgmt": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to configure NuGet Central Package Management.",
+            "displayName": "Option to configure NuGet Central Package Management"
+        },
         "no-solution-file": {
             "type": "parameter",
             "datatype": "bool",
@@ -169,6 +177,10 @@
             "type": "computed",
             "value": "(include-shared-toolkit || all-supported-packages)"
         },
+        "CentralPkgMgmt": {
+            "type": "computed",
+            "value": "(central-pkg-mgmt)"
+        },
         "HostIdentifier": {
             "type": "bind",
             "binding": "HostIdentifier"
@@ -186,6 +198,12 @@
                     "condition": "(no-solution-file || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
                     "exclude": [
                         "SharedClassLib.1.sln"
+                    ]
+                },
+                {
+                    "condition": "(!CentralPkgMgmt || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
+                    "exclude": [
+                        "Directory.Packages.props"
                     ]
                 }
             ]

@@ -1,0 +1,47 @@
+<Project>
+    <PropertyGroup>
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageVersion Include="Xamarin.Forms" Version="5.0.0.2612" />
+        <!--#if (AddFormsEssentials)-->
+        <PackageVersion Include="Xamarin.Essentials" Version="1.8.0" />
+        <!--#endif-->
+        <!--#if (AddFormsToolkit)-->
+        <PackageVersion Include="Xamarin.CommunityToolkit" Version="2.0.6" />
+        <!--#endif-->
+        <!--#if (AddFormsMarkup)-->
+        <PackageVersion Include="Xamarin.CommunityToolkit.Markup" Version="2.0.6" />
+        <!--#endif-->
+        <!--#if (AddSharedToolkit)-->
+        <!--#if (Net8)-->
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.0.0-preview.2" />
+        <!--#elif (Net7)-->
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="2.1.0-preview.2" />
+        <!--#else-->
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="1.1.0-preview.2" />
+        <!--#endif-->
+        <!--#endif-->
+        <!--#if (Net8)-->
+        <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+        <PackageVersion Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+        <!--#endif-->
+        <!--#if (AddMauiToolkit)-->
+        <!--#if (Net7OrLater)-->
+        <PackageVersion Include="CommunityToolkit.Maui" Version="6.0.0" />
+        <!--#else-->
+        <PackageVersion Include="CommunityToolkit.Maui" Version="2.0.0" />
+        <!--#endif-->
+        <!--#endif-->
+        <!--#if (AddMauiMarkup)-->
+        <!--#if (Net7OrLater)-->
+        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="3.3.0" />
+        <!--#else-->
+        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="1.2.1" />
+        <!--#endif-->
+        <!--#endif-->
+        <!--#if (AddMvvmToolkit)-->
+        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.2.1" />
+        <!--#endif-->
+    </ItemGroup>
+</Project>

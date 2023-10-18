@@ -1,0 +1,42 @@
+<Project>
+    <PropertyGroup>
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    </PropertyGroup>
+    <!--#if (PackageRef)-->
+    <ItemGroup>
+    <!--#endif-->
+        <!--#if (Net8)-->
+        <!--#if (UseMauiCore)-->
+        <PackageVersion Include="Microsoft.Maui.Core" Version="$(MauiVersion)" />
+        <!--#elif (UseMauiEssentials)-->
+        <PackageVersion Include="Microsoft.Maui.Essentials" Version="$(MauiVersion)" />
+        <!--#else-->
+        <!--#if (UseRazorSdk)-->
+        <PackageVersion Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
+        <!--#endif-->
+        <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+        <PackageVersion Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+        <!--#endif-->
+        <!--#endif-->
+        <!--#if (Net7OrLater)-->
+        <!--#if (AddToolkitPackage)-->
+        <PackageVersion Include="CommunityToolkit.Maui" Version="6.0.0" />
+        <!--#endif-->
+        <!--#if (AddMarkupPackage)-->
+        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="3.3.0" />
+        <!--#endif-->
+        <!--#else-->
+        <!--#if (AddToolkitPackage)-->
+        <PackageVersion Include="CommunityToolkit.Maui" Version="2.0.0" />
+        <!--#endif-->
+        <!--#if (AddMarkupPackage)-->
+        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="1.2.1" />
+        <!--#endif-->
+        <!--#endif-->
+        <!--#if (AddMvvmToolkitPackage)-->
+        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.2.1" />
+        <!--#endif-->
+    <!--#if (PackageRef)-->
+    </ItemGroup>
+    <!--#endif-->
+</Project>

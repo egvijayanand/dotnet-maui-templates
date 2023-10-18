@@ -1,7 +1,15 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
 
-What's new in ver. 4.4.0-preview.1:
+What's new in ver. 4.4.0-preview.2:
 -----------------------------------
+Support for the CPM option extended to Class Library projects as well.
+
+dotnet new mauiclasslib -o MauiLib -cpm
+
+dotnet new sharedclasslib -o SharedLib -cpm
+
+v4.4.0-preview.1:
+
 Introduced an option for NuGet Central Package Management in CLI project templates.
 
 -cpm | --central-pkg-mgmt - The default value is false.
