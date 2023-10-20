@@ -1,4 +1,4 @@
-﻿using MauiTemplates;
+﻿using VijayAnand.MauiTemplates;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using Microsoft.VisualStudio.Shell;
@@ -17,5 +17,5 @@ using Microsoft.VisualStudio.Shell;
 
 [assembly: ComVisible(false)]
 
-[assembly: AssemblyVersion("1.7.1.0")]
-[assembly: AssemblyFileVersion("1.7.1.0")]
+[assembly: AssemblyVersion("2.0.0.0")]
+[assembly: AssemblyFileVersion("2.0.0.0")]
