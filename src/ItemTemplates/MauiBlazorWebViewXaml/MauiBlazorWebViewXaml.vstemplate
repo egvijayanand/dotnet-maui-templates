@@ -9,8 +9,15 @@
 		<Icon>__TemplateIcon.ico</Icon>
 	</TemplateData>
 	<TemplateContent>
+		<CustomParameters>
+			<CustomParameter Name="$net8$" Value="" />
+		</CustomParameters>
 		<References/>
 		<ProjectItem TargetFileName="$fileinputname$.xaml" ReplaceParameters="true">MauiBlazorWebView.xaml</ProjectItem>
 		<ProjectItem TargetFileName="$fileinputname$.xaml.cs" ReplaceParameters="true">MauiBlazorWebView.xaml.cs</ProjectItem>
 	</TemplateContent>
+	<WizardExtension>
+		<Assembly>VijayAnand.MauiTemplates, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7550554040ebdd44</Assembly>
+		<FullClassName>VijayAnand.MauiTemplates.CustomActionWizard</FullClassName>
+	</WizardExtension>
 </VSTemplate>

@@ -1,4 +1,5 @@
-﻿using EnvDTE;
+﻿using Community.VisualStudio.Toolkit;
+using EnvDTE;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.TemplateWizard;
 using System;
@@ -6,7 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace MauiTemplates
+namespace VijayAnand.MauiTemplates
 {
     public class CustomActionWizard : IWizard
     {
@@ -49,46 +50,87 @@ namespace MauiTemplates
             }
         }
 
-        public void RunStarted(object automationObject,
+        public async void RunStarted(object automationObject,
                                Dictionary<string, string> replacementsDictionary,
                                WizardRunKind runKind,
                                object[] customParams)
         {
-            ThreadHelper.ThrowIfNotOnUIThread();
-            ide = automationObject as DTE;
-            replacementsDictionary.TryGetValue("$destinationdirectory$", out destinationFolder);
-
-            if (replacementsDictionary.ContainsKey("$MauiAppId$"))
+            try
             {
-                replacementsDictionary["$MauiAppId$"] = replacementsDictionary["$safeprojectname$"].ToLowerInvariant();
-            }
+                //ThreadHelper.ThrowIfNotOnUIThread();
+                await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
+                ide = automationObject as DTE;
+                replacementsDictionary.TryGetValue("$destinationdirectory$", out destinationFolder);
 
-            if (runKind == WizardRunKind.AsNewItem)
-            {
-                if (replacementsDictionary.ContainsKey("$basenamespace$"))
+                if (replacementsDictionary.ContainsKey("$MauiAppId$"))
                 {
-                    if (replacementsDictionary.TryGetValue("$rootnamespace$", out var rootNamespace))
-                    {
-                        if (!string.IsNullOrEmpty(rootNamespace))
-                        {
-                            var match = Regex.Match(rootNamespace, @"\.Platforms\.\w{3,}");
+                    replacementsDictionary["$MauiAppId$"] = replacementsDictionary["$safeprojectname$"].ToLowerInvariant();
+                }
 
-                            if (rootNamespace.EndsWith("Controls", StringComparison.OrdinalIgnoreCase)
-                                || rootNamespace.EndsWith("Handlers", StringComparison.OrdinalIgnoreCase))
+                if (runKind == WizardRunKind.AsNewItem)
+                {
+                    if (replacementsDictionary.ContainsKey("$basenamespace$"))
+                    {
+                        if (replacementsDictionary.TryGetValue("$rootnamespace$", out var rootNamespace))
+                        {
+                            if (!string.IsNullOrEmpty(rootNamespace))
                             {
-                                replacementsDictionary["$basenamespace$"] = rootNamespace.Substring(0, rootNamespace.LastIndexOf('.'));
+                                var match = Regex.Match(rootNamespace, @"\.Platforms\.\w{3,}");
+
+                                if (rootNamespace.EndsWith("Controls", StringComparison.OrdinalIgnoreCase)
+                                    || rootNamespace.EndsWith("Handlers", StringComparison.OrdinalIgnoreCase))
+                                {
+                                    replacementsDictionary["$basenamespace$"] = rootNamespace.Substring(0, rootNamespace.LastIndexOf('.'));
+                                }
+                                else if (match.Success)
+                                {
+                                    replacementsDictionary["$basenamespace$"] = rootNamespace.Substring(0, match.Index);
+                                }
+                                else
+                                {
+                                    replacementsDictionary["$basenamespace$"] = rootNamespace;
+                                }
                             }
-                            else if (match.Success)
+                        }
+                    }
+
+                    if (replacementsDictionary.ContainsKey("$net8$"))
+                    {
+                        var project = await VS.Solution.GetActiveProjectAsync();
+
+                        string tfm;
+
+                        if (project != null)
+                        {
+                            tfm = await project.GetAttributeAsync("TargetFrameworks");
+
+                            if (tfm != null)
                             {
-                                replacementsDictionary["$basenamespace$"] = rootNamespace.Substring(0, match.Index);
+                                if (tfm.Contains("net8.0"))
+                                {
+                                    replacementsDictionary["$net8$"] = "true";
+                                }
                             }
                             else
                             {
-                                replacementsDictionary["$basenamespace$"] = rootNamespace;
+                                tfm = await project.GetAttributeAsync("TargetFramework");
+
+                                if (tfm != null)
+                                {
+                                    if (tfm.StartsWith("net8.0"))
+                                    {
+                                        replacementsDictionary["$net8$"] = "true";
+                                    }
+                                }
                             }
                         }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                // Log the exception.
+                await ex.LogAsync();
             }
         }
 

@@ -3,13 +3,26 @@
     x:Class="$rootnamespace$.$safeitemname$"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+$if$ ($net8$ == true)
+    xmlns:b="clr-namespace:Microsoft.AspNetCore.Components.WebView.Maui;assembly=Microsoft.AspNetCore.Components.WebView.Maui"
+$endif$
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:local="clr-namespace:$rootnamespace$"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <ContentPage.Content>
         <Grid>
-            <!-- StartPath property is supported on .NET 8 -->
+$if$ ($net8$ == true)
+            <b:BlazorWebView
+                HostPage="wwwroot/index.html"
+                StartPath="/">
+                <b:BlazorWebView.RootComponents>
+                    <b:RootComponent
+                        Selector="#app"
+                        ComponentType="{x:Type local:Main}" />
+                </b:BlazorWebView.RootComponents>
+            </b:BlazorWebView>
+$else$
             <BlazorWebView HostPage="wwwroot/index.html">
                 <BlazorWebView.RootComponents>
                     <RootComponent
@@ -17,6 +30,7 @@
                         ComponentType="{x:Type local:Main}" />
                 </BlazorWebView.RootComponents>
             </BlazorWebView>
+$endif$
         </Grid>
     </ContentPage.Content>
 </ContentPage>
