@@ -23,7 +23,7 @@
 		</CustomParameters>
 	</TemplateContent>
 	<WizardExtension>
-		<Assembly>VijayAnand.MauiTemplates, Version=1.7.1.0, Culture=neutral, PublicKeyToken=7550554040ebdd44</Assembly>
-		<FullClassName>MauiTemplates.CustomActionWizard</FullClassName>
+		<Assembly>VijayAnand.MauiTemplates, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7550554040ebdd44</Assembly>
+		<FullClassName>VijayAnand.MauiTemplates.CustomActionWizard</FullClassName>
 	</WizardExtension>
 </VSTemplate>

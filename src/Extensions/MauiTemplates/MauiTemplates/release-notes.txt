@@ -1,4 +1,4 @@
-What's new in ver. 4.3.5.0:
+What's new in ver. 4.3.6.0:
 ---------------------------
 Defined custom logic for BlazorWebView XAML item template processing.
 
