@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!--#if (Net8)-->
+<ContentPage
+    x:Class="MyApp.Namespace.MauiBlazorWebView__1"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:b="clr-namespace:Microsoft.AspNetCore.Components.WebView.Maui;assembly=Microsoft.AspNetCore.Components.WebView.Maui"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MyApp.LocalNamespace"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <Grid>
+            <b:BlazorWebView
+                HostPage="wwwroot/index.html"
+                StartPath="/">
+                <b:BlazorWebView.RootComponents>
+                    <b:RootComponent
+                        Selector="#app"
+                        ComponentType="{x:Type local:Main}" />
+                </b:BlazorWebView.RootComponents>
+            </b:BlazorWebView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
+<!--#else-->
 <ContentPage
     x:Class="MyApp.Namespace.MauiBlazorWebView__1"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -9,13 +34,7 @@
     mc:Ignorable="d">
     <ContentPage.Content>
         <Grid>
-<!--#if (Net8)-->
-            <BlazorWebView
-                HostPage="wwwroot/index.html"
-                StartPath="/">
-<!--#else-->
             <BlazorWebView HostPage="wwwroot/index.html">
-<!--#endif-->
                 <BlazorWebView.RootComponents>
                     <RootComponent
                         Selector="#app"
@@ -25,3 +44,4 @@
         </Grid>
     </ContentPage.Content>
 </ContentPage>
+<!--#endif-->

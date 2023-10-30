@@ -382,6 +382,10 @@
             "type": "computed",
             "value": "(frameworkLower == \"net7.0\" || frameworkLower == \"net8.0\")"
         },
+        "Net8OrLater": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net8.0\")"
+        },
         "AllPlatforms": {
             "type": "computed",
             "value": "(target-platform == \"All\")"
