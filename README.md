@@ -11,8 +11,8 @@ Release Details:
 |Channel|.NET MAUI Version|IDE Version|Release Date|Remarks|
 |:---:|:---:|:---:|:---:|:---:|
 |Stable|.NET 6 SR11 (6.0.553)|VS2022 17.4.x - 17.7.x|Tue, Apr 25, 2023|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
-|Stable|.NET 7 SR8 (7.0.96)|VS2022 17.4.x - 17.7.x|Tue, Oct 10, 2023|Active|
-|Preview|[.NET 8 RC2](https://devblogs.microsoft.com/dotnet/announcing-dotnet-maui-in-dotnet-8-rc-2/ "Announcement Blog Post") (8.0.0-rc.2.9373) <br /> Requires Android SDK Platform 34|VS2022 17.8.0 Preview 4.0|Tue, Oct 10, 2023|Go-Live Support|
+|Stable|.NET 7 SR9 (7.0.100)|VS2022 17.4.x - 17.7.x|Tue, Oct 31, 2023|Active|
+|Preview|[.NET 8 RC2](https://devblogs.microsoft.com/dotnet/announcing-dotnet-maui-in-dotnet-8-rc-2/ "Announcement Blog Post") (8.0.0-rc.2.9511) <br /> <small>Requires Android SDK Platform 34</small>|VS2022 17.8.0 Preview 6.0|Tue, Oct 31, 2023|Go-Live Support|
 
 Use the below commands to verify the version installed:
 
