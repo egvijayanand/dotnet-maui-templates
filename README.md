@@ -11,8 +11,8 @@ Release Details:
 |Channel|.NET MAUI Version|IDE Version|Release Date|Remarks|
 |:---:|:---:|:---:|:---:|:---:|
 |Stable|.NET 6 SR11 (6.0.553)|VS2022 17.4.x - 17.7.x|Tue, Apr 25, 2023|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
-|Stable|.NET 7 SR9 (7.0.100)|VS2022 17.4.x - 17.7.x|Tue, Oct 31, 2023|Active|
-|Preview|[.NET 8 RC2](https://devblogs.microsoft.com/dotnet/announcing-dotnet-maui-in-dotnet-8-rc-2/ "Announcement Blog Post") (8.0.0-rc.2.9511) <br /> <small>Requires Android SDK Platform 34</small>|VS2022 17.8.0 Preview 6.0|Tue, Oct 31, 2023|Go-Live Support|
+|Stable|.NET 7 SR10 (7.0.101)|VS2022 17.4.x - 17.7.x|Tue, Nov 7, 2023|Active|
+|Preview|[.NET 8 RC2](https://devblogs.microsoft.com/dotnet/announcing-dotnet-maui-in-dotnet-8-rc-2/ "Announcement Blog Post") (8.0.0-rc.2.9530) <br /> _Requires Android SDK Platform 34_|VS2022 17.8.0 Preview 7.0|Tue, Nov 7, 2023|Go-Live Support|
 
 Use the below commands to verify the version installed:
 
@@ -121,8 +121,16 @@ For making use of these templates cross-platform, have provided it as .NET CLI t
 
 Install the template package from NuGet with the below command.
 
+Stable:
+
 ```shell
 dotnet new install VijayAnand.MauiTemplates
+```
+
+Preview:
+
+```shell
+dotnet new install VijayAnand.MauiTemplates::4.4.0-preview.3
 ```
 
 If you've already installed this package, then this can be updated to the latest version with the below command.
