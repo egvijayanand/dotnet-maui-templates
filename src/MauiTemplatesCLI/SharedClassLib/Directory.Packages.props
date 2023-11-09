@@ -15,11 +15,11 @@
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <!--#if (Net8)-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.0.0-preview.2" />
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.0.0-preview.4" />
         <!--#elif (Net7)-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="2.1.0-preview.2" />
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="2.1.0-preview.4" />
         <!--#else-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="1.1.0-preview.2" />
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="1.1.0-preview.4" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (Net8)-->
@@ -28,7 +28,7 @@
         <!--#endif-->
         <!--#if (AddMauiToolkit)-->
         <!--#if (Net7OrLater)-->
-        <PackageVersion Include="CommunityToolkit.Maui" Version="6.0.0" />
+        <PackageVersion Include="CommunityToolkit.Maui" Version="6.1.0" />
         <!--#else-->
         <PackageVersion Include="CommunityToolkit.Maui" Version="2.0.0" />
         <!--#endif-->
@@ -41,7 +41,7 @@
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMvvmToolkit)-->
-        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.2.1" />
+        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.2.2" />
         <!--#endif-->
     </ItemGroup>
 </Project>

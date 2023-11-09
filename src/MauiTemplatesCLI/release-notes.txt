@@ -1,7 +1,13 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
 
-What's new in ver. 4.4.0-preview.3:
+What's new in ver. 4.4.0-preview.4:
 -----------------------------------
+.NET MAUI Version on the Main page of the App.
+
+Another set of .NET 8 / C# 12 features.
+
+v4.4.0-preview.3:
+
 Started incorporating .NET 8 / C# 12 features wherever possible.
 
 v4.4.0-preview.2:

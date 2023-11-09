@@ -1,4 +1,8 @@
-﻿namespace MauiApp._1.Views
+﻿#if (!Tabbed)
+using System.Reflection;
+
+#endif
+namespace MauiApp._1.Views
 {
 #if Tabbed
     public partial class MainPage : TabbedPage
@@ -7,7 +11,8 @@
 #endif
     {
 #if (Plain && !Mvvm)
-        private int count = 0;
+        private int _count = 0;
+
 #endif
 #if (Mvvm && !Tabbed)
         public MainPage(MainViewModel viewModel)
@@ -16,7 +21,16 @@
 #endif
         {
             InitializeComponent();
+#if (!Tabbed)
+            var version = typeof(MauiApp).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
+            VersionLabel.Text = $".NET MAUI ver. {version?[..version.IndexOf('+')]}";
+#endif
 #if (Mvvm && !Tabbed)
+#if Plain
+            viewModel.Title = "Home";
+#else
+            viewModel.Title = "Calendar";
+#endif
             BindingContext = viewModel;
 #endif
         }
@@ -30,8 +44,8 @@
 
         private void OnCounterClicked(object sender, EventArgs e)
         {
-            count++;
-            CounterLabel.Text = $"Current count: {count}";
+            _count++;
+            CounterLabel.Text = $"Current count: {_count}";
 
             SemanticScreenReader.Announce(CounterLabel.Text);
         }

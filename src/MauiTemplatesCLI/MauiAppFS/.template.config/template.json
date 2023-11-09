@@ -308,8 +308,8 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to configure NuGet Central Package Management.",
-            "displayName": "Option to configure NuGet Central Package Management"
+            "description": "Option to configure NuGet Central Package Management (CPM).",
+            "displayName": "Option to configure NuGet Central Package Management (CPM)"
         },
         "no-solution-file": {
             "type": "parameter",

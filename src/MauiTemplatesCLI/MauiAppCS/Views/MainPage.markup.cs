@@ -1,46 +1,78 @@
-﻿namespace MauiApp._1.Views
+﻿using System.Reflection;
+#if Comet
+using MauiApp._1.Extensions;
+#endif
+
+namespace MauiApp._1.Views
 {
 #if Comet
+#if Net8OrLater
+    public partial class MainPage(ISemanticScreenReader screenReader) : View
+#else
     public partial class MainPage : View
+#endif
     {
-        private int count = 0;
+        private int _count = 0;
         private readonly State<string> countText = "Current count: 0";
+#if Net7OrEarlier
         private readonly ISemanticScreenReader _screenReader;
 
-        public MainPage(ISemanticScreenReader screenReader)
-        {
-            _screenReader = screenReader;
-            Body = Build;
-        }
+        public MainPage(ISemanticScreenReader screenReader) => _screenReader = screenReader;
+#endif
 
+        [Body]
         View Build() => new ScrollView()
         {
-            new VStack(spacing: 25)
+#if Net8OrLater
+            new Grid(rows: [ "*", 40 ])
+#else
+            new Grid(rows: new object[] { "*", 40 })
+#endif
             {
-                new Text(() => "Hello, World!").FontFamily(() => AppFont)
-                                               .FontSize(32)
-                                               .Color(() => AppColor),
-                new Text(() => "Welcome to .NET Multi-platform App UI").FontFamily(() => AppFont)
-                                                                       .FontSize(18)
-                                                                       .Color(() => AppColor),
-                new Text(countText).FontFamily(() => AppFont)
-                                   .FontSize(18)
-                                   .FontWeight(FontWeight.Bold)
-                                   .Color(() => AppColor),
-                new Button("Click me", IncrementCount).FontFamily(() => AppFont)
-                                                 .FontSize(AppFontSize)
-                                                 .Background(() => AppColor)
-                                                 .Color(() => White)
-                                                 .Padding(new Thickness(14, 10)),
-                new Image(() => "dotnet_bot.png")
-            }.Padding(30)
+                new VStack(spacing: 25)
+                {
+                    new Text(() => "Hello, World!").FontFamily(() => AppFont)
+                                                   .FontSize(32)
+                                                   .Color(() => AppColor),
+                    new Text(() => "Welcome to .NET Multi-platform App UI").FontFamily(() => AppFont)
+                                                                           .FontSize(18)
+                                                                           .Color(() => AppColor),
+                    new Text(countText).FontFamily(() => AppFont)
+                                       .FontSize(18)
+                                       .FontWeight(FontWeight.Bold)
+                                       .Color(() => AppColor),
+                    new Button("Click me", IncrementCount).FontFamily(() => AppFont)
+                                                          .FontSize(AppFontSize)
+                                                          .Background(() => AppColor)
+                                                          .Color(() => White)
+                                                          .Padding(new Thickness(14, 10)),
+                    new Image(() => "dotnet_bot.png")
+                }.Padding(30),
+                new Grid()
+                {
+                    new Text(MauiVersion).FontFamily(() => AppFont)
+                                         .Center()
+                                         .Color(() => White)
+                }.Cell(1)
+                 .Background(() => AppColor)
+            }
         };
 
         private void IncrementCount()
         {
-            count++;
-            countText.Value = $"Current count: {count}";
+            _count++;
+            countText.Value = $"Current count: {_count}";
+#if Net8OrLater
+            screenReader.Announce(countText.Value);
+#else
             _screenReader.Announce(countText.Value);
+#endif
+        }
+
+        private static string MauiVersion()
+        {
+            var version = typeof(MauiApp).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
+            return $".NET MAUI ver. {version?[..version.IndexOf('+')]}";
         }
     }
 #endif
@@ -54,32 +86,42 @@
     {
         public override VisualNode Render() => new ContentPage()
         {
-            new VerticalStackLayout()
+            new Grid("*, 40", "*")
             {
-                new Label("Hello, World!").HCenter()
-                                          .Style(AppStyle("MauiLabel"))
-                                          .FontSize(32)
-                                          .Set(MC.SemanticProperties.HeadingLevelProperty, SemanticHeadingLevel.Level1),
-                new Label("Welcome to .NET Multi-platform App UI").HCenter()
-                                                                  .Style(AppStyle("MauiLabel"))
-                                                                  .FontSize(18)
-                                                                  .Set(MC.SemanticProperties.DescriptionProperty, "Welcome to dot net Multi platform App U I")
-                                                                  .Set(MC.SemanticProperties.HeadingLevelProperty, SemanticHeadingLevel.Level1),
-                new Label($"Current count: {State.Count}").HCenter()
-                                          .Style(AppStyle("MauiLabel"))
-                                          .FontAttributes(MC.FontAttributes.Bold)
-                                          .FontSize(18),
-                new Button("Click me").HCenter()
-                                      .Style(AppStyle("PrimaryAction"))
-                                      .OnClicked(IncrementCount)
-                                      .Set(MC.SemanticProperties.HintProperty, "Counts the number of times you click"),
-                new Image("dotnet_bot.png").WidthRequest(310)
-                                           .HeightRequest(250)
-                                           .HCenter()
-                                           .Set(MC.SemanticProperties.DescriptionProperty, "Cute dot net bot waving hi to you!")
-            }.VCenter()
-             .Padding(30)
-             .Spacing(25)
+                new VerticalStackLayout()
+                {
+                    new Label("Hello, World!").HCenter()
+                                              .Style(AppStyle("MauiLabel"))
+                                              .FontSize(32)
+                                              .Set(MC.SemanticProperties.HeadingLevelProperty, SemanticHeadingLevel.Level1),
+                    new Label("Welcome to .NET Multi-platform App UI").HCenter()
+                                                                      .Style(AppStyle("MauiLabel"))
+                                                                      .FontSize(18)
+                                                                      .Set(MC.SemanticProperties.DescriptionProperty, "Welcome to dot net Multi platform App U I")
+                                                                      .Set(MC.SemanticProperties.HeadingLevelProperty, SemanticHeadingLevel.Level1),
+                    new Label($"Current count: {State.Count}").HCenter()
+                                                              .Style(AppStyle("MauiLabel"))
+                                                              .FontAttributes(MC.FontAttributes.Bold)
+                                                              .FontSize(18),
+                    new Button("Click me").HCenter()
+                                          .Style(AppStyle("PrimaryAction"))
+                                          .OnClicked(IncrementCount)
+                                          .Set(MC.SemanticProperties.HintProperty, "Counts the number of times you click"),
+                    new Image("dotnet_bot.png").WidthRequest(310)
+                                               .HeightRequest(250)
+                                               .HCenter()
+                                               .Set(MC.SemanticProperties.DescriptionProperty, "Cute dot net bot waving hi to you!")
+                }.VCenter()
+                 .Padding(30)
+                 .Spacing(25),
+                new Grid()
+                {
+                    new Label(MauiVersion).HCenter()
+                                          .VCenter()
+                                          .TextColor(AppColor("White"))
+                }.GridRow(1)
+                 .BackgroundColor(AppColor("Primary"))
+            }
         };
 
         private void IncrementCount()
@@ -87,13 +129,19 @@
             SetState(s => s.Count++);
             Services.GetService<ISemanticScreenReader>()?.Announce($"Current count: {State.Count}");
         }
+
+        private static string MauiVersion()
+        {
+            var version = typeof(MauiApp).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
+            return $".NET MAUI ver. {version?[..version.IndexOf('+')]}";
+        }
     }
 #endif
 #if Markup
     public partial class MainPage : ContentPage
     {
 #if (!Mvvm)
-        private int count = 0;
+        private int _count = 0;
         private Label CounterLabel;
 
 #endif
@@ -103,75 +151,96 @@
         public MainPage()
 #endif
         {
+            var version = typeof(MauiApp).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
 #if Mvvm
             BindingContext = viewModel;
+            viewModel.Title = "Home";
             SetBinding(Page.TitleProperty, new Binding(nameof(MainViewModel.Title)));
 #else
             Title = "Home";
 #endif
             Content = new ScrollView()
             {
-                Content = new StackLayout()
+                Content = new Grid()
                 {
-                    Spacing = 25,
+                    RowDefinitions = Rows.Define(Star, 40),
                     Children =
                     {
-                        new Label()
+                        new StackLayout()
                         {
-                            Style = AppStyle("MauiLabel"),
-                            Text = "Hello, World!",
-                        }.FontSize(32)
-                         .CenterHorizontal()
-                         .SemanticHeadingLevel(SemanticHeadingLevel.Level1),
-                        new Label()
-                        {
-                            Style = AppStyle("MauiLabel"),
-                            Text = "Welcome to .NET Multi-platform App UI",
-                        }.FontSize(18)
-                         .CenterHorizontal()
-                         .SemanticDescription("Welcome to dot net Multi platform App U I")
-                         .SemanticHeadingLevel(SemanticHeadingLevel.Level1),
-                        new Label()
-                        {
-                            Style = AppStyle("MauiLabel"),
+                            Spacing = 25,
+                            Children =
+                            {
+                                new Label()
+                                {
+                                    Style = AppStyle("MauiLabel"),
+                                    Text = "Hello, World!",
+                                }.FontSize(32)
+                                .CenterHorizontal()
+                                .SemanticHeadingLevel(SemanticHeadingLevel.Level1),
+                                new Label()
+                                {
+                                    Style = AppStyle("MauiLabel"),
+                                    Text = "Welcome to .NET Multi-platform App UI",
+                                }.FontSize(18)
+                                .CenterHorizontal()
+                                .SemanticDescription("Welcome to dot net Multi platform App U I")
+                                .SemanticHeadingLevel(SemanticHeadingLevel.Level1),
+                                new Label()
+                                {
+                                    Style = AppStyle("MauiLabel"),
 #if (!Mvvm)
-                            Text = "Current count: 0",
+                                    Text = "Current count: 0",
 #endif
-                        }.Font(size: 18, bold: true)
-                         .CenterHorizontal()
+                                }.Font(size: 18, bold: true)
+                                .CenterHorizontal()
 #if Mvvm
-                         .Bind(Label.TextProperty, static (MainViewModel vm) => vm.CountText),
+                                .Bind(Label.TextProperty, static (MainViewModel vm) => vm.CountText),
 #else
-                         .Assign(out CounterLabel),
+                                .Assign(out CounterLabel),
 #endif
-                        new Button()
-                        {
-                            Style = AppStyle("PrimaryAction"),
-                            Text = "Click me",
-                        }.CenterHorizontal()
+                                new Button()
+                                {
+                                    Style = AppStyle("PrimaryAction"),
+                                    Text = "Click me",
+                                }.CenterHorizontal()
 #if Mvvm
-                         .BindCommand(static (MainViewModel vm) => vm.IncrementCommand)
+                                .BindCommand(static (MainViewModel vm) => vm.IncrementCommand)
 #else
-                        .Invoke(btn => btn.Clicked += OnCounterClicked)
+                                .Invoke(btn => btn.Clicked += OnCounterClicked)
 #endif
-                         .SemanticHint("Counts the number of times you click"),
-                        new Image()
+                                .SemanticHint("Counts the number of times you click"),
+                                new Image()
+                                {
+                                    Source = "dotnet_bot.png",
+                                }.Height(310)
+                                .Width(250)
+                                .CenterHorizontal()
+                                .SemanticDescription("Cute dot net bot waving hi to you!"),
+                            }
+                        }.Padding(30),
+                        new Grid()
                         {
-                            Source = "dotnet_bot.png",
-                        }.Height(310)
-                         .Width(250)
-                         .CenterHorizontal()
-                         .SemanticDescription("Cute dot net bot waving hi to you!"),
+                            BackgroundColor = AppColor("Primary"),
+                            Children =
+                            {
+                                new Label()
+                                {
+                                    Text = $".NET MAUI ver. {version?[..version.IndexOf('+')]}",
+                                    TextColor = AppColor("White"),
+                                }.Center(),
+                            },
+                        }.Row(1),
                     }
-                }.Padding(30)
+                }
             };
         }
 #if (!Mvvm)
 
         private void OnCounterClicked(object? sender, EventArgs e)
         {
-            count++;
-            CounterLabel.Text = $"Current count: {count}";
+            _count++;
+            CounterLabel.Text = $"Current count: {_count}";
 
             SemanticScreenReader.Announce(CounterLabel.Text);
         }

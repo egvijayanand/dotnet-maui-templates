@@ -2,35 +2,51 @@
 
 <ContentPage>
     <ScrollView>
-        <VerticalStackLayout Spacing="25" Padding="new(30,0)" VerticalOptions="LayoutOptions.Center">
+        <Grid RowDefinitions="*,40">
+            <GridCell Row="0">
+                <VerticalStackLayout Spacing="25" Padding="new(30,0)" VerticalOptions="LayoutOptions.Center">
 
-            <Image Source="dotNetBotSource" HeightRequest="200" HorizontalOptions="LayoutOptions.Center" />
+                    <Image Source="dotNetBotSource" HeightRequest="200" HorizontalOptions="LayoutOptions.Center" />
 
-            <Label Text="Hello, World!" FontSize="32" HorizontalOptions="LayoutOptions.Center" />
+                    <Label Text="Hello, World!" FontSize="32" HorizontalOptions="LayoutOptions.Center" />
 
-            <Label Text="Welcome to .NET Multi-platform App UI" FontSize="18"
-                HorizontalOptions="LayoutOptions.Center" />
+                    <Label Text="Welcome to .NET Multi-platform App UI" FontSize="18"
+                           HorizontalOptions="LayoutOptions.Center" />
 
-            <Label Text="@CountText" FontSize="18" HorizontalOptions="LayoutOptions.Center" />
+                    <Label Text="@CountText" FontSize="18" HorizontalOptions="LayoutOptions.Center" />
 
-            <Button Text="Click me" HorizontalOptions="LayoutOptions.Center" OnClick="OnCounterClicked" />
-        </VerticalStackLayout>
+                    <Button Text="Click me" HorizontalOptions="LayoutOptions.Center" OnClick="OnCounterClicked" />
+                </VerticalStackLayout>
+            </GridCell>
+            <GridCell Row="1">
+                <Grid>
+                    <Label Text="@MauiVersion()" HorizontalOptions="LayoutOptions.Center"
+                           VerticalOptions="LayoutOptions.Center" />
+                </Grid>
+            </GridCell>
+        </Grid>
     </ScrollView>
 </ContentPage>
 
 @code {
     ImageSource dotNetBotSource = ImageSource.FromFile("dotnet_bot.png");
 
-    int count = 0;
+    int _count = 0;
 
-    string CountText => count switch
+    string CountText => _count switch
     {
         0 => "Current count: 0",
-        _ => $"Current count: {count}"
+        _ => $"Current count: {_count}"
     };
 
     void OnCounterClicked()
     {
-        count++;
+        _count++;
+    }
+
+    static string MauiVersion()
+    {
+        var version = typeof(MauiApp).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
+        return $".NET MAUI ver. {version?[..version.IndexOf('+')]}";
     }
 }

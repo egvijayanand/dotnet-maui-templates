@@ -130,7 +130,7 @@ dotnet new install VijayAnand.MauiTemplates
 Preview:
 
 ```shell
-dotnet new install VijayAnand.MauiTemplates::4.4.0-preview.3
+dotnet new install VijayAnand.MauiTemplates::4.4.0-preview.4
 ```
 
 If you've already installed this package, then this can be updated to the latest version with the below command.
