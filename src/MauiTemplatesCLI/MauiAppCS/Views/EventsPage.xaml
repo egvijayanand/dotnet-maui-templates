@@ -11,24 +11,37 @@
     x:DataType="vm:EventsViewModel"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <StackLayout
-            HorizontalOptions="Center"
-            VerticalOptions="Center">
-            <Label Text="You don't have anything scheduled today." />
-            <!--#if (CompiledBindings)-->
-            <Button
-                Command="{x:Bind AddEventCommand}"
+        <Grid RowDefinitions="*,40">
+            <StackLayout
                 HorizontalOptions="Center"
-                Style="{StaticResource PrimaryAction}"
-                Text="Add Event" />
-            <!--#else-->
-            <Button
-                Command="{Binding AddEventCommand}"
-                HorizontalOptions="Center"
-                Style="{StaticResource PrimaryAction}"
-                Text="Add Event" />
-            <!--#endif-->
-        </StackLayout>
+                VerticalOptions="Center">
+                <Label Text="You don't have anything scheduled today." />
+<!--#if (CompiledBindings)-->
+                <Button
+                    Command="{x:Bind AddEventCommand}"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Add Event" />
+<!--#else-->
+                <Button
+                    Command="{Binding AddEventCommand}"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Add Event" />
+<!--#endif-->
+            </StackLayout>
+            <Grid
+                Grid.Row="1"
+                BackgroundColor="{StaticResource Primary}">
+
+                <Label
+                    x:Name="VersionLabel"
+                    HorizontalOptions="Center"
+                    TextColor="{StaticResource White}"
+                    VerticalOptions="Center" />
+
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
 <!--#else-->
@@ -41,16 +54,29 @@
     xmlns:local="clr-namespace:MauiApp._1"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <StackLayout
-            HorizontalOptions="Center"
-            VerticalOptions="Center">
-            <Label Text="You don't have anything scheduled today." />
-            <Button
-                Clicked="OnAddEvent"
+        <Grid RowDefinitions="*,40">
+            <StackLayout
                 HorizontalOptions="Center"
-                Style="{StaticResource PrimaryAction}"
-                Text="Add Event" />
-        </StackLayout>
+                VerticalOptions="Center">
+                <Label Text="You don't have anything scheduled today." />
+                <Button
+                    Clicked="OnAddEvent"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Add Event" />
+            </StackLayout>
+            <Grid
+                Grid.Row="1"
+                BackgroundColor="{StaticResource Primary}">
+
+                <Label
+                    x:Name="VersionLabel"
+                    HorizontalOptions="Center"
+                    TextColor="{StaticResource White}"
+                    VerticalOptions="Center" />
+
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
 <!--#endif-->

@@ -14,19 +14,30 @@
     x:DataType="vm:MainViewModel"
     mc:Ignorable="d">
     <ContentPage.Content>
-<!--#if (Net8)-->
-        <BlazorWebView
-            HostPage="wwwroot/index.html"
-            StartPath="{x:Bind StartPath}">
+        <Grid RowDefinitions="*,40">
+<!--#if (Net8OrLater)-->
+            <BlazorWebView
+                HostPage="wwwroot/index.html"
+                StartPath="{x:Bind StartPath}">
 <!--#else-->
-        <BlazorWebView HostPage="wwwroot/index.html">
+            <BlazorWebView HostPage="wwwroot/index.html">
 <!--#endif-->
-            <BlazorWebView.RootComponents>
-                <RootComponent
-                    Selector="#app"
-                    ComponentType="{x:Type local:Main}" />
-            </BlazorWebView.RootComponents>
-        </BlazorWebView>
+                <BlazorWebView.RootComponents>
+                    <RootComponent
+                        Selector="#app"
+                        ComponentType="{x:Type local:Main}" />
+                </BlazorWebView.RootComponents>
+            </BlazorWebView>
+            <Grid
+                Grid.Row="1"
+                BackgroundColor="{StaticResource Primary}">
+                <Label
+                    x:Name="VersionLabel"
+                    HorizontalOptions="Center"
+                    TextColor="{StaticResource White}"
+                    VerticalOptions="Center" />
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
 <!--#else-->
@@ -42,19 +53,30 @@
     x:DataType="vm:MainViewModel"
     mc:Ignorable="d">
     <ContentPage.Content>
-<!--#if (Net8)-->
-        <BlazorWebView
-            HostPage="wwwroot/index.html"
-            StartPath="{Binding StartPath}">
+        <Grid RowDefinitions="*,40">
+<!--#if (Net8OrLater)-->
+            <BlazorWebView
+                HostPage="wwwroot/index.html"
+                StartPath="{Binding StartPath}">
 <!--#else-->
-        <BlazorWebView HostPage="wwwroot/index.html">
+            <BlazorWebView HostPage="wwwroot/index.html">
 <!--#endif-->
-            <BlazorWebView.RootComponents>
-                <RootComponent
-                    Selector="#app"
-                    ComponentType="{x:Type local:Main}" />
-            </BlazorWebView.RootComponents>
-        </BlazorWebView>
+                <BlazorWebView.RootComponents>
+                    <RootComponent
+                        Selector="#app"
+                        ComponentType="{x:Type local:Main}" />
+                </BlazorWebView.RootComponents>
+            </BlazorWebView>
+            <Grid
+                Grid.Row="1"
+                BackgroundColor="{StaticResource Primary}">
+                <Label
+                    x:Name="VersionLabel"
+                    HorizontalOptions="Center"
+                    TextColor="{StaticResource White}"
+                    VerticalOptions="Center" />
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
 <!--#endif-->
@@ -69,19 +91,30 @@
     Title="MauiApp._1"
     mc:Ignorable="d">
     <ContentPage.Content>
-<!--#if (Net8)-->
-        <BlazorWebView
-            HostPage="wwwroot/index.html"
-            StartPath="/counter">
+        <Grid RowDefinitions="*,40">
+<!--#if (Net8OrLater)-->
+            <BlazorWebView
+                HostPage="wwwroot/index.html"
+                StartPath="/counter">
 <!--#else-->
-        <BlazorWebView HostPage="wwwroot/index.html">
+            <BlazorWebView HostPage="wwwroot/index.html">
 <!--#endif-->
-            <BlazorWebView.RootComponents>
-                <RootComponent
-                    Selector="#app"
-                    ComponentType="{x:Type local:Main}" />
-            </BlazorWebView.RootComponents>
-        </BlazorWebView>
+                <BlazorWebView.RootComponents>
+                    <RootComponent
+                        Selector="#app"
+                        ComponentType="{x:Type local:Main}" />
+                </BlazorWebView.RootComponents>
+            </BlazorWebView>
+            <Grid
+                Grid.Row="1"
+                BackgroundColor="{StaticResource Primary}">
+                <Label
+                    x:Name="VersionLabel"
+                    HorizontalOptions="Center"
+                    TextColor="{StaticResource White}"
+                    VerticalOptions="Center" />
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
 <!--#endif-->
@@ -121,15 +154,26 @@
     x:DataType="vm:MainViewModel"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <StackLayout
-            HorizontalOptions="Center"
-            VerticalOptions="Center">
-            <Label Text="You don't have anything scheduled today." />
-            <Button Command="{x:Bind AddEventCommand}"
+        <Grid RowDefinitions="*,40">
+            <StackLayout
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <Label Text="You don't have anything scheduled today." />
+                <Button Command="{x:Bind AddEventCommand}"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource PrimaryAction}"
+                        Text="Add Event" />
+            </StackLayout>
+            <Grid
+                Grid.Row="1"
+                BackgroundColor="{StaticResource Primary}">
+                <Label
+                    x:Name="VersionLabel"
                     HorizontalOptions="Center"
-                    Style="{StaticResource PrimaryAction}"
-                    Text="Add Event" />
-        </StackLayout>
+                    TextColor="{StaticResource White}"
+                    VerticalOptions="Center" />
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
 <!--#else-->
@@ -145,15 +189,26 @@
     x:DataType="vm:MainViewModel"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <StackLayout
-            HorizontalOptions="Center"
-            VerticalOptions="Center">
-            <Label Text="You don't have anything scheduled today." />
-            <Button Command="{Binding AddEventCommand}"
+        <Grid RowDefinitions="*,40">
+            <StackLayout
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <Label Text="You don't have anything scheduled today." />
+                <Button Command="{Binding AddEventCommand}"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource PrimaryAction}"
+                        Text="Add Event" />
+            </StackLayout>
+            <Grid
+                Grid.Row="1"
+                BackgroundColor="{StaticResource Primary}">
+                <Label
+                    x:Name="VersionLabel"
                     HorizontalOptions="Center"
-                    Style="{StaticResource PrimaryAction}"
-                    Text="Add Event" />
-        </StackLayout>
+                    TextColor="{StaticResource White}"
+                    VerticalOptions="Center" />
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
 <!--#endif-->
@@ -168,15 +223,26 @@
     Title="Calendar"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <StackLayout
-            HorizontalOptions="Center"
-            VerticalOptions="Center">
-            <Label Text="You don't have anything scheduled today." />
-            <Button Style="{StaticResource PrimaryAction}"
-                    Text="Add Event"
-                    Clicked="OnAddEvent"
-                    HorizontalOptions="Center" />
-        </StackLayout>
+        <Grid RowDefinitions="*,40">
+            <StackLayout
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <Label Text="You don't have anything scheduled today." />
+                <Button Style="{StaticResource PrimaryAction}"
+                        Text="Add Event"
+                        Clicked="OnAddEvent"
+                        HorizontalOptions="Center" />
+            </StackLayout>
+            <Grid
+                Grid.Row="1"
+                BackgroundColor="{StaticResource Primary}">
+                <Label
+                    x:Name="VersionLabel"
+                    HorizontalOptions="Center"
+                    TextColor="{StaticResource White}"
+                    VerticalOptions="Center" />
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
 <!--#endif-->
@@ -220,82 +286,97 @@
 <!--#endif-->
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Padding="30" Spacing="25">
+            <Grid RowDefinitions="*,40">
+                <StackLayout
+                    Padding="30"
+                    Spacing="25">
 
-                <Label
-                    FontSize="32"
-                    HorizontalOptions="Center"
-                    SemanticProperties.HeadingLevel="Level1"
-                    Style="{StaticResource MauiLabel}"
-                    Text="Hello, World!" />
+                    <Label
+                        FontSize="32"
+                        HorizontalOptions="Center"
+                        SemanticProperties.HeadingLevel="Level1"
+                        Style="{StaticResource MauiLabel}"
+                        Text="Hello, World!" />
 
-                <Label
-                    FontSize="18"
-                    HorizontalOptions="Center"
-                    SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                    SemanticProperties.HeadingLevel="Level1"
-                    Style="{StaticResource MauiLabel}"
-                    Text="Welcome to .NET Multi-platform App UI" />
+                    <Label
+                        FontSize="18"
+                        HorizontalOptions="Center"
+                        SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                        SemanticProperties.HeadingLevel="Level1"
+                        Style="{StaticResource MauiLabel}"
+                        Text="Welcome to .NET Multi-platform App UI" />
 
 <!--#if (Mvvm)-->
 <!--#if (CompiledBindings)-->
-                <Label
-                    x:Name="CounterLabel"
-                    FontAttributes="Bold"
-                    FontSize="18"
-                    HorizontalOptions="Center"
-                    Style="{StaticResource MauiLabel}"
-                    Text="{x:Bind CountText}" />
+                    <Label
+                        x:Name="CounterLabel"
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource MauiLabel}"
+                        Text="{x:Bind CountText}" />
 
-                <Button
-                    Command="{x:Bind IncrementCommand}"
-                    HorizontalOptions="Center"
-                    SemanticProperties.Hint="Counts the number of times you click"
-                    Style="{StaticResource PrimaryAction}"
-                    Text="Click me" />
+                    <Button
+                        Command="{x:Bind IncrementCommand}"
+                        HorizontalOptions="Center"
+                        SemanticProperties.Hint="Counts the number of times you click"
+                        Style="{StaticResource PrimaryAction}"
+                        Text="Click me" />
 
 <!--#else-->
-                <Label
-                    x:Name="CounterLabel"
-                    FontAttributes="Bold"
-                    FontSize="18"
-                    HorizontalOptions="Center"
-                    Style="{StaticResource MauiLabel}"
-                    Text="{Binding CountText}" />
+                    <Label
+                        x:Name="CounterLabel"
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource MauiLabel}"
+                        Text="{Binding CountText}" />
 
-                <Button
-                    Command="{Binding IncrementCommand}"
-                    HorizontalOptions="Center"
-                    SemanticProperties.Hint="Counts the number of times you click"
-                    Style="{StaticResource PrimaryAction}"
-                    Text="Click me" />
+                    <Button
+                        Command="{Binding IncrementCommand}"
+                        HorizontalOptions="Center"
+                        SemanticProperties.Hint="Counts the number of times you click"
+                        Style="{StaticResource PrimaryAction}"
+                        Text="Click me" />
 
 <!--#endif-->
 <!--#else-->
-                <Label
-                    x:Name="CounterLabel"
-                    FontAttributes="Bold"
-                    FontSize="18"
-                    HorizontalOptions="Center"
-                    Style="{StaticResource MauiLabel}"
-                    Text="Current count: 0" />
+                    <Label
+                        x:Name="CounterLabel"
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource MauiLabel}"
+                        Text="Current count: 0" />
 
-                <Button
-                    Clicked="OnCounterClicked"
-                    HorizontalOptions="Center"
-                    SemanticProperties.Hint="Counts the number of times you click"
-                    Style="{StaticResource PrimaryAction}"
-                    Text="Click me" />
+                    <Button
+                        Clicked="OnCounterClicked"
+                        HorizontalOptions="Center"
+                        SemanticProperties.Hint="Counts the number of times you click"
+                        Style="{StaticResource PrimaryAction}"
+                        Text="Click me" />
 
 <!--#endif-->
-                <Image
-                    HeightRequest="310"
-                    HorizontalOptions="Center"
-                    SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                    Source="dotnet_bot.png"
-                    WidthRequest="250" />
+                    <Image
+                        HeightRequest="310"
+                        HorizontalOptions="Center"
+                        SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                        Source="dotnet_bot.png"
+                        WidthRequest="250" />
 
-            </StackLayout>
+                </StackLayout>
+                <Grid
+                    Grid.Row="1"
+                    BackgroundColor="{StaticResource Primary}">
+
+                    <Label
+                        x:Name="VersionLabel"
+                        HorizontalOptions="Center"
+                        TextColor="{StaticResource White}"
+                        VerticalOptions="Center" />
+
+                </Grid>
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

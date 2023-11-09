@@ -13,6 +13,7 @@
 #if Tabbed
             BindingContext = AppService.GetService<SettingsViewModel>();
 #else
+            viewModel.Title = "Settings";
             BindingContext = viewModel;
 #endif
         }

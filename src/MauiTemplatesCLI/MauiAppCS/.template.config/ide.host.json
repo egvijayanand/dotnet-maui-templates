@@ -37,7 +37,7 @@
         {
             "id": "razor-class-library",
             "name": {
-                "text": "Create a _Razor class library for the Blazor Hybrid solution."
+                "text": "Create a _Razor Class Library (RCL) for the Blazor Hybrid solution."
             },
             "isVisible": true,
             "defaultValue": "false"

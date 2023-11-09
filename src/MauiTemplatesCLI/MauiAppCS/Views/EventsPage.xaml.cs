@@ -1,4 +1,6 @@
-﻿namespace MauiApp._1.Views
+﻿using System.Reflection;
+
+namespace MauiApp._1.Views
 {
     public partial class EventsPage : ContentPage
     {
@@ -10,6 +12,8 @@
 #endif
         {
             InitializeComponent();
+            var version = typeof(MauiApp).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
+            VersionLabel.Text = $".NET MAUI ver. {version?[..version.IndexOf('+')]}";
 #if Tabbed
             BindingContext = AppService.GetService<EventsViewModel>();
 #else
@@ -21,6 +25,8 @@
         public EventsPage()
         {
             InitializeComponent();
+            var version = typeof(MauiApp).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
+            VersionLabel.Text = $".NET MAUI ver. {version?[..version.IndexOf('+')]}";
 
 #if (!Tabbed)
             Title = "Calendar";

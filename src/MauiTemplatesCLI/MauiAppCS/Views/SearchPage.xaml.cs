@@ -13,6 +13,7 @@
 #if Tabbed
             BindingContext = AppService.GetService<SearchViewModel>();
 #else
+            viewModel.Title = "Search";
             BindingContext = viewModel;
 #endif
         }
