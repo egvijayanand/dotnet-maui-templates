@@ -154,7 +154,9 @@ namespace MauiApp._1.Views
             var version = typeof(MauiApp).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
 #if Mvvm
             BindingContext = viewModel;
+#if Net8OrLater
             viewModel.Title = "Home";
+#endif
             SetBinding(Page.TitleProperty, new Binding(nameof(MainViewModel.Title)));
 #else
             Title = "Home";
