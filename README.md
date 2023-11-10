@@ -130,7 +130,7 @@ dotnet new install VijayAnand.MauiTemplates
 Preview:
 
 ```shell
-dotnet new install VijayAnand.MauiTemplates::4.4.0-preview.4
+dotnet new install VijayAnand.MauiTemplates::4.4.0-preview.5
 ```
 
 If you've already installed this package, then this can be updated to the latest version with the below command.
@@ -274,7 +274,7 @@ And now conditional compilation can be configured so that platform source files 
 For existing projects, add the below block of code in the project file (.csproj). _This will modify the behavior of build process so due care must be taken if doing so._
 
 ```xml
-<ItemGroup Condition="'$(TargetFramework)' != 'net6.0'">
+<ItemGroup Condition="'$(TargetFramework)' != 'net8.0'">
     <Compile Remove="**\*.Standard.cs" />
     <None Include="**\*.Standard.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
 </ItemGroup>

@@ -18,6 +18,9 @@ namespace MauiApp._1.Views
             BindingContext = AppService.GetService<EventsViewModel>();
 #else
             BindingContext = viewModel;
+#if Net8OrLater
+            viewModel.Title = "Calendar";
+#endif
             SetBinding(Page.TitleProperty, new Binding(nameof(EventsViewModel.Title)));
 #endif
         }

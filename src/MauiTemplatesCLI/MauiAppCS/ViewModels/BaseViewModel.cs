@@ -1,13 +1,30 @@
 ﻿namespace MauiApp._1.ViewModels
 {
+#if (Plain || Hybrid || Markup)
     public partial class BaseViewModel : ObservableObject
     {
-#if (Plain || Hybrid || Markup)
         public BaseViewModel()
         {
             
         }
+
+        [ObservableProperty]
+        private string _title = string.Empty;
+    }
 #else
+#if Net8OrLater
+    public partial class BaseViewModel(IDialogService dialogService, INavigationService navigationService) : ObservableObject
+    {
+        public IDialogService DialogService => dialogService;
+
+        public INavigationService NavigationService => navigationService;
+
+        [ObservableProperty]
+        private string _title = string.Empty;
+    }
+#else
+    public partial class BaseViewModel : ObservableObject
+    {
         private readonly IDialogService _dialogService;
         private readonly INavigationService _navigationService;
 
@@ -20,9 +37,10 @@
         public IDialogService DialogService => _dialogService;
 
         public INavigationService NavigationService => _navigationService;
-#endif
 
         [ObservableProperty]
         private string _title = string.Empty;
     }
+#endif
+#endif
 }

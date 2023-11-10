@@ -11,9 +11,17 @@
         {
             InitializeComponent();
 #if Tabbed
-            BindingContext = AppService.GetService<SettingsViewModel>();
-#else
+#if Net8OrLater
+            var viewModel = AppService.GetService<SettingsViewModel>();
             viewModel.Title = "Settings";
+            BindingContext = viewModel;
+#else
+            BindingContext = AppService.GetService<SettingsViewModel>();
+#endif
+#else
+#if Net8OrLater
+            viewModel.Title = "Settings";
+#endif
             BindingContext = viewModel;
 #endif
         }

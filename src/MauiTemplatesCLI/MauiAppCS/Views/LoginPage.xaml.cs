@@ -6,7 +6,9 @@
         public LoginPage(LoginViewModel viewModel)
         {
             InitializeComponent();
+#if Net8OrLater
             viewModel.Title = "Login";
+#endif
             BindingContext = viewModel;
         }
 #else

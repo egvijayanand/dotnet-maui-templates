@@ -7,8 +7,10 @@ open Fabulous.Maui.Blazor
 #endif
 open Microsoft.Maui
 open Microsoft.Maui.Graphics
+open Microsoft.Maui.Hosting
 open Microsoft.Maui.Accessibility
 open Microsoft.Maui.Primitives
+open System.Reflection
 #if Hybrid
 open MauiApp._1.RazorLib
 #endif
@@ -17,14 +19,24 @@ open type Fabulous.Maui.View
 
 module App =
 #if Hybrid
+    let mauiVersion =
+        let version = Assembly.GetAssembly(typeof<MauiApp>).GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion
+        $".NET MAUI ver. {version[..version.IndexOf('+') - 1]}"
+
     let view _ =
         Application(
             ContentPage(
-#if Net8
-                BlazorWebView("wwwroot/index.html", "/counter", [ new FabRootComponent( Selector = "#app", ComponentType = typeof<Main> ) ])
+                Grid(coldefs = [ Star ], rowdefs = [ Star; Absolute 40. ]) {
+#if Net8OrLater
+                    (BlazorWebView("wwwroot/index.html", "/counter", [ new FabRootComponent( Selector = "#app", ComponentType = typeof<Main> ) ])).gridRow(0)
 #else
-                BlazorWebView("wwwroot/index.html", [ new FabRootComponent( Selector = "#app", ComponentType = typeof<Main> ) ])
+                    (BlazorWebView("wwwroot/index.html", [ new FabRootComponent( Selector = "#app", ComponentType = typeof<Main> ) ])).gridRow(0)
 #endif
+
+                    (Grid() {
+                        Label(mauiVersion).center()
+                    }).gridRow(1)
+                }
             )
         )
 
@@ -49,36 +61,47 @@ module App =
         match msg with
         | Clicked -> { Count = model.Count + 1 }, [ SemanticAnnounce $"Current count: {model.Count}" ]
 
+    let mauiVersion =
+        let version = Assembly.GetAssembly(typeof<MauiApp>).GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion
+        $".NET MAUI ver. {version[..version.IndexOf('+') - 1]}"
+
     let view model =
         Application(
             ContentPage(
                 ScrollView(
-                    (VStack(spacing = 25.) {
-                        Label("Hello, World!")
-                            .semantics(SemanticHeadingLevel.Level1)
-                            .font(size = 32.)
-                            .centerTextHorizontal()
+                    Grid(coldefs = [ Star ], rowdefs = [ Star; Absolute 40. ]) {
+                        (VStack(spacing = 25.) {
+                            Label("Hello, World!")
+                                .semantics(SemanticHeadingLevel.Level1)
+                                .font(size = 32.)
+                                .centerTextHorizontal()
 
-                        Label("Welcome to .NET Multi-platform App UI powered by Fabulous")
-                            .semantics(SemanticHeadingLevel.Level2, "Welcome to dot net Multi platform App U I powered by Fabulous")
-                            .font(size = 20.)
-                            .centerTextHorizontal()
+                            Label("Welcome to .NET Multi-platform App UI powered by Fabulous")
+                                .semantics(SemanticHeadingLevel.Level2, "Welcome to dot net Multi platform App U I powered by Fabulous")
+                                .font(size = 20.)
+                                .centerTextHorizontal()
 
-                        let text = $"Current count: {model.Count}"
+                            let text = $"Current count: {model.Count}"
 
-                        Label(text)
-                            .font(size = 18.)
-                            .centerTextHorizontal()
+                            Label(text)
+                                .font(size = 18.)
+                                .centerTextHorizontal()
 
-                        Button("Click me", Clicked)
-                            .semantics(hint = "Counts the number of times you click")
-                            .centerHorizontal()
+                            Button("Click me", Clicked)
+                                .semantics(hint = "Counts the number of times you click")
+                                .centerHorizontal()
 
-                        Image("dotnet_bot.png")
-                            .semantics(description = "Cute dotnet bot waving hi to you!")
-                            .height(200.)
-                            .centerHorizontal()
-                    }).padding(30.)
+                            Image("dotnet_bot.png")
+                                .semantics(description = "Cute dotnet bot waving hi to you!")
+                                .height(200.)
+                                .centerHorizontal()
+                        }).padding(30.)
+                          .gridRow(0)
+
+                        (Grid() {
+                            Label(mauiVersion).center()
+                        }).gridRow(1)
+                    }
                 )
             )
         )

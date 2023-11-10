@@ -6,6 +6,9 @@
         public NewEventPage(NewEventViewModel viewModel)
         {
             InitializeComponent();
+#if Net8OrLater
+            viewModel.Title = "New Event";
+#endif
             BindingContext = viewModel;
         }
 #else
