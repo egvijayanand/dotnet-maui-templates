@@ -7,7 +7,7 @@
     <!--#endif-->
         <!--#if (Hybrid && RazorLib)-->
         <!--#if (Net8)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.0-rc.2.23480.2" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.0" />
         <!--#elif (Net7)-->
         <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="7.0.13" />
         <!--#else-->
@@ -42,7 +42,7 @@
         <!--#if (Hybrid || Razor)-->
         <PackageVersion Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <!--#endif-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0-rc.2.23479.6" Condition="'$(Configuration)' == 'Debug'" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" Condition="'$(Configuration)' == 'Debug'" />
         <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <PackageVersion Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <!--#else-->
@@ -52,7 +52,7 @@
         <PackageVersion Include="CommunityToolkit.Maui" Version="6.1.0" />
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
-        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="3.3.0" />
+        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="3.3.1" />
         <!--#endif-->
         <!--#if (AddMediaPackage)-->
         <PackageVersion Include="CommunityToolkit.Maui.MediaElement" Version="2.0.0" />
@@ -72,10 +72,10 @@
         <PackageVersion Include="CompiledBindings.MAUI" Version="1.0.17.6" />
         <!--#endif-->
         <!--#if (Reactor)-->
-        <PackageVersion Include="Reactor.Maui" Version="1.0.145" />
-        <PackageVersion Include="Reactor.Maui.Canvas" Version="1.0.145" />
+        <PackageVersion Include="Reactor.Maui" Version="1.0.148" />
+        <PackageVersion Include="Reactor.Maui.Canvas" Version="1.0.148" />
         <!--#if (AddMapsPackage)-->
-        <PackageVersion Include="Reactor.Maui.Maps" Version="1.0.145" />
+        <PackageVersion Include="Reactor.Maui.Maps" Version="1.0.148" />
         <!--#endif-->
         <!--#endif-->
     <!--#if (PackageRef)-->

@@ -15,11 +15,11 @@
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <!--#if (Net8)-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.0.0-preview.4" />
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.0.0" />
         <!--#elif (Net7)-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="2.1.0-preview.4" />
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="2.1.0" />
         <!--#else-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="1.1.0-preview.4" />
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="1.1.0" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (Net8)-->
@@ -35,7 +35,7 @@
         <!--#endif-->
         <!--#if (AddMauiMarkup)-->
         <!--#if (Net7OrLater)-->
-        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="3.3.0" />
+        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="3.3.1" />
         <!--#else-->
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="1.2.1" />
         <!--#endif-->

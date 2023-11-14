@@ -204,10 +204,10 @@
         <!--#endif-->
         <!--#else-->
         <!--#if (AddToolkitPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="2.0.*" />
+        <PackageReference Include="CommunityToolkit.Maui" Version="2.*" />
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.2.*" />
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMvvmToolkitPackage)-->

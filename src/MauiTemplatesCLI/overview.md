@@ -24,7 +24,7 @@ Item templates for the following:
 |ContentPage with BlazorWebView (C#)|maui-bwv-cs|
 |[Partial Class (C#)](#partial-class-item-template)|class-cs|
 
-All of these templates currently target `.NET MAUI on .NET 6/7 GA and its Service Releases and .NET 8 RC`.
+All of these templates currently target `.NET MAUI on .NET 6/7/8 GA and its Service Releases`.
 
 Install the template package from NuGet with the below command.
 
@@ -34,11 +34,13 @@ Stable:
 dotnet new install VijayAnand.MauiTemplates
 ```
 
+<!--
 Preview:
 
 ```shell
 dotnet new install VijayAnand.MauiTemplates::4.4.0-preview.5
 ```
+-->
 
 If you've already installed this package, then this can be updated to the latest version with the below command.
 
@@ -57,7 +59,7 @@ And from [v3.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/3.0.0)
 
 And from [v4.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.0.0) of the template package, CLI project template defines a new parameter named `language`:
 
-And from [v4.4.0-preview.1](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.4.0-preview.1) of the template package, CLI project template defines a new parameter named `central-pkg-mgmt`:
+And from [v4.4.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.4.0) of the template package, CLI project template defines a new parameter named `central-pkg-mgmt`:
 
 * Central Package Management: (Short notation: `-cpm`):
 

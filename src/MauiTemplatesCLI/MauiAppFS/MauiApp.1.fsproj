@@ -294,25 +294,25 @@
   <!--#if (Net8)-->
     <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="$(MauiVersion)" />
   <!--#else-->
-    <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="7.0.*" />
+    <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="7.*" />
   <!--#endif-->
   <!--#endif-->
   <!--#if (AddMapsPackage)-->
-    <PackageReference Include="Fabulous.MauiControls.Maps" Version="2.3.*" />
+    <PackageReference Include="Fabulous.MauiControls.Maps" Version="2.*" />
   <!--#if (AllPlatforms || IsWindows)-->
-    <PackageReference Include="CommunityToolkit.Maui.Maps" Version="1.0.*" />
+    <PackageReference Include="CommunityToolkit.Maui.Maps" Version="1.*" />
   <!--#endif-->
   <!--#endif-->
   <!--#if (Net7OrLater)-->
   <!--#if (Net8)-->
-    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0-*" Condition="'$(Configuration)' == 'Debug'" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.*" Condition="'$(Configuration)' == 'Debug'" />
   <!--#if (Hybrid)-->
     <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
   <!--#endif-->
     <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
     <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
   <!--#else-->
-    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.*" Condition="'$(Configuration)' == 'Debug'" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.*" Condition="'$(Configuration)' == 'Debug'" />
   <!--#endif-->
   <!--#if (AddToolkitPackage)-->
     <PackageReference Include="CommunityToolkit.Maui" Version="6.*" />
@@ -321,14 +321,14 @@
     <PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.*" />
   <!--#endif-->
   <!--#if (AddMediaPackage)-->
-    <PackageReference Include="Fabulous.MauiControls.MediaElement" Version="2.0.*" />
+    <PackageReference Include="Fabulous.MauiControls.MediaElement" Version="2.*" />
   <!--#endif-->
   <!--#else-->
   <!--#if (AddToolkitPackage)-->
-    <PackageReference Include="CommunityToolkit.Maui" Version="2.0.*" />
+    <PackageReference Include="CommunityToolkit.Maui" Version="2.*" />
   <!--#endif-->
   <!--#if (AddMarkupPackage)-->
-    <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.2.*" />
+    <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.*" />
   <!--#endif-->
   <!--#endif-->
   <!--#if (AddMvvmToolkitPackage)-->

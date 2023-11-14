@@ -53,23 +53,23 @@
         <!--#endif-->
         <!--#endif-->
         <!--#else-->
-        <PackageReference Include="Xamarin.Forms" Version="5.0.0.*" />
+        <PackageReference Include="Xamarin.Forms" Version="5.*" />
         <!--#if (AddFormsEssentials)-->
-        <PackageReference Include="Xamarin.Essentials" Version="1.8.*" />
+        <PackageReference Include="Xamarin.Essentials" Version="1.*" />
         <!--#endif-->
         <!--#if (AddFormsToolkit)-->
-        <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.*" />
+        <PackageReference Include="Xamarin.CommunityToolkit" Version="2.*" />
         <!--#endif-->
         <!--#if (AddFormsMarkup)-->
-        <PackageReference Include="Xamarin.CommunityToolkit.Markup" Version="2.0.*" />
+        <PackageReference Include="Xamarin.CommunityToolkit.Markup" Version="2.*" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <!--#if (Net8)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="3.0.0-*" />
+        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="3.*" />
         <!--#elif (Net7)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="2.1.0-*" />
+        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="2.*" />
         <!--#else-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="1.1.0-*" />
+        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="1.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#endif-->
@@ -116,23 +116,23 @@
         <!--#if (Net7OrLater)-->
         <PackageReference Include="CommunityToolkit.Maui" Version="6.*" />
         <!--#else-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="2.0.*" />
+        <PackageReference Include="CommunityToolkit.Maui" Version="2.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMauiMarkup)-->
         <!--#if (Net7OrLater)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.*" />
         <!--#else-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.2.*" />
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <!--#if (Net8)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="3.0.0-*" />
+        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="3.*" />
         <!--#elif (Net7)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="2.1.0-*" />
+        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="2.*" />
         <!--#else-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="1.1.0-*" />
+        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="1.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#endif-->

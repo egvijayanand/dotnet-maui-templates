@@ -19,11 +19,11 @@
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" />
         <!--#else-->
         <!--#if (Net8)-->
-        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.0-*" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.*" />
         <!--#elif (Net7)-->
-        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.*" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.*" />
         <!--#else-->
-        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.*" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.*" />
         <!--#endif-->
         <!--#endif-->
     </ItemGroup>
