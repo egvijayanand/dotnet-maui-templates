@@ -23,7 +23,7 @@
         <PackageVersion Include="CommunityToolkit.Maui" Version="6.1.0" />
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
-        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="3.3.0" />
+        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="3.3.1" />
         <!--#endif-->
         <!--#else-->
         <!--#if (AddToolkitPackage)-->

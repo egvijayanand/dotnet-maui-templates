@@ -1,7 +1,15 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
 
-What's new in ver. 4.4.0-preview.5:
------------------------------------
+What's new in ver. 4.4.0:
+-------------------------
+Templates updated for .NET 8 RTM.
+
+All preview features are now stable.
+
+Note: For now, CPM feature is only supported on CLI.
+
+v4.4.0-preview.5:
+
 Another set of .NET 8 / C# 12 features (Primary Constructors).
 
 v4.4.0-preview.4:

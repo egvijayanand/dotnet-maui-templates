@@ -7,16 +7,21 @@
         /// </summary>
         /// <param name="serviceType">An object that specifies the type of service object to get.</param>
         /// <returns>A service object of type <paramref name="serviceType"/>. -or- null if there is no service object of type <paramref name="serviceType"/>.</returns>
-        public static object? GetService(Type serviceType) => Current.GetService(serviceType);
+        public static object? GetService(Type serviceType) => Current?.GetService(serviceType);
 
         /// <summary>
         /// Get service of type <typeparamref name="TService"/> from the System.IServiceProvider.
         /// </summary>
         /// <typeparam name="TService">The type of service object to get.</typeparam>
         /// <returns>A service object of type <typeparamref name="TService"/> or null if there is no such service.</returns>
-        public static TService? GetService<TService>() => Current.GetService<TService>();
+        public static TService? GetService<TService>() =>
+            Current is null ? default : Current.GetService<TService>();
 
-        public static IServiceProvider Current =>
+#if Net8OrLater
+        public static IServiceProvider? Current =>
+            IPlatformApplication.Current?.Services;
+#else
+        public static IServiceProvider? Current =>
 //-:cnd:noEmit
 #if ANDROID || TIZEN
             MauiApplication.Current.Services;
@@ -28,5 +33,6 @@
             throw new PlatformNotSupportedException();
 #endif
 //+:cnd:noEmit
+#endif
     }
 }

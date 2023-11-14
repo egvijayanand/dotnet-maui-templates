@@ -12,7 +12,7 @@ Release Details:
 |:---:|:---:|:---:|:---:|:---:|
 |Stable|.NET 6 SR11 (6.0.553)|VS2022 17.4.x - 17.7.x|Tue, Apr 25, 2023|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
 |Stable|.NET 7 SR10 (7.0.101)|VS2022 17.4.x - 17.7.x|Tue, Nov 7, 2023|Active|
-|Preview|[.NET 8 RC2](https://devblogs.microsoft.com/dotnet/announcing-dotnet-maui-in-dotnet-8-rc-2/ "Announcement Blog Post") (8.0.0-rc.2.9530) <br /> _Requires Android SDK Platform 34_|VS2022 17.8.0 Preview 7.0|Tue, Nov 7, 2023|Go-Live Support|
+|Stable|[.NET 8 GA](https://devblogs.microsoft.com/dotnet/announcing-dotnet-maui-in-dotnet-8/ "Announcement Blog Post") (8.0.3) <br /> _Requires Android SDK Platform 34_|VS2022 17.8.0|Tue, Nov 14, 2023|Active|
 
 Use the below commands to verify the version installed:
 
@@ -48,7 +48,9 @@ Templates have been updated to support .NET 6/7/8 and is available to install fr
 |Channel|NuGet|VS Marketplace|
 |:---:|:---:|:---:|
 |Stable|[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/?icon=nuget)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/)|[![.NET MAUI Project and Item Templates - VS Marketplace](https://badgen.net/vs-marketplace/v/egvijayanand.maui-templates?icon=visualstudio)](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-templates)|
+<!--
 |Preview|[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/pre?icon=nuget)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/absoluteLatest)| - |
+-->
 
 ### For VS2022 users:
 
@@ -127,11 +129,13 @@ Stable:
 dotnet new install VijayAnand.MauiTemplates
 ```
 
+<!--
 Preview:
 
 ```shell
 dotnet new install VijayAnand.MauiTemplates::4.4.0-preview.5
 ```
+-->
 
 If you've already installed this package, then this can be updated to the latest version with the below command.
 
@@ -175,7 +179,7 @@ And from [v3.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/3.0.0)
 
 And from [v4.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.0.0) of the template package, CLI project template defines a new parameter named `language`:
 
-And from [v4.4.0-preview.1](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.4.0-preview.1) of the template package, CLI project template defines a new parameter named `central-pkg-mgmt`:
+And from [v4.4.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.4.0) of the template package, CLI project template defines a new parameter named `central-pkg-mgmt`:
 
 * Central Package Management: (Short notation: `-cpm`):
 
