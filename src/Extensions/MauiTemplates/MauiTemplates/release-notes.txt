@@ -1,5 +1,11 @@
-What's new in ver. 4.3.6.0:
+What's new in ver. 4.4.0.0:
 ---------------------------
+1. Templates updated for .NET 8 RTM
+
+2. Incorporated .NET 8 / C# 12 features wherever possible
+
+v4.3.6.0:
+
 Defined custom logic for BlazorWebView XAML item template processing.
 
 v4.3.0.0:
