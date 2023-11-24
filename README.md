@@ -268,9 +268,6 @@ Both .NET MAUI *App* and *Class Library* templates take the below optional Boole
 * `-it` | `--include-toolkit` - Default is `false`
 * `-im` | `--include-markup` - Default is `false`
 * `-imt` | `--include-mvvm-toolkit` - Default is `false`
-* `-inm` | `--include-maps` - Default is `false` (.NET 7 or later)
-* `-if` | `--include-foldable` - Default is `false` (.NET 7 or later)
-* `-ime` | `--include-media-element` - Default is `false` (.NET 7 or later)
 
 Other Parameters:
 
@@ -411,7 +408,7 @@ dotnet new mauiapp -dp Shell -tp Android iOS Windows
 Similar to All-in-One .NET MAUI App, the Class Library project template also takes `target-platform` as a parameter that takes a combination from the same set of values (with `All` being the default value).
 
 * Can be created targeting .NET Razor SDK
-  - Parameter name: `--use-razor-sdk` | `-usr`
+  - Parameter name: `--use-razor-sdk` | `-urs`
 * Can be created targeting .NET MAUI Core
   - Parameter name: `--use-maui-core` | `-umc`
 * Can be created targeting .NET MAUI Essentials
@@ -443,6 +440,7 @@ Specific to `.NET MAUI`:
 Common to both:
 
 * `-inmt` | `--include-mvvm-toolkit` - Default is `false`
+* `-ist` | `--include-shared-toolkit` - Default is `false`
 
 For more details: run this command in the terminal (use `-h` to save some keystrokes):
 

@@ -1,8 +1,16 @@
-What's new in ver. 4.4.0.0:
+What's new in ver. 4.5.0.0:
 ---------------------------
+1. MAUI Community Toolkit package versions bumped to their latest versions supporting the .NET 8 release
+
+2. Option to reference Shared Toolkit NuGet package in all of the templates
+
+v4.4.0.0:
+
 1. Templates updated for .NET 8 RTM
 
 2. Incorporated .NET 8 / C# 12 features wherever possible
+
+3. .NET MAUI Version on the Main page of the App
 
 v4.3.6.0:
 
