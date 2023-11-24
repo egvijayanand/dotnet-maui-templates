@@ -6,7 +6,7 @@ What's new in ver. 4.5.0:
 
 Option to reference Shared Toolkit NuGet package in all of the templates.
 
---include-shared-toolkit | -ist
+--include-shared-toolkit | -ist (Boolean parameter - Default value is false.)
 
 dotnet new mauiapp -o MyApp -ist
 
