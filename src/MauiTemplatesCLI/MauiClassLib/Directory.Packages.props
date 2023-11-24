@@ -5,7 +5,7 @@
     <!--#if (PackageRef)-->
     <ItemGroup>
     <!--#endif-->
-        <!--#if (Net8)-->
+        <!--#if (Net8OrLater)-->
         <!--#if (UseMauiCore)-->
         <PackageVersion Include="Microsoft.Maui.Core" Version="$(MauiVersion)" />
         <!--#elif (UseMauiEssentials)-->
@@ -16,14 +16,25 @@
         <!--#endif-->
         <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <PackageVersion Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+        <!--#if (AddToolkitPackage)-->
+        <PackageVersion Include="CommunityToolkit.Maui" Version="7.0.0" />
+        <!--#endif-->
+        <!--#if (AddMarkupPackage)-->
+        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="4.0.0" />
+        <!--#endif-->
+        <!--#if (AddSharedToolkit)-->
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.0.0" />
         <!--#endif-->
         <!--#endif-->
-        <!--#if (Net7OrLater)-->
+        <!--#elif (Net7)-->
         <!--#if (AddToolkitPackage)-->
         <PackageVersion Include="CommunityToolkit.Maui" Version="6.1.0" />
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="3.3.1" />
+        <!--#endif-->
+        <!--#if (AddSharedToolkit)-->
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="2.1.0" />
         <!--#endif-->
         <!--#else-->
         <!--#if (AddToolkitPackage)-->
@@ -31,6 +42,9 @@
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="1.2.1" />
+        <!--#endif-->
+        <!--#if (AddSharedToolkit)-->
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="1.1.0" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMvvmToolkitPackage)-->

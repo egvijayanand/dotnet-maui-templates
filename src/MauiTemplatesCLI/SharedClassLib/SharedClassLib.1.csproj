@@ -43,15 +43,6 @@
         <!--#if (AddFormsMarkup)-->
         <PackageReference Include="Xamarin.CommunityToolkit.Markup" />
         <!--#endif-->
-        <!--#if (AddSharedToolkit)-->
-        <!--#if (Net8)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" />
-        <!--#elif (Net7)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" />
-        <!--#else-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" />
-        <!--#endif-->
-        <!--#endif-->
         <!--#else-->
         <PackageReference Include="Xamarin.Forms" Version="5.*" />
         <!--#if (AddFormsEssentials)-->
@@ -63,71 +54,70 @@
         <!--#if (AddFormsMarkup)-->
         <PackageReference Include="Xamarin.CommunityToolkit.Markup" Version="2.*" />
         <!--#endif-->
-        <!--#if (AddSharedToolkit)-->
-        <!--#if (Net8)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="3.*" />
-        <!--#elif (Net7)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="2.*" />
-        <!--#else-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="1.*" />
-        <!--#endif-->
-        <!--#endif-->
         <!--#endif-->
     </ItemGroup>
 
-    <!--#if (Net8 || AddMauiToolkit || AddMauiMarkup)-->
+    <!--#if (Net8OrLater || AddMauiToolkit || AddMauiMarkup)-->
     <!-- .NET MAUI NuGet packages -->
     <ItemGroup Condition="'$(TargetFramework)' == 'MAUI_TFM'">
     <!--#endif-->
         <!--#if (CentralPkgMgmt)-->
-        <!--#if (Net8)-->
+        <!--#if (Net8OrLater)-->
         <PackageReference Include="Microsoft.Maui.Controls" />
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" />
         <!--#endif-->
         <!--#if (AddMauiToolkit)-->
-        <!--#if (Net7OrLater)-->
         <PackageReference Include="CommunityToolkit.Maui" />
-        <!--#else-->
-        <PackageReference Include="CommunityToolkit.Maui" />
-        <!--#endif-->
         <!--#endif-->
         <!--#if (AddMauiMarkup)-->
-        <!--#if (Net7OrLater)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" />
-        <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" />
         <!--#endif-->
-        <!--#endif-->
-        <!--#if (AddSharedToolkit)-->
-        <!--#if (Net8)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" />
-        <!--#elif (Net7)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" />
         <!--#else-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" />
-        <!--#endif-->
-        <!--#endif-->
-        <!--#else-->
-        <!--#if (Net8)-->
+        <!--#if (Net8OrLater)-->
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
-        <!--#endif-->
         <!--#if (AddMauiToolkit)-->
-        <!--#if (Net7OrLater)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="6.*" />
-        <!--#else-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="2.*" />
-        <!--#endif-->
+        <PackageReference Include="CommunityToolkit.Maui" Version="7.*" />
         <!--#endif-->
         <!--#if (AddMauiMarkup)-->
-        <!--#if (Net7OrLater)-->
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.*" />
+        <!--#endif-->
+        <!--#elif (Net7)-->
+        <!--#if (AddMauiToolkit)-->
+        <PackageReference Include="CommunityToolkit.Maui" Version="6.*" />
+        <!--#endif-->
+        <!--#if (AddMauiMarkup)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.*" />
+        <!--#endif-->
         <!--#else-->
+        <!--#if (AddMauiToolkit)-->
+        <PackageReference Include="CommunityToolkit.Maui" Version="2.*" />
+        <!--#endif-->
+        <!--#if (AddMauiMarkup)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.*" />
         <!--#endif-->
         <!--#endif-->
+        <!--#endif-->
+    <!--#if (Net8OrLater || AddMauiToolkit || AddMauiMarkup)-->
+    </ItemGroup>
+
+    <!--#endif-->
+    <!--#if (AddMvvmToolkit || AddSharedToolkit)-->
+    <!-- Common NuGet packages -->
+    <ItemGroup>
+        <!--#if (CentralPkgMgmt)-->
+        <!--#if (AddMvvmToolkit)-->
+        <PackageReference Include="CommunityToolkit.Mvvm" />
+        <!--#endif-->
         <!--#if (AddSharedToolkit)-->
-        <!--#if (Net8)-->
+        <PackageReference Include="VijayAnand.Toolkit.Markup" />
+        <!--#endif-->
+        <!--#else-->
+        <!--#if (AddMvvmToolkit)-->
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*" />
+        <!--#endif-->
+        <!--#if (AddSharedToolkit)-->
+        <!--#if (Net8OrLater)-->
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="3.*" />
         <!--#elif (Net7)-->
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="2.*" />
@@ -135,18 +125,6 @@
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="1.*" />
         <!--#endif-->
         <!--#endif-->
-        <!--#endif-->
-    <!--#if (Net8 || AddMauiToolkit || AddMauiMarkup)-->
-    </ItemGroup>
-
-    <!--#endif-->
-    <!--#if (AddMvvmToolkit)-->
-    <!-- Common NuGet packages -->
-    <ItemGroup>
-        <!--#if (CentralPkgMgmt)-->
-        <PackageReference Include="CommunityToolkit.Mvvm" />
-        <!--#else-->
-        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*" />
         <!--#endif-->
     </ItemGroup>
     <!--#endif-->

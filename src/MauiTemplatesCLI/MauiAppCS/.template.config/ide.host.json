@@ -59,6 +59,14 @@
             "defaultValue": "false"
         },
         {
+            "id": "include-shared-toolkit",
+            "name": {
+                "text": "Add and configure Vijay_Anand.Toolkit.Markup NuGet package reference"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
             "id": "include-mvvm-toolkit",
             "name": {
                 "text": "Add CommunityToolkit.Mvvm (aka Microsoft MV_VM Toolkit) NuGet package reference"

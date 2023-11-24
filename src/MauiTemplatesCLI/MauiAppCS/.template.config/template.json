@@ -148,6 +148,12 @@
                     }
                 },
                 {
+                    "condition": "(Markup && AddSharedToolkit)",
+                    "exclude": [
+                        "Helpers/*.cs"
+                    ]
+                },
+                {
                     "condition": "(!CSharp)",
                     "exclude": [
                         "**/*.markup.cs",
@@ -570,6 +576,13 @@
             "description": "Option to add and configure Microsoft.Maui.Controls.Foldable NuGet package reference (.NET 7 or later).",
             "displayName": "Add and configure Microsoft.Maui.Controls.Fo_ldable NuGet package reference"
         },
+        "include-shared-toolkit": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add VijayAnand.Toolkit.Markup NuGet package reference.",
+            "displayName": "Add VijayAnand.Toolkit.Markup NuGet package reference"
+        },
         "windows-unpackaged": {
             "type": "parameter",
             "datatype": "bool",
@@ -781,6 +794,10 @@
         "AddMvvmToolkitPackage": {
             "type": "computed",
             "value": "(include-mvvm-toolkit)"
+        },
+        "AddSharedToolkit": {
+            "type": "computed",
+            "value": "(include-shared-toolkit)"
         },
         "CentralPkgMgmt": {
             "type": "computed",

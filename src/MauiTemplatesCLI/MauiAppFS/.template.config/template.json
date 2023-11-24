@@ -283,6 +283,13 @@
             "description": "Option to add CommunityToolkit.Mvvm (aka Microsoft MVVM Toolkit) NuGet package reference.",
             "displayName": "Add CommunityToolkit.Mvvm (aka Microsoft MV_VM Toolkit) NuGet package reference"
         },
+        "include-shared-toolkit": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add VijayAnand.Toolkit.Markup NuGet package reference.",
+            "displayName": "Add VijayAnand.Toolkit.Markup NuGet package reference"
+        },
         "include-maps": {
             "type": "parameter",
             "datatype": "bool",
@@ -445,6 +452,10 @@
         "AddMvvmToolkitPackage": {
             "type": "computed",
             "value": "(include-mvvm-toolkit)"
+        },
+        "AddSharedToolkit": {
+            "type": "computed",
+            "value": "(include-shared-toolkit)"
         },
         "CentralPkgMgmt": {
             "type": "computed",

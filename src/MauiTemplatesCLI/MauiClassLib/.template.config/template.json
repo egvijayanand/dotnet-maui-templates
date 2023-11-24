@@ -137,6 +137,13 @@
             "description": "Option to add CommunityToolkit.Maui.Markup NuGet package reference.",
             "displayName": "Add CommunityToolkit.Maui._Markup NuGet package reference"
         },
+        "include-shared-toolkit": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add VijayAnand.Toolkit.Markup NuGet package reference.",
+            "displayName": "Add VijayAnand.Toolkit.Markup NuGet package reference"
+        },
         "include-mvvm-toolkit": {
             "type": "parameter",
             "datatype": "bool",
@@ -191,9 +198,13 @@
             "type": "computed",
             "value": "(frameworkLower == \"net8.0\")"
         },
-        "Net7OrLater": {
+        "Net7": {
             "type": "computed",
-            "value": "(frameworkLower == \"net7.0\" || frameworkLower == \"net8.0\")"
+            "value": "(frameworkLower == \"net7.0\")"
+        },
+        "Net8OrLater": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net8.0\")"
         },
         "AllPlatforms": {
             "type": "computed",
@@ -242,6 +253,10 @@
         "AddMvvmToolkitPackage": {
             "type": "computed",
             "value": "(include-mvvm-toolkit)"
+        },
+        "AddSharedToolkit": {
+            "type": "computed",
+            "value": "(include-shared-toolkit)"
         },
         "CentralPkgMgmt": {
             "type": "computed",

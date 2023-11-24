@@ -34,17 +34,24 @@ global using MauiReactor.Maps;
 #endif
 
 #endif
-#if AddToolkitPackage
+#if (AddToolkitPackage || AddMediaPackage)
 // .NET MAUI Toolkit
 global using CommunityToolkit.Maui;
+#if AddToolkitPackage
+global using CommunityToolkit.Maui.Behaviors;
+global using CommunityToolkit.Maui.Converters;
+global using CommunityToolkit.Maui.Views;
+#endif
 
 #endif
 #if (AddMvvmToolkitPackage || (Mvvm && !Razor))
 // MVVM Toolkit
 global using CommunityToolkit.Mvvm.ComponentModel;
 global using CommunityToolkit.Mvvm.Input;
+global using CommunityToolkit.Mvvm.Messaging;
 
 #endif
+global using MauiApp._1;
 #if (Hierarchical || Tabbed || Shell)
 global using MauiApp._1.Controls;
 #endif
@@ -60,6 +67,11 @@ global using MauiApp._1.ViewModels;
 #endif
 global using MauiApp._1.Views;
 
+#if AddSharedToolkit
+// Shared Toolkit
+global using VijayAnand.Toolkit.Markup;
+
+#endif
 #if AddMarkupPackage
 // .NET MAUI Markup
 global using CommunityToolkit.Maui.Markup;
@@ -70,18 +82,25 @@ global using MC = Microsoft.Maui.Controls;
 // Static
 global using static CommunityToolkit.Maui.Markup.GridRowsColumns;
 global using static Microsoft.Maui.Graphics.Colors;
-#if Markup
+#if AddSharedToolkit
+global using static VijayAnand.Toolkit.Markup.ResourceHelper;
+global using static VijayAnand.Toolkit.Markup.VisualStateHelper;
+#elif Markup
 global using static MauiApp._1.Helpers.ResourceHelper;
 global using static MauiApp._1.Helpers.VisualStateHelper;
 #endif
 #else
 // Static
 global using static Microsoft.Maui.Graphics.Colors;
+#if AddSharedToolkit
+global using static VijayAnand.Toolkit.Markup.ResourceHelper;
+global using static VijayAnand.Toolkit.Markup.VisualStateHelper;
+#endif
+#endif
 #if Comet
 global using static Microsoft.Maui.TextAlignment;
 global using static MauiApp._1.App;
 #endif
 #if Reactor
 global using static MauiApp._1.Helpers.ResourceHelper;
-#endif
 #endif
