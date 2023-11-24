@@ -43,7 +43,7 @@ On Linux (Only `Android` workload is supported for now):
 sudo dotnet workload install maui-android
 ```
 
-If already installed, can be updated to latest version with the below command:
+If already installed, can be updated to the latest version with the below command:
 
 ```
 dotnet workload update
