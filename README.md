@@ -45,7 +45,7 @@ sudo dotnet workload install maui-android
 
 If already installed, can be updated to the latest version with the below command:
 
-```
+```shell
 dotnet workload update
 ```
 
