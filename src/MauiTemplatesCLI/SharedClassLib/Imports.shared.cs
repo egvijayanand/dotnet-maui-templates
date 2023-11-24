@@ -1,8 +1,16 @@
 ﻿#if AddMvvmToolkit
 global using CommunityToolkit.Mvvm.ComponentModel;
 global using CommunityToolkit.Mvvm.Input;
-#endif
+global using CommunityToolkit.Mvvm.Messaging;
 
+#endif
+#if AddSharedToolkit
+global using VijayAnand.Toolkit.Markup;
+
+global using static VijayAnand.Toolkit.Markup.ResourceHelper;
+global using static VijayAnand.Toolkit.Markup.VisualStateHelper;
+
+#endif
 //-:cnd:noEmit
 // Based on constants defined in the project file
 // Can also be defined using TargetFrameworkVersion like NETSTANDARD2_0, NETSTANDARD2_0_OR_GREATER,

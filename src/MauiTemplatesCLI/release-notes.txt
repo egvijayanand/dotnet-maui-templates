@@ -1,7 +1,19 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
 
-What's new in ver. 4.4.0:
+What's new in ver. 4.5.0:
 -------------------------
+.NET MAUI Community Toolkit package versions bumped to their latest versions supporting the .NET 8 release.
+
+Option to reference Shared Toolkit NuGet package in all of the templates.
+
+--include-shared-toolkit | -ist
+
+dotnet new mauiapp -o MyApp -ist
+
+dotnet new mauiclasslib -o MauiLib -ist
+
+v4.4.0:
+
 Templates updated for .NET 8 RTM.
 
 All preview features are now stable.

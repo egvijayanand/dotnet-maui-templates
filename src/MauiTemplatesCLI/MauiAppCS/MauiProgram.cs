@@ -1,9 +1,6 @@
 ﻿#if Razor
 using BlazorBindings.Maui;
 #endif
-#if (AddToolkitPackage || AddMediaPackage)
-using CommunityToolkit.Maui;
-#endif
 #if Hybrid
 #if RazorLib
 using MauiApp._1.RazorLib.Data;

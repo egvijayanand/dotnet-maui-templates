@@ -43,6 +43,12 @@ On Linux (Only `Android` workload is supported for now):
 sudo dotnet workload install maui-android
 ```
 
+If already installed, can be updated to latest version with the below command:
+
+```
+dotnet workload update
+```
+
 Templates have been updated to support .NET 6/7/8 and is available to install from.
 
 |Channel|NuGet|VS Marketplace|
@@ -262,6 +268,13 @@ Both .NET MAUI *App* and *Class Library* templates take the below optional Boole
 * `-it` | `--include-toolkit` - Default is `false`
 * `-im` | `--include-markup` - Default is `false`
 * `-imt` | `--include-mvvm-toolkit` - Default is `false`
+* `-inm` | `--include-maps` - Default is `false` (.NET 7 or later)
+* `-if` | `--include-foldable` - Default is `false` (.NET 7 or later)
+* `-ime` | `--include-media-element` - Default is `false` (.NET 7 or later)
+
+Other Parameters:
+
+* `-ist` | `--include-shared-toolkit` - Default is `false`
 * `-cc` | `--conditional-compilation` - Default is `false`
 
 #### Conditional Compilation
