@@ -1,5 +1,15 @@
-What's new in ver. 4.5.0.0:
+Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
+
+What's new in ver. 4.6.0.0:
 ---------------------------
+1. Option to reference Nightly build .NET MAUI packages (from CI feed) in all of the supported templates
+
+Note: For this work, add the following URL as a NuGet package source:
+
+https://aka.ms/maui-nightly/index.json
+
+v4.5.0.0:
+
 1. MAUI Community Toolkit package versions bumped to their latest versions supporting the .NET 8 release
 
 2. Option to reference Shared Toolkit NuGet package in all of the templates
