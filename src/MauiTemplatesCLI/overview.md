@@ -63,7 +63,7 @@ And from [v4.4.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.4.0)
 
 * Nightly build: (Short notation: `-ni`):
 
-  Option to reference Nightly build MAUI packages (from CI feed) in all of the supported templates.
+  Option to reference Nightly build MAUI packages (from the [CI feed](https://dev.azure.com/xamarin/public/_artifacts/feed/maui-nightly)) in all the supported templates.
 
   `-ni` | `--nightly` This is a Boolean parameter - Default value is `false`. _Can also be used with the CPM option too_.
 
