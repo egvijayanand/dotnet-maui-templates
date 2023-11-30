@@ -1,11 +1,12 @@
 ﻿//-:cnd:noEmit
 #if FORMS
-namespace System.Runtime.CompilerServices
-{
-    public class IsExternalInit
-    {
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
-    }
+namespace System.Runtime.CompilerServices;
+
+internal class IsExternalInit
+{
+
 }
 #endif
 //+:cnd:noEmit

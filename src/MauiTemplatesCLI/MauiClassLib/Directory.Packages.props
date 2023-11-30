@@ -1,6 +1,9 @@
 <Project>
     <PropertyGroup>
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+        <!--#if (Net8 && Nightly)-->
+        <MauiVersion>8.0.4-nightly</MauiVersion>
+        <!--#endif-->
     </PropertyGroup>
     <!--#if (PackageRef)-->
     <ItemGroup>
@@ -23,7 +26,7 @@
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="4.0.0" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.0.0" />
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.1.0" />
         <!--#endif-->
         <!--#endif-->
         <!--#elif (Net7)-->

@@ -30,7 +30,8 @@
             </BlazorWebView>
             <Grid
                 Grid.Row="1"
-                BackgroundColor="{StaticResource Primary}">
+                BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
+                                                  Light={StaticResource Primary}}">
                 <Label
                     x:Name="VersionLabel"
                     HorizontalOptions="Center"
@@ -69,7 +70,8 @@
             </BlazorWebView>
             <Grid
                 Grid.Row="1"
-                BackgroundColor="{StaticResource Primary}">
+                BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
+                                                  Light={StaticResource Primary}}">
                 <Label
                     x:Name="VersionLabel"
                     HorizontalOptions="Center"
@@ -107,7 +109,8 @@
             </BlazorWebView>
             <Grid
                 Grid.Row="1"
-                BackgroundColor="{StaticResource Primary}">
+                BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
+                                                  Light={StaticResource Primary}}">
                 <Label
                     x:Name="VersionLabel"
                     HorizontalOptions="Center"
@@ -166,7 +169,8 @@
             </StackLayout>
             <Grid
                 Grid.Row="1"
-                BackgroundColor="{StaticResource Primary}">
+                BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
+                                                  Light={StaticResource Primary}}">
                 <Label
                     x:Name="VersionLabel"
                     HorizontalOptions="Center"
@@ -201,7 +205,8 @@
             </StackLayout>
             <Grid
                 Grid.Row="1"
-                BackgroundColor="{StaticResource Primary}">
+                BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
+                                                  Light={StaticResource Primary}}">
                 <Label
                     x:Name="VersionLabel"
                     HorizontalOptions="Center"
@@ -235,7 +240,8 @@
             </StackLayout>
             <Grid
                 Grid.Row="1"
-                BackgroundColor="{StaticResource Primary}">
+                BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
+                                                  Light={StaticResource Primary}}">
                 <Label
                     x:Name="VersionLabel"
                     HorizontalOptions="Center"
@@ -367,7 +373,8 @@
                 </StackLayout>
                 <Grid
                     Grid.Row="1"
-                    BackgroundColor="{StaticResource Primary}">
+                    BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
+                                                      Light={StaticResource Primary}}">
 
                     <Label
                         x:Name="VersionLabel"

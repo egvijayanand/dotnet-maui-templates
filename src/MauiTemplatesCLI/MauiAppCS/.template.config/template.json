@@ -513,12 +513,19 @@
                 }
             ]
         },
+        "nightly": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to use Nightly (CI) build.",
+            "displayName": "Option to use _Nightly (CI) build"
+        },
         "use-mvvm": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to use MVVM.",
-            "displayName": "Option to u_se MVVM"
+            "displayName": "Option to use MV_VM"
         },
         "include-compiled-bindings": {
             "type": "parameter",
@@ -810,6 +817,10 @@
         "ConditionalCompilation": {
             "type": "computed",
             "value": "(conditional-compilation)"
+        },
+        "Nightly": {
+            "type": "computed",
+            "value": "(nightly)"
         },
         "PackageRef": {
             "type": "computed",

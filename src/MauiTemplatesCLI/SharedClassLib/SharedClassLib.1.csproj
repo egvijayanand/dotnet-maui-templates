@@ -16,6 +16,9 @@
 
     <PropertyGroup Condition="'$(TargetFramework)' == 'MAUI_TFM'">
         <UseMaui>true</UseMaui>
+        <!--#if (Net8 && !CentralPkgMgmt && Nightly)-->
+        <MauiVersion>8.0.*-*</MauiVersion>
+        <!--#endif-->
         <SingleProject>true</SingleProject>
         <DefineConstants>$(DefineConstants);MAUI</DefineConstants>
     </PropertyGroup>

@@ -35,6 +35,14 @@
             "defaultValue": "false"
         },
         {
+            "id": "nightly",
+            "name": {
+                "text": "Configure _nightly build."
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
             "id": "include-toolkit",
             "name": {
                 "text": "Add Community_Toolkit.Maui NuGet package reference"

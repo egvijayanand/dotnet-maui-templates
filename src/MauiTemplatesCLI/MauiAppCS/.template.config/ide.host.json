@@ -19,6 +19,14 @@
             "defaultValue": "All"
         },
         {
+            "id": "nightly",
+            "name": {
+                "text": "Configure _nightly build."
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
             "id": "use-mvvm",
             "name": {
                 "text": "U_se MVVM."

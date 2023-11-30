@@ -94,6 +94,9 @@
 
     <!-- .NET MAUI -->
     <UseMaui>true</UseMaui>
+    <!--#if (Net8 && !CentralPkgMgmt && Nightly)-->
+    <MauiVersion>8.0.*-*</MauiVersion>
+    <!--#endif-->
     <SingleProject>true</SingleProject>
     <EnableDefaultItems>false</EnableDefaultItems>
 
