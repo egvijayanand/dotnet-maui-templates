@@ -32,7 +32,8 @@
             </StackLayout>
             <Grid
                 Grid.Row="1"
-                BackgroundColor="{StaticResource Primary}">
+                BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
+                                                  Light={StaticResource Primary}}">
 
                 <Label
                     x:Name="VersionLabel"
@@ -67,7 +68,8 @@
             </StackLayout>
             <Grid
                 Grid.Row="1"
-                BackgroundColor="{StaticResource Primary}">
+                BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
+                                                  Light={StaticResource Primary}}">
 
                 <Label
                     x:Name="VersionLabel"

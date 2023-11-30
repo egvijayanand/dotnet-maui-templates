@@ -262,6 +262,13 @@
                 }
             ]
         },
+        "nightly": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to use Nightly (CI) build.",
+            "displayName": "Option to use _Nightly (CI) build"
+        },
         "include-toolkit": {
             "type": "parameter",
             "datatype": "bool",
@@ -460,6 +467,10 @@
         "CentralPkgMgmt": {
             "type": "computed",
             "value": "(central-pkg-mgmt)"
+        },
+        "Nightly": {
+            "type": "computed",
+            "value": "(nightly)"
         },
         "PackageRef": {
             "type": "computed",

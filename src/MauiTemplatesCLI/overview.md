@@ -61,6 +61,30 @@ And from [v4.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.0.0)
 
 And from [v4.4.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.4.0) of the template package, CLI project template defines a new parameter named `central-pkg-mgmt`:
 
+* Nightly build: (Short notation: `-ni`):
+
+  Option to reference Nightly build MAUI packages (from the [CI feed](https://dev.azure.com/xamarin/public/_artifacts/feed/maui-nightly)) in all the supported templates.
+
+  `-ni` | `--nightly` This is a Boolean parameter - Default value is `false`. _Can also be used with the CPM option too_.
+
+  Note: For this work, add the following URL as a NuGet package source and more details [here](https://github.com/dotnet/maui/wiki/Nightly-Builds):
+
+  https://aka.ms/maui-nightly/index.json
+
+  Examples:
+
+  ```shell
+  dotnet new mauiapp -o MyApp -ni
+  ```
+
+  ```shell
+  dotnet new mauiclasslib -o MauiLib -ni
+  ```
+
+  ```shell
+  dotnet new sharedclasslib -o SharedLib -ni
+  ```
+
 * Central Package Management: (Short notation: `-cpm`):
 
   This is a Boolean parameter and its default value is `false`. _For now, this option is supported only on CLI._
@@ -142,9 +166,6 @@ Both .NET MAUI *App* and *Class Library* templates take the below optional Boole
 * `-it` | `--include-toolkit` - Default is `false`
 * `-im` | `--include-markup` - Default is `false`
 * `-imt` | `--include-mvvm-toolkit` - Default is `false`
-* `-inm` | `--include-maps` - Default is `false` (.NET 7 or later)
-* `-if` | `--include-foldable` - Default is `false` (.NET 7 or later)
-* `-ime` | `--include-media-element` - Default is `false` (.NET 7 or later)
 
 Other Parameters:
 

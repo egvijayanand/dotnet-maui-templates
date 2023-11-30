@@ -93,6 +93,9 @@
 
         <!-- .NET MAUI -->
         <UseMaui>true</UseMaui>
+        <!--#if (Net8 && !CentralPkgMgmt && Nightly)-->
+        <MauiVersion>8.0.*-*</MauiVersion>
+        <!--#endif-->
         <SingleProject>true</SingleProject>
         <!--#if (Hybrid || Razor)-->
         <EnableDefaultCssItems>false</EnableDefaultCssItems>
