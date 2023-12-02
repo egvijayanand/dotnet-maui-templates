@@ -2,7 +2,7 @@
 
 This repository is to host the .NET MAUI Project Templates, Item Templates and Code Snippets.
 
-Join me on [**Developer Thoughts**](https://egvijayanand.in/ "Developer Thoughts"), an exclusive blog for .NET MAUI and Blazor, for articles on working with these templates and much more.
+Join me on [**Developer Thoughts**](https://egvijayanand.in/?utm_source=github "Developer Thoughts"), an exclusive blog for .NET MAUI and Blazor, for [articles](https://egvijayanand.in/category/net-maui/templates-net-maui/?utm_source=github) on working with these templates and much more.
 
 We all know that .NET MAUI is an evolution of Xamarin.Forms.
 
@@ -10,9 +10,9 @@ Release Details:
 
 |Channel|.NET MAUI Version|IDE Version|Release Date|Remarks|
 |:---:|:---:|:---:|:---:|:---:|
-|Stable|.NET 6 SR11 (6.0.553)|VS2022 17.4.x - 17.7.x|Tue, Apr 25, 2023|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
-|Stable|.NET 7 SR10 (7.0.101)|VS2022 17.4.x - 17.7.x|Tue, Nov 7, 2023|Active|
-|Stable|[.NET 8 GA](https://devblogs.microsoft.com/dotnet/announcing-dotnet-maui-in-dotnet-8/ "Announcement Blog Post") (8.0.3) <br /> _Requires Android SDK Platform 34_|VS2022 17.8.0|Tue, Nov 14, 2023|Active|
+|Stable|.NET 6 SR11 (6.0.553)|VS2022 17.4.x - 17.8.x|Tue, Apr 25, 2023|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
+|Stable|.NET 7 SR10 (7.0.101)|VS2022 17.4.x - 17.8.x|Tue, Nov 7, 2023|Active|
+|Stable|[.NET 8 GA](https://devblogs.microsoft.com/dotnet/announcing-dotnet-maui-in-dotnet-8/ "Announcement Blog Post") (8.0.3) <br /> _Requires Android SDK Platform 34_|VS2022 17.8.x|Tue, Nov 14, 2023|Active|
 
 Use the below commands to verify the version installed:
 
@@ -187,17 +187,24 @@ And from [v4.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.0.0)
 
 And from [v4.4.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.4.0) of the template package, CLI project template defines a new parameter named `central-pkg-mgmt`:
 
+And from [v4.5.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.5.0) of the template package, CLI project template defines a new parameter named `include-shared-toolkit`:
+
 And from [v4.6.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.6.0) of the template package, CLI project template defines a new parameter named `nightly`:
 
 * Nightly build: (Short notation: `-ni`):
 
-  Option to reference Nightly build MAUI packages (from the [CI feed](https://dev.azure.com/xamarin/public/_artifacts/feed/maui-nightly)) in all the supported templates.
+  Option to reference Nightly build MAUI packages (from the [CI feed](https://dev.azure.com/xamarin/public/_artifacts/feed/maui-nightly "CI Feed")) in all the supported templates.
 
   `-ni` | `--nightly` This is a Boolean parameter - Default value is `false`. _Can also be used with the CPM option too_.
 
-  Note: For this work, add the following URL as a NuGet package source and more details [here](https://github.com/dotnet/maui/wiki/Nightly-Builds):
+  Note: For this work, add the following URL as a NuGet package source (make use of the command) and more details [here](https://github.com/dotnet/maui/wiki/Nightly-Builds "Nightly Builds"):
 
-  https://aka.ms/maui-nightly/index.json
+  *.NET MAUI getting released as NuGet packages is supported only from .NET 8. So, this nightly build option won't work with .NET 7 and earlier.*
+
+
+  ```shell
+  dotnet nuget add source -n maui-nightly https://aka.ms/maui-nightly/index.json
+  ```
 
   Examples:
 
