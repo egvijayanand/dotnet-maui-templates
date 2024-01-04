@@ -32,7 +32,7 @@
         "Framework": {
             "type": "parameter",
             "datatype": "choice",
-            "description": "Option to choose the application target framework.",
+            "description": "Option to choose the library target framework.",
             "choices": [
                 {
                     "choice": "net8.0",

@@ -154,10 +154,7 @@ namespace MauiApp._1.Views
             var version = typeof(MauiApp).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
 #if Mvvm
             BindingContext = viewModel;
-#if Net8OrLater
-            viewModel.Title = "Home";
-#endif
-            SetBinding(Page.TitleProperty, new Binding(nameof(MainViewModel.Title)));
+            this.Bindv2(static (MainViewModel vm) => vm.Title);
 #else
             Title = "Home";
 #endif
@@ -178,16 +175,16 @@ namespace MauiApp._1.Views
                                     Style = AppStyle("MauiLabel"),
                                     Text = "Hello, World!",
                                 }.FontSize(32)
-                                .CenterHorizontal()
-                                .SemanticHeadingLevel(SemanticHeadingLevel.Level1),
+                                 .CenterHorizontal()
+                                 .SemanticHeadingLevel(SemanticHeadingLevel.Level1),
                                 new Label()
                                 {
                                     Style = AppStyle("MauiLabel"),
                                     Text = "Welcome to .NET Multi-platform App UI",
                                 }.FontSize(18)
-                                .CenterHorizontal()
-                                .SemanticDescription("Welcome to dot net Multi platform App U I")
-                                .SemanticHeadingLevel(SemanticHeadingLevel.Level1),
+                                 .CenterHorizontal()
+                                 .SemanticDescription("Welcome to dot net Multi platform App U I")
+                                 .SemanticHeadingLevel(SemanticHeadingLevel.Level1),
                                 new Label()
                                 {
                                     Style = AppStyle("MauiLabel"),
@@ -195,11 +192,11 @@ namespace MauiApp._1.Views
                                     Text = "Current count: 0",
 #endif
                                 }.Font(size: 18, bold: true)
-                                .CenterHorizontal()
+                                 .CenterHorizontal()
 #if Mvvm
-                                .Bind(Label.TextProperty, static (MainViewModel vm) => vm.CountText),
+                                 .Bindv2(static (MainViewModel vm) => vm.CountText),
 #else
-                                .Assign(out CounterLabel),
+                                 .Assign(out CounterLabel),
 #endif
                                 new Button()
                                 {
@@ -207,18 +204,18 @@ namespace MauiApp._1.Views
                                     Text = "Click me",
                                 }.CenterHorizontal()
 #if Mvvm
-                                .BindCommand(static (MainViewModel vm) => vm.IncrementCommand)
+                                 .BindCommandv2(static (MainViewModel vm) => vm.IncrementCommand)
 #else
-                                .Invoke(btn => btn.Clicked += OnCounterClicked)
+                                 .Invoke(btn => btn.Clicked += OnCounterClicked)
 #endif
-                                .SemanticHint("Counts the number of times you click"),
+                                 .SemanticHint("Counts the number of times you click"),
                                 new Image()
                                 {
                                     Source = "dotnet_bot.png",
-                                }.Height(310)
-                                .Width(250)
-                                .CenterHorizontal()
-                                .SemanticDescription("Cute dot net bot waving hi to you!"),
+                                }.Width(250)
+                                 .Height(310)
+                                 .CenterHorizontal()
+                                 .SemanticDescription("Cute dot net bot waving hi to you!"),
                             }
                         }.Padding(30),
                         new Grid()

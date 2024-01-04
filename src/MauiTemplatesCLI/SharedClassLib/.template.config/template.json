@@ -32,10 +32,29 @@
         "1D17E9ED-22F1-4992-AE45-B8507EFD6950"
     ],
     "symbols": {
+        "xamarin-forms": {
+            "type": "parameter",
+            "datatype": "choice",
+            "description": "Option to choose the Xamarin.Forms target framework.",
+            "choices": [
+                {
+                    "choice": "netstandard2.1",
+                    "description": "Target .NET Standard 2.1",
+                    "displayName": ".NET Standard 2.1"
+                },
+                {
+                    "choice": "netstandard2.0",
+                    "description": "Target .NET Standard 2.0",
+                    "displayName": ".NET Standard 2.0"
+                }
+            ],
+            "replaces": "FORMS_TFM",
+            "defaultValue": "netstandard2.0"
+        },
         "Framework": {
             "type": "parameter",
             "datatype": "choice",
-            "description": "Option to choose the application target framework.",
+            "description": "Option to choose the .NET target framework.",
             "choices": [
                 {
                     "choice": "net8.0",
@@ -116,8 +135,8 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to add VijayAnand.Toolkit.Markup NuGet package reference.",
-            "displayName": "Add VijayAnand.Toolkit.Markup NuGet package reference"
+            "description": "Option to add VijayAnand.Toolkit.Markup (Shared Toolkit) NuGet package reference.",
+            "displayName": "Add VijayAnand.Toolkit.Markup (Shared Toolkit) NuGet package reference"
         },
         "central-pkg-mgmt": {
             "type": "parameter",
@@ -137,6 +156,14 @@
             "generator": "casing",
             "parameters": {
                 "source": "Framework",
+                "toLower": true
+            }
+        },
+        "formsLower": {
+            "type": "generated",
+            "generator": "casing",
+            "parameters": {
+                "source": "xamarin-forms",
                 "toLower": true
             }
         },
