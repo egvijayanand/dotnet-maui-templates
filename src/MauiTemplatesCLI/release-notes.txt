@@ -1,7 +1,19 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
 
-What's new in ver. 4.6.0:
+What's new in ver. 4.7.0:
 -------------------------
+Xamarin.Forms Target Framework selection in Shared Class Library project template. The default value being netstandard2.0
+
+Auto-binding the project's RootNamespace as the namespace for newly created source files from item templates (Supported only on .NET 7 SDK or later).
+
+Usage:
+
+dotnet new sharedclasslib -o SharedLib (Defaults to netstandard2.0 for Xamarin.Forms and net8.0 for .NET MAUI)
+
+dotnet new sharedclasslib -o SharedLib -xf netstandard2.1 -f net7.0
+
+v4.6.0:
+
 Option to reference Nightly build MAUI packages (from CI feed) in all of the supported templates.
 
 -ni | --nightly (Boolean parameter - Default value is false. Can also be used with the CPM option too).

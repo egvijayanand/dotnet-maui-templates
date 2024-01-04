@@ -245,13 +245,13 @@ And from [v4.6.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.6.0)
   Examples:
 
   ```shell
-  dotnet new mauiapp -lang F# -f net7.0
+  dotnet new mauiapp -lang F#
   ```
 
-  For creating a .NET MAUI App on .NET 8:
+  For creating a .NET MAUI App on .NET 7:
 
   ```shell
-  dotnet new mauiapp -lang F#
+  dotnet new mauiapp -lang F# -f net7.0
   ```
 
 * Framework: (Short notation: `-f`)
@@ -294,7 +294,7 @@ In .NET CLI, all of these _Item Templates_ takes two parameters:
 
 *Note: Parameter values are case-insensitive.*
 
-Both .NET MAUI *App* and *Class Library* templates take the below optional Boolean parameters to include the officially supported CommunityToolkit NuGet packages:
+Both .NET MAUI *App* and *Class Library* templates take the below optional Boolean parameters to include the officially supported `CommunityToolkit` NuGet packages:
 
 *Specifying the parameter name, either in short or full notation, implies that it is defined.*
 
@@ -424,6 +424,8 @@ While targeting `.NET 7` or later, an option to add and configure `CommunityTool
 * `-if` | `--include-foldable` - Default is `false`
 * `-inm` | `--include-maps` - Default is `false`
 
+*With Windows as a target platform, opting for the Maps feature will also include `CommunityToolkit.Maui.Maps` NuGet package.*
+
 *Note: If the project target `.NET 6`, selecting the MediaElement/Foldable/Maps option will NOT have any impact.*
 
 Examples (passing one or more values):
@@ -450,6 +452,17 @@ Similar to All-in-One .NET MAUI App, the Class Library project template also tak
 ![Class Library Project Options - Visual Studio](images/dotnetmaui-class-library-project-options.png)
 
 #### Shared Class Library Template:
+
+The Target Framework of Xamarin.Forms library can be defined with the the below parameter.
+
+* `-xf` | `--xamarin-forms` 
+
+Supported values are:
+
+* `netstandard2.0` (Default, if not specified)
+* `netstandard2.1`
+
+*Define the Target Framework of .NET MAUI library with the `-f` | `--framework` parameter.*
 
 This takes the below optional Boolean parameters to include the officially supported NuGet packages:
 

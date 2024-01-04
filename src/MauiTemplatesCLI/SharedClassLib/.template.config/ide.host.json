@@ -3,9 +3,17 @@
     "icon": "ide/icon.png",
     "symbolInfo": [
         {
+            "id": "xamarin-forms",
+            "name": {
+                "text": "_Xamarin.Forms target framework"
+            },
+            "isVisible": true,
+            "defaultValue": "netstandard2.0"
+        },
+        {
             "id": "nightly",
             "name": {
-                "text": "Configure _nightly build."
+                "text": "Configure _Nightly build."
             },
             "isVisible": true,
             "defaultValue": "false"
@@ -29,7 +37,7 @@
         {
             "id": "include-forms-toolkit",
             "name": {
-                "text": "Add _Xamarin.CommunityToolkit. NuGet package reference"
+                "text": "Add Xamarin.C_ommunityToolkit. NuGet package reference"
             },
             "isVisible": true,
             "defaultValue": "false"
@@ -69,7 +77,7 @@
         {
             "id": "include-shared-toolkit",
             "name": {
-                "text": "Add VijayAnand.Toolkit.Markup NuGet package reference"
+                "text": "Add VijayAnand.Toolkit.Markup (_Shared Toolkit) NuGet package reference"
             },
             "isVisible": true,
             "defaultValue": "false"

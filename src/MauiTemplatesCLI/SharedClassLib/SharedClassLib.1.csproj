@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;MAUI_TFM</TargetFrameworks>
+        <TargetFrameworks>FORMS_TFM;MAUI_TFM</TargetFrameworks>
         <Nullable>enable</Nullable>
         <LangVersion>latest</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
@@ -10,20 +10,20 @@
         <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     </PropertyGroup>
 
-    <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PropertyGroup Condition="'$(TargetFramework)' == 'FORMS_TFM'">
         <DefineConstants>$(DefineConstants);FORMS</DefineConstants>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(TargetFramework)' == 'MAUI_TFM'">
         <UseMaui>true</UseMaui>
         <!--#if (Net8 && !CentralPkgMgmt && Nightly)-->
-        <MauiVersion>8.0.*-*</MauiVersion>
+        <MauiVersion>8.*-*</MauiVersion>
         <!--#endif-->
         <SingleProject>true</SingleProject>
         <DefineConstants>$(DefineConstants);MAUI</DefineConstants>
     </PropertyGroup>
 
-    <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <ItemGroup Condition="'$(TargetFramework)' == 'FORMS_TFM'">
         <Compile Include="**\*.shared.cs;**\*.logic.cs;**\*.forms.cs" />
         <None Include="**\*.maui.cs" />
     </ItemGroup>
@@ -34,7 +34,7 @@
     </ItemGroup>
 
     <!-- Xamarin.Forms NuGet packages -->
-    <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <ItemGroup Condition="'$(TargetFramework)' == 'FORMS_TFM'">
         <!--#if (CentralPkgMgmt)-->
         <PackageReference Include="Xamarin.Forms" />
         <!--#if (AddFormsEssentials)-->
@@ -47,7 +47,11 @@
         <PackageReference Include="Xamarin.CommunityToolkit.Markup" />
         <!--#endif-->
         <!--#else-->
+        <!--#if (Nightly)-->
+        <PackageReference Include="Xamarin.Forms" Version="5.*-*" />
+        <!--#else-->
         <PackageReference Include="Xamarin.Forms" Version="5.*" />
+        <!--#endif-->
         <!--#if (AddFormsEssentials)-->
         <PackageReference Include="Xamarin.Essentials" Version="1.*" />
         <!--#endif-->
@@ -63,7 +67,6 @@
     <!--#if (Net8OrLater || AddMauiToolkit || AddMauiMarkup)-->
     <!-- .NET MAUI NuGet packages -->
     <ItemGroup Condition="'$(TargetFramework)' == 'MAUI_TFM'">
-    <!--#endif-->
         <!--#if (CentralPkgMgmt)-->
         <!--#if (Net8OrLater)-->
         <PackageReference Include="Microsoft.Maui.Controls" />
@@ -101,7 +104,6 @@
         <!--#endif-->
         <!--#endif-->
         <!--#endif-->
-    <!--#if (Net8OrLater || AddMauiToolkit || AddMauiMarkup)-->
     </ItemGroup>
 
     <!--#endif-->
@@ -130,6 +132,6 @@
         <!--#endif-->
         <!--#endif-->
     </ItemGroup>
-    <!--#endif-->
 
+    <!--#endif-->
 </Project>

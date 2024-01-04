@@ -21,7 +21,7 @@
         {
             "id": "nightly",
             "name": {
-                "text": "Configure _nightly build."
+                "text": "Configure _Nightly build."
             },
             "isVisible": true,
             "defaultValue": "false"

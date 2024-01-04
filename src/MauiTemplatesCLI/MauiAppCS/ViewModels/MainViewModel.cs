@@ -2,9 +2,9 @@
 {
 #if Net8OrLater
 #if (Plain || Markup)
-    public partial class MainViewModel(ISemanticScreenReader screenReader) : BaseViewModel
+    public partial class MainViewModel(ISemanticScreenReader screenReader) : BaseViewModel("Home")
 #elif Hybrid
-    public partial class MainViewModel : BaseViewModel
+    public partial class MainViewModel() : BaseViewModel("Home")
 #else
     public partial class MainViewModel(IDialogService dialogService, INavigationService navigationService) : BaseViewModel(dialogService, navigationService)
 #endif
@@ -13,14 +13,11 @@
 #endif
     {
 #if Hybrid
-        public MainViewModel()
-        {
-            Title = "Home";
-        }
-
 #if Net8OrLater
         [ObservableProperty]
         private string _startPath = "/counter";
+#else
+        public MainViewModel() => Title = "Home";
 #endif
 #elif (Plain || Markup)
         private int _count = 0;

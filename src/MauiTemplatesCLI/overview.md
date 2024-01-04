@@ -312,6 +312,17 @@ Similar to All-in-One .NET MAUI App, the Class Library project template also tak
 
 #### Shared Class Library Project Template:
 
+The Target Framework of Xamarin.Forms library can be defined with the the below parameter.
+
+* `-xf` | `--xamarin-forms` 
+
+Supported values are:
+
+* `netstandard2.0` (Default, if not specified)
+* `netstandard2.1`
+
+*Define the Target Framework of .NET MAUI library with the `-f` | `--framework` parameter.*
+
 This takes the below optional Boolean parameters to include the officially supported NuGet packages:
 
 *Specifying the parameter name, either in short or full notation, implies that it is defined.*

@@ -804,7 +804,7 @@
         },
         "AddSharedToolkit": {
             "type": "computed",
-            "value": "(include-shared-toolkit)"
+            "value": "(include-shared-toolkit || Markup)"
         },
         "CentralPkgMgmt": {
             "type": "computed",

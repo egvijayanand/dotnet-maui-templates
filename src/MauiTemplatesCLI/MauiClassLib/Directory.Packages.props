@@ -26,7 +26,7 @@
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="4.0.0" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.1.0" />
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.2.0" />
         <!--#endif-->
         <!--#endif-->
         <!--#elif (Net7)-->
@@ -37,7 +37,7 @@
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="3.3.1" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="2.1.0" />
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="2.2.0" />
         <!--#endif-->
         <!--#else-->
         <!--#if (AddToolkitPackage)-->
@@ -47,7 +47,7 @@
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="1.2.1" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="1.1.0" />
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="1.2.0" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMvvmToolkitPackage)-->

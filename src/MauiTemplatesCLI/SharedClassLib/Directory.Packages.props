@@ -6,7 +6,11 @@
         <!--#endif-->
     </PropertyGroup>
     <ItemGroup>
+        <!--#if (Nightly)-->
+        <PackageVersion Include="Xamarin.Forms" Version="5.0.0.2371-nightly" />
+        <!--#else-->
         <PackageVersion Include="Xamarin.Forms" Version="5.0.0.2622" />
+        <!--#endif-->
         <!--#if (AddFormsEssentials)-->
         <PackageVersion Include="Xamarin.Essentials" Version="1.8.0" />
         <!--#endif-->
@@ -26,7 +30,7 @@
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="4.0.0" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.1.0" />
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.2.0" />
         <!--#endif-->
         <!--#elif (Net7)-->
         <!--#if (AddMauiToolkit)-->
@@ -36,7 +40,7 @@
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="3.3.1" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="2.1.0" />
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="2.2.0" />
         <!--#endif-->
         <!--#else-->
         <!--#if (AddMauiToolkit)-->
@@ -46,7 +50,7 @@
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="1.2.1" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="1.1.0" />
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="1.2.0" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMvvmToolkit)-->

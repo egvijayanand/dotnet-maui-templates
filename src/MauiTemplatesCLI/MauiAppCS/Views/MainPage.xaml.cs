@@ -27,9 +27,7 @@ namespace MauiApp._1.Views
 #endif
 #if (Mvvm && !Tabbed)
 #if Net8OrLater
-#if Plain
-            viewModel.Title = "Home";
-#elif Hierarchical
+#if Hierarchical
             viewModel.Title = "Calendar";
 #endif
 #endif

@@ -28,10 +28,10 @@
     },
     "symbols": {
         "namespace": {
-            "type": "parameter",
+            "type": "bind",
+            "binding": "msbuild:RootNamespace",
             "replaces": "MyApp.Namespace",
-            "datatype": "text",
-            "description": "namespace for the generated code"
+            "defaultValue": "MyApp.Namespace"
         },
         "sdkVersion": {
             "type": "bind",
@@ -54,6 +54,18 @@
                 "pattern": "^(8\\.*\\.*-?.*)$",
                 "source": "sdkVersion"
             }
+        }
+    },
+    "constraints": {
+        "dotnet7-sts": {
+            "type": "sdk-version",
+            "args": [
+                "[7.0,)"
+            ]
+        },
+        "csharp-only": {
+            "type": "project-capability",
+            "args": "CSharp"
         }
     }
 }
