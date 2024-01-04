@@ -2,9 +2,13 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 What's new in ver. 4.7.0:
 -------------------------
-Xamarin.Forms Target Framework selection in Shared Class Library project template. The default value being netstandard2.0
-
 Auto-binding the project's RootNamespace as the namespace for newly created source files from item templates (Supported only on .NET 7 SDK or later).
+
+Xamarin.Forms Target Framework selection in Shared Class Library project template.
+
+Parameter name: -xf | --xamarin-forms
+
+Supported values are netstandard2.0 (default value, if not specified) and netstandard2.1
 
 Usage:
 
