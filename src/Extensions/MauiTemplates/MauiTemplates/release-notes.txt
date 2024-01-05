@@ -1,7 +1,17 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
 
-What's new in ver. 4.6.0.0:
+What's new in ver. 4.7.0.0:
 ---------------------------
+Xamarin.Forms Target Framework option in Shared Class Library project template.
+
+Supported values are: .NET Standard 2.0 (default value) and .NET Standard 2.1
+
+And for .NET MAUI via the Framework option.
+
+Supported values are: .NET 8 (default value), .NET 7 and .NET 6
+
+v4.6.0.0:
+
 1. Option to reference Nightly build .NET MAUI packages (from CI feed) in all of the supported templates
 
 Note: For this work, add the following URL as a NuGet package source:
