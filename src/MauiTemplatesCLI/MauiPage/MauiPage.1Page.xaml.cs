@@ -1,8 +1,8 @@
 ﻿namespace MyApp.Namespace
 {
-    public partial class MauiView__1 : ContentView
+    public partial class MauiPage__1Page : ContentPage
     {
-        public MauiView__1()
+        public MauiPage__1Page()
         {
             InitializeComponent();
         }

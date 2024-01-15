@@ -18,10 +18,11 @@
     "sourceName": "MauiPage.1",
     "primaryOutputs": [
         {
-            "path": "MauiPage.1.xaml"
+            "path": "MauiPage.1Page.xaml"
         },
         {
-            "path": "MauiPage.1.xaml.cs"
+            "condition": "(!XamlOnly)",
+            "path": "MauiPage.1Page.xaml.cs"
         }
     ],
     "tags": {
@@ -34,8 +35,30 @@
             "binding": "msbuild:RootNamespace",
             "replaces": "MyApp.Namespace",
             "defaultValue": "MyApp.Namespace"
+        },
+        "xaml-only": {
+            "type": "parameter",
+            "datatype": "bool",
+            "default": "false",
+            "description": "If true, the output is generated without a C# code-behind file."
+        },
+        "XamlOnly": {
+            "type": "computed",
+            "value": "(xaml-only)"
         }
     },
+    "sources": [
+        {
+            "modifiers": [
+                {
+                    "condition": "(XamlOnly)",
+                    "exclude": [
+                        "MauiPage.1Page.xaml.cs"
+                    ]
+                }
+            ]
+        }
+    ],
     "constraints": {
         "dotnet7-sts": {
             "type": "sdk-version",

@@ -20,7 +20,7 @@
     "sourceName": "MauiShell.1",
     "primaryOutputs": [
         {
-            "path": "MauiShell.1.cs"
+            "path": "MauiShell.1Shell.cs"
         }
     ],
     "tags": {

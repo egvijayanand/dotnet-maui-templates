@@ -1,29 +1,24 @@
 {
     "$schema": "https://json.schemastore.org/template",
     "author": "Vijay Anand E G",
-    "defaultName": "AppShell",
+    "defaultName": "MauiItem1",
     "classifications": [
         "MAUI",
         "Android",
         "iOS",
         "macOS",
-        "Mac Catalyst",
-        "WinUI",
         "Windows",
-        "Shell"
+        "Code"
     ],
-    "identity": "VijayAnand.MauiShell",
-    "groupIdentity": "VijayAnand.MauiTemplates.Shell",
-    "description": "An item template for .NET MAUI ShellPage in XAML",
-    "name": ".NET MAUI ShellPage",
-    "shortName": "maui-shell",
-    "sourceName": "MauiShell.1",
+    "identity": "VijayAnand.MauiItemCS",
+    "groupIdentity": "VijayAnand.MauiTemplates.Item.Code",
+    "description": "An item template for .NET MAUI Item in C#",
+    "name": ".NET MAUI Item (C#)",
+    "shortName": "maui-item-cs",
+    "sourceName": "MauiItem.1",
     "primaryOutputs": [
         {
-            "path": "MauiShell.1Shell.xaml"
-        },
-        {
-            "path": "MauiShell.1Shell.xaml.cs"
+            "path": "MauiItem.1.cs"
         }
     ],
     "tags": {
@@ -37,16 +32,23 @@
             "replaces": "MyApp.Namespace",
             "defaultValue": "MyApp.Namespace"
         },
-        "no-comments": {
+        "base": {
+            "isRequired": true,
             "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Option to remove comments.",
-            "displayName": "Option to remove comments"
+            "description": "Base type for the item.",
+            "datatype": "text",
+            "replaces": "ContentPage"
         },
-        "AddComments": {
+        "generic": {
+            "type": "parameter",
+            "description": "Generic base type for the item.",
+            "datatype": "text",
+            "defaultValue": "",
+            "replaces": "TObject"
+        },
+        "IsGeneric": {
             "type": "computed",
-            "value": "(!no-comments)"
+            "value": "(generic != \"\")"
         }
     },
     "constraints": {

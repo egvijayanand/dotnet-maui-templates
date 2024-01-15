@@ -20,7 +20,7 @@
     "sourceName": "MauiShell.1",
     "primaryOutputs": [
         {
-            "path": "MauiShell.1.razor"
+            "path": "MauiShell.1Shell.razor"
         }
     ],
     "tags": {

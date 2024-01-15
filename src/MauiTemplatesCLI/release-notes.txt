@@ -1,7 +1,45 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
 
-What's new in ver. 4.7.0:
+What's new in ver. 4.8.0:
 -------------------------
+1. Auto Suffix for the files created with the Page, Shell and View item templates (both XAML and C#).
+
+dotnet new maui-page -n Settings
+
+Output: SettingsPage.xaml and SettingsPage.xaml.cs
+
+dotnet new maui-view-cs -n Order
+
+Output: OrderView.cs
+
+2. A revolutionary generic template, in XAML and C#, for creating items of any type.
+
+And it is named as: maui-item and maui-item-cs
+
+Both needs one required parameter, -b / --base, the base type.
+
+And optionally takes another parameter, -g / --generic, to specify the generic base type.
+
+In addition, XAML template takes one more parameter, -xo / --xaml-only, when defined, generates only XAML definition.
+
+Note: Namespace resolution in both XAML and C# file is left to the user as deriving them with the template is outside its scope.
+
+Example:
+
+dotnet new maui-item -n HomePage -b ContentPage
+
+Output: HomePage.xaml and HomePage.xaml.cs
+
+public partial class HomePage : ContentPage {}
+
+dotnet new maui-item -n SearchPage -b MauiPage -g SearchViewModel
+
+Output: SearchPage.xaml and SearchPage.xaml.cs
+
+public partial class SearchPage : MauiPage<SearchViewModel> {}
+
+v4.7.0:
+
 Auto-binding the project's RootNamespace as the namespace for newly created source files from item templates (Supported only on .NET 7 SDK or later).
 
 Xamarin.Forms Target Framework selection in Shared Class Library project template.

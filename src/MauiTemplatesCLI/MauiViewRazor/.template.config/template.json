@@ -18,7 +18,7 @@
     "sourceName": "MauiView.1",
     "primaryOutputs": [
         {
-            "path": "MauiView.1.razor"
+            "path": "MauiView.1View.razor"
         }
     ],
     "tags": {
