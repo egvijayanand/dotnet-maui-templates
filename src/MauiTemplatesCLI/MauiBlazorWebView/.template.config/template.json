@@ -19,10 +19,10 @@
     "sourceName": "MauiBlazorWebView.1",
     "primaryOutputs": [
         {
-            "path": "MauiBlazorWebView.1.xaml"
+            "path": "MauiBlazorWebView.1Page.xaml"
         },
         {
-            "path": "MauiBlazorWebView.1.xaml.cs"
+            "path": "MauiBlazorWebView.1Page.xaml.cs"
         }
     ],
     "tags": {

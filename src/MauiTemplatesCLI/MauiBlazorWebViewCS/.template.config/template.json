@@ -19,7 +19,7 @@
     "sourceName": "MauiBlazorWebView.1",
     "primaryOutputs": [
         {
-            "path": "MauiBlazorWebView.1.cs"
+            "path": "MauiBlazorWebView.1Page.cs"
         }
     ],
     "tags": {

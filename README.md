@@ -159,6 +159,8 @@ Name | Template Name | Type
 |[All-in-One .NET MAUI App](#all-in-one-net-maui-app-project-template)|mauiapp|Project|
 |[.NET MAUI Class Library](#net-maui-class-library-template)|mauiclasslib|Project|
 |[Shared Class Library](#shared-class-library-template)|sharedclasslib|Project|
+|[.NET MAUI Item (XAML)](#generic-item-template)|maui-item|Item|
+|[.NET MAUI Item (C#)](#generic-item-template)|maui-item-cs|Item|
 |ContentPage (XAML)|maui-page|Item|
 |ContentPage (C#)|maui-page-cs|Item|
 |ContentPage (Razor)|maui-page-razor|Item|
@@ -276,19 +278,21 @@ And from [v4.6.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.6.0)
   dotnet new mauiapp -f net8.0
   ```
 
-In .NET CLI, all of these _Item Templates_ takes two parameters:
+In .NET CLI, all of these _Items Template_ require a mandatory parameter:
 
 * Name: (Short notation: `-n`)
 
-    The name of the project/page/view to create. _For pages/views, don't need to suffix it with .xaml_, it will get added.
+    The name of the Item/Page/View to create. _For Pages/Views, don't need to suffix it with the name like .xaml_, it will get added.
 
     _If the name parameter is not specified, by default, the **.NET CLI template engine will take the current folder name as the filename** (current behaviour of the templating engine)._
 
+<!--
 * Namespace: (Short notation: `-na`)
 
     The namespace for the generated files.
 
     *While working with .NET 7 SDK or later, the namespace parameter in short notation needs to be passed as `-p:na` (i.e., it needs to be prefixed with `-p:`).*
+-->
 
 * Now with more options while creating the app or class library project, ability to include NuGet packages on the fly for `CommunityToolkit.Maui`, `CommunityToolkit.Maui.Markup`, `CommunityToolkit.Mvvm` or all.
 
@@ -596,20 +600,40 @@ Option to include all supported NuGet packages:
 dotnet new sharedclasslib -n MyApp.UI -asp
 ```
 
+#### Generic Item Template:
+
+* A revolutionary generic template, in XAML and C#, for creating items of any type
+* And it is named as: `maui-item` and `maui-item-cs`
+* Both needs one required parameter, `-b` / `--base`, the base type
+* And optionally takes another parameter, `-g` / `--generic`, to specify the generic base type
+* In addition, XAML template takes one more parameter, `-xo` / `--xaml-only`, to generate only XAML definition
+
+*Note: Namespace resolution in both XAML and C# file is left to the user as deriving them with the template is outside its scope.*
+
+ ```shell
+dotnet new maui-item -n LoginPage -b ContentPage
+```
+```shell
+dotnet new maui-item-cs -n ProductView -b ContentView
+```
+```shell
+dotnet new maui-item -n CartPage -b MauiPage -g CartViewModel
+```
+
+*For Page/Shell/View Item templates, don't suffix anything to the name, it'll be included automatically.*
+
 Pages:
 ```shell
-dotnet new maui-page -n HomePage -na MyApp.Views
+dotnet new maui-page -n Home
 ```
 ```shell
-dotnet new maui-page-cs -n HomePage -na MyApp.Views
+dotnet new maui-page-cs -n Home
 ```
 ```shell
-dotnet new maui-page-razor -n HomePage
+dotnet new maui-page-razor -n Home
 ```
 
 #### Page with ViewModel:
-
-*Don't suffix anything to the name, it'll be included automatically.*
 
 ```shell
 dotnet new maui-mvvm -n Login
@@ -621,37 +645,40 @@ dotnet new maui-mvvm-cs -n Login
 ContentPage with BlazorWebView:
 
 ```shell
-dotnet new maui-bwv -n HomePage -na MyApp.Views
+dotnet new maui-bwv -n Home
 ```
 ```shell
-dotnet new maui-bwv-cs -n HomePage -na MyApp.Views
+dotnet new maui-bwv-cs -n Home
 ```
 
 Views:
 ```shell
-dotnet new maui-view -n OrderView -na MyApp.Views
+dotnet new maui-view -n Order
 ```
 ```shell
-dotnet new maui-view-cs -n OrderView -na MyApp.Views
+dotnet new maui-view-cs -n Order
 ```
 ```shell
-dotnet new maui-view-razor -n OrderView
+dotnet new maui-view-razor -n Order
 ```
 
 Shell:
 ```shell
-dotnet new maui-shell -n AppShell -na MyApp
+dotnet new maui-shell -n App
 ```
 ```shell
-dotnet new maui-shell-cs -n AppShell -na MyApp
+dotnet new maui-shell-cs -n App
 ```
 ```shell
-dotnet new maui-shell-razor -n AppShell
+dotnet new maui-shell-razor -n App
 ```
 
 Resource Dictionary:
 ```shell
-dotnet new maui-resdict -n LightTheme -na MyApp.Themes
+dotnet new maui-resdict -n DarkTheme
+```
+```shell
+dotnet new maui-resdict -n LightTheme -xo
 ```
 
 Partial Class:
@@ -706,7 +733,7 @@ Option to include NuGet packages:
 dotnet new mauiapp --name MyApp --design-pattern Shell --include-toolkit --include-markup --include-mvvm-toolkit --include-media-element --include-maps --include-foldable
 ```
 ```shell
-dotnet new mauiapp -n MyApp --design-pattern Shell --conditional-compilation
+dotnet new mauiapp --name MyApp --design-pattern Shell --conditional-compilation
 ```
 
 .NET MAUI Class Library:
@@ -728,21 +755,32 @@ dotnet new sharedclasslib --name MyApp.UI
 dotnet new sharedclasslib --name MyApp.UI --all-supported-packages
 ```
 
+#### Generic Item Template:
+
+ ```shell
+dotnet new maui-item --name LoginPage --base ContentPage
+```
+```shell
+dotnet new maui-item-cs --name ProductView --base ContentView
+```
+```shell
+dotnet new maui-item --name CartPage --base MauiPage --generic CartViewModel
+```
+
+*For Page/Shell/View Item templates, don't suffix anything to the name, it'll be included automatically.*
+
 Pages:
 ```shell
-dotnet new maui-page --name HomePage --namespace MyApp.Views
+dotnet new maui-page --name Home
 ```
 ```shell
-dotnet new maui-page-cs --name HomePage --namespace MyApp.Views
+dotnet new maui-page-cs --name Home
 ```
 ```shell
-dotnet new maui-page-razor --name HomePage
+dotnet new maui-page-razor --name Home
 ```
 
 Page with ViewModel:
-
-*Don't suffix anything to the name, it'll be included automatically.*
-
 ```shell
 dotnet new maui-mvvm --name Login
 ```
@@ -753,37 +791,40 @@ dotnet new maui-mvvm-cs --name Login
 ContentPage with BlazorWebView:
 
 ```shell
-dotnet new maui-bwv --name HomePage --namespace MyApp.Views
+dotnet new maui-bwv --name Home
 ```
 ```shell
-dotnet new maui-bwv-cs --name HomePage --namespace MyApp.Views
+dotnet new maui-bwv-cs --name Home
 ```
 
 Views:
 ```shell
-dotnet new maui-view --name OrderView --namespace MyApp.Views
+dotnet new maui-view --name Order
 ```
 ```shell
-dotnet new maui-view-cs --name OrderView --namespace MyApp.Views
+dotnet new maui-view-cs --name Order
 ```
 ```shell
-dotnet new maui-view-razor --name OrderView
+dotnet new maui-view-razor --name Order
 ```
 
 Shell:
 ```shell
-dotnet new maui-shell --name AppShell --namespace MyApp
+dotnet new maui-shell --name App
 ```
 ```shell
-dotnet new maui-shell-cs --name AppShell --namespace MyApp
+dotnet new maui-shell-cs --name App
 ```
 ```shell
-dotnet new maui-shell-razor --name AppShell
+dotnet new maui-shell-razor --name App
 ```
 
 Resource Dictionary:
 ```shell
-dotnet new maui-resdict --name LightTheme --namespace MyApp.Themes
+dotnet new maui-resdict --name DarkTheme
+```
+```shell
+dotnet new maui-resdict --name LightTheme --xaml-only
 ```
 
 Partial Class:

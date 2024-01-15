@@ -18,7 +18,7 @@
     "sourceName": "MauiPage.1",
     "primaryOutputs": [
         {
-            "path": "MauiPage.1.razor"
+            "path": "MauiPage.1Page.razor"
         }
     ],
     "tags": {

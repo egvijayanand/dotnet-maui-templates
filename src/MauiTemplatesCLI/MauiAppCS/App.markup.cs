@@ -25,8 +25,6 @@
         {
             Resources.MergedDictionaries.Add(AppColors.Instance);
             Resources.MergedDictionaries.Add(AppStyles.Instance);
-            Resources.Add("ApplePadding", new Thickness(30, 60, 30, 30));
-            Resources.Add("DefaultPadding", new Thickness(30));
             Resources.Add("ItemSpacing", 10d);
             Resources.Add(new Style(typeof(StackBase))
             {
@@ -36,24 +34,16 @@
                     new() { Property = StackBase.SpacingProperty, Value = AppResource<double>("ItemSpacing") },
                 },
             });
-            Resources.Add("MauiLabel", new Style(typeof(Label))
-            {
-                Setters =
-                {
-                    new() { Property = Label.TextColorProperty, Value = RequestedTheme switch { AppTheme.Dark => AppColor("White"), AppTheme.Light or _ => AppColor("Primary") } },
-                },
-            });
-            Resources.Add("Action", new Style(typeof(Button))
-            {
-                Setters =
-                {
-                    new() { Property = Button.BackgroundColorProperty, Value = RequestedTheme switch { AppTheme.Dark => AppColor("BackgroundDark"), AppTheme.Light or _ => AppColor("BackgroundLight") } },
-                    new() { Property = Button.TextColorProperty, Value = RequestedTheme switch { AppTheme.Dark => AppColor("TextDark"), AppTheme.Light or _ => AppColor("TextLight") } },
-                    new() { Property = Button.FontFamilyProperty, Value = AppResource<string>("AppFont") },
-                    new() { Property = Button.FontSizeProperty, Value = AppResource<double>("AppFontSize") },
-                    new() { Property = Button.PaddingProperty, Value = new Thickness(14,10) },
-                },
-            });
+            Resources.Add("MauiLabel", new Style<Label>()
+                .AddAppThemeBinding(Label.TextColorProperty, AppColor("Primary"), AppColor("TextDark"))
+                .MauiStyle);
+            Resources.Add("Action", new Style<Button>(
+                (Button.FontFamilyProperty, AppString("AppFont")),
+                (Button.FontSizeProperty, AppDouble("AppFontSize")),
+                (Button.PaddingProperty, new Thickness(14,10))
+            ).AddAppThemeBinding(Button.BackgroundColorProperty, AppColor("BackgroundLight"), AppColor("BackgroundDark"))
+             .AddAppThemeBinding(Button.TextColorProperty, AppColor("TextLight"), AppColor("TextDark"))
+             .MauiStyle);
             Resources.Add("PrimaryAction", new Style(typeof(Button))
             {
                 BasedOn = (Style)Resources["Action"],
@@ -70,6 +60,7 @@
 #else
             MainPage = new MainPage();
 #endif
+            UserAppTheme = PlatformAppTheme;
         }
 
         protected override Window CreateWindow(IActivationState? activationState)

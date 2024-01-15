@@ -28,6 +28,7 @@
 #else
             MainPage = new MainPage();
 #endif
+            UserAppTheme = PlatformAppTheme;
         }
 #if (Hierarchical || Tabbed)
 
@@ -45,6 +46,7 @@
 #else
             MainPage = new MainPage();
 #endif
+            UserAppTheme = PlatformAppTheme;
         }
 #endif
 #if (Plain || Hierarchical || Tabbed || Hybrid)

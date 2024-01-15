@@ -1,7 +1,7 @@
 {
     "$schema": "https://json.schemastore.org/template",
     "author": "Vijay Anand E G",
-    "defaultName": "MauiResDict1",
+    "defaultName": "MauiItem1",
     "classifications": [
         "MAUI",
         "Android",
@@ -10,19 +10,19 @@
         "Windows",
         "Xaml"
     ],
-    "identity": "VijayAnand.MauiResDict",
-    "groupIdentity": "VijayAnand.MauiTemplates.ResDict",
-    "description": "An item template for .NET MAUI Resource Dictionary in XAML",
-    "name": ".NET MAUI ResourceDictionary",
-    "shortName": "maui-resdict",
-    "sourceName": "MauiResDict.1",
+    "identity": "VijayAnand.MauiItem",
+    "groupIdentity": "VijayAnand.MauiTemplates.Item.Xaml",
+    "description": "An item template for .NET MAUI Item in XAML",
+    "name": ".NET MAUI Item",
+    "shortName": "maui-item",
+    "sourceName": "MauiItem.1",
     "primaryOutputs": [
         {
-            "path": "MauiResDict.1.xaml"
+            "path": "MauiItem.1.xaml"
         },
         {
             "condition": "(!XamlOnly)",
-            "path": "MauiResDict.1.xaml.cs"
+            "path": "MauiItem.1.xaml.cs"
         }
     ],
     "tags": {
@@ -36,11 +36,19 @@
             "replaces": "MyApp.Namespace",
             "defaultValue": "MyApp.Namespace"
         },
-        "no-code-behind": {
+        "base": {
+            "isRequired": true,
             "type": "parameter",
-            "datatype": "bool",
-            "default": "false",
-            "description": "If true, the output is generated without a C# code-behind file."
+            "description": "Base type for the item.",
+            "datatype": "text",
+            "replaces": "ContentPage"
+        },
+        "generic": {
+            "type": "parameter",
+            "description": "Generic base type for the item.",
+            "datatype": "text",
+            "defaultValue": "",
+            "replaces": "TObject"
         },
         "xaml-only": {
             "type": "parameter",
@@ -48,9 +56,9 @@
             "default": "false",
             "description": "If true, the output is generated without a C# code-behind file."
         },
-        "NoCodeBehind": {
+        "IsGeneric": {
             "type": "computed",
-            "value": "(no-code-behind)"
+            "value": "(generic != \"\")"
         },
         "XamlOnly": {
             "type": "computed",
@@ -61,9 +69,9 @@
         {
             "modifiers": [
                 {
-                    "condition": "(NoCodeBehind || XamlOnly)",
+                    "condition": "(XamlOnly)",
                     "exclude": [
-                        "MauiResDict.1.xaml.cs"
+                        "MauiItem.1.xaml.cs"
                     ]
                 }
             ]

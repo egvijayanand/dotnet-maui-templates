@@ -152,6 +152,7 @@ namespace MauiApp._1.Views
 #endif
         {
             var version = typeof(MauiApp).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
+            var mauiVersion = $".NET MAUI ver. {version?[..version.IndexOf('+')]}"; 
 #if Mvvm
             BindingContext = viewModel;
             this.Bindv2(static (MainViewModel vm) => vm.Title);
@@ -220,16 +221,12 @@ namespace MauiApp._1.Views
                         }.Padding(30),
                         new Grid()
                         {
-                            BackgroundColor = AppColor("Primary"),
                             Children =
                             {
-                                new Label()
-                                {
-                                    Text = $".NET MAUI ver. {version?[..version.IndexOf('+')]}",
-                                    TextColor = AppColor("White"),
-                                }.Center(),
+                                new Label().Text(mauiVersion, AppColor("White")).Center(),
                             },
-                        }.Row(1),
+                        }.Row(1)
+                         .AppThemeColorBinding(BackgroundColorProperty, AppColor("Primary"), AppColor("BackgroundDark")),
                     }
                 }
             };
