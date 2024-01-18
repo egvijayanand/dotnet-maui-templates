@@ -1,8 +1,12 @@
 <Project>
     <PropertyGroup>
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-        <!--#if (Net8 && Nightly)-->
-        <MauiVersion>8.0.4-nightly</MauiVersion>
+        <!--#if (Net8)-->
+        <!--#if (Nightly)-->
+        <MauiVersion>8.0.6-nightly</MauiVersion>
+        <!--#else-->
+        <MauiVersion>8.0.6</MauiVersion>
+        <!--#endif-->
         <!--#endif-->
     </PropertyGroup>
     <!--#if (PackageRef)-->
@@ -10,11 +14,11 @@
     <!--#endif-->
         <!--#if (Hybrid && RazorLib)-->
         <!--#if (Net8)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.0" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.1" />
         <!--#elif (Net7)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="7.0.14" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="7.0.15" />
         <!--#else-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="6.0.25" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="6.0.26" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (Razor)-->
@@ -51,13 +55,13 @@
         <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <PackageVersion Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <!--#if (AddToolkitPackage)-->
-        <PackageVersion Include="CommunityToolkit.Maui" Version="7.0.0" />
+        <PackageVersion Include="CommunityToolkit.Maui" Version="7.0.1" />
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="4.0.0" />
         <!--#endif-->
         <!--#if (AddMediaPackage)-->
-        <PackageVersion Include="CommunityToolkit.Maui.MediaElement" Version="3.0.0" />
+        <PackageVersion Include="CommunityToolkit.Maui.MediaElement" Version="3.0.1" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.2.0" />
