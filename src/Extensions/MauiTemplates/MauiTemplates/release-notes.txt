@@ -1,7 +1,15 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
 
-What's new in ver. 4.7.0.0:
+What's new in ver. 4.8.1.0:
 ---------------------------
+Defined MauiVersion property (with its value set to 8.0.6) in the .NET 8 stable template to support .NET MAUI 8 SR1
+
+For more details, check this article:
+
+https://egvijayanand.in/2024/01/18/dotnet-maui-8-service-release-1/
+
+v4.7.0.0:
+
 Xamarin.Forms Target Framework option in Shared Class Library project template.
 
 Supported values are: .NET Standard 2.0 (default value) and .NET Standard 2.1
