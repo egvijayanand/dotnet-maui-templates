@@ -102,8 +102,12 @@
         <!--#else-->
         <UseMaui>true</UseMaui>
         <!--#endif-->
-        <!--#if (Net8 && !CentralPkgMgmt && Nightly)-->
+        <!--#if (Net8 && !CentralPkgMgmt)-->
+        <!--#if (Nightly)-->
         <MauiVersion>8.*-*</MauiVersion>
+        <!--#else-->
+        <MauiVersion>8.0.6</MauiVersion>
+        <!--#endif-->
         <!--#endif-->
         <SingleProject>true</SingleProject>
         <!--#if (Net8 && (AllPlatforms || IsWindows))-->

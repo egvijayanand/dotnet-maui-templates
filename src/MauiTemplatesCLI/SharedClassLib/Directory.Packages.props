@@ -1,8 +1,12 @@
 <Project>
     <PropertyGroup>
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-        <!--#if (Net8 && Nightly)-->
-        <MauiVersion>8.0.4-nightly</MauiVersion>
+        <!--#if (Net8)-->
+        <!--#if (Nightly)-->
+        <MauiVersion>8.0.6-nightly</MauiVersion>
+        <!--#else-->
+        <MauiVersion>8.0.6</MauiVersion>
+        <!--#endif-->
         <!--#endif-->
     </PropertyGroup>
     <ItemGroup>
@@ -24,7 +28,7 @@
         <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <PackageVersion Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <!--#if (AddMauiToolkit)-->
-        <PackageVersion Include="CommunityToolkit.Maui" Version="7.0.0" />
+        <PackageVersion Include="CommunityToolkit.Maui" Version="7.0.1" />
         <!--#endif-->
         <!--#if (AddMauiMarkup)-->
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="4.0.0" />
