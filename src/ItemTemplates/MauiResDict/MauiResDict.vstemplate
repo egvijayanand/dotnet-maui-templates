@@ -5,7 +5,7 @@
 		<Description>A page for defining resources using XAML.</Description>
 		<ProjectType>CSharp</ProjectType>
 		<ProjectSubType>MAUI</ProjectSubType>
-		<SortOrder>100</SortOrder>
+		<SortOrder>120</SortOrder>
 		<Icon>__TemplateIcon.ico</Icon>
 	</TemplateData>
 	<TemplateContent>

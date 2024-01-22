@@ -1,20 +1,19 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
 	<TemplateData>
-		<DefaultName>MauiPage.xaml</DefaultName>
-		<Name>Content Page with BlazorWebView (.NET MAUI)</Name>
-		<Description>A page for displaying content with BlazorWebView using XAML.</Description>
+		<DefaultName>MauiItem.cs</DefaultName>
+		<Name>Generic Item (C#) (.NET MAUI)</Name>
+		<Description>Generic .NET MAUI item template in C#.</Description>
 		<ProjectType>CSharp</ProjectType>
 		<ProjectSubType>MAUI</ProjectSubType>
-		<SortOrder>100</SortOrder>
+		<SortOrder>110</SortOrder>
 		<Icon>__TemplateIcon.ico</Icon>
 	</TemplateData>
 	<TemplateContent>
+		<References />
+		<ProjectItem TargetFileName="$fileinputname$.cs" ReplaceParameters="true">MauiItemCS.cs</ProjectItem>
 		<CustomParameters>
-			<CustomParameter Name="$net8$" Value="" />
+			<CustomParameter Name="$basetype$" Value="" />
 		</CustomParameters>
-		<References/>
-		<ProjectItem TargetFileName="$fileinputname$.xaml" ReplaceParameters="true">MauiBlazorWebView.xaml</ProjectItem>
-		<ProjectItem TargetFileName="$fileinputname$.xaml.cs" ReplaceParameters="true">MauiBlazorWebView.xaml.cs</ProjectItem>
 	</TemplateContent>
 	<WizardExtension>
 		<Assembly>VijayAnand.MauiTemplates, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7550554040ebdd44</Assembly>

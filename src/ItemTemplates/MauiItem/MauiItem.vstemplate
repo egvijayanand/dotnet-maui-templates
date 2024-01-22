@@ -1,0 +1,27 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+	<TemplateData>
+		<DefaultName>MauiItem.xaml</DefaultName>
+		<Name>Generic Item (.NET MAUI)</Name>
+		<Description>Generic .NET MAUI item template in XAML.</Description>
+		<ProjectType>CSharp</ProjectType>
+		<ProjectSubType>MAUI</ProjectSubType>
+		<SortOrder>110</SortOrder>
+		<Icon>__TemplateIcon.ico</Icon>
+	</TemplateData>
+	<TemplateContent>
+		<References/>
+		<ProjectItem TargetFileName="$fileinputname$.xaml" ReplaceParameters="true">MauiItem.xaml</ProjectItem>
+		<ProjectItem TargetFileName="$fileinputname$.xaml.cs" ReplaceParameters="true">MauiItem.xaml.cs</ProjectItem>
+		<CustomParameters>
+			<CustomParameter Name="$generic$" Value="" />
+			<CustomParameter Name="$xaml$" Value="" />
+			<CustomParameter Name="$basetype$" Value="" />
+			<CustomParameter Name="$csbasetype$" Value="" />
+			<CustomParameter Name="$typearg$" Value="" />
+		</CustomParameters>
+	</TemplateContent>
+	<WizardExtension>
+		<Assembly>VijayAnand.MauiTemplates, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7550554040ebdd44</Assembly>
+		<FullClassName>VijayAnand.MauiTemplates.CustomActionWizard</FullClassName>
+	</WizardExtension>
+</VSTemplate>

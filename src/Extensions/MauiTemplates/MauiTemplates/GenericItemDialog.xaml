@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ui:DialogWindow
+    x:Class="VijayAnand.MauiTemplates.GenericItemDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:VijayAnand.MauiTemplates"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Shell.15.0"
+    Title=".NET MAUI Generic Item | All-in-One Templates Pack"
+    Width="480"
+    Height="320"
+    KeyDown="OnWindowKeyDown"
+    Loaded="OnWindowLoaded"
+    ResizeMode="NoResize"
+    ShowInTaskbar="False"
+    WindowStartupLocation="CenterOwner"
+    mc:Ignorable="d">
+    <ui:DialogWindow.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".14*" />
+                <RowDefinition Height=".14*" />
+                <RowDefinition Height=".12*" />
+                <RowDefinition Height=".14*" />
+                <RowDefinition Height=".16*" />
+                <RowDefinition Height=".15*" />
+                <RowDefinition Height=".15*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".05*" />
+                <ColumnDefinition Width=".5*" />
+                <ColumnDefinition Width=".18*" />
+                <ColumnDefinition Width=".02*" />
+                <ColumnDefinition Width=".18*" />
+                <ColumnDefinition Width=".05*" />
+            </Grid.ColumnDefinitions>
+            <Label
+                Grid.Row="0"
+                Grid.Column="1"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                Content="Base Type:" />
+            <ComboBox
+                x:Name="cboBaseType"
+                Grid.Row="1"
+                Grid.Column="1"
+                Grid.ColumnSpan="4"
+                Padding="5"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Top"
+                AutomationProperties.AcceleratorKey="Alt+B"
+                AutomationProperties.AccessKey="B"
+                GotFocus="OnBaseTypeGotFocus"
+                IsEditable="True"
+                IsTextSearchCaseSensitive="True"
+                LostFocus="OnBaseTypeLostFocus"
+                TabIndex="0">
+                <ComboBox.Items>
+                    <ComboBoxItem>Application</ComboBoxItem>
+                    <ComboBoxItem>ContentPage</ComboBoxItem>
+                    <ComboBoxItem>ContentView</ComboBoxItem>
+                    <ComboBoxItem>FlyoutPage</ComboBoxItem>
+                    <ComboBoxItem>Grid</ComboBoxItem>
+                    <ComboBoxItem>NavigationPage</ComboBoxItem>
+                    <ComboBoxItem>ResourceDictionary</ComboBoxItem>
+                    <ComboBoxItem>Shell</ComboBoxItem>
+                    <ComboBoxItem>StackLayout</ComboBoxItem>
+                    <ComboBoxItem>SwipeView</ComboBoxItem>
+                    <ComboBoxItem>TabbedPage</ComboBoxItem>
+                </ComboBox.Items>
+            </ComboBox>
+            <Label
+                Grid.Row="2"
+                Grid.Column="1"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                Content="Generic Base Type:" />
+            <TextBox
+                x:Name="txtGenericType"
+                Grid.Row="3"
+                Grid.Column="1"
+                Grid.ColumnSpan="4"
+                Padding="5"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Top"
+                AutomationProperties.AcceleratorKey="Alt+G"
+                AutomationProperties.AccessKey="G"
+                GotFocus="OnGenericTypeGotFocus"
+                LostFocus="OnGenericTypeLostFocus"
+                TabIndex="1" />
+            <CheckBox
+                x:Name="chkXamlOnly"
+                Grid.Row="4"
+                Grid.Column="1"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                AutomationProperties.AccessKey="X"
+                Content="_Xaml Only"
+                TabIndex="2" />
+            <Button
+                Grid.Row="5"
+                Grid.Column="2"
+                MinWidth="80"
+                Padding="5"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                AutomationProperties.AcceleratorKey="Alt+O"
+                AutomationProperties.AccessKey="O"
+                Click="OnAcceptClick"
+                Content="_OK"
+                IsDefault="True"
+                TabIndex="3" />
+            <Button
+                Grid.Row="5"
+                Grid.Column="4"
+                MinWidth="80"
+                Padding="5"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                AutomationProperties.AcceleratorKey="Alt+C"
+                AutomationProperties.AccessKey="C"
+                Click="OnCancelClick"
+                Content="_Cancel"
+                IsCancel="True"
+                TabIndex="4" />
+            <TextBlock
+                Grid.Row="6"
+                Grid.Column="1"
+                Grid.ColumnSpan="3"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center">
+                <TextBlock.Text>
+                    &#169; 2024 Vijay Anand E G&#160;
+                </TextBlock.Text>
+                <Hyperlink
+                    NavigateUri="https://egvijayanand.in/"
+                    RequestNavigate="OnRequestNavigate">
+                    egvijayanand.in
+                </Hyperlink>
+            </TextBlock>
+        </Grid>
+    </ui:DialogWindow.Content>
+</ui:DialogWindow>

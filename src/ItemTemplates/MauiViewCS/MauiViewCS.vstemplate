@@ -5,7 +5,7 @@
 		<Description>A view for displaying content using C#.</Description>
 		<ProjectType>CSharp</ProjectType>
 		<ProjectSubType>MAUI</ProjectSubType>
-		<SortOrder>100</SortOrder>
+		<SortOrder>120</SortOrder>
 		<Icon>__TemplateIcon.ico</Icon>
 	</TemplateData>
 	<TemplateContent>

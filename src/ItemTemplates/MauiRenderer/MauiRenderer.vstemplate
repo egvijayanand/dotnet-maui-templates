@@ -5,7 +5,7 @@
 		<Description>.NET MAUI Custom View and its Renderer definitions (in conditional compilation format).</Description>
 		<ProjectType>CSharp</ProjectType>
 		<ProjectSubType>MAUI</ProjectSubType>
-		<SortOrder>230</SortOrder>
+		<SortOrder>140</SortOrder>
 		<Icon>__TemplateIcon.ico</Icon>
 	</TemplateData>
 	<TemplateContent>
