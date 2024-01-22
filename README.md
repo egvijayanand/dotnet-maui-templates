@@ -76,6 +76,8 @@ This has Project Templates for:
 
 And has Item Templates for:
 
+* [Generic Item](#generic-item-template)
+* [Generic Item (C#)](#generic-item-template)
 * Content Page
 * Content Page (C#)
 * Content Page (Razor)
@@ -603,12 +605,25 @@ dotnet new sharedclasslib -n MyApp.UI -asp
 #### Generic Item Template:
 
 * A revolutionary generic template, in XAML and C#, for creating items of any type
-* And it is named as: `maui-item` and `maui-item-cs`
+* Supported both within the VS2022 IDE and CLI
+* On CLI, it is named as `maui-item` and `maui-item-cs`
+* The same set of parameters is defined in the UI as `dropdown`, `textbox` and `checkbox` for ease of use
 * Both needs one required parameter, `-b` / `--base`, the base type
 * And optionally takes another parameter, `-g` / `--generic`, to specify the generic base type
-* In addition, XAML template takes one more parameter, `-xo` / `--xaml-only`, to generate only XAML definition
+* In addition, the XAML template takes one more parameter, `-xo` / `--xaml-only`, to generate only the XAML definition
+* Frequently used base types are loaded in the Editable dropdown, user can also enter their value here
+* Ensure the values are entered in Pascal notation. XAML templates support XML namespace prefix, quite like how it is used in real world (`mct:Popup`)
+* The one big advantage of using this on IDE is the relative namespace to the folder where the item is created whereas on CLI, this defaults to the root namespace. As relative namespace resolution is yet to be fully supported by the CLI templating engine and is actively tracked [here](https://github.com/dotnet/templating/issues/6010)
 
-*Note: Namespace resolution in both XAML and C# file is left to the user as deriving them with the template is outside its scope.*
+![.NET MAUI All-in-One Generic Item Template](images/dotnetmaui-generic-item-popup.png)
+
+*Note: Namespace resolution in both XAML and C# files is left to the user as deriving them with the template is outside its scope.*
+
+*Tip: For the XAML template, pass the `xmlns` scope as part of the input parameter value and it'll be used appropriately in the generated source files.*
+
+*Tip: Use `local` scope to refer to the files in the same directory like `Views`. For example, `local:BasePage`*
+
+CLI Commands:
 
  ```shell
 dotnet new maui-item -n LoginPage -b ContentPage

@@ -5,7 +5,7 @@
 		<Description>.NET MAUI Custom View and its Renderer definition in the Platforms folder.</Description>
 		<ProjectType>CSharp</ProjectType>
 		<ProjectSubType>MAUI</ProjectSubType>
-		<SortOrder>220</SortOrder>
+		<SortOrder>130</SortOrder>
 		<Icon>__TemplateIcon.ico</Icon>
 	</TemplateData>
 	<TemplateContent>

@@ -1,7 +1,23 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
 
-What's new in ver. 4.8.1.0:
+What's new in ver. 4.9.0.0:
 ---------------------------
+A revolutionary generic template, in XAML and C#, for creating items of any type from within Visual Studio 2022 IDE.
+
+Both need one required input, the base type (select a value from the predefined ones or enter a value).
+
+Optionally takes another input, to specify the generic base type.
+
+In addition, the XAML template takes one more input, when opted, generates only XAML definition.
+
+Note: Namespace resolution in both XAML and C# file is left to the user as deriving them with the template is outside its scope.
+
+Tip: For XAML template, pass the xmlns scope as part of the input parameter value and it'll be used appropriately in the generated source files.
+
+Tip: Use local scope to refer to the files in the same directory like Views. For example, local:BasePage
+
+v4.8.1.0:
+
 Defined MauiVersion property (with its value set to 8.0.6) in the .NET 8 stable template to support .NET MAUI 8 SR1
 
 For more details, check this article:

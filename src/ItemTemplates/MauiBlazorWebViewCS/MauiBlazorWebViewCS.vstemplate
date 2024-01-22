@@ -5,7 +5,7 @@
 		<Description>A page for displaying content with BlazorWebView using C#.</Description>
 		<ProjectType>CSharp</ProjectType>
 		<ProjectSubType>MAUI</ProjectSubType>
-		<SortOrder>100</SortOrder>
+		<SortOrder>110</SortOrder>
 		<Icon>__TemplateIcon.ico</Icon>
 	</TemplateData>
 	<TemplateContent>

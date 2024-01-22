@@ -12,6 +12,8 @@ namespace VijayAnand.MauiTemplates
     public class CustomActionWizard : IWizard
     {
         DTE ide;
+        bool xamlOnly;
+        bool userCancel;
         string destinationFolder;
 
         /// <summary>This method is called before opening any item that has the OpenInEditor attribute.</summary>
@@ -51,9 +53,9 @@ namespace VijayAnand.MauiTemplates
         }
 
         public async void RunStarted(object automationObject,
-                               Dictionary<string, string> replacementsDictionary,
-                               WizardRunKind runKind,
-                               object[] customParams)
+                                     Dictionary<string, string> replacementsDictionary,
+                                     WizardRunKind runKind,
+                                     object[] customParams)
         {
             try
             {
@@ -93,8 +95,7 @@ namespace VijayAnand.MauiTemplates
                             }
                         }
                     }
-
-                    if (replacementsDictionary.ContainsKey("$net8$"))
+                    else if (replacementsDictionary.ContainsKey("$net8$"))
                     {
                         var project = await VS.Solution.GetActiveProjectAsync();
 
@@ -125,6 +126,59 @@ namespace VijayAnand.MauiTemplates
                             }
                         }
                     }
+                    else if (replacementsDictionary.ContainsKey("$basetype$"))
+                    {
+                        var xamlItem = replacementsDictionary.ContainsKey("$xaml$");
+                        var window = new GenericItemDialog(xamlItem);
+                        var result = window.ShowDialog();
+
+                        if (result is true)
+                        {
+                            xamlOnly = window.XamlOnly;
+                            replacementsDictionary["$xaml$"] = xamlOnly.ToString().ToLowerInvariant();
+
+                            var baseType = window.BaseType;
+                            var genericType = window.GenericType;
+                            var baseTypeCS = baseType.Contains(":") ? baseType.Substring(baseType.IndexOf(':') + 1) : baseType;
+                            var genericTypeCS = genericType.Contains(":") ? genericType.Substring(genericType.IndexOf(':') + 1) : genericType;
+
+                            if (!string.IsNullOrEmpty(baseType))
+                            {
+                                if (xamlItem)
+                                {
+                                    replacementsDictionary["$basetype$"] = baseType;
+
+                                    if (string.IsNullOrEmpty(genericTypeCS))
+                                    {
+                                        replacementsDictionary["$csbasetype$"] = baseTypeCS;
+                                        replacementsDictionary["$generic$"] = bool.FalseString.ToLowerInvariant();
+                                    }
+                                    else
+                                    {
+                                        replacementsDictionary["$csbasetype$"] = $"{baseTypeCS}<{genericTypeCS}>";
+                                        replacementsDictionary["$generic$"] = bool.TrueString.ToLowerInvariant();
+                                        replacementsDictionary["$typearg$"] = genericType;
+                                    }
+                                }
+                                else
+                                {
+                                    // For C# template, basetype is the parameter name
+                                    if (string.IsNullOrEmpty(genericTypeCS))
+                                    {
+                                        replacementsDictionary["$basetype$"] = baseTypeCS;
+                                    }
+                                    else
+                                    {
+                                        replacementsDictionary["$basetype$"] = $"{baseTypeCS}<{genericTypeCS}>";
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            userCancel = true;
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -137,8 +191,18 @@ namespace VijayAnand.MauiTemplates
         /// <summary>This method is only called for item templates, not for project templates.</summary>
         public bool ShouldAddProjectItem(string filePath)
         {
-            //throw new System.NotImplementedException();
-            return true;
+            if (userCancel)
+            {
+                return false;
+            }
+            else if (filePath.EndsWith(".xaml.cs"))
+            {
+                return !xamlOnly;
+            }
+            else
+            {
+                return !File.Exists(filePath);
+            }
         }
     }
 }
