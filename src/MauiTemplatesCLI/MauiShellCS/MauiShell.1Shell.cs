@@ -1,4 +1,8 @@
-﻿namespace MyApp.Namespace
+﻿#if RootFolder
+namespace MyApp.RootNamespace
+#else
+namespace MyApp.Namespace
+#endif
 {
     public partial class MauiShell__1Shell : Shell
     {
@@ -19,10 +23,13 @@
             //});
 
             // Menu Items
-            //Items.Add(new MenuItem()
+            //var menuItem = new MenuItem()
             //{
-            //    Text = "",
-            //}.Invoke(x => x.Clicked += OnMenuItemClicked));
+            //    Text = ""
+            //};
+
+            //menuItem.Clicked += OnMenuItemClicked;
+            //Items.Add(menuItem);
 
             //TabBar Items
             //Items.Add(new TabBar()

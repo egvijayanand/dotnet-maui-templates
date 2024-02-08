@@ -1,11 +1,15 @@
 ﻿#if (!SameFolder)
-using MyApp.Namespace.ViewModels;
+using MyApp.RootNamespace.ViewModels;
 
 #endif
 #if SameFolder
-namespace MyApp.Namespace
+#if RootFolder
+namespace MyApp.RootNamespace
 #else
-namespace MyApp.Namespace.Views
+namespace MyApp.Namespace
+#endif
+#else
+namespace MyApp.RootNamespace.Views
 #endif
 {
     public partial class Maui__1Page : ContentPage

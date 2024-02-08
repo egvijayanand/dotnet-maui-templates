@@ -2,6 +2,17 @@
 <!--#if (XamlOnly)-->
 <?xaml-comp compile="true" ?>
 <!--#if (IsGeneric)-->
+<!--#if (RootFolder)-->
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MyApp.RootNamespace"
+    x:TypeArguments="TObject"
+    mc:Ignorable="d">
+</ContentPage>
+<!--#else-->
 <ContentPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -9,6 +20,17 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MyApp.Namespace"
     x:TypeArguments="TObject"
+    mc:Ignorable="d">
+</ContentPage>
+<!--#endif-->
+<!--#else-->
+<!--#if (RootFolder)-->
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MyApp.RootNamespace"
     mc:Ignorable="d">
 </ContentPage>
 <!--#else-->
@@ -21,15 +43,17 @@
     mc:Ignorable="d">
 </ContentPage>
 <!--#endif-->
+<!--#endif-->
 <!--#else-->
 <!--#if (IsGeneric)-->
+<!--#if (RootFolder)-->
 <ContentPage
-    x:Class="MyApp.Namespace.MauiItem__1"
+    x:Class="MyApp.RootNamespace.MauiItem__1"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:local="clr-namespace:MyApp.Namespace"
+    xmlns:local="clr-namespace:MyApp.RootNamespace"
     x:TypeArguments="TObject"
     mc:Ignorable="d">
 </ContentPage>
@@ -41,7 +65,31 @@
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MyApp.Namespace"
+    x:TypeArguments="TObject"
     mc:Ignorable="d">
 </ContentPage>
+<!--#endif-->
+<!--#else-->
+<!--#if (RootFolder)-->
+<ContentPage
+    x:Class="MyApp.RootNamespace.MauiItem__1"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MyApp.RootNamespace"
+    mc:Ignorable="d">
+</ContentPage>
+<!--#else-->
+<ContentPage
+    x:Class="MyApp.Namespace.MauiItem__1"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MyApp.Namespace"
+    mc:Ignorable="d">
+</ContentPage>
+<!--#endif-->
 <!--#endif-->
 <!--#endif-->

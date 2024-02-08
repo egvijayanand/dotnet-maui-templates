@@ -30,11 +30,57 @@
         "type": "item"
     },
     "symbols": {
-        "namespace": {
+        "root_namespace": {
             "type": "bind",
             "binding": "msbuild:RootNamespace",
-            "replaces": "MyApp.Namespace",
-            "defaultValue": "MyApp.Namespace"
+            "replaces": "MyApp.RootNamespace"
+        },
+        "proj_dir": {
+            "type": "bind",
+            "binding": "msbuild:MSBuildProjectDirectory"
+        },
+        "output_path": {
+            "type": "bind",
+            "binding": "WorkingDirectory",
+            "defaultValue": ""
+        },
+        "RootFolder": {
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(output_path == \"\" || proj_dir == output_path)"
+        },
+        "relative_path": {
+            "type": "generated",
+            "generator": "regex",
+            "datatype": "text",
+            "parameters": {
+                "source": "output_path",
+                "steps": [
+                    {
+                        "regex": ".*(\\\\|/)",
+                        "replacement": ""
+                    }
+                ]
+            }
+        },
+        "namespace": {
+            "type": "generated",
+            "generator": "join",
+            "parameters": {
+                "symbols": [
+                    {
+                        "type": "ref",
+                        "value": "root_namespace"
+                    },
+                    {
+                        "type": "ref",
+                        "value": "relative_path"
+                    }
+                ],
+                "separator": ".",
+                "removeEmptyValues": true
+            },
+            "replaces": "MyApp.Namespace"
         },
         "no-code-behind": {
             "type": "parameter",

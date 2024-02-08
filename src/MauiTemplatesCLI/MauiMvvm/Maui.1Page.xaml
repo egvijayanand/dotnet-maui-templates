@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--#if (SameFolder)-->
+<!--#if (RootFolder)-->
+<ContentPage
+    x:Class="MyApp.RootNamespace.Maui__1Page"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MyApp.RootNamespace"
+    xmlns:vm="clr-namespace:MyApp.RootNamespace"
+    x:DataType="vm:Maui__1ViewModel"
+    mc:Ignorable="d">
+<!--#else-->
 <ContentPage
     x:Class="MyApp.Namespace.Maui__1Page"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -10,21 +22,36 @@
     xmlns:vm="clr-namespace:MyApp.Namespace"
     x:DataType="vm:Maui__1ViewModel"
     mc:Ignorable="d">
+<!--#endif-->
+<!--#else-->
+<!--#if (RootFolder)-->
+<ContentPage
+    x:Class="MyApp.RootNamespace.Views.Maui__1Page"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MyApp.RootNamespace"
+    xmlns:vm="clr-namespace:MyApp.RootNamespace.ViewModels"
+    x:DataType="vm:Maui__1ViewModel"
+    mc:Ignorable="d">
 <!--#else-->
 <ContentPage
-    x:Class="MyApp.Namespace.Views.Maui__1Page"
+    x:Class="MyApp.RootNamespace.Views.Maui__1Page"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MyApp.Namespace"
-    xmlns:vm="clr-namespace:MyApp.Namespace.ViewModels"
+    xmlns:vm="clr-namespace:MyApp.RootNamespace.ViewModels"
     x:DataType="vm:Maui__1ViewModel"
     mc:Ignorable="d">
+<!--#endif-->
 <!--#endif-->
     <ContentPage.Content>
         <Grid>
             <Label
+                FontSize="18"
                 HorizontalOptions="Center"
                 Text="Welcome to .NET MAUI!!!"
                 TextColor="Purple"

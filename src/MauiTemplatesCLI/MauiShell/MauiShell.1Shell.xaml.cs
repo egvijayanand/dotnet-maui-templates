@@ -1,4 +1,8 @@
-﻿namespace MyApp.Namespace
+﻿#if RootFolder
+namespace MyApp.RootNamespace
+#else
+namespace MyApp.Namespace
+#endif
 {
     public partial class MauiShell__1Shell : Shell
     {
