@@ -1,5 +1,9 @@
 ﻿#if IsFileScoped
+#if RootFolder
+namespace MyApp.RootNamespace;
+#else
 namespace MyApp.Namespace;
+#endif
 
 #if IsInternal
 #if IsPartial
@@ -103,7 +107,11 @@ public class MyClass__1 : object
     }
 }
 #else
+#if RootFolder
+namespace MyApp.RootNamespace
+#else
 namespace MyApp.Namespace
+#endif
 {
 #if IsInternal
 #if IsPartial

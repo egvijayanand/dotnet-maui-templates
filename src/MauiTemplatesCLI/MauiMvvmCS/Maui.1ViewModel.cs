@@ -1,7 +1,11 @@
 ﻿#if SameFolder
-namespace MyApp.Namespace
+#if RootFolder
+namespace MyApp.RootNamespace
 #else
-namespace MyApp.Namespace.ViewModels
+namespace MyApp.Namespace
+#endif
+#else
+namespace MyApp.RootNamespace.ViewModels
 #endif
 {
     public partial class Maui__1ViewModel : BaseViewModel

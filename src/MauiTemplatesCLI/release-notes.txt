@@ -1,12 +1,22 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
 
-What's new in ver. 4.8.1:
+What's new in ver. 4.9.0:
 -------------------------
+1. Better namespace resolution for item templates (support for first level folder)
+
+2. Script automation for item templates
+
+For more details, check this article:
+
+https://egvijayanand.in/dotnet-maui-item-templates-made-easy-on-cli-and-visual-studio-code/
+
+v4.8.1:
+
 Defined MauiVersion property (with its value set to 8.0.6) in the .NET 8 stable template to support .NET MAUI 8 SR1
 
 For more details, check this article:
 
-https://egvijayanand.in/2024/01/18/dotnet-maui-8-service-release-1/
+https://egvijayanand.in/dotnet-maui-8-service-release-1/
 
 v4.8.0:
 

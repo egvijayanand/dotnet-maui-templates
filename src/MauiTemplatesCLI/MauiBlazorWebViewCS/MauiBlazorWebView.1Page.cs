@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Components.WebView.Maui;
 
+#if RootFolder
+namespace MyApp.RootNamespace
+#else
 namespace MyApp.Namespace
+#endif
 {
     public partial class MauiBlazorWebView__1 : ContentPage
     {
@@ -11,6 +15,9 @@ namespace MyApp.Namespace
             // Add this using statement VijayAnand.MauiBlazor.Markup to bring the extension methods to scope
             // And then invoke the Configure() method on the BlazorWebView instance, example shown below
             // new BlazorWebView().Configure("wwwroot/index.html", ("#app", typeof(Main), null));
+#if Net8
+            // new BlazorWebView().Configure("wwwroot/index.html", "/", ("#app", typeof(Main), null));
+#endif
             var bwv = new BlazorWebView()
             {
 #if Net8
