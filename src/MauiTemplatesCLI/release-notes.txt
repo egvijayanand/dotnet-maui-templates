@@ -10,7 +10,7 @@ Note: The default value for the framework parameter remains as net8.0, which mea
 
 dotnet new mauiapp -o MyApp -f net9.0
 
-2. The value of the MauiVersion property is bumped to 8.0.7 to support the latest version of .NET MAUI 8 NuGet packages.
+2. On the stable channel, the value of the MauiVersion property is bumped to 8.0.7 to support the latest version of .NET MAUI 8 NuGet packages.
 
 v4.9.0:
 
