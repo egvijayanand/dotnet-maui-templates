@@ -1,7 +1,13 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
 
-What's new in ver. 4.9.0.0:
+What's new in ver. 5.0.0.0:
 ---------------------------
+Support for creating .NET MAUI projects on .NET 9 Previews.
+
+On the stable channel, the value of the MauiVersion property is bumped to 8.0.7 to support the latest version of .NET MAUI 8 SR2 NuGet packages.
+
+v4.9.0.0:
+
 A revolutionary generic template, in XAML and C#, for creating items of any type from within Visual Studio 2022 IDE.
 
 Both need one required input, the base type (select a value from the predefined ones or enter a value).

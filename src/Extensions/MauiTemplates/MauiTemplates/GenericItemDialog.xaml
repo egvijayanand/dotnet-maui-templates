@@ -28,12 +28,12 @@
                 <RowDefinition Height=".15*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width=".05*" />
+                <ColumnDefinition Width=".06*" />
                 <ColumnDefinition Width=".5*" />
                 <ColumnDefinition Width=".18*" />
                 <ColumnDefinition Width=".02*" />
                 <ColumnDefinition Width=".18*" />
-                <ColumnDefinition Width=".05*" />
+                <ColumnDefinition Width=".06*" />
             </Grid.ColumnDefinitions>
             <Label
                 Grid.Row="0"

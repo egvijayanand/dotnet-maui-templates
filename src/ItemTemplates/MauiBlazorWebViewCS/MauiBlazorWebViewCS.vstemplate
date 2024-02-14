@@ -9,7 +9,14 @@
 		<Icon>__TemplateIcon.ico</Icon>
 	</TemplateData>
 	<TemplateContent>
-		<References/>
+		<CustomParameters>
+			<CustomParameter Name="$net8orlater$" Value="" />
+		</CustomParameters>
+		<References />
 		<ProjectItem TargetFileName="$fileinputname$.cs" ReplaceParameters="true">MauiBlazorWebView.cs</ProjectItem>
 	</TemplateContent>
+	<WizardExtension>
+		<Assembly>VijayAnand.MauiTemplates, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7550554040ebdd44</Assembly>
+		<FullClassName>VijayAnand.MauiTemplates.CustomActionWizard</FullClassName>
+	</WizardExtension>
 </VSTemplate>

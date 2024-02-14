@@ -10,7 +10,7 @@
 	</TemplateData>
 	<TemplateContent>
 		<CustomParameters>
-			<CustomParameter Name="$net8$" Value="" />
+			<CustomParameter Name="$net8orlater$" Value="" />
 		</CustomParameters>
 		<References />
 		<ProjectItem TargetFileName="$fileinputname$.xaml" ReplaceParameters="true">MauiBlazorWebView.xaml</ProjectItem>
