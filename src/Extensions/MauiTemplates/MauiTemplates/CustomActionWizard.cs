@@ -95,7 +95,7 @@ namespace VijayAnand.MauiTemplates
                             }
                         }
                     }
-                    else if (replacementsDictionary.ContainsKey("$net8$"))
+                    else if (replacementsDictionary.ContainsKey("$net8orlater$"))
                     {
                         var project = await VS.Solution.GetActiveProjectAsync();
 
@@ -107,9 +107,9 @@ namespace VijayAnand.MauiTemplates
 
                             if (tfm != null)
                             {
-                                if (tfm.Contains("net8.0"))
+                                if (tfm.Contains("net8.0") || tfm.Contains("net9.0"))
                                 {
-                                    replacementsDictionary["$net8$"] = "true";
+                                    replacementsDictionary["$net8orlater$"] = "true";
                                 }
                             }
                             else
@@ -118,9 +118,9 @@ namespace VijayAnand.MauiTemplates
 
                                 if (tfm != null)
                                 {
-                                    if (tfm.StartsWith("net8.0"))
+                                    if (tfm.StartsWith("net8.0") || tfm.StartsWith("net9.0"))
                                     {
-                                        replacementsDictionary["$net8$"] = "true";
+                                        replacementsDictionary["$net8orlater$"] = "true";
                                     }
                                 }
                             }

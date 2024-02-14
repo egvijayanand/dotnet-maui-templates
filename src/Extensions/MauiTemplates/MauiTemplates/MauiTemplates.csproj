@@ -2,7 +2,7 @@
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <LangVersion>9.0</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -21,7 +21,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>VijayAnand.MauiTemplates</RootNamespace>
     <AssemblyName>VijayAnand.MauiTemplates</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <GeneratePkgDefFile>true</GeneratePkgDefFile>
     <UseCodebase>true</UseCodebase>
     <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>
@@ -268,7 +268,7 @@
       <IncludeInVSIX>true</IncludeInVSIX>
       <VSIXSubPath>ItemTemplates\MAUI</VSIXSubPath>
     </Content>
-    <None Include="Assets\VijayAnand.MauiTemplates.4.8.1.nupkg" />
+    <None Include="Assets\VijayAnand.MauiTemplates.5.0.0.nupkg" />
     <Content Include="MauiSnippets\CSharp\asyncRelayCommand.snippet">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -354,6 +354,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Xaml" />
   </ItemGroup>
   <ItemGroup>
