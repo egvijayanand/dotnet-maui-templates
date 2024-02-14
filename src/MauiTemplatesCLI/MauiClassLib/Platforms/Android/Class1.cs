@@ -2,7 +2,7 @@ namespace MauiClassLib._1
 {
     public partial class Class1
     {
-        public partial void DoSomething()
+        public partial void DoWork()
         {
 
         }

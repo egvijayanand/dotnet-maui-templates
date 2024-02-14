@@ -3,7 +3,7 @@
     public partial class Class1
     {
 #if UseMaui
-        public partial void DoSomething();
+        public partial void DoWork();
 
 #endif
 //-:cnd:noEmit
@@ -19,9 +19,9 @@
         // Code block for Windows
 #else
 //+:cnd:noEmit
-        // Code block for Non-supported Platforms
+        // Code block for unsupported Platforms
 #if UseMaui
-        public partial void DoSomething()
+        public partial void DoWork()
         {
             // Could even be like the below exception
             //throw new PlatformNotSupportedException();
