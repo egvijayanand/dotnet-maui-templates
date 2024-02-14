@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!--#if (Net8)-->
+<!--#if (Net8OrLater)-->
 <!--#if (RootFolder)-->
 <ContentPage
     x:Class="MyApp.RootNamespace.MauiBlazorWebView__1"

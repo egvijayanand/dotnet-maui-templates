@@ -63,6 +63,12 @@ And from [v4.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.0.0)
 
 And from [v4.4.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.4.0) of the template package, CLI project template defines a new parameter named `central-pkg-mgmt`:
 
+And from [v4.5.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.5.0) of the template package, CLI project template defines a new parameter named `include-shared-toolkit`:
+
+And from [v4.6.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.6.0) of the template package, CLI project template defines a new parameter named `nightly`:
+
+And from [v5.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/5.0.0) of the template package, CLI project template `framework` parameter adds `.NET 9` as another option.
+
 * Nightly build: (Short notation: `-ni`):
 
   Option to reference Nightly build MAUI packages (from the [CI feed](https://dev.azure.com/xamarin/public/_artifacts/feed/maui-nightly)) in all the supported templates.
@@ -123,7 +129,7 @@ And from [v4.4.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.4.0)
 
 * Framework: (Short notation: `-f`)
 
-  This can take `net6.0` / `net7.0` / `net8.0` as its options (with `net8.0` being the default value, if not provided).
+  This can take `net6.0` / `net7.0` / `net8.0` / `net9.0` as its options (with `net8.0` being the default value, if not provided).
 
   Examples:
 
@@ -141,6 +147,14 @@ And from [v4.4.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.4.0)
 
   ```shell
   dotnet new mauiapp -f net8.0
+  ```
+
+  For creating a .NET MAUI App on .NET 9:
+
+  _Explicit value for the `framework` parameter is required._
+
+  ```shell
+  dotnet new mauiapp -f net9.0
   ```
 
 In .NET CLI, all of these _Items Template_ require a mandatory parameter:

@@ -9,7 +9,7 @@
         <TargetFrameworks>MAUI_TFM-android</TargetFrameworks>
         <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('osx'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst</TargetFrameworks>
         <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst;MAUI_TFM-windows10.0.19041.0</TargetFrameworks>
-        <!--#if (Net8)-->
+        <!--#if (Net8OrLater)-->
         <!-- <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-tizen</TargetFrameworks> -->
         <!--#else-->
         <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-tizen</TargetFrameworks>
@@ -64,7 +64,7 @@
         <!--#endif-->
         <!--#endif-->
         <!--#if (IsTizen)-->
-        <!--#if (Net8)-->
+        <!--#if (Net8OrLater)-->
         <!--#if (FirstLine || IsWindows)-->
         <!-- <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-tizen</TargetFrameworks> -->
         <!--#elif (IsBase)-->
@@ -97,7 +97,7 @@
         <!--#if (Nightly)-->
         <MauiVersion>8.*-*</MauiVersion>
         <!--#else-->
-        <MauiVersion>8.0.6</MauiVersion>
+        <MauiVersion>8.0.7</MauiVersion>
         <!--#endif-->
         <!--#endif-->
         <SingleProject>true</SingleProject>
@@ -187,7 +187,7 @@
         <PackageReference Include="Clancey.Comet" />
         <!--#endif-->
         <!--#if (Net7OrLater)-->
-        <!--#if (Net8)-->
+        <!--#if (Net8OrLater)-->
         <!--#if (Hybrid || Razor)-->
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" />
         <!--#endif-->
@@ -240,14 +240,14 @@
         <PackageReference Include="Clancey.Comet" Version="0.3.467-beta" />
         <!--#endif-->
         <!--#if (AddFoldablePackage)-->
-        <!--#if (Net8)-->
+        <!--#if (Net8OrLater)-->
         <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="$(MauiVersion)" />
         <!--#else-->
         <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="7.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMapsPackage)-->
-        <!--#if (Net8)-->
+        <!--#if (Net8OrLater)-->
         <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
         <!--#if (AllPlatforms || IsWindows)-->
         <PackageReference Include="CommunityToolkit.Maui.Maps" Version="2.*" />
@@ -263,7 +263,11 @@
         <!--#if (Hybrid || Razor)-->
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <!--#endif-->
+        <!--#if (Net9)-->
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.*-*" Condition="'$(Configuration)' == 'Debug'" />
+        <!--#else-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.*" Condition="'$(Configuration)' == 'Debug'" />
+        <!--#endif-->
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <!--#if (AddToolkitPackage)-->
@@ -310,10 +314,18 @@
         <PackageReference Include="CompiledBindings.MAUI" Version="1.*" />
         <!--#endif-->
         <!--#if (Reactor)-->
+        <!--#if (Net8OrLater)-->
+        <PackageReference Include="Reactor.Maui" Version="2.*" />
+        <PackageReference Include="Reactor.Maui.Canvas" Version="2.*" />
+        <!--#if (AddMapsPackage)-->
+        <PackageReference Include="Reactor.Maui.Maps" Version="2.*" />
+        <!--#endif-->
+        <!--#else-->
         <PackageReference Include="Reactor.Maui" Version="1.*" />
         <PackageReference Include="Reactor.Maui.Canvas" Version="1.*" />
         <!--#if (AddMapsPackage)-->
         <PackageReference Include="Reactor.Maui.Maps" Version="1.*" />
+        <!--#endif-->
         <!--#endif-->
         <!--#endif-->
         <!--#endif-->

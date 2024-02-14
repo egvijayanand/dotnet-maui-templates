@@ -18,7 +18,9 @@
         <!--#if (CentralPkgMgmt)-->
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" />
         <!--#else-->
-        <!--#if (Net8)-->
+        <!--#if (Net9)-->
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.*-*" />
+        <!--#elif (Net8)-->
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.*" />
         <!--#elif (Net7)-->
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.*" />

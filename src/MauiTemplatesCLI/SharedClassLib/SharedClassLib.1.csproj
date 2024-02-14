@@ -20,7 +20,7 @@
         <!--#if (Nightly)-->
         <MauiVersion>8.*-*</MauiVersion>
         <!--#else-->
-        <MauiVersion>8.0.6</MauiVersion>
+        <MauiVersion>8.0.7</MauiVersion>
         <!--#endif-->
         <!--#endif-->
         <SingleProject>true</SingleProject>

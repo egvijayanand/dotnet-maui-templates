@@ -1,7 +1,19 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
 
-What's new in ver. 4.9.0:
+What's new in ver. 5.0.0:
 -------------------------
+1. Support for creating .NET MAUI projects on .NET 9 Previews.
+
+For this, have introduced an additional option to the framework parameter - net9.0
+
+Note: The default value for the framework parameter remains as net8.0, which means to create a project for .NET 9, an explicit value of net9.0 is to be passed.
+
+dotnet new mauiapp -o MyApp -f net9.0
+
+2. The value of the MauiVersion property is bumped to 8.0.7 to support the latest version of .NET MAUI 8 NuGet packages.
+
+v4.9.0:
+
 1. Better namespace resolution for item templates (support for first level folder)
 
 2. Script automation for item templates

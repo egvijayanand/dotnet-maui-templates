@@ -11,8 +11,9 @@ Release Details:
 |Channel|.NET MAUI Version|IDE Version|Release Date|Remarks|
 |:---:|:---:|:---:|:---:|:---:|
 |Stable|.NET 6 SR11 (6.0.553)|VS2022 17.4.x - 17.8.x|Tue, Apr 25, 2023|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
-|Stable|.NET 7 SR10 (7.0.101)|VS2022 17.4.x - 17.8.x|Tue, Nov 7, 2023|Active|
-|Stable|[.NET 8 SR1](https://github.com/dotnet/maui/releases/tag/8.0.6 "Release Notes") (8.0.6) <br /> _Requires Android SDK Platform 34_|VS2022 17.8.x|Wed, Jan 17, 2024|Active|
+|Stable|.NET 7 SR10 (7.0.101)|VS2022 17.4.x - 17.9.x|Tue, Nov 7, 2023|Active|
+|Stable|[.NET 8 SR2](https://github.com/dotnet/maui/releases/tag/8.0.6 "Changelog") (8.0.7) <br /> _Requires Android SDK Platform 34_|VS2022 17.9.x|Tue, Feb 13, 2024|Active|
+|Preview|[.NET 9 Preview 1](https://github.com/dotnet/maui/releases/tag/9.0.100-preview.1.9973 "Changelog") (9.0.100-preview.1.9973) <br /> _Requires Android SDK Platform 34_|VS2022 17.10 Preview 1.0|Tue, Feb 13, 2024|Active|
 
 Use the below commands to verify the version installed:
 
@@ -195,6 +196,8 @@ And from [v4.5.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.5.0)
 
 And from [v4.6.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.6.0) of the template package, CLI project template defines a new parameter named `nightly`:
 
+And from [v5.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/5.0.0) of the template package, CLI project template `framework` parameter adds `.NET 9` as another option.
+
 * Nightly build: (Short notation: `-ni`):
 
   Option to reference Nightly build MAUI packages (from the [CI feed](https://dev.azure.com/xamarin/public/_artifacts/feed/maui-nightly "CI Feed")) in all the supported templates.
@@ -260,7 +263,7 @@ And from [v4.6.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.6.0)
 
 * Framework: (Short notation: `-f`)
 
-  This can take `net6.0` / `net7.0` / `net8.0` as its options (with `net8.0` being the default value, if not specified).
+  This can take `net6.0` / `net7.0` / `net8.0` / `net9.0` as its options (with `net8.0` being the default value, if not specified).
 
   Examples:
 
@@ -278,6 +281,14 @@ And from [v4.6.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.6.0)
 
   ```shell
   dotnet new mauiapp -f net8.0
+  ```
+
+  For creating a .NET MAUI App on .NET 9:
+
+  _Explicit value for the `framework` parameter is required._
+
+  ```shell
+  dotnet new mauiapp -f net9.0
   ```
 
 In .NET CLI, all of these _Items Template_ require a mandatory parameter:

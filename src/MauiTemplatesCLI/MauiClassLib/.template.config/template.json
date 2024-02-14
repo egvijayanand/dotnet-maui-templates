@@ -35,9 +35,14 @@
             "description": "Option to choose the library target framework.",
             "choices": [
                 {
+                    "choice": "net9.0",
+                    "description": "Target .NET 9",
+                    "displayName": ".NET 9 (Preview)"
+                },
+                {
                     "choice": "net8.0",
                     "description": "Target .NET 8",
-                    "displayName": ".NET 8 (Preview)"
+                    "displayName": ".NET 8 (LTS)"
                 },
                 {
                     "choice": "net7.0",
@@ -201,17 +206,21 @@
             "type": "computed",
             "value": "(use-maui-essentials)"
         },
-        "Net8": {
-            "type": "computed",
-            "value": "(frameworkLower == \"net8.0\")"
-        },
         "Net7": {
             "type": "computed",
             "value": "(frameworkLower == \"net7.0\")"
         },
-        "Net8OrLater": {
+        "Net8": {
             "type": "computed",
             "value": "(frameworkLower == \"net8.0\")"
+        },
+        "Net9": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net9.0\")"
+        },
+        "Net8OrLater": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net8.0\" || frameworkLower == \"net9.0\")"
         },
         "AllPlatforms": {
             "type": "computed",
@@ -279,7 +288,7 @@
         },
         "PackageRef": {
             "type": "computed",
-            "value": "(Net8 || AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage)"
+            "value": "(Net8OrLater || AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage)"
         },
         "HostIdentifier": {
             "type": "bind",

@@ -10,7 +10,7 @@
         <TargetFrameworks>MAUI_TFM-android</TargetFrameworks>
         <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('osx'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst</TargetFrameworks>
         <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst;MAUI_TFM-windows10.0.19041.0</TargetFrameworks>
-        <!--#if (Net8)-->
+        <!--#if (Net8OrLater)-->
         <!-- <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-tizen</TargetFrameworks> -->
         <!--#else-->
         <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-tizen</TargetFrameworks>
@@ -65,7 +65,7 @@
         <!--#endif-->
         <!--#endif-->
         <!--#if (IsTizen)-->
-        <!--#if (Net8)-->
+        <!--#if (Net8OrLater)-->
         <!--#if (FirstLine || IsWindows)-->
         <!-- <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-tizen</TargetFrameworks> -->
         <!--#elif (IsBase)-->
@@ -106,11 +106,11 @@
         <!--#if (Nightly)-->
         <MauiVersion>8.*-*</MauiVersion>
         <!--#else-->
-        <MauiVersion>8.0.6</MauiVersion>
+        <MauiVersion>8.0.7</MauiVersion>
         <!--#endif-->
         <!--#endif-->
         <SingleProject>true</SingleProject>
-        <!--#if (Net8 && (AllPlatforms || IsWindows))-->
+        <!--#if (Net8OrLater && (AllPlatforms || IsWindows))-->
         <UseRidGraph>true</UseRidGraph>
         <!--#endif-->
 
