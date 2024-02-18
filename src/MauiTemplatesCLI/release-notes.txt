@@ -1,7 +1,11 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
 
-What's new in ver. 5.0.0:
+What's new in ver. 5.0.1:
 -------------------------
+Fixed the incorrect type name generation in the ContentPage with BlazorWebView item templates.
+
+v5.0.0:
+
 1. Support for creating .NET MAUI projects on .NET 9 Previews.
 
 For this, have introduced an additional option to the framework parameter - net9.0

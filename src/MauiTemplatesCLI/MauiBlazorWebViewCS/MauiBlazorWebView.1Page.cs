@@ -6,9 +6,9 @@ namespace MyApp.RootNamespace
 namespace MyApp.Namespace
 #endif
 {
-    public partial class MauiBlazorWebView__1 : ContentPage
+    public partial class MauiBlazorWebView__1Page : ContentPage
     {
-        public MauiBlazorWebView__1()
+        public MauiBlazorWebView__1Page()
         {
             // Below BlazorWebView initialization can be simplified in just a single line
             // Add reference to the VijayAnand.MauiBlazor.Markup NuGet package

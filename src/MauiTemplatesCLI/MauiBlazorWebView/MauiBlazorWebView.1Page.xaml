@@ -2,7 +2,7 @@
 <!--#if (Net8OrLater)-->
 <!--#if (RootFolder)-->
 <ContentPage
-    x:Class="MyApp.RootNamespace.MauiBlazorWebView__1"
+    x:Class="MyApp.RootNamespace.MauiBlazorWebView__1Page"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:b="clr-namespace:Microsoft.AspNetCore.Components.WebView.Maui;assembly=Microsoft.AspNetCore.Components.WebView.Maui"
@@ -26,7 +26,7 @@
 </ContentPage>
 <!--#else-->
 <ContentPage
-    x:Class="MyApp.Namespace.MauiBlazorWebView__1"
+    x:Class="MyApp.Namespace.MauiBlazorWebView__1Page"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:b="clr-namespace:Microsoft.AspNetCore.Components.WebView.Maui;assembly=Microsoft.AspNetCore.Components.WebView.Maui"
@@ -52,7 +52,7 @@
 <!--#else-->
 <!--#if (RootFolder)-->
 <ContentPage
-    x:Class="MyApp.RootNamespace.MauiBlazorWebView__1"
+    x:Class="MyApp.RootNamespace.MauiBlazorWebView__1Page"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
@@ -73,7 +73,7 @@
 </ContentPage>
 <!--#else-->
 <ContentPage
-    x:Class="MyApp.Namespace.MauiBlazorWebView__1"
+    x:Class="MyApp.Namespace.MauiBlazorWebView__1Page"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
