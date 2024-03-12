@@ -1,7 +1,19 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
 
-What's new in ver. 5.0.1:
+What's new in ver. 5.1.0:
 -------------------------
+Templates updated for latest .NET MAUI release.
+
+The MauiVersion property is updated to dynamically refer to the latest available service release (8.*).
+
+While using the CPM feature, this refers to the latest service release (8.0.10) as dynamic version is unsupported.
+
+Auto inclusion of .NET MAUI Community Toolkit's xml namespace while using NET MAUI Generic item template with its type name defined with scope as mct:
+
+dotnet new maui-item -n ThemePopup -b mct:Popup
+
+v5.0.1:
+
 Fixed the incorrect type name generation in the ContentPage with BlazorWebView item templates.
 
 v5.0.0:

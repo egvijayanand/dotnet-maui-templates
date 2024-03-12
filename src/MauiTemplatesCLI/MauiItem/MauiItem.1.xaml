@@ -8,7 +8,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:local="clr-namespace:MyApp.RootNamespace"
+<!--#if (Toolkit)-->
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+<!--#endif-->
     x:TypeArguments="TObject"
     mc:Ignorable="d">
 </ContentPage>
@@ -18,6 +20,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+<!--#if (Toolkit)-->
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+<!--#endif-->
     xmlns:local="clr-namespace:MyApp.Namespace"
     x:TypeArguments="TObject"
     mc:Ignorable="d">
@@ -30,6 +35,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+<!--#if (Toolkit)-->
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+<!--#endif-->
     xmlns:local="clr-namespace:MyApp.RootNamespace"
     mc:Ignorable="d">
 </ContentPage>
@@ -39,6 +47,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+<!--#if (Toolkit)-->
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+<!--#endif-->
     xmlns:local="clr-namespace:MyApp.Namespace"
     mc:Ignorable="d">
 </ContentPage>
@@ -53,6 +64,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+<!--#if (Toolkit)-->
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+<!--#endif-->
     xmlns:local="clr-namespace:MyApp.RootNamespace"
     x:TypeArguments="TObject"
     mc:Ignorable="d">
@@ -64,6 +78,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+<!--#if (Toolkit)-->
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+<!--#endif-->
     xmlns:local="clr-namespace:MyApp.Namespace"
     x:TypeArguments="TObject"
     mc:Ignorable="d">
@@ -77,6 +94,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+<!--#if (Toolkit)-->
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+<!--#endif-->
     xmlns:local="clr-namespace:MyApp.RootNamespace"
     mc:Ignorable="d">
 </ContentPage>
@@ -87,6 +107,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+<!--#if (Toolkit)-->
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+<!--#endif-->
     xmlns:local="clr-namespace:MyApp.Namespace"
     mc:Ignorable="d">
 </ContentPage>

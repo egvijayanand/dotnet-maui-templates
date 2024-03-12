@@ -121,12 +121,26 @@
         "XamlOnly": {
             "type": "computed",
             "value": "(xaml-only)"
-        }
+        },
+        "Xmlns": {
+            "type": "derived",
+            "valueSource": "base",
+            "valueTransform": "Scope"
+        },
+        "Toolkit": {
+            "type": "computed",
+            "value": "(Xmlns == \"mct\")"
+        },
     },
     "forms": {
         "ValueWithoutScope": {
             "identifier": "replace",
             "pattern": "^.*\\:(?=[^\\:]+$)",
+            "replacement": ""
+        },
+        "Scope": {
+            "identifier": "replace",
+            "pattern": "\\:?\\w+$",
             "replacement": ""
         }
     },

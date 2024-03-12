@@ -252,6 +252,12 @@
                     "exclude": [
                         "Directory.Packages.props"
                     ]
+                },
+                {
+                    "condition": "(no-solution-file)",
+                    "exclude": [
+                        "SharedClassLib.1.code-workspace"
+                    ]
                 }
             ]
         }
