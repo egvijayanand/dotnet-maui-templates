@@ -20,7 +20,7 @@
         <!--#if (Nightly)-->
         <MauiVersion>8.*-*</MauiVersion>
         <!--#else-->
-        <MauiVersion>8.0.7</MauiVersion>
+        <MauiVersion>8.*</MauiVersion>
         <!--#endif-->
         <!--#endif-->
         <SingleProject>true</SingleProject>
@@ -37,6 +37,12 @@
         <None Include="**\*.forms.cs" />
     </ItemGroup>
 
+    <!--#if (!no-solution-file)-->
+    <ItemGroup>
+        <None Remove="SharedClassLib.1.code-workspace" />
+    </ItemGroup>
+
+    <!--#endif-->
     <!-- Xamarin.Forms NuGet packages -->
     <ItemGroup Condition="'$(TargetFramework)' == 'FORMS_TFM'">
         <!--#if (CentralPkgMgmt)-->

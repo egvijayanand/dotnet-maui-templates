@@ -3,9 +3,9 @@
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net8)-->
         <!--#if (Nightly)-->
-        <MauiVersion>8.0.10-nightly</MauiVersion>
+        <MauiVersion>8.0.20-nightly.10307</MauiVersion>
         <!--#else-->
-        <MauiVersion>8.0.7</MauiVersion>
+        <MauiVersion>8.0.10</MauiVersion>
         <!--#endif-->
         <!--#endif-->
     </PropertyGroup>
@@ -20,13 +20,13 @@
         <!--#endif-->
         <!--#if (Hybrid)-->
         <!--#if (Net9)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0-preview.1.24081.5" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0-preview.2.24128.4" />
         <!--#elif (Net8)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.2" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.3" />
         <!--#elif (Net7)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="7.0.16" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="7.0.17" />
         <!--#else-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="6.0.27" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="6.0.28" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (Net7OrLater)-->
