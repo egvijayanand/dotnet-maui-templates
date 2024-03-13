@@ -1,7 +1,15 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
 
-What's new in ver. 5.0.0.0:
+What's new in ver. 5.1.0.0:
 ---------------------------
+1. Templates updated for latest .NET MAUI release
+
+2. The MauiVersion property is updated to dynamically refer to the latest available service release (8.*)
+
+3. Auto inclusion of .NET MAUI Community Toolkit's xml namespace while using NET MAUI Generic item template with its type name defined with scope as mct:
+
+v5.0.0.1:
+
 Support for creating .NET MAUI projects on .NET 9 Previews.
 
 On the stable channel, the value of the MauiVersion property is bumped to 8.0.7 to support the latest version of .NET MAUI 8 SR2 NuGet packages.

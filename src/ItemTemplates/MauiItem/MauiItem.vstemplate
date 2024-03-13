@@ -14,6 +14,7 @@
 		<ProjectItem TargetFileName="$fileinputname$.xaml.cs" ReplaceParameters="true">MauiItem.xaml.cs</ProjectItem>
 		<CustomParameters>
 			<CustomParameter Name="$generic$" Value="" />
+			<CustomParameter Name="$toolkit$" Value="" />
 			<CustomParameter Name="$xaml$" Value="" />
 			<CustomParameter Name="$basetype$" Value="" />
 			<CustomParameter Name="$csbasetype$" Value="" />
