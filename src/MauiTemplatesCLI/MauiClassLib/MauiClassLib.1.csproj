@@ -195,7 +195,7 @@
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <!--#if (AddToolkitPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="7.*" />
+        <PackageReference Include="CommunityToolkit.Maui" Version="8.*" />
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.*" />
