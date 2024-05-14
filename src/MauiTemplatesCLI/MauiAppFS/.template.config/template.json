@@ -402,6 +402,10 @@
             "type": "computed",
             "value": "(frameworkLower == \"net9.0\")"
         },
+        "Net7OrEarlier": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net6.0\" || frameworkLower == \"net7.0\")"
+        },
         "Net7OrLater": {
             "type": "computed",
             "value": "(frameworkLower == \"net7.0\" || frameworkLower == \"net8.0\" || frameworkLower == \"net9.0\")"

@@ -1,7 +1,11 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
 
-What's new in ver. 5.2.1:
+What's new in ver. 5.3.0:
 -------------------------
+Templates updated to support latest .NET MAUI 8 service release (SR5 - 8.0.40).
+
+v5.2.1:
+
 Templates updated to support .NET 9 Preview 3.
 
 v5.2.0:

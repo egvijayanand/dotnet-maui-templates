@@ -147,9 +147,12 @@
         <!--#endif-->
     </PropertyGroup>
 
-    <!--#if (!no-solution-file)-->
+    <!--#if (!no-solution-file || CentralPkgMgmt)-->
     <ItemGroup>
         <None Remove="MauiClassLib.1.code-workspace" />
+        <!--#if (CentralPkgMgmt)-->
+        <None Remove="Directory.Packages.props" />
+        <!--#endif-->
     </ItemGroup>
 
     <!--#endif-->
@@ -195,7 +198,7 @@
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <!--#if (AddToolkitPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="8.*" />
+        <PackageReference Include="CommunityToolkit.Maui" Version="9.*" />
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.*" />
