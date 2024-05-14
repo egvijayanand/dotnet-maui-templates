@@ -3,9 +3,9 @@
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net8)-->
         <!--#if (Nightly)-->
-        <MauiVersion>8.0.40-nightly.10455</MauiVersion>
+        <MauiVersion>8.0.60-ci.net8.10656</MauiVersion>
         <!--#else-->
-        <MauiVersion>8.0.20</MauiVersion>
+        <MauiVersion>8.0.40</MauiVersion>
         <!--#endif-->
         <!--#endif-->
     </PropertyGroup>
@@ -22,11 +22,11 @@
         <!--#if (Net9)-->
         <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0-preview.3.24172.13" />
         <!--#elif (Net8)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.4" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.5" />
         <!--#elif (Net7)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="7.0.18" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="7.0.19" />
         <!--#else-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="6.0.29" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="6.0.30" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (Net7OrLater)-->
@@ -45,7 +45,7 @@
         <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <PackageVersion Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <!--#if (AddToolkitPackage)-->
-        <PackageVersion Include="CommunityToolkit.Maui" Version="8.0.1" />
+        <PackageVersion Include="CommunityToolkit.Maui" Version="9.0.0" />
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="4.0.0" />

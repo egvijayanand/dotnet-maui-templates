@@ -115,10 +115,10 @@
         <ApplicationTitle>MauiApp.1</ApplicationTitle>
 
         <!-- App Identifier -->
-        <!--#if (!IsWindows)-->
+        <!--#if (AllPlatforms || IsAndroid || IsiOS || IsmacOS || (Net8OrLater && IsWindows))-->
         <ApplicationId>com.companyname.mauiappid</ApplicationId>
         <!--#endif-->
-        <!--#if (AllPlatforms || IsWindows)-->
+        <!--#if (Net7OrEarlier && (AllPlatforms || IsWindows))-->
         <ApplicationIdGuid>81a9fb0a-63f5-4ef6-b38e-0cf88600102a</ApplicationIdGuid>
         <!--#endif-->
 
@@ -308,7 +308,7 @@
         <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#if (AddToolkitPackage)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="8.*" />
+        <PackageReference Include="CommunityToolkit.Maui" Version="9.*" />
         <!--#endif-->
         <!--#if (AddMarkupPackage)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.*" />

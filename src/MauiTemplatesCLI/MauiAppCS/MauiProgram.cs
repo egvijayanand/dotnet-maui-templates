@@ -56,7 +56,11 @@ namespace MauiApp._1
                    .UseFoldable()
 #endif
 #if AddMapsPackage
+//-:cnd:noEmit
+#if !WINDOWS
                    .UseMauiMaps()
+#endif
+//+:cnd:noEmit
 #if (AllPlatforms || IsWindows)
                    .UseMauiCommunityToolkitMaps("<BING_MAPS_API_KEY_HERE>") // To generate a Bing Maps API Key, visit https://www.bingmapsportal.com/
 #endif
