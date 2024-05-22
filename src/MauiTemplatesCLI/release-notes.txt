@@ -1,7 +1,13 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
 
-What's new in ver. 5.3.0:
+What's new in ver. 5.4.0:
 -------------------------
+Templates updated to support .NET MAUI 9 Preview 4 release (9.0.0-preview.4.10690).
+
+Added Apple's Privacy Manifest file to facilitate submitting iOS app to the store.
+
+v5.3.0:
+
 Templates updated to support latest .NET MAUI 8 service release (SR5 - 8.0.40).
 
 v5.2.1:
