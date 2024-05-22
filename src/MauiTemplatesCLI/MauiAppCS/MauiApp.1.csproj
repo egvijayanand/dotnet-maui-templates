@@ -335,6 +335,12 @@
     <!--#if (PackageRef)-->
     </ItemGroup>
     <!--#endif-->
+    <!--#if (AllPlatforms || IsiOS)-->
+
+    <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
+        <BundleResource Include="Platforms\iOS\PrivacyInfo.xcprivacy" LogicalName="PrivacyInfo.xcprivacy" />
+    </ItemGroup>
+    <!--#endif-->
     <!--#if (Hybrid && RazorLib)-->
 
     <ItemGroup>

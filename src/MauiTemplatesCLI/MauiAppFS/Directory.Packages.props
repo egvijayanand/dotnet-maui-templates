@@ -20,7 +20,7 @@
         <!--#endif-->
         <!--#if (Hybrid)-->
         <!--#if (Net9)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0-preview.3.24172.13" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0-preview.4.24267.6" />
         <!--#elif (Net8)-->
         <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.5" />
         <!--#elif (Net7)-->
@@ -38,7 +38,7 @@
         <!--#endif-->
         <PackageVersion Include="FSharp.Core" Version="8.0.100" />
         <!--#if (Net9)-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0-preview.3.24172.9" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0-preview.4.24266.19" />
         <!--#else-->
         <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
         <!--#endif-->
