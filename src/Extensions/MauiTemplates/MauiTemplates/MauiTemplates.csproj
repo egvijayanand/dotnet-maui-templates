@@ -268,7 +268,7 @@
       <IncludeInVSIX>true</IncludeInVSIX>
       <VSIXSubPath>ItemTemplates\MAUI</VSIXSubPath>
     </Content>
-    <None Include="Assets\VijayAnand.MauiTemplates.5.3.0.nupkg" />
+    <None Include="Assets\VijayAnand.MauiTemplates.5.4.0.nupkg" />
     <Content Include="MauiSnippets\CSharp\asyncRelayCommand.snippet">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -360,9 +360,9 @@
   <ItemGroup>
     <PackageReference Include="Community.VisualStudio.Toolkit" Version="17.0.75.152-pre" ExcludeAssets="Runtime" />
     <PackageReference Include="Microsoft.VisualStudio.TemplateWizardInterface">
-      <Version>17.5.33428.366</Version>
+      <Version>17.10.40170</Version>
     </PackageReference>
-    <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="17.7.2196">
+    <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="17.10.2179">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
