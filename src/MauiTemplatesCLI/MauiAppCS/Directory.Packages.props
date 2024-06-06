@@ -1,6 +1,10 @@
 <Project>
     <PropertyGroup>
+        <!--#if (CentralPkgMgmt)-->
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+        <!--#else-->
+        <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+        <!--#endif-->
         <!--#if (Net8)-->
         <!--#if (Nightly)-->
         <MauiVersion>8.0.60-ci.net8.10656</MauiVersion>
@@ -9,6 +13,7 @@
         <!--#endif-->
         <!--#endif-->
     </PropertyGroup>
+    <!--#if (CentralPkgMgmt)-->
     <!--#if (PackageRef)-->
     <ItemGroup>
     <!--#endif-->
@@ -70,7 +75,11 @@
         <PackageVersion Include="CommunityToolkit.Maui.MediaElement" Version="3.1.1" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.2.0" />
+        <!--#if (Net9)-->
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="4.0.0-preview.2" />
+        <!--#else-->
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.3.0" />
+        <!--#endif-->
         <!--#endif-->
         <!--#elif (Net7)-->
         <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" Condition="'$(Configuration)' == 'Debug'" />
@@ -120,5 +129,6 @@
         <!--#endif-->
     <!--#if (PackageRef)-->
     </ItemGroup>
+    <!--#endif-->
     <!--#endif-->
 </Project>

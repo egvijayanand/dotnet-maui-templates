@@ -31,15 +31,15 @@
                 ApplyToDerivedTypes = true,
                 Setters =
                 {
-                    new() { Property = StackBase.SpacingProperty, Value = AppResource<double>("ItemSpacing") },
+                    new() { Property = StackBase.SpacingProperty, Value = AppDouble("ItemSpacing") },
                 },
             });
             Resources.Add("MauiLabel", new Style<Label>()
                 .AddAppThemeBinding(Label.TextColorProperty, AppColor("Primary"), AppColor("TextDark"))
                 .MauiStyle);
             Resources.Add("Action", new Style<Button>(
-                (Button.FontFamilyProperty, AppString("AppFont")),
-                (Button.FontSizeProperty, AppDouble("AppFontSize")),
+                (Button.FontFamilyProperty, AppString("AppFont")!),
+                (Button.FontSizeProperty, AppDouble("AppFontSize")!),
                 (Button.PaddingProperty, new Thickness(14,10))
             ).AddAppThemeBinding(Button.BackgroundColorProperty, AppColor("BackgroundLight"), AppColor("BackgroundDark"))
              .AddAppThemeBinding(Button.TextColorProperty, AppColor("TextLight"), AppColor("TextDark"))

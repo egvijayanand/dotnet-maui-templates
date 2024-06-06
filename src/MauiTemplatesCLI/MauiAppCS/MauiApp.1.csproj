@@ -93,7 +93,7 @@
 
         <!-- .NET MAUI -->
         <UseMaui>true</UseMaui>
-        <!--#if (Net8 && !CentralPkgMgmt)-->
+        <!--#if (Net8 && !CentralPkgMgmt && (Auxiliary || !MauiLib))-->
         <!--#if (Nightly)-->
         <MauiVersion>8.*-*</MauiVersion>
         <!--#else-->
@@ -171,6 +171,7 @@
         <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
         <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
     </ItemGroup>
+    <!--#if (Auxiliary || !(MauiLib || RazorLib))-->
 
     <ItemGroup>
         <None Remove="MauiApp.1.code-workspace" />
@@ -178,10 +179,30 @@
         <None Remove="Directory.Packages.props" />
         <!--#endif-->
     </ItemGroup>
+    <!--#endif-->
 
     <!--#if (PackageRef)-->
     <ItemGroup>
     <!--#endif-->
+        <!--#if (!Auxiliary && MauiLib)-->
+        <!--#if (CentralPkgMgmt)-->
+        <!--#if (Net8OrLater)-->
+        <!--#if (Hybrid || Razor)-->
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" />
+        <!--#endif-->
+        <PackageReference Include="Microsoft.Maui.Controls" />
+        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" />
+        <!--#endif-->
+        <!--#else-->
+        <!--#if (Net8OrLater)-->
+        <!--#if (Hybrid || Razor)-->
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
+        <!--#endif-->
+        <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+        <!--#endif-->
+        <!--#endif-->
+        <!--#else-->
         <!--#if (CentralPkgMgmt)-->
         <!--#if (Razor)-->
         <PackageReference Include="BlazorBindings.Maui" />
@@ -283,7 +304,11 @@
         <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="3.*" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
+        <!--#if (Net9)-->
+        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="4.*-*" />
+        <!--#else-->
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="3.*" />
+        <!--#endif-->
         <!--#endif-->
         <!--#elif (Net7)-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.*" Condition="'$(Configuration)' == 'Debug'" />
@@ -332,6 +357,7 @@
         <!--#endif-->
         <!--#endif-->
         <!--#endif-->
+        <!--#endif-->
     <!--#if (PackageRef)-->
     </ItemGroup>
     <!--#endif-->
@@ -341,10 +367,16 @@
         <BundleResource Include="Platforms\iOS\PrivacyInfo.xcprivacy" LogicalName="PrivacyInfo.xcprivacy" />
     </ItemGroup>
     <!--#endif-->
-    <!--#if (Hybrid && RazorLib)-->
+    <!--#if (Hybrid && !MauiLib && RazorLib)-->
 
     <ItemGroup>
         <ProjectReference Include="..\MauiApp.1.RazorLib\MauiApp.1.RazorLib.csproj" />
+    </ItemGroup>
+    <!--#endif-->
+    <!--#if ((Xaml || Hybrid || Markup) && MauiLib)-->
+
+    <ItemGroup>
+        <ProjectReference Include="..\MauiApp.1.MauiLib\MauiApp.1.MauiLib.csproj" />
     </ItemGroup>
     <!--#endif-->
     <!--#if (ConditionalCompilation)-->

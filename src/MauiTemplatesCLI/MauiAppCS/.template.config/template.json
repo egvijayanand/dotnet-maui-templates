@@ -44,13 +44,13 @@
             ],
             "modifiers": [
                 {
-                    "condition": "(no-solution-file || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
+                    "condition": "(!(MauiLib || RazorLib) && (no-solution-file || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\")))",
                     "exclude": [
                         "MauiApp.1.sln"
                     ]
                 },
                 {
-                    "condition": "(!CentralPkgMgmt || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
+                    "condition": "(!(Net8 && !Auxiliary && MauiLib) && (!CentralPkgMgmt || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\")))",
                     "exclude": [
                         "Directory.Packages.props"
                     ]
@@ -225,8 +225,7 @@
                     "condition": "(!Hybrid)",
                     "exclude": [
                         "MauiApp.1.RazorLib/MauiApp.1.RazorLib.csproj",
-                        "MauiApp.1.RazorLib/_Imports.razor",
-                        "MauiApp.1.RazorLib.sln"
+                        "MauiApp.1.RazorLib/_Imports.razor"
                     ]
                 },
                 {
@@ -236,33 +235,15 @@
                     ]
                 },
                 {
-                    "condition": "(Hybrid && RazorLib)",
-                    "exclude": [
-                        "MauiApp.1.sln"
-                    ],
+                    "condition": "(Hybrid && (MauiLib || RazorLib))",
                     "rename": {
-                        "Data/WeatherForecast.cs": "MauiApp.1.RazorLib/Data/WeatherForecast.cs",
-                        "Data/WeatherForecastService.cs": "MauiApp.1.RazorLib/Data/WeatherForecastService.cs",
-                        "Pages/Counter.razor": "MauiApp.1.RazorLib/Pages/Counter.razor",
-                        "Pages/Weather.razor": "MauiApp.1.RazorLib/Pages/Weather.razor",
-                        "Pages/Home.razor": "MauiApp.1.RazorLib/Pages/Home.razor",
-                        "Shared/MainLayout.razor": "MauiApp.1.RazorLib/Shared/MainLayout.razor",
-                        "Shared/MainLayout.razor.css": "MauiApp.1.RazorLib/Shared/MainLayout.razor.css",
-                        "Shared/NavMenu.razor": "MauiApp.1.RazorLib/Shared/NavMenu.razor",
-                        "Shared/NavMenu.razor.css": "MauiApp.1.RazorLib/Shared/NavMenu.razor.css",
-                        "Shared/SurveyPrompt.razor": "MauiApp.1.RazorLib/Shared/SurveyPrompt.razor",
-                        "App.xaml": "MauiApp.1/App.xaml",
-                        "App.xaml.cs": "MauiApp.1/App.xaml.cs",
-                        "Imports.cs": "MauiApp.1/Imports.cs",
-                        "Main.razor": "MauiApp.1/Main.razor",
-                        "MauiApp.1.csproj": "MauiApp.1/MauiApp.1.csproj",
-                        "MauiProgram.cs": "MauiApp.1/MauiProgram.cs",
                         "Platforms/Android/Resources/values/colors.xml": "MauiApp.1/Platforms/Android/Resources/values/colors.xml",
                         "Platforms/Android/AndroidManifest.xml": "MauiApp.1/Platforms/Android/AndroidManifest.xml",
                         "Platforms/Android/MainActivity.cs": "MauiApp.1/Platforms/Android/MainActivity.cs",
                         "Platforms/Android/MainApplication.cs": "MauiApp.1/Platforms/Android/MainApplication.cs",
                         "Platforms/iOS/AppDelegate.cs": "MauiApp.1/Platforms/iOS/AppDelegate.cs",
                         "Platforms/iOS/Info.plist": "MauiApp.1/Platforms/iOS/Info.plist",
+                        "Platforms/iOS/PrivacyInfo.xcprivacy": "MauiApp.1/Platforms/iOS/PrivacyInfo.xcprivacy",
                         "Platforms/iOS/Program.cs": "MauiApp.1/Platforms/iOS/Program.cs",
                         "Platforms/MacCatalyst/AppDelegate.cs": "MauiApp.1/Platforms/MacCatalyst/AppDelegate.cs",
                         "Platforms/MacCatalyst/Info.plist": "MauiApp.1/Platforms/MacCatalyst/Info.plist",
@@ -280,10 +261,6 @@
                         "Resources/Raw/AboutAssets.txt": "MauiApp.1/Resources/Raw/AboutAssets.txt",
                         "Resources/appicon.svg": "MauiApp.1/Resources/appicon.svg",
                         "Resources/appiconfg.svg": "MauiApp.1/Resources/appiconfg.svg",
-                        "Resources/Colors.xaml": "MauiApp.1/Resources/Colors.xaml",
-                        "Resources/Styles.xaml": "MauiApp.1/Resources/Styles.xaml",
-                        "Views/MainPage.xaml": "MauiApp.1/Views/MainPage.xaml",
-                        "Views/MainPage.xaml.cs": "MauiApp.1/Views/MainPage.xaml.cs",
                         "wwwroot/css/bootstrap/bootstrap.min.css": "MauiApp.1/wwwroot/css/bootstrap/bootstrap.min.css",
                         "wwwroot/css/bootstrap/bootstrap.min.css.map": "MauiApp.1/wwwroot/css/bootstrap/bootstrap.min.css.map",
                         "wwwroot/css/font-awesome/css/all.min.css": "MauiApp.1/wwwroot/css/font-awesome/css/all.min.css",
@@ -306,12 +283,65 @@
                         "wwwroot/css/open-iconic/README.md": "MauiApp.1/wwwroot/css/open-iconic/README.md",
                         "wwwroot/css/app.css": "MauiApp.1/wwwroot/css/app.css",
                         "wwwroot/favicon.ico": "MauiApp.1/wwwroot/favicon.ico",
-                        "wwwroot/index.html": "MauiApp.1/wwwroot/index.html",
-                        "MauiApp.1.RazorLib.sln": "MauiApp.1.sln"
+                        "wwwroot/index.html": "MauiApp.1/wwwroot/index.html"
                     }
                 },
                 {
-                    "condition": "(Hybrid && RazorLib && Mvvm)",
+                    "condition": "(Hybrid && RazorLib)",
+                    "rename": {
+                        "Data/WeatherForecast.cs": "MauiApp.1.RazorLib/Data/WeatherForecast.cs",
+                        "Data/WeatherForecastService.cs": "MauiApp.1.RazorLib/Data/WeatherForecastService.cs",
+                        "Pages/Counter.razor": "MauiApp.1.RazorLib/Pages/Counter.razor",
+                        "Pages/Weather.razor": "MauiApp.1.RazorLib/Pages/Weather.razor",
+                        "Pages/Home.razor": "MauiApp.1.RazorLib/Pages/Home.razor",
+                        "Shared/MainLayout.razor": "MauiApp.1.RazorLib/Shared/MainLayout.razor",
+                        "Shared/MainLayout.razor.css": "MauiApp.1.RazorLib/Shared/MainLayout.razor.css",
+                        "Shared/NavMenu.razor": "MauiApp.1.RazorLib/Shared/NavMenu.razor",
+                        "Shared/NavMenu.razor.css": "MauiApp.1.RazorLib/Shared/NavMenu.razor.css",
+                        "Shared/SurveyPrompt.razor": "MauiApp.1.RazorLib/Shared/SurveyPrompt.razor"
+                    }
+                },
+                {
+                    "condition": "(Hybrid && !MauiLib && RazorLib)",
+                    "rename": {
+                        "App.xaml": "MauiApp.1/App.xaml",
+                        "App.xaml.cs": "MauiApp.1/App.xaml.cs",
+                        "Imports.cs": "MauiApp.1/Imports.cs",
+                        "Main.razor": "MauiApp.1/Main.razor",
+                        "MauiApp.1.csproj": "MauiApp.1/MauiApp.1.csproj",
+                        "MauiProgram.cs": "MauiApp.1/MauiProgram.cs",
+                        "Resources/Colors.xaml": "MauiApp.1/Resources/Colors.xaml",
+                        "Resources/Styles.xaml": "MauiApp.1/Resources/Styles.xaml",
+                        "Views/MainPage.xaml": "MauiApp.1/Views/MainPage.xaml",
+                        "Views/MainPage.xaml.cs": "MauiApp.1/Views/MainPage.xaml.cs"
+                    }
+                },
+                {
+                    "condition": "(Hybrid && MauiLib && !RazorLib)",
+                    "rename": {
+                        "Main.razor": "MauiApp.1.MauiLib/Main.razor",
+                        "Data/WeatherForecast.cs": "MauiApp.1.MauiLib/Data/WeatherForecast.cs",
+                        "Data/WeatherForecastService.cs": "MauiApp.1.MauiLib/Data/WeatherForecastService.cs",
+                        "MauiApp.1/_Imports.razor": "MauiApp.1.MauiLib/_Imports.razor",
+                        "Pages/Counter.razor": "MauiApp.1.MauiLib/Pages/Counter.razor",
+                        "Pages/Weather.razor": "MauiApp.1.MauiLib/Pages/Weather.razor",
+                        "Pages/Home.razor": "MauiApp.1.MauiLib/Pages/Home.razor",
+                        "Shared/MainLayout.razor": "MauiApp.1.MauiLib/Shared/MainLayout.razor",
+                        "Shared/MainLayout.razor.css": "MauiApp.1.MauiLib/Shared/MainLayout.razor.css",
+                        "Shared/NavMenu.razor": "MauiApp.1.MauiLib/Shared/NavMenu.razor",
+                        "Shared/NavMenu.razor.css": "MauiApp.1.MauiLib/Shared/NavMenu.razor.css",
+                        "Shared/SurveyPrompt.razor": "MauiApp.1.MauiLib/Shared/SurveyPrompt.razor",
+                    }
+                },
+                {
+                    "condition": "(Hybrid && MauiLib && RazorLib)",
+                    "rename": {
+                        "Main.razor": "MauiApp.1.MauiLib/Main.razor",
+                        "MauiApp.1/_Imports.razor": "MauiApp.1.MauiLib/_Imports.razor"
+                    }
+                },
+                {
+                    "condition": "(Hybrid && !MauiLib && RazorLib && Mvvm)",
                     "rename": {
                         "ViewModels/BaseViewModel.cs": "MauiApp.1/ViewModels/BaseViewModel.cs",
                         "ViewModels/MainViewModel.cs": "MauiApp.1/ViewModels/MainViewModel.cs"
@@ -320,10 +350,11 @@
                 {
                     "condition": "(Hybrid && !RazorLib)",
                     "exclude": [
-                        "MauiApp.1.RazorLib/MauiApp.1.RazorLib.csproj",
-                        "MauiApp.1.RazorLib/_Imports.razor",
-                        "MauiApp.1.RazorLib.sln"
-                    ],
+                        "MauiApp.1.RazorLib/**/*"
+                    ]
+                },
+                {
+                    "condition": "(Hybrid && !MauiLib && !RazorLib)",
                     "rename": {
                         "MauiApp.1/_Imports.razor": "_Imports.razor"
                     }
@@ -346,6 +377,134 @@
                         "Views/SettingsPage.xaml",
                         "Views/SettingsPage.xaml.cs",
                         "ViewModels/SettingsViewModel.cs"
+                    ]
+                },
+                {
+                    "condition": "((Xaml || Hybrid || Markup) && MauiLib)",
+                    "rename": {
+                        "App.xaml": "MauiApp.1.MauiLib/App.xaml",
+                        "App.xaml.cs": "MauiApp.1.MauiLib/App.xaml.cs",
+                        "Imports.cs": "MauiApp.1.MauiLib/Imports.cs",
+                        "MauiApp.1.csproj": "MauiApp.1/MauiApp.1.csproj",
+                        "MauiProgram.cs": "MauiApp.1.MauiLib/MauiProgram.cs",
+                        "Platforms/Android/Resources/values/colors.xml": "MauiApp.1/Platforms/Android/Resources/values/colors.xml",
+                        "Platforms/Android/AndroidManifest.xml": "MauiApp.1/Platforms/Android/AndroidManifest.xml",
+                        "Platforms/Android/MainActivity.cs": "MauiApp.1/Platforms/Android/MainActivity.cs",
+                        "Platforms/Android/MainApplication.cs": "MauiApp.1/Platforms/Android/MainApplication.cs",
+                        "Platforms/iOS/AppDelegate.cs": "MauiApp.1/Platforms/iOS/AppDelegate.cs",
+                        "Platforms/iOS/Info.plist": "MauiApp.1/Platforms/iOS/Info.plist",
+                        "Platforms/iOS/PrivacyInfo.xcprivacy": "MauiApp.1/Platforms/iOS/PrivacyInfo.xcprivacy",
+                        "Platforms/iOS/Program.cs": "MauiApp.1/Platforms/iOS/Program.cs",
+                        "Platforms/MacCatalyst/AppDelegate.cs": "MauiApp.1/Platforms/MacCatalyst/AppDelegate.cs",
+                        "Platforms/MacCatalyst/Info.plist": "MauiApp.1/Platforms/MacCatalyst/Info.plist",
+                        "Platforms/MacCatalyst/Program.cs": "MauiApp.1/Platforms/MacCatalyst/Program.cs",
+                        "Platforms/Tizen/Main.cs": "MauiApp.1/Platforms/Tizen/Main.cs",
+                        "Platforms/Tizen/tizen-manifest.xml": "MauiApp.1/Platforms/Tizen/tizen-manifest.xml",
+                        "Platforms/Windows/app.manifest": "MauiApp.1/Platforms/Windows/app.manifest",
+                        "Platforms/Windows/App.xaml": "MauiApp.1/Platforms/Windows/App.xaml",
+                        "Platforms/Windows/App.xaml.cs": "MauiApp.1/Platforms/Windows/App.xaml.cs",
+                        "Platforms/Windows/Package.appxmanifest": "MauiApp.1/Platforms/Windows/Package.appxmanifest",
+                        "Properties/launchSettings.json": "MauiApp.1/Properties/launchSettings.json",
+                        "Resources/appicon.svg": "MauiApp.1/Resources/appicon.svg",
+                        "Resources/appiconfg.svg": "MauiApp.1/Resources/appiconfg.svg",
+                        "Resources/Fonts/OpenSans-Regular.ttf": "MauiApp.1/Resources/Fonts/OpenSans-Regular.ttf",
+                        "Resources/Fonts/OpenSans-SemiBold.ttf": "MauiApp.1/Resources/Fonts/OpenSans-SemiBold.ttf",
+                        "Resources/Images/dotnet_bot.svg": "MauiApp.1/Resources/Images/dotnet_bot.svg",
+                        "Resources/Raw/AboutAssets.txt": "MauiApp.1/Resources/Raw/AboutAssets.txt"
+                    }
+                },
+                {
+                    "condition": "((Xaml || Hybrid) && MauiLib)",
+                    "rename": {
+                        "Resources/Colors.xaml": "MauiApp.1.MauiLib/Resources/Colors.xaml",
+                        "Resources/Styles.xaml": "MauiApp.1.MauiLib/Resources/Styles.xaml",
+                        "Views/MainPage.xaml": "MauiApp.1.MauiLib/Views/MainPage.xaml",
+                        "Views/MainPage.xaml.cs": "MauiApp.1.MauiLib/Views/MainPage.xaml.cs"
+                    }
+                },
+                {
+                    "condition": "(Markup && MauiLib)",
+                    "rename": {
+                        "Resources/AppColors.cs": "MauiApp.1.MauiLib/Resources/AppColors.cs",
+                        "Resources/AppStyles.cs": "MauiApp.1.MauiLib/Resources/AppStyles.cs",
+                        "Views/MainPage.markup.cs": "MauiApp.1.MauiLib/Views/MainPage.cs",
+                        "App.markup.cs": "MauiApp.1.MauiLib/App.cs"
+                    }
+                },
+                {
+                    "condition": "((Hierarchical || Tabbed || Shell) && MauiLib)",
+                    "rename": {
+                        "Controls/DateTimePicker.xaml": "MauiApp.1.MauiLib/Controls/DateTimePicker.xaml",
+                        "Controls/DateTimePicker.xaml.cs": "MauiApp.1.MauiLib/Controls/DateTimePicker.xaml.cs",
+                        "Views/NewEventPage.xaml": "MauiApp.1.MauiLib/Views/NewEventPage.xaml",
+                        "Views/NewEventPage.xaml.cs": "MauiApp.1.MauiLib/Views/NewEventPage.xaml.cs"
+                    }
+                },
+                {
+                    "condition": "((Tabbed || Shell) && MauiLib)",
+                    "rename": {
+                        "Views/EventsPage.xaml": "MauiApp.1.MauiLib/Views/EventsPage.xaml",
+                        "Views/EventsPage.xaml.cs": "MauiApp.1.MauiLib/Views/EventsPage.xaml.cs",
+                        "Views/SearchPage.xaml": "MauiApp.1.MauiLib/Views/SearchPage.xaml",
+                        "Views/SearchPage.xaml.cs": "MauiApp.1.MauiLib/Views/SearchPage.xaml.cs",
+                        "Views/SettingsPage.xaml": "MauiApp.1.MauiLib/Views/SettingsPage.xaml",
+                        "Views/SettingsPage.xaml.cs": "MauiApp.1.MauiLib/Views/SettingsPage.xaml.cs"
+                    }
+                },
+                {
+                    "condition": "(Shell && MauiLib)",
+                    "rename": {
+                        "Views/LoginPage.xaml": "MauiApp.1.MauiLib/Views/LoginPage.xaml",
+                        "Views/LoginPage.xaml.cs": "MauiApp.1.MauiLib/Views/LoginPage.xaml.cs",
+                        "AppShell.xaml": "MauiApp.1.MauiLib/AppShell.xaml",
+                        "AppShell.xaml.cs": "MauiApp.1.MauiLib/AppShell.xaml.cs"
+                    }
+                },
+                {
+                    "condition": "((Plain || Hierarchical || Tabbed || Hybrid || Markup) && MauiLib & Mvvm)",
+                    "rename": {
+                        "ViewModels/BaseViewModel.cs": "MauiApp.1.MauiLib/ViewModels/BaseViewModel.cs",
+                        "ViewModels/MainViewModel.cs": "MauiApp.1.MauiLib/ViewModels/MainViewModel.cs"
+                    }
+                },
+                {
+                    "condition": "((Hierarchical || Tabbed) && MauiLib & Mvvm)",
+                    "rename": {
+                        "Exceptions/RouteNotFoundException.cs": "MauiApp.1.MauiLib/Exceptions/RouteNotFoundException.cs",
+                        "Exceptions/TypeNotRegisteredException.cs": "MauiApp.1.MauiLib/Exceptions/TypeNotRegisteredException.cs"
+                    }
+                },
+                {
+                    "condition": "((Hierarchical || Tabbed || Shell) && MauiLib & Mvvm)",
+                    "rename": {
+                        "Models/Event.cs": "MauiApp.1.MauiLib/Models/Event.cs",
+                        "Services/AppService.cs": "MauiApp.1.MauiLib/Services/AppService.cs",
+                        "Services/DialogService.cs": "MauiApp.1.MauiLib/Services/DialogService.cs",
+                        "Services/IDialogService.cs": "MauiApp.1.MauiLib/Services/IDialogService.cs",
+                        "Services/INavigationService.cs": "MauiApp.1.MauiLib/Services/INavigationService.cs",
+                        "Services/NavigationService.cs": "MauiApp.1.MauiLib/Services/NavigationService.cs",
+                        "ViewModels/NewEventViewModel.cs": "MauiApp.1.MauiLib/ViewModels/NewEventViewModel.cs"
+                    }
+                },
+                {
+                    "condition": "((Tabbed || Shell) && MauiLib & Mvvm)",
+                    "rename": {
+                        "ViewModels/EventsViewModel.cs": "MauiApp.1.MauiLib/ViewModels/EventsViewModel.cs",
+                        "ViewModels/SearchViewModel.cs": "MauiApp.1.MauiLib/ViewModels/SearchViewModel.cs",
+                        "ViewModels/SettingsViewModel.cs": "MauiApp.1.MauiLib/ViewModels/SettingsViewModel.cs"
+                    }
+                },
+                {
+                    "condition": "(Shell && MauiLib & Mvvm)",
+                    "rename": {
+                        "ViewModels/BaseViewModel.cs": "MauiApp.1.MauiLib/ViewModels/BaseViewModel.cs",
+                        "ViewModels/LoginViewModel.cs": "MauiApp.1.MauiLib/ViewModels/LoginViewModel.cs"
+                    }
+                },
+                {
+                    "condition": "((Razor || Comet || Reactor) || !MauiLib)",
+                    "exclude": [
+                        "MauiApp.1.MauiLib/**/*"
                     ]
                 },
                 {
@@ -540,6 +699,13 @@
             "description": "Option to add CompiledBindings.MAUI NuGet package reference.",
             "displayName": "Option to add Comp_iledBindings.MAUI NuGet package reference"
         },
+        "maui-class-library": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to create a .NET MAUI Class Library (RCL) to abstract shared components.",
+            "displayName": "Option to create a .NET MAUI _Class Library (RCL) to abstract shared components"
+        },
         "razor-class-library": {
             "type": "parameter",
             "datatype": "bool",
@@ -708,6 +874,10 @@
             "type": "computed",
             "value": "(Markup || Mvu)"
         },
+        "MauiLib": {
+            "type": "computed",
+            "value": "(maui-class-library)"
+        },
         "RazorLib": {
             "type": "computed",
             "value": "(razor-class-library)"
@@ -723,6 +893,10 @@
         "Mvu": {
             "type": "computed",
             "value": "(Comet || Reactor)"
+        },
+        "Auxiliary": {
+            "type": "computed",
+            "value": "(Razor || Comet || Reactor)"
         },
         "Net7": {
             "type": "computed",
