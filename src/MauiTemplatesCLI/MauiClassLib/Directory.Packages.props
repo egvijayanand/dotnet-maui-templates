@@ -30,7 +30,11 @@
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="4.0.0" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.2.0" />
+        <!--#if (Net9)-->
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="4.0.0-preview.2" />
+        <!--#else-->
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.3.0" />
+        <!--#endif-->
         <!--#endif-->
         <!--#endif-->
         <!--#elif (Net7)-->

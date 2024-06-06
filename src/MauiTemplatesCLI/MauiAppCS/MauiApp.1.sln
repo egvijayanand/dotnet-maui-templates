@@ -3,8 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
+#if ((!Auxiliary && MauiLib) || (Hybrid && RazorLib))
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiApp.1", "MauiApp.1\MauiApp.1.csproj", "{E3234856-C63F-46B8-A907-866DE058A7C1}"
+EndProject
+#else
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiApp.1", "MauiApp.1.csproj", "{E3234856-C63F-46B8-A907-866DE058A7C1}"
 EndProject
+#endif
+#if (!Auxiliary && MauiLib)
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiApp.1.MauiLib", "MauiApp.1.MauiLib\MauiApp.1.MauiLib.csproj", "{D3FA2E60-93D4-43A3-9CA7-A532BA109327}"
+EndProject
+#endif
+#if (Hybrid && RazorLib)
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiApp.1.RazorLib", "MauiApp.1.RazorLib\MauiApp.1.RazorLib.csproj", "{96D0A57E-E5F3-4E8A-A320-5A6DF01DF74A}"
+EndProject
+#endif
 #if (CentralPkgMgmt)
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1D17E9ED-22F1-4992-AE45-B8507EFD6950}"
 	ProjectSection(SolutionItems) = preProject
@@ -24,6 +37,18 @@ Global
 		{E3234856-C63F-46B8-A907-866DE058A7C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3234856-C63F-46B8-A907-866DE058A7C1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E3234856-C63F-46B8-A907-866DE058A7C1}.Release|Any CPU.Deploy.0 = Release|Any CPU
+#if (!Auxiliary && MauiLib)
+		{D3FA2E60-93D4-43A3-9CA7-A532BA109327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3FA2E60-93D4-43A3-9CA7-A532BA109327}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3FA2E60-93D4-43A3-9CA7-A532BA109327}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3FA2E60-93D4-43A3-9CA7-A532BA109327}.Release|Any CPU.Build.0 = Release|Any CPU
+#endif
+#if (Hybrid && RazorLib)
+		{96D0A57E-E5F3-4E8A-A320-5A6DF01DF74A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96D0A57E-E5F3-4E8A-A320-5A6DF01DF74A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96D0A57E-E5F3-4E8A-A320-5A6DF01DF74A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96D0A57E-E5F3-4E8A-A320-5A6DF01DF74A}.Release|Any CPU.Build.0 = Release|Any CPU
+#endif
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

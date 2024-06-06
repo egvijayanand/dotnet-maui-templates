@@ -314,7 +314,11 @@
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.*" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
+        <!--#if (Net9)-->
+        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="4.*-*" />
+        <!--#else-->
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="3.*" />
+        <!--#endif-->
         <!--#endif-->
         <!--#if (AddMapsPackage)-->
         <PackageReference Include="Fabulous.MauiControls.Maps" Version="2.*" />

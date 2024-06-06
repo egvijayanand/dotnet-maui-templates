@@ -135,7 +135,9 @@
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
-        <!--#if (Net8OrLater)-->
+        <!--#if (Net9)-->
+        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="4.*-*" />
+        <!--#elif (Net8)-->
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="3.*" />
         <!--#elif (Net7)-->
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="2.*" />

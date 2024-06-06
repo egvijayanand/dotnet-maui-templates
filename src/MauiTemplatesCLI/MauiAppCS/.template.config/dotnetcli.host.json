@@ -14,6 +14,6 @@
   "usageExamples": [
     "--framework net7.0",
     "-f net6.0",
-    "-f net8.0"
+    "-f net9.0"
   ]
 }
