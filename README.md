@@ -198,6 +198,26 @@ And from [v4.6.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/4.6.0)
 
 And from [v5.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/5.0.0) of the template package, CLI project template `framework` parameter adds `.NET 9` as another option.
 
+And from [v5.5.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/5.5.0) of the template package, CLI project template defines a new parameter named `maui-class-library`:
+
+* MAUI Class Library (Short notation: `-mcl`):
+
+  Option to abstract the Shared components as a separate .NET MAUI Class Library.
+
+  This will create a solution structure that is akin to Xamarin.Forms (the only difference is that there won't be multiple head projects).
+
+  `-mcl` | `--maui-class-library` - Default value is `false`
+
+  ```
+  dotnet new mauiapp -o MyApp -mcl
+  ```
+
+  This abstracts both MAUI components and Razor components in an Hybrid style App:
+
+  ```
+  dotnet new mauiapp -o HybridApp -dp Hybrid -mcl -rcl
+  ```
+
 * Nightly build: (Short notation: `-ni`):
 
   Option to reference Nightly build MAUI packages (from the [CI feed](https://dev.azure.com/xamarin/public/_artifacts/feed/maui-nightly "CI Feed")) in all the supported templates.
