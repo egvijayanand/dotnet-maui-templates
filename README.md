@@ -12,8 +12,10 @@ Release Details:
 |:---:|:---:|:---:|:---:|:---:|
 |Stable|.NET 6 SR11 (6.0.553)|VS2022 17.4.x - 17.8.x|Tue, Apr 25, 2023|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
 |Stable|.NET 7 SR10 (7.0.101)|VS2022 17.4.x - 17.9.x|Tue, Nov 7, 2023|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
-|Stable|[.NET 8 SR5](https://github.com/dotnet/maui/releases/tag/8.0.40 "Changelog") (8.0.40) <br /> _Requires Android SDK Platform 34_ <br /> _Requires Apple Xcode 15.3_|VS2022 17.9.x|Tue, May 14, 2024|Active|
+|Stable|[.NET 8 SR5](https://github.com/dotnet/maui/releases/tag/8.0.40 "Changelog") (8.0.40) <br /> _Requires Android SDK Platform 34_ <br /> _Requires Apple Xcode 15.3_|VS2022 17.10.x|Tue, May 14, 2024|Active|
 |Preview|[.NET 9 Preview 4](https://github.com/dotnet/maui/releases/tag/9.0.0-preview.4.10690 "Changelog") (9.0.0-preview.4.10690) <br /> _Requires Android SDK Platform 34_ <br /> _Requires Apple Xcode 15.3_|VS2022 17.11 Preview 1.0|Tue, May 21, 2024|Preview|
+
+Version History and its dependencies are [here](https://aka.ms/maui/versions).
 
 Use the below commands to verify the version installed:
 
@@ -447,7 +449,11 @@ MVVM is a delightful and development-friendly design pattern to work with. To su
 
 *Note: Opting for this MVVM option will not have any impact on the App created with Web-based Razor syntax or MVU based Comet/Reactor.*
 
-While creating a Blazor Hybrid App, an option to abstract the Razor components as a separate Razor class library.
+While creating an App (C#), an option to abstract the Shared components as a separate .NET MAUI Class Library.
+
+* `-mcl` | `--maui-class-library` - Default is `false`
+
+While creating a Blazor Hybrid App, an option to abstract the Razor components as a separate Razor Class Library.
 
 * `-rcl` | `--razor-class-library` - Default is `false`
 
