@@ -242,7 +242,7 @@
         {
             "modifiers": [
                 {
-                    "condition": "(no-solution-file || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
+                    "condition": "(no-solution-file)",
                     "exclude": [
                         "SharedClassLib.1.sln"
                     ]
@@ -257,6 +257,12 @@
                     "condition": "(no-solution-file)",
                     "exclude": [
                         "SharedClassLib.1.code-workspace"
+                    ]
+                },
+                {
+                    "condition": "(!(Net8 && Nightly))",
+                    "exclude": [
+                        "NuGet.config"
                     ]
                 }
             ]

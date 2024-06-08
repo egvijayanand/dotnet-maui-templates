@@ -44,13 +44,13 @@
             ],
             "modifiers": [
                 {
-                    "condition": "(no-solution-file || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
+                    "condition": "(no-solution-file && Plain)",
                     "exclude": [
                         "MauiApp.1.sln"
                     ]
                 },
                 {
-                    "condition": "(!CentralPkgMgmt || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
+                    "condition": "(!CentralPkgMgmt)",
                     "exclude": [
                         "Directory.Packages.props"
                     ]
@@ -60,15 +60,11 @@
                     "exclude": [
                         "MauiApp.1.RazorLib/**/*",
                         "wwwroot/**/*",
-                        "BlazorWebView.fs",
-                        "MauiApp.1.RazorLib.sln"
+                        "BlazorWebView.fs"
                     ]
                 },
                 {
                     "condition": "(Hybrid)",
-                    "exclude": [
-                        "MauiApp.1.sln"
-                    ],
                     "rename": {
                         "Platforms/Android/Resources/values/colors.xml": "MauiApp.1/Platforms/Android/Resources/values/colors.xml",
                         "Platforms/Android/AndroidManifest.xml": "MauiApp.1/Platforms/Android/AndroidManifest.xml",
@@ -76,6 +72,7 @@
                         "Platforms/Android/MainApplication.fs": "MauiApp.1/Platforms/Android/MainApplication.fs",
                         "Platforms/iOS/AppDelegate.fs": "MauiApp.1/Platforms/iOS/AppDelegate.fs",
                         "Platforms/iOS/Info.plist": "MauiApp.1/Platforms/iOS/Info.plist",
+                        "Platforms/iOS/PrivacyInfo.xcprivacy": "MauiApp.1/Platforms/iOS/PrivacyInfo.xcprivacy",
                         "Platforms/iOS/Program.fs": "MauiApp.1/Platforms/iOS/Program.fs",
                         "Platforms/MacCatalyst/AppDelegate.fs": "MauiApp.1/Platforms/MacCatalyst/AppDelegate.fs",
                         "Platforms/MacCatalyst/Info.plist": "MauiApp.1/Platforms/MacCatalyst/Info.plist",
@@ -121,7 +118,6 @@
                         "AppBuilderExtensions.fs": "MauiApp.1/AppBuilderExtensions.fs",
                         "BlazorWebView.fs": "MauiApp.1/BlazorWebView.fs",
                         "MauiApp.1.fsproj": "MauiApp.1/MauiApp.1.fsproj",
-                        "MauiApp.1.RazorLib.sln": "MauiApp.1.sln",
                         "MauiProgram.fs": "MauiApp.1/MauiProgram.fs"
                     }
                 },
@@ -153,6 +149,12 @@
                     "condition": "(!(AllPlatforms || IsTizen))",
                     "exclude": [
                         "Platforms/Tizen/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!(Net8 && Nightly))",
+                    "exclude": [
+                        "NuGet.config"
                     ]
                 }
             ]

@@ -304,13 +304,13 @@
         {
             "modifiers": [
                 {
-                    "condition": "(no-solution-file || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
+                    "condition": "(no-solution-file)",
                     "exclude": [
                         "MauiClassLib.1.sln"
                     ]
                 },
                 {
-                    "condition": "(!CentralPkgMgmt || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
+                    "condition": "(!CentralPkgMgmt)",
                     "exclude": [
                         "Directory.Packages.props"
                     ]
@@ -355,6 +355,12 @@
                     "condition": "(UseMauiCore || UseMauiEssentials)",
                     "exclude": [
                         "Platforms/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!(Net8 && Nightly))",
+                    "exclude": [
+                        "NuGet.config"
                     ]
                 }
             ]
