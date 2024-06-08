@@ -80,6 +80,13 @@
             "replaces": "MAUI_TFM",
             "defaultValue": "net8.0"
         },
+        "central-pkg-mgmt": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to configure NuGet Central Package Management.",
+            "displayName": "Option to configure NuGet Central Package Management"
+        },
         "nightly": {
             "type": "parameter",
             "datatype": "bool",
@@ -142,13 +149,6 @@
             "defaultValue": "false",
             "description": "Option to add VijayAnand.Toolkit.Markup (Shared Toolkit) NuGet package reference.",
             "displayName": "Add VijayAnand.Toolkit.Markup (Shared Toolkit) NuGet package reference"
-        },
-        "central-pkg-mgmt": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Option to configure NuGet Central Package Management.",
-            "displayName": "Option to configure NuGet Central Package Management"
         },
         "no-solution-file": {
             "type": "parameter",

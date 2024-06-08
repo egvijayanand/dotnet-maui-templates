@@ -684,6 +684,13 @@
                 }
             ]
         },
+        "central-pkg-mgmt": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to configure NuGet Central Package Management (CPM).",
+            "displayName": "Option to configure NuGet Central Package Management (CPM)"
+        },
         "nightly": {
             "type": "parameter",
             "datatype": "bool",
@@ -709,8 +716,8 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to create a .NET MAUI Class Library (RCL) to abstract shared components.",
-            "displayName": "Option to create a .NET MAUI _Class Library (RCL) to abstract shared components"
+            "description": "Option to create a .NET MAUI Class Library (MCL) to abstract Shared components.",
+            "displayName": "Option to create a .NET MAUI _Class Library (MCL) to abstract Shared components"
         },
         "razor-class-library": {
             "type": "parameter",
@@ -774,13 +781,6 @@
             "defaultValue": "false",
             "description": "Option to configure Windows target as Unpackaged type.",
             "displayName": "Option to configure Windows target as _Unpackaged type"
-        },
-        "central-pkg-mgmt": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Option to configure NuGet Central Package Management (CPM).",
-            "displayName": "Option to configure NuGet Central Package Management (CPM)"
         },
         "conditional-compilation": {
             "type": "parameter",

@@ -270,6 +270,13 @@
                 }
             ]
         },
+        "central-pkg-mgmt": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to configure NuGet Central Package Management (CPM).",
+            "displayName": "Option to configure NuGet Central Package Management (CPM)"
+        },
         "nightly": {
             "type": "parameter",
             "datatype": "bool",
@@ -325,13 +332,6 @@
             "defaultValue": "false",
             "description": "Option to add and configure Microsoft.Maui.Controls.Foldable NuGet package reference (.NET 7 or later).",
             "displayName": "Add and configure Microsoft.Maui.Controls.Fo_ldable NuGet package reference"
-        },
-        "central-pkg-mgmt": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Option to configure NuGet Central Package Management (CPM).",
-            "displayName": "Option to configure NuGet Central Package Management (CPM)"
         },
         "no-solution-file": {
             "type": "parameter",
