@@ -13,7 +13,7 @@ Release Details:
 |Stable|.NET 6 SR11 (6.0.553)|VS2022 17.4.x - 17.8.x|Tue, Apr 25, 2023|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
 |Stable|.NET 7 SR10 (7.0.101)|VS2022 17.4.x - 17.9.x|Tue, Nov 7, 2023|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
 |Stable|[.NET 8 SR5](https://github.com/dotnet/maui/releases/tag/8.0.40 "Changelog") (8.0.40) <br /> _Requires Android SDK Platform 34_ <br /> _Requires Apple Xcode 15.3_|VS2022 17.10.x|Tue, May 14, 2024|Active|
-|Preview|[.NET 9 Preview 4](https://github.com/dotnet/maui/releases/tag/9.0.0-preview.4.10690 "Changelog") (9.0.0-preview.4.10690) <br /> _Requires Android SDK Platform 34_ <br /> _Requires Apple Xcode 15.3_|VS2022 17.11 Preview 1.0|Tue, May 21, 2024|Preview|
+|Preview|[.NET 9 Preview 5](https://github.com/dotnet/maui/releases/tag/9.0.0-preview.5.24307.10 "Changelog") (9.0.0-preview.5.24307.10) <br /> _Requires Android SDK Platform 34_ <br /> _Requires Apple Xcode 15.3_|VS2022 17.11 Preview 2.0|Tue, Jun 11, 2024|Preview|
 
 Version History and its dependencies are [here](https://aka.ms/maui/versions).
 
@@ -52,7 +52,7 @@ If already installed, can be updated to the latest version with the below comman
 dotnet workload update
 ```
 
-Templates have been updated to support .NET 6/7/8 and is available to install from.
+Templates have been updated to support .NET 6/7/8/9 and is available to install from.
 
 |Channel|NuGet|VS Marketplace|
 |:---:|:---:|:---:|
@@ -226,6 +226,8 @@ And from [v5.5.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/5.5.0)
 
   `-ni` | `--nightly` This is a Boolean parameter - Default value is `false`. _Can also be used with the CPM option too_.
 
+  Update: When creating MAUI projects with Nightly build opted-in with template v5.6.0 or later, the CI package source configuration process is automated with a local NuGet.config file. So, no need for any manual steps. _Only required when earlier templates version is used._
+  
   Note: For this work, add the following URL as a NuGet package source (make use of the command) and more details [here](https://github.com/dotnet/maui/wiki/Nightly-Builds "Nightly Builds"):
 
   *.NET MAUI getting released as NuGet packages is supported only from .NET 8. So, this nightly build option won't work with .NET 7 and earlier.*
@@ -251,7 +253,7 @@ And from [v5.5.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/5.5.0)
 
 * Central Package Management: (Short notation: `-cpm`):
 
-  This is a Boolean parameter and its default value is `false`. _For now, this option is supported only on CLI._
+  This is a Boolean parameter and its default value is `false`.
 
   Examples:
 
