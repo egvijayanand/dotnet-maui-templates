@@ -45,7 +45,7 @@
         {
             "id": "maui-class-library",
             "name": {
-                "text": "Abstracts the shared components as a separate .NET MAUI Class _Library."
+                "text": "Abstract the Shared components as a separate .NET MAUI Class _Library (MCL)"
             },
             "isVisible": true,
             "defaultValue": "false"
@@ -53,7 +53,7 @@
         {
             "id": "razor-class-library",
             "name": {
-                "text": "Create a _Razor Class Library (RCL) for the Blazor Hybrid solution."
+                "text": "Abstract the Razor components as a separate _Razor Class Library (RCL) for the Blazor Hybrid solution"
             },
             "isVisible": true,
             "defaultValue": "false"
