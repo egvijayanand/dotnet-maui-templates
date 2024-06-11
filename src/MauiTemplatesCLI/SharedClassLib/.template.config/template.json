@@ -80,6 +80,13 @@
             "replaces": "MAUI_TFM",
             "defaultValue": "net8.0"
         },
+        "central-pkg-mgmt": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to configure NuGet Central Package Management.",
+            "displayName": "Option to configure NuGet Central Package Management"
+        },
         "nightly": {
             "type": "parameter",
             "datatype": "bool",
@@ -142,13 +149,6 @@
             "defaultValue": "false",
             "description": "Option to add VijayAnand.Toolkit.Markup (Shared Toolkit) NuGet package reference.",
             "displayName": "Add VijayAnand.Toolkit.Markup (Shared Toolkit) NuGet package reference"
-        },
-        "central-pkg-mgmt": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Option to configure NuGet Central Package Management.",
-            "displayName": "Option to configure NuGet Central Package Management"
         },
         "no-solution-file": {
             "type": "parameter",
@@ -242,7 +242,7 @@
         {
             "modifiers": [
                 {
-                    "condition": "(no-solution-file || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
+                    "condition": "(no-solution-file)",
                     "exclude": [
                         "SharedClassLib.1.sln"
                     ]
@@ -257,6 +257,12 @@
                     "condition": "(no-solution-file)",
                     "exclude": [
                         "SharedClassLib.1.code-workspace"
+                    ]
+                },
+                {
+                    "condition": "(!(Net8 && Nightly))",
+                    "exclude": [
+                        "NuGet.config"
                     ]
                 }
             ]

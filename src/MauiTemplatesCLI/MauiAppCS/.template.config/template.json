@@ -44,13 +44,13 @@
             ],
             "modifiers": [
                 {
-                    "condition": "(!(MauiLib || RazorLib) && (no-solution-file || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\")))",
+                    "condition": "(no-solution-file && (Auxiliary || !(MauiLib || RazorLib)))",
                     "exclude": [
                         "MauiApp.1.sln"
                     ]
                 },
                 {
-                    "condition": "(!(Net8 && !Auxiliary && MauiLib) && (!CentralPkgMgmt || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\")))",
+                    "condition": "(!(Net8 && !Auxiliary && MauiLib) && !CentralPkgMgmt)",
                     "exclude": [
                         "Directory.Packages.props"
                     ]
@@ -330,7 +330,7 @@
                         "Shared/MainLayout.razor.css": "MauiApp.1.MauiLib/Shared/MainLayout.razor.css",
                         "Shared/NavMenu.razor": "MauiApp.1.MauiLib/Shared/NavMenu.razor",
                         "Shared/NavMenu.razor.css": "MauiApp.1.MauiLib/Shared/NavMenu.razor.css",
-                        "Shared/SurveyPrompt.razor": "MauiApp.1.MauiLib/Shared/SurveyPrompt.razor",
+                        "Shared/SurveyPrompt.razor": "MauiApp.1.MauiLib/Shared/SurveyPrompt.razor"
                     }
                 },
                 {
@@ -536,6 +536,12 @@
                     "exclude": [
                         "Platforms/Tizen/**/*"
                     ]
+                },
+                {
+                    "condition": "(!(Net8 && Nightly))",
+                    "exclude": [
+                        "NuGet.config"
+                    ]
                 }
             ]
         }
@@ -678,6 +684,13 @@
                 }
             ]
         },
+        "central-pkg-mgmt": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to configure NuGet Central Package Management (CPM).",
+            "displayName": "Option to configure NuGet Central Package Management (CPM)"
+        },
         "nightly": {
             "type": "parameter",
             "datatype": "bool",
@@ -703,8 +716,8 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to create a .NET MAUI Class Library (RCL) to abstract shared components.",
-            "displayName": "Option to create a .NET MAUI _Class Library (RCL) to abstract shared components"
+            "description": "Option to create a .NET MAUI Class Library (MCL) to abstract Shared components.",
+            "displayName": "Option to create a .NET MAUI _Class Library (MCL) to abstract Shared components"
         },
         "razor-class-library": {
             "type": "parameter",
@@ -768,13 +781,6 @@
             "defaultValue": "false",
             "description": "Option to configure Windows target as Unpackaged type.",
             "displayName": "Option to configure Windows target as _Unpackaged type"
-        },
-        "central-pkg-mgmt": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Option to configure NuGet Central Package Management (CPM).",
-            "displayName": "Option to configure NuGet Central Package Management (CPM)"
         },
         "conditional-compilation": {
             "type": "parameter",

@@ -75,6 +75,14 @@
             "defaultValue": "false"
         },
         {
+            "id": "central-pkg-mgmt",
+            "name": {
+                "text": "Use _NuGet Central Package Management (CPM)."
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
             "id": "conditional-compilation",
             "name": {
                 "text": "Configure c_onditional compilation for the project"

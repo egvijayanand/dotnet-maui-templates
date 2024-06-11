@@ -81,6 +81,14 @@
             },
             "isVisible": true,
             "defaultValue": "false"
+        },
+        {
+            "id": "central-pkg-mgmt",
+            "name": {
+                "text": "Use _NuGet Central Package Management (CPM)."
+            },
+            "isVisible": true,
+            "defaultValue": "false"
         }
     ],
     "unsupportedHosts": [
