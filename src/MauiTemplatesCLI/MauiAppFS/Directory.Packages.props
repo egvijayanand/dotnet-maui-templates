@@ -3,9 +3,9 @@
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net8)-->
         <!--#if (Nightly)-->
-        <MauiVersion>8.0.60-ci.net8.24309.1</MauiVersion>
+        <MauiVersion>8.0.70-ci.net8.24312.3</MauiVersion>
         <!--#else-->
-        <MauiVersion>8.0.40</MauiVersion>
+        <MauiVersion>8.0.60</MauiVersion>
         <!--#endif-->
         <!--#endif-->
     </PropertyGroup>
