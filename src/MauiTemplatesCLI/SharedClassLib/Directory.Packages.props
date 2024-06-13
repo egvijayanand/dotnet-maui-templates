@@ -1,5 +1,6 @@
 <Project>
     <PropertyGroup>
+        <!--#if (CentralPkgMgmt)-->
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net8)-->
         <!--#if (Nightly)-->
@@ -8,15 +9,22 @@
         <MauiVersion>8.0.60</MauiVersion>
         <!--#endif-->
         <!--#endif-->
-    </PropertyGroup>
-    <ItemGroup>
-        <!--#if (Nightly)-->
-        <PackageVersion Include="Xamarin.Forms" Version="5.0.0.2371-nightly" />
         <!--#else-->
-        <PackageVersion Include="Xamarin.Forms" Version="5.0.0.2622" />
+        <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+        <!--#if (Net8)-->
+        <!--#if (Nightly)-->
+        <MauiVersion>8.*-*</MauiVersion>
+        <!--#else-->
+        <MauiVersion>8.*</MauiVersion>
         <!--#endif-->
+        <!--#endif-->
+        <!--#endif-->
+    </PropertyGroup>
+    <!--#if (CentralPkgMgmt)-->
+    <ItemGroup>
+        <PackageVersion Include="Xamarin.Forms" Version="5.0.0.2662" />
         <!--#if (AddFormsEssentials)-->
-        <PackageVersion Include="Xamarin.Essentials" Version="1.8.0" />
+        <PackageVersion Include="Xamarin.Essentials" Version="1.8.1" />
         <!--#endif-->
         <!--#if (AddFormsToolkit)-->
         <PackageVersion Include="Xamarin.CommunityToolkit" Version="2.0.6" />
@@ -65,4 +73,5 @@
         <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.2.2" />
         <!--#endif-->
     </ItemGroup>
+    <!--#endif-->
 </Project>

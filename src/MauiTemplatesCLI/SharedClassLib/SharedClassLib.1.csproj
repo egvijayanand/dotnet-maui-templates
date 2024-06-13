@@ -16,13 +16,6 @@
 
     <PropertyGroup Condition="'$(TargetFramework)' == 'MAUI_TFM'">
         <UseMaui>true</UseMaui>
-        <!--#if (Net8 && !CentralPkgMgmt)-->
-        <!--#if (Nightly)-->
-        <MauiVersion>8.*-*</MauiVersion>
-        <!--#else-->
-        <MauiVersion>8.*</MauiVersion>
-        <!--#endif-->
-        <!--#endif-->
         <SingleProject>true</SingleProject>
         <DefineConstants>$(DefineConstants);MAUI</DefineConstants>
     </PropertyGroup>
@@ -60,11 +53,7 @@
         <PackageReference Include="Xamarin.CommunityToolkit.Markup" />
         <!--#endif-->
         <!--#else-->
-        <!--#if (Nightly)-->
-        <PackageReference Include="Xamarin.Forms" Version="5.*-*" />
-        <!--#else-->
         <PackageReference Include="Xamarin.Forms" Version="5.*" />
-        <!--#endif-->
         <!--#if (AddFormsEssentials)-->
         <PackageReference Include="Xamarin.Essentials" Version="1.*" />
         <!--#endif-->

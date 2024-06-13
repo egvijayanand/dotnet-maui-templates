@@ -2,14 +2,21 @@
     <PropertyGroup>
         <!--#if (CentralPkgMgmt)-->
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-        <!--#else-->
-        <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
-        <!--#endif-->
         <!--#if (Net8)-->
         <!--#if (Nightly)-->
         <MauiVersion>8.0.70-ci.net8.24312.3</MauiVersion>
         <!--#else-->
         <MauiVersion>8.0.60</MauiVersion>
+        <!--#endif-->
+        <!--#endif-->
+        <!--#else-->
+        <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+        <!--#if (Net8)-->
+        <!--#if (Nightly)-->
+        <MauiVersion>8.*-*</MauiVersion>
+        <!--#else-->
+        <MauiVersion>8.*</MauiVersion>
+        <!--#endif-->
         <!--#endif-->
         <!--#endif-->
     </PropertyGroup>

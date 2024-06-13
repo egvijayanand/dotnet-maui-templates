@@ -248,7 +248,7 @@
                     ]
                 },
                 {
-                    "condition": "(!CentralPkgMgmt || !(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))",
+                    "condition": "(!Net8 && !CentralPkgMgmt)",
                     "exclude": [
                         "Directory.Packages.props"
                     ]

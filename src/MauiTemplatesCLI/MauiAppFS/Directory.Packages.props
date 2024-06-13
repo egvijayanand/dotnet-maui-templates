@@ -1,5 +1,6 @@
 <Project>
     <PropertyGroup>
+        <!--#if (CentralPkgMgmt)-->
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net8)-->
         <!--#if (Nightly)-->
@@ -8,7 +9,18 @@
         <MauiVersion>8.0.60</MauiVersion>
         <!--#endif-->
         <!--#endif-->
+        <!--#else-->
+        <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+        <!--#if (Net8)-->
+        <!--#if (Nightly)-->
+        <MauiVersion>8.*-*</MauiVersion>
+        <!--#else-->
+        <MauiVersion>8.*</MauiVersion>
+        <!--#endif-->
+        <!--#endif-->
+        <!--#endif-->
     </PropertyGroup>
+    <!--#if (CentralPkgMgmt)-->
     <!--#if (PackageRef)-->
     <ItemGroup>
     <!--#endif-->
@@ -102,5 +114,6 @@
         <!--#endif-->
     <!--#if (PackageRef)-->
     </ItemGroup>
+    <!--#endif-->
     <!--#endif-->
 </Project>

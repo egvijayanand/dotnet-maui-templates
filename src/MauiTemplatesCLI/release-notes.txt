@@ -1,7 +1,13 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
 
-What's new in ver. 5.6.1:
+What's new in ver. 5.6.2:
 -------------------------
+When not using the NuGet CPM feature, defined the value for the Maui Version property as a floating version.
+
+This is done only for the .NET 8 Stable channel.
+
+v5.6.1:
+
 Templates updated to support .NET MAUI 8 SR6 release (v8.0.60).
 
 v5.6.0:
