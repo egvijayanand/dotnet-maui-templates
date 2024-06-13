@@ -168,7 +168,7 @@
 
     <ItemGroup>
         <None Remove="MauiApp.1.code-workspace" />
-        <!--#if (CentralPkgMgmt)-->
+        <!--#if (Net8 || CentralPkgMgmt)-->
         <None Remove="Directory.Packages.props" />
         <!--#endif-->
     </ItemGroup>

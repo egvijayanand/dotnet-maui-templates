@@ -236,6 +236,17 @@
     </ItemGroup>
 
     <!--#endif-->
+    <!--#if (Plain || Net8 || CentralPkgMgmt )-->
+    <ItemGroup>
+        <!--#if (Plain)-->
+        <None Remove="MauiApp.1.code-workspace" />
+        <!--#endif-->
+        <!--#if (Net8 || CentralPkgMgmt)-->
+        <None Remove="Directory.Packages.props" />
+        <!--#endif-->
+    </ItemGroup>
+
+    <!--#endif-->
     <ItemGroup>
         <!--#if (CentralPkgMgmt)-->
         <PackageReference Include="Fabulous" />
