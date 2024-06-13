@@ -50,7 +50,7 @@
                     ]
                 },
                 {
-                    "condition": "(!(Net8 && !Auxiliary && MauiLib) && !CentralPkgMgmt)",
+                    "condition": "(!Net8 && !CentralPkgMgmt)",
                     "exclude": [
                         "Directory.Packages.props"
                     ]

@@ -310,7 +310,7 @@
                     ]
                 },
                 {
-                    "condition": "(!CentralPkgMgmt)",
+                    "condition": "(!Net8 && !CentralPkgMgmt)",
                     "exclude": [
                         "Directory.Packages.props"
                     ]

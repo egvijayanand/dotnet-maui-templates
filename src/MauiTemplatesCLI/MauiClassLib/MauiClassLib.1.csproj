@@ -102,13 +102,6 @@
         <!--#else-->
         <UseMaui>true</UseMaui>
         <!--#endif-->
-        <!--#if (Net8 && !CentralPkgMgmt)-->
-        <!--#if (Nightly)-->
-        <MauiVersion>8.*-*</MauiVersion>
-        <!--#else-->
-        <MauiVersion>8.*</MauiVersion>
-        <!--#endif-->
-        <!--#endif-->
         <SingleProject>true</SingleProject>
         <!--#if (Net8OrLater && (AllPlatforms || IsWindows))-->
         <UseRidGraph>true</UseRidGraph>
