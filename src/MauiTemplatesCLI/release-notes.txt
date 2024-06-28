@@ -1,7 +1,15 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
 
-What's new in ver. 5.6.2:
+What's new in ver. 5.7.0:
 -------------------------
+Introduced an option to add the Maps package in both MAUI and Shared Class Library project templates.
+
+Added Apple's Privacy Manifest file to facilitate submitting macOS app (MacCatalyst) to the App Store.
+
+Little housekeeping to make the templates even more reliable.
+
+v5.6.2:
+
 When not using the NuGet CPM feature, defined the value for the Maui Version property as a floating version.
 
 This is done only for the .NET 8 Stable channel.

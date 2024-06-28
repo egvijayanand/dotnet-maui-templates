@@ -14,6 +14,11 @@ global using Microsoft.Maui.Media;
 global using Microsoft.Maui.Networking;
 global using Microsoft.Maui.Storage;
 
+#if AddMauiMaps
+global using Microsoft.Maui.Controls.Maps;
+global using Microsoft.Maui.Maps;
+
+#endif
 #if AddMauiToolkit
 global using CommunityToolkit.Maui;
 global using CommunityToolkit.Maui.Behaviors;

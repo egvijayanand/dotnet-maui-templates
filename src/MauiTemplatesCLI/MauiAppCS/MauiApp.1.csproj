@@ -214,26 +214,26 @@
         <!--#else-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Condition="'$(Configuration)' == 'Debug'" />
         <!--#endif-->
-        <!--#if (AddMediaPackage)-->
+        <!--#if (AddMedia)-->
         <PackageReference Include="CommunityToolkit.Maui.MediaElement" />
         <!--#endif-->
-        <!--#if (AddFoldablePackage)-->
+        <!--#if (AddFoldable)-->
         <PackageReference Include="Microsoft.Maui.Controls.Foldable" />
         <!--#endif-->
-        <!--#if (AddMapsPackage)-->
+        <!--#if (AddMaps)-->
         <PackageReference Include="Microsoft.Maui.Controls.Maps" />
         <!--#if (AllPlatforms || IsWindows)-->
         <PackageReference Include="CommunityToolkit.Maui.Maps" />
         <!--#endif-->
         <!--#endif-->
         <!--#endif-->
-        <!--#if (AddToolkitPackage)-->
+        <!--#if (AddToolkit)-->
         <PackageReference Include="CommunityToolkit.Maui" />
         <!--#endif-->
-        <!--#if (AddMarkupPackage)-->
+        <!--#if (AddMarkup)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" />
         <!--#endif-->
-        <!--#if (AddMvvmToolkitPackage || (Mvvm && !Razor))-->
+        <!--#if (AddMvvmToolkit || (Mvvm && !Razor))-->
         <PackageReference Include="CommunityToolkit.Mvvm" />
         <!--#endif-->
         <!--#if (CompiledBindings)-->
@@ -242,7 +242,7 @@
         <!--#if (Reactor)-->
         <PackageReference Include="Reactor.Maui" />
         <PackageReference Include="Reactor.Maui.Canvas" />
-        <!--#if (AddMapsPackage)-->
+        <!--#if (AddMaps)-->
         <PackageReference Include="Reactor.Maui.Maps" />
         <!--#endif-->
         <!--#endif-->
@@ -256,14 +256,14 @@
         <!--#if (Comet)-->
         <PackageReference Include="Clancey.Comet" Version="0.3.467-beta" />
         <!--#endif-->
-        <!--#if (AddFoldablePackage)-->
+        <!--#if (AddFoldable)-->
         <!--#if (Net8OrLater)-->
         <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="$(MauiVersion)" />
         <!--#else-->
         <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="7.*" />
         <!--#endif-->
         <!--#endif-->
-        <!--#if (AddMapsPackage)-->
+        <!--#if (AddMaps)-->
         <!--#if (Net8OrLater)-->
         <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
         <!--#if (AllPlatforms || IsWindows)-->
@@ -287,13 +287,13 @@
         <!--#endif-->
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
-        <!--#if (AddToolkitPackage)-->
+        <!--#if (AddToolkit)-->
         <PackageReference Include="CommunityToolkit.Maui" Version="9.*" />
         <!--#endif-->
-        <!--#if (AddMarkupPackage)-->
+        <!--#if (AddMarkup)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.*" />
         <!--#endif-->
-        <!--#if (AddMediaPackage)-->
+        <!--#if (AddMedia)-->
         <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="3.*" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
@@ -305,30 +305,30 @@
         <!--#endif-->
         <!--#elif (Net7)-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.*" Condition="'$(Configuration)' == 'Debug'" />
-        <!--#if (AddToolkitPackage)-->
+        <!--#if (AddToolkit)-->
         <PackageReference Include="CommunityToolkit.Maui" Version="6.*" />
         <!--#endif-->
-        <!--#if (AddMarkupPackage)-->
+        <!--#if (AddMarkup)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.*" />
         <!--#endif-->
-        <!--#if (AddMediaPackage)-->
+        <!--#if (AddMedia)-->
         <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="2.*" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="2.*" />
         <!--#endif-->
         <!--#else-->
-        <!--#if (AddToolkitPackage)-->
+        <!--#if (AddToolkit)-->
         <PackageReference Include="CommunityToolkit.Maui" Version="2.*" />
         <!--#endif-->
-        <!--#if (AddMarkupPackage)-->
+        <!--#if (AddMarkup)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.*" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="1.*" />
         <!--#endif-->
         <!--#endif-->
-        <!--#if (AddMvvmToolkitPackage || (Mvvm && !Razor))-->
+        <!--#if (AddMvvmToolkit || (Mvvm && !Razor))-->
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*" />
         <!--#endif-->
         <!--#if (CompiledBindings)-->
@@ -338,13 +338,13 @@
         <!--#if (Net8OrLater)-->
         <PackageReference Include="Reactor.Maui" Version="2.*" />
         <PackageReference Include="Reactor.Maui.Canvas" Version="2.*" />
-        <!--#if (AddMapsPackage)-->
+        <!--#if (AddMaps)-->
         <PackageReference Include="Reactor.Maui.Maps" Version="2.*" />
         <!--#endif-->
         <!--#else-->
         <PackageReference Include="Reactor.Maui" Version="1.*" />
         <PackageReference Include="Reactor.Maui.Canvas" Version="1.*" />
-        <!--#if (AddMapsPackage)-->
+        <!--#if (AddMaps)-->
         <PackageReference Include="Reactor.Maui.Maps" Version="1.*" />
         <!--#endif-->
         <!--#endif-->
@@ -358,6 +358,12 @@
 
     <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
         <BundleResource Include="Platforms\iOS\PrivacyInfo.xcprivacy" LogicalName="PrivacyInfo.xcprivacy" />
+    </ItemGroup>
+    <!--#endif-->
+    <!--#if (AllPlatforms || IsmacOS)-->
+
+    <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
+        <BundleResource Include="Platforms\MacCatalyst\PrivacyInfo.xcprivacy" LogicalName="PrivacyInfo.xcprivacy" />
     </ItemGroup>
     <!--#endif-->
     <!--#if (Hybrid && !MauiLib && RazorLib)-->

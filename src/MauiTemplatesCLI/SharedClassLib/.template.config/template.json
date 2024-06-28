@@ -36,6 +36,7 @@
             "type": "parameter",
             "datatype": "choice",
             "description": "Option to choose the Xamarin.Forms target framework.",
+            "displayName": "_Xamarin.Forms target framework",
             "choices": [
                 {
                     "choice": "netstandard2.1",
@@ -85,21 +86,21 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to configure NuGet Central Package Management.",
-            "displayName": "Option to configure NuGet Central Package Management"
+            "displayName": "Option to configure _NuGet Central Package Management"
         },
         "nightly": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to use Nightly (CI) build.",
-            "displayName": "Option to use _Nightly (CI) build"
+            "displayName": "Option to use Ni_ghtly (CI) build"
         },
         "all-supported-packages": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to add all supported NuGet package reference.",
-            "displayName": "_Add all supported NuGet package reference"
+            "description": "Option to add all supported NuGet package reference (Maps and Essentials Interfaces are explicit).",
+            "displayName": "_Add all supported NuGet package reference (Maps and Essentials Interfaces are explicit)"
         },
         "include-forms-essentials": {
             "type": "parameter",
@@ -113,7 +114,7 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to add Xamarin.CommunityToolkit NuGet package reference.",
-            "displayName": "Add _Xamarin.CommunityToolkit NuGet package reference"
+            "displayName": "Add Xamarin.CommunityTool_kit NuGet package reference"
         },
         "include-forms-markup": {
             "type": "parameter",
@@ -148,7 +149,28 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to add VijayAnand.Toolkit.Markup (Shared Toolkit) NuGet package reference.",
-            "displayName": "Add VijayAnand.Toolkit.Markup (Shared Toolkit) NuGet package reference"
+            "displayName": "Add VijayAnand.Toolkit.Markup (_Shared Toolkit) NuGet package reference"
+        },
+        "include-forms-essentials-interfaces": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add Xamarin.Essentials.Interfaces NuGet package reference.",
+            "displayName": "Add Xamarin.Essentials._Interfaces NuGet package reference"
+        },
+        "include-forms-maps": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add Xamarin.Forms.Maps NuGet package reference.",
+            "displayName": "Add Xamarin.F_orms.Maps NuGet package reference"
+        },
+        "include-maui-maps": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add Microsoft.Maui.Controls.Maps NuGet package reference.",
+            "displayName": "Add Microsoft.Maui.Controls.Ma_ps NuGet package reference"
         },
         "no-solution-file": {
             "type": "parameter",
@@ -188,6 +210,10 @@
             "type": "computed",
             "value": "(frameworkLower == \"net9.0\")"
         },
+        "Net7OrLater": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net7.0\" || frameworkLower == \"net8.0\" || frameworkLower == \"net9.0\")"
+        },
         "Net8OrLater": {
             "type": "computed",
             "value": "(frameworkLower == \"net8.0\" || frameworkLower == \"net9.0\")"
@@ -195,6 +221,10 @@
         "AddFormsEssentials": {
             "type": "computed",
             "value": "(include-forms-essentials || all-supported-packages)"
+        },
+        "AddFormsEssentialsInterfaces": {
+            "type": "computed",
+            "value": "(include-forms-essentials-interfaces)"
         },
         "AddFormsToolkit": {
             "type": "computed",
@@ -204,6 +234,10 @@
             "type": "computed",
             "value": "(include-forms-markup || all-supported-packages)"
         },
+        "AddFormsMaps": {
+            "type": "computed",
+            "value": "(include-forms-maps)"
+        },
         "AddMauiToolkit": {
             "type": "computed",
             "value": "(include-maui-toolkit || all-supported-packages)"
@@ -211,6 +245,10 @@
         "AddMauiMarkup": {
             "type": "computed",
             "value": "(include-maui-markup || all-supported-packages)"
+        },
+        "AddMauiMaps": {
+            "type": "computed",
+            "value": "(Net7OrLater && include-maui-maps)"
         },
         "AddMvvmToolkit": {
             "type": "computed",

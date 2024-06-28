@@ -76,6 +76,7 @@
                         "Platforms/iOS/Program.fs": "MauiApp.1/Platforms/iOS/Program.fs",
                         "Platforms/MacCatalyst/AppDelegate.fs": "MauiApp.1/Platforms/MacCatalyst/AppDelegate.fs",
                         "Platforms/MacCatalyst/Info.plist": "MauiApp.1/Platforms/MacCatalyst/Info.plist",
+                        "Platforms/MacCatalyst/PrivacyInfo.xcprivacy": "MauiApp.1/Platforms/MacCatalyst/PrivacyInfo.xcprivacy",
                         "Platforms/MacCatalyst/Program.fs": "MauiApp.1/Platforms/MacCatalyst/Program.fs",
                         "Platforms/Tizen/Main.fs": "MauiApp.1/Platforms/Tizen/Main.fs",
                         "Platforms/Tizen/tizen-manifest.xml": "MauiApp.1/Platforms/Tizen/tizen-manifest.xml",
@@ -275,14 +276,14 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to configure NuGet Central Package Management (CPM).",
-            "displayName": "Option to configure NuGet Central Package Management (CPM)"
+            "displayName": "Option to configure _NuGet Central Package Management (CPM)"
         },
         "nightly": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to use Nightly (CI) build.",
-            "displayName": "Option to use _Nightly (CI) build"
+            "displayName": "Option to use Ni_ghtly (CI) build"
         },
         "include-toolkit": {
             "type": "parameter",
@@ -310,14 +311,14 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to add VijayAnand.Toolkit.Markup NuGet package reference.",
-            "displayName": "Add VijayAnand.Toolkit.Markup NuGet package reference"
+            "displayName": "Add VijayAnand.Toolkit.Markup (_Shared Toolkit) NuGet package reference"
         },
         "include-maps": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to add and configure Microsoft.Maui.Controls.Maps NuGet package reference (.NET 7 or later).",
-            "displayName": "Add and configure Microsoft.Maui.Controls.M_aps NuGet package reference"
+            "displayName": "Add and configure Microsoft.Maui.Controls.Ma_ps NuGet package reference"
         },
         "include-media-element": {
             "type": "parameter",
@@ -452,27 +453,27 @@
             "type": "computed",
             "value": "(IsWindows || IsTizen || IsBase)"
         },
-        "AddMapsPackage": {
+        "AddMaps": {
             "type": "computed",
             "value": "(Net7OrLater && include-maps)"
         },
-        "AddMediaPackage": {
+        "AddMedia": {
             "type": "computed",
             "value": "(Net7OrLater && include-media-element)"
         },
-        "AddFoldablePackage": {
+        "AddFoldable": {
             "type": "computed",
             "value": "(Net7OrLater && include-foldable)"
         },
-        "AddToolkitPackage": {
+        "AddToolkit": {
             "type": "computed",
             "value": "(include-toolkit)"
         },
-        "AddMarkupPackage": {
+        "AddMarkup": {
             "type": "computed",
             "value": "(include-markup)"
         },
-        "AddMvvmToolkitPackage": {
+        "AddMvvmToolkit": {
             "type": "computed",
             "value": "(include-mvvm-toolkit)"
         },
@@ -490,7 +491,7 @@
         },
         "PackageRef": {
             "type": "computed",
-            "value": "(AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage || Net7OrLater)"
+            "value": "(AddToolkit || AddMarkup || AddMvvmToolkit || Net7OrLater)"
         },
         "HostIdentifier": {
             "type": "bind",

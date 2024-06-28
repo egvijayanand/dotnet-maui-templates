@@ -6,7 +6,7 @@
         <!--#if (Nightly)-->
         <MauiVersion>8.0.70-ci.net8.24312.3</MauiVersion>
         <!--#else-->
-        <MauiVersion>8.0.60</MauiVersion>
+        <MauiVersion>8.0.61</MauiVersion>
         <!--#endif-->
         <!--#endif-->
         <!--#else-->
@@ -25,6 +25,12 @@
         <PackageVersion Include="Xamarin.Forms" Version="5.0.0.2662" />
         <!--#if (AddFormsEssentials)-->
         <PackageVersion Include="Xamarin.Essentials" Version="1.8.1" />
+        <!--#endif-->
+        <!--#if (AddFormsEssentialsInterfaces)-->
+        <PackageVersion Include="Xamarin.Essentials.Interfaces" Version="1.8.0" />
+        <!--#endif-->
+        <!--#if (AddFormsMaps)-->
+        <PackageVersion Include="Xamarin.Forms.Maps" Version="5.0.0.2662" />
         <!--#endif-->
         <!--#if (AddFormsToolkit)-->
         <PackageVersion Include="Xamarin.CommunityToolkit" Version="2.0.6" />
@@ -68,6 +74,9 @@
         <!--#if (AddSharedToolkit)-->
         <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="1.2.0" />
         <!--#endif-->
+        <!--#endif-->
+        <!--#if (AddMauiMaps)-->
+        <PackageVersion Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#if (AddMvvmToolkit)-->
         <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.2.2" />

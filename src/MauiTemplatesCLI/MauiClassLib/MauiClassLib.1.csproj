@@ -112,8 +112,8 @@
         <LangVersion>latest</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>MauiClassLib._1</RootNamespace>
-
         <!--#if (AllPlatforms || IsAndroid || IsiOS || IsmacOS || IsTizen || IsWindows)-->
+
         <!-- Target Platform Options -->
         <!--#endif-->
         <!--#if (AllPlatforms || IsiOS)-->
@@ -142,7 +142,9 @@
 
     <!--#if (!no-solution-file || Net8 || CentralPkgMgmt)-->
     <ItemGroup>
+        <!--#if (!no-solution-file)-->
         <None Remove="MauiClassLib.1.code-workspace" />
+        <!--#endif-->
         <!--#if (Net8 || CentralPkgMgmt)-->
         <None Remove="Directory.Packages.props" />
         <!--#endif-->
@@ -166,13 +168,19 @@
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" />
         <!--#endif-->
         <!--#endif-->
-        <!--#if (AddToolkitPackage)-->
+        <!--#if (AddToolkit)-->
         <PackageReference Include="CommunityToolkit.Maui" />
         <!--#endif-->
-        <!--#if (AddMarkupPackage)-->
+        <!--#if (AddMarkup)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" />
         <!--#endif-->
-        <!--#if (AddMvvmToolkitPackage)-->
+        <!--#if (AddMaps)-->
+        <PackageReference Include="Microsoft.Maui.Controls.Maps" />
+        <!--#if (AllPlatforms || IsWindows)-->
+        <PackageReference Include="CommunityToolkit.Maui.Maps" />
+        <!--#endif-->
+        <!--#endif-->
+        <!--#if (AddMvvmToolkit)-->
         <PackageReference Include="CommunityToolkit.Mvvm" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
@@ -190,11 +198,17 @@
         <!--#endif-->
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
-        <!--#if (AddToolkitPackage)-->
+        <!--#if (AddToolkit)-->
         <PackageReference Include="CommunityToolkit.Maui" Version="9.*" />
         <!--#endif-->
-        <!--#if (AddMarkupPackage)-->
+        <!--#if (AddMarkup)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.*" />
+        <!--#endif-->
+        <!--#if (AddMaps)-->
+        <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
+        <!--#if (AllPlatforms || IsWindows)-->
+        <PackageVersion Include="CommunityToolkit.Maui.Maps" Version="2.*" />
+        <!--#endif-->
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <!--#if (Net9)-->
@@ -205,27 +219,33 @@
         <!--#endif-->
         <!--#endif-->
         <!--#elif (Net7)-->
-        <!--#if (AddToolkitPackage)-->
+        <!--#if (AddToolkit)-->
         <PackageReference Include="CommunityToolkit.Maui" Version="6.*" />
         <!--#endif-->
-        <!--#if (AddMarkupPackage)-->
+        <!--#if (AddMarkup)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.*" />
+        <!--#endif-->
+        <!--#if (AddMaps)-->
+        <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
+        <!--#if (AllPlatforms || IsWindows)-->
+        <PackageVersion Include="CommunityToolkit.Maui.Maps" Version="1.*" />
+        <!--#endif-->
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="2.*" />
         <!--#endif-->
         <!--#else-->
-        <!--#if (AddToolkitPackage)-->
+        <!--#if (AddToolkit)-->
         <PackageReference Include="CommunityToolkit.Maui" Version="2.*" />
         <!--#endif-->
-        <!--#if (AddMarkupPackage)-->
+        <!--#if (AddMarkup)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.*" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="1.*" />
+        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="1.*" />
         <!--#endif-->
         <!--#endif-->
-        <!--#if (AddMvvmToolkitPackage)-->
+        <!--#if (AddMvvmToolkit)-->
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*" />
         <!--#endif-->
         <!--#endif-->

@@ -247,6 +247,7 @@
                         "Platforms/iOS/Program.cs": "MauiApp.1/Platforms/iOS/Program.cs",
                         "Platforms/MacCatalyst/AppDelegate.cs": "MauiApp.1/Platforms/MacCatalyst/AppDelegate.cs",
                         "Platforms/MacCatalyst/Info.plist": "MauiApp.1/Platforms/MacCatalyst/Info.plist",
+                        "Platforms/MacCatalyst/PrivacyInfo.xcprivacy": "MauiApp.1/Platforms/MacCatalyst/PrivacyInfo.xcprivacy",
                         "Platforms/MacCatalyst/Program.cs": "MauiApp.1/Platforms/MacCatalyst/Program.cs",
                         "Platforms/Tizen/Main.cs": "MauiApp.1/Platforms/Tizen/Main.cs",
                         "Platforms/Tizen/tizen-manifest.xml": "MauiApp.1/Platforms/Tizen/tizen-manifest.xml",
@@ -397,6 +398,7 @@
                         "Platforms/iOS/Program.cs": "MauiApp.1/Platforms/iOS/Program.cs",
                         "Platforms/MacCatalyst/AppDelegate.cs": "MauiApp.1/Platforms/MacCatalyst/AppDelegate.cs",
                         "Platforms/MacCatalyst/Info.plist": "MauiApp.1/Platforms/MacCatalyst/Info.plist",
+                        "Platforms/MacCatalyst/PrivacyInfo.xcprivacy": "MauiApp.1/Platforms/MacCatalyst/PrivacyInfo.xcprivacy",
                         "Platforms/MacCatalyst/Program.cs": "MauiApp.1/Platforms/MacCatalyst/Program.cs",
                         "Platforms/Tizen/Main.cs": "MauiApp.1/Platforms/Tizen/Main.cs",
                         "Platforms/Tizen/tizen-manifest.xml": "MauiApp.1/Platforms/Tizen/tizen-manifest.xml",
@@ -968,27 +970,27 @@
             "type": "computed",
             "value": "(windows-unpackaged)"
         },
-        "AddMapsPackage": {
+        "AddMaps": {
             "type": "computed",
             "value": "(Net7OrLater && include-maps)"
         },
-        "AddMediaPackage": {
+        "AddMedia": {
             "type": "computed",
             "value": "(Net7OrLater && include-media-element)"
         },
-        "AddFoldablePackage": {
+        "AddFoldable": {
             "type": "computed",
             "value": "(Net7OrLater && include-foldable)"
         },
-        "AddToolkitPackage": {
+        "AddToolkit": {
             "type": "computed",
             "value": "(include-toolkit)"
         },
-        "AddMarkupPackage": {
+        "AddMarkup": {
             "type": "computed",
             "value": "(include-markup || Markup)"
         },
-        "AddMvvmToolkitPackage": {
+        "AddMvvmToolkit": {
             "type": "computed",
             "value": "(include-mvvm-toolkit)"
         },
@@ -1014,7 +1016,7 @@
         },
         "PackageRef": {
             "type": "computed",
-            "value": "(AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage || Net7OrLater || Razor || Mvu || CompiledBindings)"
+            "value": "(AddToolkit || AddMarkup || AddMvvmToolkit || Net7OrLater || Razor || Mvu || CompiledBindings)"
         },
         "HostIdentifier": {
             "type": "bind",
