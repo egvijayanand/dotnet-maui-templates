@@ -202,6 +202,8 @@ And from [v5.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/5.0.0)
 
 And from [v5.5.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/5.5.0) of the template package, CLI project template defines a new parameter named `maui-class-library`:
 
+And from [v5.7.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/5.7.0) of the template package, Class Library project template support referencing the Maps package.
+
 * MAUI Class Library (Short notation: `-mcl`):
 
   Option to abstract the Shared components as a separate .NET MAUI Class Library.
