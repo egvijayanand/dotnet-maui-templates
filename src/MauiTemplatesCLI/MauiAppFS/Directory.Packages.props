@@ -6,7 +6,7 @@
         <!--#if (Nightly)-->
         <MauiVersion>8.0.70-ci.net8.24312.3</MauiVersion>
         <!--#else-->
-        <MauiVersion>8.0.60</MauiVersion>
+        <MauiVersion>8.0.61</MauiVersion>
         <!--#endif-->
         <!--#endif-->
         <!--#else-->
@@ -24,8 +24,8 @@
     <!--#if (PackageRef)-->
     <ItemGroup>
     <!--#endif-->
-        <!--#if (AllPlatforms || IsAndroid)-->
-        <PackageVersion Include="FSharp.Android.Resource" Version="1.0.4" />
+        <!--#if ((AllPlatforms || IsAndroid) && Net7OrEarlier)-->
+        <PackageVersion Include="FSharp.Android.Resource" Version="1.1.1" />
         <!--#endif-->
         <!--#if (AllPlatforms || IsWindows)-->
         <PackageVersion Include="FSharp.Maui.WinUICompat" Version="1.1.0" />
@@ -42,13 +42,13 @@
         <!--#endif-->
         <!--#endif-->
         <!--#if (Net7OrLater)-->
-        <PackageVersion Include="Fabulous" Version="2.4.0" />
-        <PackageVersion Include="Fabulous.MauiControls" Version="2.8.0" />
+        <PackageVersion Include="Fabulous" Version="2.4.2" />
+        <PackageVersion Include="Fabulous.MauiControls" Version="2.8.1" />
         <!--#if (Net8OrLater)-->
         <!--#if (Hybrid)-->
         <PackageVersion Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <!--#endif-->
-        <PackageVersion Include="FSharp.Core" Version="8.0.100" />
+        <PackageVersion Include="FSharp.Core" Version="8.0.300" />
         <!--#if (Net9)-->
         <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0-preview.5.24306.7" />
         <!--#else-->
@@ -56,10 +56,10 @@
         <!--#endif-->
         <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <PackageVersion Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
-        <!--#if (AddToolkitPackage)-->
+        <!--#if (AddToolkit)-->
         <PackageVersion Include="CommunityToolkit.Maui" Version="9.0.1" />
         <!--#endif-->
-        <!--#if (AddMarkupPackage)-->
+        <!--#if (AddMarkup)-->
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="4.0.0" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
@@ -70,46 +70,46 @@
         <!--#endif-->
         <!--#endif-->
         <!--#else-->
-        <PackageVersion Include="FSharp.Core" Version="7.0.402" />
+        <PackageVersion Include="FSharp.Core" Version="7.0.403" />
         <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
-        <!--#if (AddToolkitPackage)-->
+        <!--#if (AddToolkit)-->
         <PackageVersion Include="CommunityToolkit.Maui" Version="6.1.0" />
         <!--#endif-->
-        <!--#if (AddMarkupPackage)-->
+        <!--#if (AddMarkup)-->
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="3.3.1" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="2.2.0" />
         <!--#endif-->
         <!--#endif-->
-        <!--#if (AddMediaPackage)-->
+        <!--#if (AddMedia)-->
         <PackageVersion Include="Fabulous.MauiControls.MediaElement" Version="2.0.0" />
         <!--#endif-->
-        <!--#if (AddMapsPackage)-->
+        <!--#if (AddMaps)-->
         <PackageVersion Include="Fabulous.MauiControls.Maps" Version="2.3.0" />
         <!--#if (AllPlatforms || IsWindows)-->
         <PackageVersion Include="CommunityToolkit.Maui.Maps" Version="1.0.4" />
         <!--#endif-->
         <!--#endif-->
-        <!--#if (AddFoldablePackage)-->
+        <!--#if (AddFoldable)-->
         <!--#if (Net8OrLater)-->
         <PackageVersion Include="Microsoft.Maui.Controls.Foldable" Version="$(MauiVersion)" />
         <!--#else-->
-        <PackageVersion Include="Microsoft.Maui.Controls.Foldable" Version="7.0.101" />
+        <PackageVersion Include="Microsoft.Maui.Controls.Foldable" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#endif-->
         <!--#else-->
-        <!--#if (AddToolkitPackage)-->
+        <!--#if (AddToolkit)-->
         <PackageVersion Include="CommunityToolkit.Maui" Version="2.0.0" />
         <!--#endif-->
-        <!--#if (AddMarkupPackage)-->
+        <!--#if (AddMarkup)-->
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="1.2.1" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="1.2.0" />
         <!--#endif-->
         <!--#endif-->
-        <!--#if (AddMvvmToolkitPackage)-->
+        <!--#if (AddMvvmToolkit)-->
         <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.2.2" />
         <!--#endif-->
     <!--#if (PackageRef)-->

@@ -63,7 +63,7 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to use .NET Razor SDK.",
-            "displayName": "Option to use .NET Razor SDK"
+            "displayName": "Option to use .NET _Razor SDK"
         },
         "use-maui-core": {
             "type": "parameter",
@@ -133,14 +133,14 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to configure NuGet Central Package Management.",
-            "displayName": "Option to configure NuGet Central Package Management"
+            "displayName": "Option to configure _NuGet Central Package Management"
         },
         "nightly": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to use Nightly (CI) build.",
-            "displayName": "Option to use _Nightly (CI) build"
+            "displayName": "Option to use Ni_ghtly (CI) build"
         },
         "include-toolkit": {
             "type": "parameter",
@@ -156,12 +156,12 @@
             "description": "Option to add CommunityToolkit.Maui.Markup NuGet package reference.",
             "displayName": "Add CommunityToolkit.Maui._Markup NuGet package reference"
         },
-        "include-shared-toolkit": {
+        "include-maps": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to add VijayAnand.Toolkit.Markup NuGet package reference.",
-            "displayName": "Add VijayAnand.Toolkit.Markup NuGet package reference"
+            "description": "Option to add Microsoft.Maui.Controls.Maps NuGet package reference.",
+            "displayName": "Add Microsoft.Maui.Controls.Ma_ps NuGet package reference"
         },
         "include-mvvm-toolkit": {
             "type": "parameter",
@@ -170,11 +170,19 @@
             "description": "Option to add CommunityToolkit.Mvvm (aka Microsoft MVVM Toolkit) NuGet package reference.",
             "displayName": "Add CommunityToolkit.Mvvm (aka Microsoft MV_VM Toolkit) NuGet package reference"
         },
+        "include-shared-toolkit": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add VijayAnand.Toolkit.Markup NuGet package reference.",
+            "displayName": "Add VijayAnand.Toolkit.Markup (_Shared Toolkit) NuGet package reference"
+        },
         "conditional-compilation": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to configure conditional compilation so that platform source files can be anywhere."
+            "description": "Option to configure conditional compilation so that platform source files can be anywhere.",
+            "displayName": "Option to configure c_onditional compilation for the project"
         },
         "no-solution-file": {
             "type": "parameter",
@@ -218,6 +226,10 @@
             "type": "computed",
             "value": "(frameworkLower == \"net9.0\")"
         },
+        "Net7OrLater": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net7.0\" || frameworkLower == \"net8.0\" || frameworkLower == \"net9.0\")"
+        },
         "Net8OrLater": {
             "type": "computed",
             "value": "(frameworkLower == \"net8.0\" || frameworkLower == \"net9.0\")"
@@ -258,15 +270,19 @@
             "type": "computed",
             "value": "(IsWindows || IsTizen || IsBase)"
         },
-        "AddToolkitPackage": {
+        "AddToolkit": {
             "type": "computed",
             "value": "(include-toolkit)"
         },
-        "AddMarkupPackage": {
+        "AddMarkup": {
             "type": "computed",
             "value": "(include-markup)"
         },
-        "AddMvvmToolkitPackage": {
+        "AddMaps": {
+            "type": "computed",
+            "value": "(Net7OrLater && include-maps)"
+        },
+        "AddMvvmToolkit": {
             "type": "computed",
             "value": "(include-mvvm-toolkit)"
         },
@@ -288,7 +304,7 @@
         },
         "PackageRef": {
             "type": "computed",
-            "value": "(Net8OrLater || AddToolkitPackage || AddMarkupPackage || AddMvvmToolkitPackage)"
+            "value": "(Net8OrLater || AddToolkit || AddMarkup || AddMaps || AddMvvmToolkit || AddSharedToolkit)"
         },
         "HostIdentifier": {
             "type": "bind",

@@ -11,9 +11,17 @@
             "defaultValue": "netstandard2.0"
         },
         {
+            "id": "central-pkg-mgmt",
+            "name": {
+                "text": "Use _NuGet Central Package Management (CPM)."
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
             "id": "nightly",
             "name": {
-                "text": "Configure _Nightly build."
+                "text": "Configure Ni_ghtly build."
             },
             "isVisible": true,
             "defaultValue": "false"
@@ -21,7 +29,7 @@
         {
             "id": "all-supported-packages",
             "name": {
-                "text": "_Add all supported NuGet package reference"
+                "text": "_Add all supported NuGet package reference (Maps and Essentials Interfaces are explicit)"
             },
             "isVisible": true,
             "defaultValue": "false"
@@ -37,7 +45,7 @@
         {
             "id": "include-forms-toolkit",
             "name": {
-                "text": "Add Xamarin.C_ommunityToolkit. NuGet package reference"
+                "text": "Add Xamarin.CommunityTool_kit NuGet package reference"
             },
             "isVisible": true,
             "defaultValue": "false"
@@ -83,9 +91,25 @@
             "defaultValue": "false"
         },
         {
-            "id": "central-pkg-mgmt",
+            "id": "include-forms-essentials-interfaces",
             "name": {
-                "text": "Use _NuGet Central Package Management (CPM)."
+                "text": "Add Xamarin.Essentials._Interfaces NuGet package reference"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
+            "id": "include-forms-maps",
+            "name": {
+                "text": "Add Xamarin.F_orms.Maps NuGet package reference"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
+            "id": "include-maui-maps",
+            "name": {
+                "text": "Add Microsoft.Maui.Controls.Ma_ps NuGet package reference"
             },
             "isVisible": true,
             "defaultValue": "false"

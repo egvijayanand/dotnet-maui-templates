@@ -35,9 +35,17 @@
             "defaultValue": "false"
         },
         {
+            "id": "central-pkg-mgmt",
+            "name": {
+                "text": "Use _NuGet Central Package Management (CPM)."
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
             "id": "nightly",
             "name": {
-                "text": "Configure _Nightly build."
+                "text": "Configure Ni_ghtly build."
             },
             "isVisible": true,
             "defaultValue": "false"
@@ -59,9 +67,9 @@
             "defaultValue": "false"
         },
         {
-            "id": "include-shared-toolkit",
+            "id": "include-maps",
             "name": {
-                "text": "Add and configure Vijay_Anand.Toolkit.Markup NuGet package reference"
+                "text": "Add Microsoft.Maui.Controls.Ma_ps NuGet package reference"
             },
             "isVisible": true,
             "defaultValue": "false"
@@ -75,9 +83,9 @@
             "defaultValue": "false"
         },
         {
-            "id": "central-pkg-mgmt",
+            "id": "include-shared-toolkit",
             "name": {
-                "text": "Use _NuGet Central Package Management (CPM)."
+                "text": "Add and configure VijayAnand.Toolkit.Markup (_Shared Toolkit) NuGet package reference"
             },
             "isVisible": true,
             "defaultValue": "false"

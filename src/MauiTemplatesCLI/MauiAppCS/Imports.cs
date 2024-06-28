@@ -29,22 +29,28 @@ global using Comet;
 
 // Reactor
 global using MauiReactor;
-#if AddMapsPackage
+#if AddMaps
 global using MauiReactor.Maps;
 #endif
 
 #endif
-#if (AddToolkitPackage || AddMediaPackage)
+#if (AddToolkit || AddMedia)
 // .NET MAUI Toolkit
 global using CommunityToolkit.Maui;
-#if AddToolkitPackage
+#if AddToolkit
 global using CommunityToolkit.Maui.Behaviors;
 global using CommunityToolkit.Maui.Converters;
 global using CommunityToolkit.Maui.Views;
 #endif
 
 #endif
-#if (AddMvvmToolkitPackage || (Mvvm && !Razor))
+#if AddMaps
+// MAUI Maps
+global using Microsoft.Maui.Controls.Maps;
+global using Microsoft.Maui.Maps;
+
+#endif
+#if (AddMvvmToolkit || (Mvvm && !Razor))
 // MVVM Toolkit
 global using CommunityToolkit.Mvvm.ComponentModel;
 global using CommunityToolkit.Mvvm.Input;
@@ -72,7 +78,7 @@ global using MauiApp._1.Views;
 global using VijayAnand.Toolkit.Markup;
 
 #endif
-#if AddMarkupPackage
+#if AddMarkup
 // .NET MAUI Markup
 global using CommunityToolkit.Maui.Markup;
 #if Markup

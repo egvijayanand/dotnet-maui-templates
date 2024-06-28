@@ -11,16 +11,16 @@ using MauiApp._1.Data;
 #if Net7OrLater
 using Microsoft.Extensions.Logging;
 #endif
-#if AddMapsPackage
+#if AddMaps
 using Microsoft.Maui.Controls.Hosting;
 #if (Net7OrLater && (AllPlatforms || IsWindows))
 using CommunityToolkit.Maui.Maps;
 #endif
 #endif
-#if AddFoldablePackage
+#if AddFoldable
 using Microsoft.Maui.Foldable;
 #endif
-#if (AddToolkitPackage || Hybrid || Net7OrLater || Razor)
+#if (AddToolkit || Hybrid || Net7OrLater || Razor)
 
 #endif
 namespace MauiApp._1
@@ -52,10 +52,10 @@ namespace MauiApp._1
 #if Razor
                    .UseMauiBlazorBindings()
 #endif
-#if AddFoldablePackage
+#if AddFoldable
                    .UseFoldable()
 #endif
-#if AddMapsPackage
+#if AddMaps
 //-:cnd:noEmit
 #if !WINDOWS
                    .UseMauiMaps()
@@ -65,13 +65,13 @@ namespace MauiApp._1
                    .UseMauiCommunityToolkitMaps("<BING_MAPS_API_KEY_HERE>") // To generate a Bing Maps API Key, visit https://www.bingmapsportal.com/
 #endif
 #endif
-#if AddToolkitPackage
+#if AddToolkit
                    .UseMauiCommunityToolkit()
 #endif
-#if AddMarkupPackage
+#if AddMarkup
                    .UseMauiCommunityToolkitMarkup()
 #endif
-#if AddMediaPackage
+#if AddMedia
                    .UseMauiCommunityToolkitMediaElement()
 #endif
                    .ConfigureFonts(fonts =>

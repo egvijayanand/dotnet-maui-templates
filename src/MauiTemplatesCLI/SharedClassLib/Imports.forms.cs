@@ -1,6 +1,10 @@
 ﻿global using Xamarin.Forms;
 global using Xamarin.Forms.Xaml;
 
+#if AddFormsMaps
+global using Xamarin.Forms.Maps;
+
+#endif
 #if AddFormsEssentials
 global using Xamarin.Essentials;
 

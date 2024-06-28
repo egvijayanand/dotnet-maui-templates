@@ -32,7 +32,9 @@
 
     <!--#if (!no-solution-file || Net8 || CentralPkgMgmt)-->
     <ItemGroup>
+        <!--#if (!no-solution-file)-->
         <None Remove="SharedClassLib.1.code-workspace" />
+        <!--#endif-->
         <!--#if (Net8 || CentralPkgMgmt)-->
         <None Remove="Directory.Packages.props" />
         <!--#endif-->
@@ -43,8 +45,14 @@
     <ItemGroup Condition="'$(TargetFramework)' == 'FORMS_TFM'">
         <!--#if (CentralPkgMgmt)-->
         <PackageReference Include="Xamarin.Forms" />
+        <!--#if (AddFormsMaps)-->
+        <PackageReference Include="Xamarin.Forms.Maps" />
+        <!--#endif-->
         <!--#if (AddFormsEssentials)-->
         <PackageReference Include="Xamarin.Essentials" />
+        <!--#endif-->
+        <!--#if (AddFormsEssentialsInterfaces)-->
+        <PackageReference Include="Xamarin.Essentials.Interfaces" />
         <!--#endif-->
         <!--#if (AddFormsToolkit)-->
         <PackageReference Include="Xamarin.CommunityToolkit" />
@@ -54,8 +62,14 @@
         <!--#endif-->
         <!--#else-->
         <PackageReference Include="Xamarin.Forms" Version="5.*" />
+        <!--#if (AddFormsMaps)-->
+        <PackageReference Include="Xamarin.Forms.Maps" Version="5.*" />
+        <!--#endif-->
         <!--#if (AddFormsEssentials)-->
         <PackageReference Include="Xamarin.Essentials" Version="1.*" />
+        <!--#endif-->
+        <!--#if (AddFormsEssentialsInterfaces)-->
+        <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.*" />
         <!--#endif-->
         <!--#if (AddFormsToolkit)-->
         <PackageReference Include="Xamarin.CommunityToolkit" Version="2.*" />
@@ -66,13 +80,16 @@
         <!--#endif-->
     </ItemGroup>
 
-    <!--#if (Net8OrLater || AddMauiToolkit || AddMauiMarkup)-->
+    <!--#if (Net8OrLater || AddMauiToolkit || AddMauiMarkup || AddMauiMaps)-->
     <!-- .NET MAUI NuGet packages -->
     <ItemGroup Condition="'$(TargetFramework)' == 'MAUI_TFM'">
         <!--#if (CentralPkgMgmt)-->
         <!--#if (Net8OrLater)-->
         <PackageReference Include="Microsoft.Maui.Controls" />
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" />
+        <!--#endif-->
+        <!--#if (AddMauiMaps)-->
+        <PackageReference Include="Microsoft.Maui.Controls.Maps" />
         <!--#endif-->
         <!--#if (AddMauiToolkit)-->
         <PackageReference Include="CommunityToolkit.Maui" />
@@ -104,6 +121,9 @@
         <!--#if (AddMauiMarkup)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.*" />
         <!--#endif-->
+        <!--#endif-->
+        <!--#if (AddMauiMaps)-->
+        <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#endif-->
     </ItemGroup>

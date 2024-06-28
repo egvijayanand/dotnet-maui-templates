@@ -4,22 +4,22 @@ open Microsoft.Extensions.DependencyInjection
 open Microsoft.Maui.Accessibility
 open Microsoft.Maui.Hosting
 open Fabulous.Maui
-#if AddToolkitPackage
+#if AddToolkit
 open CommunityToolkit.Maui
 #endif
-#if AddMarkupPackage
+#if AddMarkup
 open CommunityToolkit.Maui.Markup
 #endif
-#if AddFoldablePackage
+#if AddFoldable
 open Microsoft.Maui.Foldable
 #endif
-#if AddMapsPackage
+#if AddMaps
 open Fabulous.Maui.Maps
 #if (AllPlatforms || IsWindows)
 open CommunityToolkit.Maui.Maps
 #endif
 #endif
-#if AddMediaPackage
+#if AddMedia
 open Fabulous.Maui.MediaElement
 #endif
 open MauiApp._1.Extensions
@@ -32,22 +32,22 @@ type MauiProgram =
         MauiApp
             .CreateBuilder()
             .UseFabulousApp(App.program)
-#if AddToolkitPackage
+#if AddToolkit
             .UseMauiCommunityToolkit()
 #endif
-#if AddMarkupPackage
+#if AddMarkup
             .UseMauiCommunityToolkitMarkup()
 #endif
-#if AddFoldablePackage
+#if AddFoldable
             .UseFoldable()
 #endif
-#if AddMapsPackage
+#if AddMaps
             .UseFabulousMaps()
 #if (AllPlatforms || IsWindows)
             .UseMauiCommunityToolkitMaps("<BING_MAPS_API_KEY_HERE>") // To generate a Bing Maps API Key, visit https://www.bingmapsportal.com/
 #endif
 #endif
-#if AddMediaPackage
+#if AddMedia
             .UseFabulousMediaElement()
 #endif
 #if Hybrid
