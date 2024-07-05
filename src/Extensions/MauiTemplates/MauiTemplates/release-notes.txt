@@ -1,7 +1,13 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
 
-What's new in ver. 5.7.0.0:
+This VS extension does not gather any usage or telemetry data, even anonymously, ensuring that you can use it freely and with complete privacy assurance.
+
+What's new in ver. 5.8.0.0:
 ---------------------------
+1. Introduced the option to add and configure the CommunityToolkit.Maui.Camera package in both the MAUI App and Class Library project templates.
+
+v5.7.0.0:
+
 1. Introduced an option to add the Maps package in both MAUI and Shared Class Library project templates.
 
 2. Added Apple's Privacy Manifest file to facilitate submitting macOS app (MacCatalyst) to the App Store.
