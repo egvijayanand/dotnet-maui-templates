@@ -691,21 +691,21 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to configure NuGet Central Package Management (CPM).",
-            "displayName": "Option to configure NuGet Central Package Management (CPM)"
+            "displayName": "Option to configure _NuGet Central Package Management (CPM)"
         },
         "nightly": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to use Nightly (CI) build.",
-            "displayName": "Option to use _Nightly (CI) build"
+            "displayName": "Option to use Ni_ghtly (CI) build"
         },
         "use-mvvm": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to use MVVM.",
-            "displayName": "Option to use MV_VM"
+            "description": "Option to configure MVVM.",
+            "displayName": "Option to configu_re MVVM"
         },
         "include-compiled-bindings": {
             "type": "parameter",
@@ -719,14 +719,14 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to create a .NET MAUI Class Library (MCL) to abstract Shared components.",
-            "displayName": "Option to create a .NET MAUI _Class Library (MCL) to abstract Shared components"
+            "displayName": "Option to create a .NET MAUI Class Librar_y (MCL) to abstract Shared components"
         },
         "razor-class-library": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to create a Razor Class Library (RCL) for the Blazor Hybrid solution.",
-            "displayName": "Option to create a _Razor Class Library (RCL) for the Blazor Hybrid solution"
+            "displayName": "Option to create a Ra_zor Class Library (RCL) for the Blazor Hybrid solution"
         },
         "include-toolkit": {
             "type": "parameter",
@@ -748,6 +748,13 @@
             "defaultValue": "false",
             "description": "Option to add CommunityToolkit.Mvvm (aka Microsoft MVVM Toolkit) NuGet package reference.",
             "displayName": "Add CommunityToolkit.Mvvm (aka Microsoft MV_VM Toolkit) NuGet package reference"
+        },
+        "include-camera": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add and configure CommunityToolkit.Maui.Camera NuGet package reference (.NET 8 or later).",
+            "displayName": "Add and configure CommunityTool_kit.Maui.Camera NuGet package reference"
         },
         "include-maps": {
             "type": "parameter",
@@ -774,8 +781,8 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to add VijayAnand.Toolkit.Markup NuGet package reference.",
-            "displayName": "Add VijayAnand.Toolkit.Markup NuGet package reference"
+            "description": "Option to add VijayAnand.Toolkit.Markup (aka Shared Toolkit) NuGet package reference.",
+            "displayName": "Add VijayAnand.Toolkit.Markup (aka _Shared Toolkit) NuGet package reference"
         },
         "windows-unpackaged": {
             "type": "parameter",
@@ -806,11 +813,18 @@
             },
             "replaces": "com.companyname.mauiappid"
         },
+        "xmlEncodedName": {
+            "type": "derived",
+            "datatype": "string",
+            "replaces": "SAFE-NAME",
+            "valueSource": "name",
+            "valueTransform": "xmlEncode"
+        },
         "nameLower": {
             "type": "generated",
             "generator": "casing",
             "parameters": {
-                "source": "name",
+                "source": "xmlEncodedName",
                 "toLower": true
             },
             "replaces": "mauiappid",
@@ -969,6 +983,10 @@
         "Unpackaged": {
             "type": "computed",
             "value": "(windows-unpackaged)"
+        },
+        "AddCamera": {
+            "type": "computed",
+            "value": "(Net8OrLater && include-camera)"
         },
         "AddMaps": {
             "type": "computed",

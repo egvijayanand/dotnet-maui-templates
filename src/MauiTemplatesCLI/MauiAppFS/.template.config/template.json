@@ -318,7 +318,7 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to add and configure Microsoft.Maui.Controls.Maps NuGet package reference (.NET 7 or later).",
-            "displayName": "Add and configure Microsoft.Maui.Controls.Ma_ps NuGet package reference"
+            "displayName": "Add and configure Microsoft.Maui.Controls.M_aps NuGet package reference"
         },
         "include-media-element": {
             "type": "parameter",
@@ -349,11 +349,18 @@
             },
             "replaces": "com.companyname.mauiappid"
         },
+        "xmlEncodedName": {
+            "type": "derived",
+            "datatype": "string",
+            "replaces": "SAFE-NAME",
+            "valueSource": "name",
+            "valueTransform": "xmlEncode"
+        },
         "nameLower": {
             "type": "generated",
             "generator": "casing",
             "parameters": {
-                "source": "name",
+                "source": "xmlEncodedName",
                 "toLower": true
             },
             "replaces": "mauiappid",

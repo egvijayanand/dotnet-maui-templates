@@ -21,7 +21,7 @@
         {
             "id": "use-maui-core",
             "name": {
-                "text": "Use .NET M_AUI Core (includes MAUI Essentials)"
+                "text": "Use .NET MA_UI Core (includes MAUI Essentials)"
             },
             "isVisible": true,
             "defaultValue": "false"
@@ -67,9 +67,33 @@
             "defaultValue": "false"
         },
         {
+            "id": "include-camera",
+            "name": {
+                "text": "Add CommunityTool_kit.Maui.Camera NuGet package reference"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
+            "id": "include-media-element",
+            "name": {
+                "text": "Add CommunityToolkit.Maui.Med_iaElement NuGet package reference"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
             "id": "include-maps",
             "name": {
-                "text": "Add Microsoft.Maui.Controls.Ma_ps NuGet package reference"
+                "text": "Add Microsoft.Maui.Controls.M_aps NuGet package reference"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
+            "id": "include-foldable",
+            "name": {
+                "text": "Add Microsoft.Maui.Controls.Fo_ldable NuGet package reference"
             },
             "isVisible": true,
             "defaultValue": "false"

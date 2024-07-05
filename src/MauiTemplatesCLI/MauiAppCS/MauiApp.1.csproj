@@ -112,7 +112,7 @@
         <!--#endif-->
 
         <!-- Display name -->
-        <ApplicationTitle>MauiApp.1</ApplicationTitle>
+        <ApplicationTitle>SAFE-NAME</ApplicationTitle>
 
         <!-- App Identifier -->
         <!--#if (AllPlatforms || IsAndroid || IsiOS || IsmacOS || (Net8OrLater && IsWindows))-->
@@ -167,7 +167,7 @@
     <!--#if (Auxiliary || !(MauiLib || RazorLib))-->
 
     <ItemGroup>
-        <None Remove="MauiApp.1.code-workspace" />
+        <None Remove="SAFE-NAME.code-workspace" />
         <!--#if (Net8 || CentralPkgMgmt)-->
         <None Remove="Directory.Packages.props" />
         <!--#endif-->
@@ -213,6 +213,9 @@
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" />
         <!--#else-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Condition="'$(Configuration)' == 'Debug'" />
+        <!--#endif-->
+        <!--#if (AddCamera)-->
+        <PackageReference Include="CommunityToolkit.Maui.Camera" />
         <!--#endif-->
         <!--#if (AddMedia)-->
         <PackageReference Include="CommunityToolkit.Maui.MediaElement" />
@@ -293,6 +296,9 @@
         <!--#if (AddMarkup)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.*" />
         <!--#endif-->
+        <!--#if (AddCamera)-->
+        <PackageReference Include="CommunityToolkit.Maui.Camera" Version="1.*" />
+        <!--#endif-->
         <!--#if (AddMedia)-->
         <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="3.*" />
         <!--#endif-->
@@ -369,13 +375,13 @@
     <!--#if (Hybrid && !MauiLib && RazorLib)-->
 
     <ItemGroup>
-        <ProjectReference Include="..\MauiApp.1.RazorLib\MauiApp.1.RazorLib.csproj" />
+        <ProjectReference Include="..\SAFE-NAME.RazorLib\SAFE-NAME.RazorLib.csproj" />
     </ItemGroup>
     <!--#endif-->
     <!--#if ((Xaml || Hybrid || Markup) && MauiLib)-->
 
     <ItemGroup>
-        <ProjectReference Include="..\MauiApp.1.MauiLib\MauiApp.1.MauiLib.csproj" />
+        <ProjectReference Include="..\SAFE-NAME.MauiLib\SAFE-NAME.MauiLib.csproj" />
     </ItemGroup>
     <!--#endif-->
     <!--#if (ConditionalCompilation)-->

@@ -78,6 +78,9 @@
         <!--#if (AddMarkup)-->
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="4.0.0" />
         <!--#endif-->
+        <!--#if (AddCamera)-->
+        <PackageVersion Include="CommunityToolkit.Maui.Camera" Version="1.0.3" />
+        <!--#endif-->
         <!--#if (AddMedia)-->
         <PackageVersion Include="CommunityToolkit.Maui.MediaElement" Version="3.1.1" />
         <!--#endif-->
