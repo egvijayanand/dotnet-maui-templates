@@ -13,7 +13,7 @@ Release Details:
 |Stable|.NET 6 SR11 (6.0.553)|VS2022 17.4.x - 17.8.x|Tue, Apr 25, 2023|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
 |Stable|.NET 7 SR10 (7.0.101)|VS2022 17.4.x - 17.9.x|Tue, Nov 7, 2023|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
 |Stable|[.NET 8 SR6.1](https://github.com/dotnet/maui/releases/tag/8.0.61 "Changelog") (8.0.61) <br /> _Requires Android SDK Platform 34_ <br /> _Requires Apple Xcode 15.3_|VS2022 17.10.x|Wed, Jun 26, 2024|Active|
-|Preview|[.NET 9 Preview 5](https://github.com/dotnet/maui/releases/tag/9.0.0-preview.5.24307.10 "Changelog") (9.0.0-preview.5.24307.10) <br /> _Requires Android SDK Platform 34_ <br /> _Requires Apple Xcode 15.3_|VS2022 17.11 Preview 2.1|Tue, Jun 11, 2024|Preview|
+|Preview|[.NET 9 Preview 5](https://github.com/dotnet/maui/releases/tag/9.0.0-preview.5.24307.10 "Changelog") (9.0.0-preview.5.24307.10) <br /> _Requires Android SDK Platform 34_ <br /> _Requires Apple Xcode 15.3_|VS2022 17.11 Previews|Tue, Jun 11, 2024|Preview|
 
 Version History and its dependencies are [here](https://aka.ms/maui/versions).
 
@@ -71,7 +71,7 @@ Extension is made available in the [Visual Studio Marketplace](https://marketpla
 
 This has Project Templates for:
 
-* .NET MAUI App - An All-in-One .NET MAUI App Project Template - For more details, check out this [article](https://egvijayanand.in/all-in-one-dotnet-maui-app-project-template/ "All-in-One .NET MAUI App Project Template")
+* .NET MAUI App - An All-in-One .NET MAUI App Project Template - For more details, check out these [articles](https://egvijayanand.in/category/net-maui/templates-net-maui/ "All-in-One .NET MAUI App Project Template")
 * .NET MAUI Class Library
 * Shared Class Library (Xamarin.Forms and .NET MAUI)
 

@@ -41,11 +41,20 @@
         <!--#if (AddMarkup)-->
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="4.0.0" />
         <!--#endif-->
+        <!--#if (AddCamera)-->
+        <PackageVersion Include="CommunityToolkit.Maui.Camera" Version="1.0.3" />
+        <!--#endif-->
+        <!--#if (AddMedia)-->
+        <PackageVersion Include="CommunityToolkit.Maui.MediaElement" Version="4.0.0" />
+        <!--#endif-->
         <!--#if (AddMaps)-->
         <PackageVersion Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
         <!--#if (AllPlatforms || IsWindows)-->
         <PackageVersion Include="CommunityToolkit.Maui.Maps" Version="2.0.2" />
         <!--#endif-->
+        <!--#endif-->
+        <!--#if (AddFoldable)-->
+        <PackageVersion Include="Microsoft.Maui.Controls.Foldable" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <!--#if (Net9)-->
@@ -61,6 +70,9 @@
         <!--#endif-->
         <!--#if (AddMarkup)-->
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="3.3.1" />
+        <!--#endif-->
+        <!--#if (AddMedia)-->
+        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="3.1.1" />
         <!--#endif-->
         <!--#if (AddMaps)-->
         <PackageVersion Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />

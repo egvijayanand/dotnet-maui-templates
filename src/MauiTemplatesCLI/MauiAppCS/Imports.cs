@@ -34,14 +34,14 @@ global using MauiReactor.Maps;
 #endif
 
 #endif
-#if (AddToolkit || AddMedia)
+#if (AddToolkit || AddCamera || AddMedia)
 // .NET MAUI Toolkit
 global using CommunityToolkit.Maui;
 #if AddToolkit
 global using CommunityToolkit.Maui.Behaviors;
 global using CommunityToolkit.Maui.Converters;
-global using CommunityToolkit.Maui.Views;
 #endif
+global using CommunityToolkit.Maui.Views;
 
 #endif
 #if AddMaps

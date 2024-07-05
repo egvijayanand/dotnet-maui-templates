@@ -71,6 +71,9 @@ namespace MauiApp._1
 #if AddMarkup
                    .UseMauiCommunityToolkitMarkup()
 #endif
+#if AddCamera
+                   .UseMauiCommunityToolkitCamera()
+#endif
 #if AddMedia
                    .UseMauiCommunityToolkitMediaElement()
 #endif

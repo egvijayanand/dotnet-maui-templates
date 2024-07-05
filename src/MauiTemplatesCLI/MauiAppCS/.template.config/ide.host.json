@@ -21,7 +21,7 @@
         {
             "id": "nightly",
             "name": {
-                "text": "Configure _Nightly build."
+                "text": "Configure Ni_ghtly build."
             },
             "isVisible": true,
             "defaultValue": "false"
@@ -29,7 +29,7 @@
         {
             "id": "use-mvvm",
             "name": {
-                "text": "U_se MVVM."
+                "text": "Configu_re MVVM."
             },
             "isVisible": true,
             "defaultValue": "false"
@@ -45,7 +45,7 @@
         {
             "id": "maui-class-library",
             "name": {
-                "text": "Abstract the Shared components as a separate .NET MAUI Class _Library (MCL)"
+                "text": "Abstract the Shared components as a separate .NET MAUI Class Librar_y (MCL)"
             },
             "isVisible": true,
             "defaultValue": "false"
@@ -53,7 +53,7 @@
         {
             "id": "razor-class-library",
             "name": {
-                "text": "Abstract the Razor components as a separate _Razor Class Library (RCL) for the Blazor Hybrid solution"
+                "text": "Abstract the Razor components as a separate Ra_zor Class Library (RCL) for the Blazor Hybrid solution"
             },
             "isVisible": true,
             "defaultValue": "false"
@@ -86,6 +86,14 @@
             "id": "include-mvvm-toolkit",
             "name": {
                 "text": "Add CommunityToolkit.Mvvm (aka Microsoft MV_VM Toolkit) NuGet package reference"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
+            "id": "include-camera",
+            "name": {
+                "text": "Add and configure CommunityTool_kit.Maui.Camera NuGet package reference (.NET 8 or later)"
             },
             "isVisible": true,
             "defaultValue": "false"
@@ -133,7 +141,7 @@
         {
             "id": "conditional-compilation",
             "name": {
-                "text": "C_onfigure conditional compilation for the project"
+                "text": "Configure c_onditional compilation for the project"
             },
             "isVisible": true,
             "defaultValue": "false"

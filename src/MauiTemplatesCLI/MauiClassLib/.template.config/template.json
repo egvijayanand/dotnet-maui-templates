@@ -70,7 +70,7 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to use .NET MAUI Core (includes MAUI Essentials).",
-            "displayName": "Option to use .NET M_AUI Core (includes MAUI Essentials)"
+            "displayName": "Option to use .NET MA_UI Core (includes MAUI Essentials)"
         },
         "use-maui-essentials": {
             "type": "parameter",
@@ -156,12 +156,33 @@
             "description": "Option to add CommunityToolkit.Maui.Markup NuGet package reference.",
             "displayName": "Add CommunityToolkit.Maui._Markup NuGet package reference"
         },
+        "include-camera": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add CommunityToolkit.Maui.Camera NuGet package reference.",
+            "displayName": "Add CommunityTool_kit.Maui.Camera NuGet package reference"
+        },
+        "include-media-element": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add CommunityToolkit.Maui.MediaElement NuGet package reference.",
+            "displayName": "Add CommunityToolkit.Maui.Med_iaElement NuGet package reference"
+        },
         "include-maps": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to add Microsoft.Maui.Controls.Maps NuGet package reference.",
-            "displayName": "Add Microsoft.Maui.Controls.Ma_ps NuGet package reference"
+            "displayName": "Add Microsoft.Maui.Controls.M_aps NuGet package reference"
+        },
+        "include-foldable": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add Microsoft.Maui.Controls.Foldable NuGet package reference.",
+            "displayName": "Add Microsoft.Maui.Controls.Fo_ldable NuGet package reference"
         },
         "include-mvvm-toolkit": {
             "type": "parameter",
@@ -278,9 +299,21 @@
             "type": "computed",
             "value": "(include-markup)"
         },
+        "AddCamera": {
+            "type": "computed",
+            "value": "(Net8OrLater && include-camera)"
+        },
+        "AddMedia": {
+            "type": "computed",
+            "value": "(Net7OrLater && include-media-element)"
+        },
         "AddMaps": {
             "type": "computed",
             "value": "(Net7OrLater && include-maps)"
+        },
+        "AddFoldable": {
+            "type": "computed",
+            "value": "(Net7OrLater && include-foldable)"
         },
         "AddMvvmToolkit": {
             "type": "computed",

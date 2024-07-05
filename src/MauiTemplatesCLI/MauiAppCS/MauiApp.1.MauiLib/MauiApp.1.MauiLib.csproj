@@ -41,6 +41,9 @@
         <!--#else-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Condition="'$(Configuration)' == 'Debug'" />
         <!--#endif-->
+        <!--#if (AddCamera)-->
+        <PackageReference Include="CommunityToolkit.Maui.Camera" />
+        <!--#endif-->
         <!--#if (AddMedia)-->
         <PackageReference Include="CommunityToolkit.Maui.MediaElement" />
         <!--#endif-->
@@ -120,6 +123,9 @@
         <!--#if (AddMarkup)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.*" />
         <!--#endif-->
+        <!--#if (AddCamera)-->
+        <PackageReference Include="CommunityToolkit.Maui.Camera" Version="1.*" />
+        <!--#endif-->
         <!--#if (AddMedia)-->
         <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="3.*" />
         <!--#endif-->
@@ -183,7 +189,7 @@
     <!--#if (Hybrid && RazorLib)-->
 
     <ItemGroup>
-        <ProjectReference Include="..\MauiApp.1.RazorLib\MauiApp.1.RazorLib.csproj" />
+        <ProjectReference Include="..\SAFE-NAME.RazorLib\SAFE-NAME.RazorLib.csproj" />
     </ItemGroup>
     <!--#endif-->
 </Project>

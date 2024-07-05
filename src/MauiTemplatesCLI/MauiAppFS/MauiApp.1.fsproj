@@ -112,7 +112,7 @@
         <DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference>
 
         <!-- Display name -->
-        <ApplicationTitle>MauiApp.1</ApplicationTitle>
+        <ApplicationTitle>SAFE-NAME</ApplicationTitle>
 
         <!-- App Identifier -->
         <!--#if (AllPlatforms || IsAndroid || IsiOS || IsmacOS || (Net8OrLater && IsWindows))-->
@@ -241,7 +241,7 @@
     <!--#if (Plain || Net8 || CentralPkgMgmt )-->
     <ItemGroup>
         <!--#if (Plain)-->
-        <None Remove="MauiApp.1.code-workspace" />
+        <None Remove="SAFE-NAME.code-workspace" />
         <!--#endif-->
         <!--#if (Net8 || CentralPkgMgmt)-->
         <None Remove="Directory.Packages.props" />
@@ -462,7 +462,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\MauiApp.1.RazorLib\MauiApp.1.RazorLib.csproj" />
+        <ProjectReference Include="..\SAFE-NAME.RazorLib\SAFE-NAME.RazorLib.csproj" />
     </ItemGroup>
 
     <!--#endif-->
