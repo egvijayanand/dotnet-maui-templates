@@ -169,7 +169,7 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to add Microsoft.Maui.Controls.Maps NuGet package reference.",
+            "description": "Option to add Microsoft.Maui.Controls.Maps NuGet package reference (.NET 7 or later).",
             "displayName": "Add Microsoft.Maui.Controls.Ma_ps NuGet package reference"
         },
         "no-solution-file": {

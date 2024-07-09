@@ -4,9 +4,9 @@
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net8)-->
         <!--#if (Nightly)-->
-        <MauiVersion>8.0.70-ci.net8.24312.3</MauiVersion>
+        <MauiVersion>8.0.80-ci.net8.24357.1</MauiVersion>
         <!--#else-->
-        <MauiVersion>8.0.61</MauiVersion>
+        <MauiVersion>8.0.70</MauiVersion>
         <!--#endif-->
         <!--#endif-->
         <!--#else-->
@@ -36,7 +36,7 @@
         <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <PackageVersion Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <!--#if (AddToolkit)-->
-        <PackageVersion Include="CommunityToolkit.Maui" Version="9.0.1" />
+        <PackageVersion Include="CommunityToolkit.Maui" Version="9.0.2" />
         <!--#endif-->
         <!--#if (AddMarkup)-->
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="4.0.0" />
@@ -45,7 +45,7 @@
         <PackageVersion Include="CommunityToolkit.Maui.Camera" Version="1.0.3" />
         <!--#endif-->
         <!--#if (AddMedia)-->
-        <PackageVersion Include="CommunityToolkit.Maui.MediaElement" Version="4.0.0" />
+        <PackageVersion Include="CommunityToolkit.Maui.MediaElement" Version="4.0.1" />
         <!--#endif-->
         <!--#if (AddMaps)-->
         <PackageVersion Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
@@ -58,9 +58,9 @@
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <!--#if (Net9)-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="4.0.0-preview.3" />
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="4.0.0-preview.4" />
         <!--#else-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.4.0" />
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.5.0" />
         <!--#endif-->
         <!--#endif-->
         <!--#endif-->
@@ -72,13 +72,16 @@
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="3.3.1" />
         <!--#endif-->
         <!--#if (AddMedia)-->
-        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="3.1.1" />
+        <PackageVersion Include="CommunityToolkit.Maui.MediaElement" Version="3.1.1" />
         <!--#endif-->
         <!--#if (AddMaps)-->
         <PackageVersion Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
         <!--#if (AllPlatforms || IsWindows)-->
         <PackageVersion Include="CommunityToolkit.Maui.Maps" Version="1.0.4" />
         <!--#endif-->
+        <!--#endif-->
+        <!--#if (AddFoldable)-->
+        <PackageVersion Include="Microsoft.Maui.Controls.Foldable" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="2.2.0" />
