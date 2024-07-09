@@ -4,9 +4,9 @@
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net8)-->
         <!--#if (Nightly)-->
-        <MauiVersion>8.0.70-ci.net8.24312.3</MauiVersion>
+        <MauiVersion>8.0.80-ci.net8.24357.1</MauiVersion>
         <!--#else-->
-        <MauiVersion>8.0.61</MauiVersion>
+        <MauiVersion>8.0.70</MauiVersion>
         <!--#endif-->
         <!--#endif-->
         <!--#else-->
@@ -42,16 +42,16 @@
         <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <PackageVersion Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <!--#if (AddMauiToolkit)-->
-        <PackageVersion Include="CommunityToolkit.Maui" Version="9.0.1" />
+        <PackageVersion Include="CommunityToolkit.Maui" Version="9.0.2" />
         <!--#endif-->
         <!--#if (AddMauiMarkup)-->
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="4.0.0" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <!--#if (Net9)-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="4.0.0-preview.3" />
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="4.0.0-preview.4" />
         <!--#else-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.4.0" />
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.5.0" />
         <!--#endif-->
         <!--#endif-->
         <!--#elif (Net7)-->

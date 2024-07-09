@@ -160,28 +160,28 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to add CommunityToolkit.Maui.Camera NuGet package reference.",
+            "description": "Option to add CommunityToolkit.Maui.Camera NuGet package reference (.NET 8 or later).",
             "displayName": "Add CommunityTool_kit.Maui.Camera NuGet package reference"
         },
         "include-media-element": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to add CommunityToolkit.Maui.MediaElement NuGet package reference.",
+            "description": "Option to add CommunityToolkit.Maui.MediaElement NuGet package reference (.NET 7 or later).",
             "displayName": "Add CommunityToolkit.Maui.Med_iaElement NuGet package reference"
         },
         "include-maps": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to add Microsoft.Maui.Controls.Maps NuGet package reference.",
+            "description": "Option to add Microsoft.Maui.Controls.Maps NuGet package reference (.NET 7 or later).",
             "displayName": "Add Microsoft.Maui.Controls.M_aps NuGet package reference"
         },
         "include-foldable": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to add Microsoft.Maui.Controls.Foldable NuGet package reference.",
+            "description": "Option to add Microsoft.Maui.Controls.Foldable NuGet package reference (.NET 7 or later).",
             "displayName": "Add Microsoft.Maui.Controls.Fo_ldable NuGet package reference"
         },
         "include-mvvm-toolkit": {
