@@ -55,7 +55,9 @@
         <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
         <!--#endif-->
         <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+        <!--#if (Net8)-->
         <PackageVersion Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+        <!--#endif-->
         <!--#if (AddToolkit)-->
         <PackageVersion Include="CommunityToolkit.Maui" Version="9.0.2" />
         <!--#endif-->

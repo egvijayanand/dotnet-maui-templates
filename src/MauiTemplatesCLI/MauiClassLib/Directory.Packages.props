@@ -34,7 +34,9 @@
         <PackageVersion Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <!--#endif-->
         <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+        <!--#if (Net8)-->
         <PackageVersion Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+        <!--#endif-->
         <!--#if (AddToolkit)-->
         <PackageVersion Include="CommunityToolkit.Maui" Version="9.0.2" />
         <!--#endif-->
