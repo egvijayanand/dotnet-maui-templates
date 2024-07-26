@@ -2,8 +2,14 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This template package does not gather any usage or telemetry data, even anonymously, ensuring that you can use it freely and with complete privacy assurance.
 
-What's new in ver. 5.9.0:
--------------------------
+What's new in ver. 5.10.0:
+--------------------------
+The reference to the Microsoft.Maui.Controls.Compatibility NuGet package has been removed from the .NET 9 project templates.
+
+Reliability improvements.
+
+v5.9.0:
+
 Templates updated for .NET MAUI 9 Preview 6 (v9.0.0-preview.6.24327.7) and .NET MAUI 8 SR7 release (v8.0.70).
 
 v5.8.0:
