@@ -2,8 +2,14 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This template package does not gather any usage or telemetry data, even anonymously, ensuring that you can use it freely and with complete privacy assurance.
 
-What's new in ver. 5.10.0:
+What's new in ver. 5.10.1:
 --------------------------
+The value of MauiVersion property has been updated to version 8.0.71 to represent the most recent minor service release, .NET MAUI 8 SR7.1.
+
+A minor defect has been fixed in the .NET MAUI Class Library project template.
+
+v5.10.0:
+
 The reference to the Microsoft.Maui.Controls.Compatibility NuGet package has been removed from the .NET 9 project templates.
 
 Reliability improvements.

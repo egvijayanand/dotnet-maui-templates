@@ -6,7 +6,7 @@
         <!--#if (Nightly)-->
         <MauiVersion>8.0.80-ci.net8.24357.1</MauiVersion>
         <!--#else-->
-        <MauiVersion>8.0.70</MauiVersion>
+        <MauiVersion>8.0.71</MauiVersion>
         <!--#endif-->
         <!--#endif-->
         <!--#else-->
