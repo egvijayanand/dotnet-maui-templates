@@ -19,6 +19,14 @@
             "defaultValue": "All"
         },
         {
+            "id": "use-slnx",
+            "name": {
+                "text": "Use XML-based solution file (sln_x)."
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
             "id": "nightly",
             "name": {
                 "text": "Configure Ni_ghtly build."

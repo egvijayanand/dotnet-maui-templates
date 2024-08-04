@@ -46,7 +46,23 @@
                 {
                     "condition": "(no-solution-file && (Auxiliary || !(MauiLib || RazorLib)))",
                     "exclude": [
+                        "MauiApp.1.sln",
+                        "MauiApp.1.xml"
+                    ]
+                },
+                {
+                    "condition": "(UseSlnx)",
+                    "exclude": [
                         "MauiApp.1.sln"
+                    ],
+                    "rename": {
+                        "MauiApp.1.xml": "MauiApp.1.slnx"
+                    }
+                },
+                {
+                    "condition": "(!UseSlnx)",
+                    "exclude": [
+                        "MauiApp.1.xml"
                     ]
                 },
                 {
@@ -686,6 +702,13 @@
                 }
             ]
         },
+        "use-slnx": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to use XML-based solution file (slnx).",
+            "displayName": "Option to use XML-based solution file (sln_x)"
+        },
         "central-pkg-mgmt": {
             "type": "parameter",
             "datatype": "bool",
@@ -1035,6 +1058,10 @@
         "PackageRef": {
             "type": "computed",
             "value": "(AddToolkit || AddMarkup || AddMvvmToolkit || Net7OrLater || Razor || Mvu || CompiledBindings)"
+        },
+        "UseSlnx": {
+            "type": "computed",
+            "value": "(use-slnx)"
         },
         "HostIdentifier": {
             "type": "bind",

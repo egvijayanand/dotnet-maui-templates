@@ -5,10 +5,18 @@
         {
             "id": "xamarin-forms",
             "name": {
-                "text": "_Xamarin.Forms target framework"
+                "text": "Xamarin.Forms target framework"
             },
             "isVisible": true,
             "defaultValue": "netstandard2.0"
+        },
+        {
+            "id": "use-slnx",
+            "name": {
+                "text": "Use XML-based solution file (sln_x)."
+            },
+            "isVisible": true,
+            "defaultValue": "false"
         },
         {
             "id": "central-pkg-mgmt",

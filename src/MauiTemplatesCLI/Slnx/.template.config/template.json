@@ -1,0 +1,24 @@
+{
+    "$schema": "https://json.schemastore.org/template",
+    "author": "Vijay Anand E G",
+    "defaultName": "Solution1",
+    "classifications": [
+        "Solution",
+        "SLNX"
+    ],
+    "identity": "VijayAnand.Slnx",
+    "groupIdentity": "VijayAnand.MauiTemplates.Slnx",
+    "description": "A XML-based solution file (slnx) item template.",
+    "name": "XML-based Solution file (slnx)",
+    "shortName": "slnx",
+    "sourceName": "Slnx.1",
+    "primaryOutputs": [
+        {
+            "path": "Slnx.1.slnx"
+        }
+    ],
+    "tags": {
+        "language": "XML",
+        "type": "item"
+    }
+}

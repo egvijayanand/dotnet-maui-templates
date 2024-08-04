@@ -1,0 +1,25 @@
+﻿<Solution>
+<!--#if (Net8 || CentralPkgMgmt)-->
+    <Folder Name="/Solution Items/">
+        <File Path="Directory.Packages.props" />
+    </Folder>
+<!--#endif-->
+<!--#if ((!Auxiliary && MauiLib) || (Blazor && RazorLib))-->
+    <Project Path="SAFE-NAME\SAFE-NAME.csproj">
+        <Deploy />
+    </Project>
+<!--#else-->
+    <Project Path="SAFE-NAME.csproj">
+        <Deploy />
+    </Project>
+<!--#endif-->
+<!--#if (!Auxiliary && MauiLib)-->
+    <Project Path="SAFE-NAME.MauiLib\SAFE-NAME.MauiLib.csproj" />
+<!--#endif-->
+<!--#if (Blazor && RazorLib)-->
+    <Project Path="SAFE-NAME.RazorLib\SAFE-NAME.RazorLib.csproj" />
+<!--#endif-->
+    <Properties Name="Visual Studio">
+        <Property Name="OpenWith" Value="17" />
+    </Properties>
+</Solution>

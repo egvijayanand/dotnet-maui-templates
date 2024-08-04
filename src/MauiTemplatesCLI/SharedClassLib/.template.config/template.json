@@ -36,7 +36,7 @@
             "type": "parameter",
             "datatype": "choice",
             "description": "Option to choose the Xamarin.Forms target framework.",
-            "displayName": "_Xamarin.Forms target framework",
+            "displayName": "Xamarin.Forms target framework",
             "choices": [
                 {
                     "choice": "netstandard2.1",
@@ -80,6 +80,13 @@
             ],
             "replaces": "MAUI_TFM",
             "defaultValue": "net8.0"
+        },
+        "use-slnx": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to use XML-based solution file (slnx).",
+            "displayName": "Option to use XML-based solution file (sln_x)"
         },
         "central-pkg-mgmt": {
             "type": "parameter",
@@ -178,6 +185,13 @@
             "defaultValue": "false",
             "description": "Option to skip creating a solution file."
         },
+        "xmlEncodedName": {
+            "type": "derived",
+            "datatype": "string",
+            "replaces": "SAFE-NAME",
+            "valueSource": "name",
+            "valueTransform": "xmlEncode"
+        },
         "frameworkLower": {
             "type": "generated",
             "generator": "casing",
@@ -266,6 +280,14 @@
             "type": "computed",
             "value": "(nightly)"
         },
+        "SolnFile": {
+            "type": "computed",
+            "value": "(!no-solution-file)"
+        },
+        "UseSlnx": {
+            "type": "computed",
+            "value": "(use-slnx)"
+        },
         "HostIdentifier": {
             "type": "bind",
             "binding": "HostIdentifier"
@@ -280,21 +302,32 @@
         {
             "modifiers": [
                 {
-                    "condition": "(no-solution-file)",
+                    "condition": "(!SolnFile)",
+                    "exclude": [
+                        "SharedClassLib.1.code-workspace",
+                        "SharedClassLib.1.sln",
+                        "SharedClassLib.1.xml"
+                    ]
+                },
+                {
+                    "condition": "(UseSlnx)",
                     "exclude": [
                         "SharedClassLib.1.sln"
+                    ],
+                    "rename": {
+                        "SharedClassLib.1.xml": "SharedClassLib.1.slnx"
+                    }
+                },
+                {
+                    "condition": "(!UseSlnx)",
+                    "exclude": [
+                        "SharedClassLib.1.xml"
                     ]
                 },
                 {
                     "condition": "(!Net8 && !CentralPkgMgmt)",
                     "exclude": [
                         "Directory.Packages.props"
-                    ]
-                },
-                {
-                    "condition": "(no-solution-file)",
-                    "exclude": [
-                        "SharedClassLib.1.code-workspace"
                     ]
                 },
                 {

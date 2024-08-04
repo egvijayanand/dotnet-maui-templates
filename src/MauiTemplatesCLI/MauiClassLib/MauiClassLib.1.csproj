@@ -152,10 +152,13 @@
         <!--#endif-->
     </PropertyGroup>
 
-    <!--#if (!no-solution-file || Net8 || CentralPkgMgmt)-->
+    <!--#if (SolnFile || Net8 || CentralPkgMgmt)-->
     <ItemGroup>
-        <!--#if (!no-solution-file)-->
-        <None Remove="MauiClassLib.1.code-workspace" />
+        <!--#if (SolnFile)-->
+        <None Remove="SAFE-NAME.code-workspace" />
+        <!--#endif-->
+        <!--#if (SolnFile && UseSlnx)-->
+        <None Remove="SAFE-NAME.slnx" />
         <!--#endif-->
         <!--#if (Net8 || CentralPkgMgmt)-->
         <None Remove="Directory.Packages.props" />

@@ -254,6 +254,9 @@
     <ItemGroup>
         <!--#if (Plain)-->
         <None Remove="SAFE-NAME.code-workspace" />
+        <!--#if (UseSlnx)-->
+        <None Remove="SAFE-NAME.slnx" />
+        <!--#endif-->
         <!--#endif-->
         <!--#if (Net8 || CentralPkgMgmt)-->
         <None Remove="Directory.Packages.props" />

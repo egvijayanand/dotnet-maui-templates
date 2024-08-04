@@ -1,16 +1,19 @@
 {
-  "$schema": "http://json.schemastore.org/dotnetcli.host",
-  "symbolInfo": {
-    "Framework": {
-      "longName": "framework"
+    "$schema": "http://json.schemastore.org/dotnetcli.host",
+    "symbolInfo": {
+        "Framework": {
+            "longName": "framework"
+        },
+        "application-id": {
+            "shortName": "ap"
+        },
+        "use-slnx": {
+            "shortName": "slnx"
+        }
     },
-    "application-id": {
-      "shortName": "ap"
-    }
-  },
-  "usageExamples": [
-    "--framework net7.0",
-    "-f net6.0",
-    "-f net8.0"
-  ]
+    "usageExamples": [
+        "--framework net7.0",
+        "-f net6.0",
+        "-f net8.0"
+    ]
 }

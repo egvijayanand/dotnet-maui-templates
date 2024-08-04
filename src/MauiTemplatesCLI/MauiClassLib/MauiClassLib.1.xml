@@ -1,0 +1,11 @@
+﻿<Solution>
+<!--#if (Net8 || CentralPkgMgmt)-->
+    <Folder Name="/Solution Items/">
+        <File Path="Directory.Packages.props" />
+    </Folder>
+<!--#endif-->
+    <Project Path="SAFE-NAME.csproj" />
+    <Properties Name="Visual Studio">
+        <Property Name="OpenWith" Value="17" />
+    </Properties>
+</Solution>
