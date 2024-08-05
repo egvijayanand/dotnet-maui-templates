@@ -2,8 +2,22 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This template package does not gather any usage or telemetry data, even anonymously, ensuring that you can use it freely and with complete privacy assurance.
 
-What's new in ver. 5.10.1:
+What's new in ver. 5.11.0:
 --------------------------
+1. Introduced an option to support the XML-based solution file (slnx) format.
+
+This would be an explicit option since the SLNX feature is currently in the preview stage and is only supported on VS2022.
+
+-slnx | --use-slnx - Default value is false
+
+dotnet new mauiapp -o MyApp -slnx
+
+2. Defined an item template to generate the slnx solution file from the CLI.
+
+dotnet new slnx
+
+v5.10.1:
+
 The value of MauiVersion property has been updated to version 8.0.71 to represent the most recent minor service release, .NET MAUI 8 SR7.1.
 
 A minor defect has been fixed in the .NET MAUI Class Library project template.

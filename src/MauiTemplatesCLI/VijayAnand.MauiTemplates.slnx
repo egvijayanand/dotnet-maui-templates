@@ -1,0 +1,9 @@
+﻿<Solution>
+    <!-- List of Projects -->
+    <Project Path="VijayAnand.MauiTemplates.csproj" />
+
+    <!-- Support is provisionally available on Visual Studio 17.10 and later versions. -->
+    <Properties Name="Visual Studio">
+        <Property Name="OpenWith" Value="17" />
+    </Properties>
+</Solution>
