@@ -4,7 +4,7 @@
         <File Path="Directory.Packages.props" />
     </Folder>
 <!--#endif-->
-<!--#if (Blazor)-->
+<!--#if (Hybrid)-->
     <Project Path="SAFE-NAME\SAFE-NAME.fsproj">
         <Deploy />
     </Project>
