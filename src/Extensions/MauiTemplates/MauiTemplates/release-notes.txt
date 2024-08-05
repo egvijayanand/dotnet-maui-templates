@@ -2,8 +2,14 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This VS extension does not gather any usage or telemetry data, even anonymously, ensuring that you can use it freely and with complete privacy assurance.
 
-What's new in ver. 5.10.0.0:
+What's new in ver. 5.11.0.0:
 ----------------------------
+1. Introduced an option to support the XML-based solution file (slnx) format.
+
+This would be an explicit option since the SLNX feature is currently in the preview stage and is only supported on VS2022.
+
+v5.10.0.0:
+
 1. The reference to the Microsoft.Maui.Controls.Compatibility NuGet package has been removed from the .NET 9 project templates.
 
 2. Reliability improvements.
