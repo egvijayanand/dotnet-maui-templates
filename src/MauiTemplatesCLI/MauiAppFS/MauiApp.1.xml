@@ -1,0 +1,20 @@
+﻿<Solution>
+<!--#if (Net8 || CentralPkgMgmt)-->
+    <Folder Name="/Solution Items/">
+        <File Path="Directory.Packages.props" />
+    </Folder>
+<!--#endif-->
+<!--#if (Blazor)-->
+    <Project Path="SAFE-NAME\SAFE-NAME.fsproj">
+        <Deploy />
+    </Project>
+    <Project Path="SAFE-NAME.RazorLib\SAFE-NAME.RazorLib.csproj" />
+<!--#else-->
+    <Project Path="SAFE-NAME.fsproj">
+        <Deploy />
+    </Project>
+<!--#endif-->
+    <Properties Name="Visual Studio">
+        <Property Name="OpenWith" Value="17" />
+    </Properties>
+</Solution>

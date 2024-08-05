@@ -1,0 +1,22 @@
+﻿<Solution>
+    <!-- Solution Items -->
+<!--
+    <Folder Name="/Solution Items/">
+        <File Path="Directory.Packages.props" />
+    </Folder>
+-->
+
+    <!-- List of Projects -->
+<!--
+    <Project Path="ADD_PROJECT_FILE_1_RELATIVE_PATH_HERE" />
+    <Project Path="ADD_PROJECT_FILE_2_RELATIVE_PATH_HERE">
+        <Configuration />
+        <Deploy />
+    </Project>
+-->
+
+    <!-- Support is provisionally available on Visual Studio 17.10 and later versions. -->
+    <Properties Name="Visual Studio">
+        <Property Name="OpenWith" Value="17" />
+    </Properties>
+</Solution>

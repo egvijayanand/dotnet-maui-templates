@@ -1,0 +1,9 @@
+﻿<Solution>
+    <Folder Name="/Solution Items/">
+        <File Path="Directory.Packages.props" />
+    </Folder>
+    <Project Path="SAFE-NAME.csproj" />
+    <Properties Name="Visual Studio">
+        <Property Name="OpenWith" Value="17" />
+    </Properties>
+</Solution>

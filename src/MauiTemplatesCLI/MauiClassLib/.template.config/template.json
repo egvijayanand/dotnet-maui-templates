@@ -128,6 +128,13 @@
                 }
             ]
         },
+        "use-slnx": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to use XML-based solution file (slnx).",
+            "displayName": "Option to use XML-based solution file (sln_x)"
+        },
         "central-pkg-mgmt": {
             "type": "parameter",
             "datatype": "bool",
@@ -210,6 +217,13 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to skip creating a solution file."
+        },
+        "xmlEncodedName": {
+            "type": "derived",
+            "datatype": "string",
+            "replaces": "SAFE-NAME",
+            "valueSource": "name",
+            "valueTransform": "xmlEncode"
         },
         "frameworkLower": {
             "type": "generated",
@@ -339,6 +353,14 @@
             "type": "computed",
             "value": "(Net8OrLater || AddToolkit || AddMarkup || AddMaps || AddMvvmToolkit || AddSharedToolkit)"
         },
+        "UseSlnx": {
+            "type": "computed",
+            "value": "(use-slnx)"
+        },
+        "SolnFile": {
+            "type": "computed",
+            "value": "(!no-solution-file)"
+        },
         "HostIdentifier": {
             "type": "bind",
             "binding": "HostIdentifier"
@@ -353,21 +375,32 @@
         {
             "modifiers": [
                 {
-                    "condition": "(no-solution-file)",
+                    "condition": "(!SolnFile)",
+                    "exclude": [
+                        "MauiClassLib.1.code-workspace",
+                        "MauiClassLib.1.sln",
+                        "MauiClassLib.1.xml"
+                    ]
+                },
+                {
+                    "condition": "(UseSlnx)",
                     "exclude": [
                         "MauiClassLib.1.sln"
+                    ],
+                    "rename": {
+                        "MauiClassLib.1.xml": "MauiClassLib.1.slnx"
+                    }
+                },
+                {
+                    "condition": "(!UseSlnx)",
+                    "exclude": [
+                        "MauiClassLib.1.xml"
                     ]
                 },
                 {
                     "condition": "(!Net8 && !CentralPkgMgmt)",
                     "exclude": [
                         "Directory.Packages.props"
-                    ]
-                },
-                {
-                    "condition": "(no-solution-file)",
-                    "exclude": [
-                        "MauiClassLib.1.code-workspace"
                     ]
                 },
                 {
