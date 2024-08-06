@@ -65,6 +65,10 @@ Templates have been updated to support .NET 6/7/8/9 and is available to install 
 
 To provide an integrated experience, a VS extension has been developed to host these templates.
 
+The All-in-One .NET MAUI Templates Pack VS extension (v5.12.0.0 or higher) is now supported on both x64 and ARM64 installations of Visual Studio 2022. Happy coding!
+
+*Consequently, the minimum supported version of Visual Studio 2022 will be v17.6 or higher.*
+
 Extension is made available in the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-templates ".NET MAUI Templates Pack") and even more easier, can be installed from within Visual Studio itself (Extensions -> Manage Extensions / Alt + X + M).
 
 ![Manage Extensions - Visual Studio](images/vs-manage-extensions.png)
@@ -212,7 +216,7 @@ And from [v5.11.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/5.11.
 
   *This would be an explicit option since the SLNX feature is currently in the preview stage and is only supported on VS2022.*
 
-`-slx` | `--use-slnx` - Default value is `false`
+  `-slx` | `--use-slnx` - Default value is `false`
 
   ```
   dotnet new mauiapp -o MyApp -slnx
