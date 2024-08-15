@@ -1,6 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <!--#if (Net8OrLater)-->
+    <!--#if (Net9)-->
+    <!--#if (Hybrid)-->
+    <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="35" />
+    <!--#else-->
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="35" />
+    <!--#endif-->
+    <!--#elif (Net8)-->
     <!--#if (Hybrid)-->
     <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="34" />
     <!--#else-->
