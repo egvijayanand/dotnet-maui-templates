@@ -2,8 +2,12 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This template package does not gather any usage or telemetry data, even anonymously, ensuring that you can use it freely and with complete privacy assurance.
 
-What's new in ver. 5.12.0:
+What's new in ver. 5.12.1:
 --------------------------
+Android targetSdkVersion bumped to v35 for App projects targeting .NET 9
+
+v5.12.0:
+
 Templates updated to support .NET MAUI 9 Preview 7 release (v9.0.0-preview.7.24407.4).
 
 With the MainPage property of the Application made obsolete from this release, the corresponding changes have been implemented in the CreateWindow override method.
