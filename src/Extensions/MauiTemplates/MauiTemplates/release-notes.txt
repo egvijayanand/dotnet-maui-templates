@@ -2,8 +2,12 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This VS extension does not gather any usage or telemetry data, even anonymously, ensuring that you can use it freely and with complete privacy assurance.
 
-What's new in ver. 5.12.0.0:
+What's new in ver. 5.13.0.0:
 ----------------------------
+Templates updated for .NET MAUI 9 Preview 7 (v9.0.0-preview.7.24407.4).
+
+v5.12.0.0:
+
 1. The All-in-One .NET MAUI Templates Pack VS extension is now supported on both x64 and ARM64 installations of Visual Studio 2022. Happy coding!
 
 Consequently, the minimum supported version of Visual Studio 2022 will be v17.6 or higher.
