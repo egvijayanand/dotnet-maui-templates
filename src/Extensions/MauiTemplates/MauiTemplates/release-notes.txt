@@ -2,8 +2,12 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This VS extension does not gather any usage or telemetry data, even anonymously, ensuring that you can use it freely and with complete privacy assurance.
 
-What's new in ver. 5.13.0.0:
+What's new in ver. 5.13.1.0:
 ----------------------------
+Android targetSdkVersion bumped to v35 for App projects targeting .NET MAUI 9.
+
+v5.13.0.0:
+
 Templates updated for .NET MAUI 9 Preview 7 (v9.0.0-preview.7.24407.4).
 
 v5.12.0.0:
