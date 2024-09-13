@@ -2,8 +2,16 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This VS extension does not gather any usage or telemetry data, even anonymously, ensuring that you can use it freely and with complete privacy assurance.
 
-What's new in ver. 5.13.1.0:
+What's new in ver. 5.14.0.0:
 ----------------------------
+Templates updated for .NET MAUI 9 RC1 (v9.0.0-rc.1.24453.9).
+
+The WindowsSdkPackageVersion property has been temporarily included to make use of the latest version of the MVVM toolkit.
+
+Additional metadata for base types in the Generic item template.
+
+v5.13.1.0:
+
 Android targetSdkVersion bumped to v35 for App projects targeting .NET MAUI 9.
 
 v5.13.0.0:
