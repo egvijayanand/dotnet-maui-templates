@@ -68,6 +68,9 @@
                     <ComboBoxItem>StackLayout</ComboBoxItem>
                     <ComboBoxItem>SwipeView</ComboBoxItem>
                     <ComboBoxItem>TabbedPage</ComboBoxItem>
+                    <ComboBoxItem>TemplatedPage</ComboBoxItem>
+                    <ComboBoxItem>TemplatedView</ComboBoxItem>
+                    <ComboBoxItem>Window</ComboBoxItem>
                 </ComboBox.Items>
             </ComboBox>
             <Label
