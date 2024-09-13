@@ -109,6 +109,9 @@
         <LangVersion>latest</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>MauiApp._1</RootNamespace>
+        <!--#if (AddMvvmToolkit)-->
+        <WindowsSdkPackageVersion>10.0.19041.38</WindowsSdkPackageVersion>
+        <!--#endif-->
         <DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference>
 
         <!-- Display name -->

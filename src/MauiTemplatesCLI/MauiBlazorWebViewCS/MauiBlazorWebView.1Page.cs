@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components.WebView.Maui;
+//using VijayAnand.MauiBlazor.Markup;
 
 #if RootFolder
 namespace MyApp.RootNamespace
@@ -39,7 +40,7 @@ namespace MyApp.Namespace
             {
                 Children =
                 {
-                    bwv
+                    bwv // new BlazorWebView().Configure(typeof(Main), "/")
                 }
             };
         }

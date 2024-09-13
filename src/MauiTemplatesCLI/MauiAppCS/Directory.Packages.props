@@ -4,9 +4,9 @@
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net8)-->
         <!--#if (Nightly)-->
-        <MauiVersion>8.0.90-ci.net8.24414.1</MauiVersion>
+        <MauiVersion>8.0.99-ci.net8.24462.6</MauiVersion>
         <!--#else-->
-        <MauiVersion>8.0.80</MauiVersion>
+        <MauiVersion>8.0.82</MauiVersion>
         <!--#endif-->
         <!--#endif-->
         <!--#else-->
@@ -26,7 +26,7 @@
     <!--#endif-->
         <!--#if (Hybrid && RazorLib)-->
         <!--#if (Net9)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0-preview.7.24406.2" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0-rc.1.24452.1" />
         <!--#elif (Net8)-->
         <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.8" />
         <!--#elif (Net7)-->
@@ -52,7 +52,7 @@
         <!--#if (Net8OrLater)-->
         <PackageVersion Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
         <!--#if (AllPlatforms || IsWindows)-->
-        <PackageVersion Include="CommunityToolkit.Maui.Maps" Version="2.0.2" />
+        <PackageVersion Include="CommunityToolkit.Maui.Maps" Version="2.0.3" />
         <!--#endif-->
         <!--#else-->
         <PackageVersion Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
@@ -66,7 +66,7 @@
         <PackageVersion Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#if (Net9)-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0-preview.7.24405.7" Condition="'$(Configuration)' == 'Debug'" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0-rc.1.24431.7" Condition="'$(Configuration)' == 'Debug'" />
         <!--#else-->
         <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" Condition="'$(Configuration)' == 'Debug'" />
         <!--#endif-->
@@ -75,20 +75,20 @@
         <PackageVersion Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#if (AddToolkit)-->
-        <PackageVersion Include="CommunityToolkit.Maui" Version="9.0.2" />
+        <PackageVersion Include="CommunityToolkit.Maui" Version="9.0.3" />
         <!--#endif-->
         <!--#if (AddMarkup)-->
-        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="4.0.0" />
+        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="4.1.0" />
         <!--#endif-->
         <!--#if (AddCamera)-->
-        <PackageVersion Include="CommunityToolkit.Maui.Camera" Version="1.0.3" />
+        <PackageVersion Include="CommunityToolkit.Maui.Camera" Version="1.0.4" />
         <!--#endif-->
         <!--#if (AddMedia)-->
-        <PackageVersion Include="CommunityToolkit.Maui.MediaElement" Version="4.0.1" />
+        <PackageVersion Include="CommunityToolkit.Maui.MediaElement" Version="4.1.0" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <!--#if (Net9)-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="4.0.0-preview.5" />
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="4.0.0-rc.1" />
         <!--#else-->
         <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.5.0" />
         <!--#endif-->
@@ -119,17 +119,17 @@
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMvvmToolkit || (Mvvm && !Razor))-->
-        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.3.1" />
         <!--#endif-->
         <!--#if (CompiledBindings)-->
         <PackageVersion Include="CompiledBindings.MAUI" Version="1.0.18" />
         <!--#endif-->
         <!--#if (Reactor)-->
         <!--#if (Net8OrLater)-->
-        <PackageVersion Include="Reactor.Maui" Version="2.0.45" />
-        <PackageVersion Include="Reactor.Maui.Canvas" Version="2.0.45" />
+        <PackageVersion Include="Reactor.Maui" Version="2.0.47" />
+        <PackageVersion Include="Reactor.Maui.Canvas" Version="2.0.47" />
         <!--#if (AddMaps)-->
-        <PackageVersion Include="Reactor.Maui.Maps" Version="2.0.45" />
+        <PackageVersion Include="Reactor.Maui.Maps" Version="2.0.47" />
         <!--#endif-->
         <!--#else-->
         <PackageVersion Include="Reactor.Maui" Version="1.0.154" />

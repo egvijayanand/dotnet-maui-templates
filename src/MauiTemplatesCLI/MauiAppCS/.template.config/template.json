@@ -1033,7 +1033,7 @@
         },
         "AddMvvmToolkit": {
             "type": "computed",
-            "value": "(include-mvvm-toolkit)"
+            "value": "(include-mvvm-toolkit || use-mvvm)"
         },
         "AddSharedToolkit": {
             "type": "computed",

@@ -12,8 +12,8 @@ Release Details:
 |:---:|:---:|:---:|:---:|:---:|
 |Stable|.NET 6 SR11 (6.0.553)|VS2022 17.4.x - 17.8.x|Tue, Apr 25, 2023|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
 |Stable|.NET 7 SR10 (7.0.101)|VS2022 17.4.x - 17.9.x|Tue, Nov 7, 2023|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
-|Stable|[.NET 8 SR8](https://github.com/dotnet/maui/releases/tag/8.0.80 "Changelog") (8.0.80) <br /> _Requires JDK 17 and Android SDK 34_ <br /> _Requires Apple Xcode 15.4_|VS2022 17.11.x|Wed, Aug 7, 2024|Active|
-|Preview|[.NET 9 Preview 7](https://github.com/dotnet/maui/releases/tag/9.0.0-preview.7.24407.4 "Changelog") (9.0.0-preview.7.24407.4) <br /> _Requires JDK 17 and Android SDK 35_ <br /> _Requires Apple Xcode 15.4_|VS2022 17.12 Previews|Tue, Aug 13, 2024|Preview|
+|Stable|[.NET 8 SR8.2](https://github.com/dotnet/maui/releases/tag/8.0.82 "Changelog") (8.0.82) <br /> _Requires JDK 17 and Android SDK 34_ <br /> _Requires Apple Xcode 15.4_|VS2022 17.11.x|Wed, Aug 28, 2024|Active|
+|Preview|[.NET 9 RC1](https://github.com/dotnet/maui/releases/tag/9.0.0-rc.1.24453.9 "Changelog") (9.0.0-rc.1.24453.9) <br /> _Requires JDK 17 and Android SDK 35_ <br /> _Requires Apple Xcode 15.4_|VS2022 17.12 Preview 2.0|Tue, Sep 10, 2024|Preview|
 
 Version History and its dependencies are [here](https://aka.ms/maui/versions).
 
@@ -58,14 +58,14 @@ Templates have been updated to support .NET 6/7/8/9 and is available to install 
 |:---:|:---:|:---:|
 |Stable|[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/?icon=nuget&foo=bar)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/)|[![.NET MAUI Project and Item Templates - VS Marketplace](https://badgen.net/vs-marketplace/v/egvijayanand.maui-templates?icon=visualstudio&foo=bar)](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-templates)|
 <!--
-|Preview|[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/pre?icon=nuget)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/absoluteLatest)| - |
+|Preview|[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/pre?icon=nuget&foo=bar)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/absoluteLatest)| - |
 -->
 
 ### For VS2022 users:
 
 To provide an integrated experience, a VS extension has been developed to host these templates.
 
-The All-in-One .NET MAUI Templates Pack VS extension (v5.12.0.0 or higher) is now supported on both x64 and ARM64 installations of Visual Studio 2022. Happy coding!
+The All-in-One .NET MAUI Templates Pack VS extension (v5.12.0.0 or higher) is now supported on both **x64 and ARM64** installations of Visual Studio 2022. Happy coding!
 
 *Consequently, the minimum supported version of Visual Studio 2022 will be v17.6 or higher.*
 
@@ -216,7 +216,7 @@ And from [v5.11.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/5.11.
 
   *This would be an explicit option since the SLNX feature is currently in the preview stage and is only supported on VS2022.*
 
-  `-slx` | `--use-slnx` - Default value is `false`
+  `-slnx` | `--use-slnx` - Default value is `false`
 
   ```
   dotnet new mauiapp -o MyApp -slnx

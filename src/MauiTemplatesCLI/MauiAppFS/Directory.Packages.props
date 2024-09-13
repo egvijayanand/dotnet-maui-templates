@@ -4,9 +4,9 @@
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net8)-->
         <!--#if (Nightly)-->
-        <MauiVersion>8.0.90-ci.net8.24414.1</MauiVersion>
+        <MauiVersion>8.0.99-ci.net8.24462.6</MauiVersion>
         <!--#else-->
-        <MauiVersion>8.0.80</MauiVersion>
+        <MauiVersion>8.0.82</MauiVersion>
         <!--#endif-->
         <!--#endif-->
         <!--#else-->
@@ -32,7 +32,7 @@
         <!--#endif-->
         <!--#if (Hybrid)-->
         <!--#if (Net9)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0-preview.7.24406.2" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0-rc.1.24452.1" />
         <!--#elif (Net8)-->
         <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.8" />
         <!--#elif (Net7)-->
@@ -50,7 +50,7 @@
         <!--#endif-->
         <PackageVersion Include="FSharp.Core" Version="8.0.400" />
         <!--#if (Net9)-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0-preview.7.24405.7" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0-rc.1.24431.7" />
         <!--#else-->
         <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
         <!--#endif-->
@@ -66,7 +66,7 @@
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <!--#if (Net9)-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="4.0.0-preview.5" />
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="4.0.0-rc.1" />
         <!--#else-->
         <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.5.0" />
         <!--#endif-->
@@ -112,7 +112,7 @@
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMvvmToolkit)-->
-        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.3.1" />
         <!--#endif-->
     <!--#if (PackageRef)-->
     </ItemGroup>
