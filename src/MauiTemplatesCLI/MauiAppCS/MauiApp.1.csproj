@@ -110,6 +110,9 @@
         <!--#if (Unpackaged)-->
         <WindowsPackageType>None</WindowsPackageType>
         <!--#endif-->
+        <!--#if (AddMvvmToolkit)-->
+        <WindowsSdkPackageVersion>10.0.19041.38</WindowsSdkPackageVersion>
+        <!--#endif-->
 
         <!-- Display name -->
         <ApplicationTitle>SAFE-NAME</ApplicationTitle>
