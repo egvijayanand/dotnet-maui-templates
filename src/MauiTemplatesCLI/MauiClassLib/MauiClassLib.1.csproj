@@ -112,7 +112,7 @@
         <LangVersion>latest</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>MauiClassLib._1</RootNamespace>
-        <!--#if (AddMvvmToolkit)-->
+        <!--#if ((AllPlatforms || IsWindows) && AddMvvmToolkit)-->
         <WindowsSdkPackageVersion>10.0.19041.38</WindowsSdkPackageVersion>
         <!--#endif-->
         <!--#if (AllPlatforms || IsAndroid || IsiOS || IsmacOS || IsTizen || IsWindows)-->

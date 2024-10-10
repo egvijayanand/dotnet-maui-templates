@@ -4,9 +4,9 @@
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net8)-->
         <!--#if (Nightly)-->
-        <MauiVersion>8.0.99-ci.net8.24462.6</MauiVersion>
+        <MauiVersion>8.0.99-ci.net8.24509.1</MauiVersion>
         <!--#else-->
-        <MauiVersion>8.0.82</MauiVersion>
+        <MauiVersion>8.0.91</MauiVersion>
         <!--#endif-->
         <!--#endif-->
         <!--#else-->
@@ -32,13 +32,13 @@
         <!--#endif-->
         <!--#if (Hybrid)-->
         <!--#if (Net9)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0-rc.1.24452.1" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0-rc.2.24474.3" />
         <!--#elif (Net8)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.8" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.10" />
         <!--#elif (Net7)-->
         <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="7.0.20" />
         <!--#else-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="6.0.33" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="6.0.35" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (Net7OrLater)-->
@@ -50,9 +50,9 @@
         <!--#endif-->
         <PackageVersion Include="FSharp.Core" Version="8.0.400" />
         <!--#if (Net9)-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0-rc.1.24431.7" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0-rc.2.24473.5" />
         <!--#else-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
         <!--#endif-->
         <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <!--#if (Net8)-->
@@ -66,7 +66,7 @@
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <!--#if (Net9)-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="4.0.0-rc.1" />
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="4.0.0-rc.2" />
         <!--#else-->
         <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.5.0" />
         <!--#endif-->
@@ -112,7 +112,7 @@
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMvvmToolkit)-->
-        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.3.1" />
+        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.3.2" />
         <!--#endif-->
     <!--#if (PackageRef)-->
     </ItemGroup>
