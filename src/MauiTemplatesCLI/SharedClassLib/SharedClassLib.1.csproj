@@ -99,6 +99,9 @@
         <!--#if (AddMauiToolkit)-->
         <PackageReference Include="CommunityToolkit.Maui" />
         <!--#endif-->
+        <!--#if (AddSyncfusionToolkit)-->
+        <PackageReference Include="Syncfusion.Maui.Toolkit" />
+        <!--#endif-->
         <!--#if (AddMauiMarkup)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" />
         <!--#endif-->
@@ -110,6 +113,9 @@
         <!--#endif-->
         <!--#if (AddMauiToolkit)-->
         <PackageReference Include="CommunityToolkit.Maui" Version="9.*" />
+        <!--#endif-->
+        <!--#if (AddSyncfusionToolkit)-->
+        <PackageReference Include="Syncfusion.Maui.Toolkit" Version="1.*" />
         <!--#endif-->
         <!--#if (AddMauiMarkup)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.*" />

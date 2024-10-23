@@ -6,6 +6,9 @@
         },
         "use-slnx": {
             "shortName": "slnx"
+        },
+        "include-syncfusion-toolkit": {
+            "shortName": "isft"
         }
     }
 }

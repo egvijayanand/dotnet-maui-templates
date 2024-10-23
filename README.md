@@ -12,8 +12,8 @@ Release Details:
 |:---:|:---:|:---:|:---:|:---:|
 |Stable|.NET 6 SR11 (6.0.553)|VS2022 17.4.x - 17.8.x|Tue, Apr 25, 2023|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
 |Stable|.NET 7 SR10 (7.0.101)|VS2022 17.4.x - 17.9.x|Tue, Nov 7, 2023|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
-|Stable|[.NET 9 SR9.1](https://github.com/dotnet/maui/releases/tag/8.0.91 "Changelog") (8.0.91) <br /> _Requires JDK 17 and Android SDK 34_ <br /> _Requires Apple Xcode 15.4 and Supports Apple Xcode 16_|VS2022 17.11.x|Wed, Sep 25, 2024|Active|
-|Preview|[.NET 9 RC2](https://github.com/dotnet/maui/releases/tag/9.0.0-rc.2.24503.2 "Changelog") (9.0.0-rc.2.24503.2) <br /> _Requires JDK 17 and Android SDK 35_ <br /> _Requires Apple Xcode 15.4 and Supports Apple Xcode 16_|VS2022 17.12 Preview 2.1|Tue, Oct 8, 2024|Preview|
+|Stable|[.NET 9 SR9.2](https://github.com/dotnet/maui/releases/tag/8.0.92 "Changelog") (8.0.92) <br /> _Requires JDK 17 and Android SDK 34_ <br /> _Requires Apple Xcode 15.4 and Supports Apple Xcode 16_|VS2022 17.11.x|Tue, Oct 15, 2024|Active|
+|Preview|[.NET 9 RC2](https://github.com/dotnet/maui/releases/tag/9.0.0-rc.2.24503.2 "Changelog") (9.0.0-rc.2.24503.2) <br /> _Requires JDK 17 and Android SDK 35_ <br /> _Requires Apple Xcode 15.4 and Supports Apple Xcode 16_|VS2022 17.12 Preview 3.0|Tue, Oct 8, 2024|Preview|
 
 Version History and its dependencies are [here](https://aka.ms/maui/versions).
 
@@ -209,6 +209,26 @@ And from [v5.5.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/5.5.0)
 And from [v5.7.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/5.7.0) of the template package, Class Library project template support referencing the Maps package.
 
 And from [v5.11.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/5.11.0) of the template package, support for XML-based solution file (slnx) format.
+
+And from [v5.15.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/5.15.0) of the template package, support to add and configure the Syncfusion.Maui.Toolkit NuGet package.
+
+* [Syncfusion.Maui.Toolkit](https://www.nuget.org/packages/Syncfusion.Maui.Toolkit) NuGet Package (Short notation: `-isft`):
+
+  Introduced the option to add and configure the Syncfusion.Maui.Toolkit NuGet package.
+
+  *Note: This would be an explicit option*
+
+  `-isft` | `--include-syncfusion-toolkit` - Default value is `false`
+
+  ```
+  dotnet new mauiapp -o MyApp -isft
+  ```
+  ```
+  dotnet new mauiclasslib -o MauiLib -isft
+  ```
+  ```
+  dotnet new sharedclasslib -o SharedLib -isft
+  ```
 
 * SLNX Solution File Format (Short notation: `-slnx`):
 

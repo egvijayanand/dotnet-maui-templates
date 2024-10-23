@@ -4,9 +4,9 @@
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net8)-->
         <!--#if (Nightly)-->
-        <MauiVersion>8.0.99-ci.net8.24509.1</MauiVersion>
+        <MauiVersion>8.0.99-ci.net8.24518.4</MauiVersion>
         <!--#else-->
-        <MauiVersion>8.0.91</MauiVersion>
+        <MauiVersion>8.0.92</MauiVersion>
         <!--#endif-->
         <!--#endif-->
         <!--#else-->
@@ -38,21 +38,24 @@
         <PackageVersion Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#if (AddToolkit)-->
-        <PackageVersion Include="CommunityToolkit.Maui" Version="9.0.2" />
+        <PackageVersion Include="CommunityToolkit.Maui" Version="9.1.0" />
+        <!--#endif-->
+        <!--#if (AddSyncfusionToolkit)-->
+        <PackageVersion Include="Syncfusion.Maui.Toolkit" Version="1.0.1" />
         <!--#endif-->
         <!--#if (AddMarkup)-->
-        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="4.0.0" />
+        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="4.2.0" />
         <!--#endif-->
         <!--#if (AddCamera)-->
-        <PackageVersion Include="CommunityToolkit.Maui.Camera" Version="1.0.3" />
+        <PackageVersion Include="CommunityToolkit.Maui.Camera" Version="1.0.5" />
         <!--#endif-->
         <!--#if (AddMedia)-->
-        <PackageVersion Include="CommunityToolkit.Maui.MediaElement" Version="4.0.1" />
+        <PackageVersion Include="CommunityToolkit.Maui.MediaElement" Version="4.1.2" />
         <!--#endif-->
         <!--#if (AddMaps)-->
         <PackageVersion Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
         <!--#if (AllPlatforms || IsWindows)-->
-        <PackageVersion Include="CommunityToolkit.Maui.Maps" Version="2.0.2" />
+        <PackageVersion Include="CommunityToolkit.Maui.Maps" Version="2.0.3" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddFoldable)-->
