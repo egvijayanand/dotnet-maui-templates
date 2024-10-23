@@ -20,6 +20,9 @@ using CommunityToolkit.Maui.Maps;
 #if AddFoldable
 using Microsoft.Maui.Foldable;
 #endif
+#if AddSyncfusionToolkit
+using Syncfusion.Maui.Toolkit.Hosting;
+#endif
 #if (AddToolkit || Hybrid || Net7OrLater || Razor)
 
 #endif
@@ -67,6 +70,9 @@ namespace MauiApp._1
 #endif
 #if AddToolkit
                    .UseMauiCommunityToolkit()
+#endif
+#if AddSyncfusionToolkit
+                   .ConfigureSyncfusionToolkit()
 #endif
 #if AddMarkup
                    .UseMauiCommunityToolkitMarkup()

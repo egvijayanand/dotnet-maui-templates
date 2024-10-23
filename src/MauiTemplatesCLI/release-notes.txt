@@ -2,8 +2,22 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This template package does not gather any usage or telemetry data, even anonymously, ensuring that you can use it freely and with complete privacy assurance.
 
-What's new in ver. 5.14.0:
+What's new in ver. 5.15.0:
 --------------------------
+Introduced the option to add and configure the Syncfusion.Maui.Toolkit NuGet package.
+
+Note: This would be an explicit option.
+
+-isft | --include-syncfusion-toolkit - Default value is false
+
+dotnet new mauiapp -o MyApp -isft
+
+dotnet new mauiclasslib -o MauiLib -isft
+
+dotnet new sharedclasslib -o SharedLib -isft
+
+v5.14.0:
+
 Templates updated to support .NET MAUI 9 RC2 release (v9.0.0-rc.2.24503.2).
 
 v5.13.0:

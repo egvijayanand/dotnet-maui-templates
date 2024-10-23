@@ -44,6 +44,10 @@ global using CommunityToolkit.Maui.Converters;
 global using CommunityToolkit.Maui.Views;
 
 #endif
+#if AddSyncfusionToolkit
+global using Syncfusion.Maui.Toolkit;
+
+#endif
 #if AddMaps
 // MAUI Maps
 global using Microsoft.Maui.Controls.Maps;

@@ -137,6 +137,13 @@
             "description": "Option to add CommunityToolkit.Maui NuGet package reference.",
             "displayName": "Add Community_Toolkit.Maui NuGet package reference"
         },
+        "include-syncfusion-toolkit": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add Syncfusion.Maui.Toolkit NuGet package reference.",
+            "displayName": "Add _Syncfusion.Maui.Toolkit NuGet package reference"
+        },
         "include-maui-markup": {
             "type": "parameter",
             "datatype": "bool",
@@ -156,7 +163,7 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to add VijayAnand.Toolkit.Markup (Shared Toolkit) NuGet package reference.",
-            "displayName": "Add VijayAnand.Toolkit.Markup (_Shared Toolkit) NuGet package reference"
+            "displayName": "Add Vi_jayAnand.Toolkit.Markup (Shared Toolkit) NuGet package reference"
         },
         "include-forms-essentials-interfaces": {
             "type": "parameter",
@@ -255,6 +262,10 @@
         "AddMauiToolkit": {
             "type": "computed",
             "value": "(include-maui-toolkit || all-supported-packages)"
+        },
+        "AddSyncfusionToolkit": {
+            "type": "computed",
+            "value": "(Net8OrLater && include-syncfusion-toolkit)"
         },
         "AddMauiMarkup": {
             "type": "computed",

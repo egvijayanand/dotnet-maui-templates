@@ -75,6 +75,14 @@
             "defaultValue": "false"
         },
         {
+            "id": "include-syncfusion-toolkit",
+            "name": {
+                "text": "Add and configure _Syncfusion.Maui.Toolkit NuGet package reference"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
             "id": "include-markup",
             "name": {
                 "text": "Add and configure CommunityToolkit.Maui._Markup NuGet package reference"
@@ -85,7 +93,7 @@
         {
             "id": "include-shared-toolkit",
             "name": {
-                "text": "Add and configure VijayAnand.Toolkit.Markup (aka _SharedToolkit) NuGet package reference"
+                "text": "Add and configure Vi_jayAnand.Toolkit.Markup (SharedToolkit) NuGet package reference"
             },
             "isVisible": true,
             "defaultValue": "false"

@@ -7,6 +7,9 @@ open Fabulous.Maui
 #if AddToolkit
 open CommunityToolkit.Maui
 #endif
+#if AddSyncfusionToolkit
+open Syncfusion.Maui.Toolkit.Hosting
+#endif
 #if AddMarkup
 open CommunityToolkit.Maui.Markup
 #endif
@@ -34,6 +37,9 @@ type MauiProgram =
             .UseFabulousApp(App.program)
 #if AddToolkit
             .UseMauiCommunityToolkit()
+#endif
+#if AddSyncfusionToolkit
+            .ConfigureSyncfusionToolkit()
 #endif
 #if AddMarkup
             .UseMauiCommunityToolkitMarkup()
