@@ -10,11 +10,7 @@
         <TargetFrameworks>MAUI_TFM-android</TargetFrameworks>
         <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('osx'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst</TargetFrameworks>
         <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst;MAUI_TFM-windows10.0.19041.0</TargetFrameworks>
-        <!--#if (Net8OrLater)-->
         <!-- <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-tizen</TargetFrameworks> -->
-        <!--#else-->
-        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-tizen</TargetFrameworks>
-        <!--#endif-->
         <TargetFrameworks>$(TargetFrameworks);MAUI_TFM</TargetFrameworks>
         <!--#elif (IsAndroid && IsiOS && IsmacOS)-->
         <TargetFrameworks>MAUI_TFM-android</TargetFrameworks>
@@ -103,7 +99,7 @@
         <UseMaui>true</UseMaui>
         <!--#endif-->
         <SingleProject>true</SingleProject>
-        <!--#if (Net8OrLater && (AllPlatforms || IsWindows))-->
+        <!--#if (AllPlatforms || IsWindows)-->
         <UseRidGraph>true</UseRidGraph>
         <!--#endif-->
 
@@ -155,7 +151,7 @@
         <!--#endif-->
     </PropertyGroup>
 
-    <!--#if (SolnFile || Net8 || CentralPkgMgmt)-->
+    <!--#if (SolnFile || Net8OrLater || CentralPkgMgmt)-->
     <ItemGroup>
         <!--#if (SolnFile)-->
         <None Remove="SAFE-NAME.code-workspace" />
@@ -163,7 +159,7 @@
         <!--#if (SolnFile && UseSlnx)-->
         <None Remove="SAFE-NAME.slnx" />
         <!--#endif-->
-        <!--#if (Net8 || CentralPkgMgmt)-->
+        <!--#if (Net8OrLater || CentralPkgMgmt)-->
         <None Remove="Directory.Packages.props" />
         <!--#endif-->
     </ItemGroup>
@@ -173,7 +169,6 @@
     <ItemGroup>
     <!--#endif-->
         <!--#if (CentralPkgMgmt)-->
-        <!--#if (Net8OrLater)-->
         <!--#if (UseMauiCore)-->
         <PackageReference Include="Microsoft.Maui.Core" />
         <!--#elif (UseMauiEssentials)-->
@@ -185,7 +180,6 @@
         <PackageReference Include="Microsoft.Maui.Controls" />
         <!--#if (Net8)-->
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" />
-        <!--#endif-->
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddToolkit)-->
@@ -219,7 +213,6 @@
         <PackageReference Include="VijayAnand.Toolkit.Markup" />
         <!--#endif-->
         <!--#else-->
-        <!--#if (Net8OrLater)-->
         <!--#if (UseMauiCore)-->
         <PackageReference Include="Microsoft.Maui.Core" Version="$(MauiVersion)" />
         <!--#elif (UseMauiEssentials)-->
@@ -258,43 +251,10 @@
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <!--#if (Net9)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="4.*-*" />
+        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="4.*" />
         <!--#else-->
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="3.*" />
         <!--#endif-->
-        <!--#endif-->
-        <!--#endif-->
-        <!--#elif (Net7)-->
-        <!--#if (AddToolkit)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="6.*" />
-        <!--#endif-->
-        <!--#if (AddMarkup)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.*" />
-        <!--#endif-->
-        <!--#if (AddMedia)-->
-        <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="2.*" />
-        <!--#endif-->
-        <!--#if (AddMaps)-->
-        <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
-        <!--#if (AllPlatforms || IsWindows)-->
-        <PackageVersion Include="CommunityToolkit.Maui.Maps" Version="1.*" />
-        <!--#endif-->
-        <!--#endif-->
-        <!--#if (AddFoldable)-->
-        <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="$(MauiVersion)" />
-        <!--#endif-->
-        <!--#if (AddSharedToolkit)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="2.*" />
-        <!--#endif-->
-        <!--#else-->
-        <!--#if (AddToolkit)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="2.*" />
-        <!--#endif-->
-        <!--#if (AddMarkup)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.*" />
-        <!--#endif-->
-        <!--#if (AddSharedToolkit)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="1.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMvvmToolkit)-->

@@ -11,19 +11,10 @@
         {
             InitializeComponent();
 #if Tabbed
-#if Net8OrLater
-            var viewModel = AppService.GetService<SearchViewModel>();
+            var viewModel = AppService.GetRequiredService<SearchViewModel>();
+#endif
             viewModel.Title = "Search";
             BindingContext = viewModel;
-#else
-            BindingContext = AppService.GetService<SearchViewModel>();
-#endif
-#else
-#if Net8OrLater
-            viewModel.Title = "Search";
-#endif
-            BindingContext = viewModel;
-#endif
         }
 #else
         public SearchPage()

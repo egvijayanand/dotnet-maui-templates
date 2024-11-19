@@ -125,7 +125,7 @@
         {
             "id": "include-maui-maps",
             "name": {
-                "text": "Add Microsoft.Maui.Controls.Ma_ps NuGet package reference (.NET 7 or later)"
+                "text": "Add Microsoft.Maui.Controls.Ma_ps NuGet package reference"
             },
             "isVisible": true,
             "defaultValue": "false"

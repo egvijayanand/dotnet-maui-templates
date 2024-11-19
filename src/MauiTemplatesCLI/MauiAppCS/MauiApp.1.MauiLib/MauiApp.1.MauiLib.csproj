@@ -27,11 +27,6 @@
         <!--#if (Razor)-->
         <PackageReference Include="BlazorBindings.Maui" />
         <!--#endif-->
-        <!--#if (Comet)-->
-        <PackageReference Include="Clancey.Comet" />
-        <!--#endif-->
-        <!--#if (Net7OrLater)-->
-        <!--#if (Net8OrLater)-->
         <!--#if (Hybrid || Razor)-->
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" />
         <!--#endif-->
@@ -39,9 +34,6 @@
         <PackageReference Include="Microsoft.Maui.Controls" />
         <!--#if (Net8)-->
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" />
-        <!--#endif-->
-        <!--#else-->
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Condition="'$(Configuration)' == 'Debug'" />
         <!--#endif-->
         <!--#if (AddCamera)-->
         <PackageReference Include="CommunityToolkit.Maui.Camera" />
@@ -56,7 +48,6 @@
         <PackageReference Include="Microsoft.Maui.Controls.Maps" />
         <!--#if (AllPlatforms || IsWindows)-->
         <PackageReference Include="CommunityToolkit.Maui.Maps" />
-        <!--#endif-->
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddToolkit)-->
@@ -88,35 +79,20 @@
         <!--#if (Razor)-->
         <PackageReference Include="BlazorBindings.Maui" Version="1.*" />
         <!--#endif-->
-        <!--#if (Comet)-->
-        <PackageReference Include="Clancey.Comet" Version="0.3.467-beta" />
-        <!--#endif-->
         <!--#if (AddFoldable)-->
-        <!--#if (Net8OrLater)-->
         <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="$(MauiVersion)" />
-        <!--#else-->
-        <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="7.*" />
-        <!--#endif-->
         <!--#endif-->
         <!--#if (AddMaps)-->
-        <!--#if (Net8OrLater)-->
         <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
         <!--#if (AllPlatforms || IsWindows)-->
         <PackageReference Include="CommunityToolkit.Maui.Maps" Version="2.*" />
         <!--#endif-->
-        <!--#else-->
-        <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.*" />
-        <!--#if (AllPlatforms || IsWindows)-->
-        <PackageReference Include="CommunityToolkit.Maui.Maps" Version="1.*" />
         <!--#endif-->
-        <!--#endif-->
-        <!--#endif-->
-        <!--#if (Net8OrLater)-->
         <!--#if (Hybrid || Razor)-->
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#if (Net9)-->
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.*-*" Condition="'$(Configuration)' == 'Debug'" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.*" Condition="'$(Configuration)' == 'Debug'" />
         <!--#else-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.*" Condition="'$(Configuration)' == 'Debug'" />
         <!--#endif-->
@@ -141,34 +117,9 @@
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <!--#if (Net9)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="4.*-*" />
+        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="4.*" />
         <!--#else-->
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="3.*" />
-        <!--#endif-->
-        <!--#endif-->
-        <!--#elif (Net7)-->
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.*" Condition="'$(Configuration)' == 'Debug'" />
-        <!--#if (AddToolkit)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="6.*" />
-        <!--#endif-->
-        <!--#if (AddMarkup)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.*" />
-        <!--#endif-->
-        <!--#if (AddMedia)-->
-        <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="2.*" />
-        <!--#endif-->
-        <!--#if (AddSharedToolkit)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="2.*" />
-        <!--#endif-->
-        <!--#else-->
-        <!--#if (AddToolkit)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="2.*" />
-        <!--#endif-->
-        <!--#if (AddMarkup)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.*" />
-        <!--#endif-->
-        <!--#if (AddSharedToolkit)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="1.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMvvmToolkit || (Mvvm && !Razor))-->
@@ -178,17 +129,17 @@
         <PackageReference Include="CompiledBindings.MAUI" Version="1.*" />
         <!--#endif-->
         <!--#if (Reactor)-->
-        <!--#if (Net8OrLater)-->
+        <!--#if (Net9OrLater)-->
+        <PackageReference Include="Reactor.Maui" Version="3.*-*" />
+        <PackageReference Include="Reactor.Maui.Canvas" Version="3.*-*" />
+        <!--#if (AddMaps)-->
+        <PackageReference Include="Reactor.Maui.Maps" Version="3.*-*" />
+        <!--#endif-->
+        <!--#else-->
         <PackageReference Include="Reactor.Maui" Version="2.*" />
         <PackageReference Include="Reactor.Maui.Canvas" Version="2.*" />
         <!--#if (AddMaps)-->
         <PackageReference Include="Reactor.Maui.Maps" Version="2.*" />
-        <!--#endif-->
-        <!--#else-->
-        <PackageReference Include="Reactor.Maui" Version="1.*" />
-        <PackageReference Include="Reactor.Maui.Canvas" Version="1.*" />
-        <!--#if (AddMaps)-->
-        <PackageReference Include="Reactor.Maui.Maps" Version="1.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#endif-->

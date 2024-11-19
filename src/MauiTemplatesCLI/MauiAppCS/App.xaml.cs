@@ -2,11 +2,12 @@
 {
     public partial class App : Application
     {
-#if (!Markup)
-#if (Mvvm)
-#if (Net9 && (Plain || Hierarchical || Hybrid || Markup))
+#if Mvvm
+#if Net9OrLater
+#if (Plain || Hierarchical || Hybrid)
         private readonly IServiceProvider _services;
 
+#endif
 #endif
 #if (Hierarchical || Tabbed)
         private static readonly Dictionary<string, Type> _routes = new()
@@ -22,13 +23,16 @@
 #endif
         {
             InitializeComponent();
-#if (Net9 && (Plain || Hierarchical || Hybrid || Markup))
+#if Net9OrLater
+#if (Plain || Hierarchical || Hybrid)
             _services = services;
-#else
+#endif
+#endif
 
+#if Net8
 #if Hierarchical
             MainPage = new NavigationPage(services.GetRequiredService<MainPage>());
-#elif (Plain || Hybrid || Markup)
+#elif (Plain || Hybrid)
             MainPage = services.GetRequiredService<MainPage>();
 #elif Shell
             MainPage = new AppShell();
@@ -47,7 +51,7 @@
         {
             InitializeComponent();
 
-#if (!Net9)
+#if Net8
 #if Hierarchical
             MainPage = new NavigationPage(new MainPage());
 #elif Shell
@@ -59,18 +63,18 @@
             UserAppTheme = PlatformAppTheme;
         }
 #endif
-#if (Net9 || Plain || Hierarchical || Tabbed || Hybrid)
+#if (Net9OrLater || Plain || Hierarchical || Tabbed || Hybrid)
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-#if (Net9)
-#if (Mvvm)
+#if Net9OrLater
+#if Mvvm
 #if Hierarchical
             var window = new Window(new NavigationPage(_services.GetRequiredService<MainPage>()));
-#elif (Plain || Hybrid || Markup)
+#elif (Plain || Hybrid)
             var window = new Window(_services.GetRequiredService<MainPage>());
 #elif Shell
-            var window = new Window(new AppShell());
+            return new Window(new AppShell());
 #else
             var window = new Window(new MainPage());
 #endif
@@ -78,7 +82,7 @@
 #if Hierarchical
             var window = new Window(new NavigationPage(new MainPage()));
 #elif Shell
-            var window = new Window(new AppShell());
+            return new Window(new AppShell());
 #else
             var window = new Window(new MainPage());
 #endif
@@ -88,10 +92,9 @@
 #endif
 #if (Plain || Hierarchical || Tabbed || Hybrid)
             window.Title = "MauiApp._1";
-#endif
             return window;
-        }
 #endif
+        }
 #endif
     }
 }

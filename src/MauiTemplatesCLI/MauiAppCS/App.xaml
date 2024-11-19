@@ -1,4 +1,36 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--#if (AddToolkit && AddSyncfusionToolkit)-->
+<Application
+    x:Class="MauiApp._1.App"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:sft="http://schemas.syncfusion.com/maui/toolkit"
+    xmlns:local="clr-namespace:MauiApp._1"
+    mc:Ignorable="d">
+<!--#elif (AddToolkit)-->
+<Application
+    x:Class="MauiApp._1.App"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:local="clr-namespace:MauiApp._1"
+    mc:Ignorable="d">
+<!--#elif (AddSyncfusionToolkit)-->
+<Application
+    x:Class="MauiApp._1.App"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sft="http://schemas.syncfusion.com/maui/toolkit"
+    xmlns:local="clr-namespace:MauiApp._1"
+    mc:Ignorable="d">
+<!--#else-->
 <Application
     x:Class="MauiApp._1.App"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -7,6 +39,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MauiApp._1"
     mc:Ignorable="d">
+<!--#endif-->
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

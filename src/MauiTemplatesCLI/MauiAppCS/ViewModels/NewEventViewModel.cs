@@ -1,18 +1,7 @@
 ﻿namespace MauiApp._1.ViewModels
 {
-#if Net8OrLater
     public partial class NewEventViewModel(IDialogService dialogService, INavigationService navigationService) : BaseViewModel(dialogService, navigationService)
     {
-#else
-    public partial class NewEventViewModel : BaseViewModel
-    {
-        public NewEventViewModel(IDialogService dialogService, INavigationService navigationService)
-            : base(dialogService, navigationService)
-        {
-            Title = "New Event";
-        }
-
-#endif
         [ObservableProperty]
         private Event _event = new();
 

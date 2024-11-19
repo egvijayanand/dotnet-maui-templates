@@ -26,10 +26,8 @@ namespace MauiApp._1.Views
             VersionLabel.Text = $".NET MAUI ver. {version?[..version.IndexOf('+')]}";
 #endif
 #if (Mvvm && !Tabbed)
-#if Net8OrLater
 #if Hierarchical
             viewModel.Title = "Calendar";
-#endif
 #endif
             BindingContext = viewModel;
 #endif

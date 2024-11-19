@@ -6,23 +6,11 @@
     <!--#else-->
     <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="35" />
     <!--#endif-->
-    <!--#elif (Net8)-->
+    <!--#else-->
     <!--#if (Hybrid)-->
     <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="34" />
     <!--#else-->
     <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="34" />
-    <!--#endif-->
-    <!--#elif (Net7)-->
-    <!--#if (Hybrid)-->
-    <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="33" />
-    <!--#else-->
-    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="33" />
-    <!--#endif-->
-    <!--#else-->
-    <!--#if (Hybrid)-->
-    <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="31" />
-    <!--#else-->
-    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="31" />
     <!--#endif-->
     <!--#endif-->
     <application android:allowBackup="true" android:icon="@mipmap/appicon" android:roundIcon="@mipmap/appicon_round" android:supportsRtl="true"></application>

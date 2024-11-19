@@ -19,12 +19,6 @@ global using Microsoft.Maui.Graphics;
 global using Microsoft.Maui.Hosting;
 global using MC = Microsoft.Maui.Controls;
 #endif
-#if Comet
-
-// Comet
-global using Comet;
-
-#endif
 #if Reactor
 
 // Reactor
@@ -106,10 +100,6 @@ global using static Microsoft.Maui.Graphics.Colors;
 global using static VijayAnand.Toolkit.Markup.ResourceHelper;
 global using static VijayAnand.Toolkit.Markup.VisualStateHelper;
 #endif
-#endif
-#if Comet
-global using static Microsoft.Maui.TextAlignment;
-global using static MauiApp._1.App;
 #endif
 #if Reactor
 global using static MauiApp._1.Helpers.ResourceHelper;

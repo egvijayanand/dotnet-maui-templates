@@ -12,8 +12,8 @@ Release Details:
 |:---:|:---:|:---:|:---:|:---:|
 |Stable|.NET 6 SR11 (6.0.553)|VS2022 17.4.x - 17.8.x|Tue, Apr 25, 2023|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
 |Stable|.NET 7 SR10 (7.0.101)|VS2022 17.4.x - 17.9.x|Tue, Nov 7, 2023|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
-|Stable|[.NET 8 SR9.3](https://github.com/dotnet/maui/releases/tag/8.0.93 "Changelog") (8.0.93) <br /> _Requires JDK 17 and Android SDK 34_ <br /> _Requires Apple Xcode 15.4 and Supports Apple Xcode 16_|VS2022 17.11.x|Thu, Nov 7, 2024|Active|
-|Preview|[.NET 9 RC2](https://github.com/dotnet/maui/releases/tag/9.0.0-rc.2.24503.2 "Changelog") (9.0.0-rc.2.24503.2) <br /> _Requires JDK 17 and Android SDK 35_ <br /> _Requires Apple Xcode 15.4 and Supports Apple Xcode 16_|VS2022 17.12 Preview 4.0|Tue, Oct 8, 2024|Preview|
+|Stable|[.NET 8 SR10](https://github.com/dotnet/maui/releases/tag/8.0.100 "Changelog") (8.0.100) <br /> _Requires JDK 17 and Android SDK 34_ <br /> _Requires Apple Xcode 15.4 and Supports Apple Xcode 16_|VS2022 17.12.x|Tue, Nov 12, 2024|Active|
+|Stable|[.NET 9 SR1](https://github.com/dotnet/maui/releases/tag/9.0.10 "Changelog") (9.0.10) <br /> _Requires JDK 17 and Android SDK 35_ <br /> _Requires Apple Xcode 16_|VS2022 17.13 Preview 1.0|Thu, Nov 14, 2024|Active|
 
 Version History and its dependencies are [here](https://aka.ms/maui/versions).
 
@@ -319,39 +319,31 @@ And from [v5.15.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/5.15.
   dotnet new mauiapp -lang F#
   ```
 
-  For creating a .NET MAUI App on .NET 7:
+  For creating a .NET MAUI App on .NET 9:
 
   ```shell
-  dotnet new mauiapp -lang F# -f net7.0
+  dotnet new mauiapp -lang F#
   ```
 
 * Framework: (Short notation: `-f`)
 
-  This can take `net6.0` / `net7.0` / `net8.0` / `net9.0` as its options (with `net8.0` being the default value, if not specified).
+  This can take `net8.0` / `net9.0` as its options (with `net9.0` being the default value, if not specified).
 
   Examples:
 
-  ```shell
-  dotnet new mauiapp -f net6.0
-  ```
-
-  ```shell
-  dotnet new mauiapp -f net7.0
-  ```
-
   For creating a .NET MAUI App on .NET 8:
 
-  Below command can be simplified to `dotnet new mauiapp` as default value of `framework` parameter is `net8.0`
+  _Explicit value for the `framework` parameter is required._
 
   ```shell
   dotnet new mauiapp -f net8.0
   ```
 
   For creating a .NET MAUI App on .NET 9:
+  
+  Below command can be simplified to `dotnet new mauiapp` as default value of `framework` parameter is `net9.0`
 
-  _Explicit value for the `framework` parameter is required._
-
-  ```shell
+    ```shell
   dotnet new mauiapp -f net9.0
   ```
 
@@ -402,7 +394,7 @@ And now conditional compilation can be configured so that platform source files 
 For existing projects, add the below block of code in the project file (.csproj). _This will modify the behavior of build process so due care must be taken if doing so._
 
 ```xml
-<ItemGroup Condition="'$(TargetFramework)' != 'net8.0'">
+<ItemGroup Condition="'$(TargetFramework)' != 'net9.0'">
     <Compile Remove="**\*.Standard.cs" />
     <None Include="**\*.Standard.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
 </ItemGroup>
@@ -460,7 +452,6 @@ Can take any one of the following values, with default value set to `Plain`:
 |Hybrid|App configured to work in a Hybrid fashion using BlazorWebView.|
 |Markup|App configured to work with C# Markup syntax.|
 |Razor|App configured to work with Razor syntax.|
-|Comet|App configured to work with MVU pattern using Comet.|
 |Reactor|App configured to work with MVU pattern using Reactor.|
 
 * `-tp` | `--target-platform`

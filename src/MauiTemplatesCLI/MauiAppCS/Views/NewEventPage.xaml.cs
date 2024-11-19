@@ -6,9 +6,7 @@
         public NewEventPage(NewEventViewModel viewModel)
         {
             InitializeComponent();
-#if Net8OrLater
             viewModel.Title = "New Event";
-#endif
             BindingContext = viewModel;
         }
 #else
@@ -63,11 +61,10 @@
 
         private async void OnSave(object sender, EventArgs e)
         {
+            await DisplayAlert("Add Event", "Save the event details to a data store.", "OK");
 #if (Hierarchical || Tabbed)
-            await Application.Current?.MainPage?.DisplayAlert("Add Event", "Save the event details to a data store.", "OK");
             await Navigation.PopModalAsync();
 #else
-            await Shell.Current.DisplayAlert("Add Event", "Save the event details to a data store.", "OK");
             await Shell.Current.GoToAsync("..");
 #endif
         }

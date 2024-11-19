@@ -15,14 +15,10 @@
     mc:Ignorable="d">
     <ContentPage.Content>
         <Grid RowDefinitions="*,40">
-<!--#if (Net8OrLater)-->
             <BlazorWebView
                 x:Name="bwv"
                 HostPage="wwwroot/index.html"
                 StartPath="{x:Bind StartPath}">
-<!--#else-->
-            <BlazorWebView HostPage="wwwroot/index.html">
-<!--#endif-->
                 <BlazorWebView.RootComponents>
                     <RootComponent
                         Selector="#app"
@@ -56,14 +52,10 @@
     mc:Ignorable="d">
     <ContentPage.Content>
         <Grid RowDefinitions="*,40">
-<!--#if (Net8OrLater)-->
             <BlazorWebView
                 x:Name="bwv"
                 HostPage="wwwroot/index.html"
                 StartPath="{Binding StartPath}">
-<!--#else-->
-            <BlazorWebView HostPage="wwwroot/index.html">
-<!--#endif-->
                 <BlazorWebView.RootComponents>
                     <RootComponent
                         Selector="#app"
@@ -96,14 +88,10 @@
     mc:Ignorable="d">
     <ContentPage.Content>
         <Grid RowDefinitions="*,40">
-<!--#if (Net8OrLater)-->
             <BlazorWebView
                 x:Name="bwv"
                 HostPage="wwwroot/index.html"
                 StartPath="/counter">
-<!--#else-->
-            <BlazorWebView HostPage="wwwroot/index.html">
-<!--#endif-->
                 <BlazorWebView.RootComponents>
                     <RootComponent
                         Selector="#app"
@@ -297,7 +285,7 @@
         <ScrollView>
             <Grid RowDefinitions="*,40">
                 <StackLayout
-                    Padding="30"
+                    Padding="20"
                     Spacing="25">
 
                     <Label
