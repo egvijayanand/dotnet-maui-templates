@@ -8,12 +8,10 @@ using MauiApp._1.RazorLib.Data;
 using MauiApp._1.Data;
 #endif
 #endif
-#if Net7OrLater
 using Microsoft.Extensions.Logging;
-#endif
 #if AddMaps
 using Microsoft.Maui.Controls.Hosting;
-#if (Net7OrLater && (AllPlatforms || IsWindows))
+#if (AllPlatforms || IsWindows)
 using CommunityToolkit.Maui.Maps;
 #endif
 #endif
@@ -23,7 +21,7 @@ using Microsoft.Maui.Foldable;
 #if AddSyncfusionToolkit
 using Syncfusion.Maui.Toolkit.Hosting;
 #endif
-#if (AddToolkit || Hybrid || Net7OrLater || Razor)
+#if (AddToolkit || Hybrid || Net8OrLater || Razor)
 
 #endif
 namespace MauiApp._1
@@ -33,9 +31,7 @@ namespace MauiApp._1
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
-#if Comet
-            builder.UseCometApp<App>()
-#elif Reactor
+#if Reactor
             builder.UseMauiReactorApp<MainPage>(app =>
                    {
                        app.AddResource("Resources/Colors.xaml");
@@ -85,19 +81,10 @@ namespace MauiApp._1
 #endif
                    .ConfigureFonts(fonts =>
                    {
-#if Comet
-                       fonts.AddFont("OpenSans-Regular.ttf", AppFont);
-#else
                        fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-#endif
                        fonts.AddFont("OpenSans-SemiBold.ttf", "OpenSansSemiBold");
                    });
 
-#if Comet
-            builder.Services.AddSingleton(SemanticScreenReader.Default);
-            builder.Services.AddSingleton<MainPage>();
-
-#endif
 #if Reactor
             builder.Services.AddSingleton(SemanticScreenReader.Default);
 
@@ -147,7 +134,6 @@ namespace MauiApp._1
 #endif
 #if Hybrid
             builder.Services.AddMauiBlazorWebView();
-#if Net7OrLater
 //-:cnd:noEmit
 #if DEBUG
             // Caution: Recommended to enable Developer Tools only for development!!!
@@ -155,16 +141,9 @@ namespace MauiApp._1
             builder.Logging.AddDebug();
 #endif
 //+:cnd:noEmit
-#else
-//-:cnd:noEmit
-#if DEBUG
-            builder.Services.AddBlazorWebViewDeveloperTools();
-#endif
-//+:cnd:noEmit
-#endif
             builder.Services.AddSingleton(AppInfo.Current);
             builder.Services.AddSingleton<WeatherForecastService>();
-#elif Net7OrLater
+#else
 //-:cnd:noEmit
 #if DEBUG
             builder.Logging.AddDebug();

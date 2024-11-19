@@ -8,9 +8,7 @@ namespace MauiApp._1.Exceptions
         public RouteNotFoundException() { }
         public RouteNotFoundException(string message) : base(message) { }
         public RouteNotFoundException(string message, Exception inner) : base(message, inner) { }
-#if Net8OrLater
         [Obsolete]
-#endif
         protected RouteNotFoundException(SerializationInfo info, StreamingContext context) : base(info, context) { }
     }
 }

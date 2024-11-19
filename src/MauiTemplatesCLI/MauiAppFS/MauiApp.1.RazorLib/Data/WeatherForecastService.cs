@@ -1,18 +1,11 @@
 namespace MauiApp._1.RazorLib.Data
 {
     public class WeatherForecastService
-    {   
-#if Net8OrLater
+    {
         private static readonly string[] Summaries =
         [
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         ];
-#else
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-#endif
 
         public Task<WeatherForecast[]> GetForecastAsync(DateTime startDate)
         {

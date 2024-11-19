@@ -10,11 +10,7 @@
         <TargetFrameworks>MAUI_TFM-android</TargetFrameworks>
         <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('osx'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst</TargetFrameworks>
         <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst;MAUI_TFM-windows10.0.19041.0</TargetFrameworks>
-        <!--#if (Net8OrLater)-->
         <!-- <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-tizen</TargetFrameworks> -->
-        <!--#else-->
-        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-tizen</TargetFrameworks>
-        <!--#endif-->
         <TargetFrameworks>$(TargetFrameworks);MAUI_TFM</TargetFrameworks>
         <!--#elif (IsAndroid && IsiOS && IsmacOS)-->
         <TargetFrameworks>MAUI_TFM-android</TargetFrameworks>
@@ -94,13 +90,6 @@
 
         <!-- .NET MAUI -->
         <UseMaui>true</UseMaui>
-        <!--#if (Net8 && !CentralPkgMgmt)-->
-        <!--#if (Nightly)-->
-        <MauiVersion>8.*-*</MauiVersion>
-        <!--#else-->
-        <MauiVersion>8.*</MauiVersion>
-        <!--#endif-->
-        <!--#endif-->
         <SingleProject>true</SingleProject>
         <EnableDefaultItems>false</EnableDefaultItems>
 
@@ -118,11 +107,8 @@
         <ApplicationTitle>SAFE-NAME</ApplicationTitle>
 
         <!-- App Identifier -->
-        <!--#if (AllPlatforms || IsAndroid || IsiOS || IsmacOS || (Net8OrLater && IsWindows))-->
+        <!--#if (AllPlatforms || IsAndroid || IsiOS || IsmacOS || IsWindows)-->
         <ApplicationId>com.companyname.mauiappid</ApplicationId>
-        <!--#endif-->
-        <!--#if (Net7OrEarlier && (AllPlatforms || IsWindows))-->
-        <ApplicationIdGuid>81a9fb0a-63f5-4ef6-b38e-0cf88600102a</ApplicationIdGuid>
         <!--#endif-->
 
         <!-- Versions -->
@@ -204,14 +190,6 @@
         <AndroidManifest Include="$(AndroidProjectFolder)AndroidManifest.xml" />
         <Compile Include="$(AndroidProjectFolder)MainActivity.fs" />
         <Compile Include="$(AndroidProjectFolder)MainApplication.fs" />
-
-        <!--#if (Net7OrEarlier)-->
-        <!--#if (CentralPkgMgmt)-->
-        <PackageReference Include="FSharp.Android.Resource" />
-        <!--#else-->
-        <PackageReference Include="FSharp.Android.Resource" Version="1.*" />
-        <!--#endif-->
-        <!--#endif-->
     </ItemGroup>
 
     <!--#endif-->
@@ -253,7 +231,7 @@
     </ItemGroup>
 
     <!--#endif-->
-    <!--#if (Plain || Net8 || CentralPkgMgmt )-->
+    <!--#if (Plain || Net8OrLater || CentralPkgMgmt )-->
     <ItemGroup>
         <!--#if (Plain)-->
         <None Remove="SAFE-NAME.code-workspace" />
@@ -261,7 +239,7 @@
         <None Remove="SAFE-NAME.slnx" />
         <!--#endif-->
         <!--#endif-->
-        <!--#if (Net8 || CentralPkgMgmt)-->
+        <!--#if (Net8OrLater || CentralPkgMgmt)-->
         <None Remove="Directory.Packages.props" />
         <!--#endif-->
     </ItemGroup>
@@ -273,12 +251,12 @@
         <PackageReference Include="Fabulous.MauiControls" />
         <PackageReference Include="FSharp.Core" />
         <!--#else-->
-        <PackageReference Include="Fabulous" Version="2.*" />
-        <PackageReference Include="Fabulous.MauiControls" Version="2.*" />
-        <!--#if (Net8OrLater)-->
-        <PackageReference Include="FSharp.Core" Version="8.*" />
+        <PackageReference Include="Fabulous" Version="2.4.*" />
+        <PackageReference Include="Fabulous.MauiControls" Version="8.*" />
+        <!--#if (Net9)-->
+        <PackageReference Include="FSharp.Core" Version="9.*" />
         <!--#else-->
-        <PackageReference Include="FSharp.Core" Version="7.*" />
+        <PackageReference Include="FSharp.Core" Version="8.*" />
         <!--#endif-->
         <!--#endif-->
     </ItemGroup>
@@ -287,7 +265,6 @@
     <ItemGroup>
     <!--#endif-->
         <!--#if (CentralPkgMgmt)-->
-        <!--#if (Net8OrLater)-->
         <!--#if (Hybrid)-->
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" />
         <!--#endif-->
@@ -295,8 +272,6 @@
         <!--#if (Net8)-->
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" />
         <!--#endif-->
-        <!--#endif-->
-        <!--#if (Net7OrLater)-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Condition="'$(Configuration)' == 'Debug'" />
         <!--#if (AddFoldable)-->
         <PackageReference Include="Microsoft.Maui.Controls.Foldable" />
@@ -309,7 +284,6 @@
         <!--#endif-->
         <!--#if (AddMedia)-->
         <PackageReference Include="Fabulous.MauiControls.MediaElement" />
-        <!--#endif-->
         <!--#endif-->
         <!--#if (AddToolkit)-->
         <PackageReference Include="CommunityToolkit.Maui" />
@@ -328,13 +302,10 @@
         <!--#endif-->
         <!--#else-->
         <!--#if (Net9)-->
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Condition="'$(Configuration)' == 'Debug'" Version="9.*-*" />
-        <!--#elif (Net8)-->
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Condition="'$(Configuration)' == 'Debug'" Version="9.*" />
+        <!--#else-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Condition="'$(Configuration)' == 'Debug'" Version="8.*" />
-        <!--#elif (Net7)-->
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Condition="'$(Configuration)' == 'Debug'" Version="7.*" />
         <!--#endif-->
-        <!--#if (Net8OrLater)-->
         <!--#if (Hybrid)-->
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <!--#endif-->
@@ -356,7 +327,7 @@
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <!--#if (Net9)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="4.*-*" />
+        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="4.*" />
         <!--#else-->
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="3.*" />
         <!--#endif-->
@@ -369,39 +340,6 @@
         <!--#endif-->
         <!--#if (AddMedia)-->
         <PackageReference Include="Fabulous.MauiControls.MediaElement" Version="2.*" />
-        <!--#endif-->
-        <!--#elif (Net7)-->
-        <!--#if (AddFoldable)-->
-        <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="7.*" />
-        <!--#endif-->
-        <!--#if (AddToolkit)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="6.*" />
-        <!--#endif-->
-        <!--#if (AddMarkup)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.*" />
-        <!--#endif-->
-        <!--#if (AddSharedToolkit)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="2.*" />
-        <!--#endif-->
-        <!--#if (AddMaps)-->
-        <PackageReference Include="Fabulous.MauiControls.Maps" Version="2.*" />
-        <!--#if (AllPlatforms || IsWindows)-->
-        <PackageReference Include="CommunityToolkit.Maui.Maps" Version="1.*" />
-        <!--#endif-->
-        <!--#endif-->
-        <!--#if (AddMedia)-->
-        <PackageReference Include="Fabulous.MauiControls.MediaElement" Version="2.*" />
-        <!--#endif-->
-        <!--#else-->
-        <!--#if (AddToolkit)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="2.*" />
-        <!--#endif-->
-        <!--#if (AddMarkup)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.*" />
-        <!--#endif-->
-        <!--#if (AddSharedToolkit)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="1.*" />
-        <!--#endif-->
         <!--#endif-->
         <!--#if (AddMvvmToolkit)-->
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*" />

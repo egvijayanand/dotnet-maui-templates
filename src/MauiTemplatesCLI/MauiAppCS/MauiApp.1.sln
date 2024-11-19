@@ -18,7 +18,7 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiApp.1.RazorLib", "MauiApp.1.RazorLib\MauiApp.1.RazorLib.csproj", "{96D0A57E-E5F3-4E8A-A320-5A6DF01DF74A}"
 EndProject
 #endif
-#if (Net8 || CentralPkgMgmt)
+#if (Net8OrLater || CentralPkgMgmt)
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1D17E9ED-22F1-4992-AE45-B8507EFD6950}"
 	ProjectSection(SolutionItems) = preProject
 		Directory.Packages.props = Directory.Packages.props

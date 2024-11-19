@@ -249,6 +249,7 @@ namespace MauiApp._1
                     },
                 },
             });
+#if Net8
             Add(new Style(typeof(Frame))
             {
                 Setters =
@@ -258,6 +259,7 @@ namespace MauiApp._1
                     new() { Property = Frame.CornerRadiusProperty, Value = 8 },
                 },
             });
+#endif
             Add(new Style(typeof(ImageButton))
             {
                 Setters =

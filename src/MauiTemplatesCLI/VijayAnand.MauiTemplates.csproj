@@ -6,7 +6,7 @@
         <!-- Package Options -->
         <PackageType>Template</PackageType>
         <PackageId>VijayAnand.MauiTemplates</PackageId>
-        <PackageVersion>5.6.0</PackageVersion>
+        <PackageVersion>6.0.0</PackageVersion>
         <Title>.NET MAUI Project and Item Templates</Title>
         <Authors>Vijay Anand E G</Authors>
         <Copyright>Copyright &#169; 2021-2024 Vijay Anand E G</Copyright>

@@ -30,7 +30,7 @@
         <None Include="**\*.forms.cs" />
     </ItemGroup>
 
-    <!--#if (SolnFile || Net8 || CentralPkgMgmt)-->
+    <!--#if (SolnFile || Net8OrLater || CentralPkgMgmt)-->
     <ItemGroup>
         <!--#if (SolnFile)-->
         <None Remove="SAFE-NAME.code-workspace" />
@@ -38,7 +38,7 @@
         <!--#if (SolnFile && UseSlnx)-->
         <None Remove="SAFE-NAME.slnx" />
         <!--#endif-->
-        <!--#if (Net8 || CentralPkgMgmt)-->
+        <!--#if (Net8OrLater || CentralPkgMgmt)-->
         <None Remove="Directory.Packages.props" />
         <!--#endif-->
     </ItemGroup>
@@ -87,11 +87,9 @@
     <!-- .NET MAUI NuGet packages -->
     <ItemGroup Condition="'$(TargetFramework)' == 'MAUI_TFM'">
         <!--#if (CentralPkgMgmt)-->
-        <!--#if (Net8OrLater)-->
         <PackageReference Include="Microsoft.Maui.Controls" />
         <!--#if (Net8)-->
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" />
-        <!--#endif-->
         <!--#endif-->
         <!--#if (AddMauiMaps)-->
         <PackageReference Include="Microsoft.Maui.Controls.Maps" />
@@ -106,7 +104,6 @@
         <PackageReference Include="CommunityToolkit.Maui.Markup" />
         <!--#endif-->
         <!--#else-->
-        <!--#if (Net8OrLater)-->
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <!--#if (Net8)-->
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
@@ -119,21 +116,6 @@
         <!--#endif-->
         <!--#if (AddMauiMarkup)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.*" />
-        <!--#endif-->
-        <!--#elif (Net7)-->
-        <!--#if (AddMauiToolkit)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="6.*" />
-        <!--#endif-->
-        <!--#if (AddMauiMarkup)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.*" />
-        <!--#endif-->
-        <!--#else-->
-        <!--#if (AddMauiToolkit)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="2.*" />
-        <!--#endif-->
-        <!--#if (AddMauiMarkup)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.*" />
-        <!--#endif-->
         <!--#endif-->
         <!--#if (AddMauiMaps)-->
         <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
@@ -158,13 +140,9 @@
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <!--#if (Net9)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="4.*-*" />
-        <!--#elif (Net8)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="3.*" />
-        <!--#elif (Net7)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="2.*" />
+        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="4.*" />
         <!--#else-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="1.*" />
+        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="3.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#endif-->

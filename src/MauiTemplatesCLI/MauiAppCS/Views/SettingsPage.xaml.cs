@@ -11,19 +11,10 @@
         {
             InitializeComponent();
 #if Tabbed
-#if Net8OrLater
-            var viewModel = AppService.GetService<SettingsViewModel>();
+            var viewModel = AppService.GetRequiredService<SettingsViewModel>();
+#endif
             viewModel.Title = "Settings";
             BindingContext = viewModel;
-#else
-            BindingContext = AppService.GetService<SettingsViewModel>();
-#endif
-#else
-#if Net8OrLater
-            viewModel.Title = "Settings";
-#endif
-            BindingContext = viewModel;
-#endif
         }
 #else
         public SettingsPage()

@@ -15,13 +15,16 @@ namespace MauiApp._1.Views
             var version = typeof(MauiApp).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
             VersionLabel.Text = $".NET MAUI ver. {version?[..version.IndexOf('+')]}";
 #if Tabbed
-            BindingContext = AppService.GetService<EventsViewModel>();
+            BindingContext = AppService.GetRequiredService<EventsViewModel>();
 #else
             BindingContext = viewModel;
-#if Net8OrLater
             viewModel.Title = "Calendar";
-#endif
+#if Net9OrLater
+            //this.SetBinding(Page.TitleProperty, static (EventsViewModel vm) => vm.Title);
             SetBinding(Page.TitleProperty, new Binding(nameof(EventsViewModel.Title)));
+#else
+            SetBinding(Page.TitleProperty, new Binding(nameof(EventsViewModel.Title)));
+#endif
 #endif
         }
 #else

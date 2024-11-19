@@ -85,7 +85,7 @@
         {
             "id": "include-maps",
             "name": {
-                "text": "Add and configure Microsoft.Maui.Controls.M_aps NuGet package reference (.NET 7 or later)"
+                "text": "Add and configure Microsoft.Maui.Controls.M_aps NuGet package reference"
             },
             "isVisible": true,
             "defaultValue": "false"
@@ -93,7 +93,7 @@
         {
             "id": "include-media-element",
             "name": {
-                "text": "Add and configure CommunityToolkit.Maui.Media_Element NuGet package reference (.NET 7 or later)"
+                "text": "Add and configure CommunityToolkit.Maui.Media_Element NuGet package reference"
             },
             "isVisible": true,
             "defaultValue": "false"
@@ -101,7 +101,7 @@
         {
             "id": "include-foldable",
             "name": {
-                "text": "Add and configure Microsoft.Maui.Controls.Fo_ldable NuGet package reference (.NET 7 or later)"
+                "text": "Add and configure Microsoft.Maui.Controls.Fo_ldable NuGet package reference"
             },
             "isVisible": true,
             "defaultValue": "false"

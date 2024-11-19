@@ -8,9 +8,7 @@ namespace MauiApp._1.Exceptions
         public TypeNotRegisteredException() { }
         public TypeNotRegisteredException(string message) : base(message) { }
         public TypeNotRegisteredException(string message, Exception inner) : base(message, inner) { }
-#if Net8OrLater
-            [Obsolete]
-#endif
+        [Obsolete]
         protected TypeNotRegisteredException(SerializationInfo info, StreamingContext context) : base(info, context) { }
     }
 }

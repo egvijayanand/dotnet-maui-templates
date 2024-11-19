@@ -27,11 +27,7 @@ module App =
         Application(
             ContentPage(
                 Grid(coldefs = [ Star ], rowdefs = [ Star; Absolute 40. ]) {
-#if Net8OrLater
                     (BlazorWebView("wwwroot/index.html", "/counter", [ new FabRootComponent( Selector = "#app", ComponentType = typeof<Main> ) ])).gridRow(0)
-#else
-                    (BlazorWebView("wwwroot/index.html", [ new FabRootComponent( Selector = "#app", ComponentType = typeof<Main> ) ])).gridRow(0)
-#endif
 
                     (Grid() {
                         Label(mauiVersion).center()

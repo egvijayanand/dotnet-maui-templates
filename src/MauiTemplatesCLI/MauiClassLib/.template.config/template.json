@@ -37,26 +37,16 @@
                 {
                     "choice": "net9.0",
                     "description": "Target .NET 9",
-                    "displayName": ".NET 9 (Preview)"
+                    "displayName": ".NET 9 (STS)"
                 },
                 {
                     "choice": "net8.0",
                     "description": "Target .NET 8",
                     "displayName": ".NET 8 (LTS)"
-                },
-                {
-                    "choice": "net7.0",
-                    "description": "Target .NET 7",
-                    "displayName": ".NET 7 (STS)"
-                },
-                {
-                    "choice": "net6.0",
-                    "description": "Target .NET 6",
-                    "displayName": ".NET 6 (LTS)"
                 }
             ],
             "replaces": "MAUI_TFM",
-            "defaultValue": "net8.0"
+            "defaultValue": "net9.0"
         },
         "use-razor-sdk": {
             "type": "parameter",
@@ -181,21 +171,21 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to add CommunityToolkit.Maui.MediaElement NuGet package reference (.NET 7 or later).",
+            "description": "Option to add CommunityToolkit.Maui.MediaElement NuGet package reference.",
             "displayName": "Add CommunityToolkit.Maui.Med_iaElement NuGet package reference"
         },
         "include-maps": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to add Microsoft.Maui.Controls.Maps NuGet package reference (.NET 7 or later).",
+            "description": "Option to add Microsoft.Maui.Controls.Maps NuGet package reference.",
             "displayName": "Add Microsoft.Maui.Controls.M_aps NuGet package reference"
         },
         "include-foldable": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to add Microsoft.Maui.Controls.Foldable NuGet package reference (.NET 7 or later).",
+            "description": "Option to add Microsoft.Maui.Controls.Foldable NuGet package reference.",
             "displayName": "Add Microsoft.Maui.Controls.Fo_ldable NuGet package reference"
         },
         "include-mvvm-toolkit": {
@@ -256,10 +246,6 @@
             "type": "computed",
             "value": "(use-maui-essentials)"
         },
-        "Net7": {
-            "type": "computed",
-            "value": "(frameworkLower == \"net7.0\")"
-        },
         "Net8": {
             "type": "computed",
             "value": "(frameworkLower == \"net8.0\")"
@@ -268,13 +254,9 @@
             "type": "computed",
             "value": "(frameworkLower == \"net9.0\")"
         },
-        "Net7OrLater": {
-            "type": "computed",
-            "value": "(frameworkLower == \"net7.0\" || frameworkLower == \"net8.0\" || frameworkLower == \"net9.0\")"
-        },
         "Net8OrLater": {
             "type": "computed",
-            "value": "(frameworkLower == \"net8.0\" || frameworkLower == \"net9.0\")"
+            "value": "(Net8 || Net9)"
         },
         "AllPlatforms": {
             "type": "computed",
@@ -318,7 +300,7 @@
         },
         "AddSyncfusionToolkit": {
             "type": "computed",
-            "value": "(Net8OrLater && include-syncfusion-toolkit)"
+            "value": "(include-syncfusion-toolkit)"
         },
         "AddMarkup": {
             "type": "computed",
@@ -326,19 +308,19 @@
         },
         "AddCamera": {
             "type": "computed",
-            "value": "(Net8OrLater && include-camera)"
+            "value": "(include-camera)"
         },
         "AddMedia": {
             "type": "computed",
-            "value": "(Net7OrLater && include-media-element)"
+            "value": "(include-media-element)"
         },
         "AddMaps": {
             "type": "computed",
-            "value": "(Net7OrLater && include-maps)"
+            "value": "(include-maps)"
         },
         "AddFoldable": {
             "type": "computed",
-            "value": "(Net7OrLater && include-foldable)"
+            "value": "(include-foldable)"
         },
         "AddMvvmToolkit": {
             "type": "computed",
@@ -409,12 +391,6 @@
                     ]
                 },
                 {
-                    "condition": "(!Net8 && !CentralPkgMgmt)",
-                    "exclude": [
-                        "Directory.Packages.props"
-                    ]
-                },
-                {
                     "condition": "(!(AllPlatforms || IsAndroid))",
                     "exclude": [
                         "Platforms/Android/**/*"
@@ -451,7 +427,7 @@
                     ]
                 },
                 {
-                    "condition": "(!(Net8 && Nightly))",
+                    "condition": "(!Nightly)",
                     "exclude": [
                         "NuGet.config"
                     ]
