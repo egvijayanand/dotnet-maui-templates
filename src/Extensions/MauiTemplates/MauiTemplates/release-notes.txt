@@ -2,8 +2,24 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This VS extension does not gather any usage or telemetry data, even anonymously, ensuring that you can use it freely and with complete privacy assurance.
 
-What's new in ver. 5.16.0.0:
-----------------------------
+What's new in ver. 6.0.1.0:
+---------------------------
+Templates updated to support .NET MAUI 9 Stable channel release.
+
+The default value for the Framework parameter is now set to .NET 9.0 (STS).
+
+Added support for Dynamic NuGet package versioning for .NET MAUI 9 (similar to that in .NET MAUI 8).
+
+Removed unsupported versions (.NET MAUI 6 and 7) and Comet, as it is no longer being updated.
+
+For ease of use, the MAUI CommunityToolkit and Syncfusion MAUI Toolkit's XAML namespaces have been added to App.xaml file, if opted.
+
+Support for Nightly build configuration has been added for .NET MAUI 9 also.
+
+Wherever applicable, .NET MAUI 9 constructs are applied, such as referencing the Window Page instead of the Application MainPage.
+
+v5.16.0.0:
+
 Introduced the option to add and configure the Syncfusion.Maui.Toolkit NuGet package.
 
 Note: This would be an explicit option.
