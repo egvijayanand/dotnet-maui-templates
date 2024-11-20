@@ -52,7 +52,7 @@ If already installed, can be updated to the latest version with the below comman
 dotnet workload update
 ```
 
-Templates have been updated to support .NET 6/7/8/9 and is available to install from.
+Templates have been updated to support .NET MAUI 8 and 9 and is available to install from.
 
 |Channel|NuGet|VS Marketplace|
 |:---:|:---:|:---:|
@@ -461,7 +461,7 @@ Can take a combination of the following values, with default value set to `All`:
 |Parameter Value|Description|
 |:---:|:---|
 |All|Targets all possible .NET MAUI supported platforms.|
-|Base|Base framework (.NET 6/7/8) based on the framework opted.|
+|Base|Base framework (.NET 8 or 9) based on the `framework` opted.|
 |Android|Targets Android platform.|
 |iOS|Targets iOS platform.|
 |macOS|Targets macOS platform via Mac Catalyst.|
