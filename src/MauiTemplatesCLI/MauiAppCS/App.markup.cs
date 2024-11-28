@@ -53,7 +53,7 @@
             
 #if Net8
 #if Mvvm
-            MainPage = services.GetService<MainPage>();
+            MainPage = services.GetRequiredService<MainPage>();
 #else
             MainPage = new MainPage();
 #endif

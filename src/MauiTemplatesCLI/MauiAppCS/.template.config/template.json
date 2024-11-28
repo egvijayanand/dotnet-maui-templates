@@ -201,7 +201,7 @@
                     ]
                 },
                 {
-                    "condition": "(Hybrid)",
+                    "condition": "(Hybrid || JSHybrid)",
                     "exclude": [
                         "AppShell.razor",
                         "Views/MainPage.razor"
@@ -347,7 +347,7 @@
                     }
                 },
                 {
-                    "condition": "(Plain || Hybrid || CSharp)",
+                    "condition": "(Plain || Hybrid || JSHybrid || CSharp)",
                     "exclude": [
                         "**/Exceptions/*",
                         "**/Models/*",
@@ -367,7 +367,7 @@
                     ]
                 },
                 {
-                    "condition": "((Xaml || Hybrid || Markup) && MauiLib)",
+                    "condition": "((Xaml || Hybrid || JSHybrid || Markup) && MauiLib)",
                     "rename": {
                         "App.xaml": "MauiApp.1.MauiLib/App.xaml",
                         "App.xaml.cs": "MauiApp.1.MauiLib/App.xaml.cs",
@@ -402,7 +402,7 @@
                     }
                 },
                 {
-                    "condition": "((Xaml || Hybrid) && MauiLib)",
+                    "condition": "((Xaml || Hybrid || JSHybrid) && MauiLib)",
                     "rename": {
                         "Resources/Colors.xaml": "MauiApp.1.MauiLib/Resources/Colors.xaml",
                         "Resources/Styles.xaml": "MauiApp.1.MauiLib/Resources/Styles.xaml",
@@ -449,7 +449,7 @@
                     }
                 },
                 {
-                    "condition": "((Plain || Hierarchical || Tabbed || Hybrid || Markup) && MauiLib & Mvvm)",
+                    "condition": "((Plain || Hierarchical || Tabbed || Hybrid || JSHybrid || Markup) && MauiLib & Mvvm)",
                     "rename": {
                         "ViewModels/BaseViewModel.cs": "MauiApp.1.MauiLib/ViewModels/BaseViewModel.cs",
                         "ViewModels/MainViewModel.cs": "MauiApp.1.MauiLib/ViewModels/MainViewModel.cs"
@@ -530,6 +530,39 @@
                     "exclude": [
                         "NuGet.config"
                     ]
+                },
+                {
+                    "condition": "(JSHybridNet9 && MauiLib)",
+                    "rename": {
+                        "Converters/HybridWebViewRawMessageReceivedEventArgs.cs": "MauiApp.1.MauiLib/Converters/HybridWebViewRawMessageReceivedEventArgs.cs",
+                        "Resources/Raw/hybridroot/css/bootstrap/bootstrap.min.css": "MauiApp.1/Resources/Raw/wwwroot/css/bootstrap/bootstrap.min.css",
+                        "Resources/Raw/hybridroot/css/bootstrap/bootstrap.min.css.map": "MauiApp.1/Resources/Raw/wwwroot/css/bootstrap/bootstrap.min.css.map",
+                        "Resources/Raw/hybridroot/css/app.css": "MauiApp.1/Resources/Raw/wwwroot/css/app.css",
+                        "Resources/Raw/hybridroot/scripts/hwv.js": "MauiApp.1/Resources/Raw/wwwroot/scripts/hwv.js",
+                        "Resources/Raw/hybridroot/index.html": "MauiApp.1/Resources/Raw/wwwroot/index.html"
+                    }
+                },
+                {
+                    "condition": "(JSHybridNet9)",
+                    "rename": {
+                        "hybridroot/css/bootstrap/bootstrap.min.css": "wwwroot/css/bootstrap/bootstrap.min.css",
+                        "hybridroot/css/bootstrap/bootstrap.min.css.map": "wwwroot/css/bootstrap/bootstrap.min.css.map",
+                        "hybridroot/css/app.css": "wwwroot/css/app.css",
+                        "hybridroot/scripts/hwv.js": "wwwroot/scripts/hwv.js",
+                        "hybridroot/index.html": "wwwroot/index.html"
+                    }
+                },
+                {
+                    "condition": "(Net8 || !JSHybrid)",
+                    "exclude": [
+                        "Resources/Raw/hybridroot/**/*"
+                    ]
+                },
+                {
+                    "condition": "(Net8 || !(JSHybrid && Mvvm))",
+                    "exclude": [
+                        "Converters/**/*"
+                    ]
                 }
             ]
         }
@@ -585,7 +618,7 @@
                 },
                 {
                     "choice": "Tab",
-                    "description": "App configured to work in a Tabbed fashion using TabbedPage."
+                    "description": "App configured to work in a Tabbed mode using TabbedPage."
                 },
                 {
                     "choice": "Shell",
@@ -593,7 +626,11 @@
                 },
                 {
                     "choice": "Hybrid",
-                    "description": "App configured to work in a Hybrid fashion using BlazorWebView."
+                    "description": "App configured to work in a Blazor Hybrid mode using BlazorWebView."
+                },
+                {
+                    "choice": "JSHybrid",
+                    "description": "App configured to work in a JS Hybrid mode using HybridWebView."
                 },
                 {
                     "choice": "Markup",
@@ -739,7 +776,7 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to add and configure CommunityToolkit.Maui.Camera NuGet package reference (.NET 8 or later).",
+            "description": "Option to add and configure CommunityToolkit.Maui.Camera NuGet package reference.",
             "displayName": "Add and configure CommunityTool_kit.Maui.Camera NuGet package reference"
         },
         "include-maps": {
@@ -842,6 +879,22 @@
                 "toLower": true
             }
         },
+        "Net8": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net8.0\")"
+        },
+        "Net9": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net9.0\")"
+        },
+        "Net8OrLater": {
+            "type": "computed",
+            "value": "(Net8 || Net9)"
+        },
+        "Net9OrLater": {
+            "type": "computed",
+            "value": "(Net9)"
+        },
         "Plain": {
             "type": "computed",
             "value": "(design-pattern == \"Plain\" || designPatternLower == \"plain\")"
@@ -861,6 +914,18 @@
         "Hybrid": {
             "type": "computed",
             "value": "(design-pattern == \"Hybrid\" || designPatternLower == \"hybrid\")"
+        },
+        "JSHybrid": {
+            "type": "computed",
+            "value": "(design-pattern == \"JSHybrid\" || designPatternLower == \"jshybrid\")"
+        },
+        "JSHybridNet9": {
+            "type": "computed",
+            "value": "(Net9OrLater && JSHybrid)"
+        },
+        "Fallback": {
+            "type": "computed",
+            "value": "(Net8 && JSHybrid)"
         },
         "Markup": {
             "type": "computed",
@@ -888,7 +953,7 @@
         },
         "Xaml": {
             "type": "computed",
-            "value": "(Plain || Hierarchical || Tabbed || Shell)"
+            "value": "(Plain || Hierarchical || Tabbed || Shell || JSHybrid)"
         },
         "Mvvm": {
             "type": "computed",
@@ -901,22 +966,6 @@
         "Auxiliary": {
             "type": "computed",
             "value": "(Razor || Reactor)"
-        },
-        "Net8": {
-            "type": "computed",
-            "value": "(frameworkLower == \"net8.0\")"
-        },
-        "Net9": {
-            "type": "computed",
-            "value": "(frameworkLower == \"net9.0\")"
-        },
-        "Net8OrLater": {
-            "type": "computed",
-            "value": "(Net8 || Net9)"
-        },
-        "Net9OrLater": {
-            "type": "computed",
-            "value": "(Net9)"
         },
         "AllPlatforms": {
             "type": "computed",
@@ -976,7 +1025,7 @@
         },
         "AddToolkit": {
             "type": "computed",
-            "value": "(include-toolkit)"
+            "value": "(include-toolkit || (JSHybridNet9 && Mvvm))"
         },
         "AddSyncfusionToolkit": {
             "type": "computed",

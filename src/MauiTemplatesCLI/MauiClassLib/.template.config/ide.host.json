@@ -85,7 +85,7 @@
         {
             "id": "include-camera",
             "name": {
-                "text": "Add CommunityTool_kit.Maui.Camera NuGet package reference (.NET 8 or later)"
+                "text": "Add CommunityTool_kit.Maui.Camera NuGet package reference"
             },
             "isVisible": true,
             "defaultValue": "false"

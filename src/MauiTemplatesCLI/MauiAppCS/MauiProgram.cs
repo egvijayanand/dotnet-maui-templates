@@ -94,31 +94,30 @@ namespace MauiApp._1
             builder.Services.AddSingleton<MainViewModel>();
             builder.Services.AddSingleton<MainPage>();
 
-#elif (Plain || Markup)
-            builder.Services.AddSingleton(SemanticScreenReader.Default);
+#elif JSHybridNet9
+            builder.Services.AddSingleton(DeviceDisplay.Current);
+            builder.Services.AddSingleton(DeviceInfo.Current);
             builder.Services.AddSingleton<MainViewModel>();
             builder.Services.AddSingleton<MainPage>();
 
-#else
+#elif (Hierarchical || Tabbed || Shell)
             builder.Services.AddSingleton<IDialogService, DialogService>();
             builder.Services.AddSingleton<INavigationService, NavigationService>();
-#endif
+
 #if Hierarchical
             builder.Services.AddSingleton<MainViewModel>();
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddTransient<NewEventViewModel>();
             builder.Services.AddTransient<NewEventPage>();
 
-#endif
-#if Tabbed
+#elif Tabbed
             builder.Services.AddSingleton<EventsViewModel>();
             builder.Services.AddSingleton<SearchViewModel>();
             builder.Services.AddSingleton<SettingsViewModel>();
             builder.Services.AddTransient<NewEventViewModel>();
             builder.Services.AddTransient<NewEventPage>();
 
-#endif
-#if Shell
+#elif Shell
             builder.Services.AddSingleton<EventsViewModel>();
             builder.Services.AddSingleton<EventsPage>();
             builder.Services.AddSingleton<SearchViewModel>();
@@ -131,9 +130,18 @@ namespace MauiApp._1
             builder.Services.AddTransient<NewEventPage>();
 
 #endif
+#else
+            builder.Services.AddSingleton(SemanticScreenReader.Default);
+            builder.Services.AddSingleton<MainViewModel>();
+            builder.Services.AddSingleton<MainPage>();
+
+#endif
 #endif
 #if Hybrid
             builder.Services.AddMauiBlazorWebView();
+            builder.Services.AddSingleton(AppInfo.Current);
+            builder.Services.AddSingleton<WeatherForecastService>();
+
 //-:cnd:noEmit
 #if DEBUG
             // Caution: Recommended to enable Developer Tools only for development!!!
@@ -141,8 +149,14 @@ namespace MauiApp._1
             builder.Logging.AddDebug();
 #endif
 //+:cnd:noEmit
-            builder.Services.AddSingleton(AppInfo.Current);
-            builder.Services.AddSingleton<WeatherForecastService>();
+#elif JSHybridNet9
+//-:cnd:noEmit
+#if DEBUG
+            // Caution: Recommended to enable Developer Tools only for development!!!
+            builder.Services.AddHybridWebViewDeveloperTools();
+            builder.Logging.AddDebug();
+#endif
+//+:cnd:noEmit
 #else
 //-:cnd:noEmit
 #if DEBUG

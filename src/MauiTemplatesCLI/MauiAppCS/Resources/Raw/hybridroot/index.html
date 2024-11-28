@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>SAFE-NAME</title>
+    <base href="/" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="icon" href="data:,">
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        .app-content {
+            background-color: white;
+            color: black;
+        }
+
+        div.spacer {
+            margin: 10px 5px 5px 5px;
+        }
+
+        input[type=text] {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .app-content {
+                background-color: #121212;
+                color: white;
+            }
+        }
+    </style>
+</head>
+
+<body class="app-content">
+    <h3>HybridWebView!</h3>
+    <div class="spacer" style="margin-top: 20px;">
+        <input type="text" id="message" class="app-content" placeholder="Type your message for .NET here" maxlength="50"
+            style="width: 225px;" />
+        &nbsp;
+        <button type="button" id="send" class="btn btn-primary" disabled>Send to .NET</button>
+    </div>
+    <div class="spacer">
+        Messages from .NET: <textarea readonly id="msgFromCS" class="app-content"
+            style="margin-top: 5px; padding: 5px; width: 100%; height: 300px;"></textarea>
+    </div>
+    <script src="scripts/hwv.js"></script>
+    <script>
+        function addNumbers(num1, num2) {
+            return num1 + num2;
+        }
+
+        window.addEventListener(
+            "HybridWebViewMessageReceived",
+            function (e) {
+                var msgFromCS = document.getElementById("msgFromCS");
+                msgFromCS.value += e.detail.message + '\r\n';
+                msgFromCS.scrollTop = msgFromCS.scrollHeight;
+            });
+
+        let message = document.getElementById("message");
+        let send = document.getElementById("send");
+
+        message.addEventListener("input", function () {
+            if (message.value.trim() == '') {
+                send.disabled = true;
+            } else {
+                send.disabled = false;
+            }
+        });
+
+        message.addEventListener("keypress", function (e) {
+            console.log(e.key);
+            if (e.key === "Enter") {
+                send.click();
+            }
+        });
+
+        send.addEventListener("click", function () {
+            window.HybridWebView.SendRawMessage(message.value.trim());
+            message.value = '';
+            send.disabled = true;
+            message.focus();
+        });
+    </script>
+</body>
+
+</html>

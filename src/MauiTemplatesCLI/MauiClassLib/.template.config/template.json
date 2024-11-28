@@ -164,7 +164,7 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to add CommunityToolkit.Maui.Camera NuGet package reference (.NET 8 or later).",
+            "description": "Option to add CommunityToolkit.Maui.Camera NuGet package reference.",
             "displayName": "Add CommunityTool_kit.Maui.Camera NuGet package reference"
         },
         "include-media-element": {
