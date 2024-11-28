@@ -49,7 +49,8 @@ else
 			AppTheme.Dark => "table table-dark",
 			_ => "table"
 		};*/
-
+		// Simulate a network delay ...
+		await Task.Delay(500);
 		forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
 	}
 }
