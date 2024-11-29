@@ -226,9 +226,9 @@ And from [v6.1.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/6.1.0)
 
   To facilitate this, the design pattern (`-dp`) parameter includes a new value called `JSHybrid`, which creates an App project using `HybridWebView` with all prerequisites set automatically, requiring no manual intervention.
 
-  In the VS2022/Rider IDE, within the Project Options page, this `Design Pattern` is available as a dropdown UI control. Select `JSHybrid` as its value.
+  In the VS2022/Rider IDE, within the Project Options page, this `Application Design` option is available as a dropdown UI control. Select `JSHybrid` as its value.
 
-  *Since HybridWebView is a feature introduced in .NET MAUI 9, creating a .NET MAUI 8 App with this design pattern (`-dp`) parameter value of `JSHybrid` will not result in an error; instead, it will fall back by creating an App project that corresponds to the default `Plain` value.*
+  *Since HybridWebView is a feature introduced in .NET MAUI 9, creating a .NET MAUI 8 App with the value of `JSHybrid` will NOT result in an error; instead, it will fall back by creating an App project that corresponds to the default `Plain` value from both the CLI and the IDE.*
 
   ```shell
   dotnet new mauiapp -o MyApp -dp JSHybrid
