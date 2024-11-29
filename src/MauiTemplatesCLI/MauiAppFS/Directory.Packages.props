@@ -69,7 +69,11 @@
         <PackageVersion Include="Syncfusion.Maui.Toolkit" Version="1.0.2" />
         <!--#endif-->
         <!--#if (AddMarkup)-->
+        <!--#if (Net9)-->
+        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="5.1.0" />
+        <!--#else-->
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="4.2.0" />
+        <!--#endif-->
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <!--#if (Net9)-->
