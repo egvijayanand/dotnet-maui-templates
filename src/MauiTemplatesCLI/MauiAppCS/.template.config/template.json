@@ -630,7 +630,7 @@
                 },
                 {
                     "choice": "JSHybrid",
-                    "description": "App configured to work in a JS Hybrid mode using HybridWebView."
+                    "description": "App configured to work in a JavaScript Hybrid mode using HybridWebView (.NET MAUI 9 or later)."
                 },
                 {
                     "choice": "Markup",

@@ -479,7 +479,7 @@ Can take any one of the following values, with default value set to `Plain`:
 |Tab|App configured to work in a Tabbed fashion using `TabbedPage`.|
 |Shell|App configured to work with Routes using `Shell` page.|
 |Hybrid|App configured to work in a `Blazor Hybrid` mode using `BlazorWebView`.|
-|JSHybrid|App configured to work in a `JS Hybrid` mode using `HybridWebView` (.NET MAUI 9 or later).|
+|JSHybrid|App configured to work in a `JavaScript Hybrid` mode using `HybridWebView` (.NET MAUI 9 or later).|
 |Markup|App configured to work with `C# Markup` syntax.|
 |Razor|App configured to work with `Razor` syntax.|
 |Reactor|App configured to work with MVU pattern using `Reactor`.|
