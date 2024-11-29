@@ -105,10 +105,10 @@
         <!--#endif-->
         <!--#if (Reactor)-->
         <!--#if (Net9OrLater)-->
-        <PackageVersion Include="Reactor.Maui" Version="3.0.0-beta" />
-        <PackageVersion Include="Reactor.Maui.Canvas" Version="3.0.0-beta" />
+        <PackageVersion Include="Reactor.Maui" Version="3.0.6-beta" />
+        <PackageVersion Include="Reactor.Maui.Canvas" Version="3.0.6-beta" />
         <!--#if (AddMaps)-->
-        <PackageVersion Include="Reactor.Maui.Maps" Version="3.0.0-beta" />
+        <PackageVersion Include="Reactor.Maui.Maps" Version="3.0.6-beta" />
         <!--#endif-->
         <!--#else-->
         <PackageVersion Include="Reactor.Maui" Version="2.0.55" />
