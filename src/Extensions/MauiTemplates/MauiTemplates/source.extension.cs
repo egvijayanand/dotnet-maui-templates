@@ -11,8 +11,8 @@ namespace VijayAnand.MauiTemplates
         public const string Name = ".NET MAUI Project and Item Templates";
         public const string Description = @".NET MAUI Project, Item Templates, and Code Snippets for Visual Studio 2022 (.NET MAUI 8 and 9).";
         public const string Language = "en-US";
-        public const string Version = "6.0.1.0";
+        public const string Version = "6.1.0.0";
         public const string Author = "Vijay Anand E G";
-        public const string Tags = "MAUI, iOS, Android, macOS, WinUI, Windows, Desktop, Mobile, Blazor, .NET MAUI, Mac Catalyst, Templates, VS2022, Visual Studio, WinUI3, GA, Code Snippets, Unified, All-in-One, Hybrid, Tizen, Stable, .NET 7, Blazor Hybrid, BlazorWebView, C#, Handlers, Maps, MAUI Maps, MVVM, XAML, SR, WinUI, Service Release, .NET 6, Dual Screen, Foldable, Surface Duo, General Availability, Markup, Fluent, C# Markup, Media, Audio, Video, Playback, Streaming, AV, Class, .NET 8, Razor, Comet, Reactor, Compiled, Bindings, MVU, F#, Fabulous, SR1, SR2, Generic, .NET 9, CPM, NuGet, Camera";
+        public const string Tags = "MAUI, iOS, Android, macOS, WinUI, Windows, Desktop, Mobile, Blazor, .NET MAUI, Mac Catalyst, Templates, VS2022, Visual Studio, WinUI3, GA, Code Snippets, Unified, All-in-One, Hybrid, Tizen, Stable, Blazor Hybrid, BlazorWebView, C#, Handlers, Maps, MAUI Maps, MVVM, XAML, SR, WinUI, Service Release, Dual Screen, Foldable, Surface Duo, General Availability, Markup, Fluent, C# Markup, Media, Audio, Video, Playback, Streaming, AV, Class, .NET 8, Razor, Reactor, Compiled, Bindings, MVU, F#, Fabulous, Generic, .NET 9, CPM, NuGet, Camera, ARM64, JavaScript, JS, HybridWebView";
     }
 }
