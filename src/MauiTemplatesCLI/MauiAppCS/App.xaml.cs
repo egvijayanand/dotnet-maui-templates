@@ -4,7 +4,7 @@
     {
 #if Mvvm
 #if Net9OrLater
-#if (Plain || Hierarchical || Hybrid)
+#if (Plain || Hierarchical || Hybrid || JSHybridNet9)
         private readonly IServiceProvider _services;
 
 #endif
@@ -24,7 +24,7 @@
         {
             InitializeComponent();
 #if Net9OrLater
-#if (Plain || Hierarchical || Hybrid)
+#if (Plain || Hierarchical || Hybrid || JSHybridNet9)
             _services = services;
 #endif
 #endif
@@ -32,7 +32,7 @@
 #if Net8
 #if Hierarchical
             MainPage = new NavigationPage(services.GetRequiredService<MainPage>());
-#elif (Plain || Hybrid)
+#elif (Plain || Hybrid || Fallback)
             MainPage = services.GetRequiredService<MainPage>();
 #elif Shell
             MainPage = new AppShell();
@@ -63,7 +63,7 @@
             UserAppTheme = PlatformAppTheme;
         }
 #endif
-#if (Net9OrLater || Plain || Hierarchical || Tabbed || Hybrid)
+#if (Net9OrLater || Plain || Hierarchical || Tabbed || Hybrid || Fallback)
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
@@ -71,7 +71,7 @@
 #if Mvvm
 #if Hierarchical
             var window = new Window(new NavigationPage(_services.GetRequiredService<MainPage>()));
-#elif (Plain || Hybrid)
+#elif (Plain || Hybrid || JSHybridNet9)
             var window = new Window(_services.GetRequiredService<MainPage>());
 #elif Shell
             return new Window(new AppShell());
@@ -90,7 +90,7 @@
 #else
             var window = base.CreateWindow(activationState);
 #endif
-#if (Plain || Hierarchical || Tabbed || Hybrid)
+#if (Plain || Hierarchical || Tabbed || Hybrid || JSHybridNet9 || Fallback)
             window.Title = "MauiApp._1";
             return window;
 #endif

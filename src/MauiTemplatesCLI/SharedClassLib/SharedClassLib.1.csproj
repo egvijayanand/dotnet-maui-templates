@@ -115,7 +115,11 @@
         <PackageReference Include="Syncfusion.Maui.Toolkit" Version="1.*" />
         <!--#endif-->
         <!--#if (AddMauiMarkup)-->
+        <!--#if (Net9)-->
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="5.*" />
+        <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.*" />
+        <!--#endif-->
         <!--#endif-->
         <!--#if (AddMauiMaps)-->
         <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />

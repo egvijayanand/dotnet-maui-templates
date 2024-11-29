@@ -1,9 +1,31 @@
 Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for articles on Xamarin.Forms, .NET MAUI and Blazor.
 
-This template package does not gather any usage or telemetry data, even anonymously, ensuring that you can use it freely and with complete privacy assurance.
+This template package does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 6.0.0:
+What's new in ver. 6.1.0:
 -------------------------
+Introduced an option to create a new project template using HybridWebView.
+
+To know more about this, consult this article https://egvijayanand.in/2024/10/04/exploring-dotnet-maui-9-hybridwebview-features/
+
+To facilitate this, the design pattern (-dp) parameter includes a new value called JSHybrid, which creates an App project using HybridWebView with all prerequisites set automatically, requiring no manual intervention.
+
+In the VS2022/Rider IDE, within the Project Options page, this Design Pattern is available as a dropdown UI control. Select JSHybrid as its value.
+
+.NET MAUI 9 App using HybridWebView:
+
+dotnet new mauiapp -o MyApp -dp JSHybrid
+
+Since HybridWebView is a feature introduced in .NET MAUI 9, creating a .NET MAUI 8 App with this design pattern (-dp) parameter value of JSHybrid will not result in an error; instead, it will fall back by creating a App project that corresponds to the default Plain value.
+
+Note: The design pattern (-dp) parameter with the value Hybrid will continue to generate an App project using BlazorWebView, which works on both .NET MAUI 8 and 9, the present stable channel release.
+
+dotnet new mauiapp -o BlazorApp -dp Hybrid
+
+The CommunityToolkit.Maui.Markup Toolkit NuGet package version has been updated to v5.1.0, targeting the .NET 9 release.
+
+v6.0.0:
+
 Templates updated to support .NET MAUI 9 Stable channel release.
 
 The default value for the Framework parameter is now set to net9.0

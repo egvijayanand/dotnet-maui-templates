@@ -68,7 +68,7 @@ namespace MauiApp._1.Views
     {
 #if (!Mvvm)
         private int _count = 0;
-        private Label CounterLabel;
+        private Label _counterLabel;
 
 #endif
 #if Mvvm
@@ -123,7 +123,7 @@ namespace MauiApp._1.Views
 #if Mvvm
                                  .Bindv2(static (MainViewModel vm) => vm.CountText),
 #else
-                                 .Assign(out CounterLabel),
+                                 .Assign(out _counterLabel),
 #endif
                                 new Button()
                                 {
@@ -162,9 +162,9 @@ namespace MauiApp._1.Views
         private void OnCounterClicked(object? sender, EventArgs e)
         {
             _count++;
-            CounterLabel.Text = $"Current count: {_count}";
+            _counterLabel.Text = $"Current count: {_count}";
 
-            SemanticScreenReader.Announce(CounterLabel.Text);
+            SemanticScreenReader.Announce(_counterLabel.Text);
         }
 #endif
     }

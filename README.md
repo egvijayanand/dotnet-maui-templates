@@ -1,6 +1,8 @@
-## .NET MAUI Project and Item Templates
+## .NET MAUI All-in-One Templates Pack
 
-This repository is to host the .NET MAUI Project Templates, Item Templates and Code Snippets.
+### Project and Item Templates for .NET MAUI App that runs on Android, iOS, macOS, Windows, and Tizen
+
+This repository is to host the .NET MAUI Project Templates, Item Templates, and Code Snippets.
 
 Join me on [**Developer Thoughts**](https://egvijayanand.in/?utm_source=github "Developer Thoughts"), an exclusive blog for .NET MAUI and Blazor, for [articles](https://egvijayanand.in/category/net-maui/templates-net-maui/?utm_source=github) on working with these templates and much more.
 
@@ -56,7 +58,7 @@ Templates have been updated to support .NET MAUI 8 and 9 and is available to ins
 
 |Channel|NuGet|VS Marketplace|
 |:---:|:---:|:---:|
-|Stable|[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/?icon=nuget&foo=bar)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/)|[![.NET MAUI Project and Item Templates - VS Marketplace](https://badgen.net/vs-marketplace/v/egvijayanand.maui-templates?icon=visualstudio&foo=bar)](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-templates)|
+|Stable|[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates?icon=nuget&foo=bar)](https://www.nuget.org/packages/VijayAnand.MauiTemplates)|[![.NET MAUI Project and Item Templates - VS Marketplace](https://badgen.net/vs-marketplace/v/egvijayanand.maui-templates?icon=visualstudio&foo=bar)](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-templates)|
 <!--
 |Preview|[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/pre?icon=nuget&foo=bar)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/absoluteLatest)| - |
 -->
@@ -75,16 +77,16 @@ Extension is made available in the [Visual Studio Marketplace](https://marketpla
 
 This has Project Templates for:
 
-* .NET MAUI App - An All-in-One .NET MAUI App Project Template - For more details, check out these [articles](https://egvijayanand.in/category/net-maui/templates-net-maui/ "All-in-One .NET MAUI App Project Template")
-* .NET MAUI Class Library
-* Shared Class Library (Xamarin.Forms and .NET MAUI)
+* .NET MAUI App - An [All-in-One .NET MAUI App](#all-in-one-net-maui-app-project-template) Project Template - For more details, check out these [articles](https://egvijayanand.in/category/net-maui/templates-net-maui/ "All-in-One .NET MAUI App Project Template")
+* [.NET MAUI Class Library](#net-maui-class-library-project-template)
+* [Shared Class Library](#shared-class-library-project-template) (Xamarin.Forms and .NET MAUI)
 
 ![Create Project - Visual Studio](images/maui-project-templates.png)
 
 And has Item Templates for:
 
-* [Generic Item](#generic-item-template)
-* [Generic Item (C#)](#generic-item-template)
+* [Generic Item](#generic-item-templates)
+* [Generic Item (C#)](#generic-item-templates)
 * Content Page
 * Content Page (C#)
 * Content Page (Razor)
@@ -95,7 +97,7 @@ And has Item Templates for:
   - For both the `Page with ViewModel` templates, ensure only the real page name alone is provided as input like `Settings` as the `Page` and `ViewModel` will be suffixed to it like `SettingsPage` and `SettingsViewModel`. And Page will be generated in the `Views` folder and ViewModel will be generated in the `ViewModels` folder.
   - The ViewModels are generated with the base class titled `BaseViewModel` (implementation left to the user).
   - Recommended to add [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm), an officially supported NuGet package, to make it easy to work with MVVM design pattern.
-  - This MVVM - Made Easy [Part 1](https://egvijayanand.in/2022/04/22/mvvm-made-easy/) and [Part 2](https://egvijayanand.in/2022/05/09/mvvm-made-easy-with-microsoft-mvvm-toolkit-part-2/) articles can help you to get started with this brand-new NuGet package.
+  - This [MVVM - Made Easy](https://egvijayanand.in/category/mvvm/made-easy/) articles can help you to get started with this brand-new NuGet package.
 * Content View
 * Content View (C#)
 * Content View (Razor)
@@ -116,7 +118,7 @@ And has Item Templates for:
   - Made available in the section titled `Code`
 \
 &nbsp;
-* For Cond. type template to work properly, ensure Conditional Compilation is enabled (mentioned in detail [**here**](https://github.com/egvijayanand/dotnet-maui-templates#conditional-compilation "Conditional Compilation"))
+* For Cond. type template to work properly, ensure Conditional Compilation is enabled (mentioned in detail [**here**](#conditional-compilation "Conditional Compilation"))
 
 Now VS2022 extension is loaded with 25+ C# and XAML Code Snippets.
 
@@ -166,10 +168,10 @@ This comes with with the following templates:
 Name | Template Name | Type
 :---: | :---: | :---:
 |[All-in-One .NET MAUI App](#all-in-one-net-maui-app-project-template)|mauiapp|Project|
-|[.NET MAUI Class Library](#net-maui-class-library-template)|mauiclasslib|Project|
-|[Shared Class Library](#shared-class-library-template)|sharedclasslib|Project|
-|[.NET MAUI Item (XAML)](#generic-item-template)|maui-item|Item|
-|[.NET MAUI Item (C#)](#generic-item-template)|maui-item-cs|Item|
+|[.NET MAUI Class Library](#net-maui-class-library-project-template)|mauiclasslib|Project|
+|[Shared Class Library](#shared-class-library-project-template)|sharedclasslib|Project|
+|[.NET MAUI Item (XAML)](#generic-item-templates)|maui-item|Item|
+|[.NET MAUI Item (C#)](#generic-item-templates)|maui-item-cs|Item|
 |ContentPage (XAML)|maui-page|Item|
 |ContentPage (C#)|maui-page-cs|Item|
 |ContentPage (Razor)|maui-page-razor|Item|
@@ -188,7 +190,7 @@ Name | Template Name | Type
 
 ![All-in-One .NET MAUI App Project Template](images/dotnetmaui-all-in-one-project-template-pinned.png)
 
-#### Parameters:
+### What's New:
 
 Starting with [v2.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/2.0.0) of the template package, to effectively support .NET MAUI on both `.NET 6` and `.NET 7`, CLI project template defines a new parameter named `framework`:
 
@@ -212,6 +214,32 @@ And from [v5.11.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/5.11.
 
 And from [v5.15.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/5.15.0) of the template package, support to add and configure the Syncfusion.Maui.Toolkit NuGet package.
 
+And from [v6.1.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/6.1.0) of the template package, a new option has been included for the design pattern (`-dp`) parameter, named `JSHybrid`, which creates a project using `HybridWebView` with all prerequisites set automatically, requiring no manual intervention.
+
+### Parameters:
+
+* HybridWebView Project Template:
+
+  Introduced an option to create a new project template using HybridWebView.
+  
+  Consult this [Exploring .NET MAUI 9 - HybridWebView](https://egvijayanand.in/2024/10/04/exploring-dotnet-maui-9-hybridwebview-features/) article to know more about it.
+
+  To facilitate this, the design pattern (`-dp`) parameter includes a new value called `JSHybrid`, which creates an App project using `HybridWebView` with all prerequisites set automatically, requiring no manual intervention.
+
+  In the VS2022/Rider IDE, within the Project Options page, this `Design Pattern` is available as a dropdown UI control. Select `JSHybrid` as its value.
+
+  *Since HybridWebView is a feature introduced in .NET MAUI 9, creating a .NET MAUI 8 App with this design pattern (`-dp`) parameter value of `JSHybrid` will not result in an error; instead, it will fall back by creating an App project that corresponds to the default `Plain` value.*
+
+  ```shell
+  dotnet new mauiapp -o MyApp -dp JSHybrid
+  ```
+
+  *Note: The design pattern (`-dp`) parameter with the value `Hybrid` will continue to generate an App project using `BlazorWebView`, which works on both .NET MAUI 8 and 9, the present stable channel release.*
+
+  ```shell
+  dotnet new mauiapp -o BlazorApp -dp Hybrid
+  ```
+
 * [Syncfusion.Maui.Toolkit](https://www.nuget.org/packages/Syncfusion.Maui.Toolkit) NuGet Package (Short notation: `-isft`):
 
   Introduced the option to add and configure the Syncfusion.Maui.Toolkit NuGet package.
@@ -220,13 +248,13 @@ And from [v5.15.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/5.15.
 
   `-isft` | `--include-syncfusion-toolkit` - Default value is `false`
 
-  ```
+  ```shell
   dotnet new mauiapp -o MyApp -isft
   ```
-  ```
+  ```shell
   dotnet new mauiclasslib -o MauiLib -isft
   ```
-  ```
+  ```shell
   dotnet new sharedclasslib -o SharedLib -isft
   ```
 
@@ -238,7 +266,7 @@ And from [v5.15.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/5.15.
 
   `-slnx` | `--use-slnx` - Default value is `false`
 
-  ```
+  ```shell
   dotnet new mauiapp -o MyApp -slnx
   ```
 
@@ -250,13 +278,13 @@ And from [v5.15.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/5.15.
 
   `-mcl` | `--maui-class-library` - Default value is `false`
 
-  ```
+  ```shell
   dotnet new mauiapp -o MyApp -mcl
   ```
 
   This abstracts both MAUI components and Razor components in an Hybrid style App:
 
-  ```
+  ```shell
   dotnet new mauiapp -o HybridApp -dp Hybrid -mcl -rcl
   ```
 
@@ -331,20 +359,20 @@ And from [v5.15.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/5.15.
 
   Examples:
 
-  For creating a .NET MAUI App on .NET 8:
+  For creating a .NET MAUI 9 App:
+  
+  Below command can be simplified to `dotnet new mauiapp` as default value of `framework` parameter is `net9.0`
+
+  ```shell
+  dotnet new mauiapp -f net9.0
+  ```
+
+  For creating a .NET MAUI 8 App:
 
   _Explicit value for the `framework` parameter is required._
 
   ```shell
   dotnet new mauiapp -f net8.0
-  ```
-
-  For creating a .NET MAUI App on .NET 9:
-  
-  Below command can be simplified to `dotnet new mauiapp` as default value of `framework` parameter is `net9.0`
-
-    ```shell
-  dotnet new mauiapp -f net9.0
   ```
 
 In .NET CLI, all of these _Items Template_ require a mandatory parameter:
@@ -377,10 +405,11 @@ Both .NET MAUI *App* and *Class Library* templates take the below optional Boole
 
 Other Parameters:
 
+* `-isft` | `--include-syncfusion-toolkit` - Default is `false`
 * `-ist` | `--include-shared-toolkit` - Default is `false`
 * `-cc` | `--conditional-compilation` - Default is `false`
 
-#### Conditional Compilation
+### Conditional Compilation
 
 And now conditional compilation can be configured so that platform source files can be defined anywhere in the project provided they follow a naming convention as mentioned below. This will allow maintaining related source files in the same place, especially MAUI Handlers.
 
@@ -435,7 +464,7 @@ For existing projects, add the below block of code in the project file (.csproj)
 </ItemGroup>
 ```
 
-#### All-in-One .NET MAUI **App** Project Template:
+### All-in-One .NET MAUI **App** Project Template:
 
 This takes two additional parameters to define the application design pattern and target platform respectively. Not all options are supported in the F# template. For now, only Plain and Hybrid option is available.
 
@@ -446,13 +475,14 @@ Can take any one of the following values, with default value set to `Plain`:
 |Parameter Value|Description|
 |:---:|:---|
 |Plain|App configured to work with a single, initial screen.|
-|Hierarchical|App configured to work in a Hierarchical pattern using NavigationPage.|
-|Tab|App configured to work in a Tabbed fashion using TabbedPage.|
-|Shell|App configured to work with Routes using Shell page.|
-|Hybrid|App configured to work in a Hybrid fashion using BlazorWebView.|
-|Markup|App configured to work with C# Markup syntax.|
-|Razor|App configured to work with Razor syntax.|
-|Reactor|App configured to work with MVU pattern using Reactor.|
+|Hierarchical|App configured to work in a Hierarchical pattern using `NavigationPage`.|
+|Tab|App configured to work in a Tabbed fashion using `TabbedPage`.|
+|Shell|App configured to work with Routes using `Shell` page.|
+|Hybrid|App configured to work in a `Blazor Hybrid` mode using `BlazorWebView`.|
+|JSHybrid|App configured to work in a `JavaScript Hybrid` mode using `HybridWebView` (.NET MAUI 9 or later).|
+|Markup|App configured to work with `C# Markup` syntax.|
+|Razor|App configured to work with `Razor` syntax.|
+|Reactor|App configured to work with MVU pattern using `Reactor`.|
 
 * `-tp` | `--target-platform`
 
@@ -494,27 +524,28 @@ The target for the Windows platform can be either `Package` (MSIX) or `Unpackage
 
 * `-wu` | `--windows-unpackaged` - Default is `false`
 
-While targeting `.NET 7` or later, an option to add and configure `CommunityToolkit.Maui.MediaElement`, `Microsoft.Maui.Controls.Foldable`, `Microsoft.Maui.Controls.Maps`, or all NuGet packages.
+Further options to add and configure [CommunityToolkit.Maui.Camera](https://www.nuget.org/packages/CommunityToolkit.Maui.Camera), [Microsoft.Maui.Controls.Foldable](https://www.nuget.org/packages/Microsoft.Maui.Controls.Foldable), [CommunityToolkit.Maui.MediaElement](https://www.nuget.org/packages/CommunityToolkit.Maui.MediaElement), [Microsoft.Maui.Controls.Maps](https://www.nuget.org/packages/Microsoft.Maui.Controls.Maps), or all NuGet packages.
 
-* `-ime` | `--include-media-element` - Default is `false`
+* `-ic` | `--include-camera` - Default is `false`
 * `-if` | `--include-foldable` - Default is `false`
+* `-ime` | `--include-media-element` - Default is `false`
 * `-inm` | `--include-maps` - Default is `false`
 
-*With Windows as a target platform, opting for the Maps feature will also include `CommunityToolkit.Maui.Maps` NuGet package.*
-
+<!--
 *Note: If the project target `.NET 6`, selecting the MediaElement/Foldable/Maps option will NOT have any impact.*
+-->
 
-Examples (passing one or more values):
+Examples:
 
 ```shell
-dotnet new mauiapp --design-pattern Hybrid --target-platform Mobile
+dotnet new mauiapp -dp Shell -tp Android
 ```
 
-  ```shell
-dotnet new mauiapp -dp Shell -tp Android iOS Windows
+```shell
+dotnet new mauiapp -dp Hybrid --tp Mobile
 ```
 
-#### .NET MAUI Class Library Template:
+### .NET MAUI Class Library Project Template:
 
 Similar to All-in-One .NET MAUI App, the Class Library project template also takes `target-platform` as a parameter that takes a combination from the same set of values (with `All` being the default value).
 
@@ -527,7 +558,7 @@ Similar to All-in-One .NET MAUI App, the Class Library project template also tak
 
 ![Class Library Project Options - Visual Studio](images/dotnetmaui-class-library-project-options.png)
 
-#### Shared Class Library Template:
+### Shared Class Library Project Template:
 
 The Target Framework of Xamarin.Forms library can be defined with the the below parameter.
 
@@ -544,20 +575,24 @@ This takes the below optional Boolean parameters to include the officially suppo
 
 *Specifying the parameter name, either in short or full notation, implies that it is defined.*
 
-Single parameter to include all the supported NuGet packages:
+Single parameter to include commonly used NuGet packages (`Maps`, `Syncfusion Toolkit`, and `Essential Interfaces` are explicit):
 
 * `-asp` | `--all-supported-packages` - Default is `false`
 
 Specific to `Xamarin.Forms`:
 
 * `-ife` | `--include-forms-essentials` - Default is `false`
+* `-ifei` | `--include-forms-essentials-interfaces` - Default is `false`
 * `-ift` | `--include-forms-toolkit` - Default is `false`
 * `-ifm` | `--include-forms-markup` - Default is `false`
+* `-infm` | `--include-forms-maps` - Default is `false`
 
 Specific to `.NET MAUI`:
 
 * `-imt` | `--include-maui-toolkit` - Default is `false`
+* `-isft` | `--include-syncfusion-toolkit` - Default is `false`
 * `-imm` | `--include-maui-markup` - Default is `false`
+* `-inmm` | `--include-maui-maps` - Default is `false`
 
 Common to both:
 
@@ -576,7 +611,7 @@ dotnet new mauiclasslib --help
 dotnet new sharedclasslib --help
 ```
 
-#### Partial Class Item Template:
+### Partial Class Item Template:
 
 This item template (short name: `class-cs`) allows to create a C# class from CLI with support for multiple options.
 
@@ -600,19 +635,22 @@ Supported values are:
 
 File-scoped Namespace parameter (`-fsn` | `--file-scoped-namespace`), the default value is `false`.
 
-#### Usage:
+### Usage:
 
 After installation, use the below command(s) to create new artifacts using the template (both provide the same output):
 
 With parameter names abbreviated:
 
-
 .NET MAUI App:
+
 ```shell
 dotnet new mauiapp -n MyApp -dp Shell
 ```
 ```shell
 dotnet new mauiapp -n MyApp -dp Hybrid
+```
+```shell
+dotnet new mauiapp -n MyApp -dp JSHybrid
 ```
 ```shell
 dotnet new mauiapp -n MyApp -dp Markup
@@ -621,61 +659,78 @@ dotnet new mauiapp -n MyApp -dp Markup
 dotnet new mauiapp -n MyApp -dp Razor
 ```
 ```shell
-dotnet new mauiapp -n MyApp -dp Comet
-```
-```shell
 dotnet new mauiapp -n MyApp -dp Reactor
 ```
+
 Option to use MVVM:
+
 ```shell
 dotnet new mauiapp -n MyApp -mvvm
 ```
 ```shell
 dotnet new mauiapp -n MyApp -dp Markup -mvvm
 ```
+
 Option to use MVVM (Compiled Bindings):
+
 ```shell
 dotnet new mauiapp -n MyApp -mvvm -icb
 ```
+
 Option to create Razor class library while creating Blazor Hybrid App:
+
 ```shell
 dotnet new mauiapp -n MyApp -dp Hybrid -rcl
 ```
+
 Option to include NuGet packages:
+
 ```shell
 dotnet new mauiapp -n MyApp -dp Shell -it -im -imt -ime -inm -if
 ```
-Option to configure conditional compilation:
+
+Option to configure Conditional Compilation:
+
 ```shell
 dotnet new mauiapp -n MyApp -dp Shell -cc
 ```
 
 .NET MAUI Class Library:
+
 ```shell
 dotnet new mauiclasslib -n MyApp.Core
 ```
+
 Option to include NuGet packages:
+
 ```shell
 dotnet new mauiclasslib -n MyApp.Core -it -im -imt
 ```
-Option to configure conditional compilation:
+
+Option to configure Conditional Compilation:
+
 ```shell
 dotnet new mauiclasslib -n MyApp.Core -cc
 ```
 
 Shared Class Library:
+
 ```shell
 dotnet new sharedclasslib -n MyApp.UI
 ```
-Option to include all supported NuGet packages:
+Option to include commonly used NuGet packages:
+
 ```shell
 dotnet new sharedclasslib -n MyApp.UI -asp
 ```
 
-#### Generic Item Template:
+### Generic Item Templates:
 
-* A revolutionary generic template, in XAML and C#, for creating items of any type
+* An innovative generic template, in XAML and C#, for creating items of any type
 * Supported both within the VS2022 IDE and CLI
+  - Covered in detail in the below articles
+  - [Introducing .NET MAUI Generic Item Templates](https://egvijayanand.in/2024/01/16/introducing-dotnet-maui-generic-item-templates/)
+  - [Introducing .NET MAUI Generic Item Templates for Visual Studio 2022](https://egvijayanand.in/2024/01/23/introducing-dotnet-maui-generic-item-templates-for-visual-studio-2022/)
 * On CLI, it is named as `maui-item` and `maui-item-cs`
 * The same set of parameters is defined in the UI as `dropdown`, `textbox` and `checkbox` for ease of use
 * Both needs one required parameter, `-b` / `--base`, the base type
@@ -687,7 +742,7 @@ dotnet new sharedclasslib -n MyApp.UI -asp
 
 ![.NET MAUI All-in-One Generic Item Template](images/dotnetmaui-generic-item-popup.png)
 
-*Note: Namespace resolution in both XAML and C# files is left to the user as deriving them with the template is outside its scope.*
+*Note: Namespace resolution in both XAML and C# files is left to the user, as deriving them with the template is outside its scope.*
 
 *Tip: For the XAML template, pass the `xmlns` scope as part of the input parameter value and it'll be used appropriately in the generated source files.*
 
@@ -705,7 +760,7 @@ dotnet new maui-item-cs -n ProductView -b ContentView
 dotnet new maui-item -n CartPage -b MauiPage -g CartViewModel
 ```
 
-*For Page/Shell/View Item templates, don't suffix anything to the name, it'll be included automatically.*
+*For Page/Shell/View Item templates, DON'T suffix anything to the name, it'll be included automatically.*
 
 Pages:
 ```shell
@@ -718,7 +773,7 @@ dotnet new maui-page-cs -n Home
 dotnet new maui-page-razor -n Home
 ```
 
-#### Page with ViewModel:
+### Page with ViewModel:
 
 ```shell
 dotnet new maui-mvvm -n Login
@@ -737,6 +792,7 @@ dotnet new maui-bwv-cs -n Home
 ```
 
 Views:
+
 ```shell
 dotnet new maui-view -n Order
 ```
@@ -748,6 +804,7 @@ dotnet new maui-view-razor -n Order
 ```
 
 Shell:
+
 ```shell
 dotnet new maui-shell -n App
 ```
@@ -759,6 +816,7 @@ dotnet new maui-shell-razor -n App
 ```
 
 Resource Dictionary:
+
 ```shell
 dotnet new maui-resdict -n DarkTheme
 ```
@@ -767,6 +825,7 @@ dotnet new maui-resdict -n LightTheme -xo
 ```
 
 Partial Class:
+
 ```shell
 dotnet new class-cs -n BaseViewModel
 ```
@@ -780,11 +839,15 @@ dotnet new class-cs -n OrderDataStore -b IDataStore -p false -am internal
 With parameter names expanded:
 
 .NET MAUI App:
+
 ```shell
 dotnet new mauiapp --name MyApp --design-pattern Shell
 ```
 ```shell
 dotnet new mauiapp --name MyApp --design-pattern Hybrid
+```
+```shell
+dotnet new mauiapp --name MyApp --design-pattern JSHybrid
 ```
 ```shell
 dotnet new mauiapp --name MyApp --design-pattern Markup
@@ -793,27 +856,32 @@ dotnet new mauiapp --name MyApp --design-pattern Markup
 dotnet new mauiapp --name MyApp --design-pattern Razor
 ```
 ```shell
-dotnet new mauiapp --name MyApp --design-pattern Comet
-```
-```shell
 dotnet new mauiapp --name MyApp --design-pattern Reactor
 ```
+
 Option to use MVVM:
+
 ```shell
 dotnet new mauiapp --name MyApp --use-mvvm
 ```
 ```shell
 dotnet new mauiapp --name MyApp --design-pattern Markup --use-mvvm
 ```
+
 Option to use MVVM (Compiled Bindings):
+
 ```shell
 dotnet new mauiapp --name MyApp --use-mvvm --include-compiled-bindings
 ```
+
 Option to create Razor class library while creating Blazor Hybrid App:
+
 ```shell
 dotnet new mauiapp --name MyApp --design-pattern Hybrid --razor-class-library
 ```
+
 Option to include NuGet packages:
+
 ```shell
 dotnet new mauiapp --name MyApp --design-pattern Shell --include-toolkit --include-markup --include-mvvm-toolkit --include-media-element --include-maps --include-foldable
 ```
@@ -822,6 +890,7 @@ dotnet new mauiapp --name MyApp --design-pattern Shell --conditional-compilation
 ```
 
 .NET MAUI Class Library:
+
 ```shell
 dotnet new mauiclasslib --name MyApp.Core
 ```
@@ -833,6 +902,7 @@ dotnet new mauiclasslib --name MyApp.Core --conditional-compilation
 ```
 
 Shared Class Library:
+
 ```shell
 dotnet new sharedclasslib --name MyApp.UI
 ```
@@ -840,7 +910,7 @@ dotnet new sharedclasslib --name MyApp.UI
 dotnet new sharedclasslib --name MyApp.UI --all-supported-packages
 ```
 
-#### Generic Item Template:
+Generic Item Templates:
 
  ```shell
 dotnet new maui-item --name LoginPage --base ContentPage
@@ -855,6 +925,7 @@ dotnet new maui-item --name CartPage --base MauiPage --generic CartViewModel
 *For Page/Shell/View Item templates, don't suffix anything to the name, it'll be included automatically.*
 
 Pages:
+
 ```shell
 dotnet new maui-page --name Home
 ```
@@ -866,6 +937,7 @@ dotnet new maui-page-razor --name Home
 ```
 
 Page with ViewModel:
+
 ```shell
 dotnet new maui-mvvm --name Login
 ```
@@ -875,6 +947,7 @@ dotnet new maui-mvvm-cs --name Login
 
 ContentPage with BlazorWebView:
 
+
 ```shell
 dotnet new maui-bwv --name Home
 ```
@@ -883,6 +956,7 @@ dotnet new maui-bwv-cs --name Home
 ```
 
 Views:
+
 ```shell
 dotnet new maui-view --name Order
 ```
@@ -894,6 +968,7 @@ dotnet new maui-view-razor --name Order
 ```
 
 Shell:
+
 ```shell
 dotnet new maui-shell --name App
 ```
@@ -905,6 +980,7 @@ dotnet new maui-shell-razor --name App
 ```
 
 Resource Dictionary:
+
 ```shell
 dotnet new maui-resdict --name DarkTheme
 ```
@@ -913,6 +989,7 @@ dotnet new maui-resdict --name LightTheme --xaml-only
 ```
 
 Partial Class:
+
 ```shell
 dotnet new class-cs --name BaseViewModel
 ```

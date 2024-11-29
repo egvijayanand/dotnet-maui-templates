@@ -35,7 +35,7 @@
                 .MauiStyle);
             Resources.Add("Action", new Style<Button>(
                 (Button.FontFamilyProperty, AppString("AppFont")!),
-                (Button.FontSizeProperty, AppDouble("AppFontSize")!),
+                (Button.FontSizeProperty, AppResource<double>("AppFontSize", 14d)),
                 (Button.PaddingProperty, new Thickness(14,10))
             ).AddAppThemeBinding(Button.BackgroundColorProperty, AppColor("BackgroundLight"), AppColor("BackgroundDark"))
              .AddAppThemeBinding(Button.TextColorProperty, AppColor("TextLight"), AppColor("TextDark"))
@@ -53,7 +53,7 @@
             
 #if Net8
 #if Mvvm
-            MainPage = services.GetService<MainPage>();
+            MainPage = services.GetRequiredService<MainPage>();
 #else
             MainPage = new MainPage();
 #endif

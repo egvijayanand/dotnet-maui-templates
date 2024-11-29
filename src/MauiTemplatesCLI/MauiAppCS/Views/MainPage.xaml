@@ -30,7 +30,7 @@
                 BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
                                                   Light={StaticResource Primary}}">
                 <Label
-                    x:Name="VersionLabel"
+                    x:Name="versionLabel"
                     HorizontalOptions="Center"
                     TextColor="{StaticResource White}"
                     VerticalOptions="Center" />
@@ -67,7 +67,7 @@
                 BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
                                                   Light={StaticResource Primary}}">
                 <Label
-                    x:Name="VersionLabel"
+                    x:Name="versionLabel"
                     HorizontalOptions="Center"
                     TextColor="{StaticResource White}"
                     VerticalOptions="Center" />
@@ -103,7 +103,274 @@
                 BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
                                                   Light={StaticResource Primary}}">
                 <Label
-                    x:Name="VersionLabel"
+                    x:Name="versionLabel"
+                    HorizontalOptions="Center"
+                    TextColor="{StaticResource White}"
+                    VerticalOptions="Center" />
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
+<!--#endif-->
+<!--#elif (JSHybridNet9)-->
+<!--#if (Mvvm)-->
+<!--#if (CompiledBindings)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:c="clr-namespace:MauiApp._1.Converters"
+    xmlns:local="clr-namespace:MauiApp._1"
+    xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
+    Title="{x:Bind Title}"
+    x:DataType="vm:MainViewModel"
+    mc:Ignorable="d">
+    <ContentPage.Resources>
+        <c:HybridWebViewRawMessageReceivedEventArgsConverter x:Key="ArgsConverter" />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid RowDefinitions="*,40">
+            <Grid
+                x:Name="container"
+                Margin="20"
+                ColumnDefinitions="{OnIdiom Default='*,*',
+                                            Phone='*',
+                                            Tablet='*'}"
+                ColumnSpacing="20"
+                RowDefinitions="{OnIdiom Default='*',
+                                         Phone='*,*',
+                                         Tablet='*,*'}">
+                <Grid
+                    RowDefinitions="Auto,Auto,Auto,Auto"
+                    RowSpacing="10">
+                    <Label
+                        FontSize="24"
+                        Text=".NET MAUI"
+                        Style="{StaticResource MauiLabel}" />
+                    <HorizontalStackLayout
+                        Grid.Row="1"
+                        VerticalOptions="Center">
+                        <Entry
+                            x:Name="message"
+                            ClearButtonVisibility="WhileEditing"
+                            WidthRequest="225"
+                            MaxLength="50"
+                            Placeholder="Type your message for JS here"
+                            ReturnCommand="{x:Bind SendMessageCommand}"
+                            Text="{x:Bind Message, Mode=TwoWay}" />
+                        <Button
+                            Command="{x:Bind SendMessageCommand}"
+                            IsEnabled="{x:Bind CanSendMessage}"
+                            Text="Send to JS" />
+                    </HorizontalStackLayout>
+                    <Label
+                        Grid.Row="2"
+                        Text="Messages from JS:" />
+                    <Editor
+                        Grid.Row="3"
+                        HorizontalOptions="Fill"
+                        IsReadOnly="True"
+                        MinimumHeightRequest="300"
+                        Text="{x:Bind Messages}"
+                        VerticalOptions="Fill" />
+                </Grid>
+                <HybridWebView
+                    x:Name="hwv"
+                    Grid.Row="{OnIdiom Default=0,
+                                       Phone=1,
+                                       Tablet=1}"
+                    Grid.Column="{OnIdiom Default=1,
+                                          Phone=0,
+                                          Tablet=0}">
+                    <HybridWebView.Behaviors>
+                        <mct:EventToCommandBehavior
+                            Command="{x:Bind ShowMessageCommand}"
+                            EventArgsConverter="{StaticResource ArgsConverter}"
+                            EventName="RawMessageReceived" />
+                    </HybridWebView.Behaviors>
+                </HybridWebView>
+            </Grid>
+            <Grid
+                Grid.Row="1"
+                BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
+                                                  Light={StaticResource Primary}}">
+                <Label
+                    x:Name="versionLabel"
+                    HorizontalOptions="Center"
+                    TextColor="{StaticResource White}"
+                    VerticalOptions="Center" />
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
+<!--#else-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:c="clr-namespace:MauiApp._1.Converters"
+    xmlns:local="clr-namespace:MauiApp._1"
+    xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
+    Title="{Binding Title}"
+    x:DataType="vm:MainViewModel"
+    mc:Ignorable="d">
+    <ContentPage.Resources>
+        <c:HybridWebViewRawMessageReceivedEventArgsConverter x:Key="ArgsConverter" />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid RowDefinitions="*,40">
+            <Grid
+                x:Name="container"
+                Margin="20"
+                ColumnDefinitions="{OnIdiom Default='*,*',
+                                            Phone='*',
+                                            Tablet='*'}"
+                ColumnSpacing="20"
+                RowDefinitions="{OnIdiom Default='*',
+                                         Phone='*,*',
+                                         Tablet='*,*'}">
+                <Grid
+                    RowDefinitions="Auto,Auto,Auto,Auto"
+                    RowSpacing="10">
+                    <Label
+                        FontSize="24"
+                        Text=".NET MAUI"
+                        Style="{StaticResource MauiLabel}" />
+                    <HorizontalStackLayout
+                        Grid.Row="1"
+                        VerticalOptions="Center">
+                        <Entry
+                            x:Name="message"
+                            ClearButtonVisibility="WhileEditing"
+                            WidthRequest="225"
+                            MaxLength="50"
+                            Placeholder="Type your message for JS here"
+                            ReturnCommand="{Binding SendMessageCommand}"
+                            Text="{Binding Message}" />
+                        <Button
+                            Command="{Binding SendMessageCommand}"
+                            IsEnabled="{Binding CanSendMessage}"
+                            Text="Send to JS" />
+                    </HorizontalStackLayout>
+                    <Label
+                        Grid.Row="2"
+                        Text="Messages from JS:" />
+                    <Editor
+                        Grid.Row="3"
+                        HorizontalOptions="Fill"
+                        IsReadOnly="True"
+                        MinimumHeightRequest="300"
+                        Text="{Binding Messages}"
+                        VerticalOptions="Fill" />
+                </Grid>
+                <HybridWebView
+                    x:Name="hwv"
+                    Grid.Row="{OnIdiom Default=0,
+                                       Phone=1,
+                                       Tablet=1}"
+                    Grid.Column="{OnIdiom Default=1,
+                                          Phone=0,
+                                          Tablet=0}">
+                    <HybridWebView.Behaviors>
+                        <mct:EventToCommandBehavior
+                            Command="{Binding ShowMessageCommand}"
+                            EventArgsConverter="{StaticResource ArgsConverter}"
+                            EventName="RawMessageReceived" />
+                    </HybridWebView.Behaviors>
+                </HybridWebView>
+            </Grid>
+            <Grid
+                Grid.Row="1"
+                BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
+                                                  Light={StaticResource Primary}}">
+                <Label
+                    x:Name="versionLabel"
+                    HorizontalOptions="Center"
+                    TextColor="{StaticResource White}"
+                    VerticalOptions="Center" />
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
+<!--#endif-->
+<!--#else-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MauiApp._1"
+    Title="MauiApp._1"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <Grid RowDefinitions="*,40">
+            <Grid
+                x:Name="container"
+                Margin="20"
+                ColumnDefinitions="{OnIdiom Default='*,*',
+                                            Phone='*',
+                                            Tablet='*'}"
+                ColumnSpacing="20"
+                RowDefinitions="{OnIdiom Default='*',
+                                         Phone='*,*',
+                                         Tablet='*,*'}">
+                <Grid
+                    RowDefinitions="Auto,Auto,Auto,Auto"
+                    RowSpacing="10">
+                    <Label
+                        FontSize="24"
+                        Text=".NET MAUI"
+                        Style="{StaticResource MauiLabel}" />
+                    <HorizontalStackLayout
+                        Grid.Row="1"
+                        VerticalOptions="Center">
+                        <Entry
+                            x:Name="message"
+                            ClearButtonVisibility="WhileEditing"
+                            WidthRequest="225"
+                            MaxLength="50"
+                            Placeholder="Type your message for JS here"
+                            TextChanged="OnMessageChanged" />
+                        <Button
+                            x:Name="send"
+                            Clicked="OnSendClicked"
+                            IsEnabled="False"
+                            Text="Send to JS" />
+                    </HorizontalStackLayout>
+                    <Label
+                        Grid.Row="2"
+                        Text="Messages from JS:" />
+                    <Editor
+                        x:Name="messages"
+                        Grid.Row="3"
+                        HorizontalOptions="Fill"
+                        IsReadOnly="True"
+                        MinimumHeightRequest="300"
+                        VerticalOptions="Fill" />
+                </Grid>
+                <HybridWebView
+                    x:Name="hwv"
+                    Grid.Row="{OnIdiom Default=0,
+                                       Phone=1,
+                                       Tablet=1}"
+                    Grid.Column="{OnIdiom Default=1,
+                                          Phone=0,
+                                          Tablet=0}"
+                    RawMessageReceived="OnRawMessageReceived" />
+            </Grid>
+            <Grid
+                Grid.Row="1"
+                BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
+                                                  Light={StaticResource Primary}}">
+                <Label
+                    x:Name="versionLabel"
                     HorizontalOptions="Center"
                     TextColor="{StaticResource White}"
                     VerticalOptions="Center" />
@@ -153,17 +420,18 @@
                 HorizontalOptions="Center"
                 VerticalOptions="Center">
                 <Label Text="You don't have anything scheduled today." />
-                <Button Command="{x:Bind AddEventCommand}"
-                        HorizontalOptions="Center"
-                        Style="{StaticResource PrimaryAction}"
-                        Text="Add Event" />
+                <Button
+                    Command="{x:Bind AddEventCommand}"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Add Event" />
             </StackLayout>
             <Grid
                 Grid.Row="1"
                 BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
                                                   Light={StaticResource Primary}}">
                 <Label
-                    x:Name="VersionLabel"
+                    x:Name="versionLabel"
                     HorizontalOptions="Center"
                     TextColor="{StaticResource White}"
                     VerticalOptions="Center" />
@@ -189,17 +457,18 @@
                 HorizontalOptions="Center"
                 VerticalOptions="Center">
                 <Label Text="You don't have anything scheduled today." />
-                <Button Command="{Binding AddEventCommand}"
-                        HorizontalOptions="Center"
-                        Style="{StaticResource PrimaryAction}"
-                        Text="Add Event" />
+                <Button
+                    Command="{Binding AddEventCommand}"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Add Event" />
             </StackLayout>
             <Grid
                 Grid.Row="1"
                 BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
                                                   Light={StaticResource Primary}}">
                 <Label
-                    x:Name="VersionLabel"
+                    x:Name="versionLabel"
                     HorizontalOptions="Center"
                     TextColor="{StaticResource White}"
                     VerticalOptions="Center" />
@@ -224,17 +493,18 @@
                 HorizontalOptions="Center"
                 VerticalOptions="Center">
                 <Label Text="You don't have anything scheduled today." />
-                <Button Style="{StaticResource PrimaryAction}"
-                        Text="Add Event"
-                        Clicked="OnAddEvent"
-                        HorizontalOptions="Center" />
+                <Button
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Add Event"
+                    Clicked="OnAddEvent"
+                    HorizontalOptions="Center" />
             </StackLayout>
             <Grid
                 Grid.Row="1"
                 BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
                                                   Light={StaticResource Primary}}">
                 <Label
-                    x:Name="VersionLabel"
+                    x:Name="versionLabel"
                     HorizontalOptions="Center"
                     TextColor="{StaticResource White}"
                     VerticalOptions="Center" />
@@ -306,7 +576,6 @@
 <!--#if (Mvvm)-->
 <!--#if (CompiledBindings)-->
                     <Label
-                        x:Name="CounterLabel"
                         FontAttributes="Bold"
                         FontSize="18"
                         HorizontalOptions="Center"
@@ -322,7 +591,6 @@
 
 <!--#else-->
                     <Label
-                        x:Name="CounterLabel"
                         FontAttributes="Bold"
                         FontSize="18"
                         HorizontalOptions="Center"
@@ -339,7 +607,7 @@
 <!--#endif-->
 <!--#else-->
                     <Label
-                        x:Name="CounterLabel"
+                        x:Name="counterLabel"
                         FontAttributes="Bold"
                         FontSize="18"
                         HorizontalOptions="Center"
@@ -368,7 +636,7 @@
                                                       Light={StaticResource Primary}}">
 
                     <Label
-                        x:Name="VersionLabel"
+                        x:Name="versionLabel"
                         HorizontalOptions="Center"
                         TextColor="{StaticResource White}"
                         VerticalOptions="Center" />

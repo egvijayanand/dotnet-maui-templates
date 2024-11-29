@@ -1,0 +1,32 @@
+﻿html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.content {
+    padding-top: 1.1rem;
+}
+
+::placeholder {
+    color: #c8c8c8;
+}
+
+.btn-primary:disabled {
+    color: #141414;
+    background-color: #c8c8c8;
+}
+
+h3:focus {
+    outline: none;
+}
+
+.valid.modified:not([type=checkbox]) {
+    outline: 1px solid #26b050;
+}
+
+.invalid {
+    outline: 1px solid #e50000;
+}
+
+.validation-message {
+    color: #e50000;
+}

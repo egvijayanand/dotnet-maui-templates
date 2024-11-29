@@ -4,7 +4,7 @@
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net9)-->
         <!--#if (Nightly)-->
-        <MauiVersion>9.0.10</MauiVersion>
+        <MauiVersion>9.0.20-ci.main.24578.1</MauiVersion>
         <!--#else-->
         <MauiVersion>9.0.10</MauiVersion>
         <!--#endif-->
@@ -55,7 +55,11 @@
         <PackageVersion Include="Syncfusion.Maui.Toolkit" Version="1.0.2" />
         <!--#endif-->
         <!--#if (AddMarkup)-->
+        <!--#if (Net9)-->
+        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="5.1.0" />
+        <!--#else-->
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="4.2.0" />
+        <!--#endif-->
         <!--#endif-->
         <!--#if (AddCamera)-->
         <PackageVersion Include="CommunityToolkit.Maui.Camera" Version="1.0.5" />

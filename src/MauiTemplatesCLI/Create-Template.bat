@@ -41,7 +41,6 @@ if not exist .\bin\%config%\%packageName%.%packageVersion%.nupkg goto create
 echo.
 call Info "Deleting existing package ..."
 
-echo.
 del .\bin\%config%\%packageName%.%packageVersion%.nupkg
 
 :create

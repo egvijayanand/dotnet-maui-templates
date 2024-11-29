@@ -107,7 +107,11 @@
         <PackageReference Include="Syncfusion.Maui.Toolkit" Version="1.*" />
         <!--#endif-->
         <!--#if (AddMarkup)-->
+        <!--#if (Net9)-->
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="5.*" />
+        <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.*" />
+        <!--#endif-->
         <!--#endif-->
         <!--#if (AddCamera)-->
         <PackageReference Include="CommunityToolkit.Maui.Camera" Version="1.*" />
