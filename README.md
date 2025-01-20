@@ -4,7 +4,7 @@
 
 This repository is to host the .NET MAUI Project Templates, Item Templates, and Code Snippets.
 
-Join me on [**Developer Thoughts**](https://egvijayanand.in/?utm_source=github "Developer Thoughts"), an exclusive blog for .NET MAUI and Blazor, for [articles](https://egvijayanand.in/category/net-maui/templates-net-maui/?utm_source=github) on working with these templates and much more.
+Join me on [**Developer Thoughts**](https://egvijayanand.in/?utm_source=github&utm_medium=readme&utm_campaign=templates "Developer Thoughts"), an exclusive blog for .NET MAUI and Blazor, for [articles](https://egvijayanand.in/category/net-maui/templates-net-maui/?utm_source=github&utm_medium=readme&utm_campaign=templates) on working with these templates and much more.
 
 We all know that .NET MAUI is an evolution of Xamarin.Forms.
 

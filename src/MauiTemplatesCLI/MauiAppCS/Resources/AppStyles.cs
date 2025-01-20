@@ -12,795 +12,594 @@ namespace MauiApp._1
             Add("AppFont", "OpenSansRegular");
             // Update the base FontSize to set it across all Controls styles
             Add("AppFontSize", 14d);
-            Add(new Style(typeof(ActivityIndicator))
-            {
-                Setters =
-                {
-                    new() { Property = ActivityIndicator.ColorProperty, Value = Application.Current!.RequestedTheme switch { AppTheme.Dark => AppColor("White"), AppTheme.Light or _ => AppColor("Primary") } },
-                },
-            });
-            Add(new Style(typeof(IndicatorView))
-            {
-                Setters =
-                {
-                    new() { Property = IndicatorView.IndicatorColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray500"), AppTheme.Light or _ => AppColor("Gray200") } },
-                    new() { Property = IndicatorView.SelectedIndicatorColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray100"), AppTheme.Light or _ => AppColor("Gray950") } },
-                },
-            });
-            Add(new Style(typeof(Border))
-            {
-                Setters =
-                {
-                    new() { Property = Border.StrokeProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray500"), AppTheme.Light or _ => AppColor("Gray200") } },
-                    new() { Property = Border.StrokeShapeProperty, Value = "Rectangle" },
-                    new() { Property = Border.StrokeThicknessProperty, Value = 1 },
-                },
-            });
-            Add(new Style(typeof(BoxView))
-            {
-                Setters =
-                {
-                    new() { Property = BoxView.ColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray200"), AppTheme.Light or _ => AppColor("Gray950") } },
-                },
-            });
-            Add(new Style(typeof(Button))
-            {
-                Setters =
-                {
-                    new() { Property = Button.TextColorProperty, Value = AppColor("White") },
-                    new() { Property = Button.BackgroundColorProperty, Value = AppColor("Primary") },
-                    new() { Property = Button.FontFamilyProperty, Value = this["AppFont"] },
-                    new() { Property = Button.FontSizeProperty, Value = this["AppFontSize"] },
-                    new() { Property = Button.CornerRadiusProperty, Value = 8 },
-                    new() { Property = Button.PaddingProperty, Value = new Thickness(14, 10) },
-                    new Setter()
+            Add(new Style<ActivityIndicator>(
+            ).AddAppThemeBinding(ActivityIndicator.ColorProperty, AppColor("Primary"), AppColor("White")));
+            Add(new Style<IndicatorView>(
+            ).AddAppThemeBinding(IndicatorView.IndicatorColorProperty, AppColor("Gray200"), AppColor("Gray500"))
+             .AddAppThemeBinding(IndicatorView.SelectedIndicatorColorProperty, AppColor("Gray950"), AppColor("Gray100")));
+            Add(new Style<Border>(
+                (Border.StrokeShapeProperty, new Rectangle()),
+                (Border.StrokeThicknessProperty, 1)
+            ).AddAppThemeBinding(Border.StrokeProperty, AppColor("Gray200"), AppColor("Gray500")));
+            Add(new Style<BoxView>(
+            ).AddAppThemeBinding(BoxView.ColorProperty, AppColor("Gray950"), AppColor("Gray200")));
+            Add(new Style<Button>(
+                (Button.TextColorProperty, AppColor("White")),
+                (Button.BackgroundColorProperty, AppColor("Primary")),
+                (Button.FontFamilyProperty, (string)this["AppFont"]),
+                (Button.FontSizeProperty, Convert.ToDouble(this["AppFontSize"])),
+                (Button.CornerRadiusProperty, 8),
+                (Button.PaddingProperty, new Thickness(14,10))
+            ).Add(VisualStateManager.VisualStateGroupsProperty, CreateVisualStateGroupList(
+                [
+                    new VisualStateGroup()
                     {
-                        Property = VisualStateManager.VisualStateGroupsProperty,
-                        Value = CreateVisualStateGroupList(new[]
+                        Name = nameof(VisualStateManager.CommonStates),
+                        States =
                         {
-                            new VisualStateGroup()
+                            new VisualState()
                             {
-                                Name = nameof(VisualStateManager.CommonStates),
-                                States =
+                                Name = VisualStateManager.CommonStates.Normal,
+                            },
+                            new VisualState()
+                            {
+                                Name = VisualStateManager.CommonStates.Disabled,
+                                Setters =
                                 {
-                                    new VisualState()
+                                    new Setter()
                                     {
-                                        Name = VisualStateManager.CommonStates.Normal,
+                                        Property = Button.TextColorProperty,
+                                        Value = Application.Current?.RequestedTheme switch { AppTheme.Dark => AppColor("Gray200"), AppTheme.Light or _ => AppColor("Gray950") },
                                     },
-                                    new VisualState()
+                                    new Setter()
                                     {
-                                        Name = VisualStateManager.CommonStates.Disabled,
-                                        Setters =
-                                        {
-                                            new Setter()
-                                            {
-                                                Property = Button.TextColorProperty,
-                                                Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray200"), AppTheme.Light or _ => AppColor("Gray950") },
-                                            },
-                                            new Setter()
-                                            {
-                                                Property = Button.BackgroundColorProperty,
-                                                Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray200") },
-                                            },
-                                        },
+                                        Property = Button.BackgroundColorProperty,
+                                        Value = Application.Current?.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray200") },
                                     },
                                 },
                             },
-                        })
+                        },
                     },
-                },
-            });
-            Add(new Style(typeof(CheckBox))
-            {
-                Setters =
-                {
-                    new() { Property = CheckBox.ColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("White"), AppTheme.Light or _ => AppColor("Primary") } },
-                    new Setter()
+                ])));
+            Add(new Style<CheckBox>(
+            ).AddAppThemeBinding(CheckBox.ColorProperty, AppColor("Primary"), AppColor("White"))
+             .Add(VisualStateManager.VisualStateGroupsProperty, CreateVisualStateGroupList(
+                [
+                    new VisualStateGroup()
                     {
-                        Property = VisualStateManager.VisualStateGroupsProperty,
-                        Value = CreateVisualStateGroupList(new[]
+                        Name = nameof(VisualStateManager.CommonStates),
+                        States =
                         {
-                            new VisualStateGroup()
+                            new VisualState()
                             {
-                                Name = nameof(VisualStateManager.CommonStates),
-                                States =
+                                Name = VisualStateManager.CommonStates.Normal,
+                            },
+                            new VisualState()
+                            {
+                                Name = VisualStateManager.CommonStates.Disabled,
+                                Setters =
                                 {
-                                    new VisualState()
+                                    new Setter()
                                     {
-                                        Name = VisualStateManager.CommonStates.Normal,
-                                    },
-                                    new VisualState()
-                                    {
-                                        Name = VisualStateManager.CommonStates.Disabled,
-                                        Setters =
-                                        {
-                                            new Setter()
-                                            {
-                                                Property = CheckBox.ColorProperty,
-                                                Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
-                                            },
-                                        },
+                                        Property = CheckBox.ColorProperty,
+                                        Value = Application.Current?.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
                                     },
                                 },
                             },
-                        })
+                        },
                     },
-                },
-            });
-            Add(new Style(typeof(DatePicker))
-            {
-                Setters =
-                {
-                    new() { Property = DatePicker.TextColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("TextDark"), AppTheme.Light or _ => AppColor("TextLight") } },
-                    new() { Property = DatePicker.BackgroundColorProperty, Value = Colors.Transparent },
-                    new() { Property = DatePicker.FontFamilyProperty, Value = this["AppFont"] },
-                    new() { Property = DatePicker.FontSizeProperty, Value = this["AppFontSize"] },
-                    new Setter()
+                ])));
+            Add(new Style<DatePicker>(
+                (DatePicker.BackgroundColorProperty, Transparent),
+                (DatePicker.FontFamilyProperty, (string)this["AppFont"]),
+                (DatePicker.FontSizeProperty, Convert.ToDouble(this["AppFontSize"]))
+            ).AddAppThemeBinding(DatePicker.TextColorProperty, AppColor("TextLight"), AppColor("TextDark"))
+             .Add(VisualStateManager.VisualStateGroupsProperty, CreateVisualStateGroupList(
+                [
+                    new VisualStateGroup()
                     {
-                        Property = VisualStateManager.VisualStateGroupsProperty,
-                        Value = CreateVisualStateGroupList(new[]
+                        Name = nameof(VisualStateManager.CommonStates),
+                        States =
                         {
-                            new VisualStateGroup()
+                            new VisualState()
                             {
-                                Name = nameof(VisualStateManager.CommonStates),
-                                States =
+                                Name = VisualStateManager.CommonStates.Normal,
+                            },
+                            new VisualState()
+                            {
+                                Name = VisualStateManager.CommonStates.Disabled,
+                                Setters =
                                 {
-                                    new VisualState()
+                                    new Setter()
                                     {
-                                        Name = VisualStateManager.CommonStates.Normal,
-                                    },
-                                    new VisualState()
-                                    {
-                                        Name = VisualStateManager.CommonStates.Disabled,
-                                        Setters =
-                                        {
-                                            new Setter()
-                                            {
-                                                Property = DatePicker.TextColorProperty,
-                                                Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray500"), AppTheme.Light or _ => AppColor("Gray200") },
-                                            },
-                                        },
+                                        Property = DatePicker.TextColorProperty,
+                                        Value = Application.Current?.RequestedTheme switch { AppTheme.Dark => AppColor("Gray500"), AppTheme.Light or _ => AppColor("Gray200") },
                                     },
                                 },
                             },
-                        })
+                        },
                     },
-                },
-            });
-            Add(new Style(typeof(Editor))
-            {
-                Setters =
-                {
-                    new() { Property = Editor.TextColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("TextDark"), AppTheme.Light or _ => AppColor("TextLight") } },
-                    new() { Property = Editor.BackgroundColorProperty, Value = Colors.Transparent },
-                    new() { Property = Editor.FontFamilyProperty, Value = this["AppFont"] },
-                    new() { Property = Editor.FontSizeProperty, Value = this["AppFontSize"] },
-                    new() { Property = Editor.PlaceholderColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray500"), AppTheme.Light or _ => AppColor("Gray200") } },
-                    new Setter()
+                ])));
+            Add(new Style<Editor>(
+                (Editor.BackgroundColorProperty, Transparent),
+                (Editor.FontFamilyProperty, (string)this["AppFont"]),
+                (Editor.FontSizeProperty, Convert.ToDouble(this["AppFontSize"]))
+            ).AddAppThemeBinding(Editor.TextColorProperty, AppColor("TextLight"), AppColor("TextDark"))
+             .AddAppThemeBinding(Editor.PlaceholderColorProperty, AppColor("Gray200"), AppColor("Gray500"))
+             .Add(VisualStateManager.VisualStateGroupsProperty, CreateVisualStateGroupList(
+                [
+                    new VisualStateGroup()
                     {
-                        Property = VisualStateManager.VisualStateGroupsProperty,
-                        Value = CreateVisualStateGroupList(new[]
+                        Name = nameof(VisualStateManager.CommonStates),
+                        States =
                         {
-                            new VisualStateGroup()
+                            new VisualState()
                             {
-                                Name = nameof(VisualStateManager.CommonStates),
-                                States =
+                                Name = VisualStateManager.CommonStates.Normal,
+                            },
+                            new VisualState()
+                            {
+                                Name = VisualStateManager.CommonStates.Disabled,
+                                Setters =
                                 {
-                                    new VisualState()
+                                    new Setter()
                                     {
-                                        Name = VisualStateManager.CommonStates.Normal,
-                                    },
-                                    new VisualState()
-                                    {
-                                        Name = VisualStateManager.CommonStates.Disabled,
-                                        Setters =
-                                        {
-                                            new Setter()
-                                            {
-                                                Property = Editor.TextColorProperty,
-                                                Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
-                                            },
-                                        },
+                                        Property = Editor.TextColorProperty,
+                                        Value = Application.Current?.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
                                     },
                                 },
                             },
-                        })
+                        },
                     },
-                },
-            });
-            Add(new Style(typeof(Entry))
-            {
-                Setters =
-                {
-                    new() { Property = Entry.TextColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("TextDark"), AppTheme.Light or _ => AppColor("TextLight") } },
-                    new() { Property = Entry.BackgroundColorProperty, Value = Colors.Transparent },
-                    new() { Property = Entry.FontFamilyProperty, Value = this["AppFont"] },
-                    new() { Property = Entry.FontSizeProperty, Value = this["AppFontSize"] },
-                    new() { Property = Entry.PlaceholderColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray200") } },
-                    new Setter()
+                ])));
+            Add(new Style<Entry>(
+                (Entry.BackgroundColorProperty, Transparent),
+                (Entry.FontFamilyProperty, (string)this["AppFont"]),
+                (Entry.FontSizeProperty, Convert.ToDouble(this["AppFontSize"]))
+            ).AddAppThemeBinding(Entry.TextColorProperty, AppColor("TextLight"), AppColor("TextDark"))
+             .AddAppThemeBinding(Entry.PlaceholderColorProperty, AppColor("Gray200"), AppColor("Gray600"))
+             .Add(VisualStateManager.VisualStateGroupsProperty, CreateVisualStateGroupList(
+                [
+                    new VisualStateGroup()
                     {
-                        Property = VisualStateManager.VisualStateGroupsProperty,
-                        Value = CreateVisualStateGroupList(new[]
+                        Name = nameof(VisualStateManager.CommonStates),
+                        States =
                         {
-                            new VisualStateGroup()
+                            new VisualState()
                             {
-                                Name = nameof(VisualStateManager.CommonStates),
-                                States =
+                                Name = VisualStateManager.CommonStates.Normal,
+                            },
+                            new VisualState()
+                            {
+                                Name = VisualStateManager.CommonStates.Disabled,
+                                Setters =
                                 {
-                                    new VisualState()
+                                    new Setter()
                                     {
-                                        Name = VisualStateManager.CommonStates.Normal,
-                                    },
-                                    new VisualState()
-                                    {
-                                        Name = VisualStateManager.CommonStates.Disabled,
-                                        Setters =
-                                        {
-                                            new Setter()
-                                            {
-                                                Property = Entry.TextColorProperty,
-                                                Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
-                                            },
-                                        },
+                                        Property = Entry.TextColorProperty,
+                                        Value = Application.Current?.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
                                     },
                                 },
                             },
-                        })
+                        },
                     },
-                },
-            });
+                ])));
 #if Net8
-            Add(new Style(typeof(Frame))
-            {
-                Setters =
-                {
-                    new() { Property = Frame.HasShadowProperty, Value = false },
-                    new() { Property = Frame.BorderColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray950"), AppTheme.Light or _ => AppColor("Gray200") } },
-                    new() { Property = Frame.CornerRadiusProperty, Value = 8 },
-                },
-            });
+            Add(new Style<Frame>(
+                (Frame.HasShadowProperty, false),
+                (Frame.CornerRadiusProperty, 8)
+            ).AddAppThemeBinding(Frame.BorderColorProperty, AppColor("Gray200"), AppColor("Gray950")));
 #endif
-            Add(new Style(typeof(ImageButton))
-            {
-                Setters =
-                {
-                    new() { Property = ImageButton.OpacityProperty, Value = 1 },
-                    new() { Property = ImageButton.BorderColorProperty, Value = Colors.Transparent },
-                    new() { Property = ImageButton.BorderWidthProperty, Value = 0 },
-                    new() { Property = ImageButton.CornerRadiusProperty, Value = 0 },
-                    new Setter()
+            Add(new Style<ImageButton>(
+                (ImageButton.OpacityProperty, 1),
+                (ImageButton.BorderColorProperty, Transparent),
+                (ImageButton.BorderWidthProperty, 0),
+                (ImageButton.CornerRadiusProperty, 0)
+            ).Add(VisualStateManager.VisualStateGroupsProperty, CreateVisualStateGroupList(
+                [
+                    new VisualStateGroup()
                     {
-                        Property = VisualStateManager.VisualStateGroupsProperty,
-                        Value = CreateVisualStateGroupList(new[]
+                        Name = nameof(VisualStateManager.CommonStates),
+                        States =
                         {
-                            new VisualStateGroup()
+                            new VisualState()
                             {
-                                Name = nameof(VisualStateManager.CommonStates),
-                                States =
+                                Name = VisualStateManager.CommonStates.Normal,
+                            },
+                            new VisualState()
+                            {
+                                Name = VisualStateManager.CommonStates.Disabled,
+                                Setters =
                                 {
-                                    new VisualState()
+                                    new Setter()
                                     {
-                                        Name = VisualStateManager.CommonStates.Normal,
-                                    },
-                                    new VisualState()
-                                    {
-                                        Name = VisualStateManager.CommonStates.Disabled,
-                                        Setters =
-                                        {
-                                            new Setter()
-                                            {
-                                                Property = ImageButton.OpacityProperty,
-                                                Value = 0.5,
-                                            },
-                                        },
+                                        Property = ImageButton.OpacityProperty,
+                                        Value = 0.5,
                                     },
                                 },
                             },
-                        })
+                        },
+                    },
+                ])));
+            Add(new Style<Label>(
+                (Label.FontFamilyProperty, (string)this["AppFont"]),
+                (Label.FontSizeProperty, Convert.ToDouble(this["AppFontSize"]))
+            ).AddAppThemeBinding(Label.TextColorProperty, AppColor("TextLight"), AppColor("TextDark"))
+             .Add(VisualStateManager.VisualStateGroupsProperty, CreateVisualStateGroupList(
+            [
+                new VisualStateGroup()
+                {
+                    Name = nameof(VisualStateManager.CommonStates),
+                    States =
+                    {
+                        new VisualState()
+                        {
+                            Name = VisualStateManager.CommonStates.Normal,
+                        },
+                        new VisualState()
+                        {
+                            Name = VisualStateManager.CommonStates.Disabled,
+                            Setters =
+                            {
+                                new Setter()
+                                {
+                                    Property = Label.TextColorProperty,
+                                    Value = Application.Current?.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
+                                },
+                            },
+                        },
                     },
                 },
-            });
-            Add(new Style(typeof(Label))
-            {
-                Setters =
-                {
-                    new() { Property = Label.TextColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("TextDark"), AppTheme.Light or _ => AppColor("TextLight") } },
-                    new() { Property = Label.FontFamilyProperty, Value = this["AppFont"] },
-                    new() { Property = Label.FontSizeProperty, Value = this["AppFontSize"] },
-                    new Setter()
+            ])));
+            Add(new Style<ListView>(
+            ).AddAppThemeBinding(ListView.SeparatorColorProperty, AppColor("Gray200"), AppColor("Gray500"))
+             .AddAppThemeBinding(ListView.RefreshControlColorProperty, AppColor("Gray900"), AppColor("Gray200")));
+            Add(new Style<Picker>(
+                (Picker.BackgroundColorProperty, Transparent),
+                (Picker.FontFamilyProperty, (string)this["AppFont"]),
+                (Picker.FontSizeProperty, Convert.ToDouble(this["AppFontSize"]))
+            ).AddAppThemeBinding(Picker.TextColorProperty, AppColor("TextLight"), AppColor("TextDark"))
+             .AddAppThemeBinding(Picker.TitleColorProperty, AppColor("Gray900"), AppColor("Gray200"))
+             .Add(VisualStateManager.VisualStateGroupsProperty, CreateVisualStateGroupList(
+                [
+                    new VisualStateGroup()
                     {
-                        Property = VisualStateManager.VisualStateGroupsProperty,
-                        Value = CreateVisualStateGroupList(new[]
+                        Name = nameof(VisualStateManager.CommonStates),
+                        States =
                         {
-                            new VisualStateGroup()
+                            new VisualState()
                             {
-                                Name = nameof(VisualStateManager.CommonStates),
-                                States =
+                                Name = VisualStateManager.CommonStates.Normal,
+                            },
+                            new VisualState()
+                            {
+                                Name = VisualStateManager.CommonStates.Disabled,
+                                Setters =
                                 {
-                                    new VisualState()
+                                    new Setter()
                                     {
-                                        Name = VisualStateManager.CommonStates.Normal,
+                                        Property = Picker.TextColorProperty,
+                                        Value = Application.Current?.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
                                     },
-                                    new VisualState()
+                                    new Setter()
                                     {
-                                        Name = VisualStateManager.CommonStates.Disabled,
-                                        Setters =
-                                        {
-                                            new Setter()
-                                            {
-                                                Property = Label.TextColorProperty,
-                                                Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
-                                            },
-                                        },
+                                        Property = Picker.TitleColorProperty,
+                                        Value = Application.Current?.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
                                     },
                                 },
                             },
-                        })
+                        },
                     },
-                },
-            });
-            Add(new Style(typeof(ListView))
-            {
-                Setters =
-                {
-                    new() { Property = ListView.SeparatorColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray500"), AppTheme.Light or _ => AppColor("Gray200") } },
-                    new() { Property = ListView.RefreshControlColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray200"), AppTheme.Light or _ => AppColor("Gray900") } },
-                },
-            });
-            Add(new Style(typeof(Picker))
-            {
-                Setters =
-                {
-                    new() { Property = Picker.TextColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("TextDark"), AppTheme.Light or _ => AppColor("TextLight") } },
-                    new() { Property = Picker.TitleColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray200"), AppTheme.Light or _ => AppColor("Gray900") } },
-                    new() { Property = Picker.BackgroundColorProperty, Value = Colors.Transparent },
-                    new() { Property = Picker.FontFamilyProperty, Value = this["AppFont"] },
-                    new() { Property = Picker.FontSizeProperty, Value = this["AppFontSize"] },
-                    new Setter()
+                ])));
+            Add(new Style<ProgressBar>(
+            ).AddAppThemeBinding(ProgressBar.ProgressColorProperty, AppColor("Primary"), AppColor("White"))
+             .Add(VisualStateManager.VisualStateGroupsProperty, CreateVisualStateGroupList(
+                [
+                    new VisualStateGroup()
                     {
-                        Property = VisualStateManager.VisualStateGroupsProperty,
-                        Value = CreateVisualStateGroupList(new[]
+                        Name = nameof(VisualStateManager.CommonStates),
+                        States =
                         {
-                            new VisualStateGroup()
+                            new VisualState()
                             {
-                                Name = nameof(VisualStateManager.CommonStates),
-                                States =
+                                Name = VisualStateManager.CommonStates.Normal,
+                            },
+                            new VisualState()
+                            {
+                                Name = VisualStateManager.CommonStates.Disabled,
+                                Setters =
                                 {
-                                    new VisualState()
+                                    new Setter()
                                     {
-                                        Name = VisualStateManager.CommonStates.Normal,
-                                    },
-                                    new VisualState()
-                                    {
-                                        Name = VisualStateManager.CommonStates.Disabled,
-                                        Setters =
-                                        {
-                                            new Setter()
-                                            {
-                                                Property = Picker.TextColorProperty,
-                                                Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
-                                            },
-                                            new Setter()
-                                            {
-                                                Property = Picker.TitleColorProperty,
-                                                Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
-                                            },
-                                        },
+                                        Property = ProgressBar.ProgressColorProperty,
+                                        Value = Application.Current?.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
                                     },
                                 },
                             },
-                        })
+                        },
                     },
-                },
-            });
-            Add(new Style(typeof(ProgressBar))
-            {
-                Setters =
-                {
-                    new() { Property = ProgressBar.ProgressColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("White"), AppTheme.Light or _ => AppColor("Primary") } },
-                    new Setter()
+                ])));
+            Add(new Style<RadioButton>(
+                (RadioButton.BackgroundProperty, Brush.Transparent),
+                (RadioButton.FontFamilyProperty, (string)this["AppFont"]),
+                (RadioButton.FontSizeProperty, Convert.ToDouble(this["AppFontSize"]))
+            ).AddAppThemeBinding(RadioButton.TextColorProperty, AppColor("TextLight"), AppColor("TextDark"))
+             .Add(VisualStateManager.VisualStateGroupsProperty, CreateVisualStateGroupList(
+                [
+                    new VisualStateGroup()
                     {
-                        Property = VisualStateManager.VisualStateGroupsProperty,
-                        Value = CreateVisualStateGroupList(new[]
+                        Name = nameof(VisualStateManager.CommonStates),
+                        States =
                         {
-                            new VisualStateGroup()
+                            new VisualState()
                             {
-                                Name = nameof(VisualStateManager.CommonStates),
-                                States =
+                                Name = VisualStateManager.CommonStates.Normal,
+                            },
+                            new VisualState()
+                            {
+                                Name = VisualStateManager.CommonStates.Disabled,
+                                Setters =
                                 {
-                                    new VisualState()
+                                    new Setter()
                                     {
-                                        Name = VisualStateManager.CommonStates.Normal,
-                                    },
-                                    new VisualState()
-                                    {
-                                        Name = VisualStateManager.CommonStates.Disabled,
-                                        Setters =
-                                        {
-                                            new Setter()
-                                            {
-                                                Property = ProgressBar.ProgressColorProperty,
-                                                Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
-                                            },
-                                        },
+                                        Property = RadioButton.TextColorProperty,
+                                        Value = Application.Current?.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
                                     },
                                 },
                             },
-                        })
+                        },
                     },
-                },
-            });
-            Add(new Style(typeof(RadioButton))
-            {
-                Setters =
-                {
-                    new() { Property = RadioButton.BackgroundProperty, Value = "Transparent" },
-                    new() { Property = RadioButton.TextColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("TextDark"), AppTheme.Light or _ => AppColor("TextLight") } },
-                    new() { Property = RadioButton.FontFamilyProperty, Value = this["AppFont"] },
-                    new() { Property = RadioButton.FontSizeProperty, Value = this["AppFontSize"] },
-                    new Setter()
+                ])));
+            Add(new Style<RefreshView>(
+            ).AddAppThemeBinding(RefreshView.RefreshColorProperty, AppColor("Gray900"), AppColor("Gray200")));
+            Add(new Style<SearchBar>(
+                (SearchBar.PlaceholderColorProperty, AppColor("Gray500")),
+                (SearchBar.CancelButtonColorProperty, AppColor("Gray500")),
+                (SearchBar.BackgroundColorProperty, Transparent),
+                (SearchBar.FontFamilyProperty, (string)this["AppFont"]),
+                (SearchBar.FontSizeProperty, Convert.ToDouble(this["AppFontSize"]))
+            ).AddAppThemeBinding(SearchBar.TextColorProperty, AppColor("TextLight"), AppColor("TextDark"))
+             .Add(VisualStateManager.VisualStateGroupsProperty, CreateVisualStateGroupList(
+                [
+                    new VisualStateGroup()
                     {
-                        Property = VisualStateManager.VisualStateGroupsProperty,
-                        Value = CreateVisualStateGroupList(new[]
+                        Name = nameof(VisualStateManager.CommonStates),
+                        States =
                         {
-                            new VisualStateGroup()
+                            new VisualState()
                             {
-                                Name = nameof(VisualStateManager.CommonStates),
-                                States =
+                                Name = VisualStateManager.CommonStates.Normal,
+                            },
+                            new VisualState()
+                            {
+                                Name = VisualStateManager.CommonStates.Disabled,
+                                Setters =
                                 {
-                                    new VisualState()
+                                    new Setter()
                                     {
-                                        Name = VisualStateManager.CommonStates.Normal,
+                                        Property = SearchBar.TextColorProperty,
+                                        Value = Application.Current?.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
                                     },
-                                    new VisualState()
+                                    new Setter()
                                     {
-                                        Name = VisualStateManager.CommonStates.Disabled,
-                                        Setters =
-                                        {
-                                            new Setter()
-                                            {
-                                                Property = RadioButton.TextColorProperty,
-                                                Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
-                                            },
-                                        },
+                                        Property = SearchBar.PlaceholderColorProperty,
+                                        Value = Application.Current?.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
                                     },
                                 },
                             },
-                        })
+                        },
                     },
-                },
-            });
-            Add(new Style(typeof(RefreshView))
-            {
-                Setters =
-                {
-                    new() { Property = RefreshView.RefreshColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray200"), AppTheme.Light or _ => AppColor("Gray900") } },
-                },
-            });
-            Add(new Style(typeof(SearchBar))
-            {
-                Setters =
-                {
-                    new() { Property = SearchBar.TextColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("TextDark"), AppTheme.Light or _ => AppColor("TextLight") } },
-                    new() { Property = SearchBar.PlaceholderColorProperty, Value = AppColor("Gray500") },
-                    new() { Property = SearchBar.CancelButtonColorProperty, Value = AppColor("Gray500") },
-                    new() { Property = SearchBar.BackgroundColorProperty, Value = Colors.Transparent },
-                    new() { Property = SearchBar.FontFamilyProperty, Value = this["AppFont"] },
-                    new() { Property = SearchBar.FontSizeProperty, Value = this["AppFontSize"] },
-                    new Setter()
+                ])));
+            Add(new Style<SearchHandler>(
+                (SearchHandler.PlaceholderColorProperty, AppColor("Gray500")),
+                (SearchHandler.BackgroundColorProperty, Transparent),
+                (SearchHandler.FontFamilyProperty, (string)this["AppFont"]),
+                (SearchHandler.FontSizeProperty, Convert.ToDouble(this["AppFontSize"]))
+            ).AddAppThemeBinding(SearchHandler.TextColorProperty, AppColor("TextLight"), AppColor("TextDark"))
+             .Add(VisualStateManager.VisualStateGroupsProperty, CreateVisualStateGroupList(
+                [
+                    new VisualStateGroup()
                     {
-                        Property = VisualStateManager.VisualStateGroupsProperty,
-                        Value = CreateVisualStateGroupList(new[]
+                        Name = nameof(VisualStateManager.CommonStates),
+                        States =
                         {
-                            new VisualStateGroup()
+                            new VisualState()
                             {
-                                Name = nameof(VisualStateManager.CommonStates),
-                                States =
+                                Name = VisualStateManager.CommonStates.Normal,
+                            },
+                            new VisualState()
+                            {
+                                Name = VisualStateManager.CommonStates.Disabled,
+                                Setters =
                                 {
-                                    new VisualState()
+                                    new Setter()
                                     {
-                                        Name = VisualStateManager.CommonStates.Normal,
+                                        Property = SearchHandler.TextColorProperty,
+                                        Value = Application.Current?.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
                                     },
-                                    new VisualState()
+                                    new Setter()
                                     {
-                                        Name = VisualStateManager.CommonStates.Disabled,
-                                        Setters =
-                                        {
-                                            new Setter()
-                                            {
-                                                Property = SearchBar.TextColorProperty,
-                                                Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
-                                            },
-                                            new Setter()
-                                            {
-                                                Property = SearchBar.PlaceholderColorProperty,
-                                                Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
-                                            },
-                                        },
+                                        Property = SearchHandler.PlaceholderColorProperty,
+                                        Value = Application.Current?.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
                                     },
                                 },
                             },
-                        })
+                        },
                     },
-                },
-            });
-            Add(new Style(typeof(SearchHandler))
-            {
-                Setters =
-                {
-                    new() { Property = SearchHandler.TextColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("TextDark"), AppTheme.Light or _ => AppColor("TextLight") } },
-                    new() { Property = SearchHandler.PlaceholderColorProperty, Value = AppColor("Gray500") },
-                    new() { Property = SearchHandler.BackgroundColorProperty, Value = Colors.Transparent },
-                    new() { Property = SearchHandler.FontFamilyProperty, Value = this["AppFont"] },
-                    new() { Property = SearchHandler.FontSizeProperty, Value = this["AppFontSize"] },
-                    new Setter()
+                ])));
+            Add(new Style<Shadow>(
+                (Shadow.RadiusProperty, 15),
+                (Shadow.OpacityProperty, 0.5),
+                (Shadow.OffsetProperty, new Point(10, 10))
+            ).AddAppThemeBinding(Shadow.BrushProperty, new SolidColorBrush(AppColor("White")), new SolidColorBrush(AppColor("White"))));
+            Add(new Style<Slider>(
+            ).AddAppThemeBinding(Slider.MinimumTrackColorProperty, AppColor("Primary"), AppColor("White"))
+             .AddAppThemeBinding(Slider.MaximumTrackColorProperty, AppColor("Gray200"), AppColor("Gray600"))
+             .AddAppThemeBinding(Slider.ThumbColorProperty, AppColor("Primary"), AppColor("White"))
+             .Add(VisualStateManager.VisualStateGroupsProperty, CreateVisualStateGroupList(
+                [
+                    new VisualStateGroup()
                     {
-                        Property = VisualStateManager.VisualStateGroupsProperty,
-                        Value = CreateVisualStateGroupList(new[]
+                        Name = nameof(VisualStateManager.CommonStates),
+                        States =
                         {
-                            new VisualStateGroup()
+                            new VisualState()
                             {
-                                Name = nameof(VisualStateManager.CommonStates),
-                                States =
+                                Name = VisualStateManager.CommonStates.Normal,
+                            },
+                            new VisualState()
+                            {
+                                Name = VisualStateManager.CommonStates.Disabled,
+                                Setters =
                                 {
-                                    new VisualState()
+                                    new Setter()
                                     {
-                                        Name = VisualStateManager.CommonStates.Normal,
+                                        Property = Slider.MinimumTrackColorProperty,
+                                        Value = Application.Current?.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
                                     },
-                                    new VisualState()
+                                    new Setter()
                                     {
-                                        Name = VisualStateManager.CommonStates.Disabled,
-                                        Setters =
-                                        {
-                                            new Setter()
-                                            {
-                                                Property = SearchHandler.TextColorProperty,
-                                                Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
-                                            },
-                                            new Setter()
-                                            {
-                                                Property = SearchHandler.PlaceholderColorProperty,
-                                                Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
-                                            },
-                                        },
+                                        Property = Slider.MaximumTrackColorProperty,
+                                        Value = Application.Current?.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
+                                    },
+                                    new Setter()
+                                    {
+                                        Property = Slider.ThumbColorProperty,
+                                        Value = Application.Current?.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
                                     },
                                 },
                             },
-                        })
+                        },
                     },
-                },
-            });
-            Add(new Style(typeof(Shadow))
-            {
-                Setters =
-                {
-                    new() { Property = Shadow.RadiusProperty, Value = 15 },
-                    new() { Property = Shadow.OpacityProperty, Value = 0.5 },
-                    new() { Property = Shadow.BrushProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppResource<Brush>("White"), AppTheme.Light or _ => AppResource<Brush>("White") } },
-                    new() { Property = Shadow.OffsetProperty, Value = new Point(10,10) },
-                },
-            });
-            Add(new Style(typeof(Slider))
-            {
-                Setters =
-                {
-                    new() { Property = Slider.MinimumTrackColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("White"), AppTheme.Light or _ => AppColor("Primary") } },
-                    new() { Property = Slider.MaximumTrackColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray200") } },
-                    new() { Property = Slider.ThumbColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("White"), AppTheme.Light or _ => AppColor("Primary") } },
-                    new Setter()
+                ])));
+            Add(new Style<SwipeItem>(
+            ).AddAppThemeBinding(SwipeItem.BackgroundColorProperty, AppColor("White"), AppColor("Black")));
+            Add(new Style<Switch>(
+                (Switch.ThumbColorProperty, AppColor("White"))
+            ).AddAppThemeBinding(Switch.OnColorProperty, AppColor("Primary"), AppColor("White"))
+             .Add(VisualStateManager.VisualStateGroupsProperty, CreateVisualStateGroupList(
+                [
+                    new VisualStateGroup()
                     {
-                        Property = VisualStateManager.VisualStateGroupsProperty,
-                        Value = CreateVisualStateGroupList(new[]
+                        Name = nameof(VisualStateManager.CommonStates),
+                        States =
                         {
-                            new VisualStateGroup()
+                            new VisualState()
                             {
-                                Name = nameof(VisualStateManager.CommonStates),
-                                States =
+                                Name = VisualStateManager.CommonStates.Normal,
+                            },
+                            new VisualState()
+                            {
+                                Name = VisualStateManager.CommonStates.Disabled,
+                                Setters =
                                 {
-                                    new VisualState()
+                                    new Setter()
                                     {
-                                        Name = VisualStateManager.CommonStates.Normal,
+                                        Property = Switch.OnColorProperty,
+                                        Value = Application.Current?.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
                                     },
-                                    new VisualState()
+                                    new Setter()
                                     {
-                                        Name = VisualStateManager.CommonStates.Disabled,
-                                        Setters =
-                                        {
-                                            new Setter()
-                                            {
-                                                Property = Slider.MinimumTrackColorProperty,
-                                                Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
-                                            },
-                                            new Setter()
-                                            {
-                                                Property = Slider.MaximumTrackColorProperty,
-                                                Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
-                                            },
-                                            new Setter()
-                                            {
-                                                Property = Slider.ThumbColorProperty,
-                                                Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
-                                            },
-                                        },
+                                        Property = Switch.ThumbColorProperty,
+                                        Value = Application.Current?.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
                                     },
                                 },
                             },
-                        })
-                    },
-                },
-            });
-            Add(new Style(typeof(SwipeItem))
-            {
-                Setters =
-                {
-                    new() { Property = SwipeItem.BackgroundColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Black"), AppTheme.Light or _ => AppColor("White") } },
-                },
-            });
-            Add(new Style(typeof(Switch))
-            {
-                Setters =
-                {
-                    new() { Property = Switch.OnColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("White"), AppTheme.Light or _ => AppColor("Primary") } },
-                    new() { Property = Switch.ThumbColorProperty, Value = AppColor("White") },
-                    new Setter()
-                    {
-                        Property = VisualStateManager.VisualStateGroupsProperty,
-                        Value = CreateVisualStateGroupList(new[]
-                        {
-                            new VisualStateGroup()
+                            new VisualState()
                             {
-                                Name = nameof(VisualStateManager.CommonStates),
-                                States =
+                                Name = "On",
+                                Setters =
                                 {
-                                    new VisualState()
+                                    new Setter()
                                     {
-                                        Name = VisualStateManager.CommonStates.Normal,
+                                        Property = Switch.OnColorProperty,
+                                        Value = Application.Current?.RequestedTheme switch { AppTheme.Dark => AppColor("Gray200"), AppTheme.Light or _ => AppColor("Secondary") },
                                     },
-                                    new VisualState()
+                                    new Setter()
                                     {
-                                        Name = VisualStateManager.CommonStates.Disabled,
-                                        Setters =
-                                        {
-                                            new Setter()
-                                            {
-                                                Property = Switch.OnColorProperty,
-                                                Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
-                                            },
-                                            new Setter()
-                                            {
-                                                Property = Switch.ThumbColorProperty,
-                                                Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
-                                            },
-                                        },
-                                    },
-                                    new VisualState()
-                                    {
-                                        Name = "On",
-                                        Setters =
-                                        {
-                                            new Setter()
-                                            {
-                                                Property = Switch.OnColorProperty,
-                                                Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray200"), AppTheme.Light or _ => AppColor("Secondary") },
-                                            },
-                                            new Setter()
-                                            {
-                                                Property = Switch.ThumbColorProperty,
-                                                Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("White"), AppTheme.Light or _ => AppColor("Primary") },
-                                            },
-                                        },
-                                    },
-                                    new VisualState()
-                                    {
-                                        Name = "Off",
-                                        Setters =
-                                        {
-                                            new Setter()
-                                            {
-                                                Property = Switch.ThumbColorProperty,
-                                                Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray500"), AppTheme.Light or _ => AppColor("Gray400") },
-                                            },
-                                        },
+                                        Property = Switch.ThumbColorProperty,
+                                        Value = Application.Current?.RequestedTheme switch { AppTheme.Dark => AppColor("White"), AppTheme.Light or _ => AppColor("Primary") },
                                     },
                                 },
                             },
-                        })
-                    },
-                },
-            });
-            Add(new Style(typeof(TimePicker))
-            {
-                Setters =
-                {
-                    new() { Property = TimePicker.TextColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("TextDark"), AppTheme.Light or _ => AppColor("TextLight") } },
-                    new() { Property = TimePicker.BackgroundProperty, Value = "Transparent" },
-                    new() { Property = TimePicker.FontFamilyProperty, Value = this["AppFont"] },
-                    new() { Property = TimePicker.FontSizeProperty, Value = this["AppFontSize"] },
-                    new Setter()
-                    {
-                        Property = VisualStateManager.VisualStateGroupsProperty,
-                        Value = CreateVisualStateGroupList(new[]
-                        {
-                            new VisualStateGroup()
+                            new VisualState()
                             {
-                                Name = nameof(VisualStateManager.CommonStates),
-                                States =
+                                Name = "Off",
+                                Setters =
                                 {
-                                    new VisualState()
+                                    new Setter()
                                     {
-                                        Name = VisualStateManager.CommonStates.Normal,
-                                    },
-                                    new VisualState()
-                                    {
-                                        Name = VisualStateManager.CommonStates.Disabled,
-                                        Setters =
-                                        {
-                                            new Setter()
-                                            {
-                                                Property = TimePicker.TextColorProperty,
-                                                Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
-                                            },
-                                        },
+                                        Property = Switch.ThumbColorProperty,
+                                        Value = Application.Current?.RequestedTheme switch { AppTheme.Dark => AppColor("Gray500"), AppTheme.Light or _ => AppColor("Gray400") },
                                     },
                                 },
                             },
-                        })
+                        },
                     },
-                },
-            });
-
-            // Page
-            Add(new Style(typeof(Page))
-            {
-                ApplyToDerivedTypes = true,
-                Setters =
-                {
-                    new() { Property = Page.PaddingProperty, Value = Thickness.Zero },
-                    new() { Property = Page.BackgroundColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("BackgroundDark"), AppTheme.Light or _ => AppColor("BackgroundLight") } },
-                },
-            });
-
-            // Shell
-            Add(new Style(typeof(Shell))
-            {
-                ApplyToDerivedTypes = true,
-                Setters =
-                {
-                    new() { Property = Shell.BackgroundColorProperty, Value = AppColor("Primary") },
-                    new() { Property = Shell.ForegroundColorProperty, Value = DeviceInfo.Platform.ToString() switch { nameof(DevicePlatform.WinUI) => AppColor("Primary"), _ => AppColor("White") } },
-                    new() { Property = Shell.TitleColorProperty, Value = AppColor("White") },
-                    new() { Property = Shell.DisabledColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray950"), AppTheme.Light or _ => AppColor("Gray200") } },
-                    new() { Property = Shell.UnselectedColorProperty, Value = AppColor("Gray200") },
-                    new() { Property = Shell.NavBarHasShadowProperty, Value = true },
-                    new() { Property = Shell.TabBarBackgroundColorProperty, Value = AppColor("Primary") },
-                    new() { Property = Shell.TabBarForegroundColorProperty, Value = AppColor("White") },
-                    new() { Property = Shell.TabBarTitleColorProperty, Value = AppColor("White") },
-                    new() { Property = Shell.TabBarUnselectedColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray200"), AppTheme.Light or _ => AppColor("Gray900") } },
-                },
-            });
-
-            // NavigationPage
-            Add(new Style(typeof(NavigationPage))
-            {
-                Setters =
-                {
-                    new() { Property = NavigationPage.BarBackgroundColorProperty, Value = AppColor("Primary") },
-                    new() { Property = NavigationPage.BarTextColorProperty, Value = AppColor("White") },
-                    new() { Property = NavigationPage.IconColorProperty, Value = AppColor("White") },
-                },
-            });
-
-            // TabbedPage
-            Add(new Style(typeof(TabbedPage))
-            {
-                Setters =
-                {
-                    new() { Property = TabbedPage.BarBackgroundColorProperty, Value = AppColor("Primary") },
-                    new() { Property = TabbedPage.BarTextColorProperty, Value = AppColor("White") },
-                    new() { Property = TabbedPage.UnselectedTabColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray950"), AppTheme.Light or _ => AppColor("Gray200") } },
-                    new() { Property = TabbedPage.SelectedTabColorProperty, Value = Application.Current.RequestedTheme switch { AppTheme.Dark => AppColor("Gray200"), AppTheme.Light or _ => AppColor("Gray950") } },
-                },
-            });
+                ])));
+            Add(new Style<TimePicker>(
+                (TimePicker.BackgroundProperty, Brush.Transparent),
+                (TimePicker.FontFamilyProperty, (string)this["AppFont"]),
+                (TimePicker.FontSizeProperty, Convert.ToDouble(this["AppFontSize"]))
+            ).AddAppThemeBinding(TimePicker.TextColorProperty, AppColor("TextLight"), AppColor("TextDark"))
+             .Add(VisualStateManager.VisualStateGroupsProperty, CreateVisualStateGroupList(
+                [
+                    new VisualStateGroup()
+                    {
+                        Name = nameof(VisualStateManager.CommonStates),
+                        States =
+                        {
+                            new VisualState()
+                            {
+                                Name = VisualStateManager.CommonStates.Normal,
+                            },
+                            new VisualState()
+                            {
+                                Name = VisualStateManager.CommonStates.Disabled,
+                                Setters =
+                                {
+                                    new Setter()
+                                    {
+                                        Property = TimePicker.TextColorProperty,
+                                        Value = Application.Current?.RequestedTheme switch { AppTheme.Dark => AppColor("Gray600"), AppTheme.Light or _ => AppColor("Gray300") },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                ])));
+            Add(new Style<Page>(
+                (Page.PaddingProperty, Thickness.Zero)
+            ).ApplyToDerivedTypes(true)
+             .AddAppThemeBinding(Page.BackgroundColorProperty, AppColor("BackgroundLight"), AppColor("BackgroundDark")));
+            Add(new Style<Shell>(
+                (Shell.BackgroundColorProperty, AppColor("Primary")),
+//-:cnd:noEmit
+#if WINDOWS
+                (Shell.ForegroundColorProperty, AppColor("Primary")),
+#else
+                (Shell.ForegroundColorProperty, AppColor("White")),
+#endif
+//+:cnd:noEmit
+                (Shell.TitleColorProperty, AppColor("White")),
+                (Shell.UnselectedColorProperty, AppColor("Gray200")),
+                (Shell.NavBarHasShadowProperty, true),
+                (Shell.TabBarBackgroundColorProperty, AppColor("Primary")),
+                (Shell.TabBarForegroundColorProperty, AppColor("White")),
+                (Shell.TabBarTitleColorProperty, AppColor("White"))
+            ).ApplyToDerivedTypes(true)
+             .AddAppThemeBinding(Shell.DisabledColorProperty, AppColor("Gray200"), AppColor("Gray950"))
+             .AddAppThemeBinding(Shell.TabBarUnselectedColorProperty, AppColor("Gray900"), AppColor("Gray200")));
+            Add(new Style<NavigationPage>(
+                (NavigationPage.BarBackgroundColorProperty, AppColor("Primary")),
+                (NavigationPage.BarTextColorProperty, AppColor("White")),
+                (NavigationPage.IconColorProperty, AppColor("White"))
+            ));
+            Add(new Style<TabbedPage>(
+                (TabbedPage.BarBackgroundColorProperty, AppColor("Primary")),
+                (TabbedPage.BarTextColorProperty, AppColor("White"))
+            ).AddAppThemeBinding(TabbedPage.UnselectedTabColorProperty, AppColor("Gray200"), AppColor("Gray950"))
+             .AddAppThemeBinding(TabbedPage.SelectedTabColorProperty, AppColor("Gray950"), AppColor("Gray200")));
         }
 
         public static AppStyles Instance => _instance ??= new AppStyles();

@@ -271,7 +271,11 @@
         <!--#if (AddMaps)-->
         <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
         <!--#if (AllPlatforms || IsWindows)-->
+        <!--#if (Net9)-->
+        <PackageReference Include="CommunityToolkit.Maui.Maps" Version="3.*" />
+        <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui.Maps" Version="2.*" />
+        <!--#endif-->
         <!--#endif-->
         <!--#endif-->
         <!--#if (Hybrid || Razor)-->
@@ -287,7 +291,11 @@
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#if (AddToolkit)-->
+        <!--#if (Net9)-->
+        <PackageReference Include="CommunityToolkit.Maui" Version="10.*" />
+        <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui" Version="9.*" />
+        <!--#endif-->
         <!--#endif-->
         <!--#if (AddSyncfusionToolkit)-->
         <PackageReference Include="Syncfusion.Maui.Toolkit" Version="1.*" />
@@ -300,10 +308,18 @@
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddCamera)-->
+        <!--#if (Net9)-->
+        <PackageReference Include="CommunityToolkit.Maui.Camera" Version="2.*" />
+        <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui.Camera" Version="1.*" />
         <!--#endif-->
+        <!--#endif-->
         <!--#if (AddMedia)-->
-        <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="3.*" />
+        <!--#if (Net9)-->
+        <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="5.*" />
+        <!--#else-->
+        <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="4.*" />
+        <!--#endif-->
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <!--#if (Net9)-->

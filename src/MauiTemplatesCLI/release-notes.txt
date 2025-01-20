@@ -2,8 +2,16 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This template package does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 6.1.0:
+What's new in ver. 6.2.0:
 -------------------------
+The versions of the CommunityToolkit.* NuGet packages have been updated to support .NET 9 natively.
+
+The global styles defined in the Markup design pattern have been revamped to incorporate the AddAppThemeBinding method from the Markup Toolkit package.
+
+The package type for the app targeting the Windows platform has been updated to Unpackaged.
+
+v6.1.0:
+
 Introduced an option to create a new project template using HybridWebView.
 
 To know more about this, consult this article https://egvijayanand.in/2024/10/04/exploring-dotnet-maui-9-hybridwebview-features/
