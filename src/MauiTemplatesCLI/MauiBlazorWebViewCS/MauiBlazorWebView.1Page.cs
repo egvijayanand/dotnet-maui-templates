@@ -16,8 +16,11 @@ namespace MyApp.Namespace
             // Add this using statement VijayAnand.MauiBlazor.Markup to bring the extension methods to scope
             // And then invoke the Configure() method on the BlazorWebView instance, example shown below
             // new BlazorWebView().Configure("wwwroot/index.html", ("#app", typeof(Main), null));
+            // In a much simplified definition (assuming default value for others)
+            // new BlazorWebView().Configure(typeof(Main));
 #if Net8OrLater
             // new BlazorWebView().Configure("wwwroot/index.html", "/", ("#app", typeof(Main), null));
+            // new BlazorWebView().Configure(typeof(Main), "/");
 #endif
             var bwv = new BlazorWebView()
             {

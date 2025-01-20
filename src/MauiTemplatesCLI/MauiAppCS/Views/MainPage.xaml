@@ -279,6 +279,7 @@
                                           Tablet=0}">
                     <HybridWebView.Behaviors>
                         <mct:EventToCommandBehavior
+                            BindingContext="{Binding BindingContext, Source={x:Reference hwv}, x:DataType=HybridWebView}"
                             Command="{Binding ShowMessageCommand}"
                             EventArgsConverter="{StaticResource ArgsConverter}"
                             EventName="RawMessageReceived" />

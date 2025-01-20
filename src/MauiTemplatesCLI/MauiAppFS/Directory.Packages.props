@@ -4,9 +4,9 @@
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net9)-->
         <!--#if (Nightly)-->
-        <MauiVersion>9.0.20-ci.main.24578.1</MauiVersion>
+        <MauiVersion>9.0.40-ci.main.25070.1</MauiVersion>
         <!--#else-->
-        <MauiVersion>9.0.10</MauiVersion>
+        <MauiVersion>9.0.30</MauiVersion>
         <!--#endif-->
         <!--#elif (Net8)-->
         <!--#if (Nightly)-->
@@ -63,10 +63,14 @@
         <PackageVersion Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#if (AddToolkit)-->
+        <!--#if (Net9)-->
+        <PackageVersion Include="CommunityToolkit.Maui" Version="10.0.0" />
+        <!--#else-->
         <PackageVersion Include="CommunityToolkit.Maui" Version="9.1.1" />
         <!--#endif-->
+        <!--#endif-->
         <!--#if (AddSyncfusionToolkit)-->
-        <PackageVersion Include="Syncfusion.Maui.Toolkit" Version="1.0.2" />
+        <PackageVersion Include="Syncfusion.Maui.Toolkit" Version="1.0.3" />
         <!--#endif-->
         <!--#if (AddMarkup)-->
         <!--#if (Net9)-->
@@ -77,9 +81,9 @@
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
         <!--#if (Net9)-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="4.0.0" />
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="4.1.0" />
         <!--#else-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.5.0" />
+        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.6.0" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMedia)-->
@@ -95,7 +99,7 @@
         <PackageVersion Include="Microsoft.Maui.Controls.Foldable" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#if (AddMvvmToolkit)-->
-        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.3.2" />
+        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0" />
         <!--#endif-->
     <!--#if (PackageRef)-->
     </ItemGroup>

@@ -810,7 +810,7 @@
         "windows-unpackaged": {
             "type": "parameter",
             "datatype": "bool",
-            "defaultValue": "false",
+            "defaultValue": "true",
             "description": "Option to configure Windows target as Unpackaged type.",
             "displayName": "Option to configure Windows target as _Unpackaged type"
         },

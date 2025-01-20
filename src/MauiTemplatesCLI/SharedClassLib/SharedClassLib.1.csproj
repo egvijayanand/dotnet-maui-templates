@@ -109,7 +109,11 @@
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#if (AddMauiToolkit)-->
+        <!--#if (Net9)-->
+        <PackageReference Include="CommunityToolkit.Maui" Version="10.*" />
+        <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui" Version="9.*" />
+        <!--#endif-->
         <!--#endif-->
         <!--#if (AddSyncfusionToolkit)-->
         <PackageReference Include="Syncfusion.Maui.Toolkit" Version="1.*" />

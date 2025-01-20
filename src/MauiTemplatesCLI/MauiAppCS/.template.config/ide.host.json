@@ -144,7 +144,7 @@
                 "text": "Option to configure Windows target as _Unpackaged type."
             },
             "isVisible": true,
-            "defaultValue": "false"
+            "defaultValue": "true"
         },
         {
             "id": "central-pkg-mgmt",
