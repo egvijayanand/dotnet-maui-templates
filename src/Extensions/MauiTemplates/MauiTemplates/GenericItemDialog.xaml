@@ -134,10 +134,10 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center">
                 <TextBlock.Text>
-                    &#169; 2024 Vijay Anand E G&#160;
+                    &#169; 2024-2025 Vijay Anand E G&#160;
                 </TextBlock.Text>
                 <Hyperlink
-                    NavigateUri="https://egvijayanand.in/"
+                    NavigateUri="https://egvijayanand.in/?utm_source=vs2022&amp;utm_medium=dialog&amp;utm_campaign=new-item"
                     RequestNavigate="OnRequestNavigate">
                     egvijayanand.in
                 </Hyperlink>
