@@ -15,7 +15,7 @@ Release Details:
 |Stable|.NET 6 SR11 (6.0.553)|VS2022 17.4.x - 17.8.x|Tue, Apr 25, 2023|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
 |Stable|.NET 7 SR10 (7.0.101)|VS2022 17.4.x - 17.9.x|Tue, Nov 7, 2023|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
 |Stable|[.NET 8 SR10](https://github.com/dotnet/maui/releases/tag/8.0.100 "Changelog") (8.0.100) <br /> _Requires JDK 17 and Android SDK 34_ <br /> _Requires Apple Xcode 15.4 and Supports Apple Xcode 16_|VS2022 17.12.x|Tue, Nov 12, 2024|Active|
-|Stable|[.NET 9 SR3](https://github.com/dotnet/maui/releases/tag/9.0.30 "Changelog") (9.0.30) <br /> _Requires JDK 17 and Android SDK 35.0.24_ <br /> _Requires Apple Xcode 16.1_|VS2022 <br /> 17.12.x Stable <br /> 17.13 Preview 2.1|Tue, Jan 14, 2025|Active|
+|Stable|[.NET 9 SR4](https://github.com/dotnet/maui/releases/tag/9.0.40 "Changelog") (9.0.40) <br /> _Requires JDK 17 and Android SDK 35.0.24_ <br /> _Requires Apple Xcode 16.1_|VS2022 <br /> 17.13.x Stable <br /> 17.14 Preview 1.0|Tue, Feb 11, 2025|Active|
 
 Version History and its dependencies are [here](https://aka.ms/maui/versions).
 
