@@ -2,11 +2,17 @@
     <PropertyGroup>
         <!--#if (CentralPkgMgmt)-->
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-        <!--#if (Net9)-->
+        <!--#if (Net10)-->
         <!--#if (Nightly)-->
-        <MauiVersion>9.0.40-ci.main.25070.1</MauiVersion>
+        <MauiVersion>10.0.0-preview.1.25122.6</MauiVersion>
         <!--#else-->
-        <MauiVersion>9.0.30</MauiVersion>
+        <MauiVersion>10.0.0-preview.1.25122.6</MauiVersion>
+        <!--#endif-->
+        <!--#elif (Net9)-->
+        <!--#if (Nightly)-->
+        <MauiVersion>9.0.50-ci.main.25158.1</MauiVersion>
+        <!--#else-->
+        <MauiVersion>9.0.40</MauiVersion>
         <!--#endif-->
         <!--#elif (Net8)-->
         <!--#if (Nightly)-->
@@ -17,7 +23,13 @@
         <!--#endif-->
         <!--#else-->
         <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
-        <!--#if (Net9)-->
+        <!--#if (Net10)-->
+        <!--#if (Nightly)-->
+        <MauiVersion>10.*-*</MauiVersion>
+        <!--#else-->
+        <MauiVersion>10.*-*</MauiVersion>
+        <!--#endif-->
+        <!--#elif (Net9)-->
         <!--#if (Nightly)-->
         <MauiVersion>9.*-*</MauiVersion>
         <!--#else-->
@@ -40,10 +52,12 @@
         <PackageVersion Include="FSharp.Maui.WinUICompat" Version="1.1.0" />
         <!--#endif-->
         <!--#if (Hybrid)-->
-        <!--#if (Net9)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0" />
+        <!--#if (Net10)-->
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="10.0.0-preview.1.25120.3" />
+        <!--#elif (Net9)-->
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.2" />
         <!--#else-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.11" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.13" />
         <!--#endif-->
         <!--#endif-->
         <PackageVersion Include="Fabulous" Version="2.4.2" />
@@ -51,9 +65,13 @@
         <!--#if (Hybrid)-->
         <PackageVersion Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <!--#endif-->
-        <!--#if (Net9)-->
-        <PackageVersion Include="FSharp.Core" Version="9.0.100" />
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
+        <!--#if (Net9OrLater)-->
+        <PackageVersion Include="FSharp.Core" Version="9.0.201" />
+        <!--#if (Net10)-->
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0-preview.1.25080.5" />
+        <!--#else-->
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.2" />
+        <!--#endif-->
         <!--#else-->
         <PackageVersion Include="FSharp.Core" Version="8.0.403" />
         <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
@@ -63,8 +81,8 @@
         <PackageVersion Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#if (AddToolkit)-->
-        <!--#if (Net9)-->
-        <PackageVersion Include="CommunityToolkit.Maui" Version="10.0.0" />
+        <!--#if (Net9OrLater)-->
+        <PackageVersion Include="CommunityToolkit.Maui" Version="11.1.0" />
         <!--#else-->
         <PackageVersion Include="CommunityToolkit.Maui" Version="9.1.1" />
         <!--#endif-->
@@ -73,14 +91,14 @@
         <PackageVersion Include="Syncfusion.Maui.Toolkit" Version="1.0.3" />
         <!--#endif-->
         <!--#if (AddMarkup)-->
-        <!--#if (Net9)-->
+        <!--#if (Net9OrLater)-->
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="5.1.0" />
         <!--#else-->
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="4.2.0" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
-        <!--#if (Net9)-->
+        <!--#if (Net9OrLater)-->
         <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="4.1.0" />
         <!--#else-->
         <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.6.0" />

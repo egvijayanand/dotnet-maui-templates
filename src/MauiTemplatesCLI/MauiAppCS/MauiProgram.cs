@@ -21,6 +21,9 @@ using Microsoft.Maui.Foldable;
 #if AddSyncfusionToolkit
 using Syncfusion.Maui.Toolkit.Hosting;
 #endif
+#if Reactor
+using Microsoft.Maui.Controls.Hosting;
+#endif
 #if (AddToolkit || Hybrid || Net8OrLater || Razor)
 
 #endif
@@ -31,22 +34,13 @@ namespace MauiApp._1
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
-#if Reactor
-            builder.UseMauiReactorApp<MainPage>(app =>
-                   {
-                       app.AddResource("Resources/Colors.xaml");
-                       app.AddResource("Resources/Styles.xaml");
-                       app.AddResource("Resources/AppStyles.xaml");
-
-                       app.SetWindowsSpecificAssetsDirectory("Assets");
-                   })
+            builder.UseMauiApp<App>()
+#if (Net8 && Reactor)
 //-:cnd:noEmit
 #if DEBUG
                    .EnableMauiReactorHotReload()
 #endif
 //+:cnd:noEmit
-#else
-            builder.UseMauiApp<App>()
 #endif
 #if Razor
                    .UseMauiBlazorBindings()

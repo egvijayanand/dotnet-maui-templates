@@ -30,6 +30,16 @@
     xmlns:sft="http://schemas.syncfusion.com/maui/toolkit"
     xmlns:local="clr-namespace:MauiApp._1"
     mc:Ignorable="d">
+<!--#elif (Reactor)-->
+<local:MauiReactorApplication
+    x:Class="MauiApp._1.App"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MauiApp._1"
+    x:ClassModifier="NotPublic"
+    mc:Ignorable="d">
 <!--#else-->
 <Application
     x:Class="MauiApp._1.App"
@@ -89,4 +99,8 @@
             </Style>
         </ResourceDictionary>
     </Application.Resources>
+<!--#if (Reactor)-->
+</local:MauiReactorApplication>
+<!--#else-->
 </Application>
+<!--#endif-->

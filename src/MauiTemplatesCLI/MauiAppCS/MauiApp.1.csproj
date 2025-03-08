@@ -105,7 +105,7 @@
         <WindowsPackageType>None</WindowsPackageType>
         <!--#endif-->
         <!--#if ((AllPlatforms || IsWindows) && AddMvvmToolkit)-->
-        <WindowsSdkPackageVersion>10.0.19041.38</WindowsSdkPackageVersion>
+        <!--<WindowsSdkPackageVersion>10.0.19041.38</WindowsSdkPackageVersion>-->
         <!--#endif-->
 
         <!-- Display name -->
@@ -122,7 +122,7 @@
 
         <!-- Target Platform Options -->
         <!--#if (AllPlatforms || IsiOS)-->
-        <!--#if (Net9)-->
+        <!--#if (Net9OrLater)-->
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
         <!--#elif (Hybrid)-->
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
@@ -131,7 +131,7 @@
         <!--#endif-->
         <!--#endif-->
         <!--#if (AllPlatforms || IsmacOS)-->
-        <!--#if (Net9)-->
+        <!--#if (Net9OrLater)-->
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>
         <!--#elif (Hybrid)-->
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
@@ -156,6 +156,12 @@
         <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
         <!--#endif-->
     </PropertyGroup>
+    <!--#if (Net9OrLater && Reactor)-->
+
+    <ItemGroup Condition="'$(Configuration)'=='Debug'">
+        <RuntimeHostConfigurationOption Include="MauiReactor.HotReload" Value="true" Trim="false" />
+    </ItemGroup>
+    <!--#endif-->
 
     <ItemGroup>
         <!-- App Icon -->
@@ -271,7 +277,7 @@
         <!--#if (AddMaps)-->
         <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
         <!--#if (AllPlatforms || IsWindows)-->
-        <!--#if (Net9)-->
+        <!--#if (Net9OrLater)-->
         <PackageReference Include="CommunityToolkit.Maui.Maps" Version="3.*" />
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui.Maps" Version="2.*" />
@@ -281,7 +287,9 @@
         <!--#if (Hybrid || Razor)-->
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <!--#endif-->
-        <!--#if (Net9)-->
+        <!--#if (Net10)-->
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.*-*" Condition="'$(Configuration)' == 'Debug'" />
+        <!--#elif (Net9)-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.*" Condition="'$(Configuration)' == 'Debug'" />
         <!--#else-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.*" Condition="'$(Configuration)' == 'Debug'" />
@@ -291,8 +299,8 @@
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#if (AddToolkit)-->
-        <!--#if (Net9)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="10.*" />
+        <!--#if (Net9OrLater)-->
+        <PackageReference Include="CommunityToolkit.Maui" Version="11.*" />
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui" Version="9.*" />
         <!--#endif-->
@@ -301,28 +309,28 @@
         <PackageReference Include="Syncfusion.Maui.Toolkit" Version="1.*" />
         <!--#endif-->
         <!--#if (AddMarkup)-->
-        <!--#if (Net9)-->
+        <!--#if (Net9OrLater)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="5.*" />
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddCamera)-->
-        <!--#if (Net9)-->
+        <!--#if (Net9OrLater)-->
         <PackageReference Include="CommunityToolkit.Maui.Camera" Version="2.*" />
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui.Camera" Version="1.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMedia)-->
-        <!--#if (Net9)-->
-        <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="5.*" />
+        <!--#if (Net9OrLater)-->
+        <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="6.*" />
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="4.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
-        <!--#if (Net9)-->
+        <!--#if (Net9OrLater)-->
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="4.*" />
         <!--#else-->
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="3.*" />
@@ -336,10 +344,10 @@
         <!--#endif-->
         <!--#if (Reactor)-->
         <!--#if (Net9OrLater)-->
-        <PackageReference Include="Reactor.Maui" Version="3.*-*" />
-        <PackageReference Include="Reactor.Maui.Canvas" Version="3.*-*" />
+        <PackageReference Include="Reactor.Maui" Version="3.*" />
+        <PackageReference Include="Reactor.Maui.Canvas" Version="3.*" />
         <!--#if (AddMaps)-->
-        <PackageReference Include="Reactor.Maui.Maps" Version="3.*-*" />
+        <PackageReference Include="Reactor.Maui.Maps" Version="3.*" />
         <!--#endif-->
         <!--#else-->
         <PackageReference Include="Reactor.Maui" Version="2.*" />

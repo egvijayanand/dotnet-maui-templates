@@ -1,6 +1,10 @@
 ﻿namespace MauiApp._1
 {
+#if Reactor
+    internal partial class App : MauiReactorApplication
+#else
     public partial class App : Application
+#endif
     {
 #if Mvvm
 #if Net9OrLater
@@ -47,7 +51,11 @@
         public static IDictionary<string, Type> Routes => _routes;
 #endif
 #else
+#if (Net9OrLater && Reactor)
+        public App(IServiceProvider services) : base(services)
+#else
         public App()
+#endif
         {
             InitializeComponent();
 
@@ -63,6 +71,7 @@
             UserAppTheme = PlatformAppTheme;
         }
 #endif
+#if (!Reactor)
 #if (Net9OrLater || Plain || Hierarchical || Tabbed || Hybrid || Fallback)
 
         protected override Window CreateWindow(IActivationState? activationState)
@@ -96,5 +105,15 @@
 #endif
         }
 #endif
+#endif
     }
+#if Reactor
+
+#if Net9OrLater
+    internal abstract class MauiReactorApplication(IServiceProvider services)
+        : ReactorApplication<MainPage>(services);
+#else
+    internal abstract class MauiReactorApplication : ReactorApplication<MainPage>;
+#endif
+#endif
 }

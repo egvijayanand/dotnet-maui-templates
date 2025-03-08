@@ -2,8 +2,22 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This template package does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 6.2.0:
+What's new in ver. 7.0.0:
 -------------------------
+1. Support for creating .NET MAUI projects on .NET 10 Previews.
+
+For this, have introduced an additional option to the framework parameter - net10.0
+
+Note: The default value for the framework parameter remains as net9.0, which means to create a project for .NET MAUI 10, an explicit value of net10.0 is to be passed.
+
+dotnet new mauiapp -o MyApp -f net10.0
+
+2. On the stable channel, the value of the MauiVersion property is bumped to 9.0.40 to support the latest version of .NET MAUI 9 SR4 NuGet packages.
+
+Known issue: The hybrid solution with MAUI and Razor components, abstracted as a separate library, is experiencing build issues in .NET 10 Preview 1.
+
+v6.2.0:
+
 The versions of the CommunityToolkit.* NuGet packages have been updated to support .NET 9 natively.
 
 The global styles defined in the Markup design pattern have been revamped to incorporate the AddAppThemeBinding method from the Markup Toolkit package.
