@@ -217,6 +217,8 @@ And from [v5.15.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/5.15.
 
 And from [v6.1.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/6.1.0) of the template package, a new option has been included for the design pattern (`-dp`) parameter, named `JSHybrid`, which creates a project using `HybridWebView` with all prerequisites set automatically, requiring no manual intervention.
 
+And from [v7.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.0.0) of the template package, CLI project template `framework` parameter adds `net10.0` as another option to support `.NET 10` Previews.
+
 ### Parameters:
 
 * HybridWebView Project Template:
@@ -356,7 +358,7 @@ And from [v6.1.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/6.1.0)
 
 * Framework: (Short notation: `-f`)
 
-  This can take `net8.0` / `net9.0` as its options (with `net9.0` being the default value, if not specified).
+  This can take `net8.0` / `net9.0` / `net10.0` as its options (with `net9.0` being the default value, if not specified).
 
   Examples:
 
@@ -374,6 +376,14 @@ And from [v6.1.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/6.1.0)
 
   ```shell
   dotnet new mauiapp -f net8.0
+  ```
+
+  For creating a .NET MAUI 10 App:
+
+  _Explicit value for the `framework` parameter is required._
+
+  ```shell
+  dotnet new mauiapp -f net10.0
   ```
 
 In .NET CLI, all of these _Items Template_ require a mandatory parameter:

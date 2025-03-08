@@ -10,5 +10,9 @@
         "include-syncfusion-toolkit": {
             "shortName": "isft"
         }
-    }
+    },
+    "usageExamples": [
+        "--framework net8.0",
+        "-f net10.0"
+    ]
 }

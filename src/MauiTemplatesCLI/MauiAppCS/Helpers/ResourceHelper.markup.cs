@@ -12,13 +12,14 @@ namespace MauiApp._1.Helpers
             {
                 return (value is T resource) ? resource : default;
             }
-            else
-            {
-                throw new ArgumentOutOfRangeException(nameof(key), $"StaticResource not found for key {key}");
-            }
+            
+            throw new ArgumentOutOfRangeException(nameof(key), $"StaticResource not found for key {key}");
         }
 
-        public static Color? AppColor(string resourceKey) => AppResource<Color>(resourceKey);
+        public static T AppResource<T>(string key, T defaultValue) 
+            => AppResource<T>(key) ?? defaultValue;
+
+        public static Color AppColor(string resourceKey) => AppResource(resourceKey, KnownColor.Default);
 
         public static IValueConverter? AppConverter(string resourceKey) => AppResource<IValueConverter>(resourceKey);
 
@@ -30,10 +31,8 @@ namespace MauiApp._1.Helpers
             {
                 return value;
             }
-            else
-            {
-                throw new ArgumentOutOfRangeException(nameof(key), $"StaticResource not found for key {key}");
-            }
+            
+            throw new ArgumentOutOfRangeException(nameof(key), $"StaticResource not found for key {key}");
         }
     }
 }
