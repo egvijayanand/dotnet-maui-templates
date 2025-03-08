@@ -16,6 +16,8 @@ dotnet new mauiapp -o MyApp -f net10.0
 
 Known issue: The hybrid solution with MAUI and Razor components, abstracted as a separate library, is experiencing build issues in .NET 10 Preview 1.
 
+v7.0.1 - Android SDK version block updated.
+
 v6.2.0:
 
 The versions of the CommunityToolkit.* NuGet packages have been updated to support .NET 9 natively.
