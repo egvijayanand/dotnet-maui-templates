@@ -10,9 +10,9 @@
         <!--#endif-->
         <!--#elif (Net9)-->
         <!--#if (Nightly)-->
-        <MauiVersion>9.0.50-ci.main.25158.1</MauiVersion>
+        <MauiVersion>9.0.60-ci.main.25164.2</MauiVersion>
         <!--#else-->
-        <MauiVersion>9.0.40</MauiVersion>
+        <MauiVersion>9.0.50</MauiVersion>
         <!--#endif-->
         <!--#elif (Net8)-->
         <!--#if (Nightly)-->
@@ -99,7 +99,7 @@
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddSyncfusionToolkit)-->
-        <PackageVersion Include="Syncfusion.Maui.Toolkit" Version="1.0.3" />
+        <PackageVersion Include="Syncfusion.Maui.Toolkit" Version="1.0.4" />
         <!--#endif-->
         <!--#if (AddMarkup)-->
         <!--#if (Net9OrLater)-->
