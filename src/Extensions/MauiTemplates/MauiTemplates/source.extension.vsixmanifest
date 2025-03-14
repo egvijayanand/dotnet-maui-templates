@@ -4,7 +4,7 @@
                  xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
         <Identity Id="MauiTemplates.20dca96a-7311-401f-84ed-980478fb319b"
-                  Version="7.0.1.0"
+                  Version="7.1.0.0"
                   Language="en-US"
                   Publisher="Vijay Anand E G"/>
         <DisplayName>.NET MAUI Project and Item Templates</DisplayName>
