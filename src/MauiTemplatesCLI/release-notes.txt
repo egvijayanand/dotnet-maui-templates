@@ -2,8 +2,14 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This template package does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 7.0.0:
+What's new in ver. 7.1.0:
 -------------------------
+The MauiVersion property value is updated to 9.0.50 to support the recent release of .NET MAUI 9 SR5 NuGet packages.
+
+Syncfusion.Maui.Toolkit NuGet package version updated to 1.0.4
+
+v7.0.0:
+
 1. Support for creating .NET MAUI projects on .NET 10 Previews.
 
 For this, have introduced an additional option to the framework parameter - net10.0
