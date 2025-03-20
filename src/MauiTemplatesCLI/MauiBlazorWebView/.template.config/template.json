@@ -91,7 +91,7 @@
             "generator": "regexMatch",
             "datatype": "bool",
             "parameters": {
-                "pattern": "^(8|9)\\.*\\.*-?.*$",
+                "pattern": "^(8|9|10)\\.*\\.*-?.*$",
                 "source": "sdkVersion"
             }
         }

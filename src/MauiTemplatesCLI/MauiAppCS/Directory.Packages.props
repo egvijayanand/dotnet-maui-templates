@@ -4,13 +4,13 @@
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net10)-->
         <!--#if (Nightly)-->
-        <MauiVersion>10.0.0-preview.1.25122.6</MauiVersion>
+        <MauiVersion>10.0.0-preview.2.25165.1</MauiVersion>
         <!--#else-->
-        <MauiVersion>10.0.0-preview.1.25122.6</MauiVersion>
+        <MauiVersion>10.0.0-preview.2.25165.1</MauiVersion>
         <!--#endif-->
         <!--#elif (Net9)-->
         <!--#if (Nightly)-->
-        <MauiVersion>9.0.60-ci.main.25164.2</MauiVersion>
+        <MauiVersion>9.0.60-ci.main.25169.1</MauiVersion>
         <!--#else-->
         <MauiVersion>9.0.50</MauiVersion>
         <!--#endif-->
@@ -50,11 +50,11 @@
     <!--#endif-->
         <!--#if (Hybrid && RazorLib)-->
         <!--#if (Net10)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="10.0.0-preview.1.25120.3" />
-        <!--#elif (Net9)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.2" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="10.0.0-preview.2.25164.1" />
+        <!--#elif (Net8)-->
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.14" />
         <!--#else-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.13" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.3" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (Razor)-->
@@ -81,11 +81,11 @@
         <PackageVersion Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#if (Net10)-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0-preview.1.25080.5" Condition="'$(Configuration)' == 'Debug'" />
-        <!--#elif (Net9)-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.2" Condition="'$(Configuration)' == 'Debug'" />
-        <!--#else-->
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0-preview.2.25163.2" Condition="'$(Configuration)' == 'Debug'" />
+        <!--#elif (Net8)-->
         <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" Condition="'$(Configuration)' == 'Debug'" />
+        <!--#else-->
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.3" Condition="'$(Configuration)' == 'Debug'" />
         <!--#endif-->
         <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <!--#if (Net8)-->
