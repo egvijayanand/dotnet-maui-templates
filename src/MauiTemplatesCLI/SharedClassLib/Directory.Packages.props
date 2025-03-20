@@ -4,13 +4,13 @@
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net10)-->
         <!--#if (Nightly)-->
-        <MauiVersion>10.0.0-preview.1.25122.6</MauiVersion>
+        <MauiVersion>10.0.0-preview.2.25165.1</MauiVersion>
         <!--#else-->
-        <MauiVersion>10.0.0-preview.1.25122.6</MauiVersion>
+        <MauiVersion>10.0.0-preview.2.25165.1</MauiVersion>
         <!--#endif-->
         <!--#elif (Net9)-->
         <!--#if (Nightly)-->
-        <MauiVersion>9.0.60-ci.main.25164.2</MauiVersion>
+        <MauiVersion>9.0.60-ci.main.25169.1</MauiVersion>
         <!--#else-->
         <MauiVersion>9.0.50</MauiVersion>
         <!--#endif-->
