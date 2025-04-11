@@ -2,8 +2,12 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This VS extension does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 7.2.0.0:
+What's new in ver. 7.3.1.0:
 ---------------------------
+Templates updated to support .NET MAUI 10 Preview 3 and .NET MAUI 9 SR6.
+
+v7.2.0.0:
+
 Templates updated to support .NET 10 Preview 2.
 
 v7.1.0.0:
