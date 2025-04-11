@@ -61,7 +61,11 @@
 
         private async void OnSave(object sender, EventArgs e)
         {
+#if Net10OrLater
+            await DisplayAlertAsync("Add Event", "Save the event details to a data store.", "OK");
+#else
             await DisplayAlert("Add Event", "Save the event details to a data store.", "OK");
+#endif
 #if (Hierarchical || Tabbed)
             await Navigation.PopModalAsync();
 #else

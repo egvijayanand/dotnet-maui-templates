@@ -9,8 +9,13 @@
 
             return page switch
             {
+#if Net10OrLater
+                Shell => Shell.Current.DisplayAlertAsync(title, message, cancel),
+                not null => page.DisplayAlertAsync(title, message, cancel),
+#else
                 Shell => Shell.Current.DisplayAlert(title, message, cancel),
                 not null => page.DisplayAlert(title, message, cancel),
+#endif
                 _ => throw new InvalidOperationException("Window's Page cannot be null.")
             };
 #elif Shell
@@ -37,8 +42,13 @@
 
             return page switch
             {
+#if Net10OrLater
+                Shell => Shell.Current.DisplayAlertAsync(title, message, accept, cancel),
+                not null => page.DisplayAlertAsync(title, message, accept, cancel),
+#else
                 Shell => Shell.Current.DisplayAlert(title, message, accept, cancel),
                 not null => page.DisplayAlert(title, message, accept, cancel),
+#endif
                 _ => throw new InvalidOperationException("Window's Page cannot be null.")
             };
 #elif Shell
