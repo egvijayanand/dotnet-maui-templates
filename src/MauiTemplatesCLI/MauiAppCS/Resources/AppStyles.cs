@@ -251,9 +251,11 @@ namespace MauiApp._1
                     },
                 },
             ])));
+#if (Net8 || Net9)
             Add(new Style<ListView>(
             ).AddAppThemeBinding(ListView.SeparatorColorProperty, AppColor("Gray200"), AppColor("Gray500"))
              .AddAppThemeBinding(ListView.RefreshControlColorProperty, AppColor("Gray900"), AppColor("Gray200")));
+#endif
             Add(new Style<Picker>(
                 (Picker.BackgroundColorProperty, Transparent),
                 (Picker.FontFamilyProperty, (string)this["AppFont"]),
