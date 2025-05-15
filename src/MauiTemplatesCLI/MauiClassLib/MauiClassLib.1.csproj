@@ -111,6 +111,9 @@
         <!--#if ((AllPlatforms || IsWindows) && AddMvvmToolkit)-->
         <!--<WindowsSdkPackageVersion>10.0.19041.38</WindowsSdkPackageVersion>-->
         <!--#endif-->
+        <!--#if (Net10)-->
+        <RoslynCompilerType>FrameworkPackage</RoslynCompilerType>
+        <!--#endif-->
         <!--#if (AllPlatforms || IsAndroid || IsiOS || IsmacOS || IsTizen || IsWindows)-->
 
         <!-- Target Platform Options -->
@@ -237,7 +240,7 @@
         <!--#endif-->
         <!--#if (AddMarkup)-->
         <!--#if (Net9OrLater)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="5.*" />
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="6.*" />
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.*" />
         <!--#endif-->
