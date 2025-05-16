@@ -2,8 +2,16 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This VS extension does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 7.3.1.0:
+What's new in ver. 7.4.0.0:
 ---------------------------
+Templates updated to support .NET MAUI 10 Preview 4 and .NET MAUI 9 SR7.
+
+The CommunityToolkit.Maui.Markup Toolkit NuGet package version has been updated to v6.0.0, its latest release.
+
+To build .NET MAUI 10 Preview projects in the Visual Studio IDE, the RoslynCompilerType project property is included conditionally.
+
+7.3.1.0:
+
 Templates updated to support .NET MAUI 10 Preview 3 and .NET MAUI 9 SR6.
 
 v7.2.0.0:
