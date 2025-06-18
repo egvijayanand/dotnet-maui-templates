@@ -60,7 +60,11 @@
         Messages from .NET: <textarea readonly id="msgFromCS" class="app-content"
             style="margin-top: 5px; padding: 5px; width: 100%; height: 300px;"></textarea>
     </div>
+    <!--#if (Net10OrLater)-->
+    <script src="_framework/hybridwebview.js"></script>
+    <!--#else-->
     <script src="scripts/hwv.js"></script>
+    <!--#endif-->
     <script>
         function addNumbers(num1, num2) {
             return num1 + num2;
