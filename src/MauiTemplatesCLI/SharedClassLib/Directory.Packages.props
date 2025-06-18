@@ -4,15 +4,15 @@
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net10)-->
         <!--#if (Nightly)-->
-        <MauiVersion>10.0.0-preview.4.25263.4</MauiVersion>
+        <MauiVersion>10.0.0-preview.5.25306.5</MauiVersion>
         <!--#else-->
-        <MauiVersion>10.0.0-preview.4.25263.4</MauiVersion>
+        <MauiVersion>10.0.0-preview.5.25306.5</MauiVersion>
         <!--#endif-->
         <!--#elif (Net9)-->
         <!--#if (Nightly)-->
-        <MauiVersion>9.0.80-ci.main.25265.1</MauiVersion>
+        <MauiVersion>9.0.90-ci.main.25317.1</MauiVersion>
         <!--#else-->
-        <MauiVersion>9.0.70</MauiVersion>
+        <MauiVersion>9.0.80</MauiVersion>
         <!--#endif-->
         <!--#elif (Net8)-->
         <!--#if (Nightly)-->
@@ -68,17 +68,17 @@
         <!--#endif-->
         <!--#if (AddMauiToolkit)-->
         <!--#if (Net9OrLater)-->
-        <PackageVersion Include="CommunityToolkit.Maui" Version="11.2.0" />
+        <PackageVersion Include="CommunityToolkit.Maui" Version="12.0.0" />
         <!--#else-->
         <PackageVersion Include="CommunityToolkit.Maui" Version="9.1.1" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddSyncfusionToolkit)-->
-        <PackageVersion Include="Syncfusion.Maui.Toolkit" Version="1.0.4" />
+        <PackageVersion Include="Syncfusion.Maui.Toolkit" Version="1.0.5" />
         <!--#endif-->
         <!--#if (AddMauiMarkup)-->
         <!--#if (Net9OrLater)-->
-        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="6.0.0" />
+        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="6.0.1" />
         <!--#else-->
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="4.2.0" />
         <!--#endif-->

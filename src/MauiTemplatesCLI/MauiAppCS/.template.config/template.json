@@ -559,6 +559,12 @@
                     ]
                 },
                 {
+                    "condition": "(Net10OrLater && JSHybrid)",
+                    "exclude": [
+                        "Resources/Raw/hybridroot/scripts/**/*"
+                    ]
+                },
+                {
                     "condition": "(Net8 || !(JSHybrid && Mvvm))",
                     "exclude": [
                         "Converters/**/*"
