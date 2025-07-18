@@ -2,8 +2,14 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This template package does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 7.5.0:
+What's new in ver. 7.6.0:
 -------------------------
+Templates updated to support .NET MAUI 10 Preview 6 and .NET MAUI 9 SR9.
+
+The build issue with the Hybrid solution using MAUI and Razor components, abstracted as a separate library, has now been resolved.
+
+v7.5.0:
+
 Templates updated to support .NET MAUI 10 Preview 5 and .NET MAUI 9 SR8.
 
 The CommunityToolkit.Maui Toolkit NuGet package version has been updated to v12.0.0, its latest release.
