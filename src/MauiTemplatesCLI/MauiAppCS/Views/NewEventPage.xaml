@@ -121,7 +121,6 @@
     xmlns:ctrl="clr-namespace:MauiApp._1.Controls"
     xmlns:local="clr-namespace:MauiApp._1"
     xmlns:sys="clr-namespace:System;assembly=mscorlib"
-    xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
     Padding="{OnPlatform iOS={StaticResource ApplePadding},
                          Default={StaticResource DefaultPadding}}"
     Shell.PresentationMode="ModalAnimated"

@@ -32,7 +32,7 @@
         <PackageReference Include="BlazorBindings.Maui" />
         <!--#endif-->
         <!--#if (Hybrid || Razor)-->
-        <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" IncludeAssets="compile;runtime" />
         <!--#endif-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Condition="'$(Configuration)' == 'Debug'" />
         <PackageReference Include="Microsoft.Maui.Controls" />
@@ -97,7 +97,7 @@
         <!--#endif-->
         <!--#endif-->
         <!--#if (Hybrid || Razor)-->
-        <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" IncludeAssets="compile;runtime" />
         <!--#endif-->
         <!--#if (Net10)-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.*-*" Condition="'$(Configuration)' == 'Debug'" />
@@ -129,7 +129,7 @@
         <!--#endif-->
         <!--#if (AddCamera)-->
         <!--#if (Net9OrLater)-->
-        <PackageReference Include="CommunityToolkit.Maui.Camera" Version="2.*" />
+        <PackageReference Include="CommunityToolkit.Maui.Camera" Version="3.*" />
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui.Camera" Version="1.*" />
         <!--#endif-->
