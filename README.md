@@ -293,7 +293,7 @@ And from [v7.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.0.0)
 
 * Nightly build: (Short notation: `-ni`):
 
-  Option to reference Nightly build MAUI packages (from the [CI feed](https://dev.azure.com/xamarin/public/_artifacts/feed/maui-nightly "CI Feed")) in all the supported templates.
+  Option to reference Nightly build MAUI packages (from the [CI feed](https://dev.azure.com/dnceng/public/_artifacts/feed/dotnet9 "CI Feed")) in all the supported templates.
 
   `-ni` | `--nightly` This is a Boolean parameter - Default value is `false`. _Can also be used with the CPM option too_.
 
@@ -305,7 +305,7 @@ And from [v7.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.0.0)
 
 
   ```shell
-  dotnet nuget add source -n maui-nightly https://aka.ms/maui-nightly/index.json
+  dotnet nuget add source -n maui-nightly https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet9/nuget/v3/index.json
   ```
 
   Examples:

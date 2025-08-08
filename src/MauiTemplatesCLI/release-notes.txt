@@ -2,8 +2,20 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This template package does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 7.6.0:
+What's new in ver. 7.7.0:
 -------------------------
+The Syncfusion.Maui.Toolkit NuGet package version has been updated to v1.0.6, its latest release.
+
+The Nightly Builds (integrated) feed links have been updated for .NET MAUI v9 (main branch) and v10 (net10.0 branch).
+
+Take a look at this Wiki for further details: https://github.com/dotnet/maui/wiki/Nightly-Builds
+
+dotnet new mauiapp -o Net9App -ni
+
+dotnet new mauiapp -o Net10App -ni -f net10.0
+
+v7.6.0:
+
 Templates updated to support .NET MAUI 10 Preview 6 and .NET MAUI 9 SR9.
 
 The build issue with the Hybrid solution using MAUI and Razor components, abstracted as a separate library, has now been resolved.
