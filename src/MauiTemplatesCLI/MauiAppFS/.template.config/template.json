@@ -163,9 +163,15 @@
                     ]
                 },
                 {
+                    "condition": "(Nightly)",
+                    "rename": {
+                        "NuGet.xml": "NuGet.config"
+                    }
+                },
+                {
                     "condition": "(!Nightly)",
                     "exclude": [
-                        "NuGet.config"
+                        "NuGet.xml"
                     ]
                 }
             ]
