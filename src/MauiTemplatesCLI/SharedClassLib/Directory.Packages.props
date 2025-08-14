@@ -4,15 +4,15 @@
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net10)-->
         <!--#if (Nightly)-->
-        <MauiVersion>10.0.0-preview.6.25359.8</MauiVersion>
+        <MauiVersion>10.0.0-preview.7.25406.3</MauiVersion>
         <!--#else-->
-        <MauiVersion>10.0.0-preview.6.25359.8</MauiVersion>
+        <MauiVersion>10.0.0-preview.7.25406.3</MauiVersion>
         <!--#endif-->
         <!--#elif (Net9)-->
         <!--#if (Nightly)-->
-        <MauiVersion>9.0.90-ci.main.25354.1</MauiVersion>
+        <MauiVersion>9.0.110-ci.main.25412.14</MauiVersion>
         <!--#else-->
-        <MauiVersion>9.0.90</MauiVersion>
+        <MauiVersion>9.0.100</MauiVersion>
         <!--#endif-->
         <!--#elif (Net8)-->
         <!--#if (Nightly)-->
@@ -68,7 +68,7 @@
         <!--#endif-->
         <!--#if (AddMauiToolkit)-->
         <!--#if (Net9OrLater)-->
-        <PackageVersion Include="CommunityToolkit.Maui" Version="12.1.0" />
+        <PackageVersion Include="CommunityToolkit.Maui" Version="12.2.0" />
         <!--#else-->
         <PackageVersion Include="CommunityToolkit.Maui" Version="9.1.1" />
         <!--#endif-->
