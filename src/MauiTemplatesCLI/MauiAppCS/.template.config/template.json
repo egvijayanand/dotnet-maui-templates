@@ -551,11 +551,11 @@
                 {
                     "condition": "(JSHybridNet9)",
                     "rename": {
-                        "hybridroot/css/bootstrap/bootstrap.min.css": "wwwroot/css/bootstrap/bootstrap.min.css",
-                        "hybridroot/css/bootstrap/bootstrap.min.css.map": "wwwroot/css/bootstrap/bootstrap.min.css.map",
-                        "hybridroot/css/app.css": "wwwroot/css/app.css",
-                        "hybridroot/scripts/hwv.js": "wwwroot/scripts/hwv.js",
-                        "hybridroot/index.html": "wwwroot/index.html"
+                        "Resources/Raw/hybridroot/css/bootstrap/bootstrap.min.css": "Resources/Raw/wwwroot/css/bootstrap/bootstrap.min.css",
+                        "Resources/Raw/hybridroot/css/bootstrap/bootstrap.min.css.map": "Resources/Raw/wwwroot/css/bootstrap/bootstrap.min.css.map",
+                        "Resources/Raw/hybridroot/css/app.css": "Resources/Raw/wwwroot/css/app.css",
+                        "Resources/Raw/hybridroot/scripts/hwv.js": "Resources/Raw/wwwroot/scripts/hwv.js",
+                        "Resources/Raw/hybridroot/index.html": "Resources/Raw/wwwroot/index.html"
                     }
                 },
                 {

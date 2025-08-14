@@ -82,6 +82,10 @@ And from [v5.15.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/5.15.
 
 And from [v6.1.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/6.1.0) of the template package, a new option has been included for the design pattern (`-dp`) parameter, named `JSHybrid`, which creates a project using `HybridWebView` with all prerequisites set automatically, requiring no manual intervention.
 
+And from [v7.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.0.0) of the template package, CLI project template `framework` parameter adds `net10.0` as another option to support `.NET 10` Previews.
+
+And from [v7.7.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.7.0) of the template package, Nightly Builds feed links have been updated for both .NET MAUI v9 and v10.
+
 ### Parameters:
 
 * HybridWebView Project Template:
@@ -168,7 +172,7 @@ And from [v6.1.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/6.1.0)
 
 
   ```shell
-  dotnet nuget add source -n maui-nightly https://aka.ms/maui-nightly/index.json
+  dotnet nuget add source -n maui-nightly https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet9/nuget/v3/index.json
   ```
 
   Examples:

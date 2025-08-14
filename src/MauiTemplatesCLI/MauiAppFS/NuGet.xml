@@ -11,4 +11,18 @@
     <add key="maui-nightly" value="https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet9/nuget/v3/index.json" />
     <!--#endif-->
   </packageSources>
+  <!--#if (CentralPkgMgmt)-->
+  <packageSourceMapping>
+    <packageSource key="nuget.org">
+      <package pattern="*" />
+    </packageSource>
+    <packageSource key="maui-nightly">
+      <!--#if (Net10)-->
+      <package pattern="Microsoft.AspNetCore.*" />
+      <package pattern="Microsoft.Extensions.*" />
+      <!--#endif-->
+      <package pattern="Microsoft.Maui.*" />
+    </packageSource>
+  </packageSourceMapping>
+  <!--#endif-->
 </configuration>
