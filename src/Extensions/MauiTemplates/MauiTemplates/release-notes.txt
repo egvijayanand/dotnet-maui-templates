@@ -2,8 +2,12 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This VS extension does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 7.7.0.0:
+What's new in ver. 7.8.0.0:
 ---------------------------
+Templates updated to support .NET MAUI 10 Preview 7 and .NET MAUI 9 SR10.
+
+v7.7.0.0:
+
 The Syncfusion.Maui.Toolkit NuGet package version has been updated to v1.0.6, its latest release.
 
 The Nightly Builds (integrated) feed links have been updated for .NET MAUI v9 (main branch) and v10 (net10.0 branch).
