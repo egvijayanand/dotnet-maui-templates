@@ -1,44 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!--#if (IsGeneric)-->
 <!--#if (XamlOnly)-->
 <?xaml-comp compile="true" ?>
-<!--#if (IsGeneric)-->
+<!--#if (ImplicitNamespace)-->
+<ContentView
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:TypeArguments="TContext">
+</ContentView>
+<!--#elif (GlobalNamespace)-->
+<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:TypeArguments="TContext"
+    mc:Ignorable="d">
+</ContentView>
+<!--#else-->
+<!--#if (Toolkit)-->
 <!--#if (RootFolder)-->
 <ContentPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-<!--#if (Toolkit)-->
     xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-<!--#endif-->
-    x:TypeArguments="TObject"
-    mc:Ignorable="d">
-</ContentPage>
-<!--#else-->
-<ContentPage
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-<!--#if (Toolkit)-->
-    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-<!--#endif-->
-    xmlns:local="clr-namespace:MyApp.Namespace"
-    x:TypeArguments="TObject"
-    mc:Ignorable="d">
-</ContentPage>
-<!--#endif-->
-<!--#else-->
-<!--#if (RootFolder)-->
-<ContentPage
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-<!--#if (Toolkit)-->
-    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-<!--#endif-->
     xmlns:local="clr-namespace:MyApp.RootNamespace"
+    x:TypeArguments="TObject"
     mc:Ignorable="d">
 </ContentPage>
 <!--#else-->
@@ -47,16 +35,75 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-<!--#if (Toolkit)-->
     xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-<!--#endif-->
     xmlns:local="clr-namespace:MyApp.Namespace"
+    x:TypeArguments="TObject"
+    mc:Ignorable="d">
+</ContentPage>
+<!--#endif-->
+<!--#else-->
+<!--#if (RootFolder)-->
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MyApp.RootNamespace"
+    x:TypeArguments="TObject"
+    mc:Ignorable="d">
+</ContentPage>
+<!--#else-->
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MyApp.Namespace"
+    x:TypeArguments="TObject"
     mc:Ignorable="d">
 </ContentPage>
 <!--#endif-->
 <!--#endif-->
+<!--#endif-->
 <!--#else-->
-<!--#if (IsGeneric)-->
+<!--#if (ImplicitNamespace)-->
+<!--#if (RootFolder)-->
+<ContentView
+    x:Class="MyApp.RootNamespace.MauiItem__1"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:TypeArguments="TContext">
+</ContentView>
+<!--#else-->
+<ContentView
+    x:Class="MyApp.Namespace.MauiItem__1"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:TypeArguments="TContext">
+</ContentView>
+<!--#endif-->
+<!--#elif (GlobalNamespace)-->
+<!--#if (RootFolder)-->
+<ContentView
+    x:Class="MyApp.RootNamespace.MauiItem__1"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:TypeArguments="TContext"
+    mc:Ignorable="d">
+</ContentView>
+<!--#else-->
+<ContentView
+    x:Class="MyApp.Namespace.MauiItem__1"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:TypeArguments="TContext"
+    mc:Ignorable="d">
+</ContentView>
+<!--#endif-->
+<!--#else-->
+<!--#if (Toolkit)-->
 <!--#if (RootFolder)-->
 <ContentPage
     x:Class="MyApp.RootNamespace.MauiItem__1"
@@ -64,9 +111,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-<!--#if (Toolkit)-->
     xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-<!--#endif-->
     xmlns:local="clr-namespace:MyApp.RootNamespace"
     x:TypeArguments="TObject"
     mc:Ignorable="d">
@@ -78,9 +123,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-<!--#if (Toolkit)-->
     xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-<!--#endif-->
     xmlns:local="clr-namespace:MyApp.Namespace"
     x:TypeArguments="TObject"
     mc:Ignorable="d">
@@ -94,9 +137,127 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-<!--#if (Toolkit)-->
-    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:local="clr-namespace:MyApp.RootNamespace"
+    x:TypeArguments="TObject"
+    mc:Ignorable="d">
+</ContentPage>
+<!--#else-->
+<ContentPage
+    x:Class="MyApp.Namespace.MauiItem__1"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MyApp.Namespace"
+    x:TypeArguments="TObject"
+    mc:Ignorable="d">
+</ContentPage>
 <!--#endif-->
+<!--#endif-->
+<!--#endif-->
+<!--#endif-->
+<!--#else-->
+<!--#if (XamlOnly)-->
+<?xaml-comp compile="true" ?>
+<!--#if (ImplicitNamespace)-->
+<ContentView>
+</ContentView>
+<!--#elif (GlobalNamespace)-->
+<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+</ContentView>
+<!--#else-->
+<!--#if (Toolkit)-->
+<!--#if (RootFolder)-->
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:local="clr-namespace:MyApp.RootNamespace"
+    mc:Ignorable="d">
+</ContentPage>
+<!--#else-->
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:local="clr-namespace:MyApp.Namespace"
+    mc:Ignorable="d">
+</ContentPage>
+<!--#endif-->
+<!--#else-->
+<!--#if (RootFolder)-->
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MyApp.RootNamespace"
+    mc:Ignorable="d">
+</ContentPage>
+<!--#else-->
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MyApp.Namespace"
+    mc:Ignorable="d">
+</ContentPage>
+<!--#endif-->
+<!--#endif-->
+<!--#endif-->
+<!--#else-->
+<!--#if (ImplicitNamespace)-->
+<!--#if (RootFolder)-->
+<ContentView
+    x:Class="MyApp.RootNamespace.MauiItem__1"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+</ContentView>
+<!--#else-->
+<ContentView
+    x:Class="MyApp.Namespace.MauiItem__1"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+</ContentView>
+<!--#endif-->
+<!--#elif (GlobalNamespace)-->
+<!--#if (RootFolder)-->
+<ContentView
+    x:Class="MyApp.RootNamespace.MauiItem__1"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+</ContentView>
+<!--#else-->
+<ContentView
+    x:Class="MyApp.Namespace.MauiItem__1"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+</ContentView>
+<!--#endif-->
+<!--#else-->
+<!--#if (Toolkit)-->
+<!--#if (RootFolder)-->
+<ContentPage
+    x:Class="MyApp.RootNamespace.MauiItem__1"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:local="clr-namespace:MyApp.RootNamespace"
     mc:Ignorable="d">
 </ContentPage>
@@ -107,12 +268,34 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-<!--#if (Toolkit)-->
     xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-<!--#endif-->
     xmlns:local="clr-namespace:MyApp.Namespace"
     mc:Ignorable="d">
 </ContentPage>
+<!--#endif-->
+<!--#else-->
+<!--#if (RootFolder)-->
+<ContentPage
+    x:Class="MyApp.RootNamespace.MauiItem__1"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MyApp.RootNamespace"
+    mc:Ignorable="d">
+</ContentPage>
+<!--#else-->
+<ContentPage
+    x:Class="MyApp.Namespace.MauiItem__1"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MyApp.Namespace"
+    mc:Ignorable="d">
+</ContentPage>
+<!--#endif-->
+<!--#endif-->
 <!--#endif-->
 <!--#endif-->
 <!--#endif-->

@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--#if (XamlOnly)-->
 <?xaml-comp compile="true" ?>
+<!--#if (ImplicitNamespace)-->
+<ContentView>
+<!--#elif (GlobalNamespace)-->
+<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+<!--#else-->
 <!--#if (RootFolder)-->
 <ContentView
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -18,8 +28,22 @@
     xmlns:local="clr-namespace:MyApp.Namespace"
     mc:Ignorable="d">
 <!--#endif-->
+<!--#endif-->
 <!--#else-->
 <!--#if (RootFolder)-->
+<!--#if (ImplicitNamespace)-->
+<ContentView
+    x:Class="MyApp.RootNamespace.MauiView__1View"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+<!--#elif (GlobalNamespace)-->
+<ContentView
+    x:Class="MyApp.RootNamespace.MauiView__1View"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+<!--#else-->
 <ContentView
     x:Class="MyApp.RootNamespace.MauiView__1View"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -27,6 +51,20 @@
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MyApp.RootNamespace"
+    mc:Ignorable="d">
+<!--#endif-->
+<!--#else-->
+<!--#if (ImplicitNamespace)-->
+<ContentView
+    x:Class="MyApp.Namespace.MauiView__1View"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+<!--#elif (GlobalNamespace)-->
+<ContentView
+    x:Class="MyApp.Namespace.MauiView__1View"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 <!--#else-->
 <ContentView
@@ -37,6 +75,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MyApp.Namespace"
     mc:Ignorable="d">
+<!--#endif-->
 <!--#endif-->
 <!--#endif-->
     <ContentView.Content>

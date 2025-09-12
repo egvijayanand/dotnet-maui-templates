@@ -13,12 +13,14 @@ namespace MyApp.Namespace
         {
             // Below BlazorWebView initialization can be simplified in just a single line
             // Add reference to the VijayAnand.MauiBlazor.Markup NuGet package
-            // Add this using statement VijayAnand.MauiBlazor.Markup to bring the extension methods to scope
+            // Use the command: dotnet add package VijayAnand.MauiBlazor.Markup
+            // Add then uncomment the using statement VijayAnand.MauiBlazor.Markup to bring the extension methods to scope
             // And then invoke the Configure() method on the BlazorWebView instance, example shown below
             // new BlazorWebView().Configure("wwwroot/index.html", ("#app", typeof(Main), null));
             // In a much simplified definition (assuming default value for others)
             // new BlazorWebView().Configure(typeof(Main));
 #if Net8OrLater
+             // With the startPath parameter overload
             // new BlazorWebView().Configure("wwwroot/index.html", "/", ("#app", typeof(Main), null));
             // new BlazorWebView().Configure(typeof(Main), "/");
 #endif

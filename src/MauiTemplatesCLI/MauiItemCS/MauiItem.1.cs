@@ -1,18 +1,16 @@
 ﻿#if RootFolder
-namespace MyApp.RootNamespace
+namespace MyApp.RootNamespace;
 #else
-namespace MyApp.Namespace
+namespace MyApp.Namespace;
+#endif
+
+#if IsGeneric
+public partial class MauiItem__1 : ContentPage<TObject>
+#else
+public partial class MauiItem__1 : ContentPage
 #endif
 {
-#if IsGeneric
-    public partial class MauiItem__1 : ContentPage<TObject>
-#else
-    public partial class MauiItem__1 : ContentPage
-#endif
+    public MauiItem__1()
     {
-        public MauiItem__1()
-        {
-
-        }
     }
 }

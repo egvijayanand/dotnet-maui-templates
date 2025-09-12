@@ -1,4 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!--#if (ImplicitNamespace)-->
+<!--#if (RootFolder)-->
+<ContentPage
+    x:Class="MyApp.RootNamespace.Views.Maui__1Page"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:DataType="Maui__1ViewModel">
+<!--#else-->
+<ContentPage
+    x:Class="MyApp.Namespace.Maui__1Page"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:DataType="Maui__1ViewModel">
+<!--#endif-->
+<!--#elif (GlobalNamespace)-->
+<!--#if (RootFolder)-->
+<ContentPage
+    x:Class="MyApp.RootNamespace.Views.Maui__1Page"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:DataType="Maui__1ViewModel"
+    mc:Ignorable="d">
+<!--#else-->
+<ContentPage
+    x:Class="MyApp.Namespace.Maui__1Page"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:DataType="Maui__1ViewModel"
+    mc:Ignorable="d">
+<!--#endif-->
+<!--#else-->
 <!--#if (SameFolder)-->
 <!--#if (RootFolder)-->
 <ContentPage
@@ -46,6 +79,7 @@
     xmlns:vm="clr-namespace:MyApp.RootNamespace.ViewModels"
     x:DataType="vm:Maui__1ViewModel"
     mc:Ignorable="d">
+<!--#endif-->
 <!--#endif-->
 <!--#endif-->
     <ContentPage.Content>

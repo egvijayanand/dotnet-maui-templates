@@ -83,6 +83,18 @@
             },
             "replaces": "MyApp.Namespace"
         },
+        "global-namespace": {
+            "type": "parameter",
+            "datatype": "bool",
+            "default": "false",
+            "description": "If true, the output is generated with .NET MAUI 10 global namespace."
+        },
+        "implicit-namespace": {
+            "type": "parameter",
+            "datatype": "bool",
+            "default": "false",
+            "description": "If true, the output is generated with .NET MAUI 10 implicit namespace."
+        },
         "no-comments": {
             "type": "parameter",
             "datatype": "bool",
@@ -93,6 +105,14 @@
         "AddComments": {
             "type": "computed",
             "value": "(!no-comments)"
+        },
+        "GlobalNamespace": {
+            "type": "computed",
+            "value": "(global-namespace)"
+        },
+        "ImplicitNamespace": {
+            "type": "computed",
+            "value": "(implicit-namespace)"
         }
     },
     "constraints": {
