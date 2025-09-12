@@ -112,6 +112,7 @@ namespace MauiApp._1
             builder.Services.AddTransient<NewEventPage>();
 
 #elif Shell
+            builder.Services.AddSingleton<AppViewModel>();
             builder.Services.AddSingleton<EventsViewModel>();
             builder.Services.AddSingleton<EventsPage>();
             builder.Services.AddSingleton<SearchViewModel>();

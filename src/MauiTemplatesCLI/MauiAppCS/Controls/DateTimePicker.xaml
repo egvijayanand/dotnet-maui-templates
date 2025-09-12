@@ -1,17 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<ContentView x:Class="MauiApp._1.Controls.DateTimePicker"
-             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:MauiApp._1">
+<!--#if (Net10OrLater)-->
+<ContentView 
+    x:Class="MauiApp._1.Controls.DateTimePicker"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+<!--#else-->
+<ContentView
+    x:Class="MauiApp._1.Controls.DateTimePicker"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MauiApp._1"
+    mc:Ignorable="d">
+<!--#endif-->
     <ContentView.Content>
         <Grid ColumnDefinitions="45,Auto,Auto">
-            <Label Grid.Column="0"
-                   x:Name="lblTitle"
-                   VerticalOptions="Center" />
-            <DatePicker Grid.Column="1"
-                        x:Name="occursOn" />
-            <TimePicker Grid.Column="2"
-                        x:Name="occursAt" />
+            <Label
+                x:Name="lblTitle"
+                Grid.Column="0"
+                VerticalOptions="Center" />
+            <DatePicker
+                x:Name="occursOn"
+                Grid.Column="1" />
+            <TimePicker
+                x:Name="occursAt"
+                Grid.Column="2" />
         </Grid>
     </ContentView.Content>
 </ContentView>

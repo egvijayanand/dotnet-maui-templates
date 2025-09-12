@@ -66,7 +66,7 @@
                     ]
                 },
                 {
-                    "condition": "(Xaml || CSharp)",
+                    "condition": "(Xaml || JSHybrid || CSharp)",
                     "exclude": [
                         "**/Data/**",
                         "**/Pages/**",
@@ -178,6 +178,7 @@
                         "AppShell.xaml.cs",
                         "Views/LoginPage.xaml",
                         "Views/LoginPage.xaml.cs",
+                        "ViewModels/AppViewModel.cs",
                         "ViewModels/LoginViewModel.cs"
                     ]
                 },
@@ -485,6 +486,7 @@
                 {
                     "condition": "(Shell && MauiLib & Mvvm)",
                     "rename": {
+                        "ViewModels/AppViewModel.cs": "MauiApp.1.MauiLib/ViewModels/AppViewModel.cs",
                         "ViewModels/BaseViewModel.cs": "MauiApp.1.MauiLib/ViewModels/BaseViewModel.cs",
                         "ViewModels/LoginViewModel.cs": "MauiApp.1.MauiLib/ViewModels/LoginViewModel.cs"
                     }
@@ -978,7 +980,7 @@
         },
         "Xaml": {
             "type": "computed",
-            "value": "(Plain || Hierarchical || Tabbed || Shell || JSHybrid)"
+            "value": "(Plain || Hierarchical || Tabbed || Shell)"
         },
         "Mvvm": {
             "type": "computed",

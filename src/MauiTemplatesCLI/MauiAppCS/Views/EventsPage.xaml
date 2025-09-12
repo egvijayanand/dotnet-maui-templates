@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--#if (Mvvm)-->
+<!--#if (Net10OrLater)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.EventsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:DataType="EventsViewModel"
+    mc:Ignorable="d">
+<!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.EventsPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -10,6 +20,7 @@
     xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
     x:DataType="vm:EventsViewModel"
     mc:Ignorable="d">
+<!--#endif-->
     <ContentPage.Content>
         <Grid RowDefinitions="*,40">
             <StackLayout
@@ -46,6 +57,15 @@
     </ContentPage.Content>
 </ContentPage>
 <!--#else-->
+<!--#if (Net10OrLater)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.EventsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+<!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.EventsPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -54,6 +74,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MauiApp._1"
     mc:Ignorable="d">
+<!--#endif-->
     <ContentPage.Content>
         <Grid RowDefinitions="*,40">
             <StackLayout

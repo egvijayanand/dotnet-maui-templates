@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--#if (Hybrid)-->
+<!--#region Hybrid-->
 <!--#if (Mvvm)-->
 <!--#if (CompiledBindings)-->
+<!--#if (Net10OrLater)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{x:Bind Title}"
+    x:DataType="MainViewModel"
+    mc:Ignorable="d">
+<!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -13,6 +25,7 @@
     Title="{x:Bind Title}"
     x:DataType="vm:MainViewModel"
     mc:Ignorable="d">
+<!--#endif-->
     <ContentPage.Content>
         <Grid RowDefinitions="*,40">
             <BlazorWebView
@@ -20,9 +33,15 @@
                 HostPage="wwwroot/index.html"
                 StartPath="{x:Bind StartPath}">
                 <BlazorWebView.RootComponents>
+<!--#if (Net10OrLater)-->
+                    <RootComponent
+                        Selector="#app"
+                        ComponentType="{x:Type Main}" />
+<!--#else-->
                     <RootComponent
                         Selector="#app"
                         ComponentType="{x:Type local:Main}" />
+<!--#endif-->
                 </BlazorWebView.RootComponents>
             </BlazorWebView>
             <Grid
@@ -38,6 +57,17 @@
         </Grid>
     </ContentPage.Content>
 </ContentPage>
+<!--#else-->
+<!--#if (Net10OrLater)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{Binding Title}"
+    x:DataType="MainViewModel"
+    mc:Ignorable="d">
 <!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
@@ -50,6 +80,7 @@
     Title="{Binding Title}"
     x:DataType="vm:MainViewModel"
     mc:Ignorable="d">
+<!--#endif-->
     <ContentPage.Content>
         <Grid RowDefinitions="*,40">
             <BlazorWebView
@@ -57,9 +88,15 @@
                 HostPage="wwwroot/index.html"
                 StartPath="{Binding StartPath}">
                 <BlazorWebView.RootComponents>
+<!--#if (Net10OrLater)-->
+                    <RootComponent
+                        Selector="#app"
+                        ComponentType="{x:Type Main}" />
+<!--#else-->
                     <RootComponent
                         Selector="#app"
                         ComponentType="{x:Type local:Main}" />
+<!--#endif-->
                 </BlazorWebView.RootComponents>
             </BlazorWebView>
             <Grid
@@ -77,6 +114,16 @@
 </ContentPage>
 <!--#endif-->
 <!--#else-->
+<!--#if (Net10OrLater)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MauiApp._1"
+    mc:Ignorable="d">
+<!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -86,6 +133,7 @@
     xmlns:local="clr-namespace:MauiApp._1"
     Title="MauiApp._1"
     mc:Ignorable="d">
+<!--#endif-->
     <ContentPage.Content>
         <Grid RowDefinitions="*,40">
             <BlazorWebView
@@ -93,9 +141,15 @@
                 HostPage="wwwroot/index.html"
                 StartPath="/counter">
                 <BlazorWebView.RootComponents>
+<!--#if (Net10OrLater)-->
+                    <RootComponent
+                        Selector="#app"
+                        ComponentType="{x:Type Main}" />
+<!--#else-->
                     <RootComponent
                         Selector="#app"
                         ComponentType="{x:Type local:Main}" />
+<!--#endif-->
                 </BlazorWebView.RootComponents>
             </BlazorWebView>
             <Grid
@@ -112,9 +166,25 @@
     </ContentPage.Content>
 </ContentPage>
 <!--#endif-->
+<!--#endregion-->
 <!--#elif (JSHybridNet9)-->
+<!--#region JSHybridNet9-->
 <!--#if (Mvvm)-->
 <!--#if (CompiledBindings)-->
+<!--#if (Net10OrLater)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{x:Bind Title}"
+    x:DataType="MainViewModel"
+    mc:Ignorable="d">
+    <ContentPage.Resources>
+        <HybridWebViewRawMessageReceivedEventArgsConverter x:Key="ArgsConverter" />
+    </ContentPage.Resources>
+<!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -131,6 +201,7 @@
     <ContentPage.Resources>
         <c:HybridWebViewRawMessageReceivedEventArgsConverter x:Key="ArgsConverter" />
     </ContentPage.Resources>
+<!--#endif-->
     <ContentPage.Content>
         <Grid RowDefinitions="*,40">
             <Grid
@@ -207,6 +278,20 @@
     </ContentPage.Content>
 </ContentPage>
 <!--#else-->
+<!--#if (Net10OrLater)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{Binding Title}"
+    x:DataType="MainViewModel"
+    mc:Ignorable="d">
+    <ContentPage.Resources>
+        <HybridWebViewRawMessageReceivedEventArgsConverter x:Key="ArgsConverter" />
+    </ContentPage.Resources>
+<!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -223,6 +308,7 @@
     <ContentPage.Resources>
         <c:HybridWebViewRawMessageReceivedEventArgsConverter x:Key="ArgsConverter" />
     </ContentPage.Resources>
+<!--#endif-->
     <ContentPage.Content>
         <Grid RowDefinitions="*,40">
             <Grid
@@ -301,6 +387,16 @@
 </ContentPage>
 <!--#endif-->
 <!--#else-->
+<!--#if (Net10OrLater)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MauiApp._1"
+    mc:Ignorable="d">
+<!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -310,6 +406,7 @@
     xmlns:local="clr-namespace:MauiApp._1"
     Title="MauiApp._1"
     mc:Ignorable="d">
+<!--#endif-->
     <ContentPage.Content>
         <Grid RowDefinitions="*,40">
             <Grid
@@ -380,7 +477,29 @@
     </ContentPage.Content>
 </ContentPage>
 <!--#endif-->
+<!--#endregion-->
 <!--#elif (Tabbed)-->
+<!--#region Tabbed-->
+<!--#if (Net10OrLater)-->
+<TabbedPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:droid="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MauiApp._1"
+    droid:TabbedPage.ToolbarPlacement="Bottom"
+    mc:Ignorable="d">
+    <NavigationPage Title="Calendar">
+        <x:Arguments>
+            <EventsPage NavigationPage.HasNavigationBar="{OnPlatform Android=False, Default=True}" />
+        </x:Arguments>
+    </NavigationPage>
+    <SearchPage />
+    <SettingsPage />
+</TabbedPage>
+<!--#else-->
 <TabbedPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -401,9 +520,23 @@
     <vw:SearchPage />
     <vw:SettingsPage />
 </TabbedPage>
+<!--#endif-->
+<!--#endregion-->
 <!--#elif (Hierarchical)-->
+<!--#region Hierarchical-->
 <!--#if (Mvvm)-->
 <!--#if (CompiledBindings)-->
+<!--#if (Net10OrLater)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{x:Bind Title}"
+    x:DataType="MainViewModel"
+    mc:Ignorable="d">
+<!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -415,6 +548,7 @@
     Title="{x:Bind Title}"
     x:DataType="vm:MainViewModel"
     mc:Ignorable="d">
+<!--#endif-->
     <ContentPage.Content>
         <Grid RowDefinitions="*,40">
             <StackLayout
@@ -441,6 +575,17 @@
     </ContentPage.Content>
 </ContentPage>
 <!--#else-->
+<!--#if (Net10OrLater)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{Binding Title}"
+    x:DataType="MainViewModel"
+    mc:Ignorable="d">
+<!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -452,6 +597,7 @@
     Title="{Binding Title}"
     x:DataType="vm:MainViewModel"
     mc:Ignorable="d">
+<!--#endif-->
     <ContentPage.Content>
         <Grid RowDefinitions="*,40">
             <StackLayout
@@ -479,6 +625,16 @@
 </ContentPage>
 <!--#endif-->
 <!--#else-->
+<!--#if (Net10OrLater)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Calendar"
+    mc:Ignorable="d">
+<!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -488,6 +644,7 @@
     xmlns:local="clr-namespace:MauiApp._1"
     Title="Calendar"
     mc:Ignorable="d">
+<!--#endif-->
     <ContentPage.Content>
         <Grid RowDefinitions="*,40">
             <StackLayout
@@ -514,9 +671,22 @@
     </ContentPage.Content>
 </ContentPage>
 <!--#endif-->
+<!--#endregion-->
 <!--#else-->
+<!--#region Plain-->
 <!--#if (Mvvm)-->
 <!--#if (CompiledBindings)-->
+<!--#if (Net10OrLater)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{x:Bind Title}"
+    x:DataType="MainViewModel"
+    mc:Ignorable="d">
+<!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -527,6 +697,18 @@
     xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
     Title="{x:Bind Title}"
     x:DataType="vm:MainViewModel"
+    mc:Ignorable="d">
+<!--#endif-->
+<!--#else-->
+<!--#if (Net10OrLater)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{Binding Title}"
+    x:DataType="MainViewModel"
     mc:Ignorable="d">
 <!--#else-->
 <ContentPage
@@ -541,6 +723,17 @@
     x:DataType="vm:MainViewModel"
     mc:Ignorable="d">
 <!--#endif-->
+<!--#endif-->
+<!--#else-->
+<!--#if (Net10OrLater)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MauiApp._1"
+    mc:Ignorable="d">
 <!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
@@ -551,6 +744,7 @@
     xmlns:local="clr-namespace:MauiApp._1"
     Title="MauiApp._1"
     mc:Ignorable="d">
+<!--#endif-->
 <!--#endif-->
     <ContentPage.Content>
         <ScrollView>
@@ -647,4 +841,5 @@
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
+<!--#endregion-->
 <!--#endif-->

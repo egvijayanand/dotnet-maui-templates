@@ -4,15 +4,15 @@
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net10)-->
         <!--#if (Nightly)-->
-        <MauiVersion>10.0.0-preview.7.25406.3</MauiVersion>
+        <MauiVersion>10.0.0-rc.1.25452.6</MauiVersion>
         <!--#else-->
-        <MauiVersion>10.0.0-preview.7.25406.3</MauiVersion>
+        <MauiVersion>10.0.0-rc.1.25452.6</MauiVersion>
         <!--#endif-->
         <!--#elif (Net9)-->
         <!--#if (Nightly)-->
-        <MauiVersion>9.0.110-ci.main.25412.14</MauiVersion>
+        <MauiVersion>9.0.120-ci.main.25459.5</MauiVersion>
         <!--#else-->
-        <MauiVersion>9.0.100</MauiVersion>
+        <MauiVersion>9.0.110</MauiVersion>
         <!--#endif-->
         <!--#elif (Net8)-->
         <!--#if (Nightly)-->
@@ -51,14 +51,14 @@
         <!--#if (Hybrid && RazorLib)-->
         <!--#if (Net10)-->
         <!--#if (Nightly)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="10.0.0-preview.7.25380.108" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="10.0.0-rc.1.25451.107" />
         <!--#else-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="10.0.0-preview.7.25380.108" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="10.0.0-rc.1.25451.107" />
         <!--#endif-->
         <!--#elif (Net8)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.19" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.20" />
         <!--#else-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.8" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.9" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (Razor)-->
@@ -86,14 +86,14 @@
         <!--#endif-->
         <!--#if (Net10)-->
         <!--#if (Nightly)-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0-preview.7.25380.108" Condition="'$(Configuration)' == 'Debug'" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0-rc.1.25451.107" Condition="'$(Configuration)' == 'Debug'" />
         <!--#else-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0-preview.7.25380.108" Condition="'$(Configuration)' == 'Debug'" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0-rc.1.25451.107" Condition="'$(Configuration)' == 'Debug'" />
         <!--#endif-->
         <!--#elif (Net8)-->
         <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" Condition="'$(Configuration)' == 'Debug'" />
         <!--#else-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.8" Condition="'$(Configuration)' == 'Debug'" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.9" Condition="'$(Configuration)' == 'Debug'" />
         <!--#endif-->
         <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <!--#if (Net8)-->
@@ -145,10 +145,10 @@
         <!--#endif-->
         <!--#if (Reactor)-->
         <!--#if (Net9OrLater)-->
-        <PackageVersion Include="Reactor.Maui" Version="3.0.34" />
-        <PackageVersion Include="Reactor.Maui.Canvas" Version="3.0.34" />
+        <PackageVersion Include="Reactor.Maui" Version="3.0.35" />
+        <PackageVersion Include="Reactor.Maui.Canvas" Version="3.0.35" />
         <!--#if (AddMaps)-->
-        <PackageVersion Include="Reactor.Maui.Maps" Version="3.0.34" />
+        <PackageVersion Include="Reactor.Maui.Maps" Version="3.0.35" />
         <!--#endif-->
         <!--#else-->
         <PackageVersion Include="Reactor.Maui" Version="2.0.59" />

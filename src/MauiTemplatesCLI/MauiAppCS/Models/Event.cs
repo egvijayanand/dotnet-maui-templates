@@ -4,11 +4,27 @@
     {
         public Event() => Initialize();
 
+#if Net10OrLater
+        [ObservableProperty]
+        public partial string Name { get; set; } = string.Empty;
+
+        [ObservableProperty]
+        public partial string Location { get; set; } = string.Empty;
+
+        [ObservableProperty]
+        public partial DateTime StartsAt { get; set; }
+
+        [ObservableProperty]
+        public partial DateTime EndsAt { get; set; }
+
+        [ObservableProperty]
+        public partial string Notes { get; set; } = string.Empty;
+#else
         [ObservableProperty]
         private string _name = string.Empty;
 
         [ObservableProperty]
-        private string location = string.Empty;
+        private string _location = string.Empty;
 
         [ObservableProperty]
         private DateTime _startsAt;
@@ -18,39 +34,21 @@
 
         [ObservableProperty]
         private string _notes = string.Empty;
+#endif
 
         private void Initialize()
         {
-            var today = DateOnly.FromDateTime(DateTime.Today);
-            var tomorrow = today.AddDays(1);
             var now = DateTime.Now;
+            var today = new DateOnly(now.Year, now.Month, now.Day);
 
-            if (now.Minute < 30)
+            StartsAt = (now.Hour, now.Minute) switch
             {
-                if (now.Hour < 23)
-                {
-                    StartsAt = new DateTime(today, new TimeOnly(now.Hour, 30, 0));
-                    EndsAt = new DateTime(today, new TimeOnly(now.Hour + 1, 0, 0));
-                }
-                else
-                {
-                    StartsAt = new DateTime(today, new TimeOnly(now.Hour, 30, 0));
-                    EndsAt = new DateTime(tomorrow, new TimeOnly(0, 0, 0));
-                }
-            }
-            else
-            {
-                if (now.Hour < 23)
-                {
-                    StartsAt = new DateTime(today, new TimeOnly(now.Hour + 1, 0, 0));
-                    EndsAt = new DateTime(today, new TimeOnly(now.Hour + 1, 30, 0));
-                }
-                else
-                {
-                    StartsAt = new DateTime(tomorrow, new TimeOnly(0, 0, 0));
-                    EndsAt = new DateTime(tomorrow, new TimeOnly(0, 30, 0));
-                }
-            }
+                (23, >= 30) => today.AddDays(1).ToDateTime(new TimeOnly()),
+                (_, >= 30) => today.ToDateTime(new TimeOnly(now.Hour + 1, 0)),
+                _ => today.ToDateTime(new TimeOnly(now.Hour, 30)),
+            };
+
+            EndsAt = StartsAt.AddMinutes(30); // interval
         }
     }
 }

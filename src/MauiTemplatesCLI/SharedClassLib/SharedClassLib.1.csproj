@@ -4,13 +4,18 @@
     <PropertyGroup>
         <TargetFrameworks>FORMS_TFM;MAUI_TFM</TargetFrameworks>
         <Nullable>enable</Nullable>
+        <!--#if (Net10OrLater)-->
+        <LangVersion>preview</LangVersion>
+        <!--#else-->
         <LangVersion>latest</LangVersion>
+        <!--#endif-->
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>SharedClassLib._1</RootNamespace>
-        <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
-        <!--#if (Net10)-->
+        <!-- <EnablePreviewFeatures>true</EnablePreviewFeatures> -->
+        <!--#if (Net10OrLater)-->
         <RoslynCompilerType>FrameworkPackage</RoslynCompilerType>
         <!--#endif-->
+        <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(TargetFramework)' == 'FORMS_TFM'">

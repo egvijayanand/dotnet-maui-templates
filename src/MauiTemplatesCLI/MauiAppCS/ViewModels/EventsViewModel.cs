@@ -1,6 +1,7 @@
 ﻿namespace MauiApp._1.ViewModels
 {
-    public partial class EventsViewModel(IDialogService dialogService, INavigationService navigationService) : BaseViewModel(dialogService, navigationService)
+    public partial class EventsViewModel(IDialogService dialogService, INavigationService navigationService)
+        : BaseViewModel(dialogService, navigationService)
     {
         [RelayCommand]
 #if (Hierarchical || Tabbed)

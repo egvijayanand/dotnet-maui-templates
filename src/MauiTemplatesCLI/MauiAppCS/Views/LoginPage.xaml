@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--#if (Mvvm)-->
+<!--#if (Net10OrLater)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.LoginPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Shell.NavBarIsVisible="False"
+    x:DataType="LoginViewModel"
+    mc:Ignorable="d">
+<!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.LoginPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -11,6 +22,7 @@
     Shell.NavBarIsVisible="False"
     x:DataType="vm:LoginViewModel"
     mc:Ignorable="d">
+<!--#endif-->
     <ContentPage.Content>
         <StackLayout
             HorizontalOptions="Center"
@@ -30,6 +42,16 @@
     </ContentPage.Content>
 </ContentPage>
 <!--#else-->
+<!--#if (Net10OrLater)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.LoginPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Shell.NavBarIsVisible="False"
+    mc:Ignorable="d">
+<!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.LoginPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -39,6 +61,7 @@
     xmlns:local="clr-namespace:MauiApp._1"
     Shell.NavBarIsVisible="False"
     mc:Ignorable="d">
+<!--#endif-->
     <ContentPage.Content>
         <StackLayout
             HorizontalOptions="Center"
