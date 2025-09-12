@@ -116,6 +116,26 @@
             "description": "Option to create the artifacts in the same folder.",
             "displayName": "Option to create the artifacts in the same folder"
         },
+        "global-namespace": {
+            "type": "parameter",
+            "datatype": "bool",
+            "default": "false",
+            "description": "If true, the output is generated with .NET MAUI 10 global namespace."
+        },
+        "implicit-namespace": {
+            "type": "parameter",
+            "datatype": "bool",
+            "default": "false",
+            "description": "If true, the output is generated with .NET MAUI 10 implicit namespace."
+        },
+        "GlobalNamespace": {
+            "type": "computed",
+            "value": "(global-namespace)"
+        },
+        "ImplicitNamespace": {
+            "type": "computed",
+            "value": "(implicit-namespace)"
+        },
         "SameFolder": {
             "type": "computed",
             "value": "(same-folder)"

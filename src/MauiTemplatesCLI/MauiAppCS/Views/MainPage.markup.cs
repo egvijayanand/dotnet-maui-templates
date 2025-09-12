@@ -48,7 +48,11 @@ namespace MauiApp._1.Views
                 }.GridRow(1)
                  .BackgroundColor(AppColor("Primary")!)
             }
+#if Net9OrLater
+        }.WindowTitle("MauiApp._1");
+#else
         };
+#endif
 
         private void IncrementCount()
         {

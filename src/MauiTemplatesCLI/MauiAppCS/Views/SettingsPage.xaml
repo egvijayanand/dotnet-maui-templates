@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--#if (Mvvm)-->
 <!--#if (CompiledBindings)-->
+<!--#if (Net10OrLater)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.SettingsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{x:Bind Title}"
+    x:DataType="SettingsViewModel"
+    mc:Ignorable="d">
+<!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.SettingsPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -11,6 +22,18 @@
     xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
     Title="{x:Bind Title}"
     x:DataType="vm:SettingsViewModel"
+    mc:Ignorable="d">
+<!--#endif-->
+<!--#else-->
+<!--#if (Net10OrLater)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.SettingsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{Binding Title}"
+    x:DataType="SettingsViewModel"
     mc:Ignorable="d">
 <!--#else-->
 <ContentPage
@@ -25,6 +48,17 @@
     x:DataType="vm:SettingsViewModel"
     mc:Ignorable="d">
 <!--#endif-->
+<!--#endif-->
+<!--#else-->
+<!--#if (Net10OrLater)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.SettingsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Settings"
+    mc:Ignorable="d">
 <!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.SettingsPage"
@@ -35,6 +69,7 @@
     xmlns:local="clr-namespace:MauiApp._1"
     Title="Settings"
     mc:Ignorable="d">
+<!--#endif-->
 <!--#endif-->
     <ContentPage.Content>
         <Label

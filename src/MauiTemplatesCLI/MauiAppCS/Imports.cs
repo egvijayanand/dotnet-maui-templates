@@ -104,3 +104,36 @@ global using static VijayAnand.Toolkit.Markup.VisualStateHelper;
 #if Reactor
 global using static MauiApp._1.Helpers.ResourceHelper;
 #endif
+#if Net10OrLater
+#if (Xaml || Hybrid || JSHybrid || Reactor)
+
+#if Reactor
+using XmlnsDefinitionAttribute = Microsoft.Maui.Controls.XmlnsDefinitionAttribute;
+
+#endif
+// CLR Namespaces
+[assembly: XmlnsDefinition("http://schemas.microsoft.com/dotnet/maui/global", "MauiApp._1")]
+#if (Hierarchical || Tabbed || Shell)
+[assembly: XmlnsDefinition("http://schemas.microsoft.com/dotnet/maui/global", "MauiApp._1.Controls")]
+#endif
+#if JSHybridNet9
+[assembly: XmlnsDefinition("http://schemas.microsoft.com/dotnet/maui/global", "MauiApp._1.Converters")]
+#endif
+#if (Hierarchical || Tabbed || Shell)
+[assembly: XmlnsDefinition("http://schemas.microsoft.com/dotnet/maui/global", "MauiApp._1.Models")]
+#endif
+#if Mvvm
+[assembly: XmlnsDefinition("http://schemas.microsoft.com/dotnet/maui/global", "MauiApp._1.ViewModels")]
+#endif
+[assembly: XmlnsDefinition("http://schemas.microsoft.com/dotnet/maui/global", "MauiApp._1.Views")]
+#endif
+#if (AddToolkit || AddSyncfusionToolkit)
+// XAML Namespaces
+#if AddToolkit
+[assembly: XmlnsDefinition("http://schemas.microsoft.com/dotnet/maui/global", "http://schemas.microsoft.com/dotnet/2022/maui/toolkit")]
+#endif
+#if AddSyncfusionToolkit
+[assembly: XmlnsDefinition("http://schemas.microsoft.com/dotnet/maui/global", "http://schemas.syncfusion.com/maui/toolkit")]
+#endif
+#endif
+#endif

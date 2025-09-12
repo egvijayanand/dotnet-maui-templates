@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--#if (Mvvm)-->
 <!--#if (CompiledBindings)-->
+<!--#if (Net10OrLater)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.NewEventPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    Padding="{OnPlatform iOS={StaticResource ApplePadding},
+                         Default={StaticResource DefaultPadding}}"
+    Shell.PresentationMode="ModalAnimated"
+    Title="{x:Bind Title}"
+    x:DataType="NewEventViewModel"
+    mc:Ignorable="d">
+<!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.NewEventPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -17,6 +32,7 @@
     Title="{x:Bind Title}"
     x:DataType="vm:NewEventViewModel"
     mc:Ignorable="d">
+<!--#endif-->
     <ContentPage.Content>
         <StackLayout>
             <Entry
@@ -27,6 +43,18 @@
                 Text="{x:Bind Event.Location}"
                 Placeholder="Location"
                 MaxLength="100" />
+<!--#if (Net10OrLater)-->
+            <DateTimePicker
+                Title="Start:"
+                Date="{x:Bind Event.StartsAt.Date}"
+                MinimumDate="{x:Static sys:DateTime.Now}"
+                Time="{x:Bind Event.StartsAt.TimeOfDay}" />
+            <DateTimePicker
+                Title="End:"
+                Date="{x:Bind Event.EndsAt.Date}"
+                MinimumDate="{x:Static sys:DateTime.Now}"
+                Time="{x:Bind Event.EndsAt.TimeOfDay}" />
+<!--#else-->
             <ctrl:DateTimePicker
                 Title="Start:"
                 Date="{x:Bind Event.StartsAt.Date}"
@@ -37,6 +65,7 @@
                 Date="{x:Bind Event.EndsAt.Date}"
                 MinimumDate="{x:Static sys:DateTime.Now}"
                 Time="{x:Bind Event.EndsAt.TimeOfDay}" />
+<!--#endif-->
             <Editor
                 Text="{x:Bind Event.Notes}"
                 HeightRequest="100"
@@ -56,6 +85,21 @@
     </ContentPage.Content>
 </ContentPage>
 <!--#else-->
+<!--#if (Net10OrLater)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.NewEventPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    Padding="{OnPlatform iOS={StaticResource ApplePadding},
+                         Default={StaticResource DefaultPadding}}"
+    Shell.PresentationMode="ModalAnimated"
+    Title="{Binding Title}"
+    x:DataType="NewEventViewModel"
+    mc:Ignorable="d">
+<!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.NewEventPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -72,6 +116,7 @@
     Title="{Binding Title}"
     x:DataType="vm:NewEventViewModel"
     mc:Ignorable="d">
+<!--#endif-->
     <ContentPage.Content>
         <StackLayout>
             <Entry
@@ -82,6 +127,18 @@
                 Text="{Binding Event.Location}"
                 Placeholder="Location"
                 MaxLength="100" />
+<!--#if (Net10OrLater)-->
+            <DateTimePicker
+                Title="Start:"
+                Date="{Binding Event.StartsAt.Date}"
+                MinimumDate="{x:Static sys:DateTime.Now}"
+                Time="{Binding Event.StartsAt.TimeOfDay}" />
+            <DateTimePicker
+                Title="End:"
+                Date="{Binding Event.EndsAt.Date}"
+                MinimumDate="{x:Static sys:DateTime.Now}"
+                Time="{Binding Event.EndsAt.TimeOfDay}" />
+<!--#else-->
             <ctrl:DateTimePicker
                 Title="Start:"
                 Date="{Binding Event.StartsAt.Date}"
@@ -92,6 +149,7 @@
                 Date="{Binding Event.EndsAt.Date}"
                 MinimumDate="{x:Static sys:DateTime.Now}"
                 Time="{Binding Event.EndsAt.TimeOfDay}" />
+<!--#endif-->
             <Editor
                 Text="{Binding Event.Notes}"
                 HeightRequest="100"
@@ -112,6 +170,20 @@
 </ContentPage>
 <!--#endif-->
 <!--#else-->
+<!--#if (Net10OrLater)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.NewEventPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    Padding="{OnPlatform iOS={StaticResource ApplePadding},
+                         Default={StaticResource DefaultPadding}}"
+    Shell.PresentationMode="ModalAnimated"
+    Title="New Event"
+    mc:Ignorable="d">
+<!--#else-->
 <ContentPage
     x:Class="MauiApp._1.Views.NewEventPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -126,6 +198,7 @@
     Shell.PresentationMode="ModalAnimated"
     Title="New Event"
     mc:Ignorable="d">
+<!--#endif-->
     <ContentPage.Content>
         <StackLayout>
             <Entry
@@ -136,6 +209,16 @@
                 Text=""
                 Placeholder="Location"
                 MaxLength="100" />
+<!--#if (Net10OrLater)-->
+            <DateTimePicker
+                x:Name="start"
+                MinimumDate="{x:Static sys:DateTime.Now}"
+                Title="Start:" />
+            <DateTimePicker
+                x:Name="end"
+                MinimumDate="{x:Static sys:DateTime.Now}"
+                Title="End:" />
+<!--#else-->
             <ctrl:DateTimePicker
                 x:Name="start"
                 MinimumDate="{x:Static sys:DateTime.Now}"
@@ -144,6 +227,7 @@
                 x:Name="end"
                 MinimumDate="{x:Static sys:DateTime.Now}"
                 Title="End:" />
+<!--#endif-->
             <Editor
                 Text=""
                 HeightRequest="100"

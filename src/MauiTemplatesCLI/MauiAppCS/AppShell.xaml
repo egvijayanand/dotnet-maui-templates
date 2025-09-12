@@ -1,4 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!--#if (Net10OrLater)-->
+<!--#if (Mvvm)-->
+<Shell
+    x:Class="MauiApp._1.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MauiApp._1"
+    x:DataType="AppViewModel"
+    mc:Ignorable="d">
+<!--#else-->
+<Shell
+    x:Class="MauiApp._1.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MauiApp._1"
+    mc:Ignorable="d">
+<!--#endif-->
+<!--#else-->
+<!--#if (Mvvm)-->
+<Shell
+    x:Class="MauiApp._1.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MauiApp._1"
+    xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
+    xmlns:vw="clr-namespace:MauiApp._1.Views"
+    Title="MauiApp._1"
+    x:DataType="vm:AppViewModel"
+    mc:Ignorable="d">
+<!--#else-->
 <Shell
     x:Class="MauiApp._1.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -9,6 +45,8 @@
     xmlns:vw="clr-namespace:MauiApp._1.Views"
     Title="MauiApp._1"
     mc:Ignorable="d">
+<!--#endif-->
+<!--#endif-->
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
         Ensure atleast a Flyout item or a TabBar is defined for Shell to work
@@ -26,6 +64,23 @@
         Uncomment the below section to enable Shell Flyout item(s)
         And ensure appropriate page definitions are available for it work as expected
     -->
+    <!--#if (Net10OrLater)-->
+    <FlyoutItem Title="Calendar">
+        <ShellContent
+            ContentTemplate="{DataTemplate EventsPage}"
+            Route="home" />
+    </FlyoutItem>
+    <FlyoutItem Title="Search">
+        <ShellContent
+            ContentTemplate="{DataTemplate SearchPage}"
+            Route="search" />
+    </FlyoutItem>
+    <FlyoutItem Title="Settings">
+        <ShellContent
+            ContentTemplate="{DataTemplate SettingsPage}"
+            Route="settings" />
+    </FlyoutItem>
+    <!--#else-->
     <FlyoutItem Title="Calendar">
         <ShellContent
             ContentTemplate="{DataTemplate vw:EventsPage}"
@@ -41,6 +96,7 @@
             ContentTemplate="{DataTemplate vw:SettingsPage}"
             Route="settings" />
     </FlyoutItem>
+    <!--#endif-->
     <!--
         When the Flyout is visible this will be a menu item you can tie a click behavior to
     -->
@@ -48,9 +104,15 @@
         Uncomment the below section to enable Menu item(s)
         And ensure appropriate page definitions are available for it work as expected
     -->
+    <!--#if (Mvvm)-->
+    <MenuItem
+        Command="{Binding LogoutCommand}"
+        Text="Logout" />
+    <!--#else-->
     <MenuItem
         Clicked="OnMenuItemClicked"
         Text="Logout" />
+    <!--#endif-->
     <!--
         TabBar lets you define content that won't show up in a Flyout menu. When this content is active
         the flyout menu won't be available. This is useful for creating areas of the application where
@@ -62,11 +124,19 @@
         Uncomment the below section to enable TabBar item(s)
         And ensure appropriate page definitions are available for it work as expected
     -->
+    <!--#if (Net10OrLater)-->
+    <TabBar>
+        <ShellContent
+            ContentTemplate="{DataTemplate LoginPage}"
+            Route="login" />
+    </TabBar>
+    <!--#else-->
     <TabBar>
         <ShellContent
             ContentTemplate="{DataTemplate vw:LoginPage}"
             Route="login" />
     </TabBar>
+    <!--#endif-->
     <!-- Optional Templates
     // These may be provided inline as below or as separate classes.
 

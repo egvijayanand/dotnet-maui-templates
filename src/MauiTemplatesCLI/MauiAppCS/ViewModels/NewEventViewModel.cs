@@ -1,9 +1,14 @@
 ﻿namespace MauiApp._1.ViewModels
 {
-    public partial class NewEventViewModel(IDialogService dialogService, INavigationService navigationService) : BaseViewModel(dialogService, navigationService)
+    public partial class NewEventViewModel(IDialogService dialogService, INavigationService navigationService)
+        : BaseViewModel(dialogService, navigationService)
     {
         [ObservableProperty]
+#if Net10OrLater
+        public partial Event Event { get; set; } = new();
+#else
         private Event _event = new();
+#endif
 
         [RelayCommand]
         private async Task SaveAsync()

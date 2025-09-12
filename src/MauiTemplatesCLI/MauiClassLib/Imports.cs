@@ -50,3 +50,7 @@ global using static Microsoft.Maui.Graphics.Colors;
 global using static VijayAnand.Toolkit.Markup.ResourceHelper;
 global using static VijayAnand.Toolkit.Markup.VisualStateHelper;
 #endif
+#if Net10OrLater
+
+[assembly: XmlnsDefinition("http://schemas.microsoft.com/dotnet/maui/global", "MauiClassLib._1")]
+#endif

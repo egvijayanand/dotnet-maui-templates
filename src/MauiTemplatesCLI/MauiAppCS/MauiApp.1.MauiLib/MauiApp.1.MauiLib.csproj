@@ -16,9 +16,14 @@
 
         <!-- Project Options -->
         <Nullable>enable</Nullable>
+        <!--#if (Net10OrLater)-->
+        <LangVersion>preview</LangVersion>
+        <!--#else-->
         <LangVersion>latest</LangVersion>
+        <!--#endif-->
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>MauiApp._1</RootNamespace>
+        <!-- <EnablePreviewFeatures>true</EnablePreviewFeatures> -->
         <!--#if (Net10)-->
         <RoslynCompilerType>FrameworkPackage</RoslynCompilerType>
         <!--#endif-->

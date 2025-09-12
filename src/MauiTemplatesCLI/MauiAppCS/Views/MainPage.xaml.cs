@@ -24,7 +24,7 @@ namespace MauiApp._1.Views
 #endif
 #else
 #if (Plain || Fallback)
-        private int _count = 0;
+        private int _count;
 
 #endif
         public MainPage()

@@ -230,6 +230,10 @@
             "type": "computed",
             "value": "(Net9 || Net10)"
         },
+        "Net10OrLater": {
+            "type": "computed",
+            "value": "(Net10)"
+        },
         "AddFormsEssentials": {
             "type": "computed",
             "value": "(include-forms-essentials || all-supported-packages)"
