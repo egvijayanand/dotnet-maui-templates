@@ -2,8 +2,27 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This template package does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 7.8.0:
+What's new in ver. 7.9.0:
 -------------------------
+Templates updated to support .NET MAUI 10 RC1 and .NET MAUI 9 SR11.
+
+When targeting .NET MAUI 10, all XAML files in XAML-based projects will be generated using the .NET MAUI 10 Global namespace.
+
+Using a concise XAML approach, local files will be mapped to the Global namespace.
+
+Refer to the Imports.cs source file for XML namespace definitions.
+
+All XAML Item Templates now include support for two optional parameters, as outlined below.
+
+-gn | --global-namespace - Default value is false
+-in | --implicit-namespace - Default value is false
+
+When opted-in, the output will be generated using the .NET MAUI 10 Global and Implicit Namespace features respectively.
+
+dotnet new maui-page Login -gn
+
+v7.8.0:
+
 Templates updated to support .NET MAUI 10 Preview 7 and .NET MAUI 9 SR10.
 
 v7.7.0:

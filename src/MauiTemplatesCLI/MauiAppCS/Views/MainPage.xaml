@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--#if (Hybrid)-->
-<!--#region Hybrid-->
 <!--#if (Mvvm)-->
 <!--#if (CompiledBindings)-->
 <!--#if (Net10OrLater)-->
@@ -166,9 +165,7 @@
     </ContentPage.Content>
 </ContentPage>
 <!--#endif-->
-<!--#endregion-->
 <!--#elif (JSHybridNet9)-->
-<!--#region JSHybridNet9-->
 <!--#if (Mvvm)-->
 <!--#if (CompiledBindings)-->
 <!--#if (Net10OrLater)-->
@@ -477,9 +474,7 @@
     </ContentPage.Content>
 </ContentPage>
 <!--#endif-->
-<!--#endregion-->
 <!--#elif (Tabbed)-->
-<!--#region Tabbed-->
 <!--#if (Net10OrLater)-->
 <TabbedPage
     x:Class="MauiApp._1.Views.MainPage"
@@ -521,9 +516,7 @@
     <vw:SettingsPage />
 </TabbedPage>
 <!--#endif-->
-<!--#endregion-->
 <!--#elif (Hierarchical)-->
-<!--#region Hierarchical-->
 <!--#if (Mvvm)-->
 <!--#if (CompiledBindings)-->
 <!--#if (Net10OrLater)-->
@@ -671,9 +664,7 @@
     </ContentPage.Content>
 </ContentPage>
 <!--#endif-->
-<!--#endregion-->
 <!--#else-->
-<!--#region Plain-->
 <!--#if (Mvvm)-->
 <!--#if (CompiledBindings)-->
 <!--#if (Net10OrLater)-->
@@ -841,5 +832,4 @@
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
-<!--#endregion-->
 <!--#endif-->
