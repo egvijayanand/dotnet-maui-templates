@@ -2,8 +2,24 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This VS extension does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 7.8.0.0:
+What's new in ver. 7.9.0.0:
 ---------------------------
+First and foremost, adding support for the Visual Studio 2026 Insiders release.
+
+The Templates updated to support .NET MAUI 10 RC1 and .NET MAUI 9 SR11.
+
+When targeting .NET MAUI 10, all XAML files in Item Templates are generated with the .NET MAUI 10 Global namespace, making it easier to maintain concise and clean XAML code.
+
+The Generic Item Template includes an UI option for ease of use, with the Global namespace option set as the default for .NET MAUI 10.
+
+And support for Implicit namespace too.
+
+Additionally, you can select the Type Name suffix directly in the UI. Simply enter the item name, such as Login, in the Add New Item Dialog, and choose the suffix, like Page, from the available UI options. This will generate the Type name as LoginPage.
+
+Auto type suffix for regular Item Templates of Page, View, and Shell.
+
+v7.8.0.0:
+
 Templates updated to support .NET MAUI 10 Preview 7 and .NET MAUI 9 SR10.
 
 v7.7.0.0:

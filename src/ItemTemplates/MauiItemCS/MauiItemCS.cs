@@ -1,10 +1,9 @@
-﻿namespace $rootnamespace$
+﻿namespace $rootnamespace$;
+
+public partial class $safeitemname$ : $base_type$
 {
-    public partial class $safeitemname$ : $basetype$
+    public $safeitemname$()
     {
-        public $safeitemname$()
-        {
-            
-        }
+        
     }
 }

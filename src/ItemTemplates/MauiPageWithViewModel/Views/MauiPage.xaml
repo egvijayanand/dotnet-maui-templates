@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+$if$ ($maui_global$ == true)
+<ContentPage
+    x:Class="$rootnamespace$.$safeitemname$"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:$base_namespace$.ViewModels"
+    xmlns:local="clr-namespace:$rootnamespace$"
+    x:DataType="vm:$fileinputname$ViewModel"
+    mc:Ignorable="d">
+$else$
 <ContentPage
     x:Class="$rootnamespace$.$safeitemname$"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:vm="clr-namespace:$basenamespace$.ViewModels"
+    xmlns:vm="clr-namespace:$base_namespace$.ViewModels"
     xmlns:local="clr-namespace:$rootnamespace$"
     x:DataType="vm:$fileinputname$ViewModel"
     mc:Ignorable="d">
+$endif$
     <ContentPage.BindingContext>
         <vm:$fileinputname$ViewModel />
     </ContentPage.BindingContext>

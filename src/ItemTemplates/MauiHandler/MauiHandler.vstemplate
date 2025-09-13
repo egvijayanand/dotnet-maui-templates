@@ -9,7 +9,7 @@
 		<Icon>__TemplateIcon.ico</Icon>
 	</TemplateData>
 	<TemplateContent>
-		<References/>
+		<References />
 		<Folder Name="Controls" TargetFolderName="Controls">
 			<ProjectItem TargetFileName="$fileinputname$.cs" ReplaceParameters="true">CustomView.cs</ProjectItem>
 			<ProjectItem TargetFileName="I$fileinputname$.cs" ReplaceParameters="true">ICustomView.cs</ProjectItem>
@@ -24,7 +24,7 @@
 			<ProjectItem TargetFileName="I$fileinputname$Handler.cs" ReplaceParameters="true">ICustomViewHandler.cs</ProjectItem>
 		</Folder>
 		<CustomParameters>
-			<CustomParameter Name="$basenamespace$" Value=""/>
+			<CustomParameter Name="$base_namespace$" Value=""/>
 		</CustomParameters>
 	</TemplateContent>
 	<WizardExtension>

@@ -1,6 +1,6 @@
 ﻿using Android.Content;
-using $basenamespace$.Controls;
-using $basenamespace$.Renderers;
+using $base_namespace$.Controls;
+using $base_namespace$.Renderers;
 using Microsoft.Maui.Controls.Compatibility;
 using Microsoft.Maui.Controls.Handlers.Compatibility;
 using Microsoft.Maui.Controls.Platform;
@@ -9,7 +9,7 @@ using TPlatformView = Android.Views.View;
 
 [assembly: ExportRenderer(typeof($fileinputname$), typeof($safeitemname$))]
 
-namespace $basenamespace$.Renderers
+namespace $base_namespace$.Renderers
 {
     public class $safeitemname$ : ViewRenderer<$fileinputname$, TPlatformView>
     {

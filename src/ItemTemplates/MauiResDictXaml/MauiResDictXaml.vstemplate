@@ -9,7 +9,17 @@
 		<Icon>__TemplateIcon.ico</Icon>
 	</TemplateData>
 	<TemplateContent>
-		<References/>
+		<CustomParameters>
+			<CustomParameter Name="$xaml_item$" Value="" />
+			<CustomParameter Name="$maui_global$" Value="" />
+			<CustomParameter Name="$net8_or_later$" Value="" />
+			<CustomParameter Name="$net10_or_later$" Value="" />
+		</CustomParameters>
+		<References />
 		<ProjectItem TargetFileName="$fileinputname$.xaml" ReplaceParameters="true">MauiResDictXaml.xaml</ProjectItem>
 	</TemplateContent>
+	<WizardExtension>
+		<Assembly>VijayAnand.MauiTemplates, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7550554040ebdd44</Assembly>
+		<FullClassName>VijayAnand.MauiTemplates.CustomActionWizard</FullClassName>
+	</WizardExtension>
 </VSTemplate>

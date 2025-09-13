@@ -1,10 +1,9 @@
-﻿namespace $rootnamespace$
+﻿namespace $rootnamespace$;
+
+public partial class $safeitemname$ : $base_type_cs$
 {
-    public partial class $safeitemname$ : $csbasetype$
+    public $safeitemname$()
     {
-        public $safeitemname$()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

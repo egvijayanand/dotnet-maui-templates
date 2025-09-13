@@ -10,7 +10,7 @@ using TPlatformView = Microsoft.UI.Xaml.FrameworkElement;
 using TPlatformView = System.Object;
 #endif
 
-using $basenamespace$.Controls;
+using $base_namespace$.Controls;
 
 namespace $rootnamespace$
 {

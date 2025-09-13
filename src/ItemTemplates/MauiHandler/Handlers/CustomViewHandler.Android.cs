@@ -1,5 +1,5 @@
 ﻿using TPlatformView = Android.Views.View;
-using $basenamespace$.Controls;
+using $base_namespace$.Controls;
 using Microsoft.Maui.Handlers;
 
 namespace $rootnamespace$

@@ -9,16 +9,20 @@
 		<Icon>__TemplateIcon.ico</Icon>
 	</TemplateData>
 	<TemplateContent>
-		<References/>
-		<ProjectItem TargetFileName="$fileinputname$.xaml" ReplaceParameters="true">MauiItem.xaml</ProjectItem>
-		<ProjectItem TargetFileName="$fileinputname$.xaml.cs" ReplaceParameters="true">MauiItem.xaml.cs</ProjectItem>
+		<References />
+		<ProjectItem TargetFileName="$fileinputname$$suffix$.xaml" ReplaceParameters="true">MauiItem.xaml</ProjectItem>
+		<ProjectItem TargetFileName="$fileinputname$$suffix$.xaml.cs" ReplaceParameters="true">MauiItem.xaml.cs</ProjectItem>
 		<CustomParameters>
+			<CustomParameter Name="$xaml_item$" Value="" />
 			<CustomParameter Name="$generic$" Value="" />
+			<CustomParameter Name="$maui_global$" Value="" />
+			<CustomParameter Name="$maui_implicit$" Value="" />
 			<CustomParameter Name="$toolkit$" Value="" />
-			<CustomParameter Name="$xaml$" Value="" />
-			<CustomParameter Name="$basetype$" Value="" />
-			<CustomParameter Name="$csbasetype$" Value="" />
-			<CustomParameter Name="$typearg$" Value="" />
+			<CustomParameter Name="$xaml_only$" Value="" />
+			<CustomParameter Name="$base_type$" Value="" />
+			<CustomParameter Name="$base_type_cs$" Value="" />
+			<CustomParameter Name="$type_args$" Value="" />
+			<CustomParameter Name="$suffix$" Value="" />
 		</CustomParameters>
 	</TemplateContent>
 	<WizardExtension>

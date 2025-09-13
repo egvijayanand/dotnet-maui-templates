@@ -51,16 +51,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CommandOfT.cs" />
     <Compile Include="CustomActionWizard.cs" />
-    <Compile Include="GenericItemDialog.xaml.cs">
+    <Compile Include="Views\GenericItemDialog.xaml.cs">
       <DependentUpon>GenericItemDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Models\ITitle.cs" />
+    <Compile Include="Models\Option.cs" />
+    <Compile Include="ObservableObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="source.extension.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>source.extension.vsixmanifest</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\PageViewModel.cs" />
+    <Compile Include="Command.cs" />
+    <Compile Include="ViewModels\GenericItemViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="MauiCSharpSnippets.pkgdef">
@@ -268,7 +277,7 @@
       <IncludeInVSIX>true</IncludeInVSIX>
       <VSIXSubPath>ItemTemplates\MAUI</VSIXSubPath>
     </Content>
-    <None Include="Assets\VijayAnand.MauiTemplates.7.8.0.nupkg" />
+    <None Include="Assets\VijayAnand.MauiTemplates.7.9.0.nupkg" />
     <Content Include="MauiSnippets\CSharp\asyncRelayCommand.snippet">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -375,7 +384,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="GenericItemDialog.xaml">
+    <Page Include="Views\GenericItemDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

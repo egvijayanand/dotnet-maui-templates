@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ui:DialogWindow
+    x:Class="VijayAnand.MauiTemplates.Views.GenericItemDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:m="clr-namespace:VijayAnand.MauiTemplates.Models"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Shell.15.0"
+    xmlns:vm="clr-namespace:VijayAnand.MauiTemplates.ViewModels"
+    xmlns:vw="clr-namespace:VijayAnand.MauiTemplates.Views"
+    Title="{Binding Title}"
+    Width="600"
+    Height="400"
+    KeyDown="OnWindowKeyDown"
+    Loaded="OnWindowLoaded"
+    ResizeMode="NoResize"
+    ShowInTaskbar="False"
+    WindowStartupLocation="CenterOwner"
+    mc:Ignorable="d">
+    <d:Window.DataContext>
+        <vm:GenericItemViewModel />
+    </d:Window.DataContext>
+    <ui:DialogWindow.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+    </ui:DialogWindow.Resources>
+    <ui:DialogWindow.Content>
+        <Grid>
+            <Grid.Resources>
+                <Style TargetType="{x:Type CheckBox}">
+                    <Setter Property="Margin" Value="10,0,0,0" />
+                    <Setter Property="HorizontalAlignment" Value="Left" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                </Style>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <!-- Base Type -->
+                <RowDefinition Height=".10*" />
+                <RowDefinition Height=".12*" />
+                <!-- Generic Type -->
+                <RowDefinition Height=".08*" />
+                <RowDefinition Height=".12*" />
+                <!-- Options -->
+                <RowDefinition Height=".16*" />
+                <!-- Suffix -->
+                <RowDefinition Height=".16*" />
+                <!-- Actions -->
+                <RowDefinition Height=".12*" />
+                <!-- Footer -->
+                <RowDefinition Height=".14*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".04*" />
+                <ColumnDefinition Width=".56*" />
+                <ColumnDefinition Width=".18*" />
+                <ColumnDefinition Width=".18*" />
+                <ColumnDefinition Width=".04*" />
+            </Grid.ColumnDefinitions>
+            <Label
+                Grid.Row="0"
+                Grid.Column="1"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                Content="_Base Type:" />
+            <ComboBox
+                x:Name="cboBaseType"
+                Grid.Row="1"
+                Grid.Column="1"
+                Grid.ColumnSpan="3"
+                Padding="5"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Top"
+                AutomationProperties.AcceleratorKey="Alt+B"
+                AutomationProperties.AccessKey="B"
+                GotFocus="OnBaseTypeGotFocus"
+                IsEditable="True"
+                IsTextSearchCaseSensitive="True"
+                ItemsSource="{Binding BaseTypes}"
+                LostFocus="OnBaseTypeLostFocus"
+                TabIndex="0"
+                Text="{Binding BaseType, UpdateSourceTrigger=PropertyChanged}" />
+            <Label
+                Grid.Row="2"
+                Grid.Column="1"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                Content="Ge_neric Base Type:" />
+            <TextBox
+                x:Name="txtGenericType"
+                Grid.Row="3"
+                Grid.Column="1"
+                Grid.ColumnSpan="3"
+                Padding="5"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Top"
+                AutomationProperties.AcceleratorKey="Alt+N"
+                AutomationProperties.AccessKey="N"
+                GotFocus="OnGenericTypeGotFocus"
+                LostFocus="OnGenericTypeLostFocus"
+                TabIndex="1"
+                Text="{Binding GenericType, UpdateSourceTrigger=PropertyChanged}" />
+            <StackPanel
+                Grid.Row="4"
+                Grid.Column="1"
+                Grid.ColumnSpan="3"
+                VerticalAlignment="Center"
+                Orientation="Horizontal"
+                Visibility="{Binding XamlItem, Converter={StaticResource BoolToVisibilityConverter}}">
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type CheckBox}">
+                        <Setter Property="Margin" Value="15,0,0,0" />
+                        <Setter Property="HorizontalAlignment" Value="Left" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                    </Style>
+                </StackPanel.Resources>
+                <CheckBox
+                    AutomationProperties.AccessKey="{Binding XamlOption.Accelerator}"
+                    Content="{Binding XamlOption.Content}"
+                    IsChecked="{Binding XamlOption.Selected}"
+                    TabIndex="{Binding XamlOption.TabIndex}" />
+                <GroupBox
+                    Margin="15,0,0,0"
+                    Padding="5"
+                    VerticalAlignment="Top"
+                    Header=".NET MAUI 10">
+                    <ItemsControl ItemsSource="{Binding Namespaces}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <CheckBox
+                                    AutomationProperties.AccessKey="{Binding Accelerator}"
+                                    Command="{Binding DataContext.NamespaceCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                    CommandParameter="{Binding}"
+                                    Content="{Binding Content}"
+                                    IsChecked="{Binding Selected}"
+                                    TabIndex="{Binding TabIndex}" />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel
+                                    Margin="0,0,15,0"
+                                    VerticalAlignment="Center"
+                                    IsEnabled="{Binding DotNet10}"
+                                    Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </GroupBox>
+            </StackPanel>
+            <GroupBox
+                Grid.Row="5"
+                Grid.Column="1"
+                Grid.ColumnSpan="3"
+                Padding="5"
+                VerticalAlignment="Center"
+                Header="Item Type Suffix">
+                <ItemsControl ItemsSource="{Binding Suffixes}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <CheckBox
+                                AutomationProperties.AccessKey="{Binding Accelerator}"
+                                Command="{Binding DataContext.SuffixCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                CommandParameter="{Binding}"
+                                Content="{Binding Content}"
+                                IsChecked="{Binding Selected}"
+                                TabIndex="{Binding TabIndex}" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel
+                                VerticalAlignment="Center"
+                                Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </GroupBox>
+            <Button
+                Grid.Row="6"
+                Grid.Column="2"
+                MinWidth="80"
+                Padding="5"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                AutomationProperties.AcceleratorKey="Alt+O"
+                AutomationProperties.AccessKey="O"
+                Command="{Binding SubmitCommand}"
+                Content="_OK"
+                IsDefault="True"
+                TabIndex="13" />
+            <Button
+                Grid.Row="6"
+                Grid.Column="3"
+                MinWidth="80"
+                Padding="5"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                AutomationProperties.AcceleratorKey="Alt+C"
+                AutomationProperties.AccessKey="C"
+                Command="{Binding CancelCommand}"
+                Content="_Cancel"
+                IsCancel="True"
+                TabIndex="14" />
+            <StackPanel
+                Grid.Row="7"
+                Grid.Column="1"
+                Grid.ColumnSpan="3"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Orientation="Horizontal">
+                <TextBlock Margin="10,0,0,0">
+                    <TextBlock.Text>
+                        &#169; 2024-2025 Vijay Anand E G&#160;
+                    </TextBlock.Text>
+                    <Hyperlink
+                        KeyboardNavigation.TabIndex="15"
+                        NavigateUri="{Binding BlogUrl}"
+                        RequestNavigate="OnRequestNavigate">
+                        egvijayanand.in
+                    </Hyperlink>
+                </TextBlock>
+                <TextBlock
+                    Margin="5,0,5,0"
+                    Text="&#160;|&#160;" />
+                <TextBlock Margin="0,0,10,0">
+                    <TextBlock.Text>
+                        Support this project on&#160;
+                    </TextBlock.Text>
+                    <Hyperlink
+                        KeyboardNavigation.TabIndex="16"
+                        NavigateUri="{Binding SponsorUrl}"
+                        RequestNavigate="OnRequestNavigate">
+                        GitHub Sponsors
+                    </Hyperlink>
+                </TextBlock>
+            </StackPanel>
+        </Grid>
+    </ui:DialogWindow.Content>
+</ui:DialogWindow>

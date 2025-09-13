@@ -1,4 +1,4 @@
-﻿using $basenamespace$.Controls;
+﻿using $base_namespace$.Controls;
 using $rootnamespace$;
 using Microsoft.Maui.Controls.Compatibility;
 using Microsoft.Maui.Controls.Handlers.Compatibility;

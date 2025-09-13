@@ -10,9 +10,10 @@
 	</TemplateData>
 	<TemplateContent>
 		<References />
-		<ProjectItem TargetFileName="$fileinputname$.cs" ReplaceParameters="true">MauiItemCS.cs</ProjectItem>
+		<ProjectItem TargetFileName="$fileinputname$$suffix$.cs" ReplaceParameters="true">MauiItemCS.cs</ProjectItem>
 		<CustomParameters>
-			<CustomParameter Name="$basetype$" Value="" />
+			<CustomParameter Name="$base_type$" Value="" />
+			<CustomParameter Name="$suffix$" Value="" />
 		</CustomParameters>
 	</TemplateContent>
 	<WizardExtension>

@@ -64,13 +64,15 @@ Templates have been updated to support .NET MAUI 8, 9, and 10 (Preview) and is a
 |Preview|[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/pre?icon=nuget&foo=bar)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/absoluteLatest)| - |
 -->
 
-### For VS2022 users:
+### For Visual Studio users (both VS2022 and VS2026 Insiders release):
 
 To provide an integrated experience, a VS extension has been developed to host these templates.
 
-The All-in-One .NET MAUI Templates Pack VS extension (v5.12.0.0 or higher) is now supported on both **x64 and ARM64** installations of Visual Studio 2022. Happy coding!
+The All-in-One .NET MAUI Templates Pack VS extension (v5.12.0.0 or higher) is now supported on both **x64 and ARM64** installations of Visual Studio 2022 and 2026 Insiders release. Happy coding!
 
 *Consequently, the minimum supported version of Visual Studio 2022 will be v17.6 or higher.*
+
+**The v7.9.0.0 extension is now compatible with the Visual Studio 2026 Insiders release v18.0.**
 
 Extension is made available in the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-templates ".NET MAUI Templates Pack") and even more easier, can be installed from within Visual Studio itself (Extensions -> Manage Extensions / Alt + X + M).
 
@@ -121,7 +123,7 @@ And has Item Templates for:
 &nbsp;
 * For Cond. type template to work properly, ensure Conditional Compilation is enabled (mentioned in detail [**here**](#conditional-compilation "Conditional Compilation"))
 
-Now VS2022 extension is loaded with 25+ C# and XAML Code Snippets.
+Now Visual Studio extension is loaded with 25+ C# and XAML Code Snippets.
 
 XAML Snippets for new Layouts, Gestures, Color, Style.
 
@@ -231,7 +233,7 @@ And from [v7.7.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.7.0)
 
   To facilitate this, the design pattern (`-dp`) parameter includes a new value called `JSHybrid`, which creates an App project using `HybridWebView` with all prerequisites set automatically, requiring no manual intervention.
 
-  In the VS2022/Rider IDE, within the Project Options page, this `Application Design` option is available as a dropdown UI control. Select `JSHybrid` as its value.
+  In the Visual Studio/Rider IDE, within the Project Options page, this `Application Design` option is available as a dropdown UI control. Select `JSHybrid` as its value.
 
   *Since HybridWebView is a feature introduced in .NET MAUI 9, creating a .NET MAUI 8 App with the value of `JSHybrid` will NOT result in an error; instead, it will fall back by creating an App project that corresponds to the default `Plain` value from both the CLI and the IDE.*
 
@@ -267,7 +269,7 @@ And from [v7.7.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.7.0)
 
   Introduces support for the new, simplified, and easily understandable XML-based solution file format.
 
-  *This would be an explicit option since the SLNX feature is currently in the preview stage and is only supported on VS2022.*
+  *This would be an explicit option since the SLNX feature is currently in the preview stage.*
 
   `-slnx` | `--use-slnx` - Default value is `false`
 
@@ -740,7 +742,7 @@ dotnet new sharedclasslib -n MyApp.UI -asp
 ### Generic Item Templates:
 
 * An innovative generic template, in XAML and C#, for creating items of any type
-* Supported both within the VS2022 IDE and CLI
+* Supported both within the Visual Studio IDE and CLI
   - Covered in detail in the below articles
   - [Introducing .NET MAUI Generic Item Templates](https://egvijayanand.in/2024/01/16/introducing-dotnet-maui-generic-item-templates/)
   - [Introducing .NET MAUI Generic Item Templates for Visual Studio 2022](https://egvijayanand.in/2024/01/23/introducing-dotnet-maui-generic-item-templates-for-visual-studio-2022/)
