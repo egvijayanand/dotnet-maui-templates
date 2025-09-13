@@ -1,21 +1,41 @@
 ﻿using Community.VisualStudio.Toolkit;
 using EnvDTE;
 using Microsoft.VisualStudio.Shell;
+//using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.TemplateWizard;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
+using VijayAnand.MauiTemplates.ViewModels;
+using VijayAnand.MauiTemplates.Views;
 
 namespace VijayAnand.MauiTemplates
 {
     public class CustomActionWizard : IWizard
     {
         const string Colon = ":";
+        // Predefined replacement parameter
+        const string RootNamespace = "$rootnamespace$";
+        // Custom replacement parameters
+        const string BaseNamespace = "$base_namespace$";
+        const string BaseType = "$base_type$";
+        const string BaseTypeCS = "$base_type_cs$";
+        const string Generic = "$generic$";
+        const string MauiGlobal = "$maui_global$";
+        const string MauiImplicit = "$maui_implicit$";
+        const string Net8OrLater = "$net8_or_later$";
+        const string Net10OrLater = "$net10_or_later$";
+        const string Suffix = "$suffix$";
+        const string Toolkit = "$toolkit$";
+        const string TypeArgs = "$type_args$";
+        const string XamlItem = "$xaml_item$";
+        const string XamlOnly = "$xaml_only$";
 
         DTE ide;
         bool xamlOnly;
         bool userCancel;
+        bool postProcess;
         string destinationFolder;
 
         /// <summary>This method is called before opening any item that has the OpenInEditor attribute.</summary>
@@ -24,6 +44,10 @@ namespace VijayAnand.MauiTemplates
             //throw new System.NotImplementedException();
         }
 
+        /// <summary>
+        /// Called when the project has finished being generated.
+        /// </summary>
+        /// <param name="project">The Project object of the project that was generated.</param>
         public void ProjectFinishedGenerating(Project project)
         {
             //throw new System.NotImplementedException();
@@ -32,10 +56,37 @@ namespace VijayAnand.MauiTemplates
         /// <summary>This method is only called for item templates, not for project templates.</summary>
         public void ProjectItemFinishedGenerating(ProjectItem projectItem)
         {
-            //throw new System.NotImplementedException();
+            ThreadHelper.ThrowIfNotOnUIThread();
+
+            if (postProcess)
+            {
+                if (projectItem.Name.EndsWith(".xaml"))
+                {
+                    // Get the full path of the XAML file
+                    string xamlFilePath = projectItem.FileNames[1];
+
+                    // Read all lines, remove blank ones, and write back
+                    var lines = File.ReadAllLines(xamlFilePath);
+                    var contentLines = new List<string>(lines.Length);
+
+                    foreach (var line in lines)
+                    {
+                        if (!string.IsNullOrWhiteSpace(line))
+                        {
+                            contentLines.Add(line);
+                        }
+                    }
+
+                    //contentLines.Add(string.Empty); // Ensure the file ends with a newline
+                    File.WriteAllLines(xamlFilePath, contentLines);
+                    contentLines.Clear();
+                }
+            }
         }
 
-        /// <summary>This method is called after the project is created.</summary>
+        /// <summary>
+        /// This method is called after the project is created.
+        /// </summary>
         public void RunFinished()
         {
             ThreadHelper.ThrowIfNotOnUIThread();
@@ -73,9 +124,15 @@ namespace VijayAnand.MauiTemplates
 
                 if (runKind == WizardRunKind.AsNewItem)
                 {
-                    if (replacementsDictionary.ContainsKey("$basenamespace$"))
+                    // XAML-based item template. Needs post processing.
+                    postProcess = replacementsDictionary.ContainsKey(XamlItem);
+                    var net8OrLater = false;
+                    var net10OrLater = false;
+
+                    // Multi-Folder templates.
+                    if (replacementsDictionary.ContainsKey(BaseNamespace))
                     {
-                        if (replacementsDictionary.TryGetValue("$rootnamespace$", out var rootNamespace))
+                        if (replacementsDictionary.TryGetValue(RootNamespace, out var rootNamespace))
                         {
                             if (!string.IsNullOrEmpty(rootNamespace))
                             {
@@ -84,69 +141,109 @@ namespace VijayAnand.MauiTemplates
                                 if (rootNamespace.EndsWith("Controls", StringComparison.OrdinalIgnoreCase)
                                     || rootNamespace.EndsWith("Handlers", StringComparison.OrdinalIgnoreCase))
                                 {
-                                    replacementsDictionary["$basenamespace$"] = rootNamespace.Substring(0, rootNamespace.LastIndexOf('.'));
+                                    replacementsDictionary[BaseNamespace] = rootNamespace.Substring(0, rootNamespace.LastIndexOf('.'));
                                 }
                                 else if (match.Success)
                                 {
-                                    replacementsDictionary["$basenamespace$"] = rootNamespace.Substring(0, match.Index);
+                                    replacementsDictionary[BaseNamespace] = rootNamespace.Substring(0, match.Index);
                                 }
                                 else
                                 {
-                                    replacementsDictionary["$basenamespace$"] = rootNamespace;
+                                    replacementsDictionary[BaseNamespace] = rootNamespace;
                                 }
                             }
                         }
                     }
-                    else if (replacementsDictionary.ContainsKey("$net8orlater$"))
+
+                    var project = await VS.Solution.GetActiveProjectAsync();
+
+                    string tfm;
+
+                    if (project != null)
                     {
-                        var project = await VS.Solution.GetActiveProjectAsync();
+                        tfm = await project.GetAttributeAsync("TargetFrameworks");
 
-                        string tfm;
-
-                        if (project != null)
+                        if (tfm != null)
                         {
-                            tfm = await project.GetAttributeAsync("TargetFrameworks");
+                            if (tfm.Contains("net8.0")
+                                || tfm.Contains("net9.0")
+                                || tfm.Contains("net10.0"))
+                            {
+                                net8OrLater = true;
+
+                                if (tfm.Contains("net10.0"))
+                                {
+                                    net10OrLater = true;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            tfm = await project.GetAttributeAsync("TargetFramework");
 
                             if (tfm != null)
                             {
-                                if (tfm.Contains("net8.0") || tfm.Contains("net9.0"))
+                                if (tfm.StartsWith("net8.0")
+                                    || tfm.StartsWith("net9.0")
+                                    || tfm.StartsWith("net10.0"))
                                 {
-                                    replacementsDictionary["$net8orlater$"] = "true";
-                                }
-                            }
-                            else
-                            {
-                                tfm = await project.GetAttributeAsync("TargetFramework");
+                                    net8OrLater = true;
 
-                                if (tfm != null)
-                                {
-                                    if (tfm.StartsWith("net8.0") || tfm.StartsWith("net9.0"))
+                                    if (tfm.StartsWith("net10.0"))
                                     {
-                                        replacementsDictionary["$net8orlater$"] = "true";
+                                        net10OrLater = true;
                                     }
                                 }
                             }
                         }
                     }
-                    else if (replacementsDictionary.ContainsKey("$basetype$"))
+
+                    // Version based customization.
+                    if (replacementsDictionary.ContainsKey(Net8OrLater))
                     {
-                        var xamlItem = replacementsDictionary.ContainsKey("$xaml$");
-                        var window = new GenericItemDialog(xamlItem);
-                        var result = window.ShowDialog();
+                        replacementsDictionary[Net8OrLater] = net8OrLater.ToString().ToLowerInvariant();
+                    }
+
+                    if (replacementsDictionary.ContainsKey(Net10OrLater))
+                    {
+                        replacementsDictionary[Net10OrLater] = net10OrLater.ToString().ToLowerInvariant();
+                    }
+
+                    if (replacementsDictionary.ContainsKey(MauiGlobal))
+                    {
+                        replacementsDictionary[MauiGlobal] = net10OrLater.ToString().ToLowerInvariant();
+                    }
+
+                    // Generic item template.
+                    if (replacementsDictionary.ContainsKey(BaseType))
+                    {
+                        var ideVersion = 17; // VS2022, supported base IDE version.
+                        var xamlItem = replacementsDictionary.ContainsKey(XamlItem);
+
+                        if (Version.TryParse(ide.Version, out var version))
+                        {
+                            ideVersion = version.Major;
+                        }
+
+                        var viewModel = new GenericItemViewModel(xamlItem, net10OrLater, ideVersion);
+                        var result = new GenericItemDialog(viewModel).ShowDialog();
 
                         if (result is true)
                         {
-                            xamlOnly = window.XamlOnly;
-                            replacementsDictionary["$xaml$"] = xamlOnly.ToString().ToLowerInvariant();
+                            xamlOnly = viewModel.XamlOnly;
+                            var globalNamespace = viewModel.GlobalNamespace;
+                            var implicitNamespace = viewModel.ImplicitNamespace;
+                            replacementsDictionary[Suffix] = viewModel.ItemSuffix;
+                            replacementsDictionary[XamlOnly] = xamlOnly.ToString().ToLowerInvariant();
 
-                            var baseType = window.BaseType;
-                            var genericType = window.GenericType;
+                            var baseType = viewModel.BaseTypeName;
+                            var genericType = viewModel.GenericTypeName;
                             var baseTypeCS = baseType.Contains(Colon) ? baseType.Substring(baseType.IndexOf(':') + 1) : baseType;
                             var genericTypeCS = genericType.Contains(Colon) ? genericType.Substring(genericType.IndexOf(':') + 1) : genericType;
 
                             if (!string.IsNullOrEmpty(baseType))
                             {
-                                if (xamlItem)
+                                if (postProcess)
                                 {
                                     string toolkit;
 
@@ -159,31 +256,33 @@ namespace VijayAnand.MauiTemplates
                                         toolkit = bool.FalseString.ToLowerInvariant();
                                     }
 
-                                    replacementsDictionary["$basetype$"] = baseType;
-                                    replacementsDictionary["$toolkit$"] = toolkit;
+                                    replacementsDictionary[BaseType] = (globalNamespace || implicitNamespace) ? baseTypeCS : baseType;
+                                    replacementsDictionary[MauiGlobal] = globalNamespace.ToString().ToLowerInvariant();
+                                    replacementsDictionary[MauiImplicit] = implicitNamespace.ToString().ToLowerInvariant();
+                                    replacementsDictionary[Toolkit] = toolkit;
 
                                     if (string.IsNullOrEmpty(genericTypeCS))
                                     {
-                                        replacementsDictionary["$csbasetype$"] = baseTypeCS;
-                                        replacementsDictionary["$generic$"] = bool.FalseString.ToLowerInvariant();
+                                        replacementsDictionary[BaseTypeCS] = baseTypeCS;
+                                        replacementsDictionary[Generic] = bool.FalseString.ToLowerInvariant();
                                     }
                                     else
                                     {
-                                        replacementsDictionary["$csbasetype$"] = $"{baseTypeCS}<{genericTypeCS}>";
-                                        replacementsDictionary["$generic$"] = bool.TrueString.ToLowerInvariant();
-                                        replacementsDictionary["$typearg$"] = genericType;
+                                        replacementsDictionary[BaseTypeCS] = $"{baseTypeCS}<{genericTypeCS}>";
+                                        replacementsDictionary[Generic] = bool.TrueString.ToLowerInvariant();
+                                        replacementsDictionary[TypeArgs] = (globalNamespace || implicitNamespace) ? genericTypeCS : genericType;
                                     }
                                 }
                                 else
                                 {
-                                    // For C# template, basetype is the parameter name
+                                    // For C# template also, base_type is the parameter name.
                                     if (string.IsNullOrEmpty(genericTypeCS))
                                     {
-                                        replacementsDictionary["$basetype$"] = baseTypeCS;
+                                        replacementsDictionary[BaseType] = baseTypeCS;
                                     }
                                     else
                                     {
-                                        replacementsDictionary["$basetype$"] = $"{baseTypeCS}<{genericTypeCS}>";
+                                        replacementsDictionary[BaseType] = $"{baseTypeCS}<{genericTypeCS}>";
                                     }
                                 }
                             }
@@ -201,6 +300,18 @@ namespace VijayAnand.MauiTemplates
                 await ex.LogAsync();
             }
         }
+
+        /*public void RunStarted(object automationObject,
+                               Dictionary<string, string> replacementsDictionary,
+                               WizardRunKind runKind,
+                               object[] customParams,
+                               IVsProject project,
+                               uint parentItemId)
+        {
+            ThreadHelper.ThrowIfNotOnUIThread();
+            ide = automationObject as DTE;
+            replacementsDictionary.TryGetValue("$destinationdirectory$", out destinationFolder);
+        }*/
 
         /// <summary>This method is only called for item templates, not for project templates.</summary>
         public bool ShouldAddProjectItem(string filePath)
