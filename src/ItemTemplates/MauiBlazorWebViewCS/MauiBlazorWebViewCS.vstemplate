@@ -10,7 +10,8 @@
 	</TemplateData>
 	<TemplateContent>
 		<CustomParameters>
-			<CustomParameter Name="$net8orlater$" Value="" />
+			<CustomParameter Name="$net8_or_later$" Value="" />
+			<CustomParameter Name="$net10_or_later$" Value="" />
 		</CustomParameters>
 		<References />
 		<ProjectItem TargetFileName="$fileinputname$.cs" ReplaceParameters="true">MauiBlazorWebView.cs</ProjectItem>

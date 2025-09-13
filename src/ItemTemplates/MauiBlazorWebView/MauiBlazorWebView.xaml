@@ -1,36 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+$if$ ($maui_global$ == true)
+<ContentPage
+    x:Class="$rootnamespace$.$safeitemname$"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:local="clr-namespace:$rootnamespace$"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+$else$
 <ContentPage
     x:Class="$rootnamespace$.$safeitemname$"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-$if$ ($net8orlater$ == true)
-    xmlns:b="clr-namespace:Microsoft.AspNetCore.Components.WebView.Maui;assembly=Microsoft.AspNetCore.Components.WebView.Maui"
-$endif$
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:local="clr-namespace:$rootnamespace$"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+$endif$
     <ContentPage.Content>
         <Grid>
-$if$ ($net8orlater$ == true)
-            <b:BlazorWebView
+$if$ ($net8_or_later$ == true)
+            <BlazorWebView
                 HostPage="wwwroot/index.html"
                 StartPath="/">
-                <b:BlazorWebView.RootComponents>
-                    <b:RootComponent
-                        Selector="#app"
-                        ComponentType="{x:Type local:Main}" />
-                </b:BlazorWebView.RootComponents>
-            </b:BlazorWebView>
 $else$
             <BlazorWebView HostPage="wwwroot/index.html">
+$endif$
                 <BlazorWebView.RootComponents>
                     <RootComponent
                         Selector="#app"
                         ComponentType="{x:Type local:Main}" />
                 </BlazorWebView.RootComponents>
             </BlazorWebView>
-$endif$
         </Grid>
     </ContentPage.Content>
 </ContentPage>

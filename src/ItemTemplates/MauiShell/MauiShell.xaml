@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+$if$ ($maui_global$ == true)
+<Shell
+    x:Class="$rootnamespace$.$safeitemname$"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:$rootnamespace$"
+    mc:Ignorable="d">
+$else$
 <Shell
     x:Class="$rootnamespace$.$safeitemname$"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -7,6 +17,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:$rootnamespace$"
     mc:Ignorable="d">
+$endif$
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
         Ensure atleast a Flyout item or a TabBar is defined for Shell to work
@@ -64,7 +75,7 @@
     // This header appears at the top of the Flyout
     <Shell.FlyoutHeaderTemplate>
         <DataTemplate>
-            <Grid>ContentHere</Grid>
+            <Grid>Content_Here</Grid>
         </DataTemplate>
     </Shell.FlyoutHeaderTemplate>
 
@@ -89,7 +100,7 @@
     // This footer appears at the bottom of the Flyout
     <Shell.FlyoutFooterTemplate>
         <DataTemplate>
-            <Grid>ContentHere</Grid>
+            <Grid>Content_Here</Grid>
         </DataTemplate>
     </Shell.FlyoutFooterTemplate>
     -->

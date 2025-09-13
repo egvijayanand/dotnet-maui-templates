@@ -9,7 +9,7 @@
 		<Icon>__TemplateIcon.ico</Icon>
 	</TemplateData>
 	<TemplateContent>
-		<References/>
+		<References />
 		<Folder Name="Views" TargetFolderName="Views">
 			<ProjectItem TargetFileName="$fileinputname$Page.cs" ReplaceParameters="true">MauiPageCS.cs</ProjectItem>
 		</Folder>
@@ -18,7 +18,7 @@
 			<ProjectItem TargetFileName="$fileinputname$ViewModel.cs" ReplaceParameters="true">MauiViewModel.cs</ProjectItem>
 		</Folder>
 		<CustomParameters>
-			<CustomParameter Name="$basenamespace$" Value=""/>
+			<CustomParameter Name="$base_namespace$" Value=""/>
 		</CustomParameters>
 	</TemplateContent>
 	<WizardExtension>

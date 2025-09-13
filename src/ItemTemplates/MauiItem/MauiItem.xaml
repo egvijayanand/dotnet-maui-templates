@@ -1,21 +1,64 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-$if$ ($xaml$ == true)
+$if$ ($xaml_only$ == true)
 <?xaml-comp compile="true" ?>
 $endif$
-<$basetype$
-$if$ ($xaml$ == false)
+$if$ ($maui_implicit$|$xaml_only$|$generic$ == true|true|true)
+<$base_type$
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:TypeArguments="$type_args$">
+</$base_type$>
+$endif$
+$if$ ($maui_implicit$|$xaml_only$|$generic$ == true|true|false)
+<$base_type$>
+</$base_type$>
+$endif$
+$if$ ($maui_implicit$|$xaml_only$|$generic$ == true|false|true)
+<$base_type$
+    x:Class="$rootnamespace$.$safeitemname$"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:TypeArguments="$type_args$">
+</$base_type$>
+$endif$
+$if$ ($maui_implicit$|$xaml_only$|$generic$ == true|false|false)
+<$base_type$
+    x:Class="$rootnamespace$.$safeitemname$"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+</$base_type$>
+$endif$
+$if$ ($maui_implicit$ == false)
+<$base_type$
+$endif$
+$if$ ($maui_implicit$|$xaml_only$ == false|false)
     x:Class="$rootnamespace$.$safeitemname$"
 $endif$
+$if$ ($maui_implicit$|$maui_global$ == false|true)
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+$endif$
+$if$ ($maui_implicit$|$maui_global$ == false|false)
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+$endif$
+$if$ ($maui_implicit$ == false)
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+$endif$
+$if$ ($maui_implicit$|$maui_global$ == false|true)
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+$endif$
+$if$ ($maui_implicit$|$maui_global$ == false|false)
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+$endif$
+$if$ ($maui_implicit$ == false)
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-$if$ ($toolkit$ == true)
+$endif$
+$if$ ($maui_implicit$|$maui_global$|$toolkit$ == false|false|true)
     xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
 $endif$
+$if$ ($maui_implicit$|$maui_global$ == false|false)
     xmlns:local="clr-namespace:$rootnamespace$"
-$if$ ($generic$ == true)
-    x:TypeArguments="$typearg$"
 $endif$
+$if$ ($maui_implicit$|$generic$ == false|true)
+    x:TypeArguments="$type_args$"
+$endif$
+$if$ ($maui_implicit$ == false)
     mc:Ignorable="d">
-</$basetype$>
+</$base_type$>
+$endif$

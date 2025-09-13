@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+$if$ ($maui_global$ == true)
+<ContentView
+    x:Class="$rootnamespace$.$safeitemname$"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:$rootnamespace$"
+    mc:Ignorable="d">
+$else$
 <ContentView
     x:Class="$rootnamespace$.$safeitemname$"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -7,6 +17,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:$rootnamespace$"
     mc:Ignorable="d">
+$endif$
     <ContentView.Content>
         <Grid>
             <Label

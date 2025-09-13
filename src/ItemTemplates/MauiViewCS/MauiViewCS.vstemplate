@@ -9,7 +9,7 @@
 		<Icon>__TemplateIcon.ico</Icon>
 	</TemplateData>
 	<TemplateContent>
-		<References/>
-		<ProjectItem TargetFileName="$fileinputname$.cs" ReplaceParameters="true">MauiViewCS.cs</ProjectItem>
+		<References />
+		<ProjectItem TargetFileName="$fileinputname$View.cs" ReplaceParameters="true">MauiViewCS.cs</ProjectItem>
 	</TemplateContent>
 </VSTemplate>

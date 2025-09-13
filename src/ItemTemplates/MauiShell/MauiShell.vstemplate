@@ -9,8 +9,18 @@
 		<Icon>__TemplateIcon.ico</Icon>
 	</TemplateData>
 	<TemplateContent>
-		<References/>
-		<ProjectItem TargetFileName="$fileinputname$.xaml" ReplaceParameters="true">MauiShell.xaml</ProjectItem>
-		<ProjectItem TargetFileName="$fileinputname$.xaml.cs" ReplaceParameters="true">MauiShell.xaml.cs</ProjectItem>
+		<CustomParameters>
+			<CustomParameter Name="$xaml_item$" Value="" />
+			<CustomParameter Name="$maui_global$" Value="" />
+			<CustomParameter Name="$net8_or_later$" Value="" />
+			<CustomParameter Name="$net10_or_later$" Value="" />
+		</CustomParameters>
+		<References />
+		<ProjectItem TargetFileName="$fileinputname$Shell.xaml" ReplaceParameters="true">MauiShell.xaml</ProjectItem>
+		<ProjectItem TargetFileName="$fileinputname$Shell.xaml.cs" ReplaceParameters="true">MauiShell.xaml.cs</ProjectItem>
 	</TemplateContent>
+	<WizardExtension>
+		<Assembly>VijayAnand.MauiTemplates, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7550554040ebdd44</Assembly>
+		<FullClassName>VijayAnand.MauiTemplates.CustomActionWizard</FullClassName>
+	</WizardExtension>
 </VSTemplate>

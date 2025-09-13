@@ -1,8 +1,8 @@
 ﻿using TPlatformView = UIKit.UIView;
-using $basenamespace$.Controls;
+using $base_namespace$.Controls;
 using Microsoft.Maui.Handlers;
 
-namespace $basenamespace$.Handlers
+namespace $base_namespace$.Handlers
 {
     public partial class $safeitemname$ : ViewHandler<I$fileinputname$, TPlatformView>
     {
