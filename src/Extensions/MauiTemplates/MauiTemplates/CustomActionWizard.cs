@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
+using VijayAnand.MauiTemplates.Extensions;
 using VijayAnand.MauiTemplates.ViewModels;
 using VijayAnand.MauiTemplates.Views;
 
@@ -163,7 +164,7 @@ namespace VijayAnand.MauiTemplates
                     {
                         tfm = await project.GetAttributeAsync("TargetFrameworks");
 
-                        if (tfm != null)
+                        if (tfm.HasValue())
                         {
                             if (tfm.Contains("net8.0")
                                 || tfm.Contains("net9.0")
