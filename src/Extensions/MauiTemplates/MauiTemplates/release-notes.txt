@@ -2,8 +2,12 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This VS extension does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 7.9.0.0:
+What's new in ver. 7.9.1.0:
 ---------------------------
+Fix release.
+
+v7.9.0.0:
+
 First and foremost, adding support for the Visual Studio 2026 Insiders release.
 
 The Templates updated to support .NET MAUI 10 RC1 and .NET MAUI 9 SR11.
