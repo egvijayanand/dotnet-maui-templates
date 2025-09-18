@@ -2,13 +2,17 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This template package does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 7.9.0:
+What's new in ver. 7.9.1:
 -------------------------
+Fix release.
+
+v7.9.0:
+
 Templates updated to support .NET MAUI 10 RC1 and .NET MAUI 9 SR11.
 
 When targeting .NET MAUI 10, all XAML files in XAML-based projects will be generated using the .NET MAUI 10 Global namespace.
 
-Using a concise XAML approach, local files will be mapped to the Global namespace.
+Using a concise XAML approach, local types will be mapped to the Global namespace.
 
 Refer to the Imports.cs source file for XML namespace definitions.
 

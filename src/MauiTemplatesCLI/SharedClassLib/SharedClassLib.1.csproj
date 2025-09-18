@@ -26,6 +26,10 @@
         <UseMaui>true</UseMaui>
         <SingleProject>true</SingleProject>
         <DefineConstants>$(DefineConstants);MAUI</DefineConstants>
+        <!--#if (Net10OrLater)-->
+        <!-- This can also be combined with the declaration above. -->
+        <!-- <DefineConstants>$(DefineConstants);MauiAllowImplicitXmlnsDeclaration</DefineConstants> -->
+        <!--#endif-->
     </PropertyGroup>
 
     <ItemGroup Condition="'$(TargetFramework)' == 'FORMS_TFM'">
