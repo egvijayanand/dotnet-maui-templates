@@ -86,6 +86,9 @@
         <TargetFramework>MAUI_TFM</TargetFramework>
         <!--#endif-->
         <!--#endif-->
+        <!--#if (Net10OrLater)-->
+        <!-- <DefineConstants>$(DefineConstants);MauiAllowImplicitXmlnsDeclaration</DefineConstants> -->
+        <!--#endif-->
 
         <!-- .NET MAUI -->
         <!--#if (UseMauiCore)-->

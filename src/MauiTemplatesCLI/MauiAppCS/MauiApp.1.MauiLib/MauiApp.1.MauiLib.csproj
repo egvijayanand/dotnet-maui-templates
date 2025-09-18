@@ -13,6 +13,9 @@
         <!--#if (Hybrid)-->
         <EnableDefaultCssItems>false</EnableDefaultCssItems>
         <!--#endif-->
+        <!--#if (Net10OrLater)-->
+        <!-- <DefineConstants>$(DefineConstants);MauiAllowImplicitXmlnsDeclaration</DefineConstants> -->
+        <!--#endif-->
 
         <!-- Project Options -->
         <Nullable>enable</Nullable>

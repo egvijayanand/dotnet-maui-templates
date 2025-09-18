@@ -86,6 +86,9 @@
         <!--#endif-->
         <!--#endif-->
         <OutputType Condition="'$(TargetFramework)' != 'MAUI_TFM'">Exe</OutputType>
+        <!--#if (Net10OrLater)-->
+        <!-- <DefineConstants>$(DefineConstants);MauiAllowImplicitXmlnsDeclaration</DefineConstants> -->
+        <!--#endif-->
 
         <!-- .NET MAUI -->
         <UseMaui>true</UseMaui>
