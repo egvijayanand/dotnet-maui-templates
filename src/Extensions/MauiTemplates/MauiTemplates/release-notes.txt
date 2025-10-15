@@ -2,8 +2,28 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This VS extension does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 7.9.1.0:
----------------------------
+What's new in ver. 7.10.0.0:
+----------------------------
+Templates updated to support .NET MAUI 10 RC2 and .NET MAUI 9 SR11.1.
+
+Support for Implicit namespace option in app project templates when targeting .NET MAUI 10.
+
+The MauiVersion can now be shown on any page, thanks to its refactoring into a control template.
+
+App project template revised to utilize the integrated app hosting builder method for startup.
+
+For more details, consult this article.
+
+https://egvijayanand.in/2025/09/29/integrated-app-hosting-builder-method-for-dotnet-maui-explained/
+
+For app projects targeting .NET MAUI 9 and above, the Tall TitleBar is configured.
+
+To disable it, comment out or remove the TitleBar section in the MainWindow definition.
+
+Alternatively, update the MainWindow type to a prebuilt Window type in the unified App startup within MauiProgram.cs.
+
+v7.9.1.0:
+
 Fix release.
 
 v7.9.0.0:
