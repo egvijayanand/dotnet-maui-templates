@@ -15,8 +15,8 @@ Release Details:
 |Stable|.NET 6 SR11 (6.0.553)|VS2022 17.4.x - 17.8.x|Tue, Apr 25, 2023|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
 |Stable|.NET 7 SR10 (7.0.101)|VS2022 17.4.x - 17.9.x|Tue, Nov 7, 2023|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
 |Stable|[.NET 8 SR10](https://github.com/dotnet/maui/releases/tag/8.0.100 "Changelog") (8.0.100) <br /> _Requires JDK 17 and Android SDK 34_ <br /> _Requires Apple Xcode 15.4 and Supports Apple Xcode 16_|VS2022 17.12.x|Tue, Nov 12, 2024|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
-|Stable|[.NET 9 SR11](https://github.com/dotnet/maui/releases/tag/9.0.110 "Changelog") (9.0.110) <br /> _Requires JDK 17 and Android SDK 35_ <br /> _Requires Apple Xcode 16.1_|VS2022 17.14.x|Tue, Sep 9, 2025|Active|
-|Preview|[.NET 10 RC1](https://github.com/dotnet/maui/releases/tag/10.0.0-rc.1.25424.2 "Changelog") (10.0.0-rc.1.25424.2) <br /> [Release Notes](https://github.com/dotnet/core/blob/main/release-notes/10.0/preview/rc1/dotnetmaui.md) <br /> _Requires JDK 17 and Android SDK 36_ <br /> _Requires Apple Xcode 16.4_ <br /> _Preview Support for Apple Xcode 26 Beta_|VS2022 17.14.x <br /> VS2026 Insiders 18.0.0|Tue, Sep 9, 2025|Go-Live Support|
+|Stable|[.NET 9 SR11.1](https://github.com/dotnet/maui/releases/tag/9.0.111 "Changelog") (9.0.111) <br /> _Requires JDK 17 and Android SDK 35_ <br /> _Requires Apple Xcode 26_|VS2022 17.14.17|Tue, Oct 14, 2025|Active|
+|Preview|[.NET 10 RC2](https://github.com/dotnet/maui/releases/tag/10.0.0-rc.2.25504.7 "Changelog") (10.0.0-rc.2.25504.7) <br /> [Release Notes](https://github.com/dotnet/core/blob/main/release-notes/10.0/preview/rc2/dotnetmaui.md) <br /> _Requires JDK 17 and Android SDK 36_ <br /> _Requires Apple Xcode 26_|VS2022 17.14.17 <br /> VS2026 Insiders 18.0.0|Tue, Oct 14, 2025|Go-Live Support|
 
 Version History and its dependencies are [here](https://aka.ms/maui/versions).
 
@@ -222,6 +222,10 @@ And from [v6.1.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/6.1.0)
 And from [v7.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.0.0) of the template package, CLI project template `framework` parameter adds `net10.0` as another option to support `.NET 10` Previews.
 
 And from [v7.7.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.7.0) of the template package, Nightly Builds (integrated) feed links have been updated for both .NET MAUI v9 and v10.
+
+And from [v7.9.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.9.0) of the template package, support for .NET MAUI 10 Global namespace.
+
+And from [v7.10.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.10.0) of the template package, support for .NET MAUI 10 Implicit namespace and unified app startup.
 
 ### Parameters:
 

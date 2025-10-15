@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--#if (ImplicitNamespace)-->
+<Window
+    x:Class="MauiApp._1.MainWindow"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="MauiApp._1">
+<!--#elif (GlobalNamespace)-->
+<Window
+    x:Class="MauiApp._1.MainWindow"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MauiApp._1"
+    mc:Ignorable="d">
+<!--#else-->
+<Window
+    x:Class="MauiApp._1.MainWindow"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MauiApp._1"
+    xmlns:vw="clr-namespace:MauiApp._1.Views"
+    Title="MauiApp._1"
+    mc:Ignorable="d">
+<!--#endif-->
+    <!--#if (TallTitleBar)-->
+    <Window.TitleBar>
+        <TitleBar
+            BackgroundColor="{StaticResource Primary}"
+            ForegroundColor="{StaticResource OnPrimary}"
+            HeightRequest="48">
+            <TitleBar.LeadingContent>
+                <Label
+                    Margin="20,0,0,0"
+                    Style="{StaticResource AppTitle}"
+                    Text="MauiApp._1"
+                    VerticalOptions="Center" />
+            </TitleBar.LeadingContent>
+        </TitleBar>
+    </Window.TitleBar>
+    <!--#endif-->
+</Window>

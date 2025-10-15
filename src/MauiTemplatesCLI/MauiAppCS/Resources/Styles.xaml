@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <?xaml-comp compile="true" ?>
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+<!--#elif (GlobalNamespace)-->
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"

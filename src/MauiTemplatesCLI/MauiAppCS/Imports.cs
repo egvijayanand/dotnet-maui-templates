@@ -71,6 +71,8 @@ global using MauiApp._1.ViewModels;
 #endif
 global using MauiApp._1.Views;
 
+global using VijayAnand.MauiToolkit;
+
 #if AddSharedToolkit
 // Shared Toolkit
 global using VijayAnand.Toolkit.Markup;
@@ -109,6 +111,20 @@ global using static MauiApp._1.Helpers.ResourceHelper;
 
 #if Reactor
 using XmlnsDefinitionAttribute = Microsoft.Maui.Controls.XmlnsDefinitionAttribute;
+
+#endif
+// Implicit Namespace option
+#if ImplicitNamespace
+[assembly: System.Runtime.Versioning.RequiresPreviewFeatures]
+[assembly: Microsoft.Maui.Controls.Xaml.Internals.AllowImplicitXmlnsDeclaration]
+
+#else
+// To enable, uncomment the below two lines.
+//[assembly: System.Runtime.Versioning.RequiresPreviewFeatures]
+//[assembly: Microsoft.Maui.Controls.Xaml.Internals.AllowImplicitXmlnsDeclaration]
+// Alternatively, this can be done in the project file also.
+// Set the EnablePreviewFeatures node and assign its value to true.
+// And then define this constant: MauiAllowImplicitXmlnsDeclaration
 
 #endif
 // CLR Namespaces

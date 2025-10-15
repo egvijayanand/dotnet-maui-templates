@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<!--#if (Mvvm)-->
+<Shell
+    x:Class="MauiApp._1.AppShell"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="MauiApp._1"
+    x:DataType="AppViewModel">
+<!--#else-->
+<Shell
+    x:Class="MauiApp._1.AppShell"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="MauiApp._1">
+<!--#endif-->
+<!--#elif (GlobalNamespace)-->
 <!--#if (Mvvm)-->
 <Shell
     x:Class="MauiApp._1.AppShell"
@@ -64,7 +77,7 @@
         Uncomment the below section to enable Shell Flyout item(s)
         And ensure appropriate page definitions are available for it work as expected
     -->
-    <!--#if (Net10OrLater)-->
+    <!--#if (GlobalNamespace || ImplicitNamespace)-->
     <FlyoutItem Title="Calendar">
         <ShellContent
             ContentTemplate="{DataTemplate EventsPage}"
@@ -124,7 +137,7 @@
         Uncomment the below section to enable TabBar item(s)
         And ensure appropriate page definitions are available for it work as expected
     -->
-    <!--#if (Net10OrLater)-->
+    <!--#if (GlobalNamespace || ImplicitNamespace)-->
     <TabBar>
         <ShellContent
             ContentTemplate="{DataTemplate LoginPage}"

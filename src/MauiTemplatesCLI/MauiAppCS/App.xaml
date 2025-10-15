@@ -1,5 +1,16 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<!--#if (Reactor)-->
+<MauiReactorApplication
+    x:Class="MauiApp._1.App"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:ClassModifier="NotPublic">
+<!--#else-->
+<Application
+    x:Class="MauiApp._1.App"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+<!--#endif-->
+<!--#elif (GlobalNamespace)-->
 <!--#if (Reactor)-->
 <MauiReactorApplication
     x:Class="MauiApp._1.App"
@@ -29,6 +40,7 @@
     xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:sft="http://schemas.syncfusion.com/maui/toolkit"
     xmlns:local="clr-namespace:MauiApp._1"
+    xmlns:vw="clr-namespace:MauiApp._1.Views"
     mc:Ignorable="d">
 <!--#elif (AddToolkit)-->
 <Application
@@ -39,6 +51,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:local="clr-namespace:MauiApp._1"
+    xmlns:vw="clr-namespace:MauiApp._1.Views"
     mc:Ignorable="d">
 <!--#elif (AddSyncfusionToolkit)-->
 <Application
@@ -49,6 +62,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:sft="http://schemas.syncfusion.com/maui/toolkit"
     xmlns:local="clr-namespace:MauiApp._1"
+    xmlns:vw="clr-namespace:MauiApp._1.Views"
     mc:Ignorable="d">
 <!--#elif (Reactor)-->
 <local:MauiReactorApplication
@@ -68,16 +82,35 @@
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MauiApp._1"
+    xmlns:vw="clr-namespace:MauiApp._1.Views"
     mc:Ignorable="d">
 <!--#endif-->
 <!--#endif-->
     <Application.Resources>
         <ResourceDictionary>
+            <!--#if (Reactor)-->
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles.xaml" />
+                <ResourceDictionary Source="Resources/AppStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <!--#else-->
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
             <!-- Additional Styles -->
+            <!--#if (ImplicitNamespace || GlobalNamespace)-->
+            <ControlTemplate x:Key="VersionTemplate">
+                <VersionTemplate />
+            </ControlTemplate>
+            <!--#else-->
+            <ControlTemplate x:Key="VersionTemplate">
+                <vw:VersionTemplate />
+            </ControlTemplate>
+            <!--#endif-->
+
             <!--#if (!(Plain || Hybrid))-->
             <Thickness x:Key="ApplePadding">30,60,30,30</Thickness>
             <Thickness x:Key="DefaultPadding">30</Thickness>
@@ -85,17 +118,31 @@
             <!--#endif-->
             <x:Double x:Key="ItemSpacing">10</x:Double>
 
-            <Style ApplyToDerivedTypes="True" TargetType="StackBase">
+            <Style ApplyToDerivedTypes="True"
+                TargetType="StackBase">
                 <Setter Property="Spacing"
                         Value="{StaticResource ItemSpacing}" />
             </Style>
 
-            <Style x:Key="MauiLabel" TargetType="Label">
+            <Style x:Key="MauiLabel"
+                TargetType="Label">
                 <Setter Property="TextColor"
                         Value="{AppThemeBinding Dark={StaticResource White}, Light={StaticResource Primary}}" />
             </Style>
 
-            <Style x:Key="Action" TargetType="Button">
+            <!--#if (TallTitleBar)-->
+            <Style
+                x:Key="AppTitle"
+                TargetType="Label">
+                <Setter Property="FontSize"
+                        Value="16" />
+                <Setter Property="TextColor"
+                        Value="{StaticResource OnPrimary}" />
+            </Style>
+
+            <!--#endif-->
+            <Style x:Key="Action"
+                TargetType="Button">
                 <Setter Property="BackgroundColor"
                         Value="{AppThemeBinding Dark={StaticResource BackgroundDark}, Light={StaticResource BackgroundLight}}" />
                 <Setter Property="TextColor"
@@ -118,10 +165,11 @@
                 <Setter Property="TextColor"
                         Value="{StaticResource White}" />
             </Style>
+            <!--#endif-->
         </ResourceDictionary>
     </Application.Resources>
 <!--#if (Reactor)-->
-<!--#if (Net10OrLater)-->
+<!--#if (GlobalNamespace || ImplicitNamespace)-->
 </MauiReactorApplication>
 <!--#else-->
 </local:MauiReactorApplication>

@@ -231,6 +231,7 @@
         <!--#endif-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Condition="'$(Configuration)' == 'Debug'" />
         <PackageReference Include="Microsoft.Maui.Controls" />
+        <PackageReference Include="VijayAnand.MauiToolkit" />
         <!--#if (Net8)-->
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" />
         <!--#endif-->
@@ -308,6 +309,11 @@
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <!--#if (Net8)-->
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+        <!--#endif-->
+        <!--#if (Net9OrLater)-->
+        <PackageReference Include="VijayAnand.MauiToolkit" Version="4.*" />
+        <!--#else-->
+        <PackageReference Include="VijayAnand.MauiToolkit" Version="3.*" />
         <!--#endif-->
         <!--#if (AddToolkit)-->
         <!--#if (Net9OrLater)-->

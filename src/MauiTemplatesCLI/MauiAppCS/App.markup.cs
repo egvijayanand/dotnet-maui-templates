@@ -1,26 +1,15 @@
-﻿namespace MauiApp._1
+﻿using System.Reflection;
+
+namespace MauiApp._1
 {
-#if Markup
     public partial class App : Application
     {
-#if Mvvm
-#if Net9OrLater
-        private readonly IServiceProvider _services;
-
-        public App(IServiceProvider services)
-        {
-            _services = services;
-
-#else
-        public App(IServiceProvider services)
-        {
-#endif
-#else
         public App()
         {
-#endif
             Resources.MergedDictionaries.Add(AppColors.Instance);
             Resources.MergedDictionaries.Add(AppStyles.Instance);
+
+            Resources.Add(nameof(VersionTemplate), new ControlTemplate(typeof(VersionTemplate)));
             Resources.Add("ItemSpacing", 10d);
             Resources.Add(new Style(typeof(StackBase))
             {
@@ -33,6 +22,16 @@
             Resources.Add("MauiLabel", new Style<Label>()
                 .AddAppThemeBinding(Label.TextColorProperty, AppColor("Primary"), AppColor("TextDark"))
                 .MauiStyle);
+#if TallTitleBar
+            Resources.Add("AppTitle", new Style(typeof(Label))
+            {
+                Setters =
+                {
+                    new() { Property = Label.FontSizeProperty, Value = 16 },
+                    new() { Property = Label.TextColorProperty, Value = AppColor("OnPrimary") }
+                },
+            });
+#endif
             Resources.Add("Action", new Style<Button>(
                 (Button.FontFamilyProperty, AppString("AppFont")!),
                 (Button.FontSizeProperty, AppResource<double>("AppFontSize", 14d)),
@@ -50,31 +49,17 @@
                     new() { Property = Button.TextColorProperty, Value = AppColor("White") },
                 },
             });
-            
-#if Net8
-#if Mvvm
-            MainPage = services.GetRequiredService<MainPage>();
-#else
-            MainPage = new MainPage();
-#endif
-#endif
+
             UserAppTheme = PlatformAppTheme;
         }
 
-        protected override Window CreateWindow(IActivationState? activationState)
+        public static string MauiVersion
         {
-#if Net9OrLater
-#if Mvvm
-            var window = new Window(_services.GetRequiredService<MainPage>());
-#else
-            var window = new Window(new MainPage());
-#endif
-#else
-            var window = base.CreateWindow(activationState);
-#endif
-            window.Title = "MauiApp._1";
-            return window;
+            get
+            {
+                var version = typeof(MauiApp).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()!.InformationalVersion;
+                return $".NET MAUI ver. {version[..version.IndexOf('+')]}";
+            }
         }
     }
-#endif
 }

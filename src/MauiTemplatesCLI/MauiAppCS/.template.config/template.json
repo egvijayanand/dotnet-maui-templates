@@ -104,11 +104,15 @@
                         "AppShell.xaml",
                         "AppShell.xaml.cs",
                         "App.markup.cs",
+                        "MainWindow.markup.cs",
+                        "MainWindow.xaml",
+                        "MainWindow.xaml.cs",
                         "Controls/*.xaml",
                         "Controls/*.xaml.cs",
                         "Resources/*.cs",
                         "Views/*.xaml",
-                        "Views/*.xaml.cs"
+                        "Views/*.xaml.cs",
+                        "Views/VersionTemplate.markup.cs"
                     ],
                     "rename": {
                         "Views/MainPage.markup.cs": "Views/MainPage.cs",
@@ -129,7 +133,9 @@
                     ],
                     "rename": {
                         "App.markup.cs": "App.cs",
+                        "MainWindow.markup.cs": "MainWindow.cs",
                         "Views/MainPage.markup.cs": "Views/MainPage.cs",
+                        "Views/VersionTemplate.markup.cs": "Views/VersionTemplate.cs",
                         "Helpers/ResourceHelper.markup.cs": "Helpers/ResourceHelper.cs",
                         "Helpers/VisualStateHelper.markup.cs": "Helpers/VisualStateHelper.cs"
                     }
@@ -298,10 +304,14 @@
                         "Main.razor": "MauiApp.1/Main.razor",
                         "MauiApp.1.csproj": "MauiApp.1/MauiApp.1.csproj",
                         "MauiProgram.cs": "MauiApp.1/MauiProgram.cs",
+                        "MainWindow.xaml": "MauiApp.1/MainWindow.xaml",
+                        "MainWindow.xaml.cs": "MauiApp.1/MainWindow.xaml.cs",
                         "Resources/Colors.xaml": "MauiApp.1/Resources/Colors.xaml",
                         "Resources/Styles.xaml": "MauiApp.1/Resources/Styles.xaml",
                         "Views/MainPage.xaml": "MauiApp.1/Views/MainPage.xaml",
-                        "Views/MainPage.xaml.cs": "MauiApp.1/Views/MainPage.xaml.cs"
+                        "Views/MainPage.xaml.cs": "MauiApp.1/Views/MainPage.xaml.cs",
+                        "Views/VersionTemplate.xaml": "MauiApp.1/Views/VersionTemplate.xaml",
+                        "Views/VersionTemplate.xaml.cs": "MauiApp.1/Views/VersionTemplate.xaml.cs"
                     }
                 },
                 {
@@ -375,6 +385,8 @@
                         "Imports.cs": "MauiApp.1.MauiLib/Imports.cs",
                         "MauiApp.1.csproj": "MauiApp.1/MauiApp.1.csproj",
                         "MauiProgram.cs": "MauiApp.1.MauiLib/MauiProgram.cs",
+                        "MainWindow.xaml": "MauiApp.1/MainWindow.xaml",
+                        "MainWindow.xaml.cs": "MauiApp.1/MainWindow.xaml.cs",
                         "Platforms/Android/Resources/values/colors.xml": "MauiApp.1/Platforms/Android/Resources/values/colors.xml",
                         "Platforms/Android/AndroidManifest.xml": "MauiApp.1/Platforms/Android/AndroidManifest.xml",
                         "Platforms/Android/MainActivity.cs": "MauiApp.1/Platforms/Android/MainActivity.cs",
@@ -408,7 +420,9 @@
                         "Resources/Colors.xaml": "MauiApp.1.MauiLib/Resources/Colors.xaml",
                         "Resources/Styles.xaml": "MauiApp.1.MauiLib/Resources/Styles.xaml",
                         "Views/MainPage.xaml": "MauiApp.1.MauiLib/Views/MainPage.xaml",
-                        "Views/MainPage.xaml.cs": "MauiApp.1.MauiLib/Views/MainPage.xaml.cs"
+                        "Views/MainPage.xaml.cs": "MauiApp.1.MauiLib/Views/MainPage.xaml.cs",
+                        "Views/VersionTemplate.xaml": "MauiApp.1/Views/VersionTemplate.xaml",
+                        "Views/VersionTemplate.xaml.cs": "MauiApp.1/Views/VersionTemplate.xaml.cs"
                     }
                 },
                 {
@@ -417,7 +431,9 @@
                         "Resources/AppColors.cs": "MauiApp.1.MauiLib/Resources/AppColors.cs",
                         "Resources/AppStyles.cs": "MauiApp.1.MauiLib/Resources/AppStyles.cs",
                         "Views/MainPage.markup.cs": "MauiApp.1.MauiLib/Views/MainPage.cs",
-                        "App.markup.cs": "MauiApp.1.MauiLib/App.cs"
+                        "Views/VersionTemplate.markup.cs": "MauiApp.1.MauiLib/Views/VersionTemplate.cs",
+                        "App.markup.cs": "MauiApp.1.MauiLib/App.cs",
+                        "MainWindow.markup.cs": "MauiApp.1.MauiLib/MainWindow.cs"
                     }
                 },
                 {
@@ -735,6 +751,20 @@
             "description": "Option to use Nightly (CI) build.",
             "displayName": "Option to use Ni_ghtly (CI) build"
         },
+        "global-namespace": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "true",
+            "description": "Option to use .NET MAUI 10 Global Namespace feature.",
+            "displayName": "Option to use .NET MAUI 10 Global Namespace feature."
+        },
+        "implicit-namespace": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to use .NET MAUI 10 Implicit Namespace feature.",
+            "displayName": "Option to use .NET MAUI 10 Implicit Namespace feature."
+        },
         "use-mvvm": {
             "type": "parameter",
             "datatype": "bool",
@@ -921,6 +951,18 @@
         "Net10OrLater": {
             "type": "computed",
             "value": "(Net10)"
+        },
+        "GlobalNamespace": {
+            "type": "computed",
+            "value": "(Net10OrLater && global-namespace)"
+        },
+        "ImplicitNamespace": {
+            "type": "computed",
+            "value": "(Net10OrLater && implicit-namespace)"
+        },
+        "TallTitleBar": {
+            "type": "computed",
+            "value": "(Net9OrLater)"
         },
         "Plain": {
             "type": "computed",

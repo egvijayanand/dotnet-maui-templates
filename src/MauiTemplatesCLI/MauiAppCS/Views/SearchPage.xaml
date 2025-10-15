@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--#if (Mvvm)-->
 <!--#if (CompiledBindings)-->
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.SearchPage"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{x:Bind Title}"
+    x:DataType="SearchViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}">
+<!--#elif (GlobalNamespace)-->
 <ContentPage
     x:Class="MauiApp._1.Views.SearchPage"
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
@@ -10,6 +17,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="{x:Bind Title}"
     x:DataType="SearchViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#else-->
 <ContentPage
@@ -22,10 +30,18 @@
     xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
     Title="{x:Bind Title}"
     x:DataType="vm:SearchViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#endif-->
 <!--#else-->
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.SearchPage"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{Binding Title}"
+    x:DataType="SearchViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}">
+<!--#elif (GlobalNamespace)-->
 <ContentPage
     x:Class="MauiApp._1.Views.SearchPage"
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
@@ -34,6 +50,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="{Binding Title}"
     x:DataType="SearchViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#else-->
 <ContentPage
@@ -46,11 +63,18 @@
     xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
     Title="{Binding Title}"
     x:DataType="vm:SearchViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#endif-->
 <!--#endif-->
 <!--#else-->
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.SearchPage"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Search"
+    ControlTemplate="{StaticResource VersionTemplate}">
+<!--#elif (GlobalNamespace)-->
 <ContentPage
     x:Class="MauiApp._1.Views.SearchPage"
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
@@ -58,6 +82,7 @@
     xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Search"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#else-->
 <ContentPage
@@ -68,6 +93,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MauiApp._1"
     Title="Search"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#endif-->
 <!--#endif-->

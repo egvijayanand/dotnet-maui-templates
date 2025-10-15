@@ -4,15 +4,15 @@
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net10)-->
         <!--#if (Nightly)-->
-        <MauiVersion>10.0.0-rc.1.25452.6</MauiVersion>
+        <MauiVersion>10.0.0-rc.2.25504.7</MauiVersion>
         <!--#else-->
-        <MauiVersion>10.0.0-rc.1.25452.6</MauiVersion>
+        <MauiVersion>10.0.0-rc.2.25504.7</MauiVersion>
         <!--#endif-->
         <!--#elif (Net9)-->
         <!--#if (Nightly)-->
-        <MauiVersion>9.0.120-ci.main.25459.5</MauiVersion>
+        <MauiVersion>9.0.120-ci.main.25514.9</MauiVersion>
         <!--#else-->
-        <MauiVersion>9.0.110</MauiVersion>
+        <MauiVersion>9.0.111</MauiVersion>
         <!--#endif-->
         <!--#elif (Net8)-->
         <!--#if (Nightly)-->
@@ -74,7 +74,7 @@
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddSyncfusionToolkit)-->
-        <PackageVersion Include="Syncfusion.Maui.Toolkit" Version="1.0.6" />
+        <PackageVersion Include="Syncfusion.Maui.Toolkit" Version="1.0.7" />
         <!--#endif-->
         <!--#if (AddMauiMarkup)-->
         <!--#if (Net9OrLater)-->

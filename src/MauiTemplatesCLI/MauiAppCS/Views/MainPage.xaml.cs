@@ -1,8 +1,4 @@
-﻿#if (!Tabbed)
-using System.Reflection;
-
-#endif
-namespace MauiApp._1.Views
+﻿namespace MauiApp._1.Views
 {
 #if Tabbed
     public partial class MainPage : TabbedPage
@@ -60,9 +56,6 @@ namespace MauiApp._1.Views
             BindingContext = viewModel;
 #endif
 #endif
-
-            var version = typeof(MauiApp).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
-            versionLabel.Text = $".NET MAUI ver. {version?[..version.IndexOf('+')]}";
 #endif
         }
 #if Mvvm

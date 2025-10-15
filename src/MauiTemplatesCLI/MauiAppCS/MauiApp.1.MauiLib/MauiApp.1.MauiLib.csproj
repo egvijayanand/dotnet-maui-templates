@@ -47,6 +47,7 @@
         <!--#if (Net8)-->
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" />
         <!--#endif-->
+        <PackageReference Include="VijayAnand.MauiToolkit" />
         <!--#if (AddCamera)-->
         <PackageReference Include="CommunityToolkit.Maui.Camera" />
         <!--#endif-->
@@ -117,6 +118,11 @@
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <!--#if (Net8)-->
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+        <!--#endif-->
+        <!--#if (Net9OrLater)-->
+        <PackageReference Include="VijayAnand.MauiToolkit" Version="4.*" />
+        <!--#else-->
+        <PackageReference Include="VijayAnand.MauiToolkit" Version="3.*" />
         <!--#endif-->
         <!--#if (AddToolkit)-->
         <!--#if (Net9OrLater)-->
