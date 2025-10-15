@@ -125,8 +125,9 @@ namespace VijayAnand.MauiTemplates
 
                 if (runKind == WizardRunKind.AsNewItem)
                 {
-                    // XAML-based item template. Needs post processing.
-                    postProcess = replacementsDictionary.ContainsKey(XamlItem);
+                    var xamlItem = replacementsDictionary.ContainsKey(XamlItem);
+                    // XAML-based item templates require post-processing.
+                    postProcess = xamlItem;
                     var net8OrLater = false;
                     var net10OrLater = false;
 
@@ -182,7 +183,7 @@ namespace VijayAnand.MauiTemplates
                         {
                             tfm = await project.GetAttributeAsync("TargetFramework");
 
-                            if (tfm != null)
+                            if (tfm.HasValue())
                             {
                                 if (tfm.StartsWith("net8.0")
                                     || tfm.StartsWith("net9.0")
@@ -219,7 +220,6 @@ namespace VijayAnand.MauiTemplates
                     if (replacementsDictionary.ContainsKey(BaseType))
                     {
                         var ideVersion = 17; // VS2022, supported base IDE version.
-                        var xamlItem = replacementsDictionary.ContainsKey(XamlItem);
 
                         if (Version.TryParse(ide.Version, out var version))
                         {
@@ -242,9 +242,9 @@ namespace VijayAnand.MauiTemplates
                             var baseTypeCS = baseType.Contains(Colon) ? baseType.Substring(baseType.IndexOf(':') + 1) : baseType;
                             var genericTypeCS = genericType.Contains(Colon) ? genericType.Substring(genericType.IndexOf(':') + 1) : genericType;
 
-                            if (!string.IsNullOrEmpty(baseType))
+                            if (baseType.HasValue())
                             {
-                                if (postProcess)
+                                if (xamlItem)
                                 {
                                     string toolkit;
 
@@ -262,7 +262,7 @@ namespace VijayAnand.MauiTemplates
                                     replacementsDictionary[MauiImplicit] = implicitNamespace.ToString().ToLowerInvariant();
                                     replacementsDictionary[Toolkit] = toolkit;
 
-                                    if (string.IsNullOrEmpty(genericTypeCS))
+                                    if (genericTypeCS.IsEmpty())
                                     {
                                         replacementsDictionary[BaseTypeCS] = baseTypeCS;
                                         replacementsDictionary[Generic] = bool.FalseString.ToLowerInvariant();
@@ -277,7 +277,7 @@ namespace VijayAnand.MauiTemplates
                                 else
                                 {
                                     // For C# template also, base_type is the parameter name.
-                                    if (string.IsNullOrEmpty(genericTypeCS))
+                                    if (genericTypeCS.IsEmpty())
                                     {
                                         replacementsDictionary[BaseType] = baseTypeCS;
                                     }
