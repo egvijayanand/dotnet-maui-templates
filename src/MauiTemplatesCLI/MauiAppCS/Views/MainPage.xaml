@@ -2,7 +2,14 @@
 <!--#if (Hybrid)-->
 <!--#if (Mvvm)-->
 <!--#if (CompiledBindings)-->
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{x:Bind Title}"
+    x:DataType="MainViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}">
+<!--#elif (GlobalNamespace)-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
@@ -11,6 +18,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="{x:Bind Title}"
     x:DataType="MainViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#else-->
 <ContentPage
@@ -23,41 +31,37 @@
     xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
     Title="{x:Bind Title}"
     x:DataType="vm:MainViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#endif-->
     <ContentPage.Content>
-        <Grid RowDefinitions="*,40">
-            <BlazorWebView
-                x:Name="bwv"
-                HostPage="wwwroot/index.html"
-                StartPath="{x:Bind StartPath}">
-                <BlazorWebView.RootComponents>
-<!--#if (Net10OrLater)-->
-                    <RootComponent
-                        Selector="#app"
-                        ComponentType="{x:Type Main}" />
+        <BlazorWebView
+            x:Name="bwv"
+            HostPage="wwwroot/index.html"
+            StartPath="{x:Bind StartPath}">
+            <BlazorWebView.RootComponents>
+<!--#if (GlobalNamespace || ImplicitNamespace)-->
+                <RootComponent
+                    Selector="#app"
+                    ComponentType="{x:Type Main}" />
 <!--#else-->
-                    <RootComponent
-                        Selector="#app"
-                        ComponentType="{x:Type local:Main}" />
+                <RootComponent
+                    Selector="#app"
+                    ComponentType="{x:Type local:Main}" />
 <!--#endif-->
-                </BlazorWebView.RootComponents>
-            </BlazorWebView>
-            <Grid
-                Grid.Row="1"
-                BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
-                                                  Light={StaticResource Primary}}">
-                <Label
-                    x:Name="versionLabel"
-                    HorizontalOptions="Center"
-                    TextColor="{StaticResource White}"
-                    VerticalOptions="Center" />
-            </Grid>
-        </Grid>
+            </BlazorWebView.RootComponents>
+        </BlazorWebView>
     </ContentPage.Content>
 </ContentPage>
 <!--#else-->
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{Binding Title}"
+    x:DataType="MainViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}">
+<!--#elif (GlobalNamespace)-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
@@ -66,6 +70,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="{Binding Title}"
     x:DataType="MainViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#else-->
 <ContentPage
@@ -78,42 +83,37 @@
     xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
     Title="{Binding Title}"
     x:DataType="vm:MainViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#endif-->
     <ContentPage.Content>
-        <Grid RowDefinitions="*,40">
-            <BlazorWebView
-                x:Name="bwv"
-                HostPage="wwwroot/index.html"
-                StartPath="{Binding StartPath}">
-                <BlazorWebView.RootComponents>
-<!--#if (Net10OrLater)-->
-                    <RootComponent
-                        Selector="#app"
-                        ComponentType="{x:Type Main}" />
+        <BlazorWebView
+            x:Name="bwv"
+            HostPage="wwwroot/index.html"
+            StartPath="{Binding StartPath}">
+            <BlazorWebView.RootComponents>
+<!--#if (GlobalNamespace || ImplicitNamespace)-->
+                <RootComponent
+                    Selector="#app"
+                    ComponentType="{x:Type Main}" />
 <!--#else-->
-                    <RootComponent
-                        Selector="#app"
-                        ComponentType="{x:Type local:Main}" />
+                <RootComponent
+                    Selector="#app"
+                    ComponentType="{x:Type local:Main}" />
 <!--#endif-->
-                </BlazorWebView.RootComponents>
-            </BlazorWebView>
-            <Grid
-                Grid.Row="1"
-                BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
-                                                  Light={StaticResource Primary}}">
-                <Label
-                    x:Name="versionLabel"
-                    HorizontalOptions="Center"
-                    TextColor="{StaticResource White}"
-                    VerticalOptions="Center" />
-            </Grid>
-        </Grid>
+            </BlazorWebView.RootComponents>
+        </BlazorWebView>
     </ContentPage.Content>
 </ContentPage>
 <!--#endif-->
 <!--#else-->
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="MauiApp._1"
+    ControlTemplate="{StaticResource VersionTemplate}">
+<!--#elif (GlobalNamespace)-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
@@ -121,6 +121,7 @@
     xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="MauiApp._1"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#else-->
 <ContentPage
@@ -131,44 +132,43 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MauiApp._1"
     Title="MauiApp._1"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#endif-->
     <ContentPage.Content>
-        <Grid RowDefinitions="*,40">
-            <BlazorWebView
-                x:Name="bwv"
-                HostPage="wwwroot/index.html"
-                StartPath="/counter">
-                <BlazorWebView.RootComponents>
-<!--#if (Net10OrLater)-->
-                    <RootComponent
-                        Selector="#app"
-                        ComponentType="{x:Type Main}" />
+        <BlazorWebView
+            x:Name="bwv"
+            HostPage="wwwroot/index.html"
+            StartPath="/counter">
+            <BlazorWebView.RootComponents>
+<!--#if (GlobalNamespace || ImplicitNamespace)-->
+                <RootComponent
+                    Selector="#app"
+                    ComponentType="{x:Type Main}" />
 <!--#else-->
-                    <RootComponent
-                        Selector="#app"
-                        ComponentType="{x:Type local:Main}" />
+                <RootComponent
+                    Selector="#app"
+                    ComponentType="{x:Type local:Main}" />
 <!--#endif-->
-                </BlazorWebView.RootComponents>
-            </BlazorWebView>
-            <Grid
-                Grid.Row="1"
-                BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
-                                                  Light={StaticResource Primary}}">
-                <Label
-                    x:Name="versionLabel"
-                    HorizontalOptions="Center"
-                    TextColor="{StaticResource White}"
-                    VerticalOptions="Center" />
-            </Grid>
-        </Grid>
+            </BlazorWebView.RootComponents>
+        </BlazorWebView>
     </ContentPage.Content>
 </ContentPage>
 <!--#endif-->
 <!--#elif (JSHybridNet9)-->
 <!--#if (Mvvm)-->
 <!--#if (CompiledBindings)-->
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{x:Bind Title}"
+    x:DataType="MainViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}">
+    <ContentPage.Resources>
+        <HybridWebViewRawMessageReceivedEventArgsConverter x:Key="ArgsConverter" />
+    </ContentPage.Resources>
+<!--#elif (GlobalNamespace)-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
@@ -177,6 +177,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="{x:Bind Title}"
     x:DataType="MainViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
     <ContentPage.Resources>
         <HybridWebViewRawMessageReceivedEventArgsConverter x:Key="ArgsConverter" />
@@ -194,88 +195,94 @@
     xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
     Title="{x:Bind Title}"
     x:DataType="vm:MainViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
     <ContentPage.Resources>
         <c:HybridWebViewRawMessageReceivedEventArgsConverter x:Key="ArgsConverter" />
     </ContentPage.Resources>
 <!--#endif-->
     <ContentPage.Content>
-        <Grid RowDefinitions="*,40">
+        <Grid
+            x:Name="container"
+            Margin="20"
+            ColumnDefinitions="{OnIdiom Default='*,*',
+                                        Phone='*',
+                                        Tablet='*'}"
+            ColumnSpacing="20"
+            RowDefinitions="{OnIdiom Default='*',
+                                        Phone='*,*',
+                                        Tablet='*,*'}">
             <Grid
-                x:Name="container"
-                Margin="20"
-                ColumnDefinitions="{OnIdiom Default='*,*',
-                                            Phone='*',
-                                            Tablet='*'}"
-                ColumnSpacing="20"
-                RowDefinitions="{OnIdiom Default='*',
-                                         Phone='*,*',
-                                         Tablet='*,*'}">
-                <Grid
-                    RowDefinitions="Auto,Auto,Auto,Auto"
-                    RowSpacing="10">
-                    <Label
-                        FontSize="24"
-                        Text=".NET MAUI"
-                        Style="{StaticResource MauiLabel}" />
-                    <HorizontalStackLayout
-                        Grid.Row="1"
-                        VerticalOptions="Center">
-                        <Entry
-                            x:Name="message"
-                            ClearButtonVisibility="WhileEditing"
-                            WidthRequest="225"
-                            MaxLength="50"
-                            Placeholder="Type your message for JS here"
-                            ReturnCommand="{x:Bind SendMessageCommand}"
-                            Text="{x:Bind Message, Mode=TwoWay}" />
-                        <Button
-                            Command="{x:Bind SendMessageCommand}"
-                            IsEnabled="{x:Bind CanSendMessage}"
-                            Text="Send to JS" />
-                    </HorizontalStackLayout>
-                    <Label
-                        Grid.Row="2"
-                        Text="Messages from JS:" />
-                    <Editor
-                        Grid.Row="3"
-                        HorizontalOptions="Fill"
-                        IsReadOnly="True"
-                        MinimumHeightRequest="300"
-                        Text="{x:Bind Messages}"
-                        VerticalOptions="Fill" />
-                </Grid>
-                <HybridWebView
-                    x:Name="hwv"
-                    Grid.Row="{OnIdiom Default=0,
-                                       Phone=1,
-                                       Tablet=1}"
-                    Grid.Column="{OnIdiom Default=1,
-                                          Phone=0,
-                                          Tablet=0}">
-                    <HybridWebView.Behaviors>
-                        <mct:EventToCommandBehavior
-                            Command="{x:Bind ShowMessageCommand}"
-                            EventArgsConverter="{StaticResource ArgsConverter}"
-                            EventName="RawMessageReceived" />
-                    </HybridWebView.Behaviors>
-                </HybridWebView>
-            </Grid>
-            <Grid
-                Grid.Row="1"
-                BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
-                                                  Light={StaticResource Primary}}">
+                RowDefinitions="Auto,Auto,Auto,Auto"
+                RowSpacing="10">
                 <Label
-                    x:Name="versionLabel"
-                    HorizontalOptions="Center"
-                    TextColor="{StaticResource White}"
-                    VerticalOptions="Center" />
+                    FontSize="24"
+                    Text=".NET MAUI"
+                    Style="{StaticResource MauiLabel}" />
+                <HorizontalStackLayout
+                    Grid.Row="1"
+                    VerticalOptions="Center">
+                    <Entry
+                        x:Name="message"
+                        ClearButtonVisibility="WhileEditing"
+                        WidthRequest="225"
+                        MaxLength="50"
+                        Placeholder="Type your message for JS here"
+                        ReturnCommand="{x:Bind SendMessageCommand}"
+                        Text="{x:Bind Message, Mode=TwoWay}" />
+                    <Button
+                        Command="{x:Bind SendMessageCommand}"
+                        IsEnabled="{x:Bind CanSendMessage}"
+                        Text="Send to JS" />
+                </HorizontalStackLayout>
+                <Label
+                    Grid.Row="2"
+                    Text="Messages from JS:" />
+                <Editor
+                    Grid.Row="3"
+                    HorizontalOptions="Fill"
+                    IsReadOnly="True"
+                    MinimumHeightRequest="300"
+                    Text="{x:Bind Messages}"
+                    VerticalOptions="Fill" />
             </Grid>
+            <HybridWebView
+                x:Name="hwv"
+                Grid.Row="{OnIdiom Default=0,
+                                    Phone=1,
+                                    Tablet=1}"
+                Grid.Column="{OnIdiom Default=1,
+                                        Phone=0,
+                                        Tablet=0}">
+                <HybridWebView.Behaviors>
+                    <!--#if (GlobalNamespace || ImplicitNamespace)-->
+                    <EventToCommandBehavior
+                        Command="{x:Bind ShowMessageCommand}"
+                        EventArgsConverter="{StaticResource ArgsConverter}"
+                        EventName="RawMessageReceived" />
+                    <!--#else-->
+                    <mct:EventToCommandBehavior
+                        Command="{x:Bind ShowMessageCommand}"
+                        EventArgsConverter="{StaticResource ArgsConverter}"
+                        EventName="RawMessageReceived" />
+                    <!--#endif-->
+                </HybridWebView.Behaviors>
+            </HybridWebView>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
 <!--#else-->
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{Binding Title}"
+    x:DataType="MainViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}">
+    <ContentPage.Resources>
+        <HybridWebViewRawMessageReceivedEventArgsConverter x:Key="ArgsConverter" />
+    </ContentPage.Resources>
+<!--#elif (GlobalNamespace)-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
@@ -284,6 +291,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="{Binding Title}"
     x:DataType="MainViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
     <ContentPage.Resources>
         <HybridWebViewRawMessageReceivedEventArgsConverter x:Key="ArgsConverter" />
@@ -301,90 +309,93 @@
     xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
     Title="{Binding Title}"
     x:DataType="vm:MainViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
     <ContentPage.Resources>
         <c:HybridWebViewRawMessageReceivedEventArgsConverter x:Key="ArgsConverter" />
     </ContentPage.Resources>
 <!--#endif-->
     <ContentPage.Content>
-        <Grid RowDefinitions="*,40">
+        <Grid
+            x:Name="container"
+            Margin="20"
+            ColumnDefinitions="{OnIdiom Default='*,*',
+                                        Phone='*',
+                                        Tablet='*'}"
+            ColumnSpacing="20"
+            RowDefinitions="{OnIdiom Default='*',
+                                        Phone='*,*',
+                                        Tablet='*,*'}">
             <Grid
-                x:Name="container"
-                Margin="20"
-                ColumnDefinitions="{OnIdiom Default='*,*',
-                                            Phone='*',
-                                            Tablet='*'}"
-                ColumnSpacing="20"
-                RowDefinitions="{OnIdiom Default='*',
-                                         Phone='*,*',
-                                         Tablet='*,*'}">
-                <Grid
-                    RowDefinitions="Auto,Auto,Auto,Auto"
-                    RowSpacing="10">
-                    <Label
-                        FontSize="24"
-                        Text=".NET MAUI"
-                        Style="{StaticResource MauiLabel}" />
-                    <HorizontalStackLayout
-                        Grid.Row="1"
-                        VerticalOptions="Center">
-                        <Entry
-                            x:Name="message"
-                            ClearButtonVisibility="WhileEditing"
-                            WidthRequest="225"
-                            MaxLength="50"
-                            Placeholder="Type your message for JS here"
-                            ReturnCommand="{Binding SendMessageCommand}"
-                            Text="{Binding Message}" />
-                        <Button
-                            Command="{Binding SendMessageCommand}"
-                            IsEnabled="{Binding CanSendMessage}"
-                            Text="Send to JS" />
-                    </HorizontalStackLayout>
-                    <Label
-                        Grid.Row="2"
-                        Text="Messages from JS:" />
-                    <Editor
-                        Grid.Row="3"
-                        HorizontalOptions="Fill"
-                        IsReadOnly="True"
-                        MinimumHeightRequest="300"
-                        Text="{Binding Messages}"
-                        VerticalOptions="Fill" />
-                </Grid>
-                <HybridWebView
-                    x:Name="hwv"
-                    Grid.Row="{OnIdiom Default=0,
-                                       Phone=1,
-                                       Tablet=1}"
-                    Grid.Column="{OnIdiom Default=1,
-                                          Phone=0,
-                                          Tablet=0}">
-                    <HybridWebView.Behaviors>
-                        <mct:EventToCommandBehavior
-                            BindingContext="{Binding BindingContext, Source={x:Reference hwv}, x:DataType=HybridWebView}"
-                            Command="{Binding ShowMessageCommand}"
-                            EventArgsConverter="{StaticResource ArgsConverter}"
-                            EventName="RawMessageReceived" />
-                    </HybridWebView.Behaviors>
-                </HybridWebView>
-            </Grid>
-            <Grid
-                Grid.Row="1"
-                BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
-                                                  Light={StaticResource Primary}}">
+                RowDefinitions="Auto,Auto,Auto,Auto"
+                RowSpacing="10">
                 <Label
-                    x:Name="versionLabel"
-                    HorizontalOptions="Center"
-                    TextColor="{StaticResource White}"
-                    VerticalOptions="Center" />
+                    FontSize="24"
+                    Text=".NET MAUI"
+                    Style="{StaticResource MauiLabel}" />
+                <HorizontalStackLayout
+                    Grid.Row="1"
+                    VerticalOptions="Center">
+                    <Entry
+                        x:Name="message"
+                        ClearButtonVisibility="WhileEditing"
+                        WidthRequest="225"
+                        MaxLength="50"
+                        Placeholder="Type your message for JS here"
+                        ReturnCommand="{Binding SendMessageCommand}"
+                        Text="{Binding Message}" />
+                    <Button
+                        Command="{Binding SendMessageCommand}"
+                        IsEnabled="{Binding CanSendMessage}"
+                        Text="Send to JS" />
+                </HorizontalStackLayout>
+                <Label
+                    Grid.Row="2"
+                    Text="Messages from JS:" />
+                <Editor
+                    Grid.Row="3"
+                    HorizontalOptions="Fill"
+                    IsReadOnly="True"
+                    MinimumHeightRequest="300"
+                    Text="{Binding Messages}"
+                    VerticalOptions="Fill" />
             </Grid>
+            <HybridWebView
+                x:Name="hwv"
+                Grid.Row="{OnIdiom Default=0,
+                                    Phone=1,
+                                    Tablet=1}"
+                Grid.Column="{OnIdiom Default=1,
+                                        Phone=0,
+                                        Tablet=0}">
+                <HybridWebView.Behaviors>
+                    <!--#if (GlobalNamespace || ImplicitNamespace)-->
+                    <EventToCommandBehavior
+                        BindingContext="{Binding BindingContext, Source={x:Reference hwv}, x:DataType=HybridWebView}"
+                        Command="{Binding ShowMessageCommand}"
+                        EventArgsConverter="{StaticResource ArgsConverter}"
+                        EventName="RawMessageReceived" />
+                    <!--#else-->
+                    <mct:EventToCommandBehavior
+                        BindingContext="{Binding BindingContext, Source={x:Reference hwv}, x:DataType=HybridWebView}"
+                        Command="{Binding ShowMessageCommand}"
+                        EventArgsConverter="{StaticResource ArgsConverter}"
+                        EventName="RawMessageReceived" />
+                    <!--#endif-->
+                </HybridWebView.Behaviors>
+            </HybridWebView>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
 <!--#endif-->
 <!--#else-->
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="MauiApp._1"
+    ControlTemplate="{StaticResource VersionTemplate}">
+<!--#elif (GlobalNamespace)-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
@@ -392,6 +403,7 @@
     xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="MauiApp._1"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#else-->
 <ContentPage
@@ -402,80 +414,84 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MauiApp._1"
     Title="MauiApp._1"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#endif-->
     <ContentPage.Content>
-        <Grid RowDefinitions="*,40">
+        <Grid
+            x:Name="container"
+            Margin="20"
+            ColumnDefinitions="{OnIdiom Default='*,*',
+                                        Phone='*',
+                                        Tablet='*'}"
+            ColumnSpacing="20"
+            RowDefinitions="{OnIdiom Default='*',
+                                        Phone='*,*',
+                                        Tablet='*,*'}">
             <Grid
-                x:Name="container"
-                Margin="20"
-                ColumnDefinitions="{OnIdiom Default='*,*',
-                                            Phone='*',
-                                            Tablet='*'}"
-                ColumnSpacing="20"
-                RowDefinitions="{OnIdiom Default='*',
-                                         Phone='*,*',
-                                         Tablet='*,*'}">
-                <Grid
-                    RowDefinitions="Auto,Auto,Auto,Auto"
-                    RowSpacing="10">
-                    <Label
-                        FontSize="24"
-                        Text=".NET MAUI"
-                        Style="{StaticResource MauiLabel}" />
-                    <HorizontalStackLayout
-                        Grid.Row="1"
-                        VerticalOptions="Center">
-                        <Entry
-                            x:Name="message"
-                            ClearButtonVisibility="WhileEditing"
-                            WidthRequest="225"
-                            MaxLength="50"
-                            Placeholder="Type your message for JS here"
-                            TextChanged="OnMessageChanged" />
-                        <Button
-                            x:Name="send"
-                            Clicked="OnSendClicked"
-                            IsEnabled="False"
-                            Text="Send to JS" />
-                    </HorizontalStackLayout>
-                    <Label
-                        Grid.Row="2"
-                        Text="Messages from JS:" />
-                    <Editor
-                        x:Name="messages"
-                        Grid.Row="3"
-                        HorizontalOptions="Fill"
-                        IsReadOnly="True"
-                        MinimumHeightRequest="300"
-                        VerticalOptions="Fill" />
-                </Grid>
-                <HybridWebView
-                    x:Name="hwv"
-                    Grid.Row="{OnIdiom Default=0,
-                                       Phone=1,
-                                       Tablet=1}"
-                    Grid.Column="{OnIdiom Default=1,
-                                          Phone=0,
-                                          Tablet=0}"
-                    RawMessageReceived="OnRawMessageReceived" />
-            </Grid>
-            <Grid
-                Grid.Row="1"
-                BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
-                                                  Light={StaticResource Primary}}">
+                RowDefinitions="Auto,Auto,Auto,Auto"
+                RowSpacing="10">
                 <Label
-                    x:Name="versionLabel"
-                    HorizontalOptions="Center"
-                    TextColor="{StaticResource White}"
-                    VerticalOptions="Center" />
+                    FontSize="24"
+                    Text=".NET MAUI"
+                    Style="{StaticResource MauiLabel}" />
+                <HorizontalStackLayout
+                    Grid.Row="1"
+                    VerticalOptions="Center">
+                    <Entry
+                        x:Name="message"
+                        ClearButtonVisibility="WhileEditing"
+                        WidthRequest="225"
+                        MaxLength="50"
+                        Placeholder="Type your message for JS here"
+                        TextChanged="OnMessageChanged" />
+                    <Button
+                        x:Name="send"
+                        Clicked="OnSendClicked"
+                        IsEnabled="False"
+                        Text="Send to JS" />
+                </HorizontalStackLayout>
+                <Label
+                    Grid.Row="2"
+                    Text="Messages from JS:" />
+                <Editor
+                    x:Name="messages"
+                    Grid.Row="3"
+                    HorizontalOptions="Fill"
+                    IsReadOnly="True"
+                    MinimumHeightRequest="300"
+                    VerticalOptions="Fill" />
             </Grid>
+            <HybridWebView
+                x:Name="hwv"
+                Grid.Row="{OnIdiom Default=0,
+                                    Phone=1,
+                                    Tablet=1}"
+                Grid.Column="{OnIdiom Default=1,
+                                        Phone=0,
+                                        Tablet=0}"
+                RawMessageReceived="OnRawMessageReceived" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>
 <!--#endif-->
 <!--#elif (Tabbed)-->
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<TabbedPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:droid="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
+    Title="MauiApp._1"
+    droid:TabbedPage.ToolbarPlacement="Bottom">
+    <NavigationPage Title="Calendar">
+        <x:Arguments>
+            <EventsPage NavigationPage.HasNavigationBar="{OnPlatform Android=False, Default=True}" />
+        </x:Arguments>
+    </NavigationPage>
+    <SearchPage />
+    <SettingsPage />
+</TabbedPage>
+<!--#elif (GlobalNamespace)-->
 <TabbedPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
@@ -519,7 +535,14 @@
 <!--#elif (Hierarchical)-->
 <!--#if (Mvvm)-->
 <!--#if (CompiledBindings)-->
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{x:Bind Title}"
+    x:DataType="MainViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}">
+<!--#elif (GlobalNamespace)-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
@@ -528,6 +551,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="{x:Bind Title}"
     x:DataType="MainViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#else-->
 <ContentPage
@@ -540,35 +564,31 @@
     xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
     Title="{x:Bind Title}"
     x:DataType="vm:MainViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#endif-->
     <ContentPage.Content>
-        <Grid RowDefinitions="*,40">
-            <StackLayout
+        <StackLayout
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Label Text="You don't have anything scheduled today." />
+            <Button
+                Command="{x:Bind AddEventCommand}"
                 HorizontalOptions="Center"
-                VerticalOptions="Center">
-                <Label Text="You don't have anything scheduled today." />
-                <Button
-                    Command="{x:Bind AddEventCommand}"
-                    HorizontalOptions="Center"
-                    Style="{StaticResource PrimaryAction}"
-                    Text="Add Event" />
-            </StackLayout>
-            <Grid
-                Grid.Row="1"
-                BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
-                                                  Light={StaticResource Primary}}">
-                <Label
-                    x:Name="versionLabel"
-                    HorizontalOptions="Center"
-                    TextColor="{StaticResource White}"
-                    VerticalOptions="Center" />
-            </Grid>
-        </Grid>
+                Style="{StaticResource PrimaryAction}"
+                Text="Add Event" />
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
 <!--#else-->
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{Binding Title}"
+    x:DataType="MainViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}">
+<!--#elif (GlobalNamespace)-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
@@ -577,6 +597,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="{Binding Title}"
     x:DataType="MainViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#else-->
 <ContentPage
@@ -589,36 +610,31 @@
     xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
     Title="{Binding Title}"
     x:DataType="vm:MainViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#endif-->
     <ContentPage.Content>
-        <Grid RowDefinitions="*,40">
-            <StackLayout
+        <StackLayout
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Label Text="You don't have anything scheduled today." />
+            <Button
+                Command="{Binding AddEventCommand}"
                 HorizontalOptions="Center"
-                VerticalOptions="Center">
-                <Label Text="You don't have anything scheduled today." />
-                <Button
-                    Command="{Binding AddEventCommand}"
-                    HorizontalOptions="Center"
-                    Style="{StaticResource PrimaryAction}"
-                    Text="Add Event" />
-            </StackLayout>
-            <Grid
-                Grid.Row="1"
-                BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
-                                                  Light={StaticResource Primary}}">
-                <Label
-                    x:Name="versionLabel"
-                    HorizontalOptions="Center"
-                    TextColor="{StaticResource White}"
-                    VerticalOptions="Center" />
-            </Grid>
-        </Grid>
+                Style="{StaticResource PrimaryAction}"
+                Text="Add Event" />
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
 <!--#endif-->
 <!--#else-->
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Calendar"
+    ControlTemplate="{StaticResource VersionTemplate}">
+<!--#elif (GlobalNamespace)-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
@@ -626,6 +642,7 @@
     xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Calendar"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#else-->
 <ContentPage
@@ -636,38 +653,34 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MauiApp._1"
     Title="Calendar"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#endif-->
     <ContentPage.Content>
-        <Grid RowDefinitions="*,40">
-            <StackLayout
-                HorizontalOptions="Center"
-                VerticalOptions="Center">
-                <Label Text="You don't have anything scheduled today." />
-                <Button
-                    Style="{StaticResource PrimaryAction}"
-                    Text="Add Event"
-                    Clicked="OnAddEvent"
-                    HorizontalOptions="Center" />
-            </StackLayout>
-            <Grid
-                Grid.Row="1"
-                BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
-                                                  Light={StaticResource Primary}}">
-                <Label
-                    x:Name="versionLabel"
-                    HorizontalOptions="Center"
-                    TextColor="{StaticResource White}"
-                    VerticalOptions="Center" />
-            </Grid>
-        </Grid>
+        <StackLayout
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Label Text="You don't have anything scheduled today." />
+            <Button
+                Style="{StaticResource PrimaryAction}"
+                Text="Add Event"
+                Clicked="OnAddEvent"
+                HorizontalOptions="Center" />
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
 <!--#endif-->
 <!--#else-->
 <!--#if (Mvvm)-->
 <!--#if (CompiledBindings)-->
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{x:Bind Title}"
+    x:DataType="MainViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}">
+<!--#elif (GlobalNamespace)-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
@@ -676,6 +689,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="{x:Bind Title}"
     x:DataType="MainViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#else-->
 <ContentPage
@@ -688,10 +702,18 @@
     xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
     Title="{x:Bind Title}"
     x:DataType="vm:MainViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#endif-->
 <!--#else-->
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{Binding Title}"
+    x:DataType="MainViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}">
+<!--#elif (GlobalNamespace)-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
@@ -700,6 +722,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="{Binding Title}"
     x:DataType="MainViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#else-->
 <ContentPage
@@ -712,11 +735,18 @@
     xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
     Title="{Binding Title}"
     x:DataType="vm:MainViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#endif-->
 <!--#endif-->
 <!--#else-->
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.MainPage"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="MauiApp._1"
+    ControlTemplate="{StaticResource VersionTemplate}">
+<!--#elif (GlobalNamespace)-->
 <ContentPage
     x:Class="MauiApp._1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
@@ -724,6 +754,7 @@
     xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="MauiApp._1"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#else-->
 <ContentPage
@@ -734,101 +765,88 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MauiApp._1"
     Title="MauiApp._1"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#endif-->
 <!--#endif-->
     <ContentPage.Content>
         <ScrollView>
-            <Grid RowDefinitions="*,40">
-                <StackLayout
-                    Padding="20"
-                    Spacing="25">
+            <StackLayout
+                Padding="20"
+                Spacing="25">
 
-                    <Label
-                        FontSize="32"
-                        HorizontalOptions="Center"
-                        SemanticProperties.HeadingLevel="Level1"
-                        Style="{StaticResource MauiLabel}"
-                        Text="Hello, World!" />
+                <Label
+                    FontSize="32"
+                    HorizontalOptions="Center"
+                    SemanticProperties.HeadingLevel="Level1"
+                    Style="{StaticResource MauiLabel}"
+                    Text="Hello, World!" />
 
-                    <Label
-                        FontSize="18"
-                        HorizontalOptions="Center"
-                        SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                        SemanticProperties.HeadingLevel="Level1"
-                        Style="{StaticResource MauiLabel}"
-                        Text="Welcome to .NET Multi-platform App UI" />
+                <Label
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                    SemanticProperties.HeadingLevel="Level1"
+                    Style="{StaticResource MauiLabel}"
+                    Text="Welcome to .NET Multi-platform App UI" />
 
 <!--#if (Mvvm)-->
 <!--#if (CompiledBindings)-->
-                    <Label
-                        FontAttributes="Bold"
-                        FontSize="18"
-                        HorizontalOptions="Center"
-                        Style="{StaticResource MauiLabel}"
-                        Text="{x:Bind CountText}" />
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource MauiLabel}"
+                    Text="{x:Bind CountText}" />
 
-                    <Button
-                        Command="{x:Bind IncrementCommand}"
-                        HorizontalOptions="Center"
-                        SemanticProperties.Hint="Counts the number of times you click"
-                        Style="{StaticResource PrimaryAction}"
-                        Text="Click me" />
+                <Button
+                    Command="{x:Bind IncrementCommand}"
+                    HorizontalOptions="Center"
+                    SemanticProperties.Hint="Counts the number of times you click"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Click me" />
 
 <!--#else-->
-                    <Label
-                        FontAttributes="Bold"
-                        FontSize="18"
-                        HorizontalOptions="Center"
-                        Style="{StaticResource MauiLabel}"
-                        Text="{Binding CountText}" />
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource MauiLabel}"
+                    Text="{Binding CountText}" />
 
-                    <Button
-                        Command="{Binding IncrementCommand}"
-                        HorizontalOptions="Center"
-                        SemanticProperties.Hint="Counts the number of times you click"
-                        Style="{StaticResource PrimaryAction}"
-                        Text="Click me" />
+                <Button
+                    Command="{Binding IncrementCommand}"
+                    HorizontalOptions="Center"
+                    SemanticProperties.Hint="Counts the number of times you click"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Click me" />
 
 <!--#endif-->
 <!--#else-->
-                    <Label
-                        x:Name="counterLabel"
-                        FontAttributes="Bold"
-                        FontSize="18"
-                        HorizontalOptions="Center"
-                        Style="{StaticResource MauiLabel}"
-                        Text="Current count: 0" />
+                <Label
+                    x:Name="counterLabel"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource MauiLabel}"
+                    Text="Current count: 0" />
 
-                    <Button
-                        Clicked="OnCounterClicked"
-                        HorizontalOptions="Center"
-                        SemanticProperties.Hint="Counts the number of times you click"
-                        Style="{StaticResource PrimaryAction}"
-                        Text="Click me" />
+                <Button
+                    Clicked="OnCounterClicked"
+                    HorizontalOptions="Center"
+                    SemanticProperties.Hint="Counts the number of times you click"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Click me" />
 
 <!--#endif-->
-                    <Image
-                        HeightRequest="310"
-                        HorizontalOptions="Center"
-                        SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                        Source="dotnet_bot.png"
-                        WidthRequest="250" />
+                <Image
+                    HeightRequest="310"
+                    HorizontalOptions="Center"
+                    SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                    Source="dotnet_bot.png"
+                    WidthRequest="250" />
 
-                </StackLayout>
-                <Grid
-                    Grid.Row="1"
-                    BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
-                                                      Light={StaticResource Primary}}">
-
-                    <Label
-                        x:Name="versionLabel"
-                        HorizontalOptions="Center"
-                        TextColor="{StaticResource White}"
-                        VerticalOptions="Center" />
-
-                </Grid>
-            </Grid>
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

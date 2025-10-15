@@ -9,6 +9,7 @@ namespace MauiApp._1
         protected AppColors()
         {
             Add("Primary", Color.FromArgb("#512BD4"));
+            Add("OnPrimary", Colors.White);
             Add("Secondary", Color.FromArgb("#DFD8F7"));
             Add("Tertiary", Color.FromArgb("#2B0B98"));
             Add("White", Colors.White);

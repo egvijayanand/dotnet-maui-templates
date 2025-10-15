@@ -4,11 +4,11 @@
     public partial class MainViewModel(IDialogService dialogService, INavigationService navigationService)
         : BaseViewModel(dialogService, navigationService)
 #elif (Hybrid)
-    public partial class MainViewModel() : BaseViewModel("Home")
+    public partial class MainViewModel() : BaseViewModel("MauiApp._1")
 #elif (JSHybridNet9)
-    public partial class MainViewModel(IDispatcher dispatcher) : BaseViewModel("Home")
+    public partial class MainViewModel(IDispatcher dispatcher) : BaseViewModel("MauiApp._1")
 #else
-    public partial class MainViewModel(ISemanticScreenReader screenReader) : BaseViewModel("Home")
+    public partial class MainViewModel(ISemanticScreenReader screenReader) : BaseViewModel("MauiApp._1")
 #endif
     {
 #if Hybrid
@@ -44,7 +44,7 @@
         private void ShowMessage(string message)
             => dispatcher.Dispatch(() => Messages += message + Environment.NewLine);
 #else
-        private int _count = 0;
+        private int _count;
 
         [ObservableProperty]
 #if Net10OrLater

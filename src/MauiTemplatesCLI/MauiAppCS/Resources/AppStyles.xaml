@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <?xaml-comp compile="true" ?>
+<!--#if (ImplicitNamespace)-->
+<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+<!--#elif (GlobalNamespace)-->
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+<!--#else-->
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -7,6 +17,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MauiApp._1"
     mc:Ignorable="d">
+<!--#endif-->
         <!-- Additional Styles -->
         <!--#if (!(Plain || Hybrid))-->
         <Thickness x:Key="ApplePadding">30,60,30,30</Thickness>
@@ -15,17 +26,20 @@
 
         <x:Double x:Key="ItemSpacing">10</x:Double>
 
-        <Style ApplyToDerivedTypes="True" TargetType="StackBase">
+        <Style ApplyToDerivedTypes="True"
+            TargetType="StackBase">
             <Setter Property="Spacing"
                     Value="{StaticResource ItemSpacing}" />
         </Style>
 
-        <Style x:Key="MauiLabel" TargetType="Label">
+        <Style x:Key="MauiLabel"
+            TargetType="Label">
             <Setter Property="TextColor"
                     Value="{AppThemeBinding Dark={StaticResource White}, Light={StaticResource Primary}}" />
         </Style>
 
-        <Style x:Key="Action" TargetType="Button">
+        <Style x:Key="Action"
+            TargetType="Button">
             <Setter Property="BackgroundColor"
                     Value="{AppThemeBinding Dark={StaticResource BackgroundDark}, Light={StaticResource BackgroundLight}}" />
             <Setter Property="TextColor"

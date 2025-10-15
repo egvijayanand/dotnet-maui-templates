@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<ContentView 
+    x:Class="MauiApp._1.Controls.DateTimePicker"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+<!--#elif (GlobalNamespace)-->
 <ContentView 
     x:Class="MauiApp._1.Controls.DateTimePicker"
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"

@@ -34,7 +34,21 @@ namespace MauiApp._1
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
+#if (Plain || Tabbed || Hybrid || JSHybrid || Markup)
+            builder.UseMauiApp<App, MainWindow, MainPage>()
+#elif Hierarchical
+#if Mvvm
+            builder.UseMauiApp<App, MainWindow, Page>(sp => new NavigationPage(sp.GetRequiredService<MainPage>()) { Title = "MauiApp._1" })
+#else
+            builder.UseMauiApp<App, MainWindow, Page>(_ => new NavigationPage(new MainPage()) { Title = "MauiApp._1" })
+#endif
+#elif Shell
+            builder.UseMauiApp<App, MainWindow, AppShell>()
+#elif Razor
+            builder.UseMauiApp<App, Window>()
+#else
             builder.UseMauiApp<App>()
+#endif
 #if (Net8 && Reactor)
 //-:cnd:noEmit
 #if DEBUG
@@ -86,13 +100,13 @@ namespace MauiApp._1
 #if (Mvvm && !(Razor || Mvu))
 #if Hybrid
             builder.Services.AddSingleton<MainViewModel>();
-            builder.Services.AddSingleton<MainPage>();
+            //builder.Services.AddSingleton<MainPage>();
 
 #elif JSHybridNet9
             builder.Services.AddSingleton(DeviceDisplay.Current);
             builder.Services.AddSingleton(DeviceInfo.Current);
             builder.Services.AddSingleton<MainViewModel>();
-            builder.Services.AddSingleton<MainPage>();
+            //builder.Services.AddSingleton<MainPage>();
 
 #elif (Hierarchical || Tabbed || Shell)
             builder.Services.AddSingleton<IDialogService, DialogService>();
@@ -128,7 +142,7 @@ namespace MauiApp._1
 #else
             builder.Services.AddSingleton(SemanticScreenReader.Default);
             builder.Services.AddSingleton<MainViewModel>();
-            builder.Services.AddSingleton<MainPage>();
+            //builder.Services.AddSingleton<MainPage>();
 
 #endif
 #endif

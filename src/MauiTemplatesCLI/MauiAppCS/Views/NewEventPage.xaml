@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--#if (Mvvm)-->
 <!--#if (CompiledBindings)-->
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.NewEventPage"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    Padding="{OnPlatform iOS={StaticResource ApplePadding},
+                         Default={StaticResource DefaultPadding}}"
+    Shell.PresentationMode="ModalAnimated"
+    Title="{x:Bind Title}"
+    x:DataType="NewEventViewModel">
+<!--#elif (GlobalNamespace)-->
 <ContentPage
     x:Class="MauiApp._1.Views.NewEventPage"
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
@@ -43,7 +53,7 @@
                 Text="{x:Bind Event.Location}"
                 Placeholder="Location"
                 MaxLength="100" />
-<!--#if (Net10OrLater)-->
+<!--#if (GlobalNamespace || ImplicitNamespace)-->
             <DateTimePicker
                 Title="Start:"
                 Date="{x:Bind Event.StartsAt.Date}"
@@ -85,7 +95,17 @@
     </ContentPage.Content>
 </ContentPage>
 <!--#else-->
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.NewEventPage"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    Padding="{OnPlatform iOS={StaticResource ApplePadding},
+                         Default={StaticResource DefaultPadding}}"
+    Shell.PresentationMode="ModalAnimated"
+    Title="{Binding Title}"
+    x:DataType="NewEventViewModel">
+<!--#elif (GlobalNamespace)-->
 <ContentPage
     x:Class="MauiApp._1.Views.NewEventPage"
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
@@ -127,7 +147,7 @@
                 Text="{Binding Event.Location}"
                 Placeholder="Location"
                 MaxLength="100" />
-<!--#if (Net10OrLater)-->
+<!--#if (GlobalNamespace || ImplicitNamespace)-->
             <DateTimePicker
                 Title="Start:"
                 Date="{Binding Event.StartsAt.Date}"
@@ -170,7 +190,16 @@
 </ContentPage>
 <!--#endif-->
 <!--#else-->
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.NewEventPage"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    Padding="{OnPlatform iOS={StaticResource ApplePadding},
+                         Default={StaticResource DefaultPadding}}"
+    Shell.PresentationMode="ModalAnimated"
+    Title="New Event">
+<!--#elif (GlobalNamespace)-->
 <ContentPage
     x:Class="MauiApp._1.Views.NewEventPage"
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
@@ -209,7 +238,7 @@
                 Text=""
                 Placeholder="Location"
                 MaxLength="100" />
-<!--#if (Net10OrLater)-->
+<!--#if (GlobalNamespace || ImplicitNamespace)-->
             <DateTimePicker
                 x:Name="start"
                 MinimumDate="{x:Static sys:DateTime.Now}"

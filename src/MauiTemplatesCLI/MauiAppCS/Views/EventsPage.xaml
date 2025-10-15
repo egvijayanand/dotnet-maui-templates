@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--#if (Mvvm)-->
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.EventsPage"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:DataType="EventsViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}">
+<!--#elif (GlobalNamespace)-->
 <ContentPage
     x:Class="MauiApp._1.Views.EventsPage"
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
@@ -8,6 +14,7 @@
     xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:DataType="EventsViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#else-->
 <ContentPage
@@ -19,51 +26,44 @@
     xmlns:local="clr-namespace:MauiApp._1"
     xmlns:vm="clr-namespace:MauiApp._1.ViewModels"
     x:DataType="vm:EventsViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#endif-->
     <ContentPage.Content>
-        <Grid RowDefinitions="*,40">
-            <StackLayout
-                HorizontalOptions="Center"
-                VerticalOptions="Center">
-                <Label Text="You don't have anything scheduled today." />
+        <StackLayout
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Label Text="You don't have anything scheduled today." />
 <!--#if (CompiledBindings)-->
-                <Button
-                    Command="{x:Bind AddEventCommand}"
-                    HorizontalOptions="Center"
-                    Style="{StaticResource PrimaryAction}"
-                    Text="Add Event" />
+            <Button
+                Command="{x:Bind AddEventCommand}"
+                HorizontalOptions="Center"
+                Style="{StaticResource PrimaryAction}"
+                Text="Add Event" />
 <!--#else-->
-                <Button
-                    Command="{Binding AddEventCommand}"
-                    HorizontalOptions="Center"
-                    Style="{StaticResource PrimaryAction}"
-                    Text="Add Event" />
+            <Button
+                Command="{Binding AddEventCommand}"
+                HorizontalOptions="Center"
+                Style="{StaticResource PrimaryAction}"
+                Text="Add Event" />
 <!--#endif-->
-            </StackLayout>
-            <Grid
-                Grid.Row="1"
-                BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
-                                                  Light={StaticResource Primary}}">
-
-                <Label
-                    x:Name="VersionLabel"
-                    HorizontalOptions="Center"
-                    TextColor="{StaticResource White}"
-                    VerticalOptions="Center" />
-
-            </Grid>
-        </Grid>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
 <!--#else-->
-<!--#if (Net10OrLater)-->
+<!--#if (ImplicitNamespace)-->
+<ContentPage
+    x:Class="MauiApp._1.Views.EventsPage"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    ControlTemplate="{StaticResource VersionTemplate}">
+<!--#elif (GlobalNamespace)-->
 <ContentPage
     x:Class="MauiApp._1.Views.EventsPage"
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#else-->
 <ContentPage
@@ -73,33 +73,20 @@
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MauiApp._1"
+    ControlTemplate="{StaticResource VersionTemplate}"
     mc:Ignorable="d">
 <!--#endif-->
     <ContentPage.Content>
-        <Grid RowDefinitions="*,40">
-            <StackLayout
+        <StackLayout
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Label Text="You don't have anything scheduled today." />
+            <Button
+                Clicked="OnAddEvent"
                 HorizontalOptions="Center"
-                VerticalOptions="Center">
-                <Label Text="You don't have anything scheduled today." />
-                <Button
-                    Clicked="OnAddEvent"
-                    HorizontalOptions="Center"
-                    Style="{StaticResource PrimaryAction}"
-                    Text="Add Event" />
-            </StackLayout>
-            <Grid
-                Grid.Row="1"
-                BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
-                                                  Light={StaticResource Primary}}">
-
-                <Label
-                    x:Name="VersionLabel"
-                    HorizontalOptions="Center"
-                    TextColor="{StaticResource White}"
-                    VerticalOptions="Center" />
-
-            </Grid>
-        </Grid>
+                Style="{StaticResource PrimaryAction}"
+                Text="Add Event" />
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
 <!--#endif-->

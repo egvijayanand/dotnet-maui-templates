@@ -35,6 +35,22 @@
             "defaultValue": "false"
         },
         {
+            "id": "global-namespace",
+            "name": {
+                "text": "Use .NET MAUI 10 Global Namespace feature."
+            },
+            "isVisible": true,
+            "defaultValue": "true"
+        },
+        {
+            "id": "implicit-namespace",
+            "name": {
+                "text": "Use .NET MAUI 10 Implicit Namespace feature."
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
             "id": "use-mvvm",
             "name": {
                 "text": "Configu_re MVVM."

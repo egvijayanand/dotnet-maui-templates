@@ -2,8 +2,34 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This template package does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 7.9.1:
--------------------------
+What's new in ver. 7.10.0:
+--------------------------
+Templates updated to support .NET MAUI 10 RC2 and .NET MAUI 9 SR11.1.
+
+Support for implicit namespace option in project templates when targeting .NET MAUI 10.
+
+dotnet new mauiapp -o MyApp -in -f net10.0
+
+Global namespace is the default option for .NET MAUI 10, but for smooth migration and to test backward compatibility, it can be opted out.
+
+dotnet new mauiapp -o MyApp -gn:false -f net10.0
+
+The MauiVersion can now be shown on any page, thanks to its refactoring into a control template.
+
+App project template revised to utilize the integrated app hosting builder method for startup.
+
+For more details, consult this article.
+
+https://egvijayanand.in/2025/09/29/integrated-app-hosting-builder-method-for-dotnet-maui-explained/
+
+For app projects targeting .NET MAUI 9 and above, the Tall TitleBar is configured.
+
+To disable it, comment out or remove the TitleBar section in the MainWindow definition.
+
+Alternatively, update the MainWindow type to a prebuilt Window type in the unified App startup within MauiProgram.cs.
+
+v7.9.1:
+
 Fix release.
 
 v7.9.0:
