@@ -12,7 +12,7 @@
         <!--#if (Nightly)-->
         <MauiVersion>9.0.120-ci.main.25514.9</MauiVersion>
         <!--#else-->
-        <MauiVersion>9.0.111</MauiVersion>
+        <MauiVersion>9.0.120</MauiVersion>
         <!--#endif-->
         <!--#elif (Net8)-->
         <!--#if (Nightly)-->
