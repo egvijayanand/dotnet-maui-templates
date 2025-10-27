@@ -385,8 +385,6 @@
                         "Imports.cs": "MauiApp.1.MauiLib/Imports.cs",
                         "MauiApp.1.csproj": "MauiApp.1/MauiApp.1.csproj",
                         "MauiProgram.cs": "MauiApp.1.MauiLib/MauiProgram.cs",
-                        "MainWindow.xaml": "MauiApp.1/MainWindow.xaml",
-                        "MainWindow.xaml.cs": "MauiApp.1/MainWindow.xaml.cs",
                         "Platforms/Android/Resources/values/colors.xml": "MauiApp.1/Platforms/Android/Resources/values/colors.xml",
                         "Platforms/Android/AndroidManifest.xml": "MauiApp.1/Platforms/Android/AndroidManifest.xml",
                         "Platforms/Android/MainActivity.cs": "MauiApp.1/Platforms/Android/MainActivity.cs",
@@ -417,12 +415,14 @@
                 {
                     "condition": "((Xaml || Hybrid || JSHybrid) && MauiLib)",
                     "rename": {
+                        "MainWindow.xaml": "MauiApp.1.MauiLib/MainWindow.xaml",
+                        "MainWindow.xaml.cs": "MauiApp.1.MauiLib/MainWindow.xaml.cs",
                         "Resources/Colors.xaml": "MauiApp.1.MauiLib/Resources/Colors.xaml",
                         "Resources/Styles.xaml": "MauiApp.1.MauiLib/Resources/Styles.xaml",
                         "Views/MainPage.xaml": "MauiApp.1.MauiLib/Views/MainPage.xaml",
                         "Views/MainPage.xaml.cs": "MauiApp.1.MauiLib/Views/MainPage.xaml.cs",
-                        "Views/VersionTemplate.xaml": "MauiApp.1/Views/VersionTemplate.xaml",
-                        "Views/VersionTemplate.xaml.cs": "MauiApp.1/Views/VersionTemplate.xaml.cs"
+                        "Views/VersionTemplate.xaml": "MauiApp.1.MauiLib/Views/VersionTemplate.xaml",
+                        "Views/VersionTemplate.xaml.cs": "MauiApp.1.MauiLib/Views/VersionTemplate.xaml.cs"
                     }
                 },
                 {

@@ -12,7 +12,7 @@
         <!--#if (Nightly)-->
         <MauiVersion>9.0.120-ci.main.25514.9</MauiVersion>
         <!--#else-->
-        <MauiVersion>9.0.111</MauiVersion>
+        <MauiVersion>9.0.120</MauiVersion>
         <!--#endif-->
         <!--#elif (Net8)-->
         <!--#if (Nightly)-->
@@ -150,10 +150,10 @@
         <!--#endif-->
         <!--#if (Reactor)-->
         <!--#if (Net9OrLater)-->
-        <PackageVersion Include="Reactor.Maui" Version="3.0.36" />
-        <PackageVersion Include="Reactor.Maui.Canvas" Version="3.0.36" />
+        <PackageVersion Include="Reactor.Maui" Version="3.0.37" />
+        <PackageVersion Include="Reactor.Maui.Canvas" Version="3.0.37" />
         <!--#if (AddMaps)-->
-        <PackageVersion Include="Reactor.Maui.Maps" Version="3.0.36" />
+        <PackageVersion Include="Reactor.Maui.Maps" Version="3.0.37" />
         <!--#endif-->
         <!--#else-->
         <PackageVersion Include="Reactor.Maui" Version="2.0.59" />
