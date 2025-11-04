@@ -68,7 +68,7 @@
         <!--#endif-->
         <!--#if (AddMauiToolkit)-->
         <!--#if (Net9OrLater)-->
-        <PackageVersion Include="CommunityToolkit.Maui" Version="12.2.0" />
+        <PackageVersion Include="CommunityToolkit.Maui" Version="12.3.0" />
         <!--#else-->
         <PackageVersion Include="CommunityToolkit.Maui" Version="9.1.1" />
         <!--#endif-->
