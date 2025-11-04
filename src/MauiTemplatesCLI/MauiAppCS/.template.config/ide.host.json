@@ -35,6 +35,14 @@
             "defaultValue": "false"
         },
         {
+            "id": "aspire",
+            "name": {
+                "text": "Integrate .NET MAUI 10 with Aspire."
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
             "id": "global-namespace",
             "name": {
                 "text": "Use .NET MAUI 10 Global Namespace feature."

@@ -7,6 +7,9 @@
         "application-id": {
             "shortName": "ap"
         },
+        "aspire": {
+            "shortName": ""
+        },
         "use-mvvm": {
             "shortName": "mvvm"
         },

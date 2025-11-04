@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Sdk Name="Aspire.AppHost.Sdk" Version="9.5.2" />
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <OutputType>Exe</OutputType>
+        <!-- Until .NET MAUI is officially supported. -->
+        <NoWarn>$(NoWarn);ASPIRE004</NoWarn>
+
+        <!-- Project Options -->
+        <Nullable>enable</Nullable>
+        <!--#if (Net10OrLater)-->
+        <LangVersion>preview</LangVersion>
+        <!--#else-->
+        <LangVersion>latest</LangVersion>
+        <!--#endif-->
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>MauiApp._1</RootNamespace>
+    </PropertyGroup>
+  
+    <ItemGroup>
+        <!--#if (CentralPkgMgmt)-->
+        <PackageReference Include="Aspire.Hosting.AppHost" />
+        <!--#else-->
+        <PackageReference Include="Aspire.Hosting.AppHost" Version="9.5.2" />
+        <!--#endif-->
+    </ItemGroup>
+  
+    <ItemGroup>
+        <ProjectReference Include="..\SAFE-NAME\SAFE-NAME.csproj" />
+    </ItemGroup>
+
+</Project>

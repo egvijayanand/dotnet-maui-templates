@@ -3,11 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
-#if ((!Auxiliary && MauiLib) || (Hybrid && RazorLib))
+#if (AddAspire || (!Auxiliary && MauiLib) || (Hybrid && RazorLib))
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiApp.1", "MauiApp.1\MauiApp.1.csproj", "{E3234856-C63F-46B8-A907-866DE058A7C1}"
 EndProject
 #else
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiApp.1", "MauiApp.1.csproj", "{E3234856-C63F-46B8-A907-866DE058A7C1}"
+EndProject
+#endif
+#if (AddAspire)
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiApp.1.Aspire", "MauiApp.1.Aspire\MauiApp.1.Aspire.csproj", "{DBA5FAF3-33E8-4DE5-B829-7B1968E8A937}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiApp.1.Shared", "MauiApp.1.Shared\MauiApp.1.Shared.csproj", "{9D4E9AD4-B425-4DF8-9635-DC1FD7F0A6DB}"
 EndProject
 #endif
 #if (!Auxiliary && MauiLib)
@@ -37,6 +43,16 @@ Global
 		{E3234856-C63F-46B8-A907-866DE058A7C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3234856-C63F-46B8-A907-866DE058A7C1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E3234856-C63F-46B8-A907-866DE058A7C1}.Release|Any CPU.Deploy.0 = Release|Any CPU
+#if (AddAspire)
+		{DBA5FAF3-33E8-4DE5-B829-7B1968E8A937}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBA5FAF3-33E8-4DE5-B829-7B1968E8A937}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBA5FAF3-33E8-4DE5-B829-7B1968E8A937}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBA5FAF3-33E8-4DE5-B829-7B1968E8A937}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D4E9AD4-B425-4DF8-9635-DC1FD7F0A6DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D4E9AD4-B425-4DF8-9635-DC1FD7F0A6DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D4E9AD4-B425-4DF8-9635-DC1FD7F0A6DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D4E9AD4-B425-4DF8-9635-DC1FD7F0A6DB}.Release|Any CPU.Build.0 = Release|Any CPU
+#endif
 #if (!Auxiliary && MauiLib)
 		{D3FA2E60-93D4-43A3-9CA7-A532BA109327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D3FA2E60-93D4-43A3-9CA7-A532BA109327}.Debug|Any CPU.Build.0 = Debug|Any CPU
