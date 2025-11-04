@@ -2,8 +2,22 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This VS extension does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 7.10.1.0:
+What's new in ver. 7.11.0.0:
 ----------------------------
+Introduced an option to integrate .NET MAUI 10 with Aspire.
+
+This will generate two more projects: one for Aspire AppHost and another for Service Defaults.
+
+The Aspire AppHost project will reference the .NET MAUI project, while the .NET MAUI project will reference the Service Defaults project.
+
+Note: This feature is exclusive to .NET MAUI 10 and does not apply to other versions.
+
+For more details, consult this article.
+
+https://egvijayanand.in/2025/10/29/integrating-dotnet-maui-with-aspire-a-comprehensive-guide/
+
+v7.10.1.0:
+
 Fix release.
 
 v7.10.0.0:

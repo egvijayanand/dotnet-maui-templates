@@ -4,7 +4,7 @@
                  xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
         <Identity Id="MauiTemplates.20dca96a-7311-401f-84ed-980478fb319b"
-                  Version="7.10.1.0"
+                  Version="7.11.0.0"
                   Language="en-US"
                   Publisher="Vijay Anand E G"/>
         <DisplayName>.NET MAUI Project and Item Templates</DisplayName>
@@ -15,7 +15,7 @@
         <ReleaseNotes>release-notes.txt</ReleaseNotes>
         <Icon>Resources\Icon.png</Icon>
         <PreviewImage>Resources\Icon.png</PreviewImage>
-        <Tags>MAUI, iOS, Android, macOS, WinUI, Windows, Desktop, Mobile, Blazor, .NET MAUI, Mac Catalyst, Templates, VS2022, Visual Studio, WinUI3, GA, Code Snippets, Unified, All-in-One, Hybrid, Tizen, Stable, Blazor Hybrid, BlazorWebView, C#, Handlers, Maps, MAUI Maps, MVVM, XAML, SR, WinUI, Service Release, Dual Screen, Foldable, Surface Duo, General Availability, Markup, Fluent, C# Markup, Media, Audio, Video, Playback, Streaming, AV, Class, .NET 8, Razor, Reactor, Compiled, Bindings, MVU, F#, Fabulous, Generic, .NET 9, CPM, NuGet, Camera, ARM64, JavaScript, JS, HybridWebView, .NET 10, Preview, VS2026, Insiders</Tags>
+        <Tags>MAUI, iOS, Android, macOS, WinUI, Windows, Desktop, Mobile, Blazor, .NET MAUI, Mac Catalyst, Templates, VS2022, Visual Studio, WinUI3, GA, Code Snippets, Unified, All-in-One, Hybrid, Tizen, Stable, Blazor Hybrid, BlazorWebView, C#, Handlers, Maps, MAUI Maps, MVVM, XAML, SR, WinUI, Service Release, Dual Screen, Foldable, Surface Duo, General Availability, Markup, Fluent, C# Markup, Media, Audio, Video, Playback, Streaming, AV, Class, .NET 8, Razor, Reactor, Compiled, Bindings, MVU, F#, Fabulous, Generic, .NET 9, CPM, NuGet, Camera, ARM64, JavaScript, JS, HybridWebView, .NET 10, Preview, VS2026, Insiders, Aspire</Tags>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community"
