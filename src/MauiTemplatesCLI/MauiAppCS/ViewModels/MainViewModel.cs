@@ -24,7 +24,11 @@
 #elif JSHybridNet9
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(CanSendMessage))]
+#if Net10OrLater
         public partial string Message { get; set; } = string.Empty;
+#else
+        private string _message = string.Empty;
+#endif
     
         [ObservableProperty]    
 #if Net10OrLater

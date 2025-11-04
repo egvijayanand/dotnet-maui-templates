@@ -1,4 +1,7 @@
-﻿#if Razor
+#if AddAspire
+using Microsoft.Extensions.Hosting;
+#endif
+#if Razor
 using BlazorBindings.Maui;
 #endif
 #if Hybrid
@@ -86,6 +89,9 @@ namespace MauiApp._1
 #endif
 #if AddMedia
                    .UseMauiCommunityToolkitMediaElement()
+#endif
+#if AddAspire
+                   .AddServiceDefaults() // Aspire service defaults
 #endif
                    .ConfigureFonts(fonts =>
                    {

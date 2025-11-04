@@ -190,7 +190,15 @@
     <!--#if (Hybrid && RazorLib)-->
 
     <ItemGroup>
+        <!--#if (AddAspire)-->
+        <ProjectReference Include="..\SAFE-NAME.Shared\SAFE-NAME.Shared.csproj" />
+        <!--#endif-->
         <ProjectReference Include="..\SAFE-NAME.RazorLib\SAFE-NAME.RazorLib.csproj" />
+    </ItemGroup>
+    <!--#elif (AddAspire)-->
+
+    <ItemGroup>
+        <ProjectReference Include="..\SAFE-NAME.Shared\SAFE-NAME.Shared.csproj" />
     </ItemGroup>
     <!--#endif-->
 </Project>

@@ -187,7 +187,7 @@
         <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
         <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
     </ItemGroup>
-    <!--#if (Auxiliary || !(MauiLib || RazorLib))-->
+    <!--#if (Auxiliary || !(AddAspire || MauiLib || RazorLib))-->
 
     <ItemGroup>
         <None Remove="SAFE-NAME.code-workspace" />
@@ -401,6 +401,11 @@
 
     <ItemGroup>
         <ProjectReference Include="..\SAFE-NAME.MauiLib\SAFE-NAME.MauiLib.csproj" />
+    </ItemGroup>
+    <!--#elif (AddAspire)-->
+    
+    <ItemGroup>
+        <ProjectReference Include="..\SAFE-NAME.Shared\SAFE-NAME.Shared.csproj" />
     </ItemGroup>
     <!--#endif-->
     <!--#if (ConditionalCompilation)-->

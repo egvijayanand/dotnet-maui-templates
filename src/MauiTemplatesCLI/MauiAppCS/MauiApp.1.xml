@@ -1,10 +1,10 @@
-﻿<Solution>
+<Solution>
 <!--#if (Net8OrLater || CentralPkgMgmt)-->
     <Folder Name="/Solution Items/">
         <File Path="Directory.Packages.props" />
     </Folder>
 <!--#endif-->
-<!--#if ((!Auxiliary && MauiLib) || (Hybrid && RazorLib))-->
+<!--#if (AddAspire || (!Auxiliary && MauiLib) || (Hybrid && RazorLib))-->
     <Project Path="SAFE-NAME\SAFE-NAME.csproj">
         <Deploy />
     </Project>
@@ -12,6 +12,10 @@
     <Project Path="SAFE-NAME.csproj">
         <Deploy />
     </Project>
+<!--#endif-->
+<!--#if (AddAspire)-->
+    <Project Path="SAFE-NAME.Aspire\SAFE-NAME.Aspire.csproj" />
+    <Project Path="SAFE-NAME.Shared\SAFE-NAME.Shared.csproj" />
 <!--#endif-->
 <!--#if (!Auxiliary && MauiLib)-->
     <Project Path="SAFE-NAME.MauiLib\SAFE-NAME.MauiLib.csproj" />
