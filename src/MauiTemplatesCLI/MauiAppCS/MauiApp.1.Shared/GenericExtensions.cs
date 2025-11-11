@@ -12,7 +12,7 @@ namespace Microsoft.Extensions.Hosting
     // Adds common .NET Aspire services: service discovery, resilience, health checks, and OpenTelemetry.
     // This project should be referenced by each service project in your solution.
     // To learn more about using this project, see https://aka.ms/dotnet/aspire/service-defaults
-    public static class AspireExtensions
+    public static class GenericExtensions
     {
         public static TBuilder AddServiceDefaults<TBuilder>(this TBuilder builder)
             where TBuilder : IHostApplicationBuilder
@@ -109,7 +109,8 @@ namespace Microsoft.Extensions.Hosting
 
             if (useOtlpExporter)
             {
-                builder.Services.AddOpenTelemetry().UseOtlpExporter();
+                builder.Services.AddOpenTelemetry()
+                    .UseOtlpExporter();
             }
 
             // TODO MAUI: this code comes from the Aspire service defaults, we will want to check if this works for us and if yes

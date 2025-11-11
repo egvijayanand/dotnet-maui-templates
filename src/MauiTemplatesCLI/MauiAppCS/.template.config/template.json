@@ -72,8 +72,22 @@
                     }
                 },
                 {
+                    "condition": "(Net10OrLater && AddAspire)",
+                    "exclude": [
+                        "MauiApp.1/Extensions/AppBuilderExtensions.cs",
+                        "MauiApp.1.Shared/MauiExtensions.cs"
+                    ]
+                },
+                {
+                    "condition": "((Net8 || Net9) && AddAspire && MauiLib)",
+                    "rename": {
+                        "MauiApp.1/Extensions/AppBuilderExtensions.cs": "MauiApp.1.MauiLib/Extensions/AppBuilderExtensions.cs"
+                    }
+                },
+                {
                     "condition": "(!AddAspire)",
                     "exclude": [
+                        "MauiApp.1/Extensions/AppBuilderExtensions.cs",
                         "MauiApp.1.Aspire/**/*",
                         "MauiApp.1.Shared/**/*"
                     ]
@@ -1148,7 +1162,7 @@
         },
         "AddAspire": {
             "type": "computed",
-            "value": "(Net10OrLater && aspire)"
+            "value": "(aspire)"
         },
         "GlobalNamespace": {
             "type": "computed",

@@ -2,8 +2,16 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This template package does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 7.11.0:
+What's new in ver. 7.12.0:
 --------------------------
+Aspire integration is no longer limited to being a .NET MAUI 10 exclusive feature.
+
+Yes, it’s now accessible for older versions as well.
+
+dotnet new mauiapp -o MyApp --aspire
+
+v7.11.0:
+
 Introduced an option to integrate .NET MAUI 10 with Aspire.
 
 --aspire - Default value is false.

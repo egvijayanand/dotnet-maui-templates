@@ -3,7 +3,7 @@
     <Sdk Name="Aspire.AppHost.Sdk" Version="9.5.2" />
 
     <PropertyGroup>
-        <TargetFramework>net10.0</TargetFramework>
+        <TargetFramework>MAUI_TFM</TargetFramework>
         <OutputType>Exe</OutputType>
         <!-- Until .NET MAUI is officially supported. -->
         <NoWarn>$(NoWarn);ASPIRE004</NoWarn>

@@ -91,7 +91,12 @@ namespace MauiApp._1
                    .UseMauiCommunityToolkitMediaElement()
 #endif
 #if AddAspire
+#if Net10OrLater
                    .AddServiceDefaults() // Aspire service defaults
+#else
+                   .ConfigureEnvironmentVariables() // Load configuration from environment variables
+                   .AddServiceDefaults() // Aspire service defaults
+#endif
 #endif
                    .ConfigureFonts(fonts =>
                    {
