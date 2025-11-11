@@ -229,11 +229,13 @@ And from [v7.10.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.10.
 
 And from [v7.11.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.11.0) of the template package, introduced an option to integrate .NET MAUI 10 with Aspire.
 
+And from [v7.12.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.12.0) of the template package, introduced an option to integrate earlier versions of .NET MAUI with Aspire.
+
 ### Parameters:
 
 * Integration with Aspire:
 
-  Introduced an option to integrate .NET MAUI 10 with Aspire.
+  Introduced an option to integrate .NET MAUI with Aspire.
 
   `--aspire` - Default value is false.
 
@@ -244,8 +246,6 @@ And from [v7.11.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.11.
   This will generate two more projects: one for **Aspire AppHost** and another for **Service Defaults**.
 
   The Aspire AppHost project will reference the .NET MAUI project, while the .NET MAUI project will reference the Service Defaults project.
-
-  *Note: This feature is exclusive to .NET MAUI 10 and does not apply to other versions.*
 
   Consult this [Integrating .NET MAUI with Aspire](https://egvijayanand.in/2025/10/29/integrating-dotnet-maui-with-aspire-a-comprehensive-guide/) article to know more about it.
 
