@@ -37,7 +37,7 @@
         {
             "id": "use-slnx",
             "name": {
-                "text": "Use _XML-based solution file (slnx)."
+                "text": "Use _XML-based solution file (SLNX)."
             },
             "isVisible": true,
             "defaultValue": "false"

@@ -21,7 +21,7 @@
         {
             "id": "use-slnx",
             "name": {
-                "text": "Use _XML-based solution file (slnx)."
+                "text": "Use _XML-based solution file (SLNX)."
             },
             "isVisible": true,
             "defaultValue": "false"
@@ -37,7 +37,7 @@
         {
             "id": "aspire",
             "name": {
-                "text": "Integrate .NET MAUI 10 with Aspire."
+                "text": "Integrate .NET MAUI with Aspire."
             },
             "isVisible": true,
             "defaultValue": "false"

@@ -2,8 +2,14 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This template package does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 7.12.0:
+What's new in ver. 7.13.0:
 --------------------------
+The UI text has been updated to reflect Aspire integration support for earlier versions too.
+
+In the next version, the default Framework value will be updated to net10.0 to support .NET 10.
+
+v7.12.0:
+
 Aspire integration is no longer limited to being a .NET MAUI 10 exclusive feature.
 
 Yes, it’s now accessible for older versions as well.

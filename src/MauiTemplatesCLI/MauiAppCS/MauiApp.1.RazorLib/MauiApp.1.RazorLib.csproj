@@ -22,7 +22,7 @@
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" />
         <!--#else-->
         <!--#if (Net10)-->
-        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="10.*-*" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="10.*" />
         <!--#elif (Net9)-->
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.*" />
         <!--#else-->

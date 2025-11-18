@@ -90,7 +90,13 @@
         <!--#endif-->
         <!--#else-->
         <!--#if (Razor)-->
-        <PackageReference Include="BlazorBindings.Maui" Version="1.*" />
+        <!--#if (Net10OrLater)-->
+        <PackageReference Include="BlazorBindings.Maui" Version="4.*" />
+        <!--#elif (Net9)-->
+        <PackageReference Include="BlazorBindings.Maui" Version="3.*" />
+        <!--#else-->
+        <PackageReference Include="BlazorBindings.Maui" Version="2.*" />
+        <!--#endif-->
         <!--#endif-->
         <!--#if (AddFoldable)-->
         <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="$(MauiVersion)" />
@@ -98,7 +104,9 @@
         <!--#if (AddMaps)-->
         <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
         <!--#if (AllPlatforms || IsWindows)-->
-        <!--#if (Net9OrLater)-->
+        <!--#if (Net10OrLater)-->
+        <PackageReference Include="CommunityToolkit.Maui.Maps" Version="4.*" />
+        <!--#elif (Net9)-->
         <PackageReference Include="CommunityToolkit.Maui.Maps" Version="3.*" />
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui.Maps" Version="2.*" />
@@ -109,7 +117,7 @@
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" IncludeAssets="compile;runtime" />
         <!--#endif-->
         <!--#if (Net10)-->
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.*-*" Condition="'$(Configuration)' == 'Debug'" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.*" Condition="'$(Configuration)' == 'Debug'" />
         <!--#elif (Net9)-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.*" Condition="'$(Configuration)' == 'Debug'" />
         <!--#else-->
@@ -119,13 +127,17 @@
         <!--#if (Net8)-->
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <!--#endif-->
-        <!--#if (Net9OrLater)-->
+        <!--#if (Net10OrLater)-->
+        <PackageReference Include="VijayAnand.MauiToolkit" Version="4.*" />
+        <!--#elif (Net9)-->
         <PackageReference Include="VijayAnand.MauiToolkit" Version="4.*" />
         <!--#else-->
         <PackageReference Include="VijayAnand.MauiToolkit" Version="3.*" />
         <!--#endif-->
         <!--#if (AddToolkit)-->
-        <!--#if (Net9OrLater)-->
+        <!--#if (Net10OrLater)-->
+        <PackageReference Include="CommunityToolkit.Maui" Version="13.*" />
+        <!--#elif (Net9)-->
         <PackageReference Include="CommunityToolkit.Maui" Version="12.*" />
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui" Version="9.*" />
@@ -135,28 +147,36 @@
         <PackageReference Include="Syncfusion.Maui.Toolkit" Version="1.*" />
         <!--#endif-->
         <!--#if (AddMarkup)-->
-        <!--#if (Net9OrLater)-->
+        <!--#if (Net10OrLater)-->
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="7.*" />
+        <!--#elif (Net9)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="6.*" />
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddCamera)-->
-        <!--#if (Net9OrLater)-->
-        <PackageReference Include="CommunityToolkit.Maui.Camera" Version="3.*" />
+        <!--#if (Net10OrLater)-->
+        <PackageReference Include="CommunityToolkit.Maui.Camera" Version="5.*" />
+        <!--#elif (Net9)-->
+        <PackageReference Include="CommunityToolkit.Maui.Camera" Version="4.*" />
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui.Camera" Version="1.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMedia)-->
-        <!--#if (Net9OrLater)-->
+        <!--#if (Net10OrLater)-->
+        <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="7.*" />
+        <!--#elif (Net9)-->
         <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="6.*" />
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="4.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
-        <!--#if (Net9OrLater)-->
+        <!--#if (Net10OrLater)-->
+        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="4.*" />
+        <!--#elif (Net9)-->
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="4.*" />
         <!--#else-->
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="3.*" />
@@ -169,7 +189,13 @@
         <PackageReference Include="CompiledBindings.MAUI" Version="1.*" />
         <!--#endif-->
         <!--#if (Reactor)-->
-        <!--#if (Net9OrLater)-->
+        <!--#if (Net10OrLater)-->
+        <PackageReference Include="Reactor.Maui" Version="3.*" />
+        <PackageReference Include="Reactor.Maui.Canvas" Version="3.*" />
+        <!--#if (AddMaps)-->
+        <PackageReference Include="Reactor.Maui.Maps" Version="3.*" />
+        <!--#endif-->
+        <!--#elif (Net9)-->
         <PackageReference Include="Reactor.Maui" Version="3.*" />
         <PackageReference Include="Reactor.Maui.Canvas" Version="3.*" />
         <!--#if (AddMaps)-->
