@@ -8,8 +8,8 @@
     ],
     "identity": "VijayAnand.Slnx",
     "groupIdentity": "VijayAnand.MauiTemplates.Slnx",
-    "description": "A XML-based solution file (slnx) item template.",
-    "name": "XML-based Solution file (slnx)",
+    "description": "A XML-based solution file (SLNX) item template.",
+    "name": "XML-based Solution file (SLNX)",
     "shortName": "slnx",
     "sourceName": "Slnx.1",
     "primaryOutputs": [

@@ -60,7 +60,7 @@
                 {
                     "choice": "net10.0",
                     "description": "Target .NET 10",
-                    "displayName": ".NET 10 (Preview)"
+                    "displayName": ".NET 10 (LTS)"
                 },
                 {
                     "choice": "net9.0",
@@ -80,8 +80,8 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to use XML-based solution file (slnx).",
-            "displayName": "Option to use _XML-based solution file (slnx)"
+            "description": "Option to use XML-based solution file (SLNX).",
+            "displayName": "Option to use _XML-based solution file (SLNX)"
         },
         "central-pkg-mgmt": {
             "type": "parameter",

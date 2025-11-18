@@ -117,16 +117,15 @@ using XmlnsDefinitionAttribute = Microsoft.Maui.Controls.XmlnsDefinitionAttribut
 #if ImplicitNamespace
 [assembly: System.Runtime.Versioning.RequiresPreviewFeatures]
 [assembly: Microsoft.Maui.Controls.Xaml.Internals.AllowImplicitXmlnsDeclaration]
-
 #else
 // To enable, uncomment the below two lines.
 //[assembly: System.Runtime.Versioning.RequiresPreviewFeatures]
 //[assembly: Microsoft.Maui.Controls.Xaml.Internals.AllowImplicitXmlnsDeclaration]
+#endif
 // Alternatively, this can be done in the project file also.
 // Set the EnablePreviewFeatures node and assign its value to true.
 // And then define this constant: MauiAllowImplicitXmlnsDeclaration
 
-#endif
 // CLR Namespaces
 [assembly: XmlnsDefinition("http://schemas.microsoft.com/dotnet/maui/global", "MauiApp._1")]
 #if (Hierarchical || Tabbed || Shell)

@@ -121,7 +121,9 @@
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#if (AddMauiToolkit)-->
-        <!--#if (Net9OrLater)-->
+        <!--#if (Net10OrLater)-->
+        <PackageReference Include="CommunityToolkit.Maui" Version="13.*" />
+        <!--#elif (Net9)-->
         <PackageReference Include="CommunityToolkit.Maui" Version="12.*" />
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui" Version="9.*" />
@@ -131,7 +133,9 @@
         <PackageReference Include="Syncfusion.Maui.Toolkit" Version="1.*" />
         <!--#endif-->
         <!--#if (AddMauiMarkup)-->
-        <!--#if (Net9OrLater)-->
+        <!--#if (Net10OrLater)-->
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="7.*" />
+        <!--#elif (Net9)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="6.*" />
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.*" />
@@ -159,7 +163,9 @@
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*" />
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
-        <!--#if (Net9OrLater)-->
+        <!--#if (Net10OrLater)-->
+        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="4.*" />
+        <!--#elif (Net9)-->
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="4.*" />
         <!--#else-->
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="3.*" />

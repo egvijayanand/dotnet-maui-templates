@@ -256,7 +256,9 @@
         <!--#else-->
         <PackageReference Include="Fabulous" Version="2.4.*" />
         <PackageReference Include="Fabulous.MauiControls" Version="8.*" />
-        <!--#if (Net9OrLater)-->
+        <!--#if (Net10OrLater)-->
+        <PackageReference Include="FSharp.Core" Version="10.*" />
+        <!--#elif (Net9)-->
         <PackageReference Include="FSharp.Core" Version="9.*" />
         <!--#else-->
         <PackageReference Include="FSharp.Core" Version="8.*" />
@@ -305,7 +307,7 @@
         <!--#endif-->
         <!--#else-->
         <!--#if (Net10)-->
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Condition="'$(Configuration)' == 'Debug'" Version="10.*-*" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Condition="'$(Configuration)' == 'Debug'" Version="10.*" />
         <!--#elif (Net9)-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Condition="'$(Configuration)' == 'Debug'" Version="9.*" />
         <!--#else-->
@@ -322,7 +324,9 @@
         <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#if (AddToolkit)-->
-        <!--#if (Net9OrLater)-->
+        <!--#if (Net10OrLater)-->
+        <PackageReference Include="CommunityToolkit.Maui" Version="13.*" />
+        <!--#elif (Net9)-->
         <PackageReference Include="CommunityToolkit.Maui" Version="12.*" />
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui" Version="9.*" />
@@ -332,14 +336,18 @@
         <PackageReference Include="Syncfusion.Maui.Toolkit" Version="1.*" />
         <!--#endif-->
         <!--#if (AddMarkup)-->
-        <!--#if (Net9OrLater)-->
+        <!--#if (Net10OrLater)-->
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="7.*" />
+        <!--#elif (Net9)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="6.*" />
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
-        <!--#if (Net9OrLater)-->
+        <!--#if (Net10OrLater)-->
+        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="4.*" />
+        <!--#elif (Net9)-->
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="4.*" />
         <!--#else-->
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="3.*" />

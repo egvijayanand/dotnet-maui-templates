@@ -47,7 +47,7 @@ namespace MauiApp._1
 #endif
 #elif Shell
             builder.UseMauiApp<App, MainWindow, AppShell>()
-#elif Razor
+#elif (Razor && Net9OrLater)
             builder.UseMauiApp<App, Window>()
 #else
             builder.UseMauiApp<App>()
