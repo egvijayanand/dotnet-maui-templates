@@ -16,7 +16,7 @@
                 "text": "Use _XML-based solution file (SLNX)."
             },
             "isVisible": true,
-            "defaultValue": "false"
+            "defaultValue": "true"
         },
         {
             "id": "central-pkg-mgmt",
@@ -30,6 +30,14 @@
             "id": "nightly",
             "name": {
                 "text": "Configure Ni_ghtly build."
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
+            "id": "source-gen",
+            "name": {
+                "text": "Use .NET MAUI 10 Source Generation feature."
             },
             "isVisible": true,
             "defaultValue": "false"

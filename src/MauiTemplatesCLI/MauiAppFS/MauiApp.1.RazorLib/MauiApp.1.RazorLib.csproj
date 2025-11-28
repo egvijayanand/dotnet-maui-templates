@@ -6,9 +6,6 @@
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>MauiApp._1.RazorLib</RootNamespace>
-    <!--#if (Net10)-->
-    <RoslynCompilerType>FrameworkPackage</RoslynCompilerType>
-    <!--#endif-->
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,13 +16,7 @@
     <!--#if (CentralPkgMgmt)-->
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" />
     <!--#else-->
-    <!--#if (Net10)-->
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="10.*" />
-    <!--#elif (Net9)-->
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.*" />
-    <!--#else-->
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.*" />
-    <!--#endif-->
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="PKG_VERSION" />
     <!--#endif-->
   </ItemGroup>
 

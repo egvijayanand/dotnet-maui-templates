@@ -6,7 +6,7 @@
         <!-- Package Options -->
         <PackageType>Template</PackageType>
         <PackageId>VijayAnand.MauiTemplates</PackageId>
-        <PackageVersion>7.0.0</PackageVersion>
+        <PackageVersion>8.0.0</PackageVersion>
         <Title>.NET MAUI Project and Item Templates</Title>
         <Authors>Vijay Anand E G</Authors>
         <Copyright>Copyright &#169; 2021-2025 Vijay Anand E G</Copyright>
@@ -29,7 +29,7 @@
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>
     <ItemGroup>
-        <Content Include="MauiAppCS\**\*;MauiAppFS\**\*;MauiClassLib\**\*;SharedClassLib\**\*;MauiItem\**\*;MauiItemCS\**\*;MauiPage\**\*;MauiPageCS\**\*;MauiPageRazor\**\*;MauiView\**\*;MauiViewCS\**\*;MauiViewRazor\**\*;MauiResDict\**\*;MauiShell\**\*;MauiShellCS\**\*;MauiShellRazor\**\*;MauiMvvm\**\*;MauiMvvmCS\**\*;MauiBlazorWebView\**\*;MauiBlazorWebViewCS\**\*;MyClass\**\*;Slnx\**\*"
+        <Content Include="MauiAppCS\**\*;MauiAppFS\**\*;MauiClassLib\**\*;SharedClassLib\**\*;MauiItem\**\*;MauiItemCS\**\*;MauiPage\**\*;MauiPageCS\**\*;MauiPageRazor\**\*;MauiView\**\*;MauiViewCS\**\*;MauiViewRazor\**\*;MauiResDict\**\*;MauiShell\**\*;MauiShellCS\**\*;MauiShellRazor\**\*;MauiMvvm\**\*;MauiMvvmCS\**\*;MauiBlazorWebView\**\*;MauiBlazorWebViewCS\**\*;MyClass\**\*;Slnx\**\*;FileApp\**\*"
                  Exclude="**\bin\**;**\obj\**" />
         <Compile Remove="**\*" />
         <None Remove="VijayAnand.MauiTemplates.slnx" />

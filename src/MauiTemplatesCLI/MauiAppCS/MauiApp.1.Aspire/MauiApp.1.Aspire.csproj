@@ -22,8 +22,10 @@
     <ItemGroup>
         <!--#if (CentralPkgMgmt)-->
         <PackageReference Include="Aspire.Hosting.AppHost" />
+        <PackageReference Include="Aspire.Hosting.Maui" />
         <!--#else-->
         <PackageReference Include="Aspire.Hosting.AppHost" Version="$(AspireVersion)" />
+        <PackageReference Include="Aspire.Hosting.Maui" Version="13.*-*" />
         <!--#endif-->
     </ItemGroup>
   

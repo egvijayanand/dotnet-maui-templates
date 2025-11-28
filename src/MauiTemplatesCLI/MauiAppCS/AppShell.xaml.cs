@@ -18,7 +18,7 @@
         }
 #if (!Mvvm)
 
-        private async void OnMenuItemClicked(object sender, EventArgs e)
+        private async void OnMenuItemClicked(object? sender, EventArgs e)
         {
             await Current.GoToAsync("//login");
         }

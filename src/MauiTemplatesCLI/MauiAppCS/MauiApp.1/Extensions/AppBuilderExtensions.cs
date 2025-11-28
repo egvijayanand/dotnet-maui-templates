@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Maui.Hosting
 {
-    public static partial class AppBuilderExtensions
+    public static class AppBuilderExtensions
     {
         public static MauiAppBuilder ConfigureEnvironmentVariables(this MauiAppBuilder builder)
         {

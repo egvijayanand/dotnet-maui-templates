@@ -32,7 +32,7 @@
 #endif
         }
 
-        private async void OnAddEvent(object sender, EventArgs e)
+        private async void OnAddEvent(object? sender, EventArgs e)
         {
 #if Tabbed
             await Navigation.PushModalAsync(new NewEventPage());

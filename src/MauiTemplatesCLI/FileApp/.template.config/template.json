@@ -1,0 +1,160 @@
+{
+    "$schema": "https://json.schemastore.org/template",
+    "author": "Vijay Anand E G",
+    "defaultName": "App",
+    "classifications": [
+        "Code"
+    ],
+    "identity": "VijayAnand.FileApp",
+    "groupIdentity": "VijayAnand.MauiTemplates.FileApp.Code",
+    "description": "An item template for .NET 10 File App in C#",
+    "name": "File App (C#)",
+    "shortName": "fileapp",
+    "sourceName": "FileApp.1",
+    "primaryOutputs": [
+        {
+            "path": "FileApp.1.cs"
+        }
+    ],
+    "tags": {
+        "language": "C#",
+        "type": "item"
+    },
+    "symbols": {
+        "Framework": {
+            "type": "parameter",
+            "datatype": "choice",
+            "description": "Option to choose the target framework.",
+            "choices": [
+                {
+                    "choice": "net10.0",
+                    "description": "Target .NET 10",
+                    "displayName": ".NET 10 (LTS)"
+                },
+                {
+                    "choice": "net9.0",
+                    "description": "Target .NET 9",
+                    "displayName": ".NET 9 (STS)"
+                },
+                {
+                    "choice": "net8.0",
+                    "description": "Target .NET 8",
+                    "displayName": ".NET 8 (LTS)"
+                }
+            ],
+            "replaces": "DOTNET_TFM",
+            "defaultValue": "net10.0"
+        },
+        "Sdk": {
+            "type": "parameter",
+            "datatype": "choice",
+            "description": "Option to set the SDK type.",
+            "choices": [
+                {
+                    "choice": "Aspire",
+                    "description": "Use Aspire SDK."
+                },
+                {
+                    "choice": "BlazorWasm",
+                    "description": "Use Blazor WebAssembly SDK."
+                },
+                {
+                    "choice": "Razor",
+                    "description": "Use Razor SDK."
+                },
+                {
+                    "choice": "Web",
+                    "description": "Use Web SDK."
+                },
+                {
+                    "choice": "Worker",
+                    "description": "Use Worker SDK."
+                }
+            ]
+        },
+        "Maui": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Opt-in for Aspire .NET MAUI integration.",
+            "displayName": "Opt-in for Aspire .NET MAUI integration."
+        },
+        "Preview": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Opt-in for preview language features.",
+            "displayName": "Opt-in for _preview language features."
+        },
+        "frameworkLower": {
+            "type": "generated",
+            "generator": "casing",
+            "parameters": {
+                "source": "Framework",
+                "toLower": true
+            }
+        },
+        "sdkLower": {
+            "type": "generated",
+            "generator": "casing",
+            "parameters": {
+                "source": "Sdk",
+                "toLower": true
+            }
+        },
+        "Net8": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net8.0\")"
+        },
+        "Net9": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net9.0\")"
+        },
+        "Net10": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net10.0\")"
+        },
+        "PkgVersion": {
+            "type": "generated",
+            "generator": "switch",
+            "replaces": "PKG_VERSION",
+            "parameters": {
+                "datatype": "string",
+                "cases": [
+                    {
+                        "condition": "(Net8)",
+                        "value": "8.*"
+                    },
+                    {
+                        "condition": "(Net9)",
+                        "value": "9.*"
+                    },
+                    {
+                        "condition": "(Net10)",
+                        "value": "10.*"
+                    }
+                ]
+            }
+        },
+        "Aspire": {
+            "type": "computed",
+            "value": "(sdkLower == \"aspire\")"
+        },
+        "BlazorWasm": {
+            "type": "computed",
+            "value": "(sdkLower == \"blazorwasm\")"
+        },
+        "Razor": {
+            "type": "computed",
+            "value": "(sdkLower == \"razor\")"
+        },
+        "Web": {
+            "type": "computed",
+            "value": "(sdkLower == \"web\")"
+        },
+        "Worker": {
+            "type": "computed",
+            "value": "(sdkLower == \"worker\")"
+        }
+    }
+}

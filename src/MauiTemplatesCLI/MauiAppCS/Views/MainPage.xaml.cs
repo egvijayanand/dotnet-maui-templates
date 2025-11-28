@@ -67,24 +67,24 @@
 #if (Hybrid || Tabbed)
 #elif Hierarchical
 
-        private async void OnAddEvent(object sender, EventArgs e)
+        private async void OnAddEvent(object? sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new NewEventPage());
         }
 #elif JSHybridNet9
 
-        private void OnSendClicked(object sender, EventArgs e) => SendMessage();
+        private void OnSendClicked(object? sender, EventArgs e) => SendMessage();
 
         private bool CanSendMessage() => !string.IsNullOrWhiteSpace(message.Text);
 
-        private void OnMessageChanged(object sender, TextChangedEventArgs e)
+        private void OnMessageChanged(object? sender, TextChangedEventArgs e)
             => send.IsEnabled = CanSendMessage();
 
-        private void OnRawMessageReceived(object sender, HybridWebViewRawMessageReceivedEventArgs e)
+        private void OnRawMessageReceived(object? sender, HybridWebViewRawMessageReceivedEventArgs e)
             => messages.Text += e.Message + Environment.NewLine;
 #else
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void OnCounterClicked(object? sender, EventArgs e)
         {
             _count++;
             counterLabel.Text = $"Current count: {_count}";

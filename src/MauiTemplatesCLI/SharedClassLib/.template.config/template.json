@@ -74,12 +74,12 @@
                 }
             ],
             "replaces": "MAUI_TFM",
-            "defaultValue": "net9.0"
+            "defaultValue": "net10.0"
         },
         "use-slnx": {
             "type": "parameter",
             "datatype": "bool",
-            "defaultValue": "false",
+            "defaultValue": "true",
             "description": "Option to use XML-based solution file (SLNX).",
             "displayName": "Option to use _XML-based solution file (SLNX)"
         },
@@ -96,6 +96,13 @@
             "defaultValue": "false",
             "description": "Option to use Nightly (CI) build.",
             "displayName": "Option to use Ni_ghtly (CI) build"
+        },
+        "source-gen": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to use .NET MAUI 10 Source Generation feature.",
+            "displayName": "Option to use .NET MAUI 10 Source Generation feature."
         },
         "all-supported-packages": {
             "type": "parameter",
@@ -210,6 +217,10 @@
                 "toLower": true
             }
         },
+        "SourceGen": {
+            "type": "computed",
+            "value": "(Net10OrLater && source-gen)"
+        },
         "Net8": {
             "type": "computed",
             "value": "(frameworkLower == \"net8.0\")"
@@ -221,6 +232,28 @@
         "Net10": {
             "type": "computed",
             "value": "(frameworkLower == \"net10.0\")"
+        },
+        "PkgVersion": {
+            "type": "generated",
+            "generator": "switch",
+            "replaces": "PKG_VERSION",
+            "parameters": {
+                "datatype": "string",
+                "cases": [
+                    {
+                        "condition": "(Net8)",
+                        "value": "8.*"
+                    },
+                    {
+                        "condition": "(Net9)",
+                        "value": "9.*"
+                    },
+                    {
+                        "condition": "(Net10)",
+                        "value": "10.*"
+                    }
+                ]
+            }
         },
         "Net8OrLater": {
             "type": "computed",
