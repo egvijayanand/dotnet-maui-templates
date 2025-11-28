@@ -59,7 +59,7 @@
             }
         }
 
-        private async void OnSave(object sender, EventArgs e)
+        private async void OnSave(object? sender, EventArgs e)
         {
 #if Net10OrLater
             await DisplayAlertAsync("Add Event", "Save the event details to a data store.", "OK");
@@ -73,7 +73,7 @@
 #endif
         }
 
-        private async void OnCancel(object sender, EventArgs e)
+        private async void OnCancel(object? sender, EventArgs e)
         {
 #if (Hierarchical || Tabbed)
             await Navigation.PopModalAsync();

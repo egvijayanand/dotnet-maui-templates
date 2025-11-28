@@ -16,7 +16,7 @@ Release Details:
 |Stable|.NET 7 SR10 (7.0.101)|VS2022 17.4.x - 17.9.x|Tue, Nov 7, 2023|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
 |Stable|[.NET 8 SR10](https://github.com/dotnet/maui/releases/tag/8.0.100 "Changelog") (8.0.100) <br /> _Requires JDK 17 and Android SDK 34_ <br /> _Requires Apple Xcode 15.4 and Supports Apple Xcode 16_|VS2022 17.12.x|Tue, Nov 12, 2024|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
 |Stable|[.NET 9 SR12](https://github.com/dotnet/maui/releases/tag/9.0.120 "Changelog") (9.0.120) <br /> _Requires JDK 17 and Android SDK 35_ <br /> _Requires Apple Xcode 26_|VS2022 17.14.17|Thu, Oct 16, 2025|Active|
-|Stable|[.NET 10 SR1](https://github.com/dotnet/maui/releases/tag/10.0.10 "Changelog") (10.0.10) <br /> [Release Notes](https://github.com/dotnet/core/blob/main/release-notes/10.0/10.0.0/dotnetmaui.md) <br /> _Requires JDK 17 and Android SDK 36_ <br /> _Requires Apple Xcode 26_|VS2026 18.x|Tue, Nov 11, 2025|Active|
+|Stable|[.NET 10 SR1.1](https://github.com/dotnet/maui/releases/tag/10.0.11 "Changelog") (10.0.11) <br /> [Release Notes](https://github.com/dotnet/core/blob/main/release-notes/10.0/10.0.0/dotnetmaui.md) <br /> _Requires JDK 17 and Android SDK 36_ <br /> _Requires Apple Xcode 26_|VS2026 18.x|Mon, Nov 24, 2025|Active|
 
 Version History and its dependencies are [here](https://aka.ms/maui/versions).
 
@@ -64,15 +64,15 @@ Templates have been updated to support .NET MAUI 8, 9, and 10 (Preview) and is a
 |Preview|[![VijayAnand.MauiTemplates - NuGet Package](https://badgen.net/nuget/v/VijayAnand.MauiTemplates/pre?icon=nuget&foo=bar)](https://www.nuget.org/packages/VijayAnand.MauiTemplates/absoluteLatest)| - |
 -->
 
-### For Visual Studio users (both VS2022 and VS2026 Insiders release):
+### For Visual Studio users (both VS2022 and VS2026):
 
 To provide an integrated experience, a VS extension has been developed to host these templates.
 
-The All-in-One .NET MAUI Templates Pack VS extension (v5.12.0.0 or higher) is now supported on both **x64 and ARM64** installations of Visual Studio 2022 and 2026 Insiders release. Happy coding!
+The All-in-One .NET MAUI Templates Pack VS extension (VSIX) is now supported on both **x64 and ARM64** installations of Visual Studio 2022 and 2026. Happy coding!
 
 *Consequently, the minimum supported version of Visual Studio 2022 will be v17.6 or higher.*
 
-**The v7.9.0.0 extension is now compatible with the Visual Studio 2026 Insiders release v18.0.**
+**The VS extension v7.9 or higher is now compatible with the Visual Studio 2026 v18.0.**
 
 Extension is made available in the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=egvijayanand.maui-templates ".NET MAUI Templates Pack") and even more easier, can be installed from within Visual Studio itself (Extensions -> Manage Extensions / Alt + X + M).
 
@@ -190,6 +190,7 @@ Name | Template Name | Type
 |ContentPage with BlazorWebView (XAML)|maui-bwv|Item|
 |ContentPage with BlazorWebView (C#)|maui-bwv-cs|Item|
 |[Partial Class (C#)](#partial-class-item-template)|class-cs|Item|
+|[.NET 10 FileApp](#net-10-file-app-item-template)|class-cs|Item|
 
 ![All-in-One .NET MAUI App Project Template](images/dotnetmaui-all-in-one-project-template-pinned.png)
 
@@ -231,16 +232,28 @@ And from [v7.11.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.11.
 
 And from [v7.12.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.12.0) of the template package, introduced an option to integrate earlier versions of .NET MAUI with Aspire.
 
+And from [v8.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/8.0.0) of the template package, `Framework` parameter defaults to .NET 10 (`net10.0`), uses `SLNX` as the default solution file format, support for .NET MAUI 10 Source Generation feature, and a new .NET 10 `FileApp` item template.
+
 ### Parameters:
+
+* Source Generation:
+
+  Introduced an option to use .NET MAUI 10 Source Generation feature.
+
+  `-sg` | `--source-gen` - Default value is `false`.
+
+  ```shell
+  dotnet new mauiapp -o MyApp -sg
+  ```
 
 * Integration with Aspire:
 
   Introduced an option to integrate .NET MAUI with Aspire.
 
-  `--aspire` - Default value is false.
+  `--aspire` - Default value is `false`.
 
   ```shell
-  dotnet new mauiapp -o MyApp -f net10.0 --aspire
+  dotnet new mauiapp -o MyApp --aspire
   ```
 
   This will generate two more projects: one for **Aspire AppHost** and another for **Service Defaults**.
@@ -293,12 +306,12 @@ And from [v7.12.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.12.
 
   Introduces support for the new, simplified, and easily understandable XML-based solution file format.
 
-  *This would be an explicit option since the SLNX feature is currently in the preview stage.*
+  `-slnx` | `--use-slnx` - Default value is `true` (from `v8.0` onwards)
 
-  `-slnx` | `--use-slnx` - Default value is `false`
-
+  To work with the classic SLN format, override the default value:
+  
   ```shell
-  dotnet new mauiapp -o MyApp -slnx
+  dotnet new mauiapp -o MyApp -slnx:false
   ```
 
 * MAUI Class Library (Short notation: `-mcl`):
@@ -386,19 +399,17 @@ And from [v7.12.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.12.
 
 * Framework: (Short notation: `-f`)
 
-  This can take `net8.0` / `net9.0` / `net10.0` as its options (with `net9.0` being the default value, if not specified).
+  This can take `net8.0` / `net9.0` / `net10.0` as its options (with `net10.0` being the default value, if not specified).
 
   Examples:
 
-  For creating a .NET MAUI 9 App:
-  
-  Below command can be simplified to `dotnet new mauiapp` as default value of `framework` parameter is `net9.0`
+  For creating a .NET MAUI 10 App:
 
   ```shell
-  dotnet new mauiapp -f net9.0
+  dotnet new mauiapp
   ```
 
-  For creating a .NET MAUI 8 App:
+  For creating a .NET MAUI 8/9 App:
 
   _Explicit value for the `framework` parameter is required._
 
@@ -406,12 +417,8 @@ And from [v7.12.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.12.
   dotnet new mauiapp -f net8.0
   ```
 
-  For creating a .NET MAUI 10 App:
-
-  _Explicit value for the `framework` parameter is required._
-
   ```shell
-  dotnet new mauiapp -f net10.0
+  dotnet new mauiapp -f net9.0
   ```
 
 In .NET CLI, all of these _Items Template_ require a mandatory parameter:
@@ -462,7 +469,7 @@ And now conditional compilation can be configured so that platform source files 
 For existing projects, add the below block of code in the project file (.csproj). _This will modify the behavior of build process so due care must be taken if doing so._
 
 ```xml
-<ItemGroup Condition="'$(TargetFramework)' != 'net9.0'">
+<ItemGroup Condition="'$(TargetFramework)' != 'net10.0'">
     <Compile Remove="**\*.Standard.cs" />
     <None Include="**\*.Standard.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
 </ItemGroup>
@@ -673,6 +680,56 @@ Supported values are:
 * private
 
 File-scoped Namespace parameter (`-fsn` | `--file-scoped-namespace`), the default value is `false`.
+
+```shell
+dotnet new class-cs -n OrderViewModel -b ObservableObject -fsn
+```
+
+### .NET 10 File-App Item Template:
+
+This item template (short name: `fileapp`) allows to create a .NET 10 FileApp from CLI with support for multiple options.
+
+It requires a `filename` (without an extension) as its input.
+
+Optionally, it accept the following parameters:
+
+`Framework` parameter (`-f` | `--framework`):
+
+* Supported values are:
+
+  - `net10.0` (the default value)
+  - `net9.0`
+  - `net8.0`
+
+`SDK` parameter (`--sdk`):
+
+* Supported values are:
+  - Aspire
+  - BlazorWasm
+  - Razor
+  - Web
+  - Worker
+
+`.NET MAUI` parameter (`--maui`):
+
+* Option to integrate Aspire with .NET MAUI, the default value is `false`.
+
+`Preview` parameter (`--preview`):
+
+* Option to use C# language preview features, the default value is `false`.
+
+
+```shell
+dotnet new fileapp -n Aspire --sdk Aspire --maui
+```
+
+```shell
+dotnet new fileapp -n App --sdk Web
+```
+
+```shell
+dotnet new fileapp -n Console --preview
+```
 
 ### Usage:
 

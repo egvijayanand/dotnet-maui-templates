@@ -24,7 +24,7 @@
                 "text": "Use _XML-based solution file (SLNX)."
             },
             "isVisible": true,
-            "defaultValue": "false"
+            "defaultValue": "true"
         },
         {
             "id": "nightly",
@@ -54,6 +54,14 @@
             "id": "implicit-namespace",
             "name": {
                 "text": "Use .NET MAUI 10 Implicit Namespace feature."
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
+            "id": "source-gen",
+            "name": {
+                "text": "Use .NET MAUI 10 Source Generation feature."
             },
             "isVisible": true,
             "defaultValue": "false"

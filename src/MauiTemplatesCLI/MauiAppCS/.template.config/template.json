@@ -770,7 +770,7 @@
                 }
             ],
             "replaces": "MAUI_TFM",
-            "defaultValue": "net9.0"
+            "defaultValue": "net10.0"
         },
         "application-id": {
             "type": "parameter",
@@ -874,7 +874,7 @@
         "use-slnx": {
             "type": "parameter",
             "datatype": "bool",
-            "defaultValue": "false",
+            "defaultValue": "true",
             "description": "Option to use XML-based solution file (SLNX).",
             "displayName": "Option to use _XML-based solution file (SLNX)"
         },
@@ -912,6 +912,13 @@
             "defaultValue": "false",
             "description": "Option to use .NET MAUI 10 Implicit Namespace feature.",
             "displayName": "Option to use .NET MAUI 10 Implicit Namespace feature."
+        },
+        "source-gen": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to use .NET MAUI 10 Source Generation feature.",
+            "displayName": "Option to use .NET MAUI 10 Source Generation feature."
         },
         "use-mvvm": {
             "type": "parameter",
@@ -1148,6 +1155,28 @@
             "type": "computed",
             "value": "(frameworkLower == \"net10.0\")"
         },
+        "PkgVersion": {
+            "type": "generated",
+            "generator": "switch",
+            "replaces": "PKG_VERSION",
+            "parameters": {
+                "datatype": "string",
+                "cases": [
+                    {
+                        "condition": "(Net8)",
+                        "value": "8.*"
+                    },
+                    {
+                        "condition": "(Net9)",
+                        "value": "9.*"
+                    },
+                    {
+                        "condition": "(Net10)",
+                        "value": "10.*"
+                    }
+                ]
+            }
+        },
         "Net8OrLater": {
             "type": "computed",
             "value": "(Net8 || Net9 || Net10)"
@@ -1171,6 +1200,10 @@
         "ImplicitNamespace": {
             "type": "computed",
             "value": "(Net10OrLater && implicit-namespace)"
+        },
+        "SourceGen": {
+            "type": "computed",
+            "value": "(Net10OrLater && source-gen)"
         },
         "TallTitleBar": {
             "type": "computed",
