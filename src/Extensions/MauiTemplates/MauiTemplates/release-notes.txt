@@ -2,8 +2,26 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This VS extension does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 7.13.0.0:
-----------------------------
+What's new in ver. 8.0.0.0:
+---------------------------
+1. Templates updated to support .NET MAUI 10 Stable channel release.
+
+2. The default value for the Framework parameter is now set to .NET 10 (LTS).
+
+So by default, the project command generates a .NET MAUI 10 project.
+
+To create a .NET 8 or .NET 9 project, set the Framework parameter to .NET 8 (LTS) or .NET 9 (STS), respectively.
+
+3. By default, the solution file is created in the new SLNX format.
+
+To work with the classic SLN format, uncheck the SLNX UI control.
+
+4. Introduced an option for .NET MAUI 10 Source Generation feature to improve Debug build performance.
+
+To enable this feature, check the Source Generation UI control.
+
+v7.13.0.0:
+
 The UI text updated to indicate that Aspire integration is available for earlier versions of .NET MAUI, also.
 
 In the next version, the default Framework value will be updated to net10.0 to support .NET 10.
