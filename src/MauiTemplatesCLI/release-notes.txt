@@ -2,8 +2,12 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This template package does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 8.0.0:
+What's new in ver. 8.1.0:
 -------------------------
+Templates updated to support .NET MAUI 10 SR2.
+
+v8.0.0:
+
 1. Templates updated to support .NET MAUI 10 Stable channel release.
 
 2. The Framework parameter now defaults to net10.0 in all project templates.
