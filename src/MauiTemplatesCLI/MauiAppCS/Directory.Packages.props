@@ -3,13 +3,13 @@
         <!--#if (CentralPkgMgmt)-->
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (AddAspire)-->
-        <AspireVersion>13.0.0</AspireVersion>
+        <AspireVersion>13.1.0</AspireVersion>
         <!--#endif-->
         <!--#if (Net10)-->
         <!--#if (Nightly)-->
-        <MauiVersion>10.0.20-ci.net10.25563.5</MauiVersion>
+        <MauiVersion>10.0.30-ci.net10.25624.1</MauiVersion>
         <!--#else-->
-        <MauiVersion>10.0.11</MauiVersion>
+        <MauiVersion>10.0.20</MauiVersion>
         <!--#endif-->
         <!--#elif (Net9)-->
         <MauiVersion>9.0.120</MauiVersion>
@@ -19,7 +19,7 @@
         <!--#else-->
         <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
         <!--#if (AddAspire)-->
-        <AspireVersion>13.0.0</AspireVersion>
+        <AspireVersion>13.1.0</AspireVersion>
         <!--#endif-->
         <!--#if (Nightly)-->
         <MauiVersion>PKG_VERSION-*</MauiVersion>
@@ -34,10 +34,10 @@
     <!--#endif-->
         <!--#if (AddAspire)-->
         <PackageVersion Include="Aspire.Hosting.AppHost" Version="$(AspireVersion)" />
-        <PackageVersion Include="Aspire.Hosting.Maui" Version="13.0.0-preview.1.25560.3" />
+        <PackageVersion Include="Aspire.Hosting.Maui" Version="13.1.0-preview.1.25616.3" />
         <PackageVersion Include="Microsoft.Maui.Core" Version="$(MauiVersion)" />
-        <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.0.0" />
-        <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="10.0.0" />
+        <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.1.0" />
+        <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="10.1.0" />
         <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.14.0" />
         <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.14.0" />
         <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.14.0" />
@@ -49,7 +49,7 @@
         <!--#elif (Net8)-->
         <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.22" />
         <!--#else-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="10.0.0" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="10.0.1" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (Razor)-->
@@ -84,7 +84,7 @@
         <!--#elif (Net8)-->
         <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" Condition="'$(Configuration)' == 'Debug'" />
         <!--#else-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" Condition="'$(Configuration)' == 'Debug'" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.1" Condition="'$(Configuration)' == 'Debug'" />
         <!--#endif-->
         <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <!--#if (Net8)-->
@@ -157,10 +157,10 @@
         <!--#endif-->
         <!--#if (Reactor)-->
         <!--#if (Net9)-->
-        <PackageVersion Include="Reactor.Maui" Version="3.0.39" />
-        <PackageVersion Include="Reactor.Maui.Canvas" Version="3.0.39" />
+        <PackageVersion Include="Reactor.Maui" Version="3.0.40" />
+        <PackageVersion Include="Reactor.Maui.Canvas" Version="3.0.40" />
         <!--#if (AddMaps)-->
-        <PackageVersion Include="Reactor.Maui.Maps" Version="3.0.39" />
+        <PackageVersion Include="Reactor.Maui.Maps" Version="3.0.40" />
         <!--#endif-->
         <!--#elif (Net8)-->
         <PackageVersion Include="Reactor.Maui" Version="2.0.59" />
@@ -169,10 +169,10 @@
         <PackageVersion Include="Reactor.Maui.Maps" Version="2.0.59" />
         <!--#endif-->
         <!--#else-->
-        <PackageVersion Include="Reactor.Maui" Version="3.0.39" />
-        <PackageVersion Include="Reactor.Maui.Canvas" Version="3.0.39" />
+        <PackageVersion Include="Reactor.Maui" Version="3.0.40" />
+        <PackageVersion Include="Reactor.Maui.Canvas" Version="3.0.40" />
         <!--#if (AddMaps)-->
-        <PackageVersion Include="Reactor.Maui.Maps" Version="3.0.39" />
+        <PackageVersion Include="Reactor.Maui.Maps" Version="3.0.40" />
         <!--#endif-->
         <!--#endif-->
         <!--#endif-->

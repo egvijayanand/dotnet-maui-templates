@@ -2,7 +2,7 @@
 #if FileBasedProgram
 //+:cnd:noEmit
 #if Aspire
-#:sdk Aspire.AppHost.Sdk@13.0.0
+#:sdk Aspire.AppHost.Sdk@13.1.0
 #elif BlazorWasm
 #:sdk Microsoft.NET.Sdk.BlazorWebAssembly
 #elif Razor
@@ -16,13 +16,16 @@
 #endif
 // Properties
 #:property TargetFramework=DOTNET_TFM
+#:property PublishAot=false
 #if Preview
 #:property LangVersion=preview
 #endif
-#if (Aspire && Maui)
+#if Aspire
 // Packages
-#:package Aspire.Hosting.AppHost@13.0.0
+#:package Aspire.Hosting.AppHost@13.1.0
+#if Maui
 #:package Aspire.Hosting.Maui@13.*-*
+#endif
 #elif BlazorWasm
 // Packages
 #:package Microsoft.AspNetCore.Components.WebAssembly@PKG_VERSION
