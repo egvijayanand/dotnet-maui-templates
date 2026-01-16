@@ -12,7 +12,6 @@ using MauiApp._1.Data;
 #endif
 #endif
 using Microsoft.Extensions.Logging;
-using Microsoft.Maui.LifecycleEvents;
 #if AddMaps
 using Microsoft.Maui.Controls.Hosting;
 #if (AllPlatforms || IsWindows)
@@ -33,27 +32,10 @@ using Microsoft.Maui.Controls.Hosting;
 #endif
 namespace MauiApp._1
 {
-    public static class MauiProgram
+    public static class MauiProgramExtensions
     {
-        public static MauiApp CreateMauiApp()
+        public static MauiAppBuilder UseSharedMauiApp(this MauiAppBuilder builder)
         {
-            var builder = MauiApp.CreateBuilder();
-#if MauiLib
-#if AddMaps
-//-:cnd:noEmit
-#if WINDOWS
-            builder.UseSharedMauiApp();
-#else
-            builder.UseSharedMauiApp()
-                   .UseMauiMaps();
-#endif
-//+:cnd:noEmit
-#else
-            builder.UseSharedMauiApp();
-#endif
-
-            // Add platform-specific configuration here, if any.
-#else
 #if (Plain || Tabbed || Hybrid || JSHybrid || Markup)
             builder.UseMauiApp<App, MainWindow, MainPage>()
 #elif Hierarchical
@@ -83,11 +65,6 @@ namespace MauiApp._1
                    .UseFoldable()
 #endif
 #if AddMaps
-//-:cnd:noEmit
-#if !WINDOWS
-                   .UseMauiMaps()
-#endif
-//+:cnd:noEmit
 #if (AllPlatforms || IsWindows)
                    .UseMauiCommunityToolkitMaps("<BING_MAPS_API_KEY_HERE>") // To generate a Bing Maps API Key, visit https://www.bingmapsportal.com/
 #endif
@@ -201,31 +178,8 @@ namespace MauiApp._1
 #endif
 //+:cnd:noEmit
 #endif
-#endif
 
-//-:cnd:noEmit
-#if WINDOWS
-            // Launch the app window maximized on Windows
-            builder.ConfigureLifecycleEvents(events =>
-            {
-                events.AddWindows(app =>
-                {
-                    app.OnWindowCreated(window =>
-                    {
-                        window.ExtendsContentIntoTitleBar = false;
-
-                        if (window.AppWindow.Presenter is Microsoft.UI.Windowing.OverlappedPresenter presenter)
-                        {
-                            //presenter.SetBorderAndTitleBar(false, false);
-                            presenter.Maximize();
-                        }
-                    });
-                });
-            });
-#endif
-//+:cnd:noEmit
-
-            return builder.Build();
+            return builder;
         }
     }
 }

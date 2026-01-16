@@ -460,7 +460,7 @@
                     "rename": {
                         "Imports.cs": "MauiApp.1.MauiLib/Imports.cs",
                         "MauiApp.1.csproj": "MauiApp.1/MauiApp.1.csproj",
-                        "MauiProgram.cs": "MauiApp.1.MauiLib/MauiProgram.cs"
+                        "MauiProgram.cs": "MauiApp.1/MauiProgram.cs"
                     }
                 },
                 {
