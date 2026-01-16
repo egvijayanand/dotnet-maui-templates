@@ -4,9 +4,9 @@
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net10)-->
         <!--#if (Nightly)-->
-        <MauiVersion>10.0.30-ci.net10.25624.1</MauiVersion>
+        <MauiVersion>10.0.40-ci.main.26065.2</MauiVersion>
         <!--#else-->
-        <MauiVersion>10.0.20</MauiVersion>
+        <MauiVersion>10.0.30</MauiVersion>
         <!--#endif-->
         <!--#elif (Net9)-->
         <MauiVersion>9.0.120</MauiVersion>
