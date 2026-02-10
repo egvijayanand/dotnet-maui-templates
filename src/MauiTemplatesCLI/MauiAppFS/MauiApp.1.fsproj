@@ -311,7 +311,7 @@
         <!--#elif (Net8)-->
         <PackageReference Include="CommunityToolkit.Maui" Version="9.*" />
         <!--#else-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="13.*" />
+        <PackageReference Include="CommunityToolkit.Maui" Version="14.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddSyncfusionToolkit)-->
