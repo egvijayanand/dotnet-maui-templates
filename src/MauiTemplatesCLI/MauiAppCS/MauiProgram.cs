@@ -105,7 +105,11 @@ namespace MauiApp._1
                    .UseMauiCommunityToolkitCamera()
 #endif
 #if AddMedia
+#if Net10OrLater
+                   .UseMauiCommunityToolkitMediaElement(default) // Optionally, you can enable foreground service for media playback on Android 13+.
+#else
                    .UseMauiCommunityToolkitMediaElement()
+#endif
 #endif
 #if AddAspire
 #if Net10OrLater

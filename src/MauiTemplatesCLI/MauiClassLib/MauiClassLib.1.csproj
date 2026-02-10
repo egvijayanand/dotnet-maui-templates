@@ -239,7 +239,7 @@
         <!--#elif (Net8)-->
         <PackageReference Include="CommunityToolkit.Maui" Version="9.*" />
         <!--#else-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="13.*" />
+        <PackageReference Include="CommunityToolkit.Maui" Version="14.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddSyncfusionToolkit)-->
@@ -264,7 +264,7 @@
         <!--#elif (Net8)-->
         <PackageReference Include="CommunityToolkit.Maui.Camera" Version="1.*" />
         <!--#else-->
-        <PackageReference Include="CommunityToolkit.Maui.Camera" Version="5.*" />
+        <PackageReference Include="CommunityToolkit.Maui.Camera" Version="6.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMedia)-->
@@ -273,7 +273,7 @@
         <!--#elif (Net8)-->
         <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="4.*" />
         <!--#else-->
-        <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="7.*" />
+        <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="8.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMaps)-->
