@@ -2,8 +2,12 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This VS extension does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 8.2.0.0:
+What's new in ver. 8.3.0.0:
 ---------------------------
+Templates updated to support .NET MAUI 10 SR4.
+
+v8.2.0.0:
+
 Templates updated to support .NET MAUI 10 SR3.
 
 For MCL, MauiProgram.cs file is retained in the head project to handle platform-specific configurations.
