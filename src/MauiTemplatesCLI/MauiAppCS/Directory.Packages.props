@@ -3,13 +3,13 @@
         <!--#if (CentralPkgMgmt)-->
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (AddAspire)-->
-        <AspireVersion>13.1.0</AspireVersion>
+        <AspireVersion>13.1.1</AspireVersion>
         <!--#endif-->
         <!--#if (Net10)-->
         <!--#if (Nightly)-->
-        <MauiVersion>10.0.50-ci.main.26112.9</MauiVersion>
+        <MauiVersion>10.0.50-ci.main.26118.3</MauiVersion>
         <!--#else-->
-        <MauiVersion>10.0.40</MauiVersion>
+        <MauiVersion>10.0.41</MauiVersion>
         <!--#endif-->
         <!--#elif (Net9)-->
         <MauiVersion>9.0.120</MauiVersion>
@@ -19,7 +19,7 @@
         <!--#else-->
         <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
         <!--#if (AddAspire)-->
-        <AspireVersion>13.1.0</AspireVersion>
+        <AspireVersion>13.1.1</AspireVersion>
         <!--#endif-->
         <!--#if (Nightly)-->
         <MauiVersion>PKG_VERSION-*</MauiVersion>
@@ -34,14 +34,14 @@
     <!--#endif-->
         <!--#if (AddAspire)-->
         <PackageVersion Include="Aspire.Hosting.AppHost" Version="$(AspireVersion)" />
-        <PackageVersion Include="Aspire.Hosting.Maui" Version="13.1.0-preview.1.25616.3" />
+        <PackageVersion Include="Aspire.Hosting.Maui" Version="13.1.1-preview.1.26105.8" />
         <PackageVersion Include="Microsoft.Maui.Core" Version="$(MauiVersion)" />
-        <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.2.0" />
-        <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="10.2.0" />
-        <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.14.0" />
-        <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.14.0" />
-        <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.14.0" />
-        <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.14.0" />
+        <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.3.0" />
+        <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="10.3.0" />
+        <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.15.0" />
+        <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.15.0" />
+        <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.15.0" />
+        <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.15.0" />
         <!--#endif-->
         <!--#if (Hybrid && RazorLib)-->
         <!--#if (Net9)-->
@@ -153,7 +153,11 @@
         <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0" />
         <!--#endif-->
         <!--#if (CompiledBindings)-->
+        <!--#if (Net9OrLater)-->
+        <PackageVersion Include="CompiledBindings.MAUI" Version="1.0.19.7" />
+        <!--#else-->
         <PackageVersion Include="CompiledBindings.MAUI" Version="1.0.18" />
+        <!--#endif-->
         <!--#endif-->
         <!--#if (Reactor)-->
         <!--#if (Net9)-->
@@ -169,10 +173,10 @@
         <PackageVersion Include="Reactor.Maui.Maps" Version="2.0.59" />
         <!--#endif-->
         <!--#else-->
-        <PackageVersion Include="Reactor.Maui" Version="4.0.13" />
-        <PackageVersion Include="Reactor.Maui.Canvas" Version="4.0.13" />
+        <PackageVersion Include="Reactor.Maui" Version="4.0.16" />
+        <PackageVersion Include="Reactor.Maui.Canvas" Version="4.0.16" />
         <!--#if (AddMaps)-->
-        <PackageVersion Include="Reactor.Maui.Maps" Version="4.0.13" />
+        <PackageVersion Include="Reactor.Maui.Maps" Version="4.0.16" />
         <!--#endif-->
         <!--#endif-->
         <!--#endif-->
