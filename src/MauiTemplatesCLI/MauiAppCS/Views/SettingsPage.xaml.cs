@@ -13,7 +13,7 @@
 #if Tabbed
             var viewModel = AppService.GetRequiredService<SettingsViewModel>();
 #endif
-            viewModel.Title = "Settings";
+            viewModel.Heading = "Settings";
             BindingContext = viewModel;
         }
 #else

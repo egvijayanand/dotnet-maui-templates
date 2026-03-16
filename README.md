@@ -16,8 +16,8 @@ Release Details:
 |Stable|.NET 7 SR10 (7.0.101)|VS2022 17.4.x - 17.9.x|Tue, Nov 7, 2023|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
 |Stable|[.NET 8 SR10](https://github.com/dotnet/maui/releases/tag/8.0.100 "Changelog") (8.0.100) <br /> _Requires JDK 17 and Android SDK 34_ <br /> _Requires Apple Xcode 15.4 and Supports Apple Xcode 16_|VS2022 17.12.x|Tue, Nov 12, 2024|[Out of Support](https://dotnet.microsoft.com/en-us/platform/support/policy/maui ".NET MAUI Support Policy")|
 |Stable|[.NET 9 SR12](https://github.com/dotnet/maui/releases/tag/9.0.120 "Changelog") (9.0.120) <br /> _Requires JDK 17 and Android SDK 35_ <br /> _Requires Apple Xcode 26_|VS2022 17.14.17|Thu, Oct 16, 2025|Active|
-|Stable|[.NET 10 SR4.1](https://github.com/dotnet/maui/releases/tag/10.0.41 "Changelog") (10.0.41) <br /> [Release Notes](https://github.com/dotnet/core/blob/main/release-notes/10.0/10.0.0/dotnetmaui.md) <br /> _Requires JDK 17 and Android SDK 36_ <br /> _Requires Apple Xcode 26_|VS2026 18.x|Wed, Feb 18, 2026|Active|
-|Preview|[.NET 11 Preview 1](https://github.com/dotnet/maui/releases/tag/11.0.0-preview.1.26107 "Changelog") (11.0.0-preview.1.26107.1) <br /> [Release Notes](https://github.com/dotnet/core/blob/main/release-notes/11.0/preview/preview1/dotnetmaui.md) <br /> _Requires JDK 17 and Android SDK 36_ <br /> _Requires Apple Xcode 26_|VS2026 18.x|Tue, Feb 10, 2026|Preview|
+|Stable|[.NET 10 SR5](https://github.com/dotnet/maui/releases/tag/10.0.50 "Changelog") (10.0.50) <br /> [Release Notes](https://github.com/dotnet/core/blob/main/release-notes/10.0/10.0.0/dotnetmaui.md) <br /> _Requires JDK 17 and Android SDK 36_ <br /> _Requires Apple Xcode 26_|VS2026 18.x|Tue, Mar 10, 2026|Active|
+|Preview|[.NET 11 Preview 2](https://github.com/dotnet/maui/releases/tag/11.0.0-preview.2.26152.10 "Changelog") (11.0.0-preview.2.26152.10) <br /> [Release Notes](https://github.com/dotnet/core/blob/main/release-notes/11.0/preview/preview2/dotnetmaui.md) <br /> _Requires JDK 17 and Android SDK 36_ <br /> _Requires Apple Xcode 26_|VS2026 18.x|Tue, Mar 10, 2026|Preview|
 
 Version History and its dependencies are [here](https://aka.ms/maui/versions).
 
@@ -235,16 +235,38 @@ And from [v7.12.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.12.
 
 And from [v8.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/8.0.0) of the template package, `Framework` parameter defaults to .NET 10 (`net10.0`), uses `SLNX` as the default solution file format, support for .NET MAUI 10 Source Generation feature, and a new .NET 10 `FileApp` item template.
 
+And from [v8.5.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/8.5.0) of the template package, support for .NET MAUI 10 XAML C# Expression feature.
+
 ### Parameters:
+
+* XAML C# Expression:
+
+  Introduced an option to use .NET MAUI 10 XAML C# Expression feature.
+
+  Enable MVVM to check out this feature in action.
+
+  This is still an experimental feature and requires .NET MAUI 10 SR5 (`10.0.50`) or higher to work.
+
+  `-xce` | `--xaml-cs-expr` - Default value is `false`.
+
+  ```shell
+  dotnet new mauiapp -o MyApp -mvvm -xce
+  ```
 
 * Source Generation:
 
   Introduced an option to use .NET MAUI 10 Source Generation feature.
 
-  `-sg` | `--source-gen` - Default value is `false`.
+  `-sg` | `--source-gen` - Default value is `true` (from `v8.5.0` onwards).
 
   ```shell
   dotnet new mauiapp -o MyApp -sg
+  ```
+
+  To opt out, override the default value.
+  
+  ```shell
+  dotnet new mauiapp -o MyApp -sg:false
   ```
 
 * Integration with Aspire:

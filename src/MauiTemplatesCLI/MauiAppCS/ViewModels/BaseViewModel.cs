@@ -10,19 +10,19 @@
 
         [ObservableProperty]
 #if Net10OrLater
-        public partial string Title { get; set; } = string.Empty;
+        public partial string Heading { get; set; } = string.Empty;
 #else
-        private string _title = string.Empty;
+        private string _heading = string.Empty;
 #endif
     }
 #else
-    public partial class BaseViewModel(string title = "") : ObservableObject
+    public partial class BaseViewModel(string heading = "") : ObservableObject
     {
         [ObservableProperty]
 #if Net10OrLater
-        public partial string Title { get; set; } = title;
+        public partial string Heading { get; set; } = heading;
 #else
-        private string _title = title;
+        private string _heading = heading;
 #endif
     }
 #endif

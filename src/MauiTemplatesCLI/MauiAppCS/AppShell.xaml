@@ -119,7 +119,7 @@
     -->
     <!--#if (Mvvm)-->
     <MenuItem
-        Command="{Binding LogoutCommand}"
+        Command="{__BIND__LogoutCommand}"
         Text="Logout" />
     <!--#else-->
     <MenuItem

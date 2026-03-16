@@ -19,7 +19,13 @@
         private string _startPath = "/counter";
 #endif
 #elif (Hierarchical || Tabbed)
+#if XamlCSharpExpr
+        public IAsyncRelayCommand AddEventCommand => field ??= new AsyncRelayCommand(AddEventAsync);
+
+        //[RelayCommand]
+#else
         [RelayCommand]
+#endif
         private Task AddEventAsync() => NavigationService.PushModalAsync("newevent");
 #elif JSHybridNet9
         [ObservableProperty]
@@ -29,8 +35,8 @@
 #else
         private string _message = string.Empty;
 #endif
-    
-        [ObservableProperty]    
+
+        [ObservableProperty]
 #if Net10OrLater
         public partial string Messages { get; set; } = string.Empty;
 #else
@@ -41,12 +47,24 @@
 
         public Action? Interop { get; set; }
 
+#if XamlCSharpExpr
+        public IRelayCommand SendMessageCommand => field ??= new RelayCommand(SendMessage, () => CanSendMessage);
+
+        //[RelayCommand(CanExecute = nameof(CanSendMessage))]
+#else
         [RelayCommand(CanExecute = nameof(CanSendMessage))]
+#endif
         private void SendMessage() => Interop?.Invoke();
 
+#if XamlCSharpExpr
+        public IRelayCommand<string> ShowMessageCommand => field ??= new RelayCommand<string>(ShowMessage);
+
+        //[RelayCommand]
+#else
         [RelayCommand]
-        private void ShowMessage(string message)
-            => dispatcher.Dispatch(() => Messages += message + Environment.NewLine);
+#endif
+        private void ShowMessage(string? message)
+            => dispatcher.Dispatch(() => Messages += $"{message ?? string.Empty}{Environment.NewLine}");
 #else
         private int _count;
 
@@ -57,7 +75,13 @@
         private string _countText = "Current count: 0";
 #endif
 
+#if XamlCSharpExpr
+        public IRelayCommand IncrementCommand => field ??= new RelayCommand(Increment);
+
+        //[RelayCommand]
+#else
         [RelayCommand]
+#endif
         private void Increment()
         {
             _count++;

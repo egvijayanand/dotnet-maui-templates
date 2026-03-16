@@ -64,7 +64,7 @@
                 "text": "Use .NET MAUI 10 Source Generation feature."
             },
             "isVisible": true,
-            "defaultValue": "false"
+            "defaultValue": "true"
         },
         {
             "id": "include-toolkit",

@@ -6,7 +6,7 @@
         public LoginPage(LoginViewModel viewModel)
         {
             InitializeComponent();
-            viewModel.Title = "Login";
+            viewModel.Heading = "Login";
             BindingContext = viewModel;
         }
 #else

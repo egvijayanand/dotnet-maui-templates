@@ -13,7 +13,7 @@
 #if Tabbed
             var viewModel = AppService.GetRequiredService<SearchViewModel>();
 #endif
-            viewModel.Title = "Search";
+            viewModel.Heading = "Search";
             BindingContext = viewModel;
         }
 #else

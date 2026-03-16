@@ -1,6 +1,6 @@
 // For .NET 10 File-based Apps
-//#:sdk Aspire.AppHost.Sdk@13.1.1
-//#:package Aspire.Hosting.AppHost@13.1.1
+//#:sdk Aspire.AppHost.Sdk@13.1.2
+//#:package Aspire.Hosting.AppHost@13.1.2
 //#:package Aspire.Hosting.Maui@13.*-*
 
 //#:project ..\MauiApp.1\MauiApp.1.csproj

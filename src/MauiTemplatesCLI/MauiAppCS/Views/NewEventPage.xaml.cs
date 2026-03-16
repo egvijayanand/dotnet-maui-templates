@@ -6,7 +6,7 @@
         public NewEventPage(NewEventViewModel viewModel)
         {
             InitializeComponent();
-            viewModel.Title = "New Event";
+            viewModel.Heading = "New Event";
             BindingContext = viewModel;
         }
 #else
