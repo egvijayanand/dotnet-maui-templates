@@ -2,8 +2,22 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This VS extension does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 8.4.0.0:
+What's new in ver. 8.5.0.0:
 ---------------------------
+1. Templates updated to support .NET MAUI 10 SR5.
+
+2. Introduced a new option in .NET MAUI 10+ for the XAML C# Expressions feature to make the binding process simpler.
+
+Enable MVVM to check out this feature in action.
+
+This is still an experimental feature and requires .NET MAUI 10 SR5 (10.0.50) or higher to work.
+
+3. In .NET MAUI 10 projects, the Source Generation option is now turned on by default.
+
+To opt out, override the default value by unchecking the Source Generation UI control.
+
+v8.4.0.0:
+
 Templates updated to support .NET MAUI 10 SR4.1.
 
 v8.3.0.0:
