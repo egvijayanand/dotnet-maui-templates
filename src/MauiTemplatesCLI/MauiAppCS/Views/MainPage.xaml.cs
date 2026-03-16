@@ -51,7 +51,7 @@
 #else
 #if Mvvm
 #if Hierarchical
-            viewModel.Title = "Calendar";
+            viewModel.Heading = "Calendar";
 #endif
             BindingContext = viewModel;
 #endif

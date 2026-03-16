@@ -93,7 +93,7 @@
         <!-- .NET MAUI -->
         <UseMaui>true</UseMaui>
         <SingleProject>true</SingleProject>
-        <!--#if (SourceGen)-->
+        <!--#if (SourceGen || XamlCSharpExpr)-->
         <MauiXamlInflator>SourceGen</MauiXamlInflator>
         <!--#endif-->
         <!--#if (Hybrid || Razor)-->
@@ -113,6 +113,10 @@
         <RootNamespace>MauiApp._1</RootNamespace>
         <!--#if (Unpackaged)-->
         <WindowsPackageType>None</WindowsPackageType>
+        <!--#endif-->
+        <!--#if (XamlCSharpExpr)-->
+        <EnablePreviewFeatures>true</EnablePreviewFeatures>
+        <!--#else-->
         <!-- <EnablePreviewFeatures>true</EnablePreviewFeatures> -->
         <!--#endif-->
 

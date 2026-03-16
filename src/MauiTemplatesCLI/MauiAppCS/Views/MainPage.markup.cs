@@ -77,9 +77,9 @@
 #if Mvvm
             BindingContext = viewModel;
 #if Net10OrLater
-            this.SetBinding(Page.TitleProperty, static (MainViewModel vm) => vm.Title);
+            this.Bind(Page.TitleProperty, static (MainViewModel vm) => vm.Heading);
 #else
-            this.Bindv2(static (MainViewModel vm) => vm.Title);
+            this.Bindv2(static (MainViewModel vm) => vm.Heading);
 #endif
 #else
             Title = "MauiApp._1";

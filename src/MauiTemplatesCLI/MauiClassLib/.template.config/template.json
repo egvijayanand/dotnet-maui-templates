@@ -147,7 +147,7 @@
         "source-gen": {
             "type": "parameter",
             "datatype": "bool",
-            "defaultValue": "false",
+            "defaultValue": "true",
             "description": "Option to use .NET MAUI 10 Source Generation feature.",
             "displayName": "Option to use .NET MAUI 10 Source Generation feature."
         },

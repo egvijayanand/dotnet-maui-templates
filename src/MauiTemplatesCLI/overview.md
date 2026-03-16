@@ -86,7 +86,65 @@ And from [v7.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.0.0)
 
 And from [v7.7.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.7.0) of the template package, Nightly Builds feed links have been updated for both .NET MAUI v9 and v10.
 
+And from [v7.9.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.9.0) of the template package, support for .NET MAUI 10 Global namespace.
+
+And from [v7.10.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.10.0) of the template package, support for .NET MAUI 10 Implicit namespace and unified app startup.
+
+And from [v7.11.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.11.0) of the template package, introduced an option to integrate .NET MAUI 10 with Aspire.
+
+And from [v7.12.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/7.12.0) of the template package, introduced an option to integrate earlier versions of .NET MAUI with Aspire.
+
+And from [v8.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/8.0.0) of the template package, `Framework` parameter defaults to .NET 10 (`net10.0`), uses `SLNX` as the default solution file format, support for .NET MAUI 10 Source Generation feature, and a new .NET 10 `FileApp` item template.
+
+And from [v8.5.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/8.5.0) of the template package, support for .NET MAUI 10 XAML C# Expression feature.
+
 ### Parameters:
+
+* XAML C# Expression:
+
+  Introduced an option to use .NET MAUI 10 XAML C# Expression feature.
+
+  Enable MVVM to check out this feature in action.
+
+  This is still an experimental feature and requires .NET MAUI 10 SR5 (`10.0.50`) or higher to work.
+
+  `-xce` | `--xaml-cs-expr` - Default value is `false`.
+
+  ```shell
+  dotnet new mauiapp -o MyApp -mvvm -xce
+  ```
+
+* Source Generation:
+
+  Introduced an option to use .NET MAUI 10 Source Generation feature.
+
+  `-sg` | `--source-gen` - Default value is `true` (from `v8.5.0` onwards).
+
+  ```shell
+  dotnet new mauiapp -o MyApp -sg
+  ```
+
+  To opt out, override the default value.
+  
+  ```shell
+  dotnet new mauiapp -o MyApp -sg:false
+  ```
+
+* Integration with Aspire:
+
+  Introduced an option to integrate .NET MAUI with Aspire.
+
+  `--aspire` - Default value is `false`.
+
+  ```shell
+  dotnet new mauiapp -o MyApp --aspire
+  ```
+
+  This will generate two more projects: one for **Aspire AppHost** and another for **Service Defaults**.
+
+  The Aspire AppHost project will reference the .NET MAUI project, while the .NET MAUI project will reference the Service Defaults project.
+
+  Consult this [Integrating .NET MAUI with Aspire](https://egvijayanand.in/2025/10/29/integrating-dotnet-maui-with-aspire-a-comprehensive-guide/) article to know more about it.
 
 * HybridWebView Project Template:
 

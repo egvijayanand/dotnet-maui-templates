@@ -14,11 +14,11 @@
             BindingContext = AppService.GetRequiredService<EventsViewModel>();
 #else
             BindingContext = viewModel;
-            viewModel.Title = "Calendar";
+            viewModel.Heading = "Calendar";
 #if Net10OrLater
-            this.SetBinding(Page.TitleProperty, static (EventsViewModel vm) => vm.Title);
+            //this.SetBinding(Page.TitleProperty, static (EventsViewModel vm) => vm.Heading);
 #else
-            SetBinding(Page.TitleProperty, new Binding(nameof(EventsViewModel.Title)));
+            //SetBinding(Page.TitleProperty, new Binding(nameof(EventsViewModel.Heading)));
 #endif
 #endif
         }
@@ -26,8 +26,8 @@
         public EventsPage()
         {
             InitializeComponent();
-
-#if (!Tabbed)
+#if Tabbed
+#else
             Title = "Calendar";
 #endif
         }

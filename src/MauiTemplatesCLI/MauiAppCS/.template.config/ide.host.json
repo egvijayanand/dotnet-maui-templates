@@ -45,7 +45,7 @@
         {
             "id": "global-namespace",
             "name": {
-                "text": "Use .NET MAUI 10 Global Namespace feature."
+                "text": "Use .NET MAUI 10+ Global Namespace feature."
             },
             "isVisible": true,
             "defaultValue": "true"
@@ -53,7 +53,7 @@
         {
             "id": "implicit-namespace",
             "name": {
-                "text": "Use .NET MAUI 10 Implicit Namespace feature."
+                "text": "Use .NET MAUI 10+ Implicit Namespace feature."
             },
             "isVisible": true,
             "defaultValue": "false"
@@ -61,7 +61,15 @@
         {
             "id": "source-gen",
             "name": {
-                "text": "Use .NET MAUI 10 Source Generation feature."
+                "text": "Use .NET MAUI 10+ Source Generation feature."
+            },
+            "isVisible": true,
+            "defaultValue": "true"
+        },
+        {
+            "id": "xaml-cs-expr",
+            "name": {
+                "text": "Use .NET MAUI 10+ XAML C# Expression feature."
             },
             "isVisible": true,
             "defaultValue": "false"

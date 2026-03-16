@@ -903,22 +903,29 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "true",
-            "description": "Option to use .NET MAUI 10 Global Namespace feature.",
-            "displayName": "Option to use .NET MAUI 10 Global Namespace feature."
+            "description": "Option to use .NET MAUI 10+ Global Namespace feature.",
+            "displayName": "Option to use .NET MAUI 10+ Global Namespace feature."
         },
         "implicit-namespace": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to use .NET MAUI 10 Implicit Namespace feature.",
-            "displayName": "Option to use .NET MAUI 10 Implicit Namespace feature."
+            "description": "Option to use .NET MAUI 10+ Implicit Namespace feature.",
+            "displayName": "Option to use .NET MAUI 10+ Implicit Namespace feature."
         },
         "source-gen": {
             "type": "parameter",
             "datatype": "bool",
+            "defaultValue": "true",
+            "description": "Option to use .NET MAUI 10+ Source Generation feature.",
+            "displayName": "Option to use .NET MAUI 10+ Source Generation feature."
+        },
+        "xaml-cs-expr": {
+            "type": "parameter",
+            "datatype": "bool",
             "defaultValue": "false",
-            "description": "Option to use .NET MAUI 10 Source Generation feature.",
-            "displayName": "Option to use .NET MAUI 10 Source Generation feature."
+            "description": "Option to use .NET MAUI 10+ XAML C# Expression feature.",
+            "displayName": "Option to use .NET MAUI 10+ XAML C# Expression feature."
         },
         "use-mvvm": {
             "type": "parameter",
@@ -1188,6 +1195,32 @@
         "Net10OrLater": {
             "type": "computed",
             "value": "(Net10)"
+        },
+        "XamlCSharpExpr": {
+            "type": "computed",
+            "value": "(Net10OrLater && xaml-cs-expr)"
+        },
+        "BindingExpression": {
+            "type": "generated",
+            "generator": "switch",
+            "replaces": "__BIND__",
+            "parameters": {
+                "datatype": "bool",
+                "cases": [
+                    {
+                        "condition": "(CompiledBindings)",
+                        "value": "x:Bind "
+                    },
+                    {
+                        "condition": "(XamlCSharpExpr)",
+                        "value": ""
+                    },
+                    {
+                        "condition": "",
+                        "value": "Binding "
+                    }
+                ]
+            }
         },
         "AddAspire": {
             "type": "computed",

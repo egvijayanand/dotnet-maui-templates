@@ -4,9 +4,9 @@
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net10)-->
         <!--#if (Nightly)-->
-        <MauiVersion>10.0.50-ci.main.26118.3</MauiVersion>
+        <MauiVersion>10.0.60-ci.main.26164.3</MauiVersion>
         <!--#else-->
-        <MauiVersion>10.0.41</MauiVersion>
+        <MauiVersion>10.0.50</MauiVersion>
         <!--#endif-->
         <!--#elif (Net9)-->
         <MauiVersion>9.0.120</MauiVersion>
@@ -44,7 +44,7 @@
         <!--#elif (Net8)-->
         <PackageVersion Include="CommunityToolkit.Maui" Version="9.1.1" />
         <!--#else-->
-        <PackageVersion Include="CommunityToolkit.Maui" Version="14.0.0" />
+        <PackageVersion Include="CommunityToolkit.Maui" Version="14.0.1" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddSyncfusionToolkit)-->
@@ -60,7 +60,7 @@
         <!--#elif (Net8)-->
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="4.2.0" />
         <!--#else-->
-        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="7.0.0" />
+        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="7.0.1" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddCamera)-->
@@ -78,7 +78,7 @@
         <!--#elif (Net8)-->
         <PackageVersion Include="CommunityToolkit.Maui.MediaElement" Version="4.1.2" />
         <!--#else-->
-        <PackageVersion Include="CommunityToolkit.Maui.MediaElement" Version="8.0.0" />
+        <PackageVersion Include="CommunityToolkit.Maui.MediaElement" Version="8.0.1" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMaps)-->
