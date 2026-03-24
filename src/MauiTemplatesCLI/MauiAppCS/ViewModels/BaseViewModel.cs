@@ -1,8 +1,10 @@
 ﻿namespace MauiApp._1.ViewModels
 {
 #if (Hierarchical || Tabbed || Shell)
-    public partial class BaseViewModel(IDialogService dialogService, INavigationService navigationService)
-        : ObservableObject
+    public partial class BaseViewModel(
+        IDialogService dialogService,
+        INavigationService navigationService,
+        string heading = "") : ObservableObject
     {
         public IDialogService DialogService => dialogService;
 
@@ -10,9 +12,9 @@
 
         [ObservableProperty]
 #if Net10OrLater
-        public partial string Heading { get; set; } = string.Empty;
+        public partial string Heading { get; set; } = heading;
 #else
-        private string _heading = string.Empty;
+        private string _heading = heading;
 #endif
     }
 #else

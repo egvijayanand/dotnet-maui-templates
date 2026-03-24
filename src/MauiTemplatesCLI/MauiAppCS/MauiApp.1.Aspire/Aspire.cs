@@ -1,6 +1,6 @@
 // For .NET 10 File-based Apps
-//#:sdk Aspire.AppHost.Sdk@13.1.2
-//#:package Aspire.Hosting.AppHost@13.1.2
+//#:sdk Aspire.AppHost.Sdk@13.1.3
+//#:package Aspire.Hosting.AppHost@13.1.3
 //#:package Aspire.Hosting.Maui@13.*-*
 
 //#:project ..\MauiApp.1\MauiApp.1.csproj
@@ -13,7 +13,11 @@ var builder = DistributedApplication.CreateBuilder(args);
 // Configure builder
 if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
 {
-#if (AllPlatforms || IsWindows)
+#if (AddAvalonia)
+    builder.AddProject<Projects.MauiApp._1>("mauiapp")
+        .WithArgs("--framework", "MAUI_TFM")
+        .WithIconName("Desktop");
+#elif (AllPlatforms || IsWindows)
     builder.AddProject<Projects.MauiApp._1>("mauiapp-windows")
         .WithArgs("--framework", "MAUI_TFM-windows10.0.19041.0")
         .WithIconName("Desktop");
@@ -38,7 +42,11 @@ if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
 }
 else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
 {
-#if (AllPlatforms || IsiOS)
+#if (AddAvalonia)
+    builder.AddProject<Projects.MauiApp._1>("mauiapp")
+        .WithArgs("--framework", "MAUI_TFM")
+        .WithIconName("Desktop");
+#elif (AllPlatforms || IsiOS)
     builder.AddProject<Projects.MauiApp._1>("mauiapp-ios")
         .WithArgs("--framework", "MAUI_TFM-ios")
         //.WithEnvironment("_DeviceName", "<device_identifier>")
@@ -59,7 +67,11 @@ else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
 }
 else
 {
-#if (AllPlatforms || IsAndroid)
+#if (AddAvalonia)
+    builder.AddProject<Projects.MauiApp._1>("mauiapp")
+        .WithArgs("--framework", "MAUI_TFM")
+        .WithIconName("Desktop");
+#elif (AllPlatforms || IsAndroid)
     builder.AddProject<Projects.MauiApp._1>("mauiapp-android")
         .WithArgs("--framework", "MAUI_TFM-android")
         //.WithEnvironment("AdbTarget", "<android_device>")

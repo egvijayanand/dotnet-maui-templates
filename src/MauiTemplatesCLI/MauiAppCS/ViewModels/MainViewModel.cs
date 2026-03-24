@@ -5,7 +5,7 @@
         : BaseViewModel(dialogService, navigationService)
 #elif (Hybrid)
     public partial class MainViewModel() : BaseViewModel("MauiApp._1")
-#elif (JSHybridNet9)
+#elif (JSHybrid)
     public partial class MainViewModel(IDispatcher dispatcher) : BaseViewModel("MauiApp._1")
 #else
     public partial class MainViewModel(ISemanticScreenReader screenReader) : BaseViewModel("MauiApp._1")
@@ -27,7 +27,7 @@
         [RelayCommand]
 #endif
         private Task AddEventAsync() => NavigationService.PushModalAsync("newevent");
-#elif JSHybridNet9
+#elif JSHybrid
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(CanSendMessage))]
 #if Net10OrLater
@@ -76,7 +76,11 @@
 #endif
 
 #if XamlCSharpExpr
-        public IRelayCommand IncrementCommand => field ??= new RelayCommand(Increment);
+        public IRelayCommand IncrementCommand
+        {
+            get => field ??= new RelayCommand(Increment);
+            set => field = value; // Not really necessary, required until the fix is regularized in .NET 11 Preview.
+        }
 
         //[RelayCommand]
 #else
@@ -86,7 +90,11 @@
         {
             _count++;
             CountText = $"Current count: {_count}";
+#if AddAvalonia
+            SemanticScreenReader.Announce(CountText);
+#else
             screenReader.Announce(CountText);
+#endif
         }
 #endif
     }

@@ -5,7 +5,11 @@
 
         <!-- Project Options -->
         <Nullable>enable</Nullable>
+        <!--#if (Preview)-->
+        <LangVersion>preview</LangVersion>
+        <!--#else-->
         <LangVersion>latest</LangVersion>
+        <!--#endif-->
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>MauiApp._1.RazorLib</RootNamespace>
     </PropertyGroup>
@@ -17,6 +21,8 @@
     <ItemGroup>
         <!--#if (CentralPkgMgmt)-->
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" />
+        <!--#elif (Preview || Nightly)-->
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="PKG_VERSION-*" />
         <!--#else-->
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="PKG_VERSION" />
         <!--#endif-->

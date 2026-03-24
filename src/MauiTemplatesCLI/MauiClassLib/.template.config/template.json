@@ -35,6 +35,11 @@
             "description": "Option to choose the library target framework.",
             "choices": [
                 {
+                    "choice": "net11.0",
+                    "description": "Target .NET 11",
+                    "displayName": ".NET 11 (Preview)"
+                },
+                {
                     "choice": "net10.0",
                     "description": "Target .NET 10",
                     "displayName": ".NET 10 (LTS)"
@@ -43,11 +48,6 @@
                     "choice": "net9.0",
                     "description": "Target .NET 9",
                     "displayName": ".NET 9 (STS)"
-                },
-                {
-                    "choice": "net8.0",
-                    "description": "Target .NET 8",
-                    "displayName": ".NET 8 (LTS)"
                 }
             ],
             "replaces": "MAUI_TFM",
@@ -98,8 +98,16 @@
                     "description": "Targets iOS platform."
                 },
                 {
+                    "choice": "Linux",
+                    "description": "Targets Linux platform (.NET 11 Preview via Avalonia)."
+                },
+                {
                     "choice": "macOS",
                     "description": "Targets macOS platform via Mac Catalyst."
+                },
+                {
+                    "choice": "Wasm",
+                    "description": "Targets WebAssembly (.NET 11 Preview via Avalonia)."
                 },
                 {
                     "choice": "Windows",
@@ -172,6 +180,13 @@
             "description": "Option to add CommunityToolkit.Maui.Markup NuGet package reference.",
             "displayName": "Add CommunityToolkit.Maui._Markup NuGet package reference"
         },
+        "include-avalonia": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to add Avalonia.Controls.Maui.Desktop NuGet package reference (.NET MAUI 11).",
+            "displayName": "Add _Avalonia.Controls.Maui.Desktop NuGet package reference (.NET MAUI 11)"
+        },
         "include-camera": {
             "type": "parameter",
             "datatype": "bool",
@@ -191,7 +206,7 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to add Microsoft.Maui.Controls.Maps NuGet package reference.",
-            "displayName": "Add Microsoft.Maui.Controls.M_aps NuGet package reference"
+            "displayName": "Add Microsoft.Maui.Controls.Maps NuGet package reference"
         },
         "include-foldable": {
             "type": "parameter",
@@ -262,10 +277,6 @@
             "type": "computed",
             "value": "(Net10OrLater && source-gen)"
         },
-        "Net8": {
-            "type": "computed",
-            "value": "(frameworkLower == \"net8.0\")"
-        },
         "Net9": {
             "type": "computed",
             "value": "(frameworkLower == \"net9.0\")"
@@ -273,6 +284,10 @@
         "Net10": {
             "type": "computed",
             "value": "(frameworkLower == \"net10.0\")"
+        },
+        "Net11": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net11.0\")"
         },
         "PkgVersion": {
             "type": "generated",
@@ -282,31 +297,35 @@
                 "datatype": "string",
                 "cases": [
                     {
-                        "condition": "(Net8)",
-                        "value": "8.*"
-                    },
-                    {
                         "condition": "(Net9)",
                         "value": "9.*"
                     },
                     {
                         "condition": "(Net10)",
                         "value": "10.*"
+                    },
+                    {
+                        "condition": "(Net11)",
+                        "value": "11.*"
                     }
                 ]
             }
         },
-        "Net8OrLater": {
+        "Preview": {
             "type": "computed",
-            "value": "(Net8 || Net9 || Net10)"
+            "value": "(Net11)"
         },
         "Net9OrLater": {
             "type": "computed",
-            "value": "(Net9 || Net10)"
+            "value": "(Net9 || Net10 || Net11)"
         },
         "Net10OrLater": {
             "type": "computed",
-            "value": "(Net10)"
+            "value": "(Net10 || Net11)"
+        },
+        "Net11OrLater": {
+            "type": "computed",
+            "value": "(Net11)"
         },
         "AllPlatforms": {
             "type": "computed",
@@ -332,6 +351,14 @@
             "type": "computed",
             "value": "(target-platform == \"Tizen\")"
         },
+        "IsLinux": {
+            "type": "computed",
+            "value": "((target-platform == \"Desktop\" || target-platform == \"Linux\") && AddAvalonia)"
+        },
+        "IsWasm": {
+            "type": "computed",
+            "value": "(target-platform == \"Wasm\" && AddAvalonia)"
+        },
         "IsBase": {
             "type": "computed",
             "value": "(target-platform == \"Base\")"
@@ -342,7 +369,7 @@
         },
         "MorePlatforms": {
             "type": "computed",
-            "value": "(IsWindows || IsTizen || IsBase)"
+            "value": "(IsWindows || IsTizen || IsBase || IsLinux || IsWasm || AddAvalonia)"
         },
         "AddToolkit": {
             "type": "computed",
@@ -355,6 +382,10 @@
         "AddMarkup": {
             "type": "computed",
             "value": "(include-markup)"
+        },
+        "AddAvalonia": {
+            "type": "computed",
+            "value": "(Net11OrLater && include-avalonia)"
         },
         "AddCamera": {
             "type": "computed",
@@ -394,7 +425,7 @@
         },
         "PackageRef": {
             "type": "computed",
-            "value": "(Net8OrLater || AddToolkit || AddMarkup || AddMaps || AddMvvmToolkit || AddSharedToolkit)"
+            "value": "(Net9OrLater || AddToolkit || AddMarkup || AddMaps || AddMvvmToolkit || AddSharedToolkit)"
         },
         "UseSlnx": {
             "type": "computed",

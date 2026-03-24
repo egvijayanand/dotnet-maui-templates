@@ -10,13 +10,18 @@
 
         <!-- Project Options -->
         <Nullable>enable</Nullable>
-        <!--#if (Net10OrLater)-->
+        <!--#if (Preview)-->
         <LangVersion>preview</LangVersion>
         <!--#else-->
         <LangVersion>latest</LangVersion>
         <!--#endif-->
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>MauiApp._1</RootNamespace>
+        <!--#if (XamlCSharpExpr)-->
+        <EnablePreviewFeatures>true</EnablePreviewFeatures>
+        <!--#else-->
+        <!-- <EnablePreviewFeatures>true</EnablePreviewFeatures> -->
+        <!--#endif-->
     </PropertyGroup>
   
     <ItemGroup>

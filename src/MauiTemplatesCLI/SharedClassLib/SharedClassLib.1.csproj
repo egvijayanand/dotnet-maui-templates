@@ -4,7 +4,7 @@
     <PropertyGroup>
         <TargetFrameworks>FORMS_TFM;MAUI_TFM</TargetFrameworks>
         <Nullable>enable</Nullable>
-        <!--#if (Net10OrLater)-->
+        <!--#if (Preview)-->
         <LangVersion>preview</LangVersion>
         <!--#else-->
         <LangVersion>latest</LangVersion>
@@ -42,7 +42,7 @@
         <None Include="**\*.forms.cs" />
     </ItemGroup>
 
-    <!--#if (SolnFile || Net8OrLater || CentralPkgMgmt)-->
+    <!--#if (SolnFile || Net9OrLater || CentralPkgMgmt)-->
     <ItemGroup>
         <!--#if (SolnFile)-->
         <None Remove="SAFE-NAME.code-workspace" />
@@ -50,7 +50,7 @@
         <!--#if (SolnFile && UseSlnx)-->
         <None Remove="SAFE-NAME.slnx" />
         <!--#endif-->
-        <!--#if (Net8OrLater || CentralPkgMgmt)-->
+        <!--#if (Net9OrLater || CentralPkgMgmt)-->
         <None Remove="Directory.Packages.props" />
         <!--#endif-->
     </ItemGroup>
@@ -76,9 +76,9 @@
         <PackageReference Include="Xamarin.CommunityToolkit.Markup" />
         <!--#endif-->
         <!--#else-->
-        <PackageReference Include="Xamarin.Forms" Version="5.*" />
+        <PackageReference Include="Xamarin.Forms" Version="$(FormsVersion)" />
         <!--#if (AddFormsMaps)-->
-        <PackageReference Include="Xamarin.Forms.Maps" Version="5.*" />
+        <PackageReference Include="Xamarin.Forms.Maps" Version="$(FormsVersion)" />
         <!--#endif-->
         <!--#if (AddFormsEssentials)-->
         <PackageReference Include="Xamarin.Essentials" Version="1.*" />
@@ -95,13 +95,13 @@
         <!--#endif-->
     </ItemGroup>
 
-    <!--#if (Net8OrLater || AddMauiToolkit || AddMauiMarkup || AddMauiMaps)-->
+    <!--#if (Net9OrLater || AddMauiToolkit || AddMauiMarkup || AddMauiMaps)-->
     <!-- .NET MAUI NuGet packages -->
     <ItemGroup Condition="'$(TargetFramework)' == 'MAUI_TFM'">
         <!--#if (CentralPkgMgmt)-->
         <PackageReference Include="Microsoft.Maui.Controls" />
-        <!--#if (Net8)-->
-        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" />
+        <!--#if (AddAvalonia)-->
+        <PackageReference Include="Avalonia.Controls.Maui.Desktop" />
         <!--#endif-->
         <!--#if (AddMauiMaps)-->
         <PackageReference Include="Microsoft.Maui.Controls.Maps" />
@@ -117,30 +117,22 @@
         <!--#endif-->
         <!--#else-->
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-        <!--#if (Net8)-->
-        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+        <!--#if (AddAvalonia)-->
+        <PackageReference Include="Avalonia.Controls.Maui.Desktop" Version="$(AvaloniaMauiVersion)" />
         <!--#endif-->
         <!--#if (AddMauiToolkit)-->
         <!--#if (Net9)-->
         <PackageReference Include="CommunityToolkit.Maui" Version="12.*" />
-        <!--#elif (Net8)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="9.*" />
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui" Version="14.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddSyncfusionToolkit)-->
-        <!--#if (Net9OrLater)-->
         <PackageReference Include="Syncfusion.Maui.Toolkit" Version="1.*" />
-        <!--#else-->
-        <PackageReference Include="Syncfusion.Maui.Toolkit" Version="1.0.7" />
-        <!--#endif-->
         <!--#endif-->
         <!--#if (AddMauiMarkup)-->
         <!--#if (Net9)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="6.*" />
-        <!--#elif (Net8)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.*" />
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="7.*" />
         <!--#endif-->
@@ -169,8 +161,6 @@
         <!--#if (AddSharedToolkit)-->
         <!--#if (Net9)-->
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="4.*" />
-        <!--#elif (Net8)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="3.*" />
         <!--#else-->
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="5.*" />
         <!--#endif-->

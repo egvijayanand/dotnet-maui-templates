@@ -28,14 +28,18 @@ using Syncfusion.Maui.Toolkit.Hosting;
 #if Reactor
 using Microsoft.Maui.Controls.Hosting;
 #endif
-#if (AddToolkit || Hybrid || Net8OrLater || Razor)
+#if (AddToolkit || Hybrid || Net9OrLater || Razor)
 
 #endif
 namespace MauiApp._1
 {
     public static class MauiProgram
     {
+#if AddAvalonia
+        public static MauiApp CreateMauiApp(bool useSingleAppLifetime = false)
+#else
         public static MauiApp CreateMauiApp()
+#endif
         {
             var builder = MauiApp.CreateBuilder();
 #if MauiLib
@@ -68,13 +72,6 @@ namespace MauiApp._1
             builder.UseMauiApp<App, Window>()
 #else
             builder.UseMauiApp<App>()
-#endif
-#if (Net8 && Reactor)
-//-:cnd:noEmit
-#if DEBUG
-                   .EnableMauiReactorHotReload()
-#endif
-//+:cnd:noEmit
 #endif
 #if Razor
                    .UseMauiBlazorBindings()
@@ -112,7 +109,9 @@ namespace MauiApp._1
 #endif
 #endif
 #if AddAspire
-#if Net10OrLater
+#if AddAvalonia
+                   .AddServiceDefaults("MauiApp._1") // Aspire service defaults
+#elif Net10OrLater
                    .AddServiceDefaults() // Aspire service defaults
 #else
                    .ConfigureEnvironmentVariables() // Load configuration from environment variables
@@ -134,7 +133,7 @@ namespace MauiApp._1
             builder.Services.AddSingleton<MainViewModel>();
             //builder.Services.AddSingleton<MainPage>();
 
-#elif JSHybridNet9
+#elif JSHybrid
             builder.Services.AddSingleton(DeviceDisplay.Current);
             builder.Services.AddSingleton(DeviceInfo.Current);
             builder.Services.AddSingleton<MainViewModel>();
@@ -190,7 +189,7 @@ namespace MauiApp._1
             builder.Logging.AddDebug();
 #endif
 //+:cnd:noEmit
-#elif JSHybridNet9
+#elif JSHybrid
 //-:cnd:noEmit
 #if DEBUG
             // Caution: Recommended to enable Developer Tools only for development!!!
@@ -228,6 +227,14 @@ namespace MauiApp._1
             });
 #endif
 //+:cnd:noEmit
+#if AddAvalonia
+//-:cnd:noEmit
+
+#if SKIA
+            builder.UseAvaloniaApp(useSingleAppLifetime);
+#endif
+//+:cnd:noEmit
+#endif
 
             return builder.Build();
         }

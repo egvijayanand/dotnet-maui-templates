@@ -61,7 +61,7 @@
         <!--#endif-->
         <!--#endif-->
         <!--#if (IsTizen)-->
-        <!--#if (Net8OrLater)-->
+        <!--#if (Net9OrLater)-->
         <!--#if (FirstLine || IsWindows)-->
         <!-- <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-tizen</TargetFrameworks> -->
         <!--#elif (IsBase)-->
@@ -95,7 +95,11 @@
 
         <!-- Project Options -->
         <Nullable>enable</Nullable>
+        <!--#if (Preview)-->
+        <LangVersion>preview</LangVersion>
+        <!--#else-->
         <LangVersion>latest</LangVersion>
+        <!--#endif-->
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>MauiApp._1</RootNamespace>
         <DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference>
@@ -228,7 +232,7 @@
     </ItemGroup>
 
     <!--#endif-->
-    <!--#if (Plain || Net8OrLater || CentralPkgMgmt )-->
+    <!--#if (Plain || Net9OrLater || CentralPkgMgmt )-->
     <ItemGroup>
         <!--#if (Plain)-->
         <None Remove="SAFE-NAME.code-workspace" />
@@ -236,7 +240,7 @@
         <None Remove="SAFE-NAME.slnx" />
         <!--#endif-->
         <!--#endif-->
-        <!--#if (Net8OrLater || CentralPkgMgmt)-->
+        <!--#if (Net9OrLater || CentralPkgMgmt)-->
         <None Remove="Directory.Packages.props" />
         <!--#endif-->
     </ItemGroup>
@@ -262,9 +266,6 @@
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" />
         <!--#endif-->
         <PackageReference Include="Microsoft.Maui.Controls" />
-        <!--#if (Net8)-->
-        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" />
-        <!--#endif-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Condition="'$(Configuration)' == 'Debug'" />
         <!--#if (AddFoldable)-->
         <PackageReference Include="Microsoft.Maui.Controls.Foldable" />
@@ -294,38 +295,31 @@
         <PackageReference Include="VijayAnand.Toolkit.Markup" />
         <!--#endif-->
         <!--#else-->
+        <!--#if (Preview || Nightly)-->
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Condition="'$(Configuration)' == 'Debug'" Version="PKG_VERSION-*" />
+        <!--#else-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Condition="'$(Configuration)' == 'Debug'" Version="PKG_VERSION" />
+        <!--#endif-->
         <!--#if (Hybrid)-->
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <!--#endif-->
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-        <!--#if (Net8)-->
-        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
-        <!--#endif-->
         <!--#if (AddFoldable)-->
         <PackageReference Include="Microsoft.Maui.Controls.Foldable" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#if (AddToolkit)-->
         <!--#if (Net9)-->
         <PackageReference Include="CommunityToolkit.Maui" Version="12.*" />
-        <!--#elif (Net8)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="9.*" />
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui" Version="14.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddSyncfusionToolkit)-->
-        <!--#if (Net9OrLater)-->
         <PackageReference Include="Syncfusion.Maui.Toolkit" Version="1.*" />
-        <!--#else-->
-        <PackageReference Include="Syncfusion.Maui.Toolkit" Version="1.0.7" />
-        <!--#endif-->
         <!--#endif-->
         <!--#if (AddMarkup)-->
         <!--#if (Net9)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="6.*" />
-        <!--#elif (Net8)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.*" />
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="7.*" />
         <!--#endif-->
@@ -333,8 +327,6 @@
         <!--#if (AddSharedToolkit)-->
         <!--#if (Net9)-->
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="4.*" />
-        <!--#elif (Net8)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="3.*" />
         <!--#else-->
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="5.*" />
         <!--#endif-->

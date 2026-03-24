@@ -2,20 +2,32 @@
     <PropertyGroup>
         <!--#if (CentralPkgMgmt)-->
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-        <!--#if (Net10)-->
+        <!--#if (AddAvalonia)-->
+        <AvaloniaMauiVersion>11.0.0-preview.2.26082.825</AvaloniaMauiVersion>
+        <!--#endif-->
+        <FormsVersion>5.0.0.2662</FormsVersion>
+        <!--#if (Net11)-->
         <!--#if (Nightly)-->
-        <MauiVersion>10.0.60-ci.main.26164.3</MauiVersion>
+        <MauiVersion>11.0.0-preview.1.26160.5</MauiVersion>
         <!--#else-->
-        <MauiVersion>10.0.50</MauiVersion>
+        <MauiVersion>11.0.0-preview.2.26152.10</MauiVersion>
         <!--#endif-->
         <!--#elif (Net9)-->
         <MauiVersion>9.0.120</MauiVersion>
-        <!--#elif (Net8)-->
-        <MauiVersion>8.0.100</MauiVersion>
+        <!--#else-->
+        <!--#if (Nightly)-->
+        <MauiVersion>10.0.60-ci.main.26173.5</MauiVersion>
+        <!--#else-->
+        <MauiVersion>10.0.50</MauiVersion>
+        <!--#endif-->
         <!--#endif-->
         <!--#else-->
         <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
-        <!--#if (Nightly)-->
+        <!--#if (AddAvalonia)-->
+        <AvaloniaMauiVersion>PKG_VERSION-*</AvaloniaMauiVersion>
+        <!--#endif-->
+        <FormsVersion>5.*</FormsVersion>
+        <!--#if (Preview || Nightly)-->
         <MauiVersion>PKG_VERSION-*</MauiVersion>
         <!--#else-->
         <MauiVersion>PKG_VERSION</MauiVersion>
@@ -24,7 +36,7 @@
     </PropertyGroup>
     <!--#if (CentralPkgMgmt)-->
     <ItemGroup>
-        <PackageVersion Include="Xamarin.Forms" Version="5.0.0.2662" />
+        <PackageVersion Include="Xamarin.Forms" Version="$(FormsVersion)" />
         <!--#if (AddFormsEssentials)-->
         <PackageVersion Include="Xamarin.Essentials" Version="1.8.1" />
         <!--#endif-->
@@ -32,7 +44,7 @@
         <PackageVersion Include="Xamarin.Essentials.Interfaces" Version="1.8.0" />
         <!--#endif-->
         <!--#if (AddFormsMaps)-->
-        <PackageVersion Include="Xamarin.Forms.Maps" Version="5.0.0.2662" />
+        <PackageVersion Include="Xamarin.Forms.Maps" Version="$(FormsVersion)" />
         <!--#endif-->
         <!--#if (AddFormsToolkit)-->
         <PackageVersion Include="Xamarin.CommunityToolkit" Version="2.0.6" />
@@ -41,30 +53,22 @@
         <PackageVersion Include="Xamarin.CommunityToolkit.Markup" Version="2.0.6" />
         <!--#endif-->
         <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-        <!--#if (Net8)-->
-        <PackageVersion Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+        <!--#if (AddAvalonia)-->
+        <PackageVersion Include="Avalonia.Controls.Maui.Desktop" Version="$(AvaloniaMauiVersion)" />
         <!--#endif-->
         <!--#if (AddMauiToolkit)-->
         <!--#if (Net9)-->
         <PackageVersion Include="CommunityToolkit.Maui" Version="12.3.0" />
-        <!--#elif (Net8)-->
-        <PackageVersion Include="CommunityToolkit.Maui" Version="9.1.1" />
         <!--#else-->
         <PackageVersion Include="CommunityToolkit.Maui" Version="14.0.1" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddSyncfusionToolkit)-->
-        <!--#if (Net9OrLater)-->
         <PackageVersion Include="Syncfusion.Maui.Toolkit" Version="1.0.9" />
-        <!--#else-->
-        <PackageVersion Include="Syncfusion.Maui.Toolkit" Version="1.0.7" />
-        <!--#endif-->
         <!--#endif-->
         <!--#if (AddMauiMarkup)-->
         <!--#if (Net9)-->
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="6.0.1" />
-        <!--#elif (Net8)-->
-        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="4.2.0" />
         <!--#else-->
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="7.0.1" />
         <!--#endif-->
@@ -72,8 +76,6 @@
         <!--#if (AddSharedToolkit)-->
         <!--#if (Net9)-->
         <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="4.2.0" />
-        <!--#elif (Net8)-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.6.0" />
         <!--#else-->
         <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="5.0.0" />
         <!--#endif-->
@@ -82,7 +84,7 @@
         <PackageVersion Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#if (AddMvvmToolkit)-->
-        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.1" />
         <!--#endif-->
     </ItemGroup>
     <!--#endif-->

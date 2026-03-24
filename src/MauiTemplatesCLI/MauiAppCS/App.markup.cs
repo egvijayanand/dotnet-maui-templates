@@ -58,7 +58,13 @@ namespace MauiApp._1
             get
             {
                 var version = typeof(MauiApp).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()!.InformationalVersion;
+//-:cnd:noEmit
+#if SKIA
+                return $".NET MAUI ver. {version[..version.IndexOf('+')]} (Avalonia)";
+#else
                 return $".NET MAUI ver. {version[..version.IndexOf('+')]}";
+#endif
+//+:cnd:noEmit
             }
         }
     }

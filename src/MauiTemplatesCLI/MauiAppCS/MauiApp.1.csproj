@@ -10,6 +10,9 @@
         <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('osx'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst</TargetFrameworks>
         <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-ios;MAUI_TFM-maccatalyst;MAUI_TFM-windows10.0.19041.0</TargetFrameworks>
         <!-- <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-tizen</TargetFrameworks> -->
+        <!--#if (AddAvalonia)-->
+        <TargetFrameworks>$(TargetFrameworks);MAUI_TFM-browser</TargetFrameworks>
+        <!--#endif-->
         <TargetFrameworks>$(TargetFrameworks);MAUI_TFM</TargetFrameworks>
         <!--#elif (IsAndroid && IsiOS && IsmacOS)-->
         <TargetFrameworks>MAUI_TFM-android</TargetFrameworks>
@@ -53,17 +56,17 @@
         <!-- Targets possible from Windows OS -->
         <!--#if (FirstLine)-->
         <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-windows10.0.19041.0</TargetFrameworks>
-        <!--#elif (IsTizen || IsBase)-->
+        <!--#elif (IsTizen || IsBase || AddAvalonia)-->
         <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">MAUI_TFM-windows10.0.19041.0</TargetFrameworks>
         <!--#else-->
         <TargetFramework Condition="$([MSBuild]::IsOSPlatform('windows'))">MAUI_TFM-windows10.0.19041.0</TargetFramework>
         <!--#endif-->
         <!--#endif-->
         <!--#if (IsTizen)-->
-        <!--#if (Net8OrLater)-->
+        <!--#if (Net9OrLater)-->
         <!--#if (FirstLine || IsWindows)-->
         <!-- <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);MAUI_TFM-tizen</TargetFrameworks> -->
-        <!--#elif (IsBase)-->
+        <!--#elif (IsBase || AddAvalonia)-->
         <!-- <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">MAUI_TFM-tizen</TargetFrameworks> -->
         <!--#else-->
         <!-- <TargetFramework Condition="$([MSBuild]::IsOSPlatform('windows'))">MAUI_TFM-tizen</TargetFramework> -->
@@ -78,14 +81,39 @@
         <!--#endif-->
         <!--#endif-->
         <!--#endif-->
-        <!--#if (IsBase)-->
+        <!--#if (IsWasm)-->
         <!--#if (FirstLine || IsWindows || IsTizen)-->
+        <TargetFrameworks>$(TargetFrameworks);MAUI_TFM-browser</TargetFrameworks>
+        <!--#elif (IsBase || IsLinux)-->
+        <TargetFrameworks>MAUI_TFM-browser</TargetFrameworks>
+        <!--#else-->
+        <TargetFramework>MAUI_TFM-browser</TargetFramework>
+        <!--#endif-->
+        <!--#endif-->
+        <!--#if (IsBase || IsLinux || !(AllPlatforms || IsWasm))-->
+        <!--#if (FirstLine || IsWindows || IsTizen || IsWasm)-->
         <TargetFrameworks>$(TargetFrameworks);MAUI_TFM</TargetFrameworks>
         <!--#else-->
         <TargetFramework>MAUI_TFM</TargetFramework>
         <!--#endif-->
         <!--#endif-->
+        <!--#if (AddAvalonia)-->
+        <!--#if (AllPlatforms || IsWasm)-->
+
+        <OutputType Condition="'$(TargetFramework)' != 'MAUI_TFM-browser'">Exe</OutputType>
+        <!--#if (AllPlatforms)-->
+        <DefineConstants Condition="'$(TargetFramework)' == 'MAUI_TFM'">$(DefineConstants);SKIA</DefineConstants>
+        <!--#endif-->
+        <DefineConstants Condition="'$(TargetFramework)' == 'MAUI_TFM-browser'">$(DefineConstants);SKIA</DefineConstants>
+        <!--#else-->
+
+        <OutputType>Exe</OutputType>
+        <DefineConstants Condition="'$(TargetFramework)' == 'MAUI_TFM'">$(DefineConstants);SKIA</DefineConstants>
+        <!--#endif-->
+        <!--#else-->
+
         <OutputType Condition="'$(TargetFramework)' != 'MAUI_TFM'">Exe</OutputType>
+        <!--#endif-->
         <!--#if (Net10OrLater)-->
         <!-- <DefineConstants>$(DefineConstants);MauiAllowImplicitXmlnsDeclaration</DefineConstants> -->
         <!--#endif-->
@@ -102,7 +130,7 @@
 
         <!-- Project Options -->
         <Nullable>enable</Nullable>
-        <!--#if (Net10OrLater && AddMvvmToolkit)-->
+        <!--#if (Preview)-->
         <LangVersion>preview</LangVersion>
         <!--#else-->
         <LangVersion>latest</LangVersion>
@@ -154,6 +182,8 @@
         <!--#if (AllPlatforms || IsAndroid)-->
         <!--#if (Hybrid)-->
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">24.0</SupportedOSPlatformVersion>
+        <!--#elif (AddAvalonia)-->
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">23.0</SupportedOSPlatformVersion>
         <!--#else-->
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
         <!--#endif-->
@@ -195,7 +225,7 @@
         <!--#if (UseSlnx)-->
         <None Remove="SAFE-NAME.slnx" />
         <!--#endif-->
-        <!--#if (Net8OrLater || CentralPkgMgmt)-->
+        <!--#if (Net9OrLater || CentralPkgMgmt)-->
         <None Remove="Directory.Packages.props" />
         <!--#endif-->
     </ItemGroup>
@@ -210,16 +240,16 @@
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" />
         <!--#endif-->
         <PackageReference Include="Microsoft.Maui.Controls" />
-        <!--#if (Net8)-->
-        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" />
+        <!--#if (AddAvalonia)-->
+        <PackageReference Include="Avalonia.Controls.Maui.Desktop" />
         <!--#endif-->
         <!--#else-->
         <!--#if (Hybrid || Razor)-->
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <!--#endif-->
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-        <!--#if (Net8)-->
-        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+        <!--#if (AddAvalonia)-->
+        <PackageReference Include="Avalonia.Controls.Maui.Desktop" Version="$(AvaloniaMauiVersion)" />
         <!--#endif-->
         <!--#endif-->
         <!--#else-->
@@ -233,8 +263,8 @@
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Condition="'$(Configuration)' == 'Debug'" />
         <PackageReference Include="Microsoft.Maui.Controls" />
         <PackageReference Include="VijayAnand.MauiToolkit" />
-        <!--#if (Net8)-->
-        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" />
+        <!--#if (AddAvalonia)-->
+        <PackageReference Include="Avalonia.Controls.Maui.Desktop" />
         <!--#endif-->
         <!--#if (AddCamera)-->
         <PackageReference Include="CommunityToolkit.Maui.Camera" />
@@ -280,8 +310,6 @@
         <!--#if (Razor)-->
         <!--#if (Net9)-->
         <PackageReference Include="BlazorBindings.Maui" Version="3.*" />
-        <!--#elif (Net8)-->
-        <PackageReference Include="BlazorBindings.Maui" Version="2.*" />
         <!--#else-->
         <PackageReference Include="BlazorBindings.Maui" Version="4.*" />
         <!--#endif-->
@@ -294,8 +322,6 @@
         <!--#if (AllPlatforms || IsWindows)-->
         <!--#if (Net9)-->
         <PackageReference Include="CommunityToolkit.Maui.Maps" Version="3.*" />
-        <!--#elif (Net8)-->
-        <PackageReference Include="CommunityToolkit.Maui.Maps" Version="2.*" />
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui.Maps" Version="4.*" />
         <!--#endif-->
@@ -304,39 +330,33 @@
         <!--#if (Hybrid || Razor)-->
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <!--#endif-->
+        <!--#if (Preview || Nightly)-->
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="PKG_VERSION-*" Condition="'$(Configuration)' == 'Debug'" />
+        <!--#else-->
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="PKG_VERSION" Condition="'$(Configuration)' == 'Debug'" />
+        <!--#endif-->
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-        <!--#if (Net8)-->
-        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+        <!--#if (AddAvalonia)-->
+        <PackageReference Include="Avalonia.Controls.Maui.Desktop" Version="$(AvaloniaMauiVersion)" />
         <!--#endif-->
         <!--#if (Net9)-->
         <PackageReference Include="VijayAnand.MauiToolkit" Version="4.*" />
-        <!--#elif (Net8)-->
-        <PackageReference Include="VijayAnand.MauiToolkit" Version="3.*" />
         <!--#else-->
         <PackageReference Include="VijayAnand.MauiToolkit" Version="5.*" />
         <!--#endif-->
         <!--#if (AddToolkit)-->
         <!--#if (Net9)-->
         <PackageReference Include="CommunityToolkit.Maui" Version="12.*" />
-        <!--#elif (Net8)-->
-        <PackageReference Include="CommunityToolkit.Maui" Version="9.*" />
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui" Version="14.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddSyncfusionToolkit)-->
-        <!--#if (Net9OrLater)-->
         <PackageReference Include="Syncfusion.Maui.Toolkit" Version="1.*" />
-        <!--#else-->
-        <PackageReference Include="Syncfusion.Maui.Toolkit" Version="1.0.7" />
-        <!--#endif-->
         <!--#endif-->
         <!--#if (AddMarkup)-->
         <!--#if (Net9)-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="6.*" />
-        <!--#elif (Net8)-->
-        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.*" />
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui.Markup" Version="7.*" />
         <!--#endif-->
@@ -344,8 +364,6 @@
         <!--#if (AddCamera)-->
         <!--#if (Net9)-->
         <PackageReference Include="CommunityToolkit.Maui.Camera" Version="4.*" />
-        <!--#elif (Net8)-->
-        <PackageReference Include="CommunityToolkit.Maui.Camera" Version="1.*" />
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui.Camera" Version="6.*" />
         <!--#endif-->
@@ -353,8 +371,6 @@
         <!--#if (AddMedia)-->
         <!--#if (Net9)-->
         <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="6.*" />
-        <!--#elif (Net8)-->
-        <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="4.*" />
         <!--#else-->
         <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="8.*" />
         <!--#endif-->
@@ -362,8 +378,6 @@
         <!--#if (AddSharedToolkit)-->
         <!--#if (Net9)-->
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="4.*" />
-        <!--#elif (Net8)-->
-        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="3.*" />
         <!--#else-->
         <PackageReference Include="VijayAnand.Toolkit.Markup" Version="5.*" />
         <!--#endif-->
@@ -380,12 +394,6 @@
         <PackageReference Include="Reactor.Maui.Canvas" Version="3.*" />
         <!--#if (AddMaps)-->
         <PackageReference Include="Reactor.Maui.Maps" Version="3.*" />
-        <!--#endif-->
-        <!--#elif (Net8)-->
-        <PackageReference Include="Reactor.Maui" Version="2.*" />
-        <PackageReference Include="Reactor.Maui.Canvas" Version="2.*" />
-        <!--#if (AddMaps)-->
-        <PackageReference Include="Reactor.Maui.Maps" Version="2.*" />
         <!--#endif-->
         <!--#else-->
         <PackageReference Include="Reactor.Maui" Version="4.*" />

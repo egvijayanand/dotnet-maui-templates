@@ -91,6 +91,14 @@
             "defaultValue": "false"
         },
         {
+            "id": "include-avalonia",
+            "name": {
+                "text": "Add _Avalonia.Controls.Maui.Desktop NuGet package reference (.NET MAUI 11)"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
             "id": "include-camera",
             "name": {
                 "text": "Add CommunityTool_kit.Maui.Camera NuGet package reference"
@@ -109,7 +117,7 @@
         {
             "id": "include-maps",
             "name": {
-                "text": "Add Microsoft.Maui.Controls.M_aps NuGet package reference"
+                "text": "Add Microsoft.Maui.Controls.Maps NuGet package reference"
             },
             "isVisible": true,
             "defaultValue": "false"

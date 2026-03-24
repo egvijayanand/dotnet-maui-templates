@@ -27,7 +27,7 @@ using Syncfusion.Maui.Toolkit.Hosting;
 #if Reactor
 using Microsoft.Maui.Controls.Hosting;
 #endif
-#if (AddToolkit || Hybrid || Net8OrLater || Razor)
+#if (AddToolkit || Hybrid || Net9OrLater || Razor)
 
 #endif
 namespace MauiApp._1
@@ -50,13 +50,6 @@ namespace MauiApp._1
             builder.UseMauiApp<App, Window>()
 #else
             builder.UseMauiApp<App>()
-#endif
-#if (Net8 && Reactor)
-//-:cnd:noEmit
-#if DEBUG
-                   .EnableMauiReactorHotReload()
-#endif
-//+:cnd:noEmit
 #endif
 #if Razor
                    .UseMauiBlazorBindings()
@@ -90,7 +83,7 @@ namespace MauiApp._1
 #endif
 #if AddAspire
 #if Net10OrLater
-                   .AddServiceDefaults() // Aspire service defaults
+                   .AddServiceDefaults("MauiApp._1") // Aspire service defaults
 #else
                    .ConfigureEnvironmentVariables() // Load configuration from environment variables
                    .AddServiceDefaults() // Aspire service defaults
@@ -111,7 +104,7 @@ namespace MauiApp._1
             builder.Services.AddSingleton<MainViewModel>();
             //builder.Services.AddSingleton<MainPage>();
 
-#elif JSHybridNet9
+#elif JSHybrid
             builder.Services.AddSingleton(DeviceDisplay.Current);
             builder.Services.AddSingleton(DeviceInfo.Current);
             builder.Services.AddSingleton<MainViewModel>();
@@ -167,7 +160,7 @@ namespace MauiApp._1
             builder.Logging.AddDebug();
 #endif
 //+:cnd:noEmit
-#elif JSHybridNet9
+#elif JSHybrid
 //-:cnd:noEmit
 #if DEBUG
             // Caution: Recommended to enable Developer Tools only for development!!!

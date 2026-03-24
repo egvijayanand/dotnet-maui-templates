@@ -184,12 +184,6 @@ namespace MauiApp._1
                         },
                     },
                 ])));
-#if Net8
-            Add(new Style<Frame>(
-                (Frame.HasShadowProperty, false),
-                (Frame.CornerRadiusProperty, 8)
-            ).AddAppThemeBinding(Frame.BorderColorProperty, AppColor("Gray200"), AppColor("Gray950")));
-#endif
             Add(new Style<ImageButton>(
                 (ImageButton.OpacityProperty, 1),
                 (ImageButton.BorderColorProperty, Transparent),
@@ -251,7 +245,7 @@ namespace MauiApp._1
                     },
                 },
             ])));
-#if (Net8 || Net9)
+#if (Net9)
             Add(new Style<ListView>(
             ).AddAppThemeBinding(ListView.SeparatorColorProperty, AppColor("Gray200"), AppColor("Gray500"))
              .AddAppThemeBinding(ListView.RefreshControlColorProperty, AppColor("Gray900"), AppColor("Gray200")));

@@ -2,20 +2,24 @@
     <PropertyGroup>
         <!--#if (CentralPkgMgmt)-->
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-        <!--#if (Net10)-->
+        <!--#if (Net11)-->
         <!--#if (Nightly)-->
-        <MauiVersion>10.0.60-ci.main.26164.3</MauiVersion>
+        <MauiVersion>11.0.0-preview.1.26160.5</MauiVersion>
         <!--#else-->
-        <MauiVersion>10.0.50</MauiVersion>
+        <MauiVersion>11.0.0-preview.2.26152.10</MauiVersion>
         <!--#endif-->
         <!--#elif (Net9)-->
         <MauiVersion>9.0.120</MauiVersion>
-        <!--#elif (Net8)-->
-        <MauiVersion>8.0.100</MauiVersion>
+        <!--#else-->
+        <!--#if (Nightly)-->
+        <MauiVersion>10.0.60-ci.main.26173.5</MauiVersion>
+        <!--#else-->
+        <MauiVersion>10.0.50</MauiVersion>
+        <!--#endif-->
         <!--#endif-->
         <!--#else-->
         <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
-        <!--#if (Nightly)-->
+        <!--#if (Preview || Nightly)-->
         <MauiVersion>PKG_VERSION-*</MauiVersion>
         <!--#else-->
         <MauiVersion>PKG_VERSION</MauiVersion>
@@ -32,8 +36,8 @@
         <!--#if (Hybrid)-->
         <!--#if (Net9)-->
         <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.14" />
-        <!--#elif (Net8)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.25" />
+        <!--#elif (Net11)-->
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="11.0.0-preview.2.26159.112" />
         <!--#else-->
         <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="10.0.4" />
         <!--#endif-->
@@ -46,38 +50,27 @@
         <!--#if (Net9)-->
         <PackageVersion Include="FSharp.Core" Version="9.0.303" />
         <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.14" Condition="'$(Configuration)' == 'Debug'" />
-        <!--#elif (Net8)-->
-        <PackageVersion Include="FSharp.Core" Version="8.0.403" />
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" Condition="'$(Configuration)' == 'Debug'" />
+        <!--#elif (Net11)-->
+        <PackageVersion Include="FSharp.Core" Version="11.0.100" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="11.0.0-preview.2.26159.112" Condition="'$(Configuration)' == 'Debug'" />
         <!--#else-->
         <PackageVersion Include="FSharp.Core" Version="10.0.104" />
         <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.4" Condition="'$(Configuration)' == 'Debug'" />
         <!--#endif-->
         <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-        <!--#if (Net8)-->
-        <PackageVersion Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
-        <!--#endif-->
         <!--#if (AddToolkit)-->
         <!--#if (Net9)-->
         <PackageVersion Include="CommunityToolkit.Maui" Version="12.3.0" />
-        <!--#elif (Net8)-->
-        <PackageVersion Include="CommunityToolkit.Maui" Version="9.1.1" />
         <!--#else-->
         <PackageVersion Include="CommunityToolkit.Maui" Version="14.0.1" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddSyncfusionToolkit)-->
-        <!--#if (Net9OrLater)-->
         <PackageVersion Include="Syncfusion.Maui.Toolkit" Version="1.0.9" />
-        <!--#else-->
-        <PackageVersion Include="Syncfusion.Maui.Toolkit" Version="1.0.7" />
-        <!--#endif-->
         <!--#endif-->
         <!--#if (AddMarkup)-->
         <!--#if (Net9)-->
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="6.0.1" />
-        <!--#elif (Net8)-->
-        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="4.2.0" />
         <!--#else-->
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="7.0.1" />
         <!--#endif-->
@@ -85,8 +78,6 @@
         <!--#if (AddSharedToolkit)-->
         <!--#if (Net9)-->
         <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="4.2.0" />
-        <!--#elif (Net8)-->
-        <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="3.6.0" />
         <!--#else-->
         <PackageVersion Include="VijayAnand.Toolkit.Markup" Version="5.0.0" />
         <!--#endif-->
@@ -104,7 +95,7 @@
         <PackageVersion Include="Microsoft.Maui.Controls.Foldable" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#if (AddMvvmToolkit)-->
-        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.1" />
         <!--#endif-->
     <!--#if (PackageRef)-->
     </ItemGroup>

@@ -14,10 +14,10 @@ namespace Microsoft.Extensions.Hosting
     // To learn more about using this project, see https://aka.ms/dotnet/aspire/service-defaults
     public static class GenericExtensions
     {
-        public static TBuilder AddServiceDefaults<TBuilder>(this TBuilder builder)
+        public static TBuilder AddServiceDefaults<TBuilder>(this TBuilder builder, string applicationName = null)
             where TBuilder : IHostApplicationBuilder
         {
-            builder.ConfigureOpenTelemetry();
+            builder.ConfigureOpenTelemetry(applicationName);
 
             builder.Services.AddServiceDiscovery();
 
@@ -42,7 +42,7 @@ namespace Microsoft.Extensions.Hosting
             return builder;
         }
 
-        public static TBuilder ConfigureOpenTelemetry<TBuilder>(this TBuilder builder)
+        public static TBuilder ConfigureOpenTelemetry<TBuilder>(this TBuilder builder, string applicationName = null)
             where TBuilder : IHostApplicationBuilder
         {
             builder.Logging.AddOpenTelemetry(logging =>
@@ -59,7 +59,7 @@ namespace Microsoft.Extensions.Hosting
                 })
                 .WithTracing(tracing =>
                 {
-                    tracing.AddSource(builder.Environment.ApplicationName)
+                    tracing.AddSource(applicationName ?? builder.Environment.ApplicationName)
                         // Uncomment the following line to enable gRPC instrumentation (requires the OpenTelemetry.Instrumentation.GrpcNetClient package)
                         //.AddGrpcClientInstrumentation()
                         .AddHttpClientInstrumentation();
