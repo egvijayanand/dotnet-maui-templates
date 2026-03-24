@@ -34,66 +34,76 @@ namespace MauiApp._1
 {
     public static class MauiProgramExtensions
     {
-        public static MauiAppBuilder UseSharedMauiApp(this MauiAppBuilder builder)
+        public static MauiAppBuilder UseSharedMauiApp(this MauiAppBuilder builder, bool useSingleAppLifetime = false, bool useSkia = false)
         {
 #if (Plain || Tabbed || Hybrid || JSHybrid || Markup)
-            builder.UseMauiApp<App, MainWindow, MainPage>()
+            builder.UseMauiApp<App, MainWindow, MainPage>();
 #elif Hierarchical
 #if Mvvm
-            builder.UseMauiApp<App, MainWindow, Page>(sp => new NavigationPage(sp.GetRequiredService<MainPage>()) { Title = "MauiApp._1" })
+            builder.UseMauiApp<App, MainWindow, Page>(sp => new NavigationPage(sp.GetRequiredService<MainPage>()) { Title = "MauiApp._1" });
 #else
-            builder.UseMauiApp<App, MainWindow, Page>(_ => new NavigationPage(new MainPage()) { Title = "MauiApp._1" })
+            builder.UseMauiApp<App, MainWindow, Page>(_ => new NavigationPage(new MainPage()) { Title = "MauiApp._1" });
 #endif
 #elif Shell
-            builder.UseMauiApp<App, MainWindow, AppShell>()
+            builder.UseMauiApp<App, MainWindow, AppShell>();
 #elif (Razor && Net9OrLater)
-            builder.UseMauiApp<App, Window>()
+            builder.UseMauiApp<App, Window>();
 #else
-            builder.UseMauiApp<App>()
+            builder.UseMauiApp<App>();
 #endif
+#if AddAvalonia
+
+            if (useSkia)
+            {
+                App.DrawnUI = true;
+                builder.UseAvaloniaApp(useSingleAppLifetime);
+            }
+
+#endif
+            builder
 #if Razor
-                   .UseMauiBlazorBindings()
+                .UseMauiBlazorBindings()
 #endif
 #if AddFoldable
-                   .UseFoldable()
+                .UseFoldable()
 #endif
 #if AddMaps
 #if (AllPlatforms || IsWindows)
-                   .UseMauiCommunityToolkitMaps("<BING_MAPS_API_KEY_HERE>") // To generate a Bing Maps API Key, visit https://www.bingmapsportal.com/
+                .UseMauiCommunityToolkitMaps("<BING_MAPS_API_KEY_HERE>") // To generate a Bing Maps API Key, visit https://www.bingmapsportal.com/
 #endif
 #endif
 #if AddToolkit
-                   .UseMauiCommunityToolkit()
+                .UseMauiCommunityToolkit()
 #endif
 #if AddSyncfusionToolkit
-                   .ConfigureSyncfusionToolkit()
+                .ConfigureSyncfusionToolkit()
 #endif
 #if AddMarkup
-                   .UseMauiCommunityToolkitMarkup()
+                .UseMauiCommunityToolkitMarkup()
 #endif
 #if AddCamera
-                   .UseMauiCommunityToolkitCamera()
+                .UseMauiCommunityToolkitCamera()
 #endif
 #if AddMedia
 #if Net10OrLater
-                   .UseMauiCommunityToolkitMediaElement(default) // Optionally, you can enable foreground service for media playback on Android 13+.
+                .UseMauiCommunityToolkitMediaElement(default) // Optionally, you can enable foreground service for media playback on Android 13+.
 #else
-                   .UseMauiCommunityToolkitMediaElement()
+                .UseMauiCommunityToolkitMediaElement()
 #endif
 #endif
 #if AddAspire
 #if Net10OrLater
-                   .AddServiceDefaults("MauiApp._1") // Aspire service defaults
+                .AddServiceDefaults() // Aspire service defaults
 #else
-                   .ConfigureEnvironmentVariables() // Load configuration from environment variables
-                   .AddServiceDefaults() // Aspire service defaults
+                .ConfigureEnvironmentVariables() // Load configuration from environment variables
+                .AddServiceDefaults() // Aspire service defaults
 #endif
 #endif
-                   .ConfigureFonts(fonts =>
-                   {
-                       fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                       fonts.AddFont("OpenSans-SemiBold.ttf", "OpenSansSemiBold");
-                   });
+                .ConfigureFonts(fonts =>
+                {
+                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                    fonts.AddFont("OpenSans-SemiBold.ttf", "OpenSansSemiBold");
+                });
 
 #if Reactor
             builder.Services.AddSingleton(SemanticScreenReader.Default);

@@ -53,18 +53,14 @@ namespace MauiApp._1
             UserAppTheme = PlatformAppTheme;
         }
 
+        internal static bool DrawnUI { get; set; }
+
         public static string MauiVersion
         {
             get
             {
                 var version = typeof(MauiApp).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()!.InformationalVersion;
-//-:cnd:noEmit
-#if SKIA
-                return $".NET MAUI ver. {version[..version.IndexOf('+')]} (Avalonia)";
-#else
-                return $".NET MAUI ver. {version[..version.IndexOf('+')]}";
-#endif
-//+:cnd:noEmit
+                return $".NET MAUI ver. {version[..version.IndexOf('+')]}{(DrawnUI ? " (Skia)" : string.Empty)}";
             }
         }
     }

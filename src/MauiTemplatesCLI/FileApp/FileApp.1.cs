@@ -2,7 +2,7 @@
 #if FileBasedProgram
 //+:cnd:noEmit
 #if Aspire
-#:sdk Aspire.AppHost.Sdk@13.1.3
+#:sdk Aspire.AppHost.Sdk@13.2.0
 #elif BlazorWasm
 #:sdk Microsoft.NET.Sdk.BlazorWebAssembly
 #elif Razor
@@ -22,7 +22,7 @@
 #endif
 #if Aspire
 // Packages
-#:package Aspire.Hosting.AppHost@13.1.3
+#:package Aspire.Hosting.AppHost@13.2.0
 #if Maui
 #:package Aspire.Hosting.Maui@13.*-*
 #endif
