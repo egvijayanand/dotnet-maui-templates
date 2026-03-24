@@ -34,7 +34,11 @@ namespace MauiApp._1
 {
     public static class MauiProgramExtensions
     {
+#if AddAvalonia
         public static MauiAppBuilder UseSharedMauiApp(this MauiAppBuilder builder, bool useSingleAppLifetime = false, bool useSkia = false)
+#else
+        public static MauiAppBuilder UseSharedMauiApp(this MauiAppBuilder builder)
+#endif
         {
 #if (Plain || Tabbed || Hybrid || JSHybrid || Markup)
             builder.UseMauiApp<App, MainWindow, MainPage>();
