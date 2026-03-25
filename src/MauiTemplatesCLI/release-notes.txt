@@ -30,19 +30,17 @@ To run the Web Assembly target, set the Browser project as the startup project.
 
 When Aspire and Avalonia are combined, the Drawn UI becomes the targeted project.
 
-For both the class library projects:
-
-The option to include the Avalonia NuGet package is as follows:
+For both the class library projects, the option to include the Avalonia NuGet package is as follows:
 
 -ia | --include-avalonia - The default value is false.
 
-Known Limitations:
+dotnet new mauiclasslib -o MyLib -ia -f net11.0
 
-Hybrid apps (both BlazorWebView and HybridWebView) are not yet supported.
+dotnet new sharedclasslib -o SharedLib -ia -f net11.0
 
-PushModal navigation is not working in Web Assembly.
+For complete details, refer to this article:
 
-Web Assembly target is not working with Razor design pattern.
+https://egvijayanand.in/2026/03/25/what-is-new-in-the-all-in-one-dotnet-maui-templates-pack-v9-0-hello-avalonia/
 
 v8.5.0
 
