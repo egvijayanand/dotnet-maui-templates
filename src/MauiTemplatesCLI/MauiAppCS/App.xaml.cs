@@ -8,6 +8,10 @@ namespace MauiApp._1
     public partial class App : Application
 #endif
     {
+#if Net9
+        private static string? _mauiVersion;
+
+#endif
 #if Mvvm
 #if (Hierarchical || Tabbed)
         private static readonly Dictionary<string, Type> _routes = new()
@@ -45,12 +49,21 @@ namespace MauiApp._1
         {
             get
             {
-                var version = typeof(MauiApp).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()!.InformationalVersion;
-#if AddAvalonia
-                return $".NET MAUI ver. {version[..version.IndexOf('+')]}{(DrawnUI ? " (Skia)" : string.Empty)}";
+#if Net9
+                return _mauiVersion ??= GetVersion();
 #else
-                return $".NET MAUI ver. {version[..version.IndexOf('+')]}";
+                return field ??= GetVersion();
 #endif
+
+                static string GetVersion()
+                {
+                    var version = typeof(MauiApp).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()!.InformationalVersion;
+#if AddAvalonia
+                    return $".NET MAUI ver. {version[..version.IndexOf('+')]}{(DrawnUI ? " (Skia)" : string.Empty)}";
+#else
+                    return $".NET MAUI ver. {version[..version.IndexOf('+')]}";
+#endif
+                }
             }
         }
     }

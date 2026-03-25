@@ -13,6 +13,6 @@ namespace MauiApp._1
     {
         public override void Initialize() => AvaloniaXamlLoader.Load(this);
 
-        protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp(true);
+        protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp(useSingleAppLifetime: true);
     }
 }
