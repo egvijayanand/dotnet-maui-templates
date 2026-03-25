@@ -1,10 +1,10 @@
 <Solution>
-<!--#if (Net8OrLater || CentralPkgMgmt)-->
+<!--#if (Net9OrLater || CentralPkgMgmt)-->
     <Folder Name="/Solution Items/">
         <File Path="Directory.Packages.props" />
     </Folder>
 <!--#endif-->
-<!--#if (AddAspire || (!Auxiliary && MauiLib) || (Hybrid && RazorLib))-->
+<!--#if (AddAspire || AddWasm || (!Auxiliary && MauiLib) || (Hybrid && RazorLib))-->
     <Project Path="SAFE-NAME\SAFE-NAME.csproj">
         <Deploy />
     </Project>
@@ -16,6 +16,9 @@
 <!--#if (AddAspire)-->
     <Project Path="SAFE-NAME.Aspire\SAFE-NAME.Aspire.csproj" />
     <Project Path="SAFE-NAME.Shared\SAFE-NAME.Shared.csproj" />
+<!--#endif-->
+<!--#if (AddWasm)-->
+    <Project Path="SAFE-NAME.Browser\SAFE-NAME.Browser.csproj" />
 <!--#endif-->
 <!--#if (!Auxiliary && MauiLib)-->
     <Project Path="SAFE-NAME.MauiLib\SAFE-NAME.MauiLib.csproj" />

@@ -43,6 +43,14 @@
             "defaultValue": "false"
         },
         {
+            "id": "avalonia",
+            "name": {
+                "text": "Use _Avalonia backend for .NET MAUI 11."
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
             "id": "global-namespace",
             "name": {
                 "text": "Use .NET MAUI 10+ Global Namespace feature."
@@ -157,7 +165,7 @@
         {
             "id": "include-maps",
             "name": {
-                "text": "Add and configure Microsoft.Maui.Controls.M_aps NuGet package reference"
+                "text": "Add and configure Microsoft.Maui.Controls.Maps NuGet package reference"
             },
             "isVisible": true,
             "defaultValue": "false"

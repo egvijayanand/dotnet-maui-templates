@@ -55,7 +55,7 @@
         private void IncrementCount()
         {
             SetState(s => s.Count++);
-            Services.GetService<ISemanticScreenReader>()?.Announce($"Current count: {State.Count}");
+            SemanticScreenReader.Announce($"Current count: {State.Count}");
         }
     }
 #endif
@@ -77,7 +77,11 @@
 #if Mvvm
             BindingContext = viewModel;
 #if Net10OrLater
+#if CompiledBindings
             this.Bind(Page.TitleProperty, static (MainViewModel vm) => vm.Heading);
+#else
+            this.SetBinding(Page.TitleProperty, static (MainViewModel vm) => vm.Heading);
+#endif
 #else
             this.Bindv2(static (MainViewModel vm) => vm.Heading);
 #endif

@@ -27,6 +27,11 @@
             "description": "Option to choose the target framework.",
             "choices": [
                 {
+                    "choice": "net11.0",
+                    "description": "Target .NET 11",
+                    "displayName": ".NET 11 (Preview)"
+                },
+                {
                     "choice": "net10.0",
                     "description": "Target .NET 10",
                     "displayName": ".NET 10 (LTS)"

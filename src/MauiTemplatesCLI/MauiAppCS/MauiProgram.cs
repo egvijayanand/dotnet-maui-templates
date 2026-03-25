@@ -28,102 +28,116 @@ using Syncfusion.Maui.Toolkit.Hosting;
 #if Reactor
 using Microsoft.Maui.Controls.Hosting;
 #endif
-#if (AddToolkit || Hybrid || Net8OrLater || Razor)
+#if (AddToolkit || Hybrid || Net9OrLater || Razor)
 
 #endif
 namespace MauiApp._1
 {
     public static class MauiProgram
     {
+#if AddAvalonia
+        public static MauiApp CreateMauiApp(bool useSingleAppLifetime = false)
+#else
         public static MauiApp CreateMauiApp()
+#endif
         {
             var builder = MauiApp.CreateBuilder();
 #if MauiLib
-#if AddMaps
+#if AddAvalonia
 //-:cnd:noEmit
-#if WINDOWS
-            builder.UseSharedMauiApp();
+#if SKIA
+            builder.UseSharedMauiApp(useSingleAppLifetime, useSkia: true);
 #else
-            builder.UseSharedMauiApp()
-                   .UseMauiMaps();
+            builder.UseSharedMauiApp();
 #endif
 //+:cnd:noEmit
 #else
             builder.UseSharedMauiApp();
+#endif
+#if AddMaps
+//-:cnd:noEmit
+#if !WINDOWS
+            builder.UseMauiMaps();
+#endif
+//+:cnd:noEmit
 #endif
 
             // Add platform-specific configuration here, if any.
 #else
 #if (Plain || Tabbed || Hybrid || JSHybrid || Markup)
-            builder.UseMauiApp<App, MainWindow, MainPage>()
+            builder.UseMauiApp<App, MainWindow, MainPage>();
 #elif Hierarchical
 #if Mvvm
-            builder.UseMauiApp<App, MainWindow, Page>(sp => new NavigationPage(sp.GetRequiredService<MainPage>()) { Title = "MauiApp._1" })
+            builder.UseMauiApp<App, MainWindow, Page>(sp => new NavigationPage(sp.GetRequiredService<MainPage>()) { Title = "MauiApp._1" });
 #else
-            builder.UseMauiApp<App, MainWindow, Page>(_ => new NavigationPage(new MainPage()) { Title = "MauiApp._1" })
+            builder.UseMauiApp<App, MainWindow, Page>(_ => new NavigationPage(new MainPage()) { Title = "MauiApp._1" });
 #endif
 #elif Shell
-            builder.UseMauiApp<App, MainWindow, AppShell>()
+            builder.UseMauiApp<App, MainWindow, AppShell>();
 #elif (Razor && Net9OrLater)
-            builder.UseMauiApp<App, Window>()
+            builder.UseMauiApp<App, Window>();
 #else
-            builder.UseMauiApp<App>()
+            builder.UseMauiApp<App>();
 #endif
-#if (Net8 && Reactor)
+#if AddAvalonia
 //-:cnd:noEmit
-#if DEBUG
-                   .EnableMauiReactorHotReload()
+#if SKIA
+            App.DrawnUI = true;
+            builder.UseAvaloniaApp(useSingleAppLifetime);
 #endif
 //+:cnd:noEmit
 #endif
+            builder
 #if Razor
-                   .UseMauiBlazorBindings()
+                .UseMauiBlazorBindings()
 #endif
 #if AddFoldable
-                   .UseFoldable()
+                .UseFoldable()
 #endif
 #if AddMaps
 //-:cnd:noEmit
 #if !WINDOWS
-                   .UseMauiMaps()
+                .UseMauiMaps()
 #endif
 //+:cnd:noEmit
 #if (AllPlatforms || IsWindows)
-                   .UseMauiCommunityToolkitMaps("<BING_MAPS_API_KEY_HERE>") // To generate a Bing Maps API Key, visit https://www.bingmapsportal.com/
+                .UseMauiCommunityToolkitMaps("<BING_MAPS_API_KEY_HERE>") // To generate a Bing Maps API Key, visit https://www.bingmapsportal.com/
 #endif
 #endif
 #if AddToolkit
-                   .UseMauiCommunityToolkit()
+                .UseMauiCommunityToolkit()
 #endif
 #if AddSyncfusionToolkit
-                   .ConfigureSyncfusionToolkit()
+                .ConfigureSyncfusionToolkit()
 #endif
 #if AddMarkup
-                   .UseMauiCommunityToolkitMarkup()
+                .UseMauiCommunityToolkitMarkup()
 #endif
 #if AddCamera
-                   .UseMauiCommunityToolkitCamera()
+                .UseMauiCommunityToolkitCamera()
 #endif
 #if AddMedia
 #if Net10OrLater
-                   .UseMauiCommunityToolkitMediaElement(default) // Optionally, you can enable foreground service for media playback on Android 13+.
+                .UseMauiCommunityToolkitMediaElement(default) // Optionally, you can enable foreground service for media playback on Android 13+.
 #else
-                   .UseMauiCommunityToolkitMediaElement()
+                .UseMauiCommunityToolkitMediaElement()
 #endif
 #endif
 #if AddAspire
-#if Net10OrLater
-                   .AddServiceDefaults() // Aspire service defaults
+#if AddAvalonia
+                .AddServiceDefaults("MauiApp._1") // Aspire service defaults
+#elif Net10OrLater
+                .AddServiceDefaults() // Aspire service defaults
 #else
-                   .ConfigureEnvironmentVariables() // Load configuration from environment variables
-                   .AddServiceDefaults() // Aspire service defaults
+                .ConfigureEnvironmentVariables() // Load configuration from environment variables
+                .AddServiceDefaults() // Aspire service defaults
 #endif
 #endif
-                   .ConfigureFonts(fonts =>
-                   {
-                       fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                       fonts.AddFont("OpenSans-SemiBold.ttf", "OpenSansSemiBold");
-                   });
+                .ConfigureFonts(fonts =>
+                {
+                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                    fonts.AddFont("OpenSans-SemiBold.ttf", "OpenSansSemiBold");
+                });
 
 #if Reactor
             builder.Services.AddSingleton(SemanticScreenReader.Default);
@@ -134,7 +148,7 @@ namespace MauiApp._1
             builder.Services.AddSingleton<MainViewModel>();
             //builder.Services.AddSingleton<MainPage>();
 
-#elif JSHybridNet9
+#elif JSHybrid
             builder.Services.AddSingleton(DeviceDisplay.Current);
             builder.Services.AddSingleton(DeviceInfo.Current);
             builder.Services.AddSingleton<MainViewModel>();
@@ -190,7 +204,7 @@ namespace MauiApp._1
             builder.Logging.AddDebug();
 #endif
 //+:cnd:noEmit
-#elif JSHybridNet9
+#elif JSHybrid
 //-:cnd:noEmit
 #if DEBUG
             // Caution: Recommended to enable Developer Tools only for development!!!

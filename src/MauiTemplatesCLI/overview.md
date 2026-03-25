@@ -29,7 +29,7 @@ Item templates for the following:
 |ContentPage with BlazorWebView (C#)|maui-bwv-cs|
 |[Partial Class (C#)](#partial-class-item-template)|class-cs|
 
-All of these templates currently target `.NET MAUI 8 and 9 GA and its Service Releases`.
+All of these templates currently target `.NET MAUI 9, 10, and 11 Preview`.
 
 Install the template package from NuGet with the below command.
 
@@ -98,7 +98,39 @@ And from [v8.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/8.0.0)
 
 And from [v8.5.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/8.5.0) of the template package, support for .NET MAUI 10 XAML C# Expression feature.
 
+And from [v9.0.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/9.0.0) of the template package, the CLI project template `framework` parameter now includes `net11.0` as another option and also adds the `--avalonia` parameter, supporting .NET 11 Previews and the Avalonia backend for .NET MAUI. .NET MAUI 8 is no longer supported.
+
 ### Parameters:
+
+* [Avalonia backend for .NET MAUI](https://egvijayanand.in/2026/03/25/what-is-new-in-the-all-in-one-dotnet-maui-templates-pack-v9-0-hello-avalonia/):
+
+  Introduced an option to support the Avalonia backend for .NET MAUI.
+  
+  _This is supported only on .NET MAUI 11 Preview._
+
+  `--avalonia` - Default value is `false`.
+
+  This parameter is controlled by the framework, so it only works with .NET MAUI 11 Preview. Enabling it in earlier versions won’t have any effect.
+
+  Additional target platform values now include `Linux` and `Wasm` (Web Assembly).
+
+  ```shell
+  dotnet new mauiapp -o MyApp -f net11.0 -- avalonia
+  ```
+
+  To run the Web Assembly target, set the Browser project as the startup project.
+
+  For both the class library projects, the option to include the Avalonia NuGet package is as follows:
+  
+  `-ia` | `--include-avalonia` - The default value is `false`.
+
+  ```shell
+  dotnet new mauiclasslib -o MyLib -ia -f net11.0
+  ```
+
+  ```shell
+  dotnet new sharedclasslib -o SharedLib -ia -f net11.0
+  ```
 
 * XAML C# Expression:
 
@@ -162,7 +194,7 @@ And from [v8.5.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/8.5.0)
   dotnet new mauiapp -o MyApp -dp JSHybrid
   ```
 
-  *Note: The design pattern (`-dp`) parameter with the value `Hybrid` will continue to generate an App project using `BlazorWebView`, which works on both .NET MAUI 8 and 9, the present stable channel release.*
+  *Note: The design pattern (`-dp`) parameter with the value `Hybrid` will continue to generate an App project using `BlazorWebView`, which works on both .NET MAUI 9 and 10, the present stable channel release.*
 
   ```shell
   dotnet new mauiapp -o BlazorApp -dp Hybrid
@@ -283,24 +315,28 @@ And from [v8.5.0](https://www.nuget.org/packages/VijayAnand.MauiTemplates/8.5.0)
 
 * Framework: (Short notation: `-f`)
 
-  This can take `net8.0` / `net9.0` as its options (with `net9.0` being the default value, if not specified).
+  This can take `net9.0` / `net10.0` / `net11.0` as its options (with `net10.0` being the default value, if not specified).
 
   Examples:
 
   For creating a .NET MAUI 9 App:
 
-  Below command can be simplified to `dotnet new mauiapp` as default value of `framework` parameter is `net9.0`
+  Below command can be simplified to `dotnet new mauiapp` as default value of `framework` parameter is `net10.0`
+
+  ```shell
+  dotnet new mauiapp -f net10.0
+  ```
+
+  For creating a .NET MAUI 9 / 11 App:
+
+  _Explicit value for the `framework` parameter is required._
 
   ```shell
   dotnet new mauiapp -f net9.0
   ```
 
-  For creating a .NET MAUI 8 App:
-
-  _Explicit value for the `framework` parameter is required._
-
   ```shell
-  dotnet new mauiapp -f net8.0
+  dotnet new mauiapp -f net11.0
   ```
 
 In .NET CLI, all of these _Items Template_ require a mandatory parameter:
@@ -351,7 +387,7 @@ And now conditional compilation can be configured so that platform source files 
 For existing projects, add the below block of code in the project file (.csproj). _This will modify the behavior of build process so due care must be taken if doing so._
 
 ```xml
-<ItemGroup Condition="'$(TargetFramework)' != 'net9.0'">
+<ItemGroup Condition="'$(TargetFramework)' != 'net10.0'">
     <Compile Remove="**\*.Standard.cs" />
     <None Include="**\*.Standard.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
 </ItemGroup>
@@ -419,15 +455,17 @@ Can take a combination of the following values, with default value set to `All`:
 |Parameter Value|Description|
 |:---:|:---|
 |All|Targets all possible .NET MAUI supported platforms.|
-|Base|Targets base framework (.NET 8 or 9) based on the framework opted.|
+|Base|Targets base framework (.NET 9/10/11) based on the framework opted.|
 |Android|Targets Android platform.|
 |iOS|Targets iOS platform.|
+|Linux|Targets Linux platform (.NET MAUI 11 with Avalonia).|
 |macOS|Targets macOS platform via Mac Catalyst.|
 |Windows|Targets Windows platform.|
 |Tizen|Targets Tizen platform.|
 |Mobile|Targets Android and iOS platforms.|
-|Desktop|Targets Windows and macOS platforms.|
+|Desktop|Targets Windows, macOS, and Linux (.NET MAUI 11 only with Avalonia) platforms.|
 |Apple|Targets iOS and macOS platforms.|
+|Wasm (Web Assembly)|Targets Web Assembly (.NET MAUI 11 with Avalonia).|
 
 Additional parameters supported:
 

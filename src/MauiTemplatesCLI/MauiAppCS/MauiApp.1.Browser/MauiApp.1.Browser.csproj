@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk.WebAssembly">
+
+    <PropertyGroup>
+        <TargetFramework>MAUI_TFM-browser</TargetFramework>
+        <OutputType>Exe</OutputType>
+
+        <Nullable>enable</Nullable>
+        <!--#if (Preview)-->
+        <LangVersion>preview</LangVersion>
+        <!--#else-->
+        <LangVersion>latest</LangVersion>
+        <!--#endif-->
+        <ImplicitUsings>enable</ImplicitUsings>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <RootNamespace>MauiApp._1</RootNamespace>
+        <!--#if (XamlCSharpExpr)-->
+        <EnablePreviewFeatures>true</EnablePreviewFeatures>
+        <!--#endif-->
+
+        <UseMaui>true</UseMaui>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!--#if (CentralPkgMgmt)-->
+        <PackageReference Include="Avalonia" />
+        <PackageReference Include="Avalonia.Controls.Maui.Desktop" />
+        <PackageReference Include="Avalonia.Themes.Fluent" />
+        <PackageReference Include="Avalonia.Fonts.Inter" />
+        <PackageReference Include="Avalonia.Browser" />
+        <PackageReference Include="Microsoft.Maui.Controls" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" />
+        <!--#else-->
+        <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
+        <PackageReference Include="Avalonia.Controls.Maui.Desktop" Version="$(AvaloniaMauiVersion)" />
+        <PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
+        <PackageReference Include="Avalonia.Fonts.Inter" Version="$(AvaloniaVersion)" />
+        <PackageReference Include="Avalonia.Browser" Version="$(AvaloniaVersion)" />
+        <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="11.*-*" />
+        <!--#endif-->
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\SAFE-NAME\SAFE-NAME.csproj" />
+    </ItemGroup>
+
+</Project>

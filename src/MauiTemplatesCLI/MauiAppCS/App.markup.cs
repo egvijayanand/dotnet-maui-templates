@@ -4,6 +4,10 @@ namespace MauiApp._1
 {
     public partial class App : Application
     {
+#if Net9
+        private static string? _mauiVersion;
+
+#endif
         public App()
         {
             Resources.MergedDictionaries.Add(AppColors.Instance);
@@ -52,13 +56,30 @@ namespace MauiApp._1
 
             UserAppTheme = PlatformAppTheme;
         }
+#if AddAvalonia
+
+        internal static bool DrawnUI { get; set; }
+#endif
 
         public static string MauiVersion
         {
             get
             {
-                var version = typeof(MauiApp).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()!.InformationalVersion;
-                return $".NET MAUI ver. {version[..version.IndexOf('+')]}";
+#if Net9
+                return _mauiVersion ??= GetVersion();
+#else
+                return field ??= GetVersion();
+#endif
+
+                static string GetVersion()
+                {
+                    var version = typeof(MauiApp).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()!.InformationalVersion;
+#if AddAvalonia
+                    return $".NET MAUI ver. {version[..version.IndexOf('+')]}{(DrawnUI ? " (Skia)" : string.Empty)}";
+#else
+                    return $".NET MAUI ver. {version[..version.IndexOf('+')]}";
+#endif
+                }
             }
         }
     }

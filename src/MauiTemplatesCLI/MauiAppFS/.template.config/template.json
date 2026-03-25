@@ -193,6 +193,11 @@
             "description": "Option to choose the application target framework.",
             "choices": [
                 {
+                    "choice": "net11.0",
+                    "description": "Target .NET 11",
+                    "displayName": ".NET 11 (Preview)"
+                },
+                {
                     "choice": "net10.0",
                     "description": "Target .NET 10",
                     "displayName": ".NET 10 (LTS)"
@@ -201,11 +206,6 @@
                     "choice": "net9.0",
                     "description": "Target .NET 9",
                     "displayName": ".NET 9 (STS)"
-                },
-                {
-                    "choice": "net8.0",
-                    "description": "Target .NET 8",
-                    "displayName": ".NET 8 (LTS)"
                 }
             ],
             "replaces": "MAUI_TFM",
@@ -425,10 +425,6 @@
             "type": "computed",
             "value": "(design-pattern == \"Hybrid\" || designPatternLower == \"hybrid\")"
         },
-        "Net8": {
-            "type": "computed",
-            "value": "(frameworkLower == \"net8.0\")"
-        },
         "Net9": {
             "type": "computed",
             "value": "(frameworkLower == \"net9.0\")"
@@ -436,6 +432,10 @@
         "Net10": {
             "type": "computed",
             "value": "(frameworkLower == \"net10.0\")"
+        },
+        "Net11": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net11.0\")"
         },
         "PkgVersion": {
             "type": "generated",
@@ -445,31 +445,35 @@
                 "datatype": "string",
                 "cases": [
                     {
-                        "condition": "(Net8)",
-                        "value": "8.*"
-                    },
-                    {
                         "condition": "(Net9)",
                         "value": "9.*"
                     },
                     {
                         "condition": "(Net10)",
                         "value": "10.*"
+                    },
+                    {
+                        "condition": "(Net11)",
+                        "value": "11.*"
                     }
                 ]
             }
         },
-        "Net8OrLater": {
+        "Preview": {
             "type": "computed",
-            "value": "(Net8 || Net9 || Net10)"
+            "value": "(Net11)"
         },
         "Net9OrLater": {
             "type": "computed",
-            "value": "(Net9 || Net10)"
+            "value": "(Net9 || Net10 || Net11)"
         },
         "Net10OrLater": {
             "type": "computed",
-            "value": "(Net10)"
+            "value": "(Net10 || Net11)"
+        },
+        "Net11OrLater": {
+            "type": "computed",
+            "value": "(Net11)"
         },
         "AllPlatforms": {
             "type": "computed",
@@ -549,7 +553,7 @@
         },
         "PackageRef": {
             "type": "computed",
-            "value": "(AddToolkit || AddMarkup || AddMvvmToolkit || Net8OrLater)"
+            "value": "(AddToolkit || AddMarkup || AddMvvmToolkit || Net9OrLater)"
         },
         "UseSlnx": {
             "type": "computed",

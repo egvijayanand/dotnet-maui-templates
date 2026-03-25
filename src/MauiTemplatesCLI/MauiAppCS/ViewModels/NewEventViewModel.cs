@@ -11,7 +11,11 @@
 #endif
 
 #if XamlCSharpExpr
-        public IAsyncRelayCommand SaveCommand => field ??= new AsyncRelayCommand(SaveAsync);
+        public IAsyncRelayCommand SaveCommand
+        {
+            get => field ??= new AsyncRelayCommand(SaveAsync);
+            set => field = value; // Not really necessary, required until the fix is regularized in .NET 11 Preview.
+        }
 
         //[RelayCommand]
 #else
@@ -28,7 +32,11 @@
         }
 
 #if XamlCSharpExpr
-        public IAsyncRelayCommand CancelCommand => field ??= new AsyncRelayCommand(CancelAsync);
+        public IAsyncRelayCommand CancelCommand
+        {
+            get => field ??= new AsyncRelayCommand(CancelAsync);
+            set => field = value; // Not really necessary, required until the fix is regularized in .NET 11 Preview.
+        }
 
         //[RelayCommand]
 #else

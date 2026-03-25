@@ -79,7 +79,7 @@
                     ]
                 },
                 {
-                    "condition": "((Net8 || Net9) && AddAspire && MauiLib)",
+                    "condition": "(Net9 && AddAspire && MauiLib)",
                     "rename": {
                         "MauiApp.1/Extensions/AppBuilderExtensions.cs": "MauiApp.1.MauiLib/Extensions/AppBuilderExtensions.cs"
                     }
@@ -90,6 +90,12 @@
                         "MauiApp.1/Extensions/AppBuilderExtensions.cs",
                         "MauiApp.1.Aspire/**/*",
                         "MauiApp.1.Shared/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!AddWasm)",
+                    "exclude": [
+                        "MauiApp.1.Browser/**/*"
                     ]
                 },
                 {
@@ -122,7 +128,7 @@
                     ]
                 },
                 {
-                    "condition": "(Razor && AddAspire)",
+                    "condition": "(Razor && (AddAspire || AddWasm))",
                     "rename": {
                         "App.razor.cs": "MauiApp.1/App.cs",
                         "AppShell.razor": "MauiApp.1/AppShell.razor",
@@ -130,7 +136,7 @@
                     }
                 },
                 {
-                    "condition": "(Razor && !AddAspire)",
+                    "condition": "(Razor && !(AddAspire || AddWasm))",
                     "rename": {
                         "App.razor.cs": "App.cs",
                         "MauiApp.1/_Imports.razor": "_Imports.razor"
@@ -154,7 +160,7 @@
                     ]
                 },
                 {
-                    "condition": "(Reactor && AddAspire)",
+                    "condition": "(Reactor && (AddAspire || AddWasm))",
                     "rename": {
                         "Helpers/ResourceHelper.markup.cs": "MauiApp.1/Helpers/ResourceHelper.cs",
                         "Helpers/VisualStateHelper.markup.cs": "MauiApp.1/Helpers/VisualStateHelper.cs",
@@ -163,7 +169,7 @@
                     }
                 },
                 {
-                    "condition": "(Reactor && !AddAspire)",
+                    "condition": "(Reactor && !(AddAspire || AddWasm))",
                     "rename": {
                         "Helpers/ResourceHelper.markup.cs": "Helpers/ResourceHelper.cs",
                         "Helpers/VisualStateHelper.markup.cs": "Helpers/VisualStateHelper.cs",
@@ -353,7 +359,7 @@
                     }
                 },
                 {
-                    "condition": "(AddAspire || (Hybrid && !MauiLib && RazorLib))",
+                    "condition": "(AddAspire || AddWasm || (Hybrid && !MauiLib && RazorLib))",
                     "rename": {
                         "App.xaml": "MauiApp.1/App.xaml",
                         "App.xaml.cs": "MauiApp.1/App.xaml.cs",
@@ -377,7 +383,7 @@
                     }
                 },
                 {
-                    "condition": "(Hybrid && AddAspire && !MauiLib && !RazorLib)",
+                    "condition": "(Hybrid && (AddAspire || AddWasm) && !MauiLib && !RazorLib)",
                     "rename": {
                         "Main.razor": "MauiApp.1/Main.razor",
                         "Data/WeatherForecast.cs": "MauiApp.1/Data/WeatherForecast.cs",
@@ -417,7 +423,7 @@
                     }
                 },
                 {
-                    "condition": "((Plain || Hierarchical || Tabbed || Hybrid || JSHybrid || Markup) && !MauiLib && (AddAspire || RazorLib) && Mvvm)",
+                    "condition": "((Plain || Hierarchical || Tabbed || Hybrid || JSHybrid || Markup) && !MauiLib && (AddAspire || AddWasm || RazorLib) && Mvvm)",
                     "rename": {
                         "ViewModels/BaseViewModel.cs": "MauiApp.1/ViewModels/BaseViewModel.cs",
                         "ViewModels/MainViewModel.cs": "MauiApp.1/ViewModels/MainViewModel.cs"
@@ -479,7 +485,7 @@
                     }
                 },
                 {
-                    "condition": "(Markup && AddAspire)",
+                    "condition": "(Markup && (AddAspire || AddWasm))",
                     "rename": {
                         "App.markup.cs": "MauiApp.1/App.cs",
                         "MainWindow.markup.cs": "MauiApp.1/MainWindow.cs",
@@ -501,7 +507,7 @@
                     }
                 },
                 {
-                    "condition": "(MultiPage && AddAspire)",
+                    "condition": "(MultiPage && (AddAspire || AddWasm))",
                     "rename": {
                         "Controls/DateTimePicker.xaml": "MauiApp.1/Controls/DateTimePicker.xaml",
                         "Controls/DateTimePicker.xaml.cs": "MauiApp.1/Controls/DateTimePicker.xaml.cs",
@@ -519,7 +525,7 @@
                     }
                 },
                 {
-                    "condition": "((Tabbed || Shell) && AddAspire)",
+                    "condition": "((Tabbed || Shell) && (AddAspire || AddWasm))",
                     "rename": {
                         "Views/EventsPage.xaml": "MauiApp.1/Views/EventsPage.xaml",
                         "Views/EventsPage.xaml.cs": "MauiApp.1/Views/EventsPage.xaml.cs",
@@ -541,7 +547,7 @@
                     }
                 },
                 {
-                    "condition": "(Shell && AddAspire)",
+                    "condition": "(Shell && (AddAspire || AddWasm))",
                     "rename": {
                         "Views/LoginPage.xaml": "MauiApp.1/Views/LoginPage.xaml",
                         "Views/LoginPage.xaml.cs": "MauiApp.1/Views/LoginPage.xaml.cs",
@@ -566,7 +572,7 @@
                     }
                 },
                 {
-                    "condition": "((Hierarchical || Tabbed) && AddAspire & Mvvm)",
+                    "condition": "((Hierarchical || Tabbed) && (AddAspire || AddWasm) & Mvvm)",
                     "rename": {
                         "Exceptions/RouteNotFoundException.cs": "MauiApp.1/Exceptions/RouteNotFoundException.cs",
                         "Exceptions/TypeNotRegisteredException.cs": "MauiApp.1/Exceptions/TypeNotRegisteredException.cs"
@@ -580,7 +586,7 @@
                     }
                 },
                 {
-                    "condition": "(MultiPage && AddAspire & Mvvm)",
+                    "condition": "(MultiPage && (AddAspire || AddWasm) & Mvvm)",
                     "rename": {
                         "Models/Event.cs": "MauiApp.1/Models/Event.cs",
                         "Services/AppService.cs": "MauiApp.1/Services/AppService.cs",
@@ -604,7 +610,7 @@
                     }
                 },
                 {
-                    "condition": "((Tabbed || Shell) && AddAspire & Mvvm)",
+                    "condition": "((Tabbed || Shell) && (AddAspire || AddWasm) & Mvvm)",
                     "rename": {
                         "ViewModels/EventsViewModel.cs": "MauiApp.1/ViewModels/EventsViewModel.cs",
                         "ViewModels/SearchViewModel.cs": "MauiApp.1/ViewModels/SearchViewModel.cs",
@@ -620,7 +626,7 @@
                     }
                 },
                 {
-                    "condition": "(Shell && AddAspire & Mvvm)",
+                    "condition": "(Shell && (AddAspire || AddWasm) & Mvvm)",
                     "rename": {
                         "ViewModels/AppViewModel.cs": "MauiApp.1/ViewModels/AppViewModel.cs",
                         "ViewModels/BaseViewModel.cs": "MauiApp.1/ViewModels/BaseViewModel.cs",
@@ -684,19 +690,19 @@
                     ]
                 },
                 {
-                    "condition": "(JSHybridNet9 && AddAspire)",
+                    "condition": "(JSHybrid && (AddAspire || AddWasm))",
                     "rename": {
                         "Converters/HybridWebViewRawMessageReceivedEventArgs.cs": "MauiApp.1/Converters/HybridWebViewRawMessageReceivedEventArgs.cs"
                     }
                 },
                 {
-                    "condition": "(JSHybridNet9 && MauiLib)",
+                    "condition": "(JSHybrid && MauiLib)",
                     "rename": {
                         "Converters/HybridWebViewRawMessageReceivedEventArgs.cs": "MauiApp.1.MauiLib/Converters/HybridWebViewRawMessageReceivedEventArgs.cs"
                     }
                 },
                 {
-                    "condition": "(JSHybridNet9 && ProjFolder)",
+                    "condition": "(JSHybrid && ProjFolder)",
                     "rename": {
                         "Resources/Raw/hybridroot/css/bootstrap/bootstrap.min.css": "MauiApp.1/Resources/Raw/wwwroot/css/bootstrap/bootstrap.min.css",
                         "Resources/Raw/hybridroot/css/bootstrap/bootstrap.min.css.map": "MauiApp.1/Resources/Raw/wwwroot/css/bootstrap/bootstrap.min.css.map",
@@ -706,7 +712,7 @@
                     }
                 },
                 {
-                    "condition": "(JSHybridNet9 && !ProjFolder)",
+                    "condition": "(JSHybrid && !ProjFolder)",
                     "rename": {
                         "Resources/Raw/hybridroot/css/bootstrap/bootstrap.min.css": "Resources/Raw/wwwroot/css/bootstrap/bootstrap.min.css",
                         "Resources/Raw/hybridroot/css/bootstrap/bootstrap.min.css.map": "Resources/Raw/wwwroot/css/bootstrap/bootstrap.min.css.map",
@@ -716,7 +722,7 @@
                     }
                 },
                 {
-                    "condition": "(Net8 || !JSHybrid)",
+                    "condition": "(!JSHybrid)",
                     "exclude": [
                         "Resources/Raw/hybridroot/**/*"
                     ]
@@ -728,10 +734,19 @@
                     ]
                 },
                 {
-                    "condition": "(Net8 || !(JSHybrid && Mvvm))",
+                    "condition": "(!(JSHybrid && Mvvm))",
                     "exclude": [
                         "Converters/**/*"
                     ]
+                },
+                {
+                    "condition": "(AddWasm)",
+                    "rename": {
+                        "MauiApp.1.Browser/wasmroot/app.css": "MauiApp.1.Browser/wwwroot/app.css",
+                        "MauiApp.1.Browser/wasmroot/favicon.ico": "MauiApp.1.Browser/wwwroot/favicon.ico",
+                        "MauiApp.1.Browser/wasmroot/index.html": "MauiApp.1.Browser/wwwroot/index.html",
+                        "MauiApp.1.Browser/wasmroot/main.js": "MauiApp.1.Browser/wwwroot/main.js"
+                    }
                 }
             ]
         }
@@ -745,6 +760,7 @@
         "1D17E9ED-22F1-4992-AE45-B8507EFD6950",
         "DBA5FAF3-33E8-4DE5-B829-7B1968E8A937",
         "9D4E9AD4-B425-4DF8-9635-DC1FD7F0A6DB",
+        "D63A3B34-2D7A-478F-899A-3D6945268F3A",
         "81a9fb0a-63f5-4ef6-b38e-0cf88600102a"
     ],
     "symbols": {
@@ -754,6 +770,11 @@
             "description": "Option to choose the application target framework.",
             "choices": [
                 {
+                    "choice": "net11.0",
+                    "description": "Target .NET 11",
+                    "displayName": ".NET 11 (Preview)"
+                },
+                {
                     "choice": "net10.0",
                     "description": "Target .NET 10",
                     "displayName": ".NET 10 (LTS)"
@@ -762,11 +783,6 @@
                     "choice": "net9.0",
                     "description": "Target .NET 9",
                     "displayName": ".NET 9 (STS)"
-                },
-                {
-                    "choice": "net8.0",
-                    "description": "Target .NET 8",
-                    "displayName": ".NET 8 (LTS)"
                 }
             ],
             "replaces": "MAUI_TFM",
@@ -835,7 +851,7 @@
                 },
                 {
                     "choice": "Base",
-                    "description": "Targets base framework (.NET 8/9/10)."
+                    "description": "Targets base framework (.NET 9/10/11)."
                 },
                 {
                     "choice": "Android",
@@ -846,8 +862,16 @@
                     "description": "Targets iOS platform."
                 },
                 {
+                    "choice": "Linux",
+                    "description": "Targets Linux platform (.NET 11 Preview via Avalonia)."
+                },
+                {
                     "choice": "macOS",
                     "description": "Targets macOS platform via Mac Catalyst."
+                },
+                {
+                    "choice": "Wasm",
+                    "description": "Targets WebAssembly (.NET 11 Preview via Avalonia)."
                 },
                 {
                     "choice": "Windows",
@@ -863,7 +887,7 @@
                 },
                 {
                     "choice": "Desktop",
-                    "description": "Targets Windows and macOS platforms."
+                    "description": "Targets Windows, macOS, and Linux (via Avalonia - .NET 11 Preview)."
                 },
                 {
                     "choice": "Apple",
@@ -898,6 +922,13 @@
             "defaultValue": "false",
             "description": "Option to integrate with Aspire.",
             "displayName": "Option to integrate with Aspire."
+        },
+        "avalonia": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Option to use Avalonia backend for .NET MAUI 11.",
+            "displayName": "Option to use _Avalonia backend for .NET MAUI 11."
         },
         "global-namespace": {
             "type": "parameter",
@@ -995,7 +1026,7 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Option to add and configure Microsoft.Maui.Controls.Maps NuGet package reference.",
-            "displayName": "Add and configure Microsoft.Maui.Controls.M_aps NuGet package reference"
+            "displayName": "Add and configure Microsoft.Maui.Controls.Maps NuGet package reference"
         },
         "include-media-element": {
             "type": "parameter",
@@ -1150,10 +1181,6 @@
                 "toLower": true
             }
         },
-        "Net8": {
-            "type": "computed",
-            "value": "(frameworkLower == \"net8.0\")"
-        },
         "Net9": {
             "type": "computed",
             "value": "(frameworkLower == \"net9.0\")"
@@ -1161,6 +1188,10 @@
         "Net10": {
             "type": "computed",
             "value": "(frameworkLower == \"net10.0\")"
+        },
+        "Net11": {
+            "type": "computed",
+            "value": "(frameworkLower == \"net11.0\")"
         },
         "PkgVersion": {
             "type": "generated",
@@ -1170,31 +1201,35 @@
                 "datatype": "string",
                 "cases": [
                     {
-                        "condition": "(Net8)",
-                        "value": "8.*"
-                    },
-                    {
                         "condition": "(Net9)",
                         "value": "9.*"
                     },
                     {
                         "condition": "(Net10)",
                         "value": "10.*"
+                    },
+                    {
+                        "condition": "(Net11)",
+                        "value": "11.*"
                     }
                 ]
             }
         },
-        "Net8OrLater": {
+        "Preview": {
             "type": "computed",
-            "value": "(Net8 || Net9 || Net10)"
+            "value": "(Net11)"
         },
         "Net9OrLater": {
             "type": "computed",
-            "value": "(Net9 || Net10)"
+            "value": "(Net9 || Net10 || Net11)"
         },
         "Net10OrLater": {
             "type": "computed",
-            "value": "(Net10)"
+            "value": "(Net10 || Net11)"
+        },
+        "Net11OrLater": {
+            "type": "computed",
+            "value": "(Net11)"
         },
         "XamlCSharpExpr": {
             "type": "computed",
@@ -1225,6 +1260,10 @@
         "AddAspire": {
             "type": "computed",
             "value": "(aspire)"
+        },
+        "AddAvalonia": {
+            "type": "computed",
+            "value": "(Net11OrLater && avalonia)"
         },
         "GlobalNamespace": {
             "type": "computed",
@@ -1265,14 +1304,6 @@
         "JSHybrid": {
             "type": "computed",
             "value": "(design-pattern == \"JSHybrid\" || designPatternLower == \"jshybrid\")"
-        },
-        "JSHybridNet9": {
-            "type": "computed",
-            "value": "(Net9OrLater && JSHybrid)"
-        },
-        "Fallback": {
-            "type": "computed",
-            "value": "(Net8 && JSHybrid)"
         },
         "Markup": {
             "type": "computed",
@@ -1318,9 +1349,13 @@
             "type": "computed",
             "value": "(Hybrid && razor-class-library)"
         },
+        "AddWasm": {
+            "type": "computed",
+            "value": "(AddAvalonia && (AllPlatforms || IsWasm))"
+        },
         "ProjFolder": {
             "type": "computed",
-            "value": "(AddAspire || MauiLib || RazorLib)"
+            "value": "(AddAspire || AddWasm || MauiLib || RazorLib)"
         },
         "AllPlatforms": {
             "type": "computed",
@@ -1346,6 +1381,14 @@
             "type": "computed",
             "value": "(target-platform == \"Tizen\")"
         },
+        "IsLinux": {
+            "type": "computed",
+            "value": "((target-platform == \"Desktop\" || target-platform == \"Linux\") && AddAvalonia)"
+        },
+        "IsWasm": {
+            "type": "computed",
+            "value": "(target-platform == \"Wasm\" && AddAvalonia)"
+        },
         "IsBase": {
             "type": "computed",
             "value": "(target-platform == \"Base\")"
@@ -1356,7 +1399,7 @@
         },
         "MorePlatforms": {
             "type": "computed",
-            "value": "(IsWindows || IsTizen || IsBase)"
+            "value": "(IsWindows || IsTizen || IsBase || IsLinux || IsWasm || AddAvalonia)"
         },
         "Unpackaged": {
             "type": "computed",
@@ -1380,7 +1423,7 @@
         },
         "AddToolkit": {
             "type": "computed",
-            "value": "(include-toolkit || (JSHybridNet9 && Mvvm))"
+            "value": "(include-toolkit || (JSHybrid && Mvvm))"
         },
         "AddSyncfusionToolkit": {
             "type": "computed",
@@ -1416,7 +1459,7 @@
         },
         "PackageRef": {
             "type": "computed",
-            "value": "(AddToolkit || AddMarkup || AddMvvmToolkit || Net8OrLater || Razor || Mvu || CompiledBindings)"
+            "value": "(AddToolkit || AddMarkup || AddMvvmToolkit || Net9OrLater || Razor || Mvu || CompiledBindings)"
         },
         "UseSlnx": {
             "type": "computed",

@@ -4,7 +4,7 @@
         <TargetFramework>MAUI_TFM</TargetFramework>
 
         <Nullable>enable</Nullable>
-        <!--#if (Net10OrLater)-->
+        <!--#if (Preview)-->
         <LangVersion>preview</LangVersion>
         <!--#else-->
         <LangVersion>latest</LangVersion>

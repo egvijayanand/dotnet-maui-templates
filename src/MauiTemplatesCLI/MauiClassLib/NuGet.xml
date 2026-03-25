@@ -3,12 +3,12 @@
   <packageSources>
     <!--To inherit the global NuGet package sources remove the <clear/> line below -->
     <!-- <clear /> -->
-    <!--#if (Net10)-->
-    <add key="maui-nightly" value="https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet10/nuget/v3/index.json" />
-    <!--#elif (Net8)-->
-    <add key="maui-nightly" value="https://aka.ms/maui-nightly/index.json" />
-    <!--#else-->
+    <!--#if (Net9)-->
     <add key="maui-nightly" value="https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet9/nuget/v3/index.json" />
+    <!--#elif (Net11)-->
+    <add key="maui-nightly" value="https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet11/nuget/v3/index.json" />
+    <!--#else-->
+    <add key="maui-nightly" value="https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet10/nuget/v3/index.json" />
     <!--#endif-->
   </packageSources>
   <!--#if (CentralPkgMgmt)-->

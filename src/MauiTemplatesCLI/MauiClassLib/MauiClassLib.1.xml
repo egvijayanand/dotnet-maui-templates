@@ -1,5 +1,5 @@
 ﻿<Solution>
-<!--#if (Net8OrLater || CentralPkgMgmt)-->
+<!--#if (Net9OrLater || CentralPkgMgmt)-->
     <Folder Name="/Solution Items/">
         <File Path="Directory.Packages.props" />
     </Folder>

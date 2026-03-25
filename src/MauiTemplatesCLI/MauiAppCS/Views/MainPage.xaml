@@ -109,7 +109,7 @@
     </ContentPage.Content>
 </ContentPage>
 <!--#endif-->
-<!--#elif (JSHybridNet9)-->
+<!--#elif (JSHybrid)-->
 <!--#if (Mvvm)-->
 <!--#if (ImplicitNamespace)-->
 <ContentPage
@@ -346,11 +346,7 @@
     xmlns:droid="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
     Title="MauiApp._1"
     droid:TabbedPage.ToolbarPlacement="Bottom">
-    <NavigationPage Title="Calendar">
-        <x:Arguments>
-            <EventsPage NavigationPage.HasNavigationBar="{OnPlatform Android=False, Default=True}" />
-        </x:Arguments>
-    </NavigationPage>
+    <EventsPage NavigationPage.HasNavigationBar="{OnPlatform Android=False, Default=True}" />
     <SearchPage />
     <SettingsPage />
 </TabbedPage>
@@ -365,11 +361,7 @@
     Title="MauiApp._1"
     droid:TabbedPage.ToolbarPlacement="Bottom"
     mc:Ignorable="d">
-    <NavigationPage Title="Calendar">
-        <x:Arguments>
-            <EventsPage NavigationPage.HasNavigationBar="{OnPlatform Android=False, Default=True}" />
-        </x:Arguments>
-    </NavigationPage>
+    <EventsPage NavigationPage.HasNavigationBar="{OnPlatform Android=False, Default=True}" />
     <SearchPage />
     <SettingsPage />
 </TabbedPage>
@@ -386,11 +378,7 @@
     Title="MauiApp._1"
     droid:TabbedPage.ToolbarPlacement="Bottom"
     mc:Ignorable="d">
-    <NavigationPage Title="Calendar">
-        <x:Arguments>
-            <vw:EventsPage NavigationPage.HasNavigationBar="{OnPlatform Android=False, Default=True}" />
-        </x:Arguments>
-    </NavigationPage>
+    <vw:EventsPage NavigationPage.HasNavigationBar="{OnPlatform Android=False, Default=True}" />
     <vw:SearchPage />
     <vw:SettingsPage />
 </TabbedPage>

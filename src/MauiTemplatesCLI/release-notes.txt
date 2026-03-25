@@ -2,8 +2,48 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This template package does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 8.5.0:
+What's new in ver. 9.0.0:
 -------------------------
+Templates updated to support .NET MAUI 11 Preview.
+
+For this, have introduced an additional option to the framework parameter - net11.0
+
+Note: The framework parameter defaults to net10.0, so to create a project for .NET MAUI 11, you’ll need to explicitly set it to net11.0.
+
+dotnet new mauiapp -o MyApp -f net11.0
+
+Since .NET MAUI 8 is no longer supported, that option has been removed.
+
+A new optional parameter has been introduced to support the Avalonia backend in .NET MAUI 11.
+
+--avalonia - Default value is false.
+
+Additional target platform values now include Linux and Wasm.
+
+dotnet new mauiapp -o MyApp -f net11.0 --avalonia
+
+This will include the Avalonia package, wire up the builder method in the startup, and define constants so both Native and Drawn UI can run from the same codebase.
+
+This parameter is controlled by the framework, so it only works with .NET MAUI 11 Preview. Enabling it in earlier versions won’t have any effect.
+
+To run the Web Assembly target, set the Browser project as the startup project.
+
+When Aspire and Avalonia are combined, the Drawn UI becomes the targeted project.
+
+For both the class library projects, the option to include the Avalonia NuGet package is as follows:
+
+-ia | --include-avalonia - The default value is false.
+
+dotnet new mauiclasslib -o MyLib -ia -f net11.0
+
+dotnet new sharedclasslib -o SharedLib -ia -f net11.0
+
+For complete details, refer to this article:
+
+https://egvijayanand.in/2026/03/25/what-is-new-in-the-all-in-one-dotnet-maui-templates-pack-v9-0-hello-avalonia/
+
+v8.5.0
+
 1. Templates updated to support .NET MAUI 10 SR5.
 
 2. Introduced a new option in .NET MAUI 10+ for the XAML C# Expressions feature to make the binding process simpler.

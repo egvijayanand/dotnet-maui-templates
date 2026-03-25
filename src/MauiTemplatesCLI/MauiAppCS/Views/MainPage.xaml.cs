@@ -6,12 +6,12 @@
     public partial class MainPage : ContentPage
 #endif
     {
-#if JSHybridNet9
+#if JSHybrid
         private DisplayOrientation _orientation;
 
 #endif
 #if Mvvm
-#if JSHybridNet9
+#if JSHybrid
         public MainPage(MainViewModel viewModel, IDeviceDisplay deviceDisplay, IDeviceInfo deviceInfo)
 #elif Tabbed
         public MainPage()
@@ -19,7 +19,7 @@
         public MainPage(MainViewModel viewModel)
 #endif
 #else
-#if (Plain || Fallback)
+#if Plain
         private int _count;
 
 #endif
@@ -28,7 +28,7 @@
         {
             InitializeComponent();
 #if (!Tabbed)
-#if JSHybridNet9
+#if JSHybrid
 #if Mvvm
             ViewModel = viewModel;
             ViewModel.Interop = SendMessage;
@@ -59,7 +59,7 @@
 #endif
         }
 #if Mvvm
-#if JSHybridNet9
+#if JSHybrid
 
         public MainViewModel ViewModel { get; set; }
 #endif
@@ -71,7 +71,7 @@
         {
             await Navigation.PushModalAsync(new NewEventPage());
         }
-#elif JSHybridNet9
+#elif JSHybrid
 
         private void OnSendClicked(object? sender, EventArgs e) => SendMessage();
 
@@ -93,7 +93,7 @@
         }
 #endif
 #endif
-#if JSHybridNet9
+#if JSHybrid
 
         private void OnMainDisplayInfoChanged(object? sender, DisplayInfoChangedEventArgs e)
         {

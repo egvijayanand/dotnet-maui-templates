@@ -99,6 +99,14 @@
             "defaultValue": "false"
         },
         {
+            "id": "include-avalonia",
+            "name": {
+                "text": "Add Avalonia.Controls.Maui.Desktop NuGet package reference (.NET MAUI 11)"
+            },
+            "isVisible": true,
+            "defaultValue": "false"
+        },
+        {
             "id": "include-mvvm-toolkit",
             "name": {
                 "text": "Add CommunityToolkit.Mvvm (aka Microsoft MV_VM Toolkit) NuGet package reference"

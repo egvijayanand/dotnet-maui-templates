@@ -47,6 +47,10 @@
     static string MauiVersion()
     {
         var version = typeof(MauiApp).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
+#if SKIA
+        return $".NET MAUI ver. {version?[..version.IndexOf('+')]} (Skia)";
+#else
         return $".NET MAUI ver. {version?[..version.IndexOf('+')]}";
+#endif
     }
 }

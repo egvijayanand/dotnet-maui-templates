@@ -6,15 +6,11 @@
     <!--#else-->
     <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="35" />
     <!--#endif-->
-    <!--#elif (Net8)-->
-    <!--#if (Hybrid)-->
-    <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="34" />
-    <!--#else-->
-    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="34" />
-    <!--#endif-->
     <!--#else-->
     <!--#if (Hybrid)-->
     <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="36" />
+    <!--#elif (AddAvalonia)-->
+    <uses-sdk android:minSdkVersion="23" android:targetSdkVersion="36" />
     <!--#else-->
     <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="36" />
     <!--#endif-->

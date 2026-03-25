@@ -131,7 +131,7 @@ using XmlnsDefinitionAttribute = Microsoft.Maui.Controls.XmlnsDefinitionAttribut
 #if (Hierarchical || Tabbed || Shell)
 [assembly: XmlnsDefinition("http://schemas.microsoft.com/dotnet/maui/global", "MauiApp._1.Controls")]
 #endif
-#if JSHybridNet9
+#if JSHybrid
 [assembly: XmlnsDefinition("http://schemas.microsoft.com/dotnet/maui/global", "MauiApp._1.Converters")]
 #endif
 #if (Hierarchical || Tabbed || Shell)

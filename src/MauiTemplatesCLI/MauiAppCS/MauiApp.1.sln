@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
-#if (AddAspire || (!Auxiliary && MauiLib) || (Hybrid && RazorLib))
+#if (AddAspire || AddWasm || (!Auxiliary && MauiLib) || (Hybrid && RazorLib))
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiApp.1", "MauiApp.1\MauiApp.1.csproj", "{E3234856-C63F-46B8-A907-866DE058A7C1}"
 EndProject
 #else
@@ -16,6 +16,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiApp.1.Shared", "MauiApp.1.Shared\MauiApp.1.Shared.csproj", "{9D4E9AD4-B425-4DF8-9635-DC1FD7F0A6DB}"
 EndProject
 #endif
+#if (AddWasm)
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiApp.1.Browser", "MauiApp.1.Browser\MauiApp.1.Browser.csproj", "{D63A3B34-2D7A-478F-899A-3D6945268F3A}"
+EndProject
+#endif
 #if (!Auxiliary && MauiLib)
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiApp.1.MauiLib", "MauiApp.1.MauiLib\MauiApp.1.MauiLib.csproj", "{D3FA2E60-93D4-43A3-9CA7-A532BA109327}"
 EndProject
@@ -24,7 +28,7 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiApp.1.RazorLib", "MauiApp.1.RazorLib\MauiApp.1.RazorLib.csproj", "{96D0A57E-E5F3-4E8A-A320-5A6DF01DF74A}"
 EndProject
 #endif
-#if (Net8OrLater || CentralPkgMgmt)
+#if (Net9OrLater || CentralPkgMgmt)
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1D17E9ED-22F1-4992-AE45-B8507EFD6950}"
 	ProjectSection(SolutionItems) = preProject
 		Directory.Packages.props = Directory.Packages.props
@@ -53,6 +57,12 @@ Global
 		{9D4E9AD4-B425-4DF8-9635-DC1FD7F0A6DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D4E9AD4-B425-4DF8-9635-DC1FD7F0A6DB}.Release|Any CPU.Build.0 = Release|Any CPU
 #endif
+#if (AddWasm)
+		{D63A3B34-2D7A-478F-899A-3D6945268F3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D63A3B34-2D7A-478F-899A-3D6945268F3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D63A3B34-2D7A-478F-899A-3D6945268F3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D63A3B34-2D7A-478F-899A-3D6945268F3A}.Release|Any CPU.Build.0 = Release|Any CPU
+#endif
 #if (!Auxiliary && MauiLib)
 		{D3FA2E60-93D4-43A3-9CA7-A532BA109327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D3FA2E60-93D4-43A3-9CA7-A532BA109327}.Debug|Any CPU.Build.0 = Debug|Any CPU
@@ -70,6 +80,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		        SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
+		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
 	EndGlobalSection
 EndGlobal

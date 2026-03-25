@@ -12,7 +12,7 @@
         }
     },
     "usageExamples": [
-        "--framework net8.0",
-        "-f net10.0"
+        "--framework net9.0",
+        "-f net11.0"
     ]
 }
