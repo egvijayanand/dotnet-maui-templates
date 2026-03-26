@@ -16,9 +16,9 @@
         <MauiVersion>9.0.120</MauiVersion>
         <!--#else-->
         <!--#if (Nightly)-->
-        <MauiVersion>10.0.60-ci.main.26173.5</MauiVersion>
+        <MauiVersion>10.0.60-ci.main.26174.5</MauiVersion>
         <!--#else-->
-        <MauiVersion>10.0.50</MauiVersion>
+        <MauiVersion>10.0.51</MauiVersion>
         <!--#endif-->
         <!--#endif-->
         <!--#else-->
@@ -84,7 +84,7 @@
         <PackageVersion Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#if (AddMvvmToolkit)-->
-        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.1" />
+        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.2" />
         <!--#endif-->
     </ItemGroup>
     <!--#endif-->

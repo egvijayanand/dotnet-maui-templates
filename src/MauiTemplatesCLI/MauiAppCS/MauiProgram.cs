@@ -124,9 +124,7 @@ namespace MauiApp._1
 #endif
 #endif
 #if AddAspire
-#if AddAvalonia
-                .AddServiceDefaults("MauiApp._1") // Aspire service defaults
-#elif Net10OrLater
+#if Net10OrLater
                 .AddServiceDefaults() // Aspire service defaults
 #else
                 .ConfigureEnvironmentVariables() // Load configuration from environment variables
