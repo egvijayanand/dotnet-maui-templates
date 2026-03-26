@@ -2,8 +2,12 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This VS extension does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 9.0.0.0:
+What's new in ver. 9.0.1.0:
 ---------------------------
+Fix release.
+
+v9.0.0.0:
+
 Templates updated to support .NET MAUI 11 Preview.
 
 For this, have introduced an additional option to the Framework parameter - .NET 11 (Preview).
