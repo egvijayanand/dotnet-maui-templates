@@ -4,11 +4,7 @@
         : BaseViewModel(dialogService, navigationService)
     {
 #if XamlCSharpExpr
-        public IAsyncRelayCommand LoginCommand
-        {
-            get => field ??= new AsyncRelayCommand(LoginAsync);
-            set => field = value; // Not really necessary, required until the fix is regularized in .NET 11 Preview.
-        }
+        public IAsyncRelayCommand LoginCommand => field ??= new AsyncRelayCommand(LoginAsync);
 
         //[RelayCommand]
 #else

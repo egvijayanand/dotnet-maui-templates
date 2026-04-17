@@ -50,6 +50,7 @@
         <PackageReference Include="Microsoft.Maui.Controls" />
         <!--#if (AddAvalonia)-->
         <PackageReference Include="Avalonia.Controls.Maui.Desktop" />
+        <PackageReference Include="Avalonia.Controls.Maui.Essentials" />
         <!--#endif-->
         <PackageReference Include="VijayAnand.MauiToolkit" />
         <!--#if (AddCamera)-->
@@ -124,6 +125,7 @@
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <!--#if (AddAvalonia)-->
         <PackageReference Include="Avalonia.Controls.Maui.Desktop" Version="$(AvaloniaMauiVersion)" />
+        <PackageReference Include="Avalonia.Controls.Maui.Essentials" Version="$(AvaloniaMauiVersion)" />
         <!--#endif-->
         <!--#if (Net9)-->
         <PackageReference Include="VijayAnand.MauiToolkit" Version="4.*" />

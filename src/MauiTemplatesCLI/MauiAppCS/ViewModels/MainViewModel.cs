@@ -11,14 +11,16 @@
     public partial class MainViewModel(ISemanticScreenReader screenReader) : BaseViewModel("MauiApp._1")
 #endif
     {
-#if Hybrid
+#if Tabbed
+
+#elif Hybrid
         [ObservableProperty]
 #if Net10OrLater
         public partial string StartPath { get; set; } = "/counter";
 #else
         private string _startPath = "/counter";
 #endif
-#elif (Hierarchical || Tabbed)
+#elif Hierarchical
 #if XamlCSharpExpr
         public IAsyncRelayCommand AddEventCommand => field ??= new AsyncRelayCommand(AddEventAsync);
 
@@ -76,11 +78,7 @@
 #endif
 
 #if XamlCSharpExpr
-        public IRelayCommand IncrementCommand
-        {
-            get => field ??= new RelayCommand(Increment);
-            set => field = value; // Not really necessary, required until the fix is regularized in .NET 11 Preview.
-        }
+        public IRelayCommand IncrementCommand => field ??= new RelayCommand(Increment);
 
         //[RelayCommand]
 #else

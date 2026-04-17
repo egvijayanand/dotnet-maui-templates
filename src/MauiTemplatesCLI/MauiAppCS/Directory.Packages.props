@@ -3,25 +3,25 @@
         <!--#if (CentralPkgMgmt)-->
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (AddAspire)-->
-        <AspireVersion>13.2.0</AspireVersion>
+        <AspireVersion>13.2.2</AspireVersion>
         <!--#endif-->
         <!--#if (AddAvalonia)-->
         <!--#if (AddWasm)-->
-        <AvaloniaVersion>12.0.0-rc1</AvaloniaVersion>
+        <AvaloniaVersion>12.0.1</AvaloniaVersion>
         <!--#endif-->
-        <AvaloniaMauiVersion>11.0.0-preview.2.26082.825</AvaloniaMauiVersion>
+        <AvaloniaMauiVersion>11.0.0-preview.3.26105.308</AvaloniaMauiVersion>
         <!--#endif-->
         <!--#if (Net11)-->
         <!--#if (Nightly)-->
-        <MauiVersion>11.0.0-preview.1.26160.5</MauiVersion>
+        <MauiVersion>11.0.0-preview.3.26207.5</MauiVersion>
         <!--#else-->
-        <MauiVersion>11.0.0-preview.2.26152.10</MauiVersion>
+        <MauiVersion>11.0.0-preview.3.26203.7</MauiVersion>
         <!--#endif-->
         <!--#elif (Net9)-->
         <MauiVersion>9.0.120</MauiVersion>
         <!--#else-->
         <!--#if (Nightly)-->
-        <MauiVersion>10.0.60-ci.main.26174.5</MauiVersion>
+        <MauiVersion>10.0.60-ci.main.26203.10</MauiVersion>
         <!--#elif (XamlCSharpExpr)-->
         <MauiVersion>[10.0.51,)</MauiVersion>
         <!--#else-->
@@ -31,11 +31,11 @@
         <!--#else-->
         <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
         <!--#if (AddAspire)-->
-        <AspireVersion>13.2.0</AspireVersion>
+        <AspireVersion>13.2.2</AspireVersion>
         <!--#endif-->
         <!--#if (AddAvalonia)-->
         <!--#if (AddWasm)-->
-        <AvaloniaVersion>12.*-*</AvaloniaVersion>
+        <AvaloniaVersion>12.*</AvaloniaVersion>
         <!--#endif-->
         <AvaloniaMauiVersion>PKG_VERSION-*</AvaloniaMauiVersion>
         <!--#endif-->
@@ -54,17 +54,18 @@
     <!--#endif-->
         <!--#if (AddAspire)-->
         <PackageVersion Include="Aspire.Hosting.AppHost" Version="$(AspireVersion)" />
-        <PackageVersion Include="Aspire.Hosting.Maui" Version="13.2.0-preview.1.26170.3" />
+        <PackageVersion Include="Aspire.Hosting.Maui" Version="13.2.2-preview.1.26207.2" />
         <PackageVersion Include="Microsoft.Maui.Core" Version="$(MauiVersion)" />
-        <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.4.0" />
-        <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="10.4.0" />
-        <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.15.0" />
-        <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.15.0" />
+        <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.5.0" />
+        <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="10.5.0" />
+        <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.15.2" />
+        <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.15.2" />
         <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.15.0" />
         <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.15.0" />
         <!--#endif-->
         <!--#if (AddAvalonia)-->
         <PackageVersion Include="Avalonia.Controls.Maui.Desktop" Version="$(AvaloniaMauiVersion)" />
+        <PackageVersion Include="Avalonia.Controls.Maui.Essentials" Version="$(AvaloniaMauiVersion)" />
         <!--#if (AddWasm)-->
         <PackageVersion Include="Avalonia" Version="$(AvaloniaVersion)" />
         <PackageVersion Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
@@ -74,11 +75,11 @@
         <!--#endif-->
         <!--#if (Hybrid && RazorLib)-->
         <!--#if (Net9)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.14" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.15" />
         <!--#elif (Net11)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="11.0.0-preview.2.26159.112" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="11.0.0-preview.3.26207.106" />
         <!--#else-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="10.0.4" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="10.0.6" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (Razor)-->
@@ -105,11 +106,11 @@
         <PackageVersion Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#if (Net9)-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.14" Condition="'$(Configuration)' == 'Debug'" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.15" Condition="'$(Configuration)' == 'Debug'" />
         <!--#elif (Net11)-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="11.0.0-preview.2.26159.112" Condition="'$(Configuration)' == 'Debug'" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="11.0.0-preview.3.26207.106" Condition="'$(Configuration)' == 'Debug'" />
         <!--#else-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.4" Condition="'$(Configuration)' == 'Debug'" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.6" Condition="'$(Configuration)' == 'Debug'" />
         <!--#endif-->
         <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <!--#if (Net9)-->
@@ -121,7 +122,7 @@
         <!--#if (Net9)-->
         <PackageVersion Include="CommunityToolkit.Maui" Version="12.3.0" />
         <!--#else-->
-        <PackageVersion Include="CommunityToolkit.Maui" Version="14.0.1" />
+        <PackageVersion Include="CommunityToolkit.Maui" Version="14.1.0" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddSyncfusionToolkit)-->
@@ -138,14 +139,14 @@
         <!--#if (Net9)-->
         <PackageVersion Include="CommunityToolkit.Maui.Camera" Version="4.0.0" />
         <!--#else-->
-        <PackageVersion Include="CommunityToolkit.Maui.Camera" Version="6.0.0" />
+        <PackageVersion Include="CommunityToolkit.Maui.Camera" Version="6.0.1" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMedia)-->
         <!--#if (Net9)-->
         <PackageVersion Include="CommunityToolkit.Maui.MediaElement" Version="6.1.3" />
         <!--#else-->
-        <PackageVersion Include="CommunityToolkit.Maui.MediaElement" Version="8.0.1" />
+        <PackageVersion Include="CommunityToolkit.Maui.MediaElement" Version="9.0.0" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
@@ -173,10 +174,10 @@
         <PackageVersion Include="Reactor.Maui.Maps" Version="3.0.40" />
         <!--#endif-->
         <!--#else-->
-        <PackageVersion Include="Reactor.Maui" Version="4.0.16" />
-        <PackageVersion Include="Reactor.Maui.Canvas" Version="4.0.16" />
+        <PackageVersion Include="Reactor.Maui" Version="4.0.17" />
+        <PackageVersion Include="Reactor.Maui.Canvas" Version="4.0.17" />
         <!--#if (AddMaps)-->
-        <PackageVersion Include="Reactor.Maui.Maps" Version="4.0.16" />
+        <PackageVersion Include="Reactor.Maui.Maps" Version="4.0.17" />
         <!--#endif-->
         <!--#endif-->
         <!--#endif-->

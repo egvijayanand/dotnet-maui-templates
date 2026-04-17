@@ -24,6 +24,7 @@
         <!--#if (CentralPkgMgmt)-->
         <PackageReference Include="Avalonia" />
         <PackageReference Include="Avalonia.Controls.Maui.Desktop" />
+        <PackageReference Include="Avalonia.Controls.Maui.Essentials" />
         <PackageReference Include="Avalonia.Themes.Fluent" />
         <PackageReference Include="Avalonia.Fonts.Inter" />
         <PackageReference Include="Avalonia.Browser" />
@@ -32,6 +33,7 @@
         <!--#else-->
         <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
         <PackageReference Include="Avalonia.Controls.Maui.Desktop" Version="$(AvaloniaMauiVersion)" />
+        <PackageReference Include="Avalonia.Controls.Maui.Essentials" Version="$(AvaloniaMauiVersion)" />
         <PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
         <PackageReference Include="Avalonia.Fonts.Inter" Version="$(AvaloniaVersion)" />
         <PackageReference Include="Avalonia.Browser" Version="$(AvaloniaVersion)" />
