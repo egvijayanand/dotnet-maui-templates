@@ -200,6 +200,7 @@
         <PackageReference Include="Microsoft.Maui.Controls" />
         <!--#if (AddAvalonia)-->
         <PackageReference Include="Avalonia.Controls.Maui.Desktop" />
+        <PackageReference Include="Avalonia.Controls.Maui.Essentials" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddToolkit)-->
@@ -244,6 +245,7 @@
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <!--#if (AddAvalonia)-->
         <PackageReference Include="Avalonia.Controls.Maui.Desktop" Version="$(AvaloniaMauiVersion)" />
+        <PackageReference Include="Avalonia.Controls.Maui.Essentials" Version="$(AvaloniaMauiVersion)" />
         <!--#endif-->
         <!--#if (AddToolkit)-->
         <!--#if (Net9)-->
