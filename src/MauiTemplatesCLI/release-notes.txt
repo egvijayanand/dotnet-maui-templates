@@ -2,8 +2,12 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This template package does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 9.1.0:
+What's new in ver. 9.2.0:
 -------------------------
+Templates updated to support .NET MAUI 10 SR6.
+
+v9.1.0:
+
 Templates updated to support .NET MAUI 11 Preview 3.
 
 The Essentials package is also included as a reference while opting for Avalonia.
