@@ -2,7 +2,7 @@
 #if FileBasedProgram
 //+:cnd:noEmit
 #if Aspire
-#:sdk Aspire.AppHost.Sdk@13.2.2
+#:sdk Aspire.AppHost.Sdk@13.2.4
 #elif BlazorWasm
 #:sdk Microsoft.NET.Sdk.BlazorWebAssembly
 #elif Razor
@@ -24,7 +24,7 @@
 //#:property ExperimentalFileBasedProgramEnableIncludeDirective=true
 #if Aspire
 // Packages
-#:package Aspire.Hosting.AppHost@13.2.2
+#:package Aspire.Hosting.AppHost@13.2.4
 #if Maui
 #:package Aspire.Hosting.Maui@13.*-*
 #endif

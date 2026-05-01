@@ -7,7 +7,7 @@
         <!--#endif-->
         <!--#if (Net11)-->
         <!--#if (Nightly)-->
-        <MauiVersion>11.0.0-preview.3.26207.5</MauiVersion>
+        <MauiVersion>11.0.0-preview.4.26230.3</MauiVersion>
         <!--#else-->
         <MauiVersion>11.0.0-preview.3.26203.7</MauiVersion>
         <!--#endif-->
@@ -15,9 +15,9 @@
         <MauiVersion>9.0.120</MauiVersion>
         <!--#else-->
         <!--#if (Nightly)-->
-        <MauiVersion>10.0.60-ci.main.26203.10</MauiVersion>
+        <MauiVersion>10.0.70-ci.main.26230.7</MauiVersion>
         <!--#else-->
-        <MauiVersion>10.0.51</MauiVersion>
+        <MauiVersion>10.0.60</MauiVersion>
         <!--#endif-->
         <!--#endif-->
         <!--#else-->
