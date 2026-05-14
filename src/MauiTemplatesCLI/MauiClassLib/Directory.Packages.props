@@ -7,15 +7,15 @@
         <!--#endif-->
         <!--#if (Net11)-->
         <!--#if (Nightly)-->
-        <MauiVersion>11.0.0-preview.4.26230.3</MauiVersion>
+        <MauiVersion>11.0.0-preview.4.26263.6</MauiVersion>
         <!--#else-->
-        <MauiVersion>11.0.0-preview.3.26203.7</MauiVersion>
+        <MauiVersion>11.0.0-preview.4.26230.3</MauiVersion>
         <!--#endif-->
         <!--#elif (Net9)-->
         <MauiVersion>9.0.120</MauiVersion>
         <!--#else-->
         <!--#if (Nightly)-->
-        <MauiVersion>10.0.70-ci.main.26230.7</MauiVersion>
+        <MauiVersion>10.0.80-ci.main.26263.5</MauiVersion>
         <!--#else-->
         <MauiVersion>10.0.60</MauiVersion>
         <!--#endif-->
@@ -53,7 +53,7 @@
         <!--#if (Net9)-->
         <PackageVersion Include="CommunityToolkit.Maui" Version="12.3.0" />
         <!--#else-->
-        <PackageVersion Include="CommunityToolkit.Maui" Version="14.1.0" />
+        <PackageVersion Include="CommunityToolkit.Maui" Version="14.1.1" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddSyncfusionToolkit)-->
