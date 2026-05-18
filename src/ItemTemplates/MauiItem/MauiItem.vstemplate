@@ -19,6 +19,7 @@
 			<CustomParameter Name="$maui_implicit$" Value="" />
 			<CustomParameter Name="$toolkit$" Value="" />
 			<CustomParameter Name="$xaml_only$" Value="" />
+			<CustomParameter Name="$include_cs$" Value="" />
 			<CustomParameter Name="$base_type$" Value="" />
 			<CustomParameter Name="$base_type_cs$" Value="" />
 			<CustomParameter Name="$type_args$" Value="" />

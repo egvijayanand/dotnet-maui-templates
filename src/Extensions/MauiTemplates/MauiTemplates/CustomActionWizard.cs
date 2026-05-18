@@ -32,9 +32,10 @@ namespace VijayAnand.MauiTemplates
         const string TypeArgs = "$type_args$";
         const string XamlItem = "$xaml_item$";
         const string XamlOnly = "$xaml_only$";
+        const string IncludeCS = "$include_cs$";
 
         DTE ide;
-        bool xamlOnly;
+        bool xamlOnly, includeCS;
         bool userCancel;
         bool postProcess;
         string destinationFolder;
@@ -169,11 +170,12 @@ namespace VijayAnand.MauiTemplates
                         {
                             if (tfm.Contains("net8.0")
                                 || tfm.Contains("net9.0")
-                                || tfm.Contains("net10.0"))
+                                || tfm.Contains("net10.0")
+                                || tfm.Contains("net11.0"))
                             {
                                 net8OrLater = true;
 
-                                if (tfm.Contains("net10.0"))
+                                if (tfm.Contains("net10.0") || tfm.Contains("net11.0"))
                                 {
                                     net10OrLater = true;
                                 }
@@ -187,11 +189,12 @@ namespace VijayAnand.MauiTemplates
                             {
                                 if (tfm.StartsWith("net8.0")
                                     || tfm.StartsWith("net9.0")
-                                    || tfm.StartsWith("net10.0"))
+                                    || tfm.StartsWith("net10.0")
+                                    || tfm.StartsWith("net11.0"))
                                 {
                                     net8OrLater = true;
 
-                                    if (tfm.StartsWith("net10.0"))
+                                    if (tfm.StartsWith("net10.0") || tfm.StartsWith("net11.0"))
                                     {
                                         net10OrLater = true;
                                     }
@@ -232,10 +235,12 @@ namespace VijayAnand.MauiTemplates
                         if (result is true)
                         {
                             xamlOnly = viewModel.XamlOnly;
+                            includeCS = viewModel.IncludeCS;
                             var globalNamespace = viewModel.GlobalNamespace;
                             var implicitNamespace = viewModel.ImplicitNamespace;
                             replacementsDictionary[Suffix] = viewModel.ItemSuffix;
                             replacementsDictionary[XamlOnly] = xamlOnly.ToString().ToLowerInvariant();
+                            replacementsDictionary[IncludeCS] = includeCS.ToString().ToLowerInvariant();
 
                             var baseType = viewModel.BaseTypeName;
                             var genericType = viewModel.GenericTypeName;

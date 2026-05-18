@@ -23,33 +23,34 @@ namespace VijayAnand.MauiTemplates.ViewModels
 
         public GenericItemViewModel() : this(false, false) { }
 
-        public GenericItemViewModel(bool xamlItem, bool dotNet10, int ideVersion = 17)
+        public GenericItemViewModel(bool xamlItem, bool net10OrLater, int ideVersion = 17)
         {
             Title = ".NET MAUI Generic Item | All-in-One Templates Pack";
             XamlItem = xamlItem;
-            DotNet10 = dotNet10;
+            Net10OrLater = net10OrLater;
 
             BlogUrl = $"https://egvijayanand.in/?utm_source={(ideVersion == 18 ? "vs2026" : "vs2022")}&utm_medium=dialog&utm_campaign=new-item";
             SponsorUrl = "https://github.com/sponsors/egvijayanand";
 
             XamlOption = new() { Content = "_Xaml Only", Accelerator = "X", TabIndex = 2 };
+            CSOption = new() { Content = "Include _C# Block", Accelerator = "C", TabIndex = 3 };
 
             // Keep the objects in the same order to preserve the index value.
             Namespaces = [
-            new() { Content = "_Global Namespace", Accelerator = "G", Selected = dotNet10, TabIndex = 3 },
-            new() { Content = "_Implicit Namespace", Accelerator = "I", TabIndex = 4 },
+            new() { Content = "_Global Namespace", Accelerator = "G", Selected = net10OrLater, TabIndex = 4 },
+            new() { Content = "_Implicit Namespace", Accelerator = "I", TabIndex = 5 },
             ];
 
             Suffixes =
             [
-            new() { Content = "_Page", Accelerator = "P", TabIndex = 5 },
-            new() { Content = "_View", Accelerator = "V", TabIndex = 6 },
-            new() { Content = "_Shell", Accelerator = "S", TabIndex = 7 },
-            new() { Content = "_Template", Accelerator = "T", TabIndex = 8 },
-            new() { Content = "The_me", Accelerator = "M", TabIndex = 9 },
-            new() { Content = "_Dialog", Accelerator = "D", TabIndex = 10 },
-            new() { Content = "Pop_up", Accelerator = "U", TabIndex = 11 },
-            new() { Content = "_Window", Accelerator = "W", TabIndex = 12 }
+            new() { Content = "_Page", Accelerator = "P", TabIndex = 6 },
+            new() { Content = "_View", Accelerator = "V", TabIndex = 7 },
+            new() { Content = "_Shell", Accelerator = "S", TabIndex = 8 },
+            new() { Content = "_Template", Accelerator = "T", TabIndex = 9 },
+            new() { Content = "The_me", Accelerator = "M", TabIndex = 10 },
+            new() { Content = "_Dialog", Accelerator = "D", TabIndex = 11 },
+            new() { Content = "Pop_up", Accelerator = "U", TabIndex = 12 },
+            new() { Content = "_Window", Accelerator = "W", TabIndex = 13 }
             ];
 
             if (XamlItem)
@@ -102,11 +103,16 @@ namespace VijayAnand.MauiTemplates.ViewModels
         /// </summary>
         public Option XamlOption { get; }
 
+        /// <summary>
+        /// To manage the <see cref="IncludeCS"/> option.
+        /// </summary>
+        public Option CSOption { get; }
+
         public ObservableCollection<Option> Namespaces { get; }
 
         public ObservableCollection<Option> Suffixes { get; }
 
-        public bool DotNet10 { get; }
+        public bool Net10OrLater { get; }
 
         public bool XamlItem { get; }
 
@@ -129,6 +135,8 @@ namespace VijayAnand.MauiTemplates.ViewModels
 
         #region Output
         public bool XamlOnly => XamlOption.Selected;
+
+        public bool IncludeCS => XamlOption.Selected && CSOption.Selected;
 
         public bool GlobalNamespace { get; private set; }
 
