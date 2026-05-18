@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--#if (IsGeneric)-->
-<!--#if (XamlOnly)-->
+<!--#if (XamlOnly && !IncludeCS)-->
 <?xaml-comp compile="true" ?>
 <!--#if (ImplicitNamespace)-->
 <ContentView
@@ -72,12 +72,26 @@
     x:Class="MyApp.RootNamespace.MauiItem__1"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:TypeArguments="TContext">
+<!--#if (IncludeCS)-->
+    <x:Code>
+        <![CDATA[
+        public MauiItem__1() => InitializeComponent();
+        ]]>
+    </x:Code>
+<!--#endif-->
 </ContentView>
 <!--#else-->
 <ContentView
     x:Class="MyApp.Namespace.MauiItem__1"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:TypeArguments="TContext">
+<!--#if (IncludeCS)-->
+    <x:Code>
+        <![CDATA[
+        public MauiItem__1() => InitializeComponent();
+        ]]>
+</x:Code>
+<!--#endif-->
 </ContentView>
 <!--#endif-->
 <!--#elif (GlobalNamespace)-->
@@ -90,6 +104,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:TypeArguments="TContext"
     mc:Ignorable="d">
+<!--#if (IncludeCS)-->
+    <x:Code>
+        <![CDATA[
+        public MauiItem__1() => InitializeComponent();
+        ]]>
+</x:Code>
+<!--#endif-->
 </ContentView>
 <!--#else-->
 <ContentView
@@ -100,6 +121,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:TypeArguments="TContext"
     mc:Ignorable="d">
+<!--#if (IncludeCS)-->
+    <x:Code>
+        <![CDATA[
+        public MauiItem__1() => InitializeComponent();
+        ]]>
+    </x:Code>
+<!--#endif-->
 </ContentView>
 <!--#endif-->
 <!--#else-->
@@ -115,6 +143,13 @@
     xmlns:local="clr-namespace:MyApp.RootNamespace"
     x:TypeArguments="TObject"
     mc:Ignorable="d">
+<!--#if (IncludeCS)-->
+    <x:Code>
+        <![CDATA[
+        public MauiItem__1() => InitializeComponent();
+]]>
+    </x:Code>
+<!--#endif-->
 </ContentPage>
 <!--#else-->
 <ContentPage
@@ -127,6 +162,13 @@
     xmlns:local="clr-namespace:MyApp.Namespace"
     x:TypeArguments="TObject"
     mc:Ignorable="d">
+<!--#if (IncludeCS)-->
+    <x:Code>
+        <![CDATA[
+        public MauiItem__1() => InitializeComponent();
+        ]]>
+    </x:Code>
+<!--#endif-->
 </ContentPage>
 <!--#endif-->
 <!--#else-->
@@ -140,6 +182,13 @@
     xmlns:local="clr-namespace:MyApp.RootNamespace"
     x:TypeArguments="TObject"
     mc:Ignorable="d">
+<!--#if (IncludeCS)-->
+    <x:Code>
+        <![CDATA[
+        public MauiItem__1() => InitializeComponent();
+        ]]>
+    </x:Code>
+<!--#endif-->
 </ContentPage>
 <!--#else-->
 <ContentPage
@@ -151,13 +200,20 @@
     xmlns:local="clr-namespace:MyApp.Namespace"
     x:TypeArguments="TObject"
     mc:Ignorable="d">
+<!--#if (IncludeCS)-->
+    <x:Code>
+        <![CDATA[
+        public MauiItem__1() => InitializeComponent();
+        ]]>
+    </x:Code>
+<!--#endif-->
 </ContentPage>
 <!--#endif-->
 <!--#endif-->
 <!--#endif-->
 <!--#endif-->
 <!--#else-->
-<!--#if (XamlOnly)-->
+<!--#if (XamlOnly && !IncludeCS)-->
 <?xaml-comp compile="true" ?>
 <!--#if (ImplicitNamespace)-->
 <ContentView>
@@ -221,11 +277,25 @@
 <ContentView
     x:Class="MyApp.RootNamespace.MauiItem__1"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+<!--#if (IncludeCS)-->
+    <x:Code>
+        <![CDATA[
+        public MauiItem__1() => InitializeComponent();
+        ]]>
+    </x:Code>
+<!--#endif-->
 </ContentView>
 <!--#else-->
 <ContentView
     x:Class="MyApp.Namespace.MauiItem__1"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+<!--#if (IncludeCS)-->
+    <x:Code>
+        <![CDATA[
+        public MauiItem__1() => InitializeComponent();
+        ]]>
+    </x:Code>
+<!--#endif-->
 </ContentView>
 <!--#endif-->
 <!--#elif (GlobalNamespace)-->
@@ -237,6 +307,13 @@
     xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+<!--#if (IncludeCS)-->
+    <x:Code>
+        <![CDATA[
+        public MauiItem__1() => InitializeComponent();
+        ]]>
+    </x:Code>
+<!--#endif-->
 </ContentView>
 <!--#else-->
 <ContentView
@@ -246,6 +323,13 @@
     xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+<!--#if (IncludeCS)-->
+    <x:Code>
+        <![CDATA[
+        public MauiItem__1() => InitializeComponent();
+        ]]>
+    </x:Code>
+<!--#endif-->
 </ContentView>
 <!--#endif-->
 <!--#else-->
@@ -260,6 +344,13 @@
     xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:local="clr-namespace:MyApp.RootNamespace"
     mc:Ignorable="d">
+<!--#if (IncludeCS)-->
+    <x:Code>
+        <![CDATA[
+        public MauiItem__1() => InitializeComponent();
+        ]]>
+    </x:Code>
+<!--#endif-->
 </ContentPage>
 <!--#else-->
 <ContentPage
@@ -271,6 +362,13 @@
     xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:local="clr-namespace:MyApp.Namespace"
     mc:Ignorable="d">
+<!--#if (IncludeCS)-->
+    <x:Code>
+        <![CDATA[
+        public MauiItem__1() => InitializeComponent();
+        ]]>
+    </x:Code>
+<!--#endif-->
 </ContentPage>
 <!--#endif-->
 <!--#else-->
@@ -283,6 +381,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MyApp.RootNamespace"
     mc:Ignorable="d">
+<!--#if (IncludeCS)-->
+    <x:Code>
+        <![CDATA[
+        public MauiItem__1() => InitializeComponent();
+        ]]>
+    </x:Code>
+<!--#endif-->
 </ContentPage>
 <!--#else-->
 <ContentPage
@@ -293,6 +398,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MyApp.Namespace"
     mc:Ignorable="d">
+<!--#if (IncludeCS)-->
+    <x:Code>
+        <![CDATA[
+        public MauiItem__1() => InitializeComponent();
+        ]]>
+    </x:Code>
+<!--#endif-->
 </ContentPage>
 <!--#endif-->
 <!--#endif-->
