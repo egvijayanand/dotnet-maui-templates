@@ -6,6 +6,16 @@ What's new in ver. 9.3.0:
 -------------------------
 Templates updated to support .NET MAUI 11 Preview 4.
 
+The generic item template has been updated to include support for the x:Code C# block in XAML.
+
+A new optional parameter has been defined for this.
+
+To be used along with the -xo | --xaml-only parameter.
+
+-ics | --include-cs - Default value is false.
+
+dotnet new maui-item -n HomePage -b ContentPage -xo -ics
+
 v9.2.0:
 
 Templates updated to support .NET MAUI 10 SR6.
