@@ -118,6 +118,12 @@
                     Content="{Binding XamlOption.Content}"
                     IsChecked="{Binding XamlOption.Selected}"
                     TabIndex="{Binding XamlOption.TabIndex}" />
+                <CheckBox
+                    AutomationProperties.AccessKey="{Binding CSOption.Accelerator}"
+                    Content="{Binding CSOption.Content}"
+                    IsChecked="{Binding CSOption.Selected}"
+                    IsEnabled="{Binding XamlOption.Selected}"
+                    TabIndex="{Binding CSOption.TabIndex}" />
                 <GroupBox
                     Margin="15,0,0,0"
                     Padding="5"
@@ -140,7 +146,7 @@
                                 <StackPanel
                                     Margin="0,0,15,0"
                                     VerticalAlignment="Center"
-                                    IsEnabled="{Binding DotNet10}"
+                                    IsEnabled="{Binding Net10OrLater}"
                                     Orientation="Horizontal" />
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
