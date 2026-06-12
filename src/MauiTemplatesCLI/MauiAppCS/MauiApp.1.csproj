@@ -171,7 +171,9 @@
         <!--#endif-->
         <!--#endif-->
         <!--#if (AllPlatforms || IsmacOS)-->
-        <!--#if (Net9OrLater)-->
+        <!--#if (Net11OrLater)-->
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">17.0</SupportedOSPlatformVersion>
+        <!--#elif (Net9OrLater)-->
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>
         <!--#elif (Hybrid)-->
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
@@ -180,7 +182,7 @@
         <!--#endif-->
         <!--#endif-->
         <!--#if (AllPlatforms || IsAndroid)-->
-        <!--#if (Hybrid)-->
+        <!--#if (Hybrid || Net11OrLater)-->
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">24.0</SupportedOSPlatformVersion>
         <!--#elif (AddAvalonia)-->
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">23.0</SupportedOSPlatformVersion>

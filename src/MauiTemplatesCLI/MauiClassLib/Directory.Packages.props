@@ -7,17 +7,17 @@
         <!--#endif-->
         <!--#if (Net11)-->
         <!--#if (Nightly)-->
-        <MauiVersion>11.0.0-preview.4.26263.6</MauiVersion>
+        <MauiVersion>11.0.0-preview.6.26309.4</MauiVersion>
         <!--#else-->
-        <MauiVersion>11.0.0-preview.4.26230.3</MauiVersion>
+        <MauiVersion>11.0.0-preview.5.26304.4</MauiVersion>
         <!--#endif-->
         <!--#elif (Net9)-->
         <MauiVersion>9.0.120</MauiVersion>
         <!--#else-->
         <!--#if (Nightly)-->
-        <MauiVersion>10.0.80-ci.main.26263.5</MauiVersion>
+        <MauiVersion>10.0.80-ci.main.26308.8</MauiVersion>
         <!--#else-->
-        <MauiVersion>10.0.60</MauiVersion>
+        <MauiVersion>10.0.71</MauiVersion>
         <!--#endif-->
         <!--#endif-->
         <!--#else-->
@@ -53,11 +53,11 @@
         <!--#if (Net9)-->
         <PackageVersion Include="CommunityToolkit.Maui" Version="12.3.0" />
         <!--#else-->
-        <PackageVersion Include="CommunityToolkit.Maui" Version="14.1.1" />
+        <PackageVersion Include="CommunityToolkit.Maui" Version="14.2.0" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddSyncfusionToolkit)-->
-        <PackageVersion Include="Syncfusion.Maui.Toolkit" Version="1.0.9" />
+        <PackageVersion Include="Syncfusion.Maui.Toolkit" Version="1.0.10" />
         <!--#endif-->
         <!--#if (AddMarkup)-->
         <!--#if (Net9)-->
@@ -70,14 +70,14 @@
         <!--#if (Net9)-->
         <PackageVersion Include="CommunityToolkit.Maui.Camera" Version="4.0.0" />
         <!--#else-->
-        <PackageVersion Include="CommunityToolkit.Maui.Camera" Version="6.0.1" />
+        <PackageVersion Include="CommunityToolkit.Maui.Camera" Version="6.1.0" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMedia)-->
         <!--#if (Net9)-->
         <PackageVersion Include="CommunityToolkit.Maui.MediaElement" Version="6.1.3" />
         <!--#else-->
-        <PackageVersion Include="CommunityToolkit.Maui.MediaElement" Version="9.0.0" />
+        <PackageVersion Include="CommunityToolkit.Maui.MediaElement" Version="10.0.0" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddMaps)-->
