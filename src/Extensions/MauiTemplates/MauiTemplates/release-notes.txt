@@ -2,8 +2,12 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This VS extension does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 9.3.0.0:
+What's new in ver. 9.4.0.0:
 ---------------------------
+Templates updated to support .NET MAUI 11 Preview 5 and .NET MAUI 10 SR7.1.
+
+v9.3.0.0:
+
 Templates updated to support .NET MAUI 11 Preview 4.
 
 The Generic Item Template has been updated to include support for the x:Code C# code block in XAML.
