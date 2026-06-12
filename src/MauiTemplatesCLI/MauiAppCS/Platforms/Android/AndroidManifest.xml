@@ -6,6 +6,8 @@
     <!--#else-->
     <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="35" />
     <!--#endif-->
+    <!--#elif (Net11OrLater)-->
+    <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="37" />
     <!--#else-->
     <!--#if (Hybrid)-->
     <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="36" />
