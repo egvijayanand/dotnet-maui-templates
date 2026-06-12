@@ -378,7 +378,7 @@
         <!--#if (Net9)-->
         <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="6.*" />
         <!--#else-->
-        <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="8.*" />
+        <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="10.*" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
