@@ -2,8 +2,14 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This VS extension does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 9.5.0.0:
+What's new in ver. 9.6.0.0:
 ---------------------------
+Templates updated to support .NET MAUI 11 Preview 7 and .NET MAUI 10 SR9.
+
+Build configuration in the page footer.
+
+v9.5.0.0:
+
 Templates updated to support .NET MAUI 11 Preview 6 and .NET MAUI 10 SR8.
 
 v9.4.0.0
