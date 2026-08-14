@@ -74,10 +74,20 @@ namespace MauiApp._1
                 static string GetVersion()
                 {
                     var version = typeof(MauiApp).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()!.InformationalVersion;
-#if AddAvalonia
-                    return $".NET MAUI ver. {version[..version.IndexOf('+')]}{(DrawnUI ? " (Skia)" : string.Empty)}";
+                    var buildConfig =
+//-:cnd:noEmit
+#if DEBUG
+                    "Debug";
+#elif RELEASE
+                    "Release";
 #else
-                    return $".NET MAUI ver. {version[..version.IndexOf('+')]}";
+                    "Custom";
+#endif
+//+:cnd:noEmit
+#if AddAvalonia
+                    return $".NET MAUI ver. {version[..version.IndexOf('+')]}{(DrawnUI ? " (Skia)" : string.Empty)} ({buildConfig})";
+#else
+                    return $".NET MAUI ver. {version[..version.IndexOf('+')]} ({buildConfig})";
 #endif
                 }
             }

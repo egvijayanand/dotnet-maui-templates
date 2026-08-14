@@ -8,17 +8,17 @@
         <FormsVersion>5.0.0.2662</FormsVersion>
         <!--#if (Net11)-->
         <!--#if (Nightly)-->
-        <MauiVersion>11.0.0-preview.7.26364.5</MauiVersion>
+        <MauiVersion>11.0.0-preview.7.26413.9</MauiVersion>
         <!--#else-->
-        <MauiVersion>11.0.0-preview.6.26360.8</MauiVersion>
+        <MauiVersion>11.0.0-preview.7.26406.9</MauiVersion>
         <!--#endif-->
         <!--#elif (Net9)-->
         <MauiVersion>9.0.120</MauiVersion>
         <!--#else-->
         <!--#if (Nightly)-->
-        <MauiVersion>10.0.100-ci.main.26364.4</MauiVersion>
+        <MauiVersion>10.0.110-ci.main.26413.8</MauiVersion>
         <!--#else-->
-        <MauiVersion>10.0.80</MauiVersion>
+        <MauiVersion>10.0.90</MauiVersion>
         <!--#endif-->
         <!--#endif-->
         <!--#else-->
@@ -61,7 +61,7 @@
         <!--#if (Net9)-->
         <PackageVersion Include="CommunityToolkit.Maui" Version="12.3.0" />
         <!--#else-->
-        <PackageVersion Include="CommunityToolkit.Maui" Version="14.2.2" />
+        <PackageVersion Include="CommunityToolkit.Maui" Version="15.0.0" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddSyncfusionToolkit)-->
@@ -71,7 +71,7 @@
         <!--#if (Net9)-->
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="6.0.1" />
         <!--#else-->
-        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="7.0.1" />
+        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="8.0.0" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (AddSharedToolkit)-->
