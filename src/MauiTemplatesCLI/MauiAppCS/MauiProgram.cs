@@ -1,6 +1,10 @@
 #if AddAspire
 using Microsoft.Extensions.Hosting;
 #endif
+#if AddAvalonia
+using Avalonia.Controls.Maui.Essentials;
+using Avalonia.Controls.Maui.LifecycleEvents;
+#endif
 #if Razor
 using BlazorBindings.Maui;
 #endif
@@ -240,6 +244,23 @@ namespace MauiApp._1
             });
 #endif
 //+:cnd:noEmit
+#if AddAvalonia
+//-:cnd:noEmit
+#if SKIA
+            // Launch the app window maximized on Windows
+            builder.ConfigureLifecycleEvents(events =>
+            {
+                events.AddWindows(app =>
+                {
+                    app.OnWindowCreated(window =>
+                    {
+                        window.WindowState = Avalonia.Controls.WindowState.Maximized;
+                    });
+                });
+            });
+#endif
+//+:cnd:noEmit
+#endif
 
             return builder.Build();
         }
