@@ -4,17 +4,17 @@
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (Net11)-->
         <!--#if (Nightly)-->
-        <MauiVersion>11.0.0-rc.1.26451.6</MauiVersion>
+        <MauiVersion>11.0.0-rc.2.26515.6</MauiVersion>
         <!--#else-->
-        <MauiVersion>11.0.0-rc.1.26451.6</MauiVersion>
+        <MauiVersion>11.0.0-rc.2.26505.5</MauiVersion>
         <!--#endif-->
         <!--#elif (Net9)-->
         <MauiVersion>9.0.120</MauiVersion>
         <!--#else-->
         <!--#if (Nightly)-->
-        <MauiVersion>10.0.110-ci.main.26458.5</MauiVersion>
+        <MauiVersion>10.0.120-ci.main.26463.5</MauiVersion>
         <!--#else-->
-        <MauiVersion>10.0.101</MauiVersion>
+        <MauiVersion>10.0.110</MauiVersion>
         <!--#endif-->
         <!--#endif-->
         <!--#else-->
@@ -35,11 +35,11 @@
         <!--#endif-->
         <!--#if (Hybrid)-->
         <!--#if (Net9)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.20" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.21" />
         <!--#elif (Net11)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="11.0.0-rc.1.26425.128" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="11.0.0-rc.2.26504.105" />
         <!--#else-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="10.0.12" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="10.0.13" />
         <!--#endif-->
         <!--#endif-->
         <PackageVersion Include="Fabulous" Version="2.4.1" />
@@ -49,13 +49,13 @@
         <!--#endif-->
         <!--#if (Net9)-->
         <PackageVersion Include="FSharp.Core" Version="9.0.303" />
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.20" Condition="'$(Configuration)' == 'Debug'" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.21" Condition="'$(Configuration)' == 'Debug'" />
         <!--#elif (Net11)-->
-        <PackageVersion Include="FSharp.Core" Version="11.0.101-rc1.26425.128" />
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="11.0.0-rc.1.26425.128" Condition="'$(Configuration)' == 'Debug'" />
+        <PackageVersion Include="FSharp.Core" Version="11.0.101-rc2.26504.105" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="11.0.0-rc.2.26504.105" Condition="'$(Configuration)' == 'Debug'" />
         <!--#else-->
-        <PackageVersion Include="FSharp.Core" Version="10.1.401" />
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.12" Condition="'$(Configuration)' == 'Debug'" />
+        <PackageVersion Include="FSharp.Core" Version="10.1.402" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.13" Condition="'$(Configuration)' == 'Debug'" />
         <!--#endif-->
         <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <!--#if (AddToolkit)-->

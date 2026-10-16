@@ -52,7 +52,8 @@ namespace MauiApp._1
 #if SKIA
             builder.UseSharedMauiApp(useSingleAppLifetime, useSkia: true);
 #else
-            builder.UseSharedMauiApp();
+            builder.UseSharedMauiApp()
+                   .UseAvaloniaEmbedding<AvaloniaApp>();
 #endif
 //+:cnd:noEmit
 #else
@@ -88,6 +89,8 @@ namespace MauiApp._1
 #if SKIA
             App.DrawnUI = true;
             builder.UseAvaloniaApp(useSingleAppLifetime);
+#else
+            builder.UseAvaloniaEmbedding<AvaloniaApp>();
 #endif
 //+:cnd:noEmit
 #endif
