@@ -3,7 +3,7 @@
         <!--#if (CentralPkgMgmt)-->
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (AddAvalonia)-->
-        <AvaloniaMauiVersion>11.0.0-rc.2.26287.618</AvaloniaMauiVersion>
+        <AvaloniaMauiVersion>11.0.0-rc.3.26299.205</AvaloniaMauiVersion>
         <!--#endif-->
         <FormsVersion>5.0.0.2662</FormsVersion>
         <!--#if (Net11)-->
@@ -18,7 +18,7 @@
         <!--#if (Nightly)-->
         <MauiVersion>10.0.120-ci.main.26463.5</MauiVersion>
         <!--#else-->
-        <MauiVersion>10.0.110</MauiVersion>
+        <MauiVersion>10.0.120</MauiVersion>
         <!--#endif-->
         <!--#endif-->
         <!--#else-->

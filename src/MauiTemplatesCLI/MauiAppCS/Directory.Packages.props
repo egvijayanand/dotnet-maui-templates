@@ -3,13 +3,13 @@
         <!--#if (CentralPkgMgmt)-->
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <!--#if (AddAspire)-->
-        <AspireVersion>13.6.1</AspireVersion>
+        <AspireVersion>13.6.4</AspireVersion>
         <!--#endif-->
         <!--#if (AddAvalonia)-->
         <!--#if (AddWasm)-->
         <AvaloniaVersion>12.1.4</AvaloniaVersion>
         <!--#endif-->
-        <AvaloniaMauiVersion>11.0.0-rc.2.26287.618</AvaloniaMauiVersion>
+        <AvaloniaMauiVersion>11.0.0-rc.3.26299.205</AvaloniaMauiVersion>
         <!--#endif-->
         <!--#if (Net11)-->
         <!--#if (Nightly)-->
@@ -23,15 +23,15 @@
         <!--#if (Nightly)-->
         <MauiVersion>10.0.120-ci.main.26463.5</MauiVersion>
         <!--#elif (XamlCSharpExpr)-->
-        <MauiVersion>[10.0.110,)</MauiVersion>
+        <MauiVersion>[10.0.120,)</MauiVersion>
         <!--#else-->
-        <MauiVersion>10.0.110</MauiVersion>
+        <MauiVersion>10.0.120</MauiVersion>
         <!--#endif-->
         <!--#endif-->
         <!--#else-->
         <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
         <!--#if (AddAspire)-->
-        <AspireVersion>13.6.1</AspireVersion>
+        <AspireVersion>13.6.4</AspireVersion>
         <!--#endif-->
         <!--#if (AddAvalonia)-->
         <!--#if (AddWasm)-->
@@ -42,7 +42,7 @@
         <!--#if (Preview || Nightly)-->
         <MauiVersion>PKG_VERSION-*</MauiVersion>
         <!--#elif (XamlCSharpExpr)-->
-        <MauiVersion>[10.0.110,)</MauiVersion>
+        <MauiVersion>[10.0.120,)</MauiVersion>
         <!--#else-->
         <MauiVersion>PKG_VERSION</MauiVersion>
         <!--#endif-->
@@ -54,7 +54,7 @@
     <!--#endif-->
         <!--#if (AddAspire)-->
         <PackageVersion Include="Aspire.Hosting.AppHost" Version="$(AspireVersion)" />
-        <PackageVersion Include="Aspire.Hosting.Maui" Version="13.6.1-preview.1.26506.6" />
+        <PackageVersion Include="Aspire.Hosting.Maui" Version="13.6.4-preview.1.26523.11" />
         <PackageVersion Include="Microsoft.Maui.Core" Version="$(MauiVersion)" />
         <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.11.0" />
         <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="10.11.0" />
@@ -75,11 +75,11 @@
         <!--#endif-->
         <!--#if (Hybrid && RazorLib)-->
         <!--#if (Net9)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.21" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="9.0.22" />
         <!--#elif (Net11)-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="11.0.0-rc.2.26504.105" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="11.0.0-rc.3.26522.148" />
         <!--#else-->
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="10.0.13" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="10.0.14" />
         <!--#endif-->
         <!--#endif-->
         <!--#if (Razor)-->
@@ -106,11 +106,11 @@
         <PackageVersion Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <!--#endif-->
         <!--#if (Net9)-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.21" Condition="'$(Configuration)' == 'Debug'" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.22" Condition="'$(Configuration)' == 'Debug'" />
         <!--#elif (Net11)-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="11.0.0-rc.2.26504.105" Condition="'$(Configuration)' == 'Debug'" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="11.0.0-rc.3.26522.148" Condition="'$(Configuration)' == 'Debug'" />
         <!--#else-->
-        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.13" Condition="'$(Configuration)' == 'Debug'" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="10.0.14" Condition="'$(Configuration)' == 'Debug'" />
         <!--#endif-->
         <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <!--#if (Net9)-->

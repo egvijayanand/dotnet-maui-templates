@@ -2,8 +2,14 @@ Join me on Developer Thoughts (https://egvijayanand.in/), an exclusive blog for 
 
 This template package does not gather any usage or telemetry data, even anonymously, ensuring that you can use it with complete privacy assurance.
 
-What's new in ver. 9.8.0:
+What's new in ver. 9.9.0:
 -------------------------
+Templates updated to support .NET MAUI 10 SR12.
+
+Scene configurations have been added to iOS and macOS templates to support Apple Xcode 27.
+
+v9.8.0:
+
 Templates updated to support .NET MAUI 11 RC2 and .NET MAUI 10 SR11.
 
 v9.7.0:
